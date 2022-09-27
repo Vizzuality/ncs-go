@@ -17,8 +17,10 @@ pre-commit:
   parallel: true
   commands:
     eslint:
+      root: '.'
       glob: "*.{js,ts,jsx,tsx}"
       run: yarn lint {staged_files}
     types:
+      root: '.'
       glob: "*.{js,ts,jsx,tsx}"
       run: yarn check-types
