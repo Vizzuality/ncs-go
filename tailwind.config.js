@@ -10,6 +10,7 @@ module.exports = {
   content: [
     './src/components/**/*.@(tsx|ts)',
     './src/containers/**/*.@(tsx|ts)',
+    './src/layouts/**/*.@(tsx|ts)',
     './src/pages/**/*.tsx',
   ],
   plugins: [aspectRatio, forms, lineClamp],
