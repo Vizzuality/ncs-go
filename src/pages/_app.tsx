@@ -10,7 +10,6 @@ import { QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query
 
 import ThirdParty from 'containers/third-party';
 
-import Button from 'components/button';
 import { MediaContextProvider } from 'components/media-query';
 import { GAPage } from 'lib/analytics/ga';
 import store from 'store';
