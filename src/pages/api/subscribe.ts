@@ -8,7 +8,7 @@ const Contact = (req: NextApiRequest, res: NextApiResponse): void => {
     const { email } = req.body;
 
     const data = {
-      list_ids: ['1b704de4-643f-4531-b6cb-63fea0e6ad2a'],
+      list_ids: ['d0be73c6-0b0f-41ce-9323-9a2d504f5d1b'],
       contacts: [
         {
           email,
@@ -17,7 +17,7 @@ const Contact = (req: NextApiRequest, res: NextApiResponse): void => {
     };
 
     const request = {
-      url: `/ncs-go/marketing/contacts`,
+      url: `/v3/marketing/contacts`,
       method: 'PUT' as const,
       body: data,
     };
