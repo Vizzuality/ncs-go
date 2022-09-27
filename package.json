@@ -12,8 +12,7 @@
     "storybook:dev": "start-storybook -p 6006 -c .storybook",
     "storybook:build": "build-storybook -c .storybook",
     "cypress:open": "cypress open",
-    "cypress:run": "cypress run",
-    "postinstall": "husky install"
+    "cypress:run": "cypress run"
   },
   "engines": {
     "node": "~16.14 || ~14"
@@ -103,9 +102,6 @@
     "@deck.gl/core": "8.7.8",
     "@deck.gl/mapbox": "8.7.8",
     "webpack": "^5"
-  },
-  "husky": {
-    "pre-commit": "yarn lint"
   },
   "packageManager": "yarn@3.1.1"
 }
