@@ -14,5 +14,5 @@ const Template: Story<VideoProps> = (args) => <Video {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  className: 'w-5 h-5 text-blue-500',
+  url: 'https://youtu.be/6PGyRolwFVo',
 };
