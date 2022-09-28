@@ -1,6 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withOptimizedImages = require('next-optimized-images');
-
+const withTM = require('next-transpile-modules')(['three']);
 /**
  * @type {import('next').NextConfig}
  */
@@ -22,6 +22,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
+    withTM(),
     withOptimizedImages({
       optimizeImages: false,
     }),
