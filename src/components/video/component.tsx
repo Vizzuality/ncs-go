@@ -6,38 +6,26 @@ import ReactPlayer from 'react-player/lazy';
 
 import type { VideoProps } from './types';
 
-export const Video: FC<VideoProps> = ({ className, thumbnail, url }: VideoProps) => (
-  <div
+export const Video: FC<VideoProps> = ({
+  className,
+  config,
+  loop = false,
+  playing = false,
+  light = true,
+  url,
+}: VideoProps) => (
+  <ReactPlayer
     className={cx({
-      'h-auto w-full': true,
+      'c-video': true,
+      'h-full w-full': true,
       [className]: className,
     })}
-  >
-    <ReactPlayer
-      className="react-player"
-      url={url}
-      loop
-      width="auto"
-      height="auto"
-      light={thumbnail}
-      style={{
-        width: '100%',
-        height: 'auto',
-        minWidth: '100%',
-        minHeight: '100%',
-      }}
-      playing
-      config={{
-        youtube: {
-          playerVars: {
-            controls: true,
-            showinfo: 0,
-            rel: 0,
-          },
-        },
-      }}
-    />
-  </div>
+    url={url}
+    loop={loop}
+    light={light}
+    playing={playing}
+    config={config}
+  />
 );
 
 export default Video;
