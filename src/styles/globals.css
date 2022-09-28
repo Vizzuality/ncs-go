@@ -52,6 +52,4 @@
   .c-video .react-player__play-icon {
     @apply bg-red-600 !important;
   }
-
-
 }
