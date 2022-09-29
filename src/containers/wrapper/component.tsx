@@ -8,7 +8,7 @@ const Wrapper = ({ children }: WrapperProps) => {
   return (
     <div
       className={cx({
-        'max-w-6xl mx-auto px-5 lg:px-10': true,
+        'max-w-8xl mx-auto px-20': true,
       })}
     >
       {children}

@@ -8,7 +8,7 @@ import type { CardProps } from './types';
 
 export const Card = ({ description, title, onClick }: CardProps) => (
   <button
-    className="relative p-6 pt-32 space-y-2 font-sans text-white bg-gray-900 border border-gray-800"
+    className="relative p-6 pt-32 space-y-2 font-sans text-left text-white bg-gray-900 border border-gray-800"
     onClick={onClick}
   >
     <Icon icon={ARROW_ROTATED_SVG} className="absolute w-5 h-5 text-brand top-6 right-6" />
