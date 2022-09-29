@@ -9861,6 +9861,21 @@ __metadata:
   languageName: node
   linkType: hard
 
+"framer-motion-3d@npm:7.5.0":
+  version: 7.5.0
+  resolution: "framer-motion-3d@npm:7.5.0"
+  dependencies:
+    framer-motion: ^7.5.0
+    react-merge-refs: ^2.0.1
+  peerDependencies:
+    "@react-three/fiber": ^8.2.2
+    react: ">=18.0"
+    react-dom: ">=18.0"
+    three: ">=0.133"
+  checksum: 30297748a0f62cf35e7631314bd23c5f6e6a449873939ddffea236d6a7b741229679c7a96c8efb64815dbe88293c78516bdc8ea8c50bb952fd3db5a0e8b04c03
+  languageName: node
+  linkType: hard
+
 "framer-motion@npm:7.4.0":
   version: 7.4.0
   resolution: "framer-motion@npm:7.4.0"
@@ -9879,6 +9894,27 @@ __metadata:
     "@emotion/is-prop-valid":
       optional: true
   checksum: 96973d93f8bc3c3e9611ebda2568d0cfae2b36bf7b3c8002e55b29a2e971223b3b0ee0a1c630b8d88652317813f2222a7cba366a83500750eafdffecac364e0b
+  languageName: node
+  linkType: hard
+
+"framer-motion@npm:^7.5.0":
+  version: 7.5.0
+  resolution: "framer-motion@npm:7.5.0"
+  dependencies:
+    "@emotion/is-prop-valid": ^0.8.2
+    "@motionone/dom": 10.13.1
+    framesync: 6.1.2
+    hey-listen: ^1.0.8
+    popmotion: 11.0.5
+    style-value-types: 5.1.2
+    tslib: 2.4.0
+  peerDependencies:
+    react: ^18.0.0
+    react-dom: ^18.0.0
+  dependenciesMeta:
+    "@emotion/is-prop-valid":
+      optional: true
+  checksum: ce0a55d02274c2d523f78df143bacd714d8343f690b8bf8cc71433afe53e72826df94cd6af6f5e2a427ed5e35d143210ec04be01b45863522930f18321198a95
   languageName: node
   linkType: hard
 
@@ -13228,6 +13264,7 @@ __metadata:
     eslint-plugin-react-hooks: 4.3.0
     final-form: 4.20.2
     framer-motion: 7.4.0
+    framer-motion-3d: 7.5.0
     jsonwebtoken: 8.5.1
     lodash: 4.17.21
     maplibre-gl: 2.1.9
@@ -15183,6 +15220,13 @@ __metadata:
   version: 1.1.0
   resolution: "react-merge-refs@npm:1.1.0"
   checksum: 90884352999002d868ab9f1bcfe3222fb0f2178ed629f1da7e98e5a9b02a2c96b4aa72800db92aabd69d2483211b4be57a2088e89a11a0b660e7ada744d4ddf7
+  languageName: node
+  linkType: hard
+
+"react-merge-refs@npm:^2.0.1":
+  version: 2.0.1
+  resolution: "react-merge-refs@npm:2.0.1"
+  checksum: c0b6fdb384a92e9b2bb7d56128244a2db97b9343c0dcae70f172352c3732312266c078495902707e45f523625afcba78996a22edea3a8e7b2b17fe97347059fe
   languageName: node
   linkType: hard
 
