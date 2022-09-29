@@ -1,6 +1,6 @@
 export const THEME = {
   primary:
-    'text-black bg-blue-500 hover:bg-blue-400 active:bg-blue-300 border border-blue-500 hover:border-blue-400 active:border-blue-300 font-sans',
+    'text-black bg-blue-500 hover:bg-blue-400 active:bg-blue-300 border border-blue-500 hover:border-blue-400 active:border-blue-300',
   'primary-alt':
     'text-blue-500 bg-transparent hover:bg-transparent active:bg-transparent border border-blue-500 hover:border-blue-400 active:border-blue-300',
 
