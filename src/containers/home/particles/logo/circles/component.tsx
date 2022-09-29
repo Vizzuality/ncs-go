@@ -15,23 +15,21 @@ export interface CirclesProps {
 const Circles = ({ count, radius, color, size, startAngle, progress }: CirclesProps) => {
   const { width, height } = useThree((state) => state.viewport);
 
-  const { positions } = useMemo(() => {
+  const positions = useMemo(() => {
     let pos = [];
-    const p = 1 - progress;
 
     for (let i = 0; i < count; i++) {
       const angle = i * (360 / count) - 90 + startAngle;
-      const randomX = (Math.random() * width - width / 2) * p;
-      const x = (radius / 100) * Math.cos((-angle * Math.PI) / 180) + randomX;
-      const randomY = ((Math.random() * height) / 2 - height / 2 / 2) * p;
-      const y = (radius / 100) * Math.sin((-angle * Math.PI) / 180) + randomY;
+      const randomX = Math.random() * width - width / 2;
+      const randomY = (Math.random() * height) / 2 - height / 2 / 2;
+
+      const x = (radius / 100) * Math.cos((-angle * Math.PI) / 180);
+      const y = (radius / 100) * Math.sin((-angle * Math.PI) / 180);
       const z = 0;
-      pos.push({ id: i, x, y, z });
+      pos.push({ id: i, x, y, z, initialX: randomX, initialY: randomY });
     }
-    return {
-      positions: pos,
-    };
-  }, [count, radius, startAngle, progress, height, width]);
+    return pos;
+  }, [count, radius, startAngle, height, width]);
 
   return (
     <>
