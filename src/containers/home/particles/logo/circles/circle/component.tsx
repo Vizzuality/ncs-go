@@ -44,7 +44,14 @@ const Circles = ({ p, size, color, progress }: CirclesProps) => {
       animate={{ x: p.x, y: p.y, z: p.z }}
     >
       <circleGeometry args={[size / 100, 32]} />
-      <circleMaterial ref={materialRef} uColor={COLOR} uTime={0} uProgress={progress} transparent />
+      <circleMaterial
+        ref={materialRef}
+        uPos={[p.x, p.y, p.z]}
+        uColor={COLOR}
+        uProgress={progress}
+        uTime={0}
+        transparent
+      />
     </motion.mesh>
   );
 };
