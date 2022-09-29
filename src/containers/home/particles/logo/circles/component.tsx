@@ -17,8 +17,8 @@ const Circles = ({ count, radius, color, size, startAngle, progress }: CirclesPr
     for (let i = 0; i < count; i++) {
       const angle = i * (360 / count) - 90 + startAngle;
       const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-      const randomX = Math.cos((-randomAngle * Math.PI) / 180);
-      const randomY = Math.sin((-randomAngle * Math.PI) / 180);
+      const randomX = (radius / 100) * Math.cos((-randomAngle * Math.PI) / 180);
+      const randomY = (radius / 100) * Math.sin((-randomAngle * Math.PI) / 180);
 
       const x = (radius / 100) * Math.cos((-angle * Math.PI) / 180);
       const y = (radius / 100) * Math.sin((-angle * Math.PI) / 180);

@@ -79,9 +79,9 @@ float snoise(vec2 v) {
 void main() {
   vUv = uv;
 
-  float n1 = (1.0 - uProgress) * snoise(uPos.xy * 5.0 + sin(uTime * 0.5) * 0.1);
-  float n2 = (1.0 - uProgress) * snoise(uPos.xy * 5.0 + sin(uTime * 0.25) * 0.1);
-  vec4 p = vec4(position.x + n1 * 0.1, position.y + n2 * 0.1, 0.0, 1.0);
+  float n1 = (1.0 - uProgress) * snoise(uPos.xy + sin(uTime * 0.5) * 0.1);
+  float n2 = (1.0 - uProgress) * snoise(uPos.xy + sin(uTime * 0.25) * 0.1);
+  vec4 p = vec4(position.x + n1 * 0.2, position.y + n2 * 0.2, 0.0, 1.0);
   vec4 final_position = projectionMatrix * modelViewMatrix * p;
 
   gl_Position = final_position;

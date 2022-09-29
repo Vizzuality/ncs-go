@@ -1,8 +1,19 @@
+import { useRef } from 'react';
+
+import { useFrame } from '@react-three/fiber';
+import { Group } from 'three';
+
 import Circles from './circles';
 
 const ParticlesLogo = ({ progress }) => {
+  const groupRef = useRef<Group>();
+
+  useFrame(() => {
+    groupRef.current.rotation.z += 0.005 * (1 - progress);
+  });
+
   return (
-    <>
+    <group ref={groupRef}>
       {/* Red dots */}
       <Circles //
         progress={progress}
@@ -101,7 +112,7 @@ const ParticlesLogo = ({ progress }) => {
         radius={100}
         startAngle={45}
       />
-    </>
+    </group>
   );
 };
 

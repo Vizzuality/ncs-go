@@ -43,7 +43,7 @@ const Circles = ({ p, size, color, progress }: CirclesProps) => {
   const y = useTransform(progressMotionValue, [0, 1], [p.initialY, p.y]);
 
   useFrame(({ clock }) => {
-    meshRef.current.rotation.z += 0.005 * (1 - progress);
+    meshRef.current.rotation.z += 0.01 * (1 - progress);
     materialRef.current.uTime = clock.elapsedTime;
   });
 
