@@ -18,7 +18,7 @@ const ParticlesLogo = ({ progress }) => {
         count={10}
         size={2}
         color={0xfc1a52}
-        radius={0}
+        radius={1}
         startAngle={0}
       />
 
