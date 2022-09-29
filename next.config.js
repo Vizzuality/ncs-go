@@ -11,6 +11,12 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
+
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      use: ['raw-loader', 'glslify-loader'],
+    });
+
     return config;
   },
 

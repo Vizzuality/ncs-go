@@ -1,7 +1,11 @@
 import { useMemo } from 'react';
 
-import { useThree } from '@react-three/fiber';
+import { extend, useThree } from '@react-three/fiber';
 import { motion } from 'framer-motion-3d';
+
+import CircleMaterial from './circleMaterial';
+
+extend({ CircleMaterial });
 export interface CirclesProps {
   count: number;
   radius: number;
@@ -41,7 +45,11 @@ const Circles = ({ count, radius, color, size, startAngle, progress }: CirclesPr
           animate={{ x: p.x, y: p.y, z: p.z }}
         >
           <circleGeometry args={[size / 100, 32]} />
-          <meshBasicMaterial color={color} />
+          <motion.meshBasicMaterial
+            color={color}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          />
         </motion.mesh>
       ))}
     </>
