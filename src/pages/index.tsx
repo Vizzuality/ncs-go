@@ -1,6 +1,7 @@
 import Head from 'next/head';
 
 import Particles from 'containers/home/particles';
+import Navigation from 'containers/navigation';
 
 const Home: React.FC = () => (
   <div>
@@ -9,6 +10,11 @@ const Home: React.FC = () => (
     </Head>
 
     <Particles />
+
+    <Navigation
+      linkLeft={{ label: 'Inspiring stories', url: '#' }}
+      linkRight={{ label: 'Inspiring stories', url: '#' }}
+    />
   </div>
 );
 
