@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Silka";
+  src: url("../../public/fonts/Silka-Regular.otf");
+}
+
 @-webkit-keyframes autofill {
   0%,
   100% {
