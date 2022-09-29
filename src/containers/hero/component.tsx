@@ -1,3 +1,5 @@
+import React from 'react';
+
 import type { HeroProps } from './types';
 
 export const Hero = ({ subtitle, title }: HeroProps) => (
