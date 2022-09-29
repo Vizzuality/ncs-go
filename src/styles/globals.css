@@ -2,6 +2,16 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "Silka";
+  src: url("../../public/fonts/Silka-Regular.otf");
+}
+
+@font-face {
+  font-family: "Silka-SemiBold";
+  src: url("../../public/fonts/Silka-SemiBold.otf");
+}
+
 @-webkit-keyframes autofill {
   0%,
   100% {
