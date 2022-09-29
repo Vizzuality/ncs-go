@@ -6,6 +6,9 @@ import { useSaveSubscribe } from 'hooks/subscribe';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
+import Icon from 'components/icon';
+
+import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 
 const ContactForm: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -31,51 +34,55 @@ const ContactForm: React.FC = () => {
   );
 
   return (
-    <section className="mt-20 py-28">
-      <div className="md:container px-3.5  mx-auto w-full h-full md:px-16 xl:px-16">
-        <div className="grid gap-10 md:grid-cols-3">
-          <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
-            {(props) => (
-              <form onSubmit={props.handleSubmit} className="md:col-span-2">
-                <div className="grid gap-10 md:grid-cols-2">
-                  <div className="flex items-center space-x-20">
-                    <Button
-                      className="box-border flex-shrink-0 h-10 text-base transition duration-500 ease-in-out w-36 md:ml-5 md:w-28"
-                      disabled={submitting}
-                      size="s"
-                      theme="secondary"
-                      type="submit"
-                    >
-                      Send
-                    </Button>
-                    <Field
-                      name="email"
-                      component="input"
-                      validate={composeValidators([{ presence: true }])}
-                    >
-                      {({ input, meta }) => (
-                        <div>
-                          <div className="relative mt-1">
-                            <input
-                              {...input}
-                              value={input.value as string}
-                              type="email"
-                              placeholder="Email address"
-                              className="block w-full border-t-0 border-b border-l-0 border-r-0 text-md lg:text-lg"
-                            />
-                          </div>
-                          {meta.error && meta.touched && (
-                            <p className="mt-2 text-sm text-red-600">{meta.error.join('. ')}</p>
-                          )}
-                        </div>
-                      )}
-                    </Field>
-                  </div>
-                </div>
-              </form>
-            )}
-          </Form>
+    <section className="w-full h-full px-16 mx-auto mt-20 py-28 md:container">
+      <div className="grid items-center grid-cols-12 gap-20">
+        <div className="col-span-5 space-y-6 text-gray-900">
+          <h2 className="text-2xl font-semibold">Stay up to date</h2>
+          <p className="font-sans text-lg">
+            Subscribe to be the first to know about the tool launch and more.
+          </p>
         </div>
+
+        <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
+          {(props) => (
+            <form onSubmit={props.handleSubmit} className="col-span-7">
+              <div className="flex justify-between w-full">
+                <Field
+                  name="email"
+                  component="input"
+                  validate={composeValidators([{ presence: true }])}
+                >
+                  {({ input, meta }) => (
+                    <div className="relative w-full">
+                      <input
+                        {...input}
+                        value={input.value as string}
+                        type="email"
+                        placeholder="Email address"
+                        className="flex w-full px-10 py-2 text-lg bg-gray-100 border-none placeholder:text-gray-400"
+                      />
+                      {meta.error && meta.touched && (
+                        <p className="absolute top-12 left-10 text-orange-0 text-xxs">
+                          {meta.error.join('. ')}
+                        </p>
+                      )}
+                    </div>
+                  )}
+                </Field>
+                <Button
+                  disabled={submitting}
+                  size="base"
+                  theme="primary"
+                  type="submit"
+                  className="space-x-4"
+                >
+                  <p>Subscribe</p>
+                  <Icon icon={ARROW_RIGHT_SVG} className="w-5 h-5" />
+                </Button>
+              </div>
+            </form>
+          )}
+        </Form>
       </div>
     </section>
   );
