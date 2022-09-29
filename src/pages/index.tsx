@@ -4,6 +4,9 @@ import Head from 'next/head';
 
 import Card from 'containers/home/card';
 import Particles from 'containers/home/particles';
+import Overview from 'containers/overview';
+import Pathways from 'containers/pathways';
+import Stories from 'containers/stories';
 import Wrapper from 'containers/wrapper';
 
 import Modal from 'components/modal';
@@ -13,18 +16,22 @@ const CARDS = [
     key: 'overview',
     title: 'Naturebase overview',
     description: 'Brief description, lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    component: <Overview />,
   },
   {
     key: 'stories',
     title: 'Inspiring stories',
     description: 'Brief description, lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    component: <Stories />,
   },
   {
     key: 'pathways',
     title: 'NCS pathways',
     description: 'Brief description, lorem ipsum dolor sit amet, consectetur adipiscing elit.',
+    component: <Pathways />,
   },
 ];
+
 const Home: React.FC = () => {
   const [modal, setModal] = useState(null);
 
@@ -52,17 +59,21 @@ const Home: React.FC = () => {
           </div>
         </Wrapper>
       </div>
-
-      <Modal
-        className="h-screen"
-        open={modal === 'overview'}
-        title="Overview"
-        size="default"
-        onOpenChange={() => setModal(null)}
-        dismissable
-      >
-        <div className="h-screen">Overview</div>
-      </Modal>
+      {CARDS.map((c) => {
+        return (
+          <Modal
+            key={c.key}
+            className="h-screen"
+            open={modal === `${c.key}`}
+            title={c.title}
+            size="default"
+            onOpenChange={() => setModal(null)}
+            dismissable
+          >
+            {c.component}
+          </Modal>
+        );
+      })}
     </div>
   );
 };
