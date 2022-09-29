@@ -2,15 +2,10 @@ import React, { useCallback, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
-import validate from 'validate.js';
-
 import { useSaveSubscribe } from 'hooks/subscribe';
 
 import Button from 'components/button';
-
-const validationConstraints = {
-  email: { presence: { allowEmpty: false }, email: true },
-};
+import { composeValidators } from 'components/forms/validations';
 
 const ContactForm: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -39,14 +34,7 @@ const ContactForm: React.FC = () => {
     <section className="mt-20 py-28">
       <div className="md:container px-3.5  mx-auto w-full h-full md:px-16 xl:px-16">
         <div className="grid gap-10 md:grid-cols-3">
-          <Form
-            initialValues={{ email: null }}
-            onSubmit={handleSubmit}
-            validate={(values) => {
-              const validationResult = validate(values, validationConstraints);
-              return validationResult;
-            }}
-          >
+          <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
             {(props) => (
               <form onSubmit={props.handleSubmit} className="md:col-span-2">
                 <div className="grid gap-10 md:grid-cols-2">
@@ -60,15 +48,20 @@ const ContactForm: React.FC = () => {
                     >
                       Send
                     </Button>
-                    <Field name="email" component="input">
+                    <Field
+                      name="email"
+                      component="input"
+                      validate={composeValidators([{ presence: true }])}
+                    >
                       {({ input, meta }) => (
                         <div>
                           <div className="relative mt-1">
                             <input
                               {...input}
+                              value={input.value as string}
                               type="email"
                               placeholder="Email address"
-                              className="block w-full border-t-0 border-b border-l-0 border-r-0 text-md lg:text-lg border-b-darkGray placeholder-lightGray"
+                              className="block w-full border-t-0 border-b border-l-0 border-r-0 text-md lg:text-lg"
                             />
                           </div>
                           {meta.error && meta.touched && (
