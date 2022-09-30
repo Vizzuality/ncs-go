@@ -5,7 +5,7 @@ import Features from 'containers/home/overview/features';
 
 const Overview = () => {
   return (
-    <div className="h-screen">
+    <div>
       <div className="pt-28">
         <Hero
           className="text-gray-800"

@@ -41,7 +41,6 @@ export const Cards = () => {
         return (
           <Modal
             key={c.key}
-            className="h-screen"
             open={modal === `${c.key}`}
             title={c.title}
             size="default"
