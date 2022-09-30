@@ -1,19 +1,19 @@
 import React from 'react';
 
 import Hero from 'containers/hero';
-import Wrapper from 'containers/wrapper';
+import Features from 'containers/overview/features';
 
 const Overview = () => {
   return (
     <div className="h-screen">
-      <Wrapper>
-        <div className="pt-28">
-          <Hero
-            title="Naturebase overview"
-            subtitle="Naturebase help you to achieve the CO2 emission reduction goals from France Agreement."
-          />
-        </div>
-      </Wrapper>
+      <div className="pt-28">
+        <Hero
+          className="text-gray-800"
+          title="Naturebase overview"
+          subtitle="Naturebase help you to achieve the CO2 emission reduction goals from France Agreement."
+        />
+      </div>
+      <Features />
     </div>
   );
 };
