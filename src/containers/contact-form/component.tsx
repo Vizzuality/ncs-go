@@ -38,7 +38,7 @@ const ContactForm: React.FC = () => {
       <div className="grid items-center grid-cols-12 gap-20">
         <div className="col-span-5 space-y-6 text-gray-900">
           <h2 className="text-2xl font-semibold">Stay up to date</h2>
-          <p className="font-sans text-lg">
+          <p className="font-sans text-lg leading-7">
             Subscribe to be the first to know about the tool launch and more.
           </p>
         </div>
@@ -50,7 +50,7 @@ const ContactForm: React.FC = () => {
                 <Field
                   name="email"
                   component="input"
-                  validate={composeValidators([{ presence: true }])}
+                  validate={composeValidators([{ presence: true, email: true }])}
                 >
                   {({ input, meta }) => (
                     <div className="relative w-full">
@@ -58,11 +58,11 @@ const ContactForm: React.FC = () => {
                         {...input}
                         value={input.value as string}
                         type="email"
-                        placeholder="Email address"
-                        className="flex w-full px-10 py-2 text-lg bg-gray-100 border-none placeholder:text-gray-400"
+                        placeholder="Enter your email"
+                        className="flex w-full px-10 py-5 text-lg bg-gray-100 border-none placeholder:text-gray-400"
                       />
                       {meta.error && meta.touched && (
-                        <p className="absolute top-12 left-10 text-orange-0 text-xxs">
+                        <p className="absolute top-full left-10 text-orange-0 text-xxs">
                           {meta.error.join('. ')}
                         </p>
                       )}
