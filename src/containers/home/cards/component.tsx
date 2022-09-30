@@ -1,4 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { useRouter } from 'next/router';
 
 import Card from 'containers/home/cards/card';
 import Overview from 'containers/home/overview';
@@ -11,7 +13,12 @@ import Modal from 'components/modal';
 import { CARDS } from './constants';
 
 export const Cards = () => {
+  const { asPath } = useRouter();
   const [modal, setModal] = useState(null);
+
+  useEffect(() => {
+    setModal(asPath.split('#')[1]);
+  }, [asPath]);
 
   const SECTIONS = {
     overview: <Overview />,
