@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Hero from 'containers/hero';
-import Features from 'containers/overview/features';
+import Features from 'containers/home/overview/features';
 
 const Overview = () => {
   return (

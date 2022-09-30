@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 
 import Head from 'next/head';
 
-import Card from 'containers/home/card';
+import Card from 'containers/home/common/card';
+import Overview from 'containers/home/overview';
 import Particles from 'containers/home/particles';
-import Overview from 'containers/overview';
-import Pathways from 'containers/pathways';
-import Stories from 'containers/stories';
+import Pathways from 'containers/home/pathways';
+import Stories from 'containers/home/stories';
 import Wrapper from 'containers/wrapper';
 
 import Modal from 'components/modal';

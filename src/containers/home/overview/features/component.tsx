@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Hero from 'containers/hero';
-import FeatureCard from 'containers/overview/features/card';
+import FeatureCard from 'containers/home/overview/features/card';
 
 import { FEATURES } from './constants';
 
