@@ -4,5 +4,6 @@ export const THEME = {
 };
 
 export const SIZE = {
-  base: 'text-lg px-10 py-2',
+  s: 'text-lg px-10 py-5',
+  base: 'text-lg px-10 py-6',
 };

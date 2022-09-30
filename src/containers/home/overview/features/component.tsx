@@ -9,12 +9,14 @@ import { FEATURES } from './constants';
 const Features = () => {
   return (
     <div className="bg-gray-900">
-      <Hero
-        className="text-white"
-        title="Features"
-        subtitle="Set up strategies based on NCS based on real data."
-      />
       <Wrapper>
+        <div className="pb-20 pt-28">
+          <Hero
+            className="text-white"
+            title="Features"
+            subtitle="Set up strategies based on NCS based on real data."
+          />
+        </div>
         <div className="grid grid-flow-col grid-rows-2">
           {FEATURES.map((f) => (
             <div key={f.key} className="col-span-2">
