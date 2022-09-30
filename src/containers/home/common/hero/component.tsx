@@ -10,13 +10,13 @@ export const Hero = ({ className, subtitle, title }: HeroProps) => (
   <Wrapper>
     <div
       className={cx({
-        'grid grid-cols-12 font-sans': true,
+        'font-sans': true,
         [className]: !!className,
       })}
     >
-      <div className="col-span-7 space-y-4">
+      <div className="space-y-4 ">
         <h2 className="text-base font-semibold tracking-widest uppercase">{title}</h2>
-        <h3 className="text-3xl">{subtitle}</h3>
+        <h3 className="text-3xl max-w-[28ch]">{subtitle}</h3>
       </div>
     </div>
   </Wrapper>
