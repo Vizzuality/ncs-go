@@ -1,6 +1,6 @@
 export const THEME = {
   primary: 'text-white bg-brand',
-  secondary: 'text-white bg-gray-900',
+  secondary: 'text-white bg-gray-800 whitespace-nowrap',
 };
 
 export const SIZE = {
