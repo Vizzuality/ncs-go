@@ -1,10 +1,12 @@
 export const NAVIGATION_LINKS = [
   {
+    hash: '/#stories',
     label: 'Inspiring stories',
-    url: '#',
+    url: 'containers/home/stories',
   },
   {
+    hash: '/#pathways',
     label: 'NCS Pathways',
-    url: '#',
+    url: 'containers/home/pathways',
   },
 ];

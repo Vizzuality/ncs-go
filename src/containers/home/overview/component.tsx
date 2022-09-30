@@ -21,12 +21,12 @@ const Overview = () => {
         </div>
       </Wrapper>
       <Features />
-      <div className="bg-gray-900 py-28">
+      <section className="bg-gray-900 py-28">
         <ContactForm />
-      </div>
-      <div className="bg-gray-900 pb-28">
+      </section>
+      <section className="bg-gray-900 pb-28">
         <Navigation links={NAVIGATION_LINKS} />
-      </div>
+      </section>
     </div>
   );
 };

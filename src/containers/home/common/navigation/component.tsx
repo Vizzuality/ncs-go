@@ -1,5 +1,7 @@
 import React from 'react';
 
+import Link from 'next/link';
+
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -14,10 +16,12 @@ export const Navigation = ({ links }: NavigationProps) => (
     <div className="flex justify-end space-x-6 font-sans bg-gray-900">
       {links.map((l) => {
         return (
-          <Button key={l.label} className="space-x-4" href={l.url} size="base" theme="secondary">
-            <p>{l.label}</p>
-            <Icon icon={ARROW_RIGHT_SVG} className="w-5 h-5" />
-          </Button>
+          <Link key={l.label} href={l.hash} passHref>
+            <Button className="space-x-4" size="base" theme="secondary">
+              <p>{l.label}</p>
+              <Icon icon={ARROW_RIGHT_SVG} className="w-5 h-5" />
+            </Button>
+          </Link>
         );
       })}
     </div>
