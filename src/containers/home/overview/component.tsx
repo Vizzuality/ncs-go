@@ -1,5 +1,6 @@
 import React from 'react';
 
+import ContactForm from 'containers/home/common/contact-form';
 import Hero from 'containers/home/common/hero';
 import Features from 'containers/home/overview/features';
 
@@ -14,6 +15,8 @@ const Overview = () => {
         />
       </div>
       <Features />
+
+      <ContactForm />
     </div>
   );
 };

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 
-import Card from 'containers/home/common/card';
+import Card from 'containers/home/cards/card';
 import Overview from 'containers/home/overview';
 import Pathways from 'containers/home/pathways';
 import Stories from 'containers/home/stories';
