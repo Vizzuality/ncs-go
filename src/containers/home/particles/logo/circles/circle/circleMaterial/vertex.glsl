@@ -1,7 +1,10 @@
-uniform vec3 uPos;
+uniform float uPosX;
+uniform float uPosY;
 uniform float uTime;
-uniform float uProgress;
-
+uniform float uStep;
+uniform float uLastStep;
+uniform vec3 uPrevPos;
+uniform vec3 uCurrentPos;
 
 varying vec2 vUv;
 
@@ -76,12 +79,41 @@ float snoise(vec2 v) {
   return 130.0 * dot(m, g);
 }
 
+vec2 stepNoise() {
+  vec2 uPos = vec2(uPosX, uPosY);
+
+  if (uStep == 0.0 && uPrevPos.x == uCurrentPos.x && uPrevPos.y == uCurrentPos.y) {
+    float step0x = snoise(uPos.xy * 5.0 + sin(uTime * 0.25) * 0.1) * 2.0;
+    float step0y = snoise(uPos.xy * 1.5 + sin(uTime * 0.1) * 0.1) * 2.0;
+
+    return vec2(step0x, step0y);
+  }
+
+  if (uStep == 1.0 && uLastStep == 0.0 && uPrevPos.x != uCurrentPos.x && uPrevPos.y != uCurrentPos.y) {
+    float prevStep0x = snoise(uPrevPos.xy * 5.0 + sin(uTime * 0.25) * 0.1) * 2.0;
+    float prevStep0y = snoise(uPrevPos.xy * 1.5 + sin(uTime * 0.1) * 0.1) * 2.0;
+
+    float currentStep1x = snoise(uCurrentPos.xy * 5.0 + sin(uTime * 0.5) * 0.1) * 0.5;
+    float currentStep1y = snoise(uCurrentPos.xy * 5.0 + sin(uTime * 0.5) * 0.1) * 0.5;
+
+    return mix(vec2(prevStep0x, prevStep0y), vec2(currentStep1x, currentStep1y), sin(uTime) * 0.5 + 1.0);
+  }
+
+  if (uStep == 1.0 && uPrevPos.x == uCurrentPos.x && uPrevPos.y == uCurrentPos.y) {
+    float step1x = snoise(uPos.xy * 5.0 + sin(uTime * 0.5) * 0.1) * 0.5;
+    float step1y = snoise(uPos.xy * 5.0 + sin(uTime * 0.25) * 0.1) * 0.5;
+
+    return vec2(step1x, step1y);
+  }
+
+  return vec2(0.0, 0.0);
+}
+
 void main() {
   vUv = uv;
 
-  float n1 = (1.0 - uProgress) * snoise(uPos.xy + sin(uTime * 0.5) * 0.1);
-  float n2 = (1.0 - uProgress) * snoise(uPos.xy + sin(uTime * 0.25) * 0.1);
-  vec4 p = vec4(position.x + n1 * 0.2, position.y + n2 * 0.2, 0.0, 1.0);
+  vec2 n = stepNoise();
+  vec4 p = vec4(position.x + n.x, position.y + n.y, 0.0, 1.0);
   vec4 final_position = projectionMatrix * modelViewMatrix * p;
 
   gl_Position = final_position;

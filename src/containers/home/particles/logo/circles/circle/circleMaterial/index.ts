@@ -4,10 +4,14 @@ import VERTEX from 'raw-loader!glslify-loader!./vertex.glsl';
 
 export const CircleMaterial = shaderMaterial(
   {
-    uPos: [0, 0, 0],
+    uPosX: 0,
+    uPosY: 0,
+    uPrevPos: [0, 0, 0],
+    uCurrentPos: [0, 0, 0],
     uTime: 0,
     uColor: [1, 1, 0],
-    uProgress: 0,
+    uStep: 0,
+    uLastStep: 0,
   },
   VERTEX,
   FRAGMENT

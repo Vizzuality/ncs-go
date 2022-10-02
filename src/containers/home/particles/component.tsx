@@ -6,20 +6,21 @@ import * as THREE from 'three';
 import Logo from './logo';
 
 const Particles = () => {
-  const [progress, setProgress] = useState(0);
+  const [step, setStep] = useState(0);
 
   return (
     <div className="w-screen h-screen" style={{ background: '#011426' }}>
       <input
         type="range"
         min={0}
-        max={1}
-        step={0.01}
-        value={progress}
+        max={3}
+        step={1}
+        value={step}
         onChange={(e) => {
-          setProgress(parseFloat(e.target.value));
+          setStep(parseInt(e.target.value, 10));
         }}
       />
+
       <Canvas
         orthographic
         camera={{ zoom: 100 }}
@@ -29,7 +30,7 @@ const Particles = () => {
         <ambientLight />
 
         {/* Meshes */}
-        <Logo progress={progress} />
+        <Logo step={step} />
       </Canvas>
     </div>
   );

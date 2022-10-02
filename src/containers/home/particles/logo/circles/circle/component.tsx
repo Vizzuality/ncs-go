@@ -1,7 +1,7 @@
-import { useRef } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 
 import { extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
-import { useMotionValue, useTransform } from 'framer-motion';
+import { useSpring } from 'framer-motion';
 import { motion } from 'framer-motion-3d';
 import { Color } from 'three';
 
@@ -23,44 +23,72 @@ export interface CirclesProps {
     x: number;
     y: number;
     z: number;
-    initialX: number;
-    initialY: number;
   };
   color: number;
   size: number;
-  progress: number;
+  step: number;
 }
 
-const Circles = ({ p, size, color, progress }: CirclesProps) => {
+const Circles = ({ p, size, color, step }: CirclesProps) => {
+  const DURATION = 1000;
+
+  const [prevPos, setPrevPos] = useState({ x: p.x, y: p.y });
+
   const meshRef = useRef(null);
   const materialRef = useRef(null);
+  const lastStepRef = useRef(step);
 
   const COLOR = new Color(color);
 
-  const progressMotionValue = useMotionValue(progress);
-  progressMotionValue.set(progress);
-  const x = useTransform(progressMotionValue, [0, 1], [p.initialX, p.x]);
-  const y = useTransform(progressMotionValue, [0, 1], [p.initialY, p.y]);
+  const x = useSpring(p.x, {
+    duration: DURATION,
+  });
+  const y = useSpring(p.y, {
+    duration: DURATION,
+  });
+
+  const velocity = useMemo(() => {
+    return Math.random();
+  }, []);
 
   useFrame(({ clock }) => {
-    meshRef.current.rotation.z += 0.01 * (1 - progress);
-    materialRef.current.uTime = clock.elapsedTime;
+    materialRef.current.uTime = clock.elapsedTime * velocity;
   });
+
+  useEffect(() => {
+    x.set(p.x);
+    y.set(p.y);
+
+    setTimeout(() => {
+      lastStepRef.current = step;
+      setPrevPos({ x: p.x, y: p.y });
+    }, DURATION);
+  }, [x, y, p]);
 
   return (
     <motion.mesh
       ref={meshRef}
       key={`${p.id}`}
-      initial={{ x: p.initialX, y: p.initialY }}
-      animate={{ x: x.get(), y: y.get() }}
+      initial={{ x: p.x, y: p.y }}
+      position-x={x}
+      position-y={y}
     >
       <circleGeometry args={[size / 100, 32]} />
-      <circleMaterial
+      <motion.circleMaterial
         ref={materialRef}
-        uPos={[p.x, p.y, p.z]}
+        // Position
+        uPrevPos={[prevPos.x, prevPos.y, 0]}
+        uCurrentPos={[p.x, p.y, 0]}
+        uPosX={x}
+        uPosY={y}
+        // Color
         uColor={COLOR}
-        uProgress={progress}
+        // Step
+        uStep={step}
+        uLastStep={lastStepRef.current}
+        // Time
         uTime={0}
+        // Misc
         transparent
       />
     </motion.mesh>
