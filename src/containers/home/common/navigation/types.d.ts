@@ -1,3 +1,4 @@
 export interface NavigationProps {
-  links: Record<>;
+  section: string;
+  onChange: (section: string) => void;
 }

@@ -15,7 +15,6 @@ export const ModalContent: FC<ModalContentProps> = ({
   size = 'default',
   children,
   className,
-  viewport,
   floating,
   getFloatingProps,
   onOpenChange,
@@ -23,20 +22,17 @@ export const ModalContent: FC<ModalContentProps> = ({
   const contentFramerVariants = {
     initial: {
       opacity: 0,
-      x: viewport === 'sm' ? '-50%' : '0',
-      y: viewport === 'sm' ? '-60%' : '-52.5%',
+      y: -20,
     },
     animate: {
       opacity: 1,
-      x: viewport === 'sm' ? '-50%' : '0',
-      y: '-50%',
+      y: 0,
       transition: {
         delay: 0.125,
       },
     },
     exit: {
-      x: viewport === 'sm' ? '-50%' : '0',
-      y: viewport === 'sm' ? '-60%' : '-52.5%',
+      y: -20,
       transition: {
         delay: 0,
         duration: 0.25,

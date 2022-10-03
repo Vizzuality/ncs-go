@@ -8,7 +8,7 @@ import { FEATURES } from './constants';
 
 const Features = () => {
   return (
-    <div className="bg-gray-900" id="#overview">
+    <div className="bg-gray-900">
       <Wrapper>
         <div className="pb-20 pt-28">
           <Hero

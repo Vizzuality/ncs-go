@@ -1,16 +1,27 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import ContactForm from 'containers/home/common/contact-form';
 import Hero from 'containers/home/common/hero';
 import Navigation from 'containers/home/common/navigation';
 import Features from 'containers/home/overview/features';
 import Wrapper from 'containers/wrapper';
 
-import { NAVIGATION_LINKS } from './constants';
-
-const Overview = () => {
+const Overview = ({ section, onChangeSection }) => {
   return (
-    <div className="overflow-auto">
+    <motion.div
+      className="overflow-auto"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+    >
       <Wrapper>
         <div className="pt-20 pb-20">
           <Hero
@@ -25,9 +36,9 @@ const Overview = () => {
         <ContactForm />
       </section>
       <section className="bg-gray-900 pb-28">
-        <Navigation links={NAVIGATION_LINKS} />
+        <Navigation onChange={onChangeSection} section={section} />
       </section>
-    </div>
+    </motion.div>
   );
 };
 

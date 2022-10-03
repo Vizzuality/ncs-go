@@ -1,11 +1,25 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import Hero from 'containers/home/common/hero';
+import Navigation from 'containers/home/common/navigation';
 import Wrapper from 'containers/wrapper';
 
-const Stories = () => {
+const Stories = ({ section, onChangeSection }) => {
   return (
-    <div className="bg-white" id="#stories">
+    <motion.div
+      className="overflow-auto"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+    >
       <Wrapper>
         <div className="pb-20 pt-28">
           <Hero
@@ -15,7 +29,10 @@ const Stories = () => {
           />
         </div>
       </Wrapper>
-    </div>
+      <section className="bg-gray-900 pb-28">
+        <Navigation onChange={onChangeSection} section={section} />
+      </section>
+    </motion.div>
   );
 };
 
