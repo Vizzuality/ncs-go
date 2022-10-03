@@ -5,11 +5,24 @@ export const STEPS = {
 
       for (let i = 0; i < count; i++) {
         const x = Math.random() * width - width / 2;
-        const y = (Math.random() * height) / 2 - height / 2 / 2;
+        const y = Math.random() * height - height / 2;
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
       return pos;
+    },
+    getAnimations: () => {
+      return {
+        animate: {
+          rotateZ: 0,
+        },
+        transition: {
+          duration: 1000,
+        },
+      };
+    },
+    getNoise: () => {
+      return 0.2;
     },
   },
   '1': {
@@ -25,6 +38,21 @@ export const STEPS = {
       }
       return pos;
     },
+    getAnimations: () => {
+      return {
+        animate: {
+          rotateZ: 360,
+        },
+        transition: {
+          duration: 1000,
+          // loop: Infinity,
+          // ease: 'linear',
+        },
+      };
+    },
+    getNoise: () => {
+      return 0.075;
+    },
   },
   '2': {
     getPositions: ({ radius, count }) => {
@@ -38,6 +66,21 @@ export const STEPS = {
         pos.push({ id: i, x, y, z });
       }
       return pos;
+    },
+    getAnimations: () => {
+      return {
+        animate: {
+          rotateZ: 90,
+        },
+        transition: {
+          duration: 1000,
+          // loop: Infinity,
+          // ease: 'linear',
+        },
+      };
+    },
+    getNoise: () => {
+      return 0.05;
     },
   },
   '3': {
@@ -53,6 +96,19 @@ export const STEPS = {
         pos.push({ id: i, x, y, z });
       }
       return pos;
+    },
+    getAnimations: () => {
+      return {
+        animate: {
+          rotateZ: 0,
+        },
+        transition: {
+          duration: 1000,
+        },
+      };
+    },
+    getNoise: () => {
+      return 0.0;
     },
   },
 };

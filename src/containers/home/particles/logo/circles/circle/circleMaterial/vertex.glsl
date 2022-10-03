@@ -1,10 +1,17 @@
 uniform float uPosX;
 uniform float uPosY;
+
 uniform float uTime;
+
 uniform float uStep;
-uniform float uLastStep;
-uniform vec3 uPrevPos;
-uniform vec3 uCurrentPos;
+uniform float uPrevStep;
+
+uniform float uNoise;
+uniform float uPrevNoise;
+
+uniform float uStartTime;
+uniform float uVelocity;
+uniform float uDuration;
 
 varying vec2 vUv;
 
@@ -82,31 +89,24 @@ float snoise(vec2 v) {
 vec2 stepNoise() {
   vec2 uPos = vec2(uPosX, uPosY);
 
-  if (uStep == 0.0 && uPrevPos.x == uCurrentPos.x && uPrevPos.y == uCurrentPos.y) {
-    float step0x = snoise(uPos.xy * 5.0 + sin(uTime * 0.25) * 0.1) * 2.0;
-    float step0y = snoise(uPos.xy * 1.5 + sin(uTime * 0.1) * 0.1) * 2.0;
+  if (uStep != uPrevStep) {
+    float t = sin((uTime - uStartTime)) / uDuration;
 
+    float prevX = snoise(uPos.xy + sin(uTime * 0.25 * uVelocity)) * uPrevNoise;
+    float prevY = snoise(uPos.xy + sin(uTime * 0.1 * uVelocity)) * uPrevNoise;
+
+    float x = snoise(uPos.xy + sin(uTime * 0.25 * uVelocity)) * uNoise;
+    float y = snoise(uPos.xy + sin(uTime * 0.1 * uVelocity)) * uNoise;
+
+
+    return mix(vec2(prevX, prevY), vec2(x, y), t);
+  }
+
+  if (uStep == uPrevStep) {
+    float step0x = snoise(uPos.xy + sin(uTime * 0.25 * uVelocity)) * uNoise;
+    float step0y = snoise(uPos.xy + sin(uTime * 0.1 * uVelocity)) * uNoise;
     return vec2(step0x, step0y);
   }
-
-  if (uStep == 1.0 && uLastStep == 0.0 && uPrevPos.x != uCurrentPos.x && uPrevPos.y != uCurrentPos.y) {
-    float prevStep0x = snoise(uPrevPos.xy * 5.0 + sin(uTime * 0.25) * 0.1) * 2.0;
-    float prevStep0y = snoise(uPrevPos.xy * 1.5 + sin(uTime * 0.1) * 0.1) * 2.0;
-
-    float currentStep1x = snoise(uCurrentPos.xy * 5.0 + sin(uTime * 0.5) * 0.1) * 0.5;
-    float currentStep1y = snoise(uCurrentPos.xy * 5.0 + sin(uTime * 0.5) * 0.1) * 0.5;
-
-    return mix(vec2(prevStep0x, prevStep0y), vec2(currentStep1x, currentStep1y), sin(uTime) * 0.5 + 1.0);
-  }
-
-  if (uStep == 1.0 && uPrevPos.x == uCurrentPos.x && uPrevPos.y == uCurrentPos.y) {
-    float step1x = snoise(uPos.xy * 5.0 + sin(uTime * 0.5) * 0.1) * 0.5;
-    float step1y = snoise(uPos.xy * 5.0 + sin(uTime * 0.25) * 0.1) * 0.5;
-
-    return vec2(step1x, step1y);
-  }
-
-  return vec2(0.0, 0.0);
 }
 
 void main() {

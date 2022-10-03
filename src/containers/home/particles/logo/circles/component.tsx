@@ -20,12 +20,16 @@ const Circles = ({ count, radius, color, size, startAngle, step }: CirclesProps)
     return STEPS[step].getPositions({ count, radius, startAngle, width, height });
   }, [step, count, radius, startAngle, width, height]);
 
+  const noise = useMemo(() => {
+    return STEPS[step].getNoise();
+  }, [step]);
+
   return (
-    <>
+    <group>
       {positions.map((p) => (
-        <Circle key={`${p.id}`} p={p} color={color} size={size} step={step} />
+        <Circle key={`${p.id}`} p={p} color={color} size={size} step={step} noise={noise} />
       ))}
-    </>
+    </group>
   );
 };
 
