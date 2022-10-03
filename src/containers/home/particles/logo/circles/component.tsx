@@ -1,6 +1,7 @@
 import { useMemo } from 'react';
 
 import { useThree } from '@react-three/fiber';
+import { motion } from 'framer-motion-3d';
 
 import Circle from './circle';
 import { STEPS } from './constants';
@@ -24,12 +25,16 @@ const Circles = ({ count, radius, color, size, startAngle, step }: CirclesProps)
     return STEPS[step].getNoise();
   }, [step]);
 
+  const animations = useMemo(() => {
+    return STEPS[step].getAnimations();
+  }, [step]);
+
   return (
-    <group>
+    <motion.group {...animations}>
       {positions.map((p) => (
         <Circle key={`${p.id}`} p={p} color={color} size={size} step={step} noise={noise} />
       ))}
-    </group>
+    </motion.group>
   );
 };
 

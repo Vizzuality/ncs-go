@@ -1,5 +1,5 @@
-uniform float uPosX;
-uniform float uPosY;
+uniform vec3 uPrevPos;
+uniform vec3 uCurrentPos;
 
 uniform float uTime;
 
@@ -12,6 +12,7 @@ uniform float uPrevNoise;
 uniform float uStartTime;
 uniform float uVelocity;
 uniform float uDuration;
+uniform float uProgress;
 
 varying vec2 vUv;
 
@@ -86,25 +87,42 @@ float snoise(vec2 v) {
   return 130.0 * dot(m, g);
 }
 
-vec2 stepNoise() {
-  vec2 uPos = vec2(uPosX, uPosY);
+float PI = 3.1415926535897932384626433832795;
 
+float easeOutExpo(float x) {
+  return 1.0 - pow(2.0, -10.0 * x);;
+}
+
+vec2 pos() {
   if (uStep != uPrevStep) {
-    float t = sin((uTime - uStartTime)) / uDuration;
+    float t = easeOutExpo(uProgress);
 
-    float prevX = snoise(uPos.xy + sin(uTime * 0.25 * uVelocity)) * uPrevNoise;
-    float prevY = snoise(uPos.xy + sin(uTime * 0.1 * uVelocity)) * uPrevNoise;
+    vec2 prev = vec2(uPrevPos.x + position.x, uPrevPos.y + position.y);
+    vec2 current = vec2(uCurrentPos.x + position.x, uCurrentPos.y + position.y);
 
-    float x = snoise(uPos.xy + sin(uTime * 0.25 * uVelocity)) * uNoise;
-    float y = snoise(uPos.xy + sin(uTime * 0.1 * uVelocity)) * uNoise;
+    return mix(prev, current, t);
+  }
+
+  return vec2(uCurrentPos.x + position.x, uCurrentPos.y + position.y);
+}
+
+vec2 noise() {
+  if (uStep != uPrevStep) {
+    float t = easeOutExpo(uProgress);
+
+    float prevX = snoise(uPrevPos.xy + sin(uTime * 0.25 * uVelocity)) * uPrevNoise;
+    float prevY = snoise(uPrevPos.xy + sin(uTime * 0.1 * uVelocity)) * uPrevNoise;
+
+    float x = snoise(uCurrentPos.xy + sin(uTime * 0.25 * uVelocity)) * uNoise;
+    float y = snoise(uCurrentPos.xy + sin(uTime * 0.1 * uVelocity)) * uNoise;
 
 
     return mix(vec2(prevX, prevY), vec2(x, y), t);
   }
 
   if (uStep == uPrevStep) {
-    float step0x = snoise(uPos.xy + sin(uTime * 0.25 * uVelocity)) * uNoise;
-    float step0y = snoise(uPos.xy + sin(uTime * 0.1 * uVelocity)) * uNoise;
+    float step0x = snoise(uCurrentPos.xy + sin(uTime * 0.25 * uVelocity)) * uNoise;
+    float step0y = snoise(uCurrentPos.xy + sin(uTime * 0.1 * uVelocity)) * uNoise;
     return vec2(step0x, step0y);
   }
 }
@@ -112,9 +130,9 @@ vec2 stepNoise() {
 void main() {
   vUv = uv;
 
-  vec2 n = stepNoise();
-  vec4 p = vec4(position.x + n.x, position.y + n.y, 0.0, 1.0);
-  vec4 final_position = projectionMatrix * modelViewMatrix * p;
+  vec2 p = pos();
+  vec2 n = noise();
+  vec4 final_position = projectionMatrix * modelViewMatrix * vec4(p.x + n.x, p.y + n.y, uCurrentPos.z, 1.0);
 
   gl_Position = final_position;
 }

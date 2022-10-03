@@ -11,7 +11,8 @@ export const CircleMaterial = shaderMaterial(
 
     uTime: 0,
     uStartTime: 0,
-    uDuration: 1000,
+    uDuration: 5,
+    uProgress: 0,
 
     uRadius: 0,
     uColor: [1, 1, 0],

@@ -1,8 +1,6 @@
-import { useEffect, useMemo, useRef } from 'react';
+import { useMemo, useRef } from 'react';
 
 import { extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
-import { useSpring } from 'framer-motion';
-import { motion } from 'framer-motion-3d';
 import { Color } from 'three';
 
 import CircleMaterial from './circleMaterial';
@@ -41,47 +39,37 @@ const Circles = ({ p, size, color, step, noise }: CirclesProps) => {
 
   const COLOR = new Color(color);
 
-  const x = useSpring(p.x, {
-    duration: DURATION,
-  });
-  const y = useSpring(p.y, {
-    duration: DURATION,
-  });
-
   const velocity = useMemo(() => {
     return Math.random();
   }, []);
 
   useFrame(() => {
-    materialRef.current.uTime = performance.now() / 1000;
+    if (step !== materialRef.current.uStep) {
+      materialRef.current.uProgress = 0;
+    }
+
     materialRef.current.uStep = step;
     materialRef.current.uCurrentPos = [p.x, p.y, p.z];
-  }, -1);
+    materialRef.current.uTime = performance.now() / 1000;
 
-  useEffect(() => {
-    materialRef.current.uStartTime = performance.now() / 1000;
-    materialRef.current.uStep = step;
-    materialRef.current.uPrevStep = prevStep.current;
+    if (step !== materialRef.current.uPrevStep) {
+      materialRef.current.uProgress = materialRef.current.uProgress + 0.01 / (DURATION / 1000);
+    }
 
-    x.set(p.x);
-    y.set(p.y);
-
-    setTimeout(() => {
+    if (materialRef.current.uProgress > 1) {
       materialRef.current.uPrevPos = [p.x, p.y, p.z];
       materialRef.current.uPrevStep = step;
-
+      materialRef.current.uProgress = 0;
       prevStep.current = step;
-    }, DURATION);
-  }, [x, y, p, step]);
+    }
+  });
 
   return (
-    <motion.mesh ref={meshRef} key={`${p.id}`} position-x={x} position-y={y}>
+    <mesh ref={meshRef} key={`${p.id}`}>
       <circleGeometry args={[size / 100, 32]} />
-      <motion.circleMaterial
+      <circleMaterial
         ref={materialRef}
         // Position
-        uPosX={x}
-        uPosY={y}
         uPrevPos={prevPos.current}
         uCurrentPos={[p.x, p.y, p.z]}
         // Color
@@ -96,13 +84,14 @@ const Circles = ({ p, size, color, step, noise }: CirclesProps) => {
         // Time
         uTime={0}
         // Animation
+        uProgress={0}
         uStartTime={0}
         uVelocity={velocity}
         uDuration={DURATION / 1000}
         // Misc
         transparent
       />
-    </motion.mesh>
+    </mesh>
   );
 };
 

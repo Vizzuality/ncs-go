@@ -17,12 +17,12 @@ export const STEPS = {
           rotateZ: 0,
         },
         transition: {
-          duration: 1000,
+          duration: 0.1,
         },
       };
     },
     getNoise: () => {
-      return 0.2;
+      return 0.5;
     },
   },
   '1': {
@@ -41,12 +41,13 @@ export const STEPS = {
     getAnimations: () => {
       return {
         animate: {
-          rotateZ: 360,
+          rotateZ: -360 * (Math.PI / 180),
         },
         transition: {
-          duration: 1000,
-          // loop: Infinity,
-          // ease: 'linear',
+          duration: 50,
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'linear',
         },
       };
     },
@@ -70,17 +71,18 @@ export const STEPS = {
     getAnimations: () => {
       return {
         animate: {
-          rotateZ: 90,
+          rotateZ: -360 * (Math.PI / 180),
         },
         transition: {
-          duration: 1000,
-          // loop: Infinity,
-          // ease: 'linear',
+          duration: 50,
+          repeat: Infinity,
+          repeatType: 'loop',
+          ease: 'linear',
         },
       };
     },
     getNoise: () => {
-      return 0.05;
+      return 0.075;
     },
   },
   '3': {
@@ -103,7 +105,7 @@ export const STEPS = {
           rotateZ: 0,
         },
         transition: {
-          duration: 1000,
+          duration: 0.1,
         },
       };
     },
