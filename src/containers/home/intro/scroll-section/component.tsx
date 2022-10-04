@@ -19,7 +19,7 @@ const ScrollSection = ({ step }: ScrollSectionProps) => {
     }
   }, [step, setStep, isInView]);
 
-  return <div ref={ref} className="relative z-50 w-full h-[200vh]"></div>;
+  return <div ref={ref} className="relative w-full h-[200vh] pointer-events-none"></div>;
 };
 
 export default ScrollSection;
