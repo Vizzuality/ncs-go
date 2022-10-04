@@ -39,12 +39,34 @@ export const STEPS = [
     id: 3,
     content: (
       <div className="space-y-10">
-        <div className="w-48 h-48 mx-auto" />
         <div className="max-w-2xl">
           <p>
             To protect, manage and restore our natural ecosystems, creating jobs, protecting
             livelihoods, increasing biodiversity - and absorbing carbon from the atmosphere.
           </p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 4,
+    content: (
+      <div className="space-y-10">
+        <div className="w-48 h-48 mx-auto" />
+        <div className="max-w-2xl">
+          <p className="uppercase tracking-[0.32em]">Coming soon</p>
+        </div>
+      </div>
+    ),
+  },
+  {
+    id: 5,
+    content: (
+      <div className="space-y-10">
+        <div className="w-48 h-48 mx-auto" />
+        <div className="max-w-2xl text-center">
+          <h1 className="text-3xl font-semibold tracking-wider">naturebase</h1>
+          <h2 className="text-lg">natural climate solutions in action</h2>
         </div>
       </div>
     ),
