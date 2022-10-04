@@ -11,6 +11,7 @@ const Intro = () => {
         <Particles />
       </div>
 
+      {/* Remove the same height as the sticky one by using the margin */}
       <div className="-mt-[100vh]">
         <ScrollSection step={0} />
         <ScrollSection step={1} />
