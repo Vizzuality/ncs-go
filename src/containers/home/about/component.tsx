@@ -22,7 +22,7 @@ const About = () => {
       }}
     >
       <Wrapper>
-        <div className="pt-20 pb-20">
+        <div className="py-32">
           <Hero
             className="text-gray-800"
             title="About Naturebase"

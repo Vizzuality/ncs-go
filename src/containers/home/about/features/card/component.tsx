@@ -1,16 +1,11 @@
 import React from 'react';
 
-import Icon from 'components/icon';
-
-import LOCK_SVG from 'svgs/lock.svg?sprite';
-
 import type { FeatureCardProps } from './types';
 
-export const FeatureCard = ({ description, title }: FeatureCardProps) => (
-  <div className="relative p-6 pt-32 space-y-2 font-sans text-left text-white bg-gray-900 border border-gray-800">
-    <Icon icon={LOCK_SVG} className="absolute w-5 h-5 text-brand top-6 right-6" />
-    <h2 className="text-xl font-semibold">{title}</h2>
-    <h3 className="text-lg">{description}</h3>
+export const FeatureCard = ({ description, num }: FeatureCardProps) => (
+  <div className="p-10 pt-32 space-y-2 text-lg text-left text-white bg-gray-900 outline outline-1 outline-gray-800 h-80">
+    <p className="font-semibold text-white">{num}.</p>
+    <h3 className="font-sans ">{description}</h3>
   </div>
 );
 

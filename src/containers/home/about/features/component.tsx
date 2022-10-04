@@ -10,17 +10,17 @@ const Features = () => {
   return (
     <div className="bg-gray-900">
       <Wrapper>
-        <div className="pb-20 pt-28">
+        <div className="py-32">
           <Hero
             className="text-white"
             title="Features"
-            subtitle="Set up strategies based on NCS based on real data."
+            subtitle="A home base for all decision-makers interested in unlocking the power of nature to preserve our living planet."
           />
         </div>
         <div className="grid grid-flow-col grid-rows-2">
           {FEATURES.map((f) => (
-            <div key={f.key} className="col-span-2">
-              <FeatureCard description={f.description} title={f.name} />
+            <div key={f.key} className={`order-${f.key}`}>
+              <FeatureCard description={f.description} num={f.key} />
             </div>
           ))}
         </div>
