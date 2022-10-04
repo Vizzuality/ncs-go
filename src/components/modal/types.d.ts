@@ -17,7 +17,7 @@ export interface ModalProps {
   /**
    * Size (width) of the modal
    */
-  size?: 'xs' | 's' | 'default' | 'l' | 'xl';
+  size?: 'default';
 
   children?: ReactNode;
   /**

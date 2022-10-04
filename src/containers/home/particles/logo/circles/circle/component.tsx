@@ -1,4 +1,4 @@
-import { useMemo, useRef } from 'react';
+import { useEffect, useMemo, useRef } from 'react';
 
 import { extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
 import { Color } from 'three';
@@ -63,6 +63,10 @@ const Circles = ({ p, size, color, step, noise }: CirclesProps) => {
       prevStep.current = step;
     }
   });
+
+  useEffect(() => {
+    materialRef.current.uProgress = 0;
+  }, [step]);
 
   return (
     <mesh ref={meshRef} key={`${p.id}`}>

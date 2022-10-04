@@ -1,19 +1,8 @@
-import { useRef } from 'react';
-
-// import { useFrame } from '@react-three/fiber';
-import { Group } from 'three';
-
 import Circles from './circles';
 
 const ParticlesLogo = ({ step }) => {
-  const groupRef = useRef<Group>();
-
-  // useFrame(() => {
-  //   groupRef.current.rotation.z += 0.005 * step;
-  // });
-
   return (
-    <group ref={groupRef}>
+    <group>
       {/* Blue dark dots */}
       <Circles step={step} count={12} size={2.5} color={0x0079d0} radius={60} startAngle={45} />
       <Circles step={step} count={12} size={2.5} color={0x0079d0} radius={60} startAngle={45} />
