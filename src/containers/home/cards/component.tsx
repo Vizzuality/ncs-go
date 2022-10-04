@@ -1,6 +1,10 @@
 import React, { useState } from 'react';
 
-import Card from 'containers/home/common/card';
+import { AnimatePresence } from 'framer-motion';
+
+import { useModal } from 'hooks/modals';
+
+import Card from 'containers/home/cards/card';
 import Overview from 'containers/home/overview';
 import Pathways from 'containers/home/pathways';
 import Stories from 'containers/home/stories';
@@ -11,13 +15,8 @@ import Modal from 'components/modal';
 import { CARDS } from './constants';
 
 export const Cards = () => {
-  const [modal, setModal] = useState(null);
-
-  const SECTIONS = {
-    overview: <Overview />,
-    pathways: <Pathways />,
-    stories: <Stories />,
-  };
+  const { isOpen, open, close } = useModal();
+  const [section, setSection] = useState<string>();
 
   return (
     <>
@@ -30,27 +29,39 @@ export const Cards = () => {
                   key={c.key}
                   title={c.title}
                   description={c.description}
-                  onClick={() => setModal(c.key)}
+                  onClick={() => {
+                    setSection(c.key);
+                    open();
+                  }}
                 />
               );
             })}
           </div>
         </Wrapper>
       </div>
-      {CARDS.map((c) => {
-        return (
-          <Modal
-            key={c.key}
-            open={modal === `${c.key}`}
-            title={c.title}
-            size="default"
-            onOpenChange={() => setModal(null)}
-            dismissable
-          >
-            {SECTIONS[c.key]}
-          </Modal>
-        );
-      })}
+
+      <Modal
+        open={isOpen}
+        title="Section"
+        size="default"
+        onOpenChange={() => {
+          setSection(null);
+          close();
+        }}
+        dismissable
+      >
+        <AnimatePresence>
+          {section === 'overview' && (
+            <Overview key="overview" onChangeSection={setSection} section="overview" />
+          )}
+          {section === 'stories' && (
+            <Stories key="stories" onChangeSection={setSection} section="stories" />
+          )}
+          {section === 'pathways' && (
+            <Pathways key="pathways" onChangeSection={setSection} section="pathways" />
+          )}
+        </AnimatePresence>
+      </Modal>
     </>
   );
 };

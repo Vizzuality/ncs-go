@@ -1,20 +1,44 @@
 import React from 'react';
 
-import Hero from 'containers/home/common/hero';
-import Features from 'containers/home/overview/features';
+import { motion } from 'framer-motion';
 
-const Overview = () => {
+import ContactForm from 'containers/home/common/contact-form';
+import Hero from 'containers/home/common/hero';
+import Navigation from 'containers/home/common/navigation';
+import Features from 'containers/home/overview/features';
+import Wrapper from 'containers/wrapper';
+
+const Overview = ({ section, onChangeSection }) => {
   return (
-    <div>
-      <div className="pt-28">
-        <Hero
-          className="text-gray-800"
-          title="Naturebase overview"
-          subtitle="Naturebase help you to achieve the CO2 emission reduction goals from France Agreement."
-        />
-      </div>
+    <motion.div
+      className="overflow-auto"
+      initial={{
+        opacity: 0,
+      }}
+      animate={{
+        opacity: 1,
+      }}
+      exit={{
+        opacity: 0,
+      }}
+    >
+      <Wrapper>
+        <div className="pt-20 pb-20">
+          <Hero
+            className="text-gray-800"
+            title="Naturebase overview"
+            subtitle="Naturebase help you to achieve the CO2 emission reduction goals from France Agreement."
+          />
+        </div>
+      </Wrapper>
       <Features />
-    </div>
+      <section className="bg-gray-900 py-28">
+        <ContactForm />
+      </section>
+      <section className="bg-gray-900 pb-28">
+        <Navigation onChange={onChangeSection} section={section} />
+      </section>
+    </motion.div>
   );
 };
 
