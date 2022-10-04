@@ -50,7 +50,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="default"
+            size="xs"
             open={openXS}
             onOpenChange={(o) => {
               setOpenXS(o);
@@ -63,7 +63,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="default"
+            size="s"
             open={openS}
             onOpenChange={(o) => {
               setOpenS(o);
@@ -89,7 +89,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="default"
+            size="l"
             open={openL}
             onOpenChange={(o) => {
               setOpenL(o);
@@ -102,7 +102,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="default"
+            size="xl"
             open={openXL}
             onOpenChange={(o) => {
               setOpenXL(o);
@@ -119,7 +119,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="default"
+            size="xs"
             open={openDismissable}
             onOpenChange={(o) => {
               setOpenDismissable(o);
@@ -132,7 +132,7 @@ const Template: Story<ModalProps> = ({ ...args }: ModalProps) => {
 
           <Modal
             {...args}
-            size="default"
+            size="xs"
             open={openNotDismissable}
             dismissable={false}
             onOpenChange={(o) => {

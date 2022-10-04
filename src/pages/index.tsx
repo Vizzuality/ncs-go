@@ -6,8 +6,10 @@ import Head from 'next/head';
 
 import { useHomeStore } from 'store/home';
 
-import Cards from 'containers/home/cards';
 import Intro from 'containers/home/intro';
+import Overview from 'containers/home/overview';
+import Pathways from 'containers/home/pathways';
+import Stories from 'containers/home/stories';
 
 const Home: React.FC = () => {
   const section = useHomeStore((state) => state.section);
@@ -25,7 +27,9 @@ const Home: React.FC = () => {
 
       <Intro />
 
-      <Cards />
+      <Overview />
+      <Stories />
+      <Pathways />
     </div>
   );
 };

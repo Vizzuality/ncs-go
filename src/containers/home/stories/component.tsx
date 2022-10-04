@@ -1,25 +1,25 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-import { motion } from 'framer-motion';
+import { useHomeStore } from 'store/home';
+
+import { useInView } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
-import Navigation from 'containers/home/common/navigation';
 import Wrapper from 'containers/wrapper';
 
-const Stories = ({ section, onChangeSection }) => {
+const Stories = () => {
+  const ref = useRef();
+  const inView = useInView(ref);
+  const setSection = useHomeStore((state) => state.setSection);
+
+  useEffect(() => {
+    if (inView) {
+      setSection('stories');
+    }
+  });
+
   return (
-    <motion.div
-      className="overflow-auto"
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-      }}
-    >
+    <div ref={ref}>
       <Wrapper>
         <div className="pb-20 pt-28">
           <Hero
@@ -29,10 +29,7 @@ const Stories = ({ section, onChangeSection }) => {
           />
         </div>
       </Wrapper>
-      <section className="bg-gray-900 pb-28">
-        <Navigation onChange={onChangeSection} section={section} />
-      </section>
-    </motion.div>
+    </div>
   );
 };
 

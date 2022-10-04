@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import Icon from 'components/icon';
 
-import CLOSE_SVG from 'svgs/close.svg?sprite';
+import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
 
 import { CONTENT_CLASSES } from './constants';
 import type { ModalContentProps } from './types';
@@ -15,6 +15,7 @@ export const ModalContent: FC<ModalContentProps> = ({
   size = 'default',
   children,
   className,
+  viewport,
   floating,
   getFloatingProps,
   onOpenChange,
@@ -22,17 +23,20 @@ export const ModalContent: FC<ModalContentProps> = ({
   const contentFramerVariants = {
     initial: {
       opacity: 0,
-      y: -20,
+      x: viewport === 'sm' ? '-50%' : '0',
+      y: viewport === 'sm' ? '-60%' : '-52.5%',
     },
     animate: {
       opacity: 1,
-      y: 0,
+      x: viewport === 'sm' ? '-50%' : '0',
+      y: '-50%',
       transition: {
         delay: 0.125,
       },
     },
     exit: {
-      y: -20,
+      x: viewport === 'sm' ? '-50%' : '0',
+      y: viewport === 'sm' ? '-60%' : '-52.5%',
       transition: {
         delay: 0,
         duration: 0.25,
@@ -57,9 +61,9 @@ export const ModalContent: FC<ModalContentProps> = ({
           onClick={() => {
             onOpenChange(false);
           }}
-          className="absolute flex items-center text-sm text-gray-300 top-7 right-10"
+          className="absolute flex items-center px-4 py-4 text-sm text-gray-300 top-6 right-6"
         >
-          <Icon icon={CLOSE_SVG} className="inline-block w-8 h-8 text-brand" />
+          <Icon icon={CLOSE_SVG} className="inline-block w-3 h-3 text-black" />
         </button>
 
         {children}

@@ -1,27 +1,27 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-import { motion } from 'framer-motion';
+import { useHomeStore } from 'store/home';
+
+import { useInView } from 'framer-motion';
 
 import ContactForm from 'containers/home/common/contact-form';
 import Hero from 'containers/home/common/hero';
-import Navigation from 'containers/home/common/navigation';
 import Features from 'containers/home/overview/features';
 import Wrapper from 'containers/wrapper';
 
-const Overview = ({ section, onChangeSection }) => {
+const Overview = () => {
+  const ref = useRef();
+  const inView = useInView(ref);
+  const setSection = useHomeStore((state) => state.setSection);
+
+  useEffect(() => {
+    if (inView) {
+      setSection('about');
+    }
+  });
+
   return (
-    <motion.div
-      className="overflow-auto"
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-      }}
-    >
+    <div ref={ref} className="snap-start snap-always">
       <Wrapper>
         <div className="pt-20 pb-20">
           <Hero
@@ -35,10 +35,7 @@ const Overview = ({ section, onChangeSection }) => {
       <section className="bg-gray-900 py-28">
         <ContactForm />
       </section>
-      <section className="bg-gray-900 pb-28">
-        <Navigation onChange={onChangeSection} section={section} />
-      </section>
-    </motion.div>
+    </div>
   );
 };
 

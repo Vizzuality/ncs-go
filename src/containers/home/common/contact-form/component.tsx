@@ -65,7 +65,7 @@ const ContactForm: React.FC = () => {
                           className="flex w-full px-10 py-5 text-lg bg-gray-100 border-none placeholder:text-gray-400"
                         />
                         {meta.error && meta.touched && (
-                          <p className="absolute top-full left-10 text-orange-0 text-xxs">
+                          <p className="absolute text-orange-400 top-full left-10 text-xxs">
                             {meta.error.join('. ')}
                           </p>
                         )}
