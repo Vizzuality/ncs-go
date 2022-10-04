@@ -31,9 +31,8 @@ export const Video: FC<VideoProps> = ({
 }: VideoProps) => (
   <ReactPlayer
     className={cx({
-      'c-video': true,
-      'h-full w-full': true,
-      [className]: className,
+      'c-video': false,
+      [className]: !!className,
     })}
     url={url}
     loop={loop}
