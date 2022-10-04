@@ -3,7 +3,7 @@ import React from 'react';
 import Head from 'next/head';
 
 import Cards from 'containers/home/cards';
-import Particles from 'containers/home/particles';
+import Intro from 'containers/home/intro';
 
 const Home: React.FC = () => {
   return (
@@ -12,7 +12,7 @@ const Home: React.FC = () => {
         <title>NCS - GO</title>
       </Head>
 
-      <Particles />
+      <Intro />
 
       <Cards />
     </div>

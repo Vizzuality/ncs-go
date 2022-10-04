@@ -1,5 +1,7 @@
 import { useEffect, useMemo, useRef } from 'react';
 
+import { useHomeStore } from 'store/home';
+
 import { extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
 import { Color } from 'three';
 
@@ -24,11 +26,11 @@ export interface CirclesProps {
   };
   color: number;
   size: number;
-  step: number;
   noise: number;
 }
 
-const Circles = ({ p, size, color, step, noise }: CirclesProps) => {
+const Circles = ({ p, size, color, noise }: CirclesProps) => {
+  const step = useHomeStore((state) => state.step);
   const DURATION = 500;
 
   const meshRef = useRef(null);

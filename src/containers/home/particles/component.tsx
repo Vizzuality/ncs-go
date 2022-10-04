@@ -1,26 +1,11 @@
-import { useState } from 'react';
-
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 
 import Logo from './logo';
 
 const Particles = () => {
-  const [step, setStep] = useState(0);
-
   return (
-    <div className="w-screen h-screen" style={{ background: '#011426' }}>
-      <input
-        type="range"
-        min={0}
-        max={3}
-        step={1}
-        value={step}
-        onChange={(e) => {
-          setStep(parseInt(e.target.value, 10));
-        }}
-      />
-
+    <div className="w-full h-full" style={{ background: '#011426' }}>
       <Canvas
         orthographic
         camera={{ zoom: 100 }}
@@ -30,7 +15,7 @@ const Particles = () => {
         <ambientLight />
 
         {/* Meshes */}
-        <Logo step={step} />
+        <Logo />
       </Canvas>
     </div>
   );
