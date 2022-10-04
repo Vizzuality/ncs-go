@@ -21,7 +21,7 @@ const Overview = () => {
   });
 
   return (
-    <div ref={ref} className="snap-start snap-always">
+    <div ref={ref}>
       <Wrapper>
         <div className="pt-20 pb-20">
           <Hero
