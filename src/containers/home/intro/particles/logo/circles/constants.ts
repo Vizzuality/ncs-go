@@ -99,11 +99,29 @@ export const STEPS = {
       for (let i = 0; i < count; i++) {
         const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
 
-        const xCenter = [width / 5 - width / 2, (width * 4) / 5 - width / 2];
-        const yCenter = [height / 5 - height / 2, (height * 4) / 5 - height / 2];
+        const randomPositions = [
+          {
+            x: width / 5 - width / 2,
+            y: height / 5 - height / 2,
+          },
+          {
+            x: (width * 1.5) / 5 - width / 2,
+            y: (height * 4) / 5 - height / 2,
+          },
+          {
+            x: (width * 4) / 5 - width / 2,
+            y: height / 5 - height / 2,
+          },
+          {
+            x: (width * 3.5) / 5 - width / 2,
+            y: (height * 4.5) / 5 - height / 2,
+          },
+        ];
 
-        const x = xCenter[Math.round(Math.random())] + Math.cos((-randomAngle * Math.PI) / 180);
-        const y = yCenter[Math.round(Math.random())] + Math.sin((-randomAngle * Math.PI) / 180);
+        const randomCenter = randomPositions[Math.floor(Math.random() * 4)];
+
+        const x = randomCenter.x + Math.cos((-randomAngle * Math.PI) / 180) * 0.025;
+        const y = randomCenter.y + Math.sin((-randomAngle * Math.PI) / 180) * 0.025;
         const z = 0;
         pos.push({ id: i, x, y, z });
       }

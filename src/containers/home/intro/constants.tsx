@@ -65,8 +65,8 @@ export const STEPS = [
       <div className="space-y-10">
         <div className="w-48 h-48 mx-auto" />
         <div className="max-w-2xl text-center">
-          <h1 className="text-3xl font-semibold tracking-wider">naturebase</h1>
-          <h2 className="text-lg">natural climate solutions in action</h2>
+          <h1 className="text-2xl font-semibold tracking-wider md:text-3xl">naturebase</h1>
+          <h2 className="md:text-lg">natural climate solutions in action</h2>
         </div>
       </div>
     ),
