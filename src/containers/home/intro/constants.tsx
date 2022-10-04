@@ -2,7 +2,7 @@ export const STEPS = [
   {
     id: 0,
     content: (
-      <div className="space-y-5">
+      <div className="space-y-10">
         <div className="max-w-2xl">
           <p>
             Nature can provide up to 30% of the emissions reductions needed to meet the Paris
@@ -15,8 +15,8 @@ export const STEPS = [
   {
     id: 1,
     content: (
-      <div className="space-y-5">
-        <div className="w-24 h-24 mx-auto" />
+      <div className="space-y-10">
+        <div className="w-48 h-48 mx-auto" />
         <div className="max-w-2xl">
           <p>But effective nature and climate action needs more than just commitments.</p>
         </div>
@@ -26,8 +26,8 @@ export const STEPS = [
   {
     id: 2,
     content: (
-      <div className="space-y-5">
-        <div className="w-24 h-24 mx-auto" />
+      <div className="space-y-10">
+        <div className="w-48 h-48 mx-auto" />
         <div className="max-w-2xl">
           <p>Science. Policy. People.</p>
           <p>They all need to come together.</p>
@@ -38,8 +38,8 @@ export const STEPS = [
   {
     id: 3,
     content: (
-      <div className="space-y-5">
-        <div className="w-24 h-24 mx-auto" />
+      <div className="space-y-10">
+        <div className="w-48 h-48 mx-auto" />
         <div className="max-w-2xl">
           <p>
             To protect, manage and restore our natural ecosystems, creating jobs, protecting
