@@ -58,19 +58,28 @@ module.exports = {
       white: '#FFFFFF',
       brand: '#5BC89C',
       blue: {
-        0: '#3387FF',
+        200: '#CCECFA',
+        400: '#8BDCFF',
       },
-      green: {
-        0: '#4CC163',
-      },
-      orange: {
-        0: '#F3A749',
+      brown: {
+        200: '#F5E2AF',
+        400: '#DAAA62',
       },
       gray: {
         100: '#F1F2F3',
         400: '#B5BBBF',
         800: '#2F3E4F',
         900: '#011426',
+      },
+      green: {
+        200: '#BAE870',
+        400: '#61CF77',
+      },
+      orange: {
+        400: '#FFB053',
+      },
+      yellow: {
+        400: '#FFE587',
       },
     },
   },
