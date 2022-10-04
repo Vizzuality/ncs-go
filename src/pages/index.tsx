@@ -2,7 +2,7 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import Overview from 'containers/home/overview';
+import About from 'containers/home/about';
 import Particles from 'containers/home/particles';
 import Pathways from 'containers/home/pathways';
 import Stories from 'containers/home/stories';
@@ -15,7 +15,7 @@ const Home: React.FC = () => {
       </Head>
 
       <Particles />
-      <Overview />
+      <About />
       <Stories />
       <Pathways />
     </div>
