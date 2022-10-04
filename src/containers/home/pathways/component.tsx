@@ -9,7 +9,7 @@ import Wrapper from 'containers/wrapper';
 
 const Pathways = () => {
   const ref = useRef();
-  const inView = useInView(ref);
+  const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
 
   useEffect(() => {

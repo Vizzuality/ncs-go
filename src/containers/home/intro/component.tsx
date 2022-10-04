@@ -11,7 +11,7 @@ import Steps from './steps';
 
 const Intro = () => {
   const ref = useRef();
-  const inView = useInView(ref);
+  const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
 
   useEffect(() => {
@@ -28,7 +28,7 @@ const Intro = () => {
       </div>
 
       {/* Remove the same height as the sticky one by using the margin */}
-      <div className="-mt-[100vh]">
+      <div className="-mt-[99vh]">
         {STEPS.map(({ id }) => (
           <ScrollSection key={id} step={id} />
         ))}

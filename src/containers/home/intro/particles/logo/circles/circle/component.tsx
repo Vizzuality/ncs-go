@@ -48,6 +48,8 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
   useFrame(() => {
     if (step !== materialRef.current.uStep) {
       materialRef.current.uProgress = 0;
+      materialRef.current.uPrevPos = [p.x, p.y, p.z];
+      materialRef.current.uPrevStep = materialRef.current.uStep;
     }
 
     materialRef.current.uStep = step;

@@ -11,7 +11,7 @@ import Wrapper from 'containers/wrapper';
 
 const Overview = () => {
   const ref = useRef();
-  const inView = useInView(ref);
+  const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
 
   useEffect(() => {
@@ -31,7 +31,9 @@ const Overview = () => {
           />
         </div>
       </Wrapper>
+
       <Features />
+
       <section className="bg-gray-900 py-28">
         <ContactForm />
       </section>

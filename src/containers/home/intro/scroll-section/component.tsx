@@ -22,7 +22,7 @@ const ScrollSection = ({ step }: ScrollSectionProps) => {
   return (
     <div
       ref={ref}
-      className="relative w-full h-[100vh] pointer-events-none snap-start snap-always"
+      className="relative w-full h-screen pointer-events-none snap-start snap-always"
     />
   );
 };
