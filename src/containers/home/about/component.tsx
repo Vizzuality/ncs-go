@@ -4,7 +4,6 @@ import { motion } from 'framer-motion';
 
 import Features from 'containers/home/about/features';
 import AboutVideo from 'containers/home/about/video';
-import ContactForm from 'containers/home/common/contact-form';
 import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
@@ -55,9 +54,6 @@ const About = () => {
       </Wrapper>
       <AboutVideo />
       <Features />
-      <section className="bg-gray-900 py-28">
-        <ContactForm />
-      </section>
     </motion.div>
   );
 };
