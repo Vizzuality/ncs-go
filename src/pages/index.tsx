@@ -2,8 +2,10 @@ import React from 'react';
 
 import Head from 'next/head';
 
-import Cards from 'containers/home/cards';
+import Overview from 'containers/home/overview';
 import Particles from 'containers/home/particles';
+import Pathways from 'containers/home/pathways';
+import Stories from 'containers/home/stories';
 
 const Home: React.FC = () => {
   return (
@@ -13,8 +15,9 @@ const Home: React.FC = () => {
       </Head>
 
       <Particles />
-
-      <Cards />
+      <Overview />
+      <Stories />
+      <Pathways />
     </div>
   );
 };

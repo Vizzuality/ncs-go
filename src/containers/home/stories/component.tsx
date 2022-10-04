@@ -3,10 +3,9 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
-import Navigation from 'containers/home/common/navigation';
 import Wrapper from 'containers/wrapper';
 
-const Stories = ({ section, onChangeSection }) => {
+const Stories = () => {
   return (
     <motion.div
       className="overflow-auto"
@@ -29,9 +28,6 @@ const Stories = ({ section, onChangeSection }) => {
           />
         </div>
       </Wrapper>
-      <section className="bg-gray-900 pb-28">
-        <Navigation onChange={onChangeSection} section={section} />
-      </section>
     </motion.div>
   );
 };
