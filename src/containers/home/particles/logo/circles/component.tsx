@@ -1,38 +1,40 @@
 import { useMemo } from 'react';
 
+import { useThree } from '@react-three/fiber';
+import { motion } from 'framer-motion-3d';
+
+import Circle from './circle';
+import { STEPS } from './constants';
 export interface CirclesProps {
   count: number;
   radius: number;
   color: number;
   size: number;
   startAngle?: number;
+  step: number;
 }
 
-const Circles = ({ count, radius, color, size, startAngle }: CirclesProps) => {
-  const { positions } = useMemo(() => {
-    let pos = [];
+const Circles = ({ count, radius, color, size, startAngle, step }: CirclesProps) => {
+  const { width, height } = useThree((state) => state.viewport);
 
-    for (let i = 0; i < count; i++) {
-      const angle = i * (360 / count) - 90 + startAngle;
-      const x = (radius / 100) * Math.cos((-angle * Math.PI) / 180);
-      const y = (radius / 100) * Math.sin((-angle * Math.PI) / 180);
-      const z = 0;
-      pos.push({ x, y, z });
-    }
-    return {
-      positions: pos,
-    };
-  }, [count, radius, startAngle]);
+  const positions = useMemo(() => {
+    return STEPS[step].getPositions({ count, radius, startAngle, width, height });
+  }, [step, count, radius, startAngle, width, height]);
+
+  const noise = useMemo(() => {
+    return STEPS[step].getNoise();
+  }, [step]);
+
+  const animations = useMemo(() => {
+    return STEPS[step].getAnimations();
+  }, [step]);
 
   return (
-    <>
+    <motion.group {...animations}>
       {positions.map((p) => (
-        <mesh key={`${p.x}-${p.y}-${p.z}`} position={[p.x, p.y, p.z]}>
-          <circleGeometry args={[size / 100, 32]} />
-          <meshBasicMaterial color={color} />
-        </mesh>
+        <Circle key={`${p.id}`} p={p} color={color} size={size} step={step} noise={noise} />
       ))}
-    </>
+    </motion.group>
   );
 };
 
