@@ -27,13 +27,13 @@ export const STEPS = {
     },
   },
   '1': {
-    getPositions: ({ count }) => {
+    getPositions: ({ radius, count }) => {
       let pos = [];
 
       for (let i = 0; i < count; i++) {
         const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-        const x = Math.cos((-randomAngle * Math.PI) / 180);
-        const y = Math.sin((-randomAngle * Math.PI) / 180);
+        const x = (radius / 100) * Math.cos((-randomAngle * Math.PI) / 180);
+        const y = (radius / 100) * Math.sin((-randomAngle * Math.PI) / 180);
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -60,13 +60,13 @@ export const STEPS = {
     },
   },
   '2': {
-    getPositions: ({ radius, count }) => {
+    getPositions: ({ count }) => {
       let pos = [];
 
       for (let i = 0; i < count; i++) {
         const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-        const x = (radius / 100) * Math.cos((-randomAngle * Math.PI) / 180);
-        const y = (radius / 100) * Math.sin((-randomAngle * Math.PI) / 180);
+        const x = Math.cos((-randomAngle * Math.PI) / 180);
+        const y = Math.sin((-randomAngle * Math.PI) / 180);
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
