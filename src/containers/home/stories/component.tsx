@@ -5,6 +5,7 @@ import { useHomeStore } from 'store/home';
 import { useInView } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
+import Cards from 'containers/home/stories/cards';
 import Wrapper from 'containers/wrapper';
 
 const Stories = () => {
@@ -29,6 +30,7 @@ const Stories = () => {
           />
         </div>
       </Wrapper>
+      <Cards />
     </div>
   );
 };
