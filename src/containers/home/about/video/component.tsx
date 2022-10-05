@@ -1,8 +1,10 @@
 import React from 'react';
 
-import Wrapper from 'containers/wrapper';
+import dynamic from 'next/dynamic';
 
-import Video from 'components/video';
+const Video = dynamic(() => import('components/video'), {
+  ssr: false,
+});
 
 const AboutVideo = () => {
   const videoConfig = {
@@ -17,12 +19,17 @@ const AboutVideo = () => {
 
   return (
     <div
-      className="flex justify-center"
+      className="relative flex justify-center w-full px-24 aspect-video"
       style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
     >
-      <Wrapper>
-        <Video config={videoConfig} playing loop url="https://youtu.be/6PGyRolwFVo" />
-      </Wrapper>
+      <Video
+        config={videoConfig}
+        playing
+        loop
+        url="https://youtu.be/6PGyRolwFVo"
+        height="100%"
+        width="100%"
+      />
     </div>
   );
 };

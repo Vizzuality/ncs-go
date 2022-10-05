@@ -28,12 +28,15 @@ export const Video: FC<VideoProps> = ({
   playing = false,
   light = true,
   url,
+  height,
+  width,
 }: VideoProps) => (
   <ReactPlayer
     className={cx({
-      'c-video': false,
       [className]: !!className,
     })}
+    width={width}
+    height={height}
     url={url}
     loop={loop}
     light={light}
