@@ -24,8 +24,15 @@ const Pathways = () => {
         <div className="pt-20 pb-20">
           <Hero
             className="text-gray-800"
-            title="Naturebase Pathways"
-            subtitle="Naturebase help you to achieve the CO2 emission reduction goals from France Agreement."
+            title="featured science"
+            subtitle="What nature can do for the climate?"
+          />
+        </div>
+        <div className="pt-20 pb-20">
+          <Hero
+            className="text-gray-800"
+            title="Pathways"
+            subtitle="Solutions can be found within our grasslands, wetlands, forests and drylands."
           />
         </div>
       </Wrapper>

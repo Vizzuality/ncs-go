@@ -30,7 +30,7 @@ const Stories = () => {
             subtitle="Here are some of the stories we have heard from the ground."
           />
         </div>
-        <div className="pb-10 font-sans text-base text-gray-800 md:text-lg md:grid md:grid-cols-3 md:gap-10">
+        <div className="pb-20 font-sans text-base text-gray-800 md:text-lg md:grid md:grid-cols-3 md:gap-10">
           <div className="col-start-1 pb-4 md:pb-0">
             <p>Nature-based solutions are ready to be deployed right now, everywhere.</p>
           </div>

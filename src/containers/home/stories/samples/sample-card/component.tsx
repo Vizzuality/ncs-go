@@ -25,8 +25,8 @@ export const SampleCard = ({
       <p className="font-sans text-base">{country}</p>
     </div>
     <div className="space-y-2.5 font-sans">
-      <h3 className="text-xl max-w-[15ch]">{title}</h3>
-      <h4 className="text-base max-w-[30ch]">{description}</h4>
+      <h3 className="text-xl min-w-[15ch]">{title}</h3>
+      <h4 className="text-base min-w-[30ch]">{description}</h4>
     </div>
     <div className="flex justify-end space-y-10 font-sans text-base pt-14">
       {articleUrl && (
