@@ -5,8 +5,9 @@ import { useHomeStore } from 'store/home';
 import { useThree } from '@react-three/fiber';
 import { motion } from 'framer-motion-3d';
 
+import { STEPS } from 'containers/home/intro/constants';
+
 import Circle from './circle';
-import { STEPS } from './constants';
 export interface CirclesProps {
   count: number;
   radius: number;
@@ -20,15 +21,18 @@ const Circles = ({ count, radius, color, size, startAngle }: CirclesProps) => {
   const { width, height } = useThree((state) => state.viewport);
 
   const positions = useMemo(() => {
-    return STEPS[step].getPositions({ count, radius, startAngle, width, height });
+    const { getPositions } = STEPS.find((s) => s.id === step);
+    return getPositions({ count, radius, startAngle, width, height });
   }, [step, count, radius, startAngle, width, height]);
 
   const noise = useMemo(() => {
-    return STEPS[step].getNoise();
+    const { getNoise } = STEPS.find((s) => s.id === step);
+    return getNoise();
   }, [step]);
 
   const animations = useMemo(() => {
-    return STEPS[step].getAnimations();
+    const { getAnimations } = STEPS.find((s) => s.id === step);
+    return getAnimations();
   }, [step]);
 
   return (
