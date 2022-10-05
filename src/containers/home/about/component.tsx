@@ -9,6 +9,8 @@ import AboutVideo from 'containers/home/about/video';
 import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
+import { Media } from 'components/media-query';
+
 const About = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
@@ -23,14 +25,21 @@ const About = () => {
   return (
     <div ref={ref}>
       <Wrapper>
-        <div className="pt-10 md:pt-32">
+        <div className="pt-10 pb-4 md:pb-0 md:pt-32 ">
           <Hero
             className="text-gray-800"
             title="About Naturebase"
             subtitle="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
           />
         </div>
-        <div className="py-20 font-sans text-base md:text-lg md:grid md:grid-cols-3 md:gap-10">
+      </Wrapper>
+
+      <Media lessThan="md">
+        <AboutVideo />
+      </Media>
+
+      <Wrapper>
+        <div className="py-4 font-sans text-base text-gray-800 md:py-20 md:text-lg md:grid md:grid-cols-3 md:gap-10">
           <div className="col-start-2 pb-4 md:pb-0">
             <p>
               Naturebase will bring together science-based data on nature’s pathways to mitigate
@@ -53,7 +62,11 @@ const About = () => {
           </div>
         </div>
       </Wrapper>
-      <AboutVideo />
+
+      <Media at="md">
+        <AboutVideo />
+      </Media>
+
       <Features />
     </div>
   );
