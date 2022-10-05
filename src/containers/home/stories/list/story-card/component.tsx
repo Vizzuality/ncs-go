@@ -2,12 +2,13 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import { PATHWAY_COLOR } from 'containers/home/stories/constants';
+
 import Icon from 'components/icon';
 
 import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
 
-import { PATHWAY_COLOR } from './constants';
 import type { StoryCardProps } from './types';
 
 export const StoryCard = ({

@@ -6,6 +6,7 @@ import { useInView } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
 import List from 'containers/home/stories/list';
+import Samples from 'containers/home/stories/samples';
 import Wrapper from 'containers/wrapper';
 
 const Stories = () => {
@@ -41,6 +42,7 @@ const Stories = () => {
           </div>
         </div>
       </Wrapper>
+      <Samples />
       <List />
     </div>
   );
