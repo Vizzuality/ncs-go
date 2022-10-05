@@ -6,8 +6,9 @@ import Head from 'next/head';
 
 import { useHomeStore } from 'store/home';
 
+import About from 'containers/home/about';
+import Contact from 'containers/home/contact';
 import Intro from 'containers/home/intro';
-import Overview from 'containers/home/overview';
 import Pathways from 'containers/home/pathways';
 import Stories from 'containers/home/stories';
 
@@ -24,12 +25,13 @@ const Home: React.FC = () => {
       <Head>
         <title>NCS - GO</title>
       </Head>
-
       <Intro />
 
-      <Overview />
+      <About />
+
       <Stories />
       <Pathways />
+      <Contact />
     </div>
   );
 };

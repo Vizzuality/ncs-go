@@ -1,4 +1,3 @@
-const aspectRatio = require('@tailwindcss/aspect-ratio');
 const forms = require('@tailwindcss/forms');
 const lineClamp = require('@tailwindcss/line-clamp');
 
@@ -13,13 +12,19 @@ module.exports = {
     './src/layouts/**/*.@(tsx|ts)',
     './src/pages/**/*.tsx',
   ],
-  plugins: [aspectRatio, forms, lineClamp],
+  plugins: [forms, lineClamp],
   theme: {
     fontFamily: {
       sans: ['Silka'],
       semibold: ['Silka-SemiBold'],
     },
     fontSize: {
+      sm: [
+        '0.75rem',
+        {
+          lineHeight: '1.125rem',
+        },
+      ],
       base: [
         '1rem',
         {

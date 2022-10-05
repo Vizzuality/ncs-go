@@ -8,11 +8,9 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Icon from 'components/icon';
+import { Media } from 'components/media-query';
 
-import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
-
-const ContactForm: React.FC = () => {
+const Contact: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
@@ -36,20 +34,27 @@ const ContactForm: React.FC = () => {
   );
 
   return (
-    <Wrapper>
-      <section className="w-full h-full px-20 py-24 bg-white">
-        <div className="grid items-center grid-cols-12 gap-20">
-          <div className="col-span-5 space-y-6 text-gray-900">
-            <h2 className="text-2xl font-semibold">Stay up to date</h2>
-            <p className="font-sans text-lg leading-7">
-              Subscribe to be the first to know about the tool launch and more.
+    <section className="w-full h-full pb-20 bg-gray-900">
+      <Wrapper>
+        <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
+          <div className="space-y-6 font-sans text-white md:col-span-6">
+            <h2 className="text-xl md:text-2xl">Keep up to date</h2>
+            <p className="text-base leading-7 md:text-lg">
+              Subscribe to keep up to date on our progress and be among the first to access our
+              platform.
             </p>
+            <Media greaterThan="xl">
+              <p className="text-sm leading-7 md:text-base opacity-80">
+                Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
+                Global Stocktake in 2023.
+              </p>
+            </Media>
           </div>
 
           <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
             {(props) => (
-              <form onSubmit={props.handleSubmit} className="col-span-7">
-                <div className="flex justify-between w-full">
+              <form onSubmit={props.handleSubmit} className="py-6 xl:col-span-6 xl:py-0">
+                <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
                   <Field
                     name="email"
                     component="input"
@@ -62,10 +67,10 @@ const ContactForm: React.FC = () => {
                           value={input.value as string}
                           type="email"
                           placeholder="Enter your email"
-                          className="flex w-full px-10 py-5 text-lg bg-gray-100 border-none placeholder:text-gray-400"
+                          className="flex w-full px-10 py-4 text-base bg-gray-100 border-none rounded-full md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                         />
                         {meta.error && meta.touched && (
-                          <p className="absolute text-orange-400 top-full left-10 text-xxs">
+                          <p className="absolute text-sm text-orange-400 top-9 md:top-12 xl:top-full left-10">
                             {meta.error.join('. ')}
                           </p>
                         )}
@@ -77,19 +82,24 @@ const ContactForm: React.FC = () => {
                     size="s"
                     theme="primary"
                     type="submit"
-                    className="space-x-4"
+                    className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
                   >
                     <p>Subscribe</p>
-                    <Icon icon={ARROW_RIGHT_SVG} className="w-5 h-5" />
                   </Button>
                 </div>
               </form>
             )}
           </Form>
+          <Media lessThan="xl">
+            <p className="text-sm leading-5 text-white md:text-base opacity-80">
+              Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
+              Global Stocktake in 2023.
+            </p>
+          </Media>
         </div>
-      </section>
-    </Wrapper>
+      </Wrapper>
+    </section>
   );
 };
 
-export default ContactForm;
+export default Contact;

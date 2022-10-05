@@ -11,9 +11,9 @@ export const Hero = ({ className, subtitle, title }: HeroProps) => (
       [className]: !!className,
     })}
   >
-    <div className="space-y-4 ">
+    <div className="space-y-4">
       <h2 className="text-base font-semibold tracking-widest uppercase">{title}</h2>
-      <h3 className="text-3xl max-w-[28ch]">{subtitle}</h3>
+      <h3 className="text-lg md:text-3xl md:max-w-[28ch]">{subtitle}</h3>
     </div>
   </div>
 );
