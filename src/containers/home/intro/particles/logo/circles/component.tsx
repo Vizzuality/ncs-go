@@ -1,5 +1,7 @@
 import { useMemo } from 'react';
 
+import { useHomeStore } from 'store/home';
+
 import { useThree } from '@react-three/fiber';
 import { motion } from 'framer-motion-3d';
 
@@ -11,10 +13,10 @@ export interface CirclesProps {
   color: number;
   size: number;
   startAngle?: number;
-  step: number;
 }
 
-const Circles = ({ count, radius, color, size, startAngle, step }: CirclesProps) => {
+const Circles = ({ count, radius, color, size, startAngle }: CirclesProps) => {
+  const step = useHomeStore((state) => state.step);
   const { width, height } = useThree((state) => state.viewport);
 
   const positions = useMemo(() => {
@@ -32,7 +34,7 @@ const Circles = ({ count, radius, color, size, startAngle, step }: CirclesProps)
   return (
     <motion.group {...animations}>
       {positions.map((p) => (
-        <Circle key={`${p.id}`} p={p} color={color} size={size} step={step} noise={noise} />
+        <Circle key={`${p.id}`} p={p} color={color} size={size} noise={noise} />
       ))}
     </motion.group>
   );

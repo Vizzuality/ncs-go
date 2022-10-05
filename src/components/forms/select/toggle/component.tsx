@@ -33,6 +33,14 @@ export const SelectToggle: FC<SelectToggleProps> = ({
     return `${selectedItems.length} items selected`;
   }, [selectedItems, placeholder, getEnabledOptions]);
 
+  const toogleButtonProps = useMemo(() => {
+    if (multiple) {
+      return getToggleButtonProps(getDropdownProps({ preventKeyAction: opened }));
+    }
+
+    return getToggleButtonProps();
+  }, [multiple, getToggleButtonProps, getDropdownProps, opened]);
+
   return (
     <button
       type="button"
@@ -42,8 +50,7 @@ export const SelectToggle: FC<SelectToggleProps> = ({
         'relative w-full flex items-center tracking-wide': true,
         [THEME.sizes[size]]: true,
       })}
-      {...(!multiple && getToggleButtonProps())}
-      {...(multiple && getToggleButtonProps(getDropdownProps({ preventKeyAction: opened })))}
+      {...toogleButtonProps}
     >
       {prefix && (
         <span

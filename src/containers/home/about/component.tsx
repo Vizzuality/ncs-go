@@ -1,6 +1,8 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
 
-import { motion } from 'framer-motion';
+import { useHomeStore } from 'store/home';
+
+import { useInView } from 'framer-motion';
 
 import Features from 'containers/home/about/features';
 import AboutVideo from 'containers/home/about/video';
@@ -8,19 +10,18 @@ import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
 const About = () => {
+  const ref = useRef();
+  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const setSection = useHomeStore((state) => state.setSection);
+
+  useEffect(() => {
+    if (inView) {
+      setSection('about');
+    }
+  });
+
   return (
-    <motion.div
-      className="overflow-auto"
-      initial={{
-        opacity: 0,
-      }}
-      animate={{
-        opacity: 1,
-      }}
-      exit={{
-        opacity: 0,
-      }}
-    >
+    <div ref={ref}>
       <Wrapper>
         <div className="pt-32">
           <Hero
@@ -54,7 +55,7 @@ const About = () => {
       </Wrapper>
       <AboutVideo />
       <Features />
-    </motion.div>
+    </div>
   );
 };
 
