@@ -36,14 +36,14 @@ const Contact: React.FC = () => {
   return (
     <section className="w-full h-full pb-20 bg-gray-900">
       <Wrapper>
-        <div className="items-center pt-10 pb-20 border-b border-gray-800 md:py-24 md:grid md:grid-cols-12 md:gap-24">
+        <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
           <div className="space-y-6 font-sans text-white md:col-span-6">
             <h2 className="text-xl md:text-2xl">Keep up to date</h2>
             <p className="text-base leading-7 md:text-lg">
               Subscribe to keep up to date on our progress and be among the first to access our
               platform.
             </p>
-            <Media greaterThan="md">
+            <Media greaterThan="xl">
               <p className="text-sm leading-7 md:text-base opacity-80">
                 Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
                 Global Stocktake in 2023.
@@ -53,8 +53,8 @@ const Contact: React.FC = () => {
 
           <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
             {(props) => (
-              <form onSubmit={props.handleSubmit} className="py-6 md:col-span-6 md:py-0">
-                <div className="flex flex-col justify-between w-full space-y-4 md:flex-row md:space-y-0">
+              <form onSubmit={props.handleSubmit} className="py-6 xl:col-span-6 xl:py-0">
+                <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
                   <Field
                     name="email"
                     component="input"
@@ -67,10 +67,10 @@ const Contact: React.FC = () => {
                           value={input.value as string}
                           type="email"
                           placeholder="Enter your email"
-                          className="flex w-full px-10 py-4 text-lg bg-gray-100 border-none rounded-full md:py-5 md:rounded-l-full placeholder:text-gray-400"
+                          className="flex w-full px-10 py-4 text-base bg-gray-100 border-none rounded-full md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                         />
                         {meta.error && meta.touched && (
-                          <p className="absolute text-orange-400 top-full left-10 text-xxs">
+                          <p className="absolute text-sm text-orange-400 top-9 md:top-12 xl:top-full left-10">
                             {meta.error.join('. ')}
                           </p>
                         )}
@@ -82,7 +82,7 @@ const Contact: React.FC = () => {
                     size="s"
                     theme="primary"
                     type="submit"
-                    className="space-x-4 rounded-full md:rounded-r-full"
+                    className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
                   >
                     <p>Subscribe</p>
                   </Button>
@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
               </form>
             )}
           </Form>
-          <Media lessThan="md">
+          <Media lessThan="xl">
             <p className="text-sm leading-5 text-white md:text-base opacity-80">
               Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
               Global Stocktake in 2023.
