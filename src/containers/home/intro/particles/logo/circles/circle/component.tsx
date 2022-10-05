@@ -5,7 +5,7 @@ import { useHomeStore } from 'store/home';
 import { extend, ReactThreeFiber, useFrame } from '@react-three/fiber';
 import { Color } from 'three';
 
-import CircleMaterial from './circleMaterial';
+import CircleMaterial from './material';
 
 declare global {
   namespace JSX {
