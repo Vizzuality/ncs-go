@@ -39,7 +39,7 @@ const About = () => {
       </Media>
 
       <Wrapper>
-        <div className="py-4 font-sans text-base text-gray-800 md:py-20 md:text-lg md:grid md:grid-cols-3 md:gap-10">
+        <div className="pt-4 pb-10 font-sans text-base text-gray-800 md:py-20 md:text-lg md:grid md:grid-cols-3 md:gap-10">
           <div className="col-start-2 pb-4 md:pb-0">
             <p>
               Naturebase will bring together science-based data on nature’s pathways to mitigate

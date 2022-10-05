@@ -19,6 +19,12 @@ module.exports = {
       semibold: ['Silka-SemiBold'],
     },
     fontSize: {
+      sm: [
+        '0.75rem',
+        {
+          lineHeight: '1.125rem',
+        },
+      ],
       base: [
         '1rem',
         {
