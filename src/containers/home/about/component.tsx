@@ -23,15 +23,15 @@ const About = () => {
   return (
     <div ref={ref}>
       <Wrapper>
-        <div className="pt-32">
+        <div className="pt-10 md:pt-32">
           <Hero
             className="text-gray-800"
             title="About Naturebase"
             subtitle="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
           />
         </div>
-        <div className="grid grid-cols-3 gap-10 py-20 font-sans text-lg">
-          <div className="col-start-2">
+        <div className="py-20 font-sans text-base md:text-lg md:grid md:grid-cols-3 md:gap-10">
+          <div className="col-start-2 pb-4 md:pb-0">
             <p>
               Naturebase will bring together science-based data on nature’s pathways to mitigate
               climate change across every region of the planet, combining them with the latest
@@ -39,7 +39,7 @@ const About = () => {
               schemes and of course, loads of case studies.
             </p>
           </div>
-          <div className="col-start-3 space-y-6">
+          <div className="col-start-3 space-y-4 md:space-y-6">
             <p>
               Scientists, practitioners, policymakers and experts can find their way to enact
               nature’s full transformative potential.
