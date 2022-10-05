@@ -1,5 +1,5 @@
 export const PATHWAY_COLOR = {
-  forest: 'brand',
+  forest: 'green-400',
   wetlands: 'blue-400',
   croplands: 'orange-400',
   grasslands: 'brown-400',
