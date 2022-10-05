@@ -1,4 +1,4 @@
 export interface FeatureCardProps {
-  num: string;
+  icon: any;
   description: string;
 }

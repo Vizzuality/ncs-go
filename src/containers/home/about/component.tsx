@@ -63,7 +63,7 @@ const About = () => {
         </div>
       </Wrapper>
 
-      <Media at="md">
+      <Media greaterThan="md">
         <AboutVideo />
       </Media>
 
