@@ -167,22 +167,34 @@ export const STEPS = [
         </div>
       </div>
     ),
-    getPositions: ({ count, width, height }) => {
+    getPositions: ({ width, height, count }) => {
       let pos = [];
 
       for (let i = 0; i < count; i++) {
-        // const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-
-        const randomPositions = IMAGES({ width, height });
-        const randomImg = randomPositions[Math.floor(Math.random() * 4)];
-
-        const x = randomImg.x; // + (randomImg.radius / 100) * Math.cos((-randomAngle * Math.PI) / 180);
-        const y = randomImg.y; // + (randomImg.radius / 100) * Math.sin((-randomAngle * Math.PI) / 180);
+        const x = Math.random() * width - width / 2;
+        const y = Math.random() * height - height / 2;
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
       return pos;
     },
+
+    // getPositions: ({ count, width, height }) => {
+    //   let pos = [];
+
+    //   for (let i = 0; i < count; i++) {
+    //     // const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
+
+    //     const randomPositions = IMAGES({ width, height });
+    //     const randomImg = randomPositions[Math.floor(Math.random() * 4)];
+
+    //     const x = randomImg.x; // + (randomImg.radius / 100) * Math.cos((-randomAngle * Math.PI) / 180);
+    //     const y = randomImg.y; // + (randomImg.radius / 100) * Math.sin((-randomAngle * Math.PI) / 180);
+    //     const z = 0;
+    //     pos.push({ id: i, x, y, z });
+    //   }
+    //   return pos;
+    // },
     getAnimations: () => {
       return {
         animate: {
