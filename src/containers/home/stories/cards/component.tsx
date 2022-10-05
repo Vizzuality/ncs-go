@@ -3,6 +3,8 @@ import React from 'react';
 import Hero from 'containers/home/common/hero';
 import StoryCard from 'containers/home/stories/cards/card';
 
+import Button from 'components/button';
+
 import { STORIES } from './constants';
 
 const StoryCards = () => {
@@ -30,6 +32,16 @@ const StoryCards = () => {
             />
           </div>
         ))}
+      </div>
+      <div className="flex justify-center w-full py-10">
+        <Button
+          className="rounded-full"
+          theme="primary"
+          size="s"
+          onClick={() => console.info('Show more stories')}
+        >
+          Show more stories
+        </Button>
       </div>
     </div>
   );

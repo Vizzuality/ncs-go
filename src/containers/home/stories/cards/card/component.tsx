@@ -21,14 +21,14 @@ export const StoryCard = ({
   videoUrl,
 }: StoryCardProps) => {
   return (
-    <div className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800">
-      <div className={`md:w-2 h-2 w-full bg-${PATHWAY_COLOR[pathway]}`} />
-      <div className="w-full h-full md:w-2/6">
+    <div className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row">
+      <div className={`md:w-2 h-2 md:h-auto w-full bg-${PATHWAY_COLOR[pathway]}`} />
+      <div className="w-full h-full">
         <Image
           src={`/images/stories/${image}`}
           alt={title}
-          width={250}
-          height="100%"
+          width={200}
+          height={50}
           layout="responsive"
         />
       </div>
