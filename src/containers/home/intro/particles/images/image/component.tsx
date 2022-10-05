@@ -73,7 +73,7 @@ const CircleImage = ({ p, radius, img }: CircleImageProps) => {
         }),
       }}
       transition={{
-        duration: 0.5,
+        duration: 0.25,
       }}
     >
       <motion.group
@@ -83,9 +83,19 @@ const CircleImage = ({ p, radius, img }: CircleImageProps) => {
           repeat: Infinity,
           repeatType: 'reverse',
           duration: 10 + velocity * 10,
+          ease: 'linear',
         }}
       >
-        <mesh>
+        <motion.mesh
+          initial={{ rotateZ: 0 }}
+          animate={{ rotateZ: Math.PI * 2 }}
+          transition={{
+            repeat: Infinity,
+            repeatType: 'loop',
+            duration: 10 + velocity * 10,
+            ease: 'linear',
+          }}
+        >
           <ringGeometry args={[ring / 100, (ring + ring * 0.01) / 100, 64]} />
           <ringMaterial
             ref={ringMaterialRef}
@@ -97,7 +107,7 @@ const CircleImage = ({ p, radius, img }: CircleImageProps) => {
             uColor={U_COLOR}
             transparent
           />
-        </mesh>
+        </motion.mesh>
 
         <mesh>
           <circleGeometry args={[radius / 100, 64]} />

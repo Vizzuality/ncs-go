@@ -47,7 +47,7 @@ export const STEPS = [
 
       for (let i = 0; i < count; i++) {
         const x = Math.random() * width - width / 2;
-        const y = Math.random() * height - height / 2;
+        const y = -0.75 + Math.random() * height - height / 2;
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -56,7 +56,7 @@ export const STEPS = [
     getAnimations: () => {
       return {
         animate: {
-          y: 0,
+          y: 0.75,
           rotateZ: 0,
         },
         transition: {
@@ -97,8 +97,7 @@ export const STEPS = [
           rotateZ: -360 * (Math.PI / 180),
         },
         transition: {
-          duration: 0.5,
-          ease: 'easeInOut',
+          duration: 0.1,
           rotateZ: {
             duration: 50,
             repeat: Infinity,
@@ -172,7 +171,7 @@ export const STEPS = [
 
       for (let i = 0; i < count; i++) {
         const x = Math.random() * width - width / 2;
-        const y = Math.random() * height - height / 2;
+        const y = -0.75 + Math.random() * height - height / 2;
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -198,7 +197,7 @@ export const STEPS = [
     getAnimations: () => {
       return {
         animate: {
-          y: 0,
+          y: 0.75,
           rotateZ: 0,
         },
         transition: {

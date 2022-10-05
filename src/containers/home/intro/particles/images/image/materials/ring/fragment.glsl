@@ -6,7 +6,7 @@ varying vec2 vUv;
 
 void main() {
   vec2 uv = vUv;
-  float opacity = smoothstep(0.0, 0.5, uv.y) + 0.1;
-
-  gl_FragColor = vec4(uColor, opacity);
+  float opacity1 = smoothstep(0.0, 0.15, uv.y) * smoothstep(0.85, 1.0, uv.y);
+  float opacity2 = smoothstep(0.0, 0.15, 1.0 - uv.y) * smoothstep(0.85, 1.0, 1.0 - uv.y);
+  gl_FragColor = vec4(uColor, opacity1 + opacity2);
 }
