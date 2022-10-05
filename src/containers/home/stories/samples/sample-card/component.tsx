@@ -21,7 +21,7 @@ export const SampleCard = ({
     className={`p-10 max-w-fit flex flex-col text-base text-gray-900 text-left bg-${PATHWAY_COLOR[pathway]}`}
   >
     <div className="flex space-x-2.5 pb-10">
-      <Icon className="w-6 h-6" icon={LOCATION_SVG} />
+      <Icon className="w-6 h-6 stroke-gray-900" icon={LOCATION_SVG} />
       <p className="font-sans text-base">{country}</p>
     </div>
     <div className="space-y-2.5 font-sans">
@@ -32,14 +32,14 @@ export const SampleCard = ({
       {articleUrl && (
         <a className="flex items-center space-x-1" href={articleUrl}>
           <p>Read article</p>
-          <Icon className="w-6 h-6" icon={ARROW_RIGHT_SVG} />
+          <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
         </a>
       )}
 
       {videoUrl && (
         <a className="flex items-center space-x-1" href={videoUrl}>
           <p>Watch video</p>
-          <Icon className="w-6 h-6" icon={ARROW_RIGHT_SVG} />
+          <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
         </a>
       )}
     </div>
