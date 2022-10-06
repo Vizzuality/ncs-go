@@ -56,6 +56,8 @@ const Samples = () => {
               config={videoConfig}
               playing
               loop
+              playBackground="bg-white"
+              playColor="text-gray-900"
               url="https://youtu.be/6PGyRolwFVo"
               height="419px"
             />
