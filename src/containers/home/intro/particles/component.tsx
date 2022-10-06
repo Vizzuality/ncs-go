@@ -1,7 +1,7 @@
 import { Canvas } from '@react-three/fiber';
 import * as THREE from 'three';
 
-import Images from './images';
+// import Images from './images';
 import Logo from './logo';
 
 const Particles = () => {
@@ -16,7 +16,7 @@ const Particles = () => {
         <ambientLight />
 
         {/* Meshes */}
-        <Images />
+        {/* <Images /> */}
         <Logo />
       </Canvas>
     </div>

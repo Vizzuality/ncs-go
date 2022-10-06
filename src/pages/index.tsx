@@ -25,6 +25,7 @@ const Home: React.FC = () => {
       <Head>
         <title>NCS - GO</title>
       </Head>
+
       <Intro />
 
       <About />

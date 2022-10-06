@@ -119,6 +119,7 @@ const CircleImage = ({ p, radius, img }: CircleImageProps) => {
             uRadius={radius / 100}
             uCurrentPos={[p.x, p.y, p.z]}
             uNoise={0.1}
+            uTextureScale={[1, 1]}
             transparent
           />
         </mesh>
