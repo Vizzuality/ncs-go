@@ -2,18 +2,22 @@ import React, { useCallback, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import useBreakpoint from 'use-breakpoint';
+
 import { useSaveSubscribe } from 'hooks/subscribe';
 
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import { Media } from 'components/media-query';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
+
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   const handleSubmit = useCallback(
     (data) => {
@@ -43,12 +47,13 @@ const Contact: React.FC = () => {
               Subscribe to keep up to date on our progress and be among the first to access our
               platform.
             </p>
-            <Media greaterThan="xl">
+
+            {minWidth >= BREAKPOINTS.xl && (
               <p className="text-sm leading-7 md:text-base opacity-80">
                 Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
                 Global Stocktake in 2023.
               </p>
-            </Media>
+            )}
           </div>
 
           <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
@@ -90,12 +95,12 @@ const Contact: React.FC = () => {
               </form>
             )}
           </Form>
-          <Media lessThan="xl">
+          {minWidth < BREAKPOINTS.xl && (
             <p className="text-sm leading-5 text-white md:text-base opacity-80">
               Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
               Global Stocktake in 2023.
             </p>
-          </Media>
+          )}
         </div>
       </Wrapper>
     </section>

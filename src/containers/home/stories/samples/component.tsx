@@ -74,13 +74,6 @@ const Samples = () => {
           </div>
         </div>
       </Wrapper>
-      {/* <Media greaterThanOrEqual="lg">
-        <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
-          <Wrapper>
-
-          </Wrapper>
-        </div>
-      </Media> */}
     </div>
   );
 };
