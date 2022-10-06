@@ -2,14 +2,20 @@ import React from 'react';
 
 import dynamic from 'next/dynamic';
 
+import useBreakpoint from 'use-breakpoint';
+
 import Card from 'containers/home/stories/samples/sample-card';
 import Wrapper from 'containers/wrapper';
+
+import { BREAKPOINTS } from 'styles/styles.config';
 
 const Video = dynamic(() => import('components/video'), {
   ssr: false,
 });
 
 const Samples = () => {
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
   const videoConfig = {
     youtube: {
       playerVars: {
@@ -20,7 +26,12 @@ const Samples = () => {
     },
   };
   return (
-    <div className="w-full pt-4 pb-10 lg:pb-0">
+    <div
+      className="w-full pt-4 pb-10 lg:pb-0"
+      style={{
+        background: minWidth >= BREAKPOINTS.lg && 'linear-gradient(#FFFFFF 90%, #011426 10%',
+      }}
+    >
       <Wrapper>
         <div className="lg:space-y-44">
           <div className="lg:grid lg:grid-cols-12">
