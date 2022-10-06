@@ -23,14 +23,14 @@ const Stories = () => {
   return (
     <div ref={ref}>
       <Wrapper>
-        <div className="pb-20 pt-28">
+        <div className="pt-10 pb-4 md:pb-20 md:pt-28">
           <Hero
             className="text-gray-800"
             title="Stories"
             subtitle="Here are some of the stories we have heard from the ground."
           />
         </div>
-        <div className="pb-20 font-sans text-base text-gray-800 md:text-lg md:grid md:grid-cols-3 md:gap-10">
+        <div className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg md:grid md:grid-cols-3 md:gap-10">
           <div className="col-start-1 pb-4 md:pb-0">
             <p>Nature-based solutions are ready to be deployed right now, everywhere.</p>
           </div>
