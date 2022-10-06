@@ -65,6 +65,7 @@ const About = () => {
       </Wrapper>
 
       {minWidth >= BREAKPOINTS.md && <AboutVideo />}
+
       <div className="bg-gray-900 md:pb-28">
         <Wrapper>
           <Features />
