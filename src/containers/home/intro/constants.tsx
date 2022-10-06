@@ -1,6 +1,6 @@
 export const getSpiralPoints = (count: number, radius: number, startAngle: number) => {
   const points = [];
-  const angleStep = 0.175;
+  const angleStep = (Math.PI * 2 * 3) / count; // Math.PI * 2 = 360 degrees
   const radiusStep = radius / count;
 
   for (let i = 0; i < count; i++) {
@@ -11,6 +11,75 @@ export const getSpiralPoints = (count: number, radius: number, startAngle: numbe
       id: i,
       x: r * Math.cos(angle) - 0.001,
       y: r * Math.sin(angle) - 0.001,
+      z: 0,
+    });
+  }
+
+  return points;
+};
+
+export const getRectPoints = (count: number, width: number, height: number) => {
+  const points = [];
+  const angleStep = (Math.PI * 2) / count;
+
+  for (let i = 0; i < count; i++) {
+    let theta = i * angleStep;
+    const rectAtan = Math.atan2(height, width);
+    const tanTheta = Math.tan(theta);
+
+    while (theta < -Math.PI) {
+      theta += Math.PI * 2;
+    }
+
+    while (theta > Math.PI) {
+      theta -= Math.PI * 2;
+    }
+
+    let region;
+
+    if (theta > -rectAtan && theta <= rectAtan) {
+      region = 1;
+    } else if (theta > rectAtan && theta <= Math.PI - rectAtan) {
+      region = 2;
+    } else if (theta > Math.PI - rectAtan || theta <= -(Math.PI - rectAtan)) {
+      region = 3;
+    } else {
+      region = 4;
+    }
+
+    let xFactor = 1;
+    let yFactor = 1;
+
+    switch (region) {
+      case 1:
+        yFactor = -1;
+        break;
+      case 2:
+        yFactor = -1;
+        break;
+      case 3:
+        xFactor = -1;
+        break;
+      case 4:
+        xFactor = -1;
+        break;
+    }
+
+    let x = width / 2;
+    let y = height / 2;
+
+    if (region === 1 || region === 3) {
+      x += xFactor * (width / 2) - width / 2; // "Z0"
+      y += yFactor * ((width / 2) * tanTheta) - height / 2;
+    } else {
+      x += xFactor * (height / (2 * tanTheta)) - width / 2; // "Z1"
+      y += yFactor * (height / 2) - height / 2;
+    }
+
+    points.push({
+      id: i,
+      x: x,
+      y: y,
       z: 0,
     });
   }
@@ -103,8 +172,8 @@ export const STEPS = [
 
       for (let i = 0; i < count; i++) {
         const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-        const x = (radius / 100) * Math.cos((-randomAngle * Math.PI) / 180);
-        const y = (radius / 100) * Math.sin((-randomAngle * Math.PI) / 180);
+        const x = ((radius * 0.5) / 100) * Math.cos((-randomAngle * Math.PI) / 180);
+        const y = ((radius * 0.5) / 100) * Math.sin((-randomAngle * Math.PI) / 180);
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -128,7 +197,7 @@ export const STEPS = [
       };
     },
     getNoise: () => {
-      return 0.075;
+      return 0.75;
     },
   },
   {
@@ -190,6 +259,7 @@ export const STEPS = [
     getPositions: ({ count }) => {
       let pos = [];
 
+      // const RECT_POINTS = getRectPoints(120, 2, 2);
       const SPIRAL_POINTS = getSpiralPoints(120, 1.1, 0);
 
       for (let i = 0; i < count; i++) {
@@ -215,7 +285,7 @@ export const STEPS = [
       };
     },
     getNoise: () => {
-      return 0.05;
+      return 0.025;
     },
   },
   {
