@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
   );
 
   return (
-    <section className="w-full h-full pb-20 bg-gray-900">
+    <section className="w-full pb-20 bg-gray-900">
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
           <div className="space-y-6 font-sans text-white md:col-span-6">

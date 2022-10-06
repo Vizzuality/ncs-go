@@ -18,7 +18,7 @@ export const SampleCard = ({
   videoUrl,
 }: SampleCardProps) => (
   <div
-    className={`p-10 max-w-fit flex flex-col text-base text-gray-900 text-left bg-${PATHWAY_COLOR[pathway]}`}
+    className={`p-10 max-w-fit flex flex-col text-base text-gray-900 text-left ${PATHWAY_COLOR[pathway]}`}
   >
     <div className="flex space-x-2.5 pb-10">
       <Icon className="w-6 h-6 stroke-gray-900" icon={LOCATION_SVG} />
