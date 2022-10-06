@@ -62,7 +62,7 @@ const Samples = () => {
       <Media lessThan="lg">
         <div className="h-auto pt-4 pb-10">
           <Wrapper>
-            <div className="relative w-full md:px-24">
+            <div className="relative w-full">
               <div className="flex w-full aspect-video">
                 <Video
                   config={videoConfig}
@@ -71,7 +71,8 @@ const Samples = () => {
                   playBackground="bg-white"
                   playColor="text-gray-900"
                   url="https://youtu.be/6PGyRolwFVo"
-                  height="419px"
+                  height="425px"
+                  width="100%"
                 />
               </div>
 
@@ -86,22 +87,22 @@ const Samples = () => {
           </Wrapper>
         </div>
       </Media>
+
       <Media greaterThanOrEqual="lg">
         <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
           <Wrapper>
-            <div className="relative justify-end w-full pb-40">
-              <div className="flex w-full">
-                <Video
-                  config={videoConfig}
-                  playing
-                  loop
-                  playBackground="bg-white"
-                  playColor="text-gray-900"
-                  url="https://youtu.be/6PGyRolwFVo"
-                  height="419px"
-                />
-              </div>
-              <div className="absolute z-10 w-full left-1/4 top-1/3">
+            <div className="relative flex justify-end w-full pb-40">
+              <Video
+                config={videoConfig}
+                playing
+                loop
+                playBackground="bg-white"
+                playColor="text-gray-900"
+                url="https://youtu.be/6PGyRolwFVo"
+                height="419px"
+              />
+
+              <div className="absolute z-10 right-2/4 xl:left-20 top-1/3">
                 <Card
                   country="Dominican Republic"
                   title="Coastal resilience"
