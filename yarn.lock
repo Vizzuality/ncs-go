@@ -25,15 +25,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@artsy/fresnel@npm:3.5.0":
-  version: 3.5.0
-  resolution: "@artsy/fresnel@npm:3.5.0"
-  peerDependencies:
-    react: ">=16.3.0 <18.0.0"
-  checksum: 31d70914669928e36c62729a43241aa366fd1f1bb599bda3816769760ef4dfc8274d0d0db72c8369d449c7031845964c60e791bcecabea6c52a666dfba87297a
-  languageName: node
-  linkType: hard
-
 "@babel/code-frame@npm:7.12.11":
   version: 7.12.11
   resolution: "@babel/code-frame@npm:7.12.11"
@@ -13321,7 +13312,6 @@ __metadata:
   resolution: "ncs-go@workspace:."
   dependencies:
     "@arkweid/lefthook": 0.7.7
-    "@artsy/fresnel": 3.5.0
     "@deck.gl/core": 8.7.8
     "@deck.gl/extensions": 8.7.8
     "@deck.gl/geo-layers": 8.7.8

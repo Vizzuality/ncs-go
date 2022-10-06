@@ -18,7 +18,6 @@
     "node": "~16.14 || ~14"
   },
   "dependencies": {
-    "@artsy/fresnel": "3.5.0",
     "@deck.gl/core": "8.7.8",
     "@deck.gl/extensions": "8.7.8",
     "@deck.gl/geo-layers": "8.7.8",
