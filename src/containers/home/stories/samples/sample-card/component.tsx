@@ -1,5 +1,7 @@
 import React from 'react';
 
+import cx from 'classnames';
+
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
@@ -18,15 +20,18 @@ export const SampleCard = ({
   videoUrl,
 }: SampleCardProps) => (
   <div
-    className={`lg:p-10 p-4 xl:max-w-fit flex flex-col text-base text-gray-900 text-left ${PATHWAY_COLOR[pathway]}`}
+    className={cx({
+      'lg:p-10 p-4 flex flex-col text-base text-gray-900 text-left h-full': true,
+      [PATHWAY_COLOR[pathway]]: true,
+    })}
   >
     <div className="flex space-x-2 xl:space-x-2.5 pb-4 xl:pb-10">
       <Icon className="w-6 h-6 stroke-gray-900" icon={LOCATION_SVG} />
       <p className="font-sans text-base">{country}</p>
     </div>
     <div className="space-y-2.5 font-sans">
-      <h3 className="text-xl max-w-[15ch]">{title}</h3>
-      <h4 className="text-base max-w-[30ch]">{description}</h4>
+      <h3 className="text-xl">{title}</h3>
+      <h4 className="text-base">{description}</h4>
     </div>
     <div className="flex justify-end space-y-10 font-sans text-base pt-14">
       {articleUrl && (
