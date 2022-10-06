@@ -22,16 +22,31 @@ const Samples = () => {
     },
   };
   return (
-    <div className="w-full">
-      {/* <Wrapper>
-        <div className="md:px-24">
-          <div className="relative">
+    <div className="w-full pt-4 pb-10 lg:pb-0">
+      <Media lessThan="lg">
+        <Wrapper>
+          <div
+            style={{ backgroundImage: `url(/images/stories/ghana.png)` }}
+            className="overflow-hidden bg-center bg-no-repeat bg-cover aspect-video"
+          />
+          <Card
+            country="Tanzania"
+            title="Carbon project on conservation site"
+            description="Indigenous-led with key financial schemes to protect biodiversity and benefit local people."
+            pathway="croplands"
+            articleUrl="#"
+          />
+        </Wrapper>
+      </Media>
+
+      <Media greaterThanOrEqual="lg">
+        <Wrapper>
+          <div className="relative mb-44">
             <div
               style={{ backgroundImage: `url(/images/stories/ghana.png)` }}
-              className="overflow-hidden bg-center bg-no-repeat bg-cover md:aspect-auto aspect-video md:w-6/12 xl:w-8/12 xl:h-80"
+              className="overflow-hidden bg-center bg-no-repeat bg-cover h-[419px] w-3/4"
             />
-
-            <div className="xl:absolute -right-40 -bottom-20">
+            <div className="absolute left-2/4 xl:right-20 top-1/3">
               <Card
                 country="Tanzania"
                 title="Carbon project on conservation site"
@@ -41,8 +56,9 @@ const Samples = () => {
               />
             </div>
           </div>
-        </div>
-      </Wrapper> */}
+        </Wrapper>
+      </Media>
+
       <Media lessThan="lg">
         <div className="h-auto pt-4 pb-10">
           <Wrapper>
@@ -71,12 +87,9 @@ const Samples = () => {
         </div>
       </Media>
       <Media greaterThanOrEqual="lg">
-        <div
-          className="h-auto py-20 border border-orange-400"
-          style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
-        >
+        <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
           <Wrapper>
-            <div className="relative justify-end w-full md:px-24">
+            <div className="relative justify-end w-full pb-40">
               <div className="flex w-full">
                 <Video
                   config={videoConfig}
@@ -88,7 +101,7 @@ const Samples = () => {
                   height="419px"
                 />
               </div>
-              <div className="w-full xl:z-10 xl:absolute xl:left-1/4 xl:top-1/3">
+              <div className="absolute z-10 w-full left-1/4 top-1/3">
                 <Card
                   country="Dominican Republic"
                   title="Coastal resilience"
