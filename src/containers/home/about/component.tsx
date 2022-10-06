@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { useHomeStore } from 'store/home';
 
 import { useInView } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
 
 import Features from 'containers/home/about/features';
 import AboutVideo from 'containers/home/about/video';
@@ -10,12 +11,16 @@ import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
 import { Media } from 'components/media-query';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
 
+  const { breakpoint } = useBreakpoint(BREAKPOINTS, 'md');
+
+  console.log({ breakpoint });
   useEffect(() => {
     if (inView) {
       setSection('about');
