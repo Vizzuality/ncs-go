@@ -4,6 +4,9 @@ import dynamic from 'next/dynamic';
 
 import Card from 'containers/home/stories/samples/sample-card';
 import Wrapper from 'containers/wrapper';
+
+import { Media } from 'components/media-query';
+
 const Video = dynamic(() => import('components/video'), {
   ssr: false,
 });
@@ -21,7 +24,7 @@ const Samples = () => {
   return (
     <div className="w-full">
       <Wrapper>
-        <div className="border border-orange-400 md:px-24">
+        <div className="md:px-24">
           <div className="relative">
             <div
               style={{ backgroundImage: `url(/images/stories/ghana.png)` }}
@@ -40,34 +43,64 @@ const Samples = () => {
           </div>
         </div>
       </Wrapper>
-      <div
-        className="h-auto py-4 xl:py-20"
-        style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
-      >
-        <Wrapper>
-          <div className="relative w-full border border-green-400 xl:justify-end md:px-24">
-            <Video
-              config={videoConfig}
-              playing
-              loop
-              playBackground="bg-white"
-              playColor="text-gray-900"
-              url="https://youtu.be/6PGyRolwFVo"
-              height="419px"
-            />
+      <Media lessThan="xl">
+        <div className="h-auto pt-4 pb-10">
+          <Wrapper>
+            <div className="relative w-full md:px-24">
+              <div className="flex w-full aspect-video">
+                <Video
+                  config={videoConfig}
+                  playing
+                  loop
+                  playBackground="bg-white"
+                  playColor="text-gray-900"
+                  url="https://youtu.be/6PGyRolwFVo"
+                  height="419px"
+                />
+              </div>
 
-            {/* <div className="w-full xl:z-10 xl:absolute xl:left-1/4 xl:top-1/3"> */}
-            <Card
-              country="Dominican Republic"
-              title="Coastal resilience"
-              description="Mangroves and coral reefs restoration."
-              pathway="wetlands"
-              videoUrl="#"
-            />
-            {/* </div> */}
-          </div>
-        </Wrapper>
-      </div>
+              <Card
+                country="Dominican Republic"
+                title="Coastal resilience"
+                description="Mangroves and coral reefs restoration."
+                pathway="wetlands"
+                videoUrl="#"
+              />
+            </div>
+          </Wrapper>
+        </div>
+      </Media>
+      <Media greaterThan="xl">
+        <div
+          className="h-auto py-20"
+          style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
+        >
+          <Wrapper>
+            <div className="relative justify-end w-full md:px-24">
+              <div className="flex w-full">
+                <Video
+                  config={videoConfig}
+                  playing
+                  loop
+                  playBackground="bg-white"
+                  playColor="text-gray-900"
+                  url="https://youtu.be/6PGyRolwFVo"
+                  height="419px"
+                />
+              </div>
+              <div className="w-full xl:z-10 xl:absolute xl:left-1/4 xl:top-1/3">
+                <Card
+                  country="Dominican Republic"
+                  title="Coastal resilience"
+                  description="Mangroves and coral reefs restoration."
+                  pathway="wetlands"
+                  videoUrl="#"
+                />
+              </div>
+            </div>
+          </Wrapper>
+        </div>
+      </Media>
     </div>
   );
 };
