@@ -23,7 +23,7 @@ const Samples = () => {
   };
   return (
     <div className="w-full">
-      <Wrapper>
+      {/* <Wrapper>
         <div className="md:px-24">
           <div className="relative">
             <div
@@ -42,8 +42,8 @@ const Samples = () => {
             </div>
           </div>
         </div>
-      </Wrapper>
-      <Media lessThan="xl">
+      </Wrapper> */}
+      <Media lessThan="lg">
         <div className="h-auto pt-4 pb-10">
           <Wrapper>
             <div className="relative w-full md:px-24">
@@ -70,9 +70,9 @@ const Samples = () => {
           </Wrapper>
         </div>
       </Media>
-      <Media greaterThan="xl">
+      <Media greaterThanOrEqual="lg">
         <div
-          className="h-auto py-20"
+          className="h-auto py-20 border border-orange-400"
           style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
         >
           <Wrapper>
