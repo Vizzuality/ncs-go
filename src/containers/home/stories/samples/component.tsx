@@ -46,19 +46,21 @@ const Samples = () => {
           </div>
         </div>
       </Wrapper>
-      <div className="relative" style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
+      <div
+        className="relative h-auto border border-orange-400"
+        style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
+      >
         <Wrapper>
-          <div className="justify-center w-full grid-cols-12 aspect-video">
+          <div className="justify-center grid-cols-12">
             <Video
               config={videoConfig}
               playing
               loop
               url="https://youtu.be/6PGyRolwFVo"
-              height="50%"
-              width="50%"
+              height="419px"
             />
 
-            <div className="absolute right-0 bottom-20">
+            <div className="absolute -left-20 top-40">
               <Card
                 country="Dominican Republic"
                 title="Coastal resilience"

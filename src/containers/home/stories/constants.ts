@@ -1,8 +1,8 @@
 export const PATHWAY_COLOR = {
-  forest: 'green-400',
-  wetlands: 'blue-400',
-  croplands: 'orange-400',
-  grasslands: 'brown-400',
-  shrublands: 'brown-400',
-  savana: 'brown-400',
+  forest: 'bg-green-400',
+  wetlands: 'bg-blue-400',
+  croplands: 'bg-orange-400',
+  grasslands: 'bg-brown-400',
+  shrublands: 'bg-brown-400',
+  savana: 'bg-brown-400',
 };

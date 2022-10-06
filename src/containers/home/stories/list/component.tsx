@@ -13,8 +13,8 @@ const List = () => {
       <div className="px-4 py-10 md:pb-28 md:px-24">
         <Hero className="text-white" subtitle="Want more examples?" />
       </div>
-      <div className="md:grid md:grid-cols-12">
-        <div className="flex flex-col space-y-4 md:px-24 md:col-span-10 md:col-start-2">
+      <div className="lg:grid lg:grid-cols-12">
+        <div className="flex flex-col space-y-4 lg:px-24 lg:col-span-10 lg:col-start-2">
           {STORIES.map((s) => (
             <div key={s.id}>
               <StoryCard

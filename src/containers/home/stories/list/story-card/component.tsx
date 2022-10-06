@@ -1,7 +1,5 @@
 import React from 'react';
 
-import Image from 'next/image';
-
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
@@ -23,16 +21,13 @@ export const StoryCard = ({
 }: StoryCardProps) => {
   return (
     <div className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row">
-      <div className={`md:w-2 h-2 md:h-auto w-full bg-${PATHWAY_COLOR[pathway]}`} />
-      <div className="w-full h-full">
-        <Image
-          src={`/images/stories/${image}`}
-          alt={title}
-          width={200}
-          height={50}
-          layout="responsive"
-        />
-      </div>
+      <div className={`md:w-2 h-2 md:h-auto w-full ${PATHWAY_COLOR[pathway]}`} />
+
+      <div
+        style={{ backgroundImage: `url(/images/stories/${image})` }}
+        className="overflow-hidden bg-center bg-no-repeat bg-cover md:aspect-auto aspect-video md:w-6/12 lg:w-5/12 lg:h-full"
+      />
+
       <div className="w-full px-6 py-10 space-y-6 md:px-10 md:py-6">
         <div className="flex space-x-2.5">
           <Icon className="w-6 h-6 stroke-white" icon={LOCATION_SVG} />
