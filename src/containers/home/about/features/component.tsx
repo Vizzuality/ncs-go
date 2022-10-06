@@ -7,22 +7,22 @@ import { FEATURES } from './constants';
 
 const Features = () => {
   return (
-    <div className="bg-gray-900 md:pb-28">
-      <div className="px-4 py-10 md:py-32 md:px-24">
+    <>
+      <div className="py-10 md:py-32">
         <Hero
           className="text-white"
           title="Features"
           subtitle="A home base for all decision-makers interested in unlocking the power of nature to preserve our living planet."
         />
       </div>
-      <div className="grid md:grid-flow-col md:grid-rows-4 xl:grid-rows-2 md:px-24">
+      <div className="grid md:grid-flow-col md:grid-rows-4 xl:grid-rows-2">
         {FEATURES.map((f) => (
           <div key={f.key} className={`order-${f.key}`}>
             <FeatureCard description={f.description} icon={f.icon} />
           </div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
