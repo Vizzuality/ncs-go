@@ -4,7 +4,8 @@ import dynamic from 'next/dynamic';
 
 import useBreakpoint from 'use-breakpoint';
 
-import Card from 'containers/home/stories/samples/sample-card';
+import SampleComposition from 'containers/home/stories/samples/sample-composition';
+import Card from 'containers/home/stories/samples/sample-composition/sample-card';
 import Wrapper from 'containers/wrapper';
 
 import { BREAKPOINTS } from 'styles/styles.config';
@@ -34,55 +35,48 @@ const Samples = () => {
     >
       <Wrapper>
         <div className="lg:space-y-44">
-          <div className="lg:grid lg:grid-cols-12">
-            <div className="relative lg:col-span-7 lg:col-start-2">
+          <SampleComposition
+            align="left"
+            media={
               <div
                 style={{ backgroundImage: `url(/images/stories/ghana.png)` }}
                 className="overflow-hidden bg-center bg-no-repeat bg-cover aspect-video"
               />
-
-              <div className="w-full lg:absolute left-full top-1/3">
-                <div className="w-full lg:max-w-[400px] lg:-translate-x-1/2">
-                  <Card
-                    country="Tanzania"
-                    title="Carbon project on conservation site"
-                    description="Indigenous-led with key financial schemes to protect biodiversity and benefit local people."
-                    pathway="croplands"
-                    articleUrl="#"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div className="lg:grid lg:grid-cols-12">
-            <div className="relative lg:col-span-7 lg:col-start-5">
-              <div className="aspect-video">
-                <Video
-                  config={videoConfig}
-                  playing
-                  loop
-                  playBackground="bg-white"
-                  playColor="text-gray-900"
-                  url="https://youtu.be/6PGyRolwFVo"
-                  height="100%"
-                  width="100%"
-                />
-              </div>
-
-              <div className="left-0 w-full lg:absolute top-1/3">
-                <div className="w-full lg:max-w-[400px] lg:-translate-x-1/2">
-                  <Card
-                    country="Dominican Republic"
-                    title="Coastal resilience"
-                    description="Mangroves and coral reefs restoration."
-                    pathway="wetlands"
-                    videoUrl="#"
-                  />
-                </div>
-              </div>
-            </div>
-          </div>
+            }
+            card={
+              <Card
+                country="Tanzania"
+                title="Carbon project on conservation site"
+                description="Indigenous-led with key financial schemes to protect biodiversity and benefit local people."
+                pathway="croplands"
+                articleUrl="#"
+              />
+            }
+          />
+          <SampleComposition
+            align="right"
+            media={
+              <Video
+                config={videoConfig}
+                playing
+                loop
+                playBackground="bg-white"
+                playColor="text-gray-900"
+                url="https://youtu.be/6PGyRolwFVo"
+                height="100%"
+                width="100%"
+              />
+            }
+            card={
+              <Card
+                country="Dominican Republic"
+                title="Coastal resilience"
+                description="Mangroves and coral reefs restoration."
+                pathway="wetlands"
+                videoUrl="#"
+              />
+            }
+          />
         </div>
       </Wrapper>
     </div>

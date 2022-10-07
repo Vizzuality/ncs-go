@@ -1,5 +1,7 @@
 import React from 'react';
 
+import cx from 'classnames';
+
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
@@ -21,7 +23,12 @@ export const StoryCard = ({
 }: StoryCardProps) => {
   return (
     <div className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row">
-      <div className={`md:w-2 h-2 md:h-auto w-full ${PATHWAY_COLOR[pathway]}`} />
+      <div
+        className={cx({
+          'md:w-2 h-2 md:h-auto w-full': true,
+          [PATHWAY_COLOR[pathway]]: true,
+        })}
+      />
 
       <div
         style={{ backgroundImage: `url(/images/stories/${image})` }}
