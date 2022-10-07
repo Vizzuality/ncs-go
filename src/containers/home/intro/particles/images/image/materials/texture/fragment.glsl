@@ -9,5 +9,5 @@ void main() {
   vec4 color = texture2D(uTexture, uv);
   float opacity = smoothstep(0.0, 0.5, uv.y) + 0.1;
 
-  gl_FragColor = vec4(color);
+  gl_FragColor = vec4(color.xyz, opacity);
 }

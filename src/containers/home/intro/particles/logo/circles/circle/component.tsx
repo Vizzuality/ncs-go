@@ -75,6 +75,7 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
   return (
     <mesh ref={meshRef} key={`${p.id}`}>
       <circleGeometry args={[size / 100, 32]} />
+
       <circleMaterial
         ref={materialRef}
         // Position
