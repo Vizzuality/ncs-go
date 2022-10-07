@@ -260,11 +260,11 @@ export const STEPS = [
       let pos = [];
 
       // const RECT_POINTS = getRectPoints(120, 2, 2);
-      const SPIRAL_POINTS = getSpiralPoints(120, 1.1, 0);
+      const SPIRAL_POINTS = getSpiralPoints(120, 1.15, 0);
 
       for (let i = 0; i < count; i++) {
         const { x, y, z } = SPIRAL_POINTS[Math.floor(Math.random() * SPIRAL_POINTS.length)];
-        pos.push({ id: i, x, y, z });
+        pos.push({ id: i, x, y: y + 0.0001, z });
       }
       return pos;
     },
