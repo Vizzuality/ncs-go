@@ -26,7 +26,7 @@ const About = () => {
   });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id="about">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-0 lg:pt-32">
           <Hero

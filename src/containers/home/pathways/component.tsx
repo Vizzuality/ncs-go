@@ -19,7 +19,7 @@ const Pathways = () => {
   });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id="featured-science">
       <Wrapper>
         <div className="pt-20 pb-20">
           <Hero

@@ -21,7 +21,7 @@ const Stories = () => {
   });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id="stories">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-20 lg:pt-28">
           <Hero
