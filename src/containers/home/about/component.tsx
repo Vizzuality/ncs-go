@@ -3,18 +3,21 @@ import React, { useEffect, useRef } from 'react';
 import { useHomeStore } from 'store/home';
 
 import { useInView } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
 
 import Features from 'containers/home/about/features';
 import AboutVideo from 'containers/home/about/video';
 import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
-import { Media } from 'components/media-query';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
+
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   useEffect(() => {
     if (inView) {
@@ -25,7 +28,7 @@ const About = () => {
   return (
     <div ref={ref}>
       <Wrapper>
-        <div className="pt-10 pb-4 md:pb-0 md:pt-32 ">
+        <div className="pt-10 pb-4 lg:pb-0 lg:pt-32">
           <Hero
             className="text-gray-800"
             title="About Naturebase"
@@ -34,13 +37,11 @@ const About = () => {
         </div>
       </Wrapper>
 
-      <Media lessThan="md">
-        <AboutVideo />
-      </Media>
+      {minWidth < BREAKPOINTS.md && <AboutVideo />}
 
       <Wrapper>
-        <div className="pt-4 pb-10 font-sans text-base text-gray-800 md:py-20 md:text-lg md:grid md:grid-cols-3 md:gap-10">
-          <div className="col-start-2 pb-4 md:pb-0">
+        <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+          <div className="col-start-2 pb-4 lg:pb-0">
             <p>
               Naturebase will bring together science-based data on nature’s pathways to mitigate
               climate change across every region of the planet, combining them with the latest
@@ -63,11 +64,13 @@ const About = () => {
         </div>
       </Wrapper>
 
-      <Media greaterThan="md">
-        <AboutVideo />
-      </Media>
+      {minWidth >= BREAKPOINTS.md && <AboutVideo />}
 
-      <Features />
+      <div className="bg-gray-900 md:pb-28">
+        <Wrapper>
+          <Features />
+        </Wrapper>
+      </div>
     </div>
   );
 };

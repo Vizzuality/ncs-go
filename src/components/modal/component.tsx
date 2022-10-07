@@ -8,14 +8,16 @@ import {
   FloatingFocusManager,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
 
-import { Media } from 'components/media-query';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 import ModalContent from './content';
 import { OVERLAY_CLASSES } from './content/constants';
 import { ModalProps } from './types';
 
 export const Modal = (props: ModalProps) => {
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
   const { open, onOpenChange, dismissable } = props;
   const { floating, context } = useFloating({
     open,
@@ -55,27 +57,26 @@ export const Modal = (props: ModalProps) => {
             >
               <FloatingFocusManager context={context}>
                 <>
-                  <Media
-                    lessThan="sm"
-                    className="absolute flex flex-col w-full h-full pointer-events-none grow"
-                  >
-                    <ModalContent
-                      {...props}
-                      floating={floating}
-                      getFloatingProps={getFloatingProps}
-                    />
-                  </Media>
-                  <Media
-                    greaterThanOrEqual="sm"
-                    className="absolute flex flex-col w-full h-full pointer-events-none grow"
-                  >
-                    <ModalContent
-                      {...props}
-                      viewport="sm"
-                      floating={floating}
-                      getFloatingProps={getFloatingProps}
-                    />
-                  </Media>
+                  {minWidth < BREAKPOINTS.sm && (
+                    <div className="absolute flex flex-col w-full h-full pointer-events-none grow">
+                      <ModalContent
+                        {...props}
+                        floating={floating}
+                        getFloatingProps={getFloatingProps}
+                      />
+                    </div>
+                  )}
+
+                  {minWidth >= BREAKPOINTS.sm && (
+                    <div className="absolute flex flex-col w-full h-full pointer-events-none grow">
+                      <ModalContent
+                        {...props}
+                        viewport="sm"
+                        floating={floating}
+                        getFloatingProps={getFloatingProps}
+                      />
+                    </div>
+                  )}
                 </>
               </FloatingFocusManager>
             </motion.div>

@@ -9,7 +9,6 @@ import { QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query
 
 import ThirdParty from 'containers/third-party';
 
-import { MediaContextProvider } from 'components/media-query';
 import { GAPage } from 'lib/analytics/ga';
 
 import 'styles/globals.css';
@@ -37,12 +36,11 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
     <QueryClientProvider client={queryClient}>
       <Hydrate state={pageProps.dehydratedState}>
         {/* @ts-ignore: https://github.com/artsy/fresnel/issues/281 */}
-        <MediaContextProvider>
-          <MapProvider>
-            <ThirdParty />
-            <Component {...pageProps} />
-          </MapProvider>
-        </MediaContextProvider>
+
+        <MapProvider>
+          <ThirdParty />
+          <Component {...pageProps} />
+        </MapProvider>
       </Hydrate>
     </QueryClientProvider>
   );
