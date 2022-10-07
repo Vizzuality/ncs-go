@@ -15,7 +15,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => (
 
       <div
         className={cx({
-          ' w-full lg:absolute top-1/3': true,
+          'w-full lg:w-[408px] lg:absolute top-1/3': true,
           'left-full': align === 'left',
           'left-0': align === 'right',
         })}

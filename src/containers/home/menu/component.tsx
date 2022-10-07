@@ -1,19 +1,21 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import useBreakpoint from 'use-breakpoint';
 
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import Modal from 'components/modal';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 import { NAV_OPTIONS } from './constants';
 
 const Menu: React.FC = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+  const [openModal, setOpenModal] = useState(false);
 
   return (
-    <section className="fixed z-20 w-full font-sans text-white bg-gray-900">
+    <section className="fixed z-10 w-full font-sans text-white bg-gray-900">
       {minWidth < BREAKPOINTS.lg && <Wrapper>Menu Mobile</Wrapper>}
       {minWidth >= BREAKPOINTS.lg && (
         <Wrapper>
@@ -28,13 +30,23 @@ const Menu: React.FC = () => {
               className="rounded-[100px] h-16"
               theme="secondary"
               size="xs"
-              onClick={() => console.info('Subscribe')}
+              onClick={() => setOpenModal(true)}
             >
               Subscribe
             </Button>
           </div>
         </Wrapper>
       )}
+      <Modal
+        size="default"
+        open={openModal}
+        title=""
+        onOpenChange={() => {
+          setOpenModal(false);
+        }}
+      >
+        Subscribe modal
+      </Modal>
     </section>
   );
 };
