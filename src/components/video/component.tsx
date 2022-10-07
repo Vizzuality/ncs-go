@@ -14,14 +14,25 @@ const PlayControl = ({ playBackground, playColor }) => {
   return (
     <div className="relative">
       <div
-        className={`flex w-20 h-20 rounded-full opacity-25 md:w-40 md:h-40 ${playBackground}`}
+        className={cx({
+          'flex w-20 h-20 rounded-full opacity-25 md:w-40 md:h-40': true,
+          [playBackground]: true,
+        })}
       ></div>
       <div
-        className={`absolute z-10 flex items-center justify-center w-16 h-16 rounded-full md:w-32 md:h-32 ${playBackground} top-2 left-2 md:top-4 md:left-4`}
+        className={cx({
+          'absolute z-10 flex items-center justify-center w-16 h-16 rounded-full md:w-32 md:h-32  top-2 left-2 md:top-4 md:left-4':
+            true,
+          [playBackground]: true,
+        })}
       >
         <Icon
           icon={PLAY_SVG}
-          className={`inline-block md:w-5 h-4 w-2.5 md:h-8 ${playColor} ${playBackground}`}
+          className={cx({
+            'inline-block md:w-5 h-4 w-2.5 md:h-8': true,
+            [playBackground]: true,
+            [playColor]: true,
+          })}
         />
       </div>
     </div>
