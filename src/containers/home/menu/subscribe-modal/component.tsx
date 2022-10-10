@@ -4,15 +4,14 @@ import { Form, Field } from 'react-final-form';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 
+import type { MenuModalProps } from 'containers/home/menu/types';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Modal from 'components/modal';
 
-import type { SubscribeModalProps } from './types';
-
-const SubscribeModal = ({ openModal, setOpenModal }: SubscribeModalProps) => {
+const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
   const [submitting, setSubmitting] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
