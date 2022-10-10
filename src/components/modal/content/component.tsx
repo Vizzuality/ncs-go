@@ -41,9 +41,9 @@ export const ModalContent: FC<ModalContentProps> = ({
           <Icon
             icon={CLOSE_SVG}
             className={cx({
-              'inline-block w-8 h-8': true,
-              'text-black': theme === 'light',
-              'text-white': theme === 'dark',
+              'inline-block w-7 h-7': true,
+              'stroke-black': theme === 'light',
+              'stroke-white': theme === 'dark',
             })}
           />
         </button>
