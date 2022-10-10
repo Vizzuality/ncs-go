@@ -14,7 +14,9 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
   const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const trackEl = useRef(null);
+  const inView = useInView(ref);
+  const trackElInView = useInView(trackEl);
   const setSection = useHomeStore((state) => state.setSection);
   const setHeader = useHomeStore((state) => state.setHeader);
 
@@ -23,6 +25,11 @@ const About = () => {
   useEffect(() => {
     if (inView) {
       setSection('about');
+    }
+  });
+
+  useEffect(() => {
+    if (trackElInView) {
       setHeader(true);
     }
   });
@@ -56,7 +63,7 @@ const About = () => {
               Scientists, practitioners, policymakers and experts can find their way to enact
               nature’s full transformative potential.
             </p>
-            <p>
+            <p ref={trackEl}>
               You will be able to navigate through the different regions and biomes, capturing real
               up-to-date information at a global, national and local level, and understand which of
               nature’s pathways offer the best potential for reducing emissions at the same time as

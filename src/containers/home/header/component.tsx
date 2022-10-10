@@ -24,8 +24,6 @@ const Header: React.FC = () => {
   const setSection = useHomeStore((state) => state.setSection);
   const header = useHomeStore((state) => state.header);
 
-  console.log({ header });
-
   useEffect(() => {
     if (inView) {
       setSection('header');
