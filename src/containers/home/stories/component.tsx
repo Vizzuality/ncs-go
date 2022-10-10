@@ -23,9 +23,9 @@ const Stories = () => {
   return (
     <div ref={ref} id="stories">
       <Wrapper>
-        <div className="pt-10 pb-4 lg:pb-20 lg:pt-28">
+        <div className="pt-10 pb-4 lg:pb-20 lg:pt-28 lg:grid lg:grid-cols-3">
           <Hero
-            className="text-gray-800"
+            className="col-span-2 col-start-1 text-gray-800"
             title="Stories"
             subtitle="Here are some of the stories we have heard from the ground."
           />

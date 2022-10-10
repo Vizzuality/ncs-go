@@ -22,13 +22,12 @@ const Pathways = () => {
     <div ref={ref} id="featured-science" className="py-10 lg:pt-32">
       <Wrapper>
         <div className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
-          <div className="col-span-2 col-start-1">
-            <Hero
-              className="text-gray-800"
-              title="featured science"
-              subtitle="What nature can do for the climate?"
-            />
-          </div>
+          <Hero
+            className="col-span-2 col-start-1 text-gray-800"
+            title="featured science"
+            subtitle="What nature can do for the climate?"
+          />
+
           <div className="col-start-1 py-4 lg:pb-0">
             <p>
               Nature-based solutions are known for protecting, sustainably managing, and restoring
@@ -45,13 +44,12 @@ const Pathways = () => {
           </div>
         </div>
         <div className="pt-4 space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
-          <div className="col-span-2 col-start-1">
-            <Hero
-              className="text-gray-800"
-              title="Pathways"
-              subtitle="Solutions can be found within our grasslands, wetlands, forests and drylands."
-            />
-          </div>
+          <Hero
+            className="col-span-2 col-start-1 text-gray-800"
+            title="Pathways"
+            subtitle="Solutions can be found within our grasslands, wetlands, forests and drylands."
+          />
+
           <div className="col-start-3 lg:pt-6">
             <p>
               There are 20 science-backed effective approaches, or pathways, to nurture the best of
