@@ -30,22 +30,23 @@ const Header: React.FC = () => {
   });
 
   return (
-    <div ref={ref}>
+    <section
+      ref={ref}
+      className="sticky top-0 left-0 z-10 w-full h-24 font-sans text-center text-white bg-gray-900"
+    >
       {minWidth < BREAKPOINTS.lg && (
         <>
-          <section className="sticky top-0 left-0 z-10 w-full h-24 font-sans text-center text-white bg-gray-900">
-            <Wrapper>
-              <div className="absolute top-9 right-8">
-                <MenuButton
-                  isOpen={openModal}
-                  onClick={() => setOpenModal(!openModal)}
-                  transition={{ ease: 'easeOut', duration: 0.3 }}
-                  width={40}
-                  height={40}
-                />
-              </div>
-            </Wrapper>
-          </section>
+          <Wrapper>
+            <div className="absolute top-9 right-8">
+              <MenuButton
+                isOpen={openModal}
+                onClick={() => setOpenModal(!openModal)}
+                transition={{ ease: 'easeOut', duration: 0.3 }}
+                width={40}
+                height={40}
+              />
+            </div>
+          </Wrapper>
 
           <MobileMenuModal openModal={openModal} setOpenModal={setOpenModal} />
         </>
@@ -53,30 +54,29 @@ const Header: React.FC = () => {
 
       {minWidth >= BREAKPOINTS.lg && (
         <>
-          <section className="sticky top-0 left-0 z-10 w-full font-sans text-white bg-gray-900">
-            <Wrapper>
-              <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
-                {NAV_OPTIONS.map((o) => (
-                  <a href={o.id} key={o.id}>
-                    {o.label}
-                  </a>
-                ))}
+          <Wrapper>
+            <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
+              {NAV_OPTIONS.map((o) => (
+                <a href={o.id} key={o.id}>
+                  {o.label}
+                </a>
+              ))}
 
-                <Button
-                  className="rounded-[100px] h-16"
-                  theme="secondary"
-                  size="xs"
-                  onClick={() => setOpenModal(true)}
-                >
-                  Subscribe
-                </Button>
-              </div>
-            </Wrapper>
-          </section>
+              <Button
+                className="rounded-[100px] h-16"
+                theme="secondary"
+                size="xs"
+                onClick={() => setOpenModal(true)}
+              >
+                Subscribe
+              </Button>
+            </div>
+          </Wrapper>
+
           <SubscribeModal setOpenModal={setOpenModal} openModal={openModal} />
         </>
       )}
-    </div>
+    </section>
   );
 };
 
