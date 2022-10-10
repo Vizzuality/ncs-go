@@ -45,11 +45,16 @@ const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
         setOpenModal(false);
       }}
     >
-      <section className="fixed z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
+      <section className="z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
         <Wrapper>
           <div className="flex flex-col py-32 space-y-10">
             {NAV_OPTIONS.map((o) => (
-              <a href={o.id} key={o.id} className="text-lg text-white">
+              <a
+                href={o.id}
+                key={o.id}
+                className="text-lg text-white"
+                onClick={() => setOpenModal(false)}
+              >
                 {o.label}
               </a>
             ))}

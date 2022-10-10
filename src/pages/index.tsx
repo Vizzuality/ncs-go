@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   const section = useHomeStore((state) => state.section);
   const ref = useRef();
 
-  const inView = useInView(ref, { margin: '100% 0px 0px 0px' });
+  const inView = useInView(ref);
 
   return (
     <div

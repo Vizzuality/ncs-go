@@ -20,9 +20,9 @@ const Menu: React.FC = () => {
     <div className="relative">
       {minWidth < BREAKPOINTS.lg && (
         <>
-          <section className="relative z-10 w-full h-24 font-sans text-center text-white bg-gray-900">
+          <section className="fixed z-10 w-full h-24 font-sans text-center text-white bg-gray-900">
             <Wrapper>
-              <div className="absolute top-9 right-7">
+              <div className="absolute top-9 right-8">
                 <MenuButton
                   isOpen={openModal}
                   onClick={() => setOpenModal(!openModal)}
