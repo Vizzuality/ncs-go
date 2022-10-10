@@ -22,6 +22,9 @@ const Header: React.FC = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
+  const header = useHomeStore((state) => state.header);
+
+  console.log({ header });
 
   useEffect(() => {
     if (inView) {
@@ -34,7 +37,7 @@ const Header: React.FC = () => {
       ref={ref}
       className="sticky top-0 left-0 z-10 w-full h-24 font-sans text-center text-white bg-gray-900"
     >
-      {minWidth < BREAKPOINTS.lg && (
+      {minWidth < BREAKPOINTS.lg && header && (
         <>
           <Wrapper>
             <div className="absolute top-9 right-8">
@@ -52,7 +55,7 @@ const Header: React.FC = () => {
         </>
       )}
 
-      {minWidth >= BREAKPOINTS.lg && (
+      {minWidth >= BREAKPOINTS.lg && header && (
         <>
           <Wrapper>
             <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
