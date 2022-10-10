@@ -4,7 +4,7 @@ import { Form, Field } from 'react-final-form';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 
-import type { MenuModalProps } from 'containers/home/menu/types';
+import type { MenuModalProps } from 'containers/home/header/types';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';

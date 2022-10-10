@@ -1,10 +1,13 @@
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
+import { useHomeStore } from 'store/home';
+
+import { useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
-import MobileMenuModal from 'containers/home/menu/mobile-menu-modal';
-import MenuButton from 'containers/home/menu/mobile-menu-modal/menu-button';
-import SubscribeModal from 'containers/home/menu/subscribe-modal';
+import MobileMenuModal from 'containers/home/header/mobile-menu-modal';
+import MenuButton from 'containers/home/header/mobile-menu-modal/menu-button';
+import SubscribeModal from 'containers/home/header/subscribe-modal';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -12,15 +15,25 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 import { NAV_OPTIONS } from './constants';
 
-const Menu: React.FC = () => {
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+const Header: React.FC = () => {
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'xxs');
   const [openModal, setOpenModal] = useState(false);
 
+  const ref = useRef();
+  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const setSection = useHomeStore((state) => state.setSection);
+
+  useEffect(() => {
+    if (inView) {
+      setSection('header');
+    }
+  });
+
   return (
-    <div className="relative">
+    <div ref={ref}>
       {minWidth < BREAKPOINTS.lg && (
         <>
-          <section className="fixed z-10 w-full h-24 font-sans text-center text-white bg-gray-900">
+          <section className="sticky top-0 left-0 z-10 w-full h-24 font-sans text-center text-white bg-gray-900">
             <Wrapper>
               <div className="absolute top-9 right-8">
                 <MenuButton
@@ -37,9 +50,10 @@ const Menu: React.FC = () => {
           <MobileMenuModal openModal={openModal} setOpenModal={setOpenModal} />
         </>
       )}
+
       {minWidth >= BREAKPOINTS.lg && (
         <>
-          <section className="fixed z-10 w-full font-sans text-white bg-gray-900">
+          <section className="sticky top-0 left-0 z-10 w-full font-sans text-white bg-gray-900">
             <Wrapper>
               <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
                 {NAV_OPTIONS.map((o) => (
@@ -66,4 +80,4 @@ const Menu: React.FC = () => {
   );
 };
 
-export default Menu;
+export default Header;
