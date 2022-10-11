@@ -1,4 +1,5 @@
 import { shaderMaterial } from '@react-three/drei';
+import glslify from 'glslify';
 import FRAGMENT from 'raw-loader!glslify-loader!./fragment.glsl';
 import VERTEX from 'raw-loader!glslify-loader!./vertex.glsl';
 
@@ -23,10 +24,11 @@ export const CircleMaterial = shaderMaterial(
     uNoise: 0,
     uPrevNoise: 0,
 
-    uVelocity: 0,
+    uVelocity: [0, 0],
+    uPrevVelocity: [0, 0],
   },
-  VERTEX,
-  FRAGMENT
+  glslify(VERTEX),
+  glslify(FRAGMENT)
 );
 
 export default CircleMaterial;

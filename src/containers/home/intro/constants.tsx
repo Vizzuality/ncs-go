@@ -144,6 +144,10 @@ export const STEPS = [
     },
     getAnimations: () => {
       return {
+        initial: {
+          y: 0.75,
+          rotateZ: 0,
+        },
         animate: {
           y: 0.75,
           rotateZ: 0,
@@ -172,8 +176,8 @@ export const STEPS = [
 
       for (let i = 0; i < count; i++) {
         const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-        const x = ((radius * 0.5) / 100) * Math.cos((-randomAngle * Math.PI) / 180);
-        const y = ((radius * 0.5) / 100) * Math.sin((-randomAngle * Math.PI) / 180);
+        const x = ((radius * 0.6) / 100) * Math.cos((-randomAngle * Math.PI) / 180);
+        const y = ((radius * 0.6) / 100) * Math.sin((-randomAngle * Math.PI) / 180);
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -240,7 +244,7 @@ export const STEPS = [
       };
     },
     getNoise: () => {
-      return 0.075;
+      return 0.125;
     },
   },
   {
@@ -285,7 +289,7 @@ export const STEPS = [
       };
     },
     getNoise: () => {
-      return 0.025;
+      return 0.075;
     },
   },
   {
