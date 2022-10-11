@@ -12,7 +12,6 @@ import useBreakpoint from 'use-breakpoint';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 import ModalContent from './content';
-import { OVERLAY_CLASSES } from './content/constants';
 import { ModalProps } from './types';
 
 export const FullScreenModal = (props: ModalProps) => {
@@ -51,7 +50,7 @@ export const FullScreenModal = (props: ModalProps) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className={OVERLAY_CLASSES}
+            className="absolute inset-0 z-50 bg-black bg-blur"
           >
             <FloatingFocusManager context={context}>
               <>

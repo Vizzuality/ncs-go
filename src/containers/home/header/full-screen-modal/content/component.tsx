@@ -8,11 +8,9 @@ import Icon from 'components/icon';
 
 import CLOSE_SVG from 'svgs/close.svg?sprite';
 
-import { CONTENT_CLASSES } from './constants';
 import type { FullScreenModalProps } from './types';
 
 export const FullScreenModal: FC<FullScreenModalProps> = ({
-  size = 'default',
   children,
   className,
   theme = 'light',
@@ -25,7 +23,11 @@ export const FullScreenModal: FC<FullScreenModalProps> = ({
       initial="initial"
       animate="animate"
       exit="exit"
-      className={cx({ [CONTENT_CLASSES[size]]: true, [className]: !!className })}
+      className={cx({
+        'pointer-events-auto w-full h-full outline-none bg-white flex flex-col overflow-hidden lg:5/5':
+          true,
+        [className]: !!className,
+      })}
       {...getFloatingProps({
         ref: floating,
       })}

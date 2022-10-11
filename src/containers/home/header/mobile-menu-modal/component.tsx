@@ -37,9 +37,7 @@ const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
 
   return (
     <FullScreenModal
-      size="default"
       open={openModal}
-      title=""
       theme="dark"
       onOpenChange={() => {
         setOpenModal(false);

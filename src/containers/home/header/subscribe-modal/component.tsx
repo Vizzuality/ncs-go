@@ -37,9 +37,7 @@ const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
   return (
     <div className="relative">
       <FullScreenModal
-        size="default"
         open={openModal}
-        title=""
         onOpenChange={() => {
           setOpenModal(false);
         }}
