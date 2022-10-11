@@ -21,8 +21,10 @@ const Header: React.FC = () => {
 
   const openMenu = useUIStore((state) => state.openMenu);
   const menu = useUIStore((state) => state.menu);
+  const section = useHomeStore((state) => state.section);
   const setSection = useHomeStore((state) => state.setSection);
   const header = useHomeStore((state) => state.header);
+  const setHeader = useHomeStore((state) => state.setHeader);
 
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
@@ -32,6 +34,10 @@ const Header: React.FC = () => {
       setSection('header');
     }
   });
+
+  useEffect(() => {
+    setHeader(section !== 'intro');
+  }, [section, setHeader]);
 
   return (
     <section
