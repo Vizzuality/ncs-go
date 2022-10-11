@@ -2,6 +2,7 @@ import React, { useCallback, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
@@ -10,6 +11,7 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
+import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
@@ -42,17 +44,19 @@ const Contact: React.FC = () => {
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
           <div className="space-y-6 font-sans text-white md:col-span-6">
-            <h2 className="text-xl md:text-2xl">Keep up to date</h2>
-            <p className="text-base leading-7 md:text-lg">
+            <motion.h2 className="text-xl md:text-2xl" {...IN_VIEW_PROPS}>
+              Keep up to date
+            </motion.h2>
+            <motion.p className="text-base leading-7 md:text-lg" {...IN_VIEW_PROPS}>
               Subscribe to keep up to date on our progress and be among the first to access our
               platform.
-            </p>
+            </motion.p>
 
             {minWidth >= BREAKPOINTS.xl && (
-              <p className="text-sm leading-7 md:text-base opacity-80">
+              <motion.p className="text-sm leading-7 md:text-base opacity-80" {...IN_VIEW_PROPS}>
                 Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
                 Global Stocktake in 2023.
-              </p>
+              </motion.p>
             )}
           </div>
 
@@ -66,7 +70,7 @@ const Contact: React.FC = () => {
                     validate={composeValidators([{ presence: true, email: true }])}
                   >
                     {({ input, meta }) => (
-                      <div className="relative w-full">
+                      <motion.div className="relative w-full" {...IN_VIEW_PROPS}>
                         <input
                           {...input}
                           value={input.value as string}
@@ -79,27 +83,32 @@ const Contact: React.FC = () => {
                             {meta.error.join('. ')}
                           </p>
                         )}
-                      </div>
+                      </motion.div>
                     )}
                   </Field>
-                  <Button
-                    disabled={submitting}
-                    size="s"
-                    theme="primary"
-                    type="submit"
-                    className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
-                  >
-                    <p>Subscribe</p>
-                  </Button>
+                  <motion.div className="w-full" {...IN_VIEW_PROPS}>
+                    <Button
+                      disabled={submitting}
+                      size="s"
+                      theme="primary"
+                      type="submit"
+                      className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
+                    >
+                      <p>Subscribe</p>
+                    </Button>
+                  </motion.div>
                 </div>
               </form>
             )}
           </Form>
           {minWidth < BREAKPOINTS.xl && (
-            <p className="text-sm leading-5 text-white md:text-base opacity-80">
+            <motion.p
+              className="text-sm leading-5 text-white md:text-base opacity-80"
+              {...IN_VIEW_PROPS}
+            >
               Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
               Global Stocktake in 2023.
-            </p>
+            </motion.p>
           )}
         </div>
       </Wrapper>

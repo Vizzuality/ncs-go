@@ -42,7 +42,10 @@ const AboutVideo = () => {
         </div>
       )}
       {minWidth >= BREAKPOINTS.md && (
-        <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
+        <motion.div
+          style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}
+          {...IN_VIEW_PROPS}
+        >
           <Wrapper>
             <div className="relative flex justify-center w-full aspect-video">
               <Video
@@ -55,7 +58,7 @@ const AboutVideo = () => {
               />
             </div>
           </Wrapper>
-        </div>
+        </motion.div>
       )}
     </motion.div>
   );

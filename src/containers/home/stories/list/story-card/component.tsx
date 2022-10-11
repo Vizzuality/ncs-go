@@ -2,9 +2,12 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import { motion } from 'framer-motion';
+
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
+import { IN_VIEW_PROPS } from 'constants/motion';
 
 import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
@@ -22,12 +25,16 @@ export const StoryCard = ({
   videoUrl,
 }: StoryCardProps) => {
   return (
-    <div className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row">
-      <div
+    <motion.div
+      className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row"
+      {...IN_VIEW_PROPS}
+    >
+      <motion.div
         className={cx({
           'md:w-2 h-2 md:h-auto w-full': true,
           [PATHWAY_COLOR[pathway]]: true,
         })}
+        {...IN_VIEW_PROPS}
       />
 
       <div
@@ -36,36 +43,42 @@ export const StoryCard = ({
       />
 
       <div className="w-full px-6 py-10 space-y-6 md:px-10 md:py-6">
-        <div className="flex space-x-2.5">
+        <motion.div className="flex space-x-2.5" {...IN_VIEW_PROPS}>
           <Icon className="w-6 h-6 stroke-white" icon={LOCATION_SVG} />
           <p className="font-sans">{country}</p>
-        </div>
+        </motion.div>
+
         <div className="space-y-2">
-          <h3 className="text-lg font-semibold">{title}</h3>
-          <h4 className="font-sans text-base">{description}</h4>
+          <motion.h3 className="text-lg font-semibold" {...IN_VIEW_PROPS}>
+            {title}
+          </motion.h3>
+          <motion.h4 className="font-sans text-base" {...IN_VIEW_PROPS}>
+            {description}
+          </motion.h4>
         </div>
+
         <div className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand">
-          <a className="flex items-center space-x-1" href={clipUrl}>
+          <motion.a className="flex items-center space-x-1" href={clipUrl} {...IN_VIEW_PROPS}>
             <p>Short clip (1 min)</p>
             <Icon className="w-6 h-6 stroke-brand" icon={ARROW_RIGHT_SVG} />
-          </a>
+          </motion.a>
 
           {articleUrl && (
-            <a className="flex items-center space-x-1" href={articleUrl}>
+            <motion.a className="flex items-center space-x-1" href={articleUrl} {...IN_VIEW_PROPS}>
               <p>Article</p>
               <Icon className="w-6 h-6 stroke-brand" icon={ARROW_RIGHT_SVG} />
-            </a>
+            </motion.a>
           )}
 
           {videoUrl && (
-            <a className="flex items-center space-x-1" href={videoUrl}>
+            <motion.a className="flex items-center space-x-1" href={videoUrl} {...IN_VIEW_PROPS}>
               <p>Video</p>
               <Icon className="w-6 h-6 stroke-brand" icon={ARROW_RIGHT_SVG} />
-            </a>
+            </motion.a>
           )}
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

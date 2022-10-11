@@ -2,9 +2,12 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import { motion } from 'framer-motion';
+
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
+import { IN_VIEW_PROPS } from 'constants/motion';
 
 import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
@@ -19,36 +22,43 @@ export const SampleCard = ({
   title,
   videoUrl,
 }: SampleCardProps) => (
-  <div
+  <motion.div
     className={cx({
       'lg:p-10 p-4 flex flex-col text-base text-gray-900 text-left h-full': true,
       [PATHWAY_COLOR[pathway]]: true,
     })}
+    {...IN_VIEW_PROPS}
   >
-    <div className="flex space-x-2 xl:space-x-2.5 pb-4 xl:pb-10">
+    <motion.div className="flex space-x-2 xl:space-x-2.5 pb-4 xl:pb-10" {...IN_VIEW_PROPS}>
       <Icon className="w-6 h-6 stroke-gray-900" icon={LOCATION_SVG} />
       <p className="font-sans text-base">{country}</p>
-    </div>
+    </motion.div>
+
     <div className="space-y-2.5 font-sans">
-      <h3 className="text-xl">{title}</h3>
-      <h4 className="text-base">{description}</h4>
+      <motion.h3 className="text-xl" {...IN_VIEW_PROPS}>
+        {title}
+      </motion.h3>
+      <motion.h4 className="text-base" {...IN_VIEW_PROPS}>
+        {description}
+      </motion.h4>
     </div>
+
     <div className="flex justify-end space-y-10 font-sans text-base pt-14">
       {articleUrl && (
-        <a className="flex items-center space-x-1" href={articleUrl}>
+        <motion.a className="flex items-center space-x-1" href={articleUrl} {...IN_VIEW_PROPS}>
           <p>Read article</p>
           <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
-        </a>
+        </motion.a>
       )}
 
       {videoUrl && (
-        <a className="flex items-center space-x-1" href={videoUrl}>
+        <motion.a className="flex items-center space-x-1" href={videoUrl} {...IN_VIEW_PROPS}>
           <p>Watch video</p>
           <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
-        </a>
+        </motion.a>
       )}
     </div>
-  </div>
+  </motion.div>
 );
 
 export default SampleCard;
