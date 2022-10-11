@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { useHomeStore } from 'store/home';
 
 import { useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import Features from 'containers/home/about/features';
@@ -10,6 +11,7 @@ import AboutVideo from 'containers/home/about/video';
 import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
+import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
@@ -30,19 +32,25 @@ const About = () => {
   return (
     <div ref={ref} id="about" className="scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
-        <div className="pt-10 pb-4 lg:pb-0 lg:pt-32 lg:grid lg:grid-cols-3">
+        <motion.div
+          className="pt-10 pb-4 lg:pb-0 lg:pt-32 lg:grid lg:grid-cols-3"
+          {...IN_VIEW_PROPS}
+        >
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
             title="About Naturebase"
             subtitle="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
           />
-        </div>
+        </motion.div>
       </Wrapper>
 
       {minWidth < BREAKPOINTS.md && <AboutVideo />}
 
       <Wrapper>
-        <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+        <motion.div
+          className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+          {...IN_VIEW_PROPS}
+        >
           <div className="col-start-2 pb-4 lg:pb-0">
             <p>
               Naturebase will bring together science-based data on nature’s pathways to mitigate
@@ -63,7 +71,7 @@ const About = () => {
               benefiting local communities and biodiversity.
             </p>
           </div>
-        </div>
+        </motion.div>
       </Wrapper>
 
       {minWidth >= BREAKPOINTS.md && <AboutVideo />}

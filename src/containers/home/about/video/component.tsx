@@ -2,10 +2,12 @@ import React from 'react';
 
 import dynamic from 'next/dynamic';
 
+import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import Wrapper from 'containers/wrapper';
 
+import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Video = dynamic(() => import('components/video'), {
@@ -26,7 +28,7 @@ const AboutVideo = () => {
   };
 
   return (
-    <>
+    <motion.div {...IN_VIEW_PROPS}>
       {minWidth < BREAKPOINTS.md && (
         <div className="relative flex justify-center w-full aspect-video">
           <Video
@@ -55,7 +57,7 @@ const AboutVideo = () => {
           </Wrapper>
         </div>
       )}
-    </>
+    </motion.div>
   );
 };
 
