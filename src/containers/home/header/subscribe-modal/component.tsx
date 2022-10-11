@@ -4,12 +4,12 @@ import { Form, Field } from 'react-final-form';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 
+import FullScreenModal from 'containers/home/header/full-screen-modal';
 import type { MenuModalProps } from 'containers/home/header/types';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Modal from 'components/modal';
 
 const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
   const [submitting, setSubmitting] = useState(false);
@@ -36,7 +36,7 @@ const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
 
   return (
     <div className="relative">
-      <Modal
+      <FullScreenModal
         size="default"
         open={openModal}
         title=""
@@ -105,7 +105,7 @@ const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
             </div>
           </Wrapper>
         </div>
-      </Modal>
+      </FullScreenModal>
     </div>
   );
 };

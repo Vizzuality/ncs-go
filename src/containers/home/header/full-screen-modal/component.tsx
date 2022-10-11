@@ -4,7 +4,6 @@ import {
   useRole,
   useDismiss,
   FloatingPortal,
-  FloatingOverlay,
   FloatingFocusManager,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
@@ -16,7 +15,7 @@ import ModalContent from './content';
 import { OVERLAY_CLASSES } from './content/constants';
 import { ModalProps } from './types';
 
-export const Modal = (props: ModalProps) => {
+export const FullScreenModal = (props: ModalProps) => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
   const { open, onOpenChange, dismissable } = props;
   const { floating, context } = useFloating({
@@ -47,39 +46,42 @@ export const Modal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <FloatingOverlay lockScroll>
-            <motion.div
-              variants={overlayFramerVariants}
-              initial="initial"
-              animate="animate"
-              exit="exit"
-              className={OVERLAY_CLASSES}
-            >
-              <FloatingFocusManager context={context}>
-                <>
-                  {minWidth < BREAKPOINTS.sm && (
+          <motion.div
+            variants={overlayFramerVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+            className={OVERLAY_CLASSES}
+          >
+            <FloatingFocusManager context={context}>
+              <>
+                {minWidth < BREAKPOINTS.sm && (
+                  <div className="absolute flex flex-col w-full h-full pointer-events-none grow">
                     <ModalContent
                       {...props}
                       floating={floating}
                       getFloatingProps={getFloatingProps}
                     />
-                  )}
-                  {minWidth >= BREAKPOINTS.sm && (
+                  </div>
+                )}
+
+                {minWidth >= BREAKPOINTS.sm && (
+                  <div className="absolute flex flex-col w-full h-full pointer-events-none grow">
                     <ModalContent
                       {...props}
                       viewport="sm"
                       floating={floating}
                       getFloatingProps={getFloatingProps}
                     />
-                  )}
-                </>
-              </FloatingFocusManager>
-            </motion.div>
-          </FloatingOverlay>
+                  </div>
+                )}
+              </>
+            </FloatingFocusManager>
+          </motion.div>
         )}
       </AnimatePresence>
     </FloatingPortal>
   );
 };
 
-export default Modal;
+export default FullScreenModal;

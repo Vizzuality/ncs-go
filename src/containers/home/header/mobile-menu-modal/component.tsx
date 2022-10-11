@@ -5,12 +5,12 @@ import { Form, Field } from 'react-final-form';
 import { useSaveSubscribe } from 'hooks/subscribe';
 
 import { NAV_OPTIONS } from 'containers/home/header/constants';
+import FullScreenModal from 'containers/home/header/full-screen-modal';
 import type { MenuModalProps } from 'containers/home/header/types';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Modal from 'components/modal';
 
 const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
   const [submitting, setSubmitting] = useState(false);
@@ -36,7 +36,7 @@ const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
   );
 
   return (
-    <Modal
+    <FullScreenModal
       size="default"
       open={openModal}
       title=""
@@ -106,7 +106,7 @@ const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
           </div>
         </Wrapper>
       </section>
-    </Modal>
+    </FullScreenModal>
   );
 };
 

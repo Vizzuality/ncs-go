@@ -19,6 +19,8 @@ export interface ModalProps {
    */
   size?: 'xs' | 's' | 'default' | 'l' | 'xl';
 
+  theme?: 'light' | 'dark';
+
   children?: ReactNode;
   /**
    * Class name to assign to the modal
