@@ -38,11 +38,19 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
 
   const prevPos = useRef(p);
   const prevStep = useRef(step);
+  const prevVelocity = useRef([0, 0]);
+  const prevNoise = useRef(noise);
 
   const COLOR = new Color(color);
 
   const velocity = useMemo(() => {
-    return Math.random();
+    const random1 = Math.random();
+    const random2 = Math.random();
+
+    if (!prevVelocity.current) {
+      prevVelocity.current = [random1, random2];
+    }
+    return [random1, random2];
   }, []);
 
   useFrame(() => {
@@ -65,6 +73,8 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
       materialRef.current.uPrevStep = step;
       materialRef.current.uProgress = 0;
       prevStep.current = step;
+      prevNoise.current = noise;
+      prevVelocity.current = velocity;
     }
   });
 
@@ -89,14 +99,16 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
         uPrevStep={prevStep.current}
         // Noise
         uNoise={noise}
-        uPrevNoise={noise}
+        uPrevNoise={prevNoise.current}
         // Time
         uTime={0}
         // Animation
         uProgress={0}
         uStartTime={0}
-        uVelocity={velocity}
         uDuration={DURATION / 1000}
+        // Velocity
+        uVelocity={velocity}
+        uPrevVelocity={prevVelocity.current}
         // Misc
         transparent
       />
