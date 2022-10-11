@@ -10,10 +10,6 @@ export interface ModalProps {
    * the escape key
    */
   dismissable?: boolean;
-  /**
-   * Size (width) of the modal
-   */
-  size?: 'xs' | 's' | 'default' | 'l' | 'xl';
 
   theme?: 'light' | 'dark';
 

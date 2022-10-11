@@ -1,6 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 import { useHomeStore } from 'store/home';
+import { useUIStore } from 'store/ui';
 
 import { useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
@@ -17,12 +18,14 @@ import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'xxs');
-  const [openModal, setOpenModal] = useState(false);
+
+  const openMenu = useUIStore((state) => state.openMenu);
+  const menu = useUIStore((state) => state.menu);
+  const setSection = useHomeStore((state) => state.setSection);
+  const header = useHomeStore((state) => state.header);
 
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
-  const setSection = useHomeStore((state) => state.setSection);
-  const header = useHomeStore((state) => state.header);
 
   useEffect(() => {
     if (inView) {
@@ -40,8 +43,8 @@ const Header: React.FC = () => {
           <Wrapper>
             <div className="absolute top-9 right-8">
               <MenuButton
-                isOpen={openModal}
-                onClick={() => setOpenModal(!openModal)}
+                isOpen={menu}
+                onClick={() => openMenu()}
                 transition={{ ease: 'easeOut', duration: 0.3 }}
                 width={40}
                 height={40}
@@ -49,7 +52,7 @@ const Header: React.FC = () => {
             </div>
           </Wrapper>
 
-          <MobileMenuModal openModal={openModal} setOpenModal={setOpenModal} />
+          <MobileMenuModal />
         </>
       )}
 
@@ -67,14 +70,14 @@ const Header: React.FC = () => {
                 className="rounded-[100px] h-16"
                 theme="secondary"
                 size="xs"
-                onClick={() => setOpenModal(true)}
+                onClick={() => openMenu()}
               >
                 Subscribe
               </Button>
             </div>
           </Wrapper>
 
-          <SubscribeModal setOpenModal={setOpenModal} openModal={openModal} />
+          <SubscribeModal />
         </>
       )}
     </section>

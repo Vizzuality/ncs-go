@@ -2,17 +2,21 @@ import React, { useCallback, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import { useUIStore } from 'store/ui';
+
 import { useSaveSubscribe } from 'hooks/subscribe';
 
 import { NAV_OPTIONS } from 'containers/home/header/constants';
 import FullScreenModal from 'containers/home/header/full-screen-modal';
-import type { MenuModalProps } from 'containers/home/header/types';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
-const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
+const MobileMenuModal = () => {
+  const closeMenu = useUIStore((state) => state.closeMenu);
+  const menu = useUIStore((state) => state.menu);
+
   const [submitting, setSubmitting] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
@@ -36,23 +40,12 @@ const MobileMenuModal = ({ openModal, setOpenModal }: MenuModalProps) => {
   );
 
   return (
-    <FullScreenModal
-      open={openModal}
-      theme="dark"
-      onOpenChange={() => {
-        setOpenModal(false);
-      }}
-    >
+    <FullScreenModal open={menu} theme="dark" onOpenChange={() => closeMenu()}>
       <section className="z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
         <Wrapper>
           <div className="flex flex-col py-32 space-y-10">
             {NAV_OPTIONS.map((o) => (
-              <a
-                href={o.id}
-                key={o.id}
-                className="text-lg text-white"
-                onClick={() => setOpenModal(false)}
-              >
+              <a href={o.id} key={o.id} className="text-lg text-white" onClick={() => closeMenu()}>
                 {o.label}
               </a>
             ))}

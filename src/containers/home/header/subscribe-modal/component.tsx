@@ -2,18 +2,20 @@ import React, { useCallback, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import { useUIStore } from 'store/ui';
+
 import { useSaveSubscribe } from 'hooks/subscribe';
 
 import FullScreenModal from 'containers/home/header/full-screen-modal';
-import type { MenuModalProps } from 'containers/home/header/types';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
-const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
+const SubscribeModal = () => {
+  const closeMenu = useUIStore((state) => state.closeMenu);
+  const menu = useUIStore((state) => state.menu);
   const [submitting, setSubmitting] = useState(false);
-
   const saveSubscribeMutation = useSaveSubscribe({});
 
   const handleSubmit = useCallback(
@@ -36,12 +38,7 @@ const SubscribeModal = ({ openModal, setOpenModal }: MenuModalProps) => {
 
   return (
     <div className="relative">
-      <FullScreenModal
-        open={openModal}
-        onOpenChange={() => {
-          setOpenModal(false);
-        }}
-      >
+      <FullScreenModal open={menu} onOpenChange={() => closeMenu()}>
         <div className="flex flex-col w-full bg-white">
           <Wrapper>
             <div className="relative flex flex-col items-center justify-center h-screen text-center bg-white">
