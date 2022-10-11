@@ -9,7 +9,7 @@ import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
 
-const Pathways = () => {
+const FeaturedScience = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
@@ -64,4 +64,4 @@ const Pathways = () => {
   );
 };
 
-export default Pathways;
+export default FeaturedScience;

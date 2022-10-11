@@ -8,10 +8,10 @@ import { useHomeStore } from 'store/home';
 
 import About from 'containers/home/about';
 import Contact from 'containers/home/contact';
+import FeaturedScience from 'containers/home/featured-science';
 import Footer from 'containers/home/footer';
 import Header from 'containers/home/header';
 import Intro from 'containers/home/intro';
-import Pathways from 'containers/home/pathways';
 import Stories from 'containers/home/stories';
 
 const Home: React.FC = () => {
@@ -36,7 +36,7 @@ const Home: React.FC = () => {
 
       <Stories />
 
-      <Pathways />
+      <FeaturedScience />
 
       <Contact />
 
