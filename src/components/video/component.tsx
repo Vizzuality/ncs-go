@@ -21,7 +21,7 @@ const PlayControl = ({ playBackground, playColor }) => {
       ></div>
       <div
         className={cx({
-          'absolute z-10 flex items-center justify-center w-16 h-16 rounded-full md:w-32 md:h-32  top-2 left-2 md:top-4 md:left-4':
+          'absolute z-5 flex items-center justify-center w-16 h-16 rounded-full md:w-32 md:h-32  top-2 left-2 md:top-4 md:left-4':
             true,
           [playBackground]: true,
         })}

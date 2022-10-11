@@ -2,22 +2,24 @@ import React, { useCallback, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
-import useBreakpoint from 'use-breakpoint';
+import { useUIStore } from 'store/ui';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 
+import { NAV_OPTIONS } from 'containers/home/header/constants';
+import FullScreenModal from 'containers/home/header/full-screen-modal';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import { BREAKPOINTS } from 'styles/styles.config';
 
-const Contact: React.FC = () => {
+const MobileMenuModal = () => {
+  const closeMenu = useUIStore((state) => state.closeMenu);
+  const menu = useUIStore((state) => state.menu);
+
   const [submitting, setSubmitting] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
-
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   const handleSubmit = useCallback(
     (data) => {
@@ -38,24 +40,16 @@ const Contact: React.FC = () => {
   );
 
   return (
-    <section className="w-full pb-20 bg-gray-900" id="contact">
-      <Wrapper>
-        <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
-          <div className="space-y-6 font-sans text-white md:col-span-6">
-            <h2 className="text-xl md:text-2xl">Keep up to date</h2>
-            <p className="text-base leading-7 md:text-lg">
-              Subscribe to keep up to date on our progress and be among the first to access our
-              platform.
-            </p>
-
-            {minWidth >= BREAKPOINTS.xl && (
-              <p className="text-sm leading-7 md:text-base opacity-80">
-                Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
-                Global Stocktake in 2023.
-              </p>
-            )}
+    <FullScreenModal open={menu} theme="dark" onOpenChange={() => closeMenu()}>
+      <section className="z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
+        <Wrapper>
+          <div className="flex flex-col py-32 space-y-10">
+            {NAV_OPTIONS.map((o) => (
+              <a href={o.id} key={o.id} className="text-lg text-white" onClick={() => closeMenu()}>
+                {o.label}
+              </a>
+            ))}
           </div>
-
           <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
             {(props) => (
               <form onSubmit={props.handleSubmit} className="py-6 xl:col-span-6 xl:py-0">
@@ -72,7 +66,7 @@ const Contact: React.FC = () => {
                           value={input.value as string}
                           type="email"
                           placeholder="Enter your email"
-                          className="flex w-full px-10 py-4 text-base bg-gray-100 border-none rounded-full md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
+                          className="flex w-full px-10 py-4 text-base text-gray-800 bg-gray-100 border-none rounded-full md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                         />
                         {meta.error && meta.touched && (
                           <p className="absolute text-sm text-orange-400 top-9 md:top-12 xl:top-full left-10">
@@ -85,7 +79,7 @@ const Contact: React.FC = () => {
                   <Button
                     disabled={submitting}
                     size="s"
-                    theme="primary"
+                    theme="secondary"
                     type="submit"
                     className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
                   >
@@ -95,16 +89,16 @@ const Contact: React.FC = () => {
               </form>
             )}
           </Form>
-          {minWidth < BREAKPOINTS.xl && (
-            <p className="text-sm leading-5 text-white md:text-base opacity-80">
-              Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
-              Global Stocktake in 2023.
+          <div className="">
+            <p className="text-sm leading-5 text-white">
+              Subscribe to keep up to date on our progress and be among the first to access our
+              platform.
             </p>
-          )}
-        </div>
-      </Wrapper>
-    </section>
+          </div>
+        </Wrapper>
+      </section>
+    </FullScreenModal>
   );
 };
 
-export default Contact;
+export default MobileMenuModal;

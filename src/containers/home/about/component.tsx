@@ -14,7 +14,9 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
   const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+
+  const inView = useInView(ref);
+
   const setSection = useHomeStore((state) => state.setSection);
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
@@ -26,11 +28,11 @@ const About = () => {
   });
 
   return (
-    <div ref={ref}>
+    <div ref={ref} id="about">
       <Wrapper>
-        <div className="pt-10 pb-4 lg:pb-0 lg:pt-32">
+        <div className="pt-10 pb-4 lg:pb-0 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
-            className="text-gray-800"
+            className="col-span-2 col-start-1 text-gray-800"
             title="About Naturebase"
             subtitle="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
           />
