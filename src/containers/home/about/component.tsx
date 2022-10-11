@@ -70,9 +70,12 @@ const About = () => {
       {minWidth >= BREAKPOINTS.md && <AboutVideo />}
 
       <div className="bg-gray-900 md:pb-28">
-        <Wrapper>
-          <Features />
-        </Wrapper>
+        {minWidth >= BREAKPOINTS.md && (
+          <Wrapper>
+            <Features />
+          </Wrapper>
+        )}
+        {minWidth < BREAKPOINTS.md && <Features />}
       </div>
     </div>
   );

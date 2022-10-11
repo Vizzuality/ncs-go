@@ -86,13 +86,13 @@ const Contact: React.FC = () => {
                       </motion.div>
                     )}
                   </Field>
-                  <motion.div className="w-full" {...IN_VIEW_PROPS}>
+                  <motion.div {...IN_VIEW_PROPS}>
                     <Button
                       disabled={submitting}
                       size="s"
                       theme="primary"
                       type="submit"
-                      className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
+                      className="w-full space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
                     >
                       <p>Subscribe</p>
                     </Button>

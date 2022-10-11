@@ -2,6 +2,10 @@ import React from 'react';
 
 import cx from 'classnames';
 
+import { motion } from 'framer-motion';
+
+import { IN_VIEW_PROPS } from 'constants/motion';
+
 const SampleComposition = ({ media, card, align = 'right' }) => (
   <div className="pt-4 lg:pt-0 lg:grid lg:grid-cols-12">
     <div
@@ -11,7 +15,9 @@ const SampleComposition = ({ media, card, align = 'right' }) => (
         'lg:col-start-5': align === 'right',
       })}
     >
-      <div className="aspect-video">{media}</div>
+      <motion.div className="aspect-video" {...IN_VIEW_PROPS}>
+        {media}
+      </motion.div>
 
       <div
         className={cx({

@@ -5,6 +5,9 @@ export const IN_VIEW_PROPS = {
   initial: { opacity: 0 },
   transition: {
     duration: 0.4,
-    delay: 0.5,
+    delay: 0.25,
+  },
+  viewport: {
+    once: true,
   },
 };
