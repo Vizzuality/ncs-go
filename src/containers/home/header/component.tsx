@@ -41,9 +41,7 @@ const Header: React.FC = () => {
 
   const handleMenu = useCallback((id) => {
     const $scrollEl = document.getElementById(id);
-
-    window.scrollTo({
-      top: $scrollEl?.offsetTop,
+    $scrollEl.scrollIntoView({
       behavior: 'smooth',
     });
   }, []);
@@ -76,7 +74,7 @@ const Header: React.FC = () => {
           <Wrapper>
             <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
               {NAV_OPTIONS.map((o) => (
-                <button key={o.id} type="button" onClick={() => handleMenu(o.id)}>
+                <button key={o.id} onClick={() => handleMenu(o.id)}>
                   {o.label}
                 </button>
               ))}
