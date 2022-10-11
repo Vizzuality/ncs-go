@@ -28,7 +28,7 @@ const About = () => {
   });
 
   return (
-    <div ref={ref} id="about">
+    <div ref={ref} id="about" className="scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-0 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero

@@ -1,18 +1,18 @@
 export const NAV_OPTIONS = [
   {
-    id: '#about',
+    id: 'about',
     label: 'About',
   },
   {
-    id: '#stories',
+    id: 'stories',
     label: 'Stories',
   },
   {
-    id: '#featured-science',
+    id: 'featured-science',
     label: 'Featured science',
   },
   {
-    id: '#contact',
+    id: 'contact',
     label: 'Contact us',
   },
 ];
