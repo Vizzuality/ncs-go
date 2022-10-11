@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 import { useHomeStore } from 'store/home';
 import { useUIStore } from 'store/ui';
@@ -39,6 +39,15 @@ const Header: React.FC = () => {
     setHeader(section !== 'intro');
   }, [section, setHeader]);
 
+  const handleMenu = useCallback((id) => {
+    const $scrollEl = document.getElementById(id);
+
+    window.scrollTo({
+      top: $scrollEl?.offsetTop,
+      behavior: 'smooth',
+    });
+  }, []);
+
   return (
     <section
       ref={ref}
@@ -67,9 +76,9 @@ const Header: React.FC = () => {
           <Wrapper>
             <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
               {NAV_OPTIONS.map((o) => (
-                <a href={o.id} key={o.id}>
+                <button key={o.id} type="button" onClick={() => handleMenu(o.id)}>
                   {o.label}
-                </a>
+                </button>
               ))}
 
               <Button

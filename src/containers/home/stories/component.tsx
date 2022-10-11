@@ -23,7 +23,7 @@ const Stories = () => {
   return (
     <div ref={ref} id="stories">
       <Wrapper>
-        <div className="pt-10 pb-4 lg:pb-20 lg:pt-28 lg:grid lg:grid-cols-3">
+        <div className="pt-10 pb-4 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
             title="Stories"
