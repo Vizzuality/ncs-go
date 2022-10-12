@@ -11,11 +11,13 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
+import Toast from 'components/toast';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
   const [submitting, setSubmitting] = useState(false);
+  const [toast, displayToast] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
 
@@ -29,6 +31,7 @@ const Contact: React.FC = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
+            displayToast(true);
           },
           onError: () => {
             setSubmitting(false);
@@ -112,6 +115,17 @@ const Contact: React.FC = () => {
           )}
         </div>
       </Wrapper>
+
+      {toast && (
+        <div className="absolute z-20 right-10 bottom-10">
+          <Toast
+            id="contact"
+            content="You have successfully subscribed."
+            level="success"
+            onDismiss={() => displayToast(false)}
+          />
+        </div>
+      )}
     </section>
   );
 };

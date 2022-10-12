@@ -12,14 +12,16 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
+import Toast from 'components/toast';
 
 const MobileMenuModal = () => {
-  const closeMenu = useUIStore((state) => state.closeMenu);
-  const menu = useUIStore((state) => state.menu);
-
   const [submitting, setSubmitting] = useState(false);
+  const [toast, displayToast] = useState(false);
 
   const saveSubscribeMutation = useSaveSubscribe({});
+
+  const closeMenu = useUIStore((state) => state.closeMenu);
+  const menu = useUIStore((state) => state.menu);
 
   const handleSubmit = useCallback(
     (data) => {
@@ -29,6 +31,7 @@ const MobileMenuModal = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
+            displayToast(true);
           },
           onError: () => {
             setSubmitting(false);
@@ -110,6 +113,17 @@ const MobileMenuModal = () => {
             </p>
           </div>
         </Wrapper>
+
+        {toast && (
+          <div className="absolute z-20 right-10 bottom-10">
+            <Toast
+              id="contact"
+              content="You have successfully subscribed."
+              level="success"
+              onDismiss={() => displayToast(false)}
+            />
+          </div>
+        )}
       </section>
     </FullScreenModal>
   );

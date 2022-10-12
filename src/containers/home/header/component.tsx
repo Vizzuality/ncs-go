@@ -1,4 +1,6 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
+
+import cx from 'classnames';
 
 import { useHomeStore } from 'store/home';
 import { useUIStore } from 'store/ui';
@@ -18,6 +20,8 @@ import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'xxs');
+
+  const [activeMenuOption, setActiveMenuOption] = useState(null);
 
   const openMenu = useUIStore((state) => state.openMenu);
   const menu = useUIStore((state) => state.menu);
@@ -74,8 +78,21 @@ const Header: React.FC = () => {
           <Wrapper>
             <div className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24">
               {NAV_OPTIONS.map((o) => (
-                <button key={o.id} onClick={() => scrollMenu(o.id)}>
-                  {o.label}
+                <button
+                  key={o.id}
+                  onClick={() => {
+                    scrollMenu(o.id);
+                    setActiveMenuOption(o.id);
+                  }}
+                >
+                  <p
+                    className={cx({
+                      'hover:text-brand py-7': true,
+                      'border-b-2 border-white': activeMenuOption === o.id,
+                    })}
+                  >
+                    {o.label}
+                  </p>
                 </button>
               ))}
 
