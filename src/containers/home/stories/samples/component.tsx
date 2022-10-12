@@ -39,7 +39,7 @@ const Samples = () => {
             align="left"
             media={
               <div
-                style={{ backgroundImage: `url(/images/stories/ghana.png)` }}
+                style={{ backgroundImage: `url(/images/home/stories/ghana.png)` }}
                 className="overflow-hidden bg-center bg-no-repeat bg-cover aspect-video"
               />
             }

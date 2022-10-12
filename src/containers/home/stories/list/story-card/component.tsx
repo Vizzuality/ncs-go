@@ -38,7 +38,7 @@ export const StoryCard = ({
       />
 
       <div
-        style={{ backgroundImage: `url(/images/stories/${image})` }}
+        style={{ backgroundImage: `url(/images/home/stories/${image})` }}
         className="overflow-hidden bg-center bg-no-repeat bg-cover md:aspect-auto aspect-video md:w-6/12 xl:w-5/12 xl:h-full"
       />
 
