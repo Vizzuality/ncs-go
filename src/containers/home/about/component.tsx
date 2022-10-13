@@ -61,6 +61,7 @@ const About = () => {
             </div>
           </Wrapper>
         )}
+
         <Wrapper>
           <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
             <div className="col-start-2 pb-4 lg:pb-0" {...IN_VIEW_PROPS}>

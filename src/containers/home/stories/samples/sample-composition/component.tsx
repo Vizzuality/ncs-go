@@ -30,7 +30,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           <motion.div
             className="aspect-video w-[96%]"
             {...IN_VIEW_PROPS}
-            initial={{ opacity: 0.5, x: 350 }}
+            initial={{ opacity: 0.5, x: 35 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{
@@ -49,7 +49,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
               'left-full': align === 'left',
               'left-0': align === 'right',
             })}
-            initial={{ opacity: 0.5, x: align === 'left' ? 350 : -350 }}
+            initial={{ opacity: 0.6, x: align === 'left' ? 70 : -70 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{
