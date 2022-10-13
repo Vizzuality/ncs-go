@@ -1,5 +1,5 @@
 export const THEME = {
-  primary: 'text-white bg-brand',
+  primary: 'text-white bg-brand-700 hover:bg-brand-800 active:bg-brand-900',
   secondary: 'text-white bg-transparent border border-white whitespace-nowrap',
 };
 

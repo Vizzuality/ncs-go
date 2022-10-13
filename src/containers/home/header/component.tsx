@@ -87,7 +87,7 @@ const Header: React.FC = () => {
                 >
                   <p
                     className={cx({
-                      'hover:text-brand py-7': true,
+                      'hover:text-brand-700 py-7': true,
                       'border-b-2 border-white': activeMenuOption === o.id,
                     })}
                   >

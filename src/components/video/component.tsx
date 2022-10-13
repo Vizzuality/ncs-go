@@ -45,7 +45,7 @@ export const Video: FC<VideoProps> = ({
   loop = false,
   playing = false,
   light = true,
-  playBackground = 'bg-brand',
+  playBackground = 'bg-brand-700',
   playColor = 'text-white',
   url,
   height,

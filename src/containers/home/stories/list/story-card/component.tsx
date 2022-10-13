@@ -57,23 +57,23 @@ export const StoryCard = ({
           </motion.h4>
         </div>
 
-        <div className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand">
+        <div className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand-700">
           <motion.a className="flex items-center space-x-1" href={clipUrl} {...IN_VIEW_PROPS}>
             <p>Short clip (1 min)</p>
-            <Icon className="w-6 h-6 stroke-brand" icon={ARROW_RIGHT_SVG} />
+            <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
           </motion.a>
 
           {articleUrl && (
             <motion.a className="flex items-center space-x-1" href={articleUrl} {...IN_VIEW_PROPS}>
               <p>Article</p>
-              <Icon className="w-6 h-6 stroke-brand" icon={ARROW_RIGHT_SVG} />
+              <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
             </motion.a>
           )}
 
           {videoUrl && (
             <motion.a className="flex items-center space-x-1" href={videoUrl} {...IN_VIEW_PROPS}>
               <p>Video</p>
-              <Icon className="w-6 h-6 stroke-brand" icon={ARROW_RIGHT_SVG} />
+              <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
             </motion.a>
           )}
         </div>

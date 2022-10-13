@@ -13,7 +13,7 @@ export const THEME: ToastTheme = {
   },
   success: {
     icon: SUCCESS_SVG,
-    bg: 'bg-brand',
+    bg: 'bg-brand-700',
     hoverBg: 'from-green-100 to-green-400',
   },
   warning: {

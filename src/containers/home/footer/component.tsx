@@ -15,13 +15,13 @@ const Footer: React.FC = () => {
             <motion.p {...IN_VIEW_PROPS}>
               If you got an idea to make it even better or want submit your case studies, email us
               at{' '}
-              <a className="text-brand" href="mailto:loremipsum@email.com">
+              <a className="text-brand-700" href="mailto:loremipsum@email.com">
                 loremipsum@email.com.
               </a>
             </motion.p>
             <motion.p {...IN_VIEW_PROPS}>
               Sign up for the Nature4Climate newsletter{' '}
-              <a className="text-brand" href="#" target="_blank" rel="noreferrer noopener">
+              <a className="text-brand-700" href="#" target="_blank" rel="noreferrer noopener">
                 here.
               </a>
             </motion.p>
