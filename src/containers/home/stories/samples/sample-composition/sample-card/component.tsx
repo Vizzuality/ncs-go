@@ -43,20 +43,20 @@ export const SampleCard = ({
       </motion.h4>
     </div>
 
-    <div className="flex justify-end pt-20 pb-5 space-y-10 font-sans text-base">
+    <div className="flex justify-end pt-20 pb-6 space-y-10 font-sans text-base">
       {articleUrl && (
         <motion.a
           className="absolute flex items-center space-x-1"
           href={articleUrl}
           {...IN_VIEW_PROPS}
           whileHover={{
-            width: '160px',
+            width: '150px',
             justifyContent: 'space-between',
             right: '20px',
             transition: { ease: 'easeOut', duration: 0.5 },
           }}
         >
-          <p>Read article</p>
+          <p className="whitespace-nowrap">Read article</p>
           <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
         </motion.a>
       )}
@@ -67,7 +67,7 @@ export const SampleCard = ({
           href={videoUrl}
           {...IN_VIEW_PROPS}
           whileHover={{
-            width: '160px',
+            width: '150px',
             justifyContent: 'space-between',
             right: '20px',
             transition: { ease: 'easeOut', duration: 0.5 },

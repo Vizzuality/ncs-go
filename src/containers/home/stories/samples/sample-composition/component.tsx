@@ -28,7 +28,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
 
         {minWidth < BREAKPOINTS.lg && (
           <motion.div
-            className="aspect-video w-[96%] lg:w-auto"
+            className="aspect-video w-[96%]"
             {...IN_VIEW_PROPS}
             initial={{ opacity: 0.5, x: 350 }}
             whileInView={{ opacity: 1, x: 0 }}

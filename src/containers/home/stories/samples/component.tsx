@@ -65,6 +65,7 @@ const Samples = () => {
                 url="https://youtu.be/6PGyRolwFVo"
                 height="100%"
                 width="100%"
+                light="/images/home/stories/ghana.png"
               />
             }
             card={
