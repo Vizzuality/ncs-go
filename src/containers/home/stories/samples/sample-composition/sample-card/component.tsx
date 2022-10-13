@@ -24,7 +24,7 @@ export const SampleCard = ({
 }: SampleCardProps) => (
   <motion.div
     className={cx({
-      'lg:p-10 p-4 flex flex-col text-base text-gray-900 text-left h-full': true,
+      'lg:p-10 p-4 flex flex-col text-base text-gray-900 text-left h-full relative': true,
       [PATHWAY_COLOR[pathway]]: true,
     })}
     {...IN_VIEW_PROPS}
@@ -43,16 +43,36 @@ export const SampleCard = ({
       </motion.h4>
     </div>
 
-    <div className="flex justify-end space-y-10 font-sans text-base pt-14">
+    <div className="flex justify-end pt-10 pb-5 space-y-10 font-sans text-base">
       {articleUrl && (
-        <motion.a className="flex items-center space-x-1" href={articleUrl} {...IN_VIEW_PROPS}>
+        <motion.a
+          className="absolute flex items-center space-x-1"
+          href={articleUrl}
+          {...IN_VIEW_PROPS}
+          whileHover={{
+            width: '160px',
+            justifyContent: 'space-between',
+            right: '20px',
+            transition: { ease: 'easeOut', duration: 0.5 },
+          }}
+        >
           <p>Read article</p>
           <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
         </motion.a>
       )}
 
       {videoUrl && (
-        <motion.a className="flex items-center space-x-1" href={videoUrl} {...IN_VIEW_PROPS}>
+        <motion.a
+          className="absolute flex items-center space-x-1"
+          href={videoUrl}
+          {...IN_VIEW_PROPS}
+          whileHover={{
+            width: '160px',
+            justifyContent: 'space-between',
+            right: '20px',
+            transition: { ease: 'easeOut', duration: 0.5 },
+          }}
+        >
           <p>Watch video</p>
           <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
         </motion.a>

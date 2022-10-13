@@ -2,7 +2,7 @@ import React from 'react';
 
 import cx from 'classnames';
 
-import { motion } from 'framer-motion';
+import { motion, AnimatePresence } from 'framer-motion';
 
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
@@ -57,11 +57,23 @@ export const StoryCard = ({
           </motion.h4>
         </div>
 
-        <div className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand-700">
-          <motion.a className="flex items-center space-x-1" href={clipUrl} {...IN_VIEW_PROPS}>
-            <p>Short clip (1 min)</p>
-            <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
-          </motion.a>
+        <div className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:flex-row text-brand-700">
+          <AnimatePresence>
+            <motion.a
+              className="flex items-center space-x-1 md:mr-10"
+              href={clipUrl}
+              {...IN_VIEW_PROPS}
+              whileHover={{
+                width: '210px',
+                justifyContent: 'space-between',
+                marginRight: 0,
+                paddingRight: '20px',
+              }}
+            >
+              <p className="whitespace-nowrap">Short clip (1 min)</p>
+              <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
+            </motion.a>
+          </AnimatePresence>
 
           {articleUrl && (
             <motion.a className="flex items-center space-x-1" href={articleUrl} {...IN_VIEW_PROPS}>
