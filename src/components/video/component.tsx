@@ -2,6 +2,7 @@ import { FC } from 'react';
 
 import cx from 'classnames';
 
+import { motion } from 'framer-motion';
 import ReactPlayer from 'react-player/lazy';
 
 import Icon from 'components/icon';
@@ -11,17 +12,26 @@ import PLAY_SVG from 'svgs/play.svg?sprite';
 import type { VideoProps } from './types';
 
 const PlayControl = ({ playBackground, playColor }) => {
+  const playMotion = {
+    hover: {
+      scale: 1.1,
+      transition: {
+        duration: 0.4,
+      },
+    },
+  };
   return (
-    <div className="relative">
-      <div
+    <motion.div className="relative" whileHover="hover">
+      <motion.div
         className={cx({
           'flex w-20 h-20 rounded-full opacity-25 md:w-40 md:h-40': true,
           [playBackground]: true,
         })}
-      ></div>
-      <div
+        variants={playMotion}
+      />
+      <motion.div
         className={cx({
-          'absolute z-5 flex items-center justify-center w-16 h-16 rounded-full md:w-32 md:h-32  top-2 left-2 md:top-4 md:left-4':
+          'absolute z-5 flex items-center justify-center w-16 h-16 rounded-full md:w-32 md:h-32 top-2 left-2 md:top-4 md:left-4':
             true,
           [playBackground]: true,
         })}
@@ -34,8 +44,8 @@ const PlayControl = ({ playBackground, playColor }) => {
             [playColor]: true,
           })}
         />
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
 
