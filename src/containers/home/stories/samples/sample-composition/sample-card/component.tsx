@@ -43,7 +43,7 @@ export const SampleCard = ({
       </motion.h4>
     </div>
 
-    <div className="flex justify-end pt-10 pb-5 space-y-10 font-sans text-base">
+    <div className="flex justify-end pt-20 pb-5 space-y-10 font-sans text-base">
       {articleUrl && (
         <motion.a
           className="absolute flex items-center space-x-1"
@@ -63,7 +63,7 @@ export const SampleCard = ({
 
       {videoUrl && (
         <motion.a
-          className="absolute flex items-center space-x-1"
+          className="absolute flex items-center space-x-1 bottom-5"
           href={videoUrl}
           {...IN_VIEW_PROPS}
           whileHover={{

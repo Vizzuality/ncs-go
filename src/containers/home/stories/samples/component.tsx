@@ -28,7 +28,7 @@ const Samples = () => {
   };
   return (
     <div
-      className="w-full pt-4 pb-10 lg:pb-0"
+      className="w-full pt-4"
       style={{
         background: minWidth >= BREAKPOINTS.lg && 'linear-gradient(#FFFFFF 90%, #011426 10%',
       }}
