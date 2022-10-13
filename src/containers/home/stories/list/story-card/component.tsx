@@ -3,11 +3,13 @@ import React from 'react';
 import cx from 'classnames';
 
 import { motion, AnimatePresence } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
 
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
 import { IN_VIEW_PROPS } from 'constants/motion';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
@@ -24,6 +26,8 @@ export const StoryCard = ({
   title,
   videoUrl,
 }: StoryCardProps) => {
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
   return (
     <motion.div
       className="flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row"
@@ -60,14 +64,14 @@ export const StoryCard = ({
         <div className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:flex-row text-brand-700">
           <AnimatePresence>
             <motion.a
-              className="flex items-center space-x-1 md:mr-10"
+              className="flex items-center mr-0 space-x-1 md:mr-10"
               href={clipUrl}
               {...IN_VIEW_PROPS}
               whileHover={{
-                width: '210px',
+                width: '220px',
                 justifyContent: 'space-between',
                 marginRight: 0,
-                paddingRight: '20px',
+                paddingRight: minWidth >= BREAKPOINTS.md && '25px',
               }}
             >
               <p className="whitespace-nowrap">Short clip (1 min)</p>
@@ -76,7 +80,18 @@ export const StoryCard = ({
           </AnimatePresence>
 
           {articleUrl && (
-            <motion.a className="flex items-center space-x-1" href={articleUrl} {...IN_VIEW_PROPS}>
+            <motion.a
+              className="flex items-center space-x-1"
+              href={articleUrl}
+              {...IN_VIEW_PROPS}
+              // whileHover={{
+              //   position: 'absolute',
+              //   width: '220px',
+              //   justifyContent: 'space-between',
+              //   marginRight: 0,
+              //   paddingRight: minWidth >= BREAKPOINTS.md && '25px',
+              // }}
+            >
               <p>Article</p>
               <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
             </motion.a>

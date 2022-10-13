@@ -80,7 +80,7 @@ const Contact: React.FC = () => {
                           value={input.value as string}
                           type="email"
                           placeholder="Enter your email"
-                          className="flex w-full px-10 py-4 text-base bg-gray-100 border-none rounded-full focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
+                          className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                         />
                         {meta.error && meta.touched && minWidth >= BREAKPOINTS.xl && (
                           <p className="absolute text-sm text-red-600 top-20 left-10">
