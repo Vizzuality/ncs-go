@@ -13,6 +13,7 @@ import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Toast from 'components/toast';
 import { IN_VIEW_PROPS } from 'constants/motion';
+import { capitalizeString } from 'lib/utils';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
@@ -81,9 +82,9 @@ const Contact: React.FC = () => {
                           placeholder="Enter your email"
                           className="flex w-full px-10 py-4 text-base bg-gray-100 border-none rounded-full focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                         />
-                        {meta.error && meta.touched && (
-                          <p className="absolute text-sm text-red-600 top-9 md:top-12 xl:top-full left-10">
-                            {meta.error.join('. ')}
+                        {meta.error && meta.touched && minWidth >= BREAKPOINTS.xl && (
+                          <p className="absolute text-sm text-red-600 top-20 left-10">
+                            {capitalizeString(meta.error)}
                           </p>
                         )}
                       </motion.div>

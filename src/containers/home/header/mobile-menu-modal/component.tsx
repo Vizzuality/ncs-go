@@ -13,6 +13,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Toast from 'components/toast';
+import { capitalizeString } from 'lib/utils';
 
 const MobileMenuModal = () => {
   const [submitting, setSubmitting] = useState(false);
@@ -87,7 +88,7 @@ const MobileMenuModal = () => {
                         />
                         {meta.error && meta.touched && (
                           <p className="absolute text-sm text-red-600 top-9 md:top-12 xl:top-full left-10">
-                            {meta.error.join('. ')}
+                            {capitalizeString(meta.error)}
                           </p>
                         )}
                       </div>
