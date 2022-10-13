@@ -43,7 +43,7 @@ export const SampleCard = ({
       </motion.h4>
     </div>
 
-    <div className="flex justify-end pt-20 pb-6 space-y-10 font-sans text-base">
+    <div className="flex justify-end pt-20 pb-6 space-y-10 font-sans text-base lg:pb-1">
       {articleUrl && (
         <motion.a
           className="absolute flex items-center space-x-1"

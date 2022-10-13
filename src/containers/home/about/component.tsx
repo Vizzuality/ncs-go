@@ -43,8 +43,9 @@ const About = () => {
       )}
 
       {minWidth < BREAKPOINTS.md && <AboutVideo />}
+
       <div
-        className="overflow-hidden bg-no-repeat bg-lefy-top"
+        className="overflow-hidden bg-left-top bg-no-repeat"
         style={{
           backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/about/background.svg)`,
         }}
@@ -87,6 +88,7 @@ const About = () => {
 
         {minWidth >= BREAKPOINTS.md && <AboutVideo />}
       </div>
+
       <div className="bg-gray-900 md:pb-28">
         <Features />
       </div>
