@@ -12,7 +12,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   return (
-    <div className="pt-4 pb-72 lg:pb-0 lg:pt-0 lg:grid lg:grid-cols-12">
+    <div className="pt-4 first-of-type:pb-64 md:first-of-type:pb-48 last-of-type:pb-48 lg:first-of-type:pb-0 lg:pt-0 lg:grid lg:grid-cols-12">
       <div
         className={cx({
           'relative lg:col-span-7': true,

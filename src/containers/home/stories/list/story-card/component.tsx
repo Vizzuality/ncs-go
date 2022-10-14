@@ -59,11 +59,11 @@ export const StoryCard = ({
 
         <div className="flex flex-col items-end w-full pt-8 space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:flex-row text-brand-700">
           <motion.a
-            className="absolute flex items-center space-x-1 right-48 bottom-4"
+            className="absolute flex items-center space-x-1 right-32 lg:right-48 bottom-4"
             href={clipUrl}
             {...IN_VIEW_PROPS}
             whileHover={{
-              width: '200px',
+              width: '180px',
               justifyContent: 'space-between',
               right: '180px',
             }}
@@ -78,7 +78,7 @@ export const StoryCard = ({
               href={articleUrl}
               {...IN_VIEW_PROPS}
               whileHover={{
-                width: '110px',
+                width: '95px',
                 justifyContent: 'space-between',
                 right: '30px',
               }}
@@ -94,7 +94,7 @@ export const StoryCard = ({
               href={videoUrl}
               {...IN_VIEW_PROPS}
               whileHover={{
-                width: '110px',
+                width: '90px',
                 justifyContent: 'space-between',
                 right: '30px',
               }}

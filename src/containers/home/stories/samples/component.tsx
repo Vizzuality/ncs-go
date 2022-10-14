@@ -1,31 +1,17 @@
 import React from 'react';
 
-import dynamic from 'next/dynamic';
-
 import useBreakpoint from 'use-breakpoint';
 
+import ModalVideo from 'containers/home/stories/samples/modal-video';
 import SampleComposition from 'containers/home/stories/samples/sample-composition';
 import Card from 'containers/home/stories/samples/sample-composition/sample-card';
 import Wrapper from 'containers/wrapper';
 
 import { BREAKPOINTS } from 'styles/styles.config';
 
-const Video = dynamic(() => import('components/video'), {
-  ssr: false,
-});
-
 const Samples = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
-  const videoConfig = {
-    youtube: {
-      playerVars: {
-        controls: true,
-        showinfo: 0,
-        rel: 0,
-      },
-    },
-  };
   return (
     <div
       className="w-full pt-4"
@@ -55,19 +41,7 @@ const Samples = () => {
           />
           <SampleComposition
             align="right"
-            media={
-              <Video
-                config={videoConfig}
-                playing
-                loop
-                playBackground="bg-white"
-                playColor="text-gray-900"
-                url="https://youtu.be/6PGyRolwFVo"
-                height="100%"
-                width="100%"
-                light="/images/home/stories/ghana.png"
-              />
-            }
+            media={<ModalVideo />}
             card={
               <Card
                 country="Dominican Republic"
