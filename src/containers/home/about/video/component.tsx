@@ -28,9 +28,9 @@ const AboutVideo = () => {
   };
 
   return (
-    <motion.div {...IN_VIEW_PROPS}>
+    <div>
       {minWidth < BREAKPOINTS.md && (
-        <div className="relative flex justify-center w-full aspect-video">
+        <motion.div className="relative flex justify-center w-full aspect-video" {...IN_VIEW_PROPS}>
           <Video
             config={videoConfig}
             playing
@@ -39,12 +39,15 @@ const AboutVideo = () => {
             height="100%"
             width="100%"
           />
-        </div>
+        </motion.div>
       )}
       {minWidth >= BREAKPOINTS.md && (
         <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
           <Wrapper>
-            <div className="relative flex justify-center w-full aspect-video">
+            <motion.div
+              className="relative flex justify-center w-full aspect-video"
+              {...IN_VIEW_PROPS}
+            >
               <Video
                 config={videoConfig}
                 playing
@@ -53,11 +56,11 @@ const AboutVideo = () => {
                 height="100%"
                 width="100%"
               />
-            </div>
+            </motion.div>
           </Wrapper>
         </div>
       )}
-    </motion.div>
+    </div>
   );
 };
 
