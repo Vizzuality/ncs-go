@@ -7,6 +7,7 @@ import useBreakpoint from 'use-breakpoint';
 import { useModal } from 'hooks/modals';
 
 import Modal from 'components/modal';
+import PlayControl from 'components/video/play-control';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Video = dynamic(() => import('components/video'), {
@@ -28,12 +29,18 @@ const ModalVideo = () => {
   };
   return (
     <>
-      <button onClick={() => open()} className="w-full h-full">
+      <div className="relative">
         <div
           style={{ backgroundImage: `url(/images/home/stories/ghana.png)` }}
           className="overflow-hidden bg-center bg-no-repeat bg-cover aspect-video"
         />
-      </button>
+        <button
+          onClick={() => open()}
+          className="absolute top-[50%] left-[50%] transform -translate-x-1/2 -translate-y-1/2 z-10"
+        >
+          <PlayControl playBackground="bg-white" playColor="text-black" />
+        </button>
+      </div>
 
       <Modal
         title=""
