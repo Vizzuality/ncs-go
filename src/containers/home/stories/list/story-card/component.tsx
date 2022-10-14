@@ -4,12 +4,12 @@ import cx from 'classnames';
 
 import { motion, useInView } from 'framer-motion';
 
+import LinkArrow from 'containers/home/common/link-arrow';
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
-import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
 
 import type { StoryCardProps } from './types';
@@ -88,33 +88,10 @@ export const StoryCard = ({
           animate={{ opacity, x }}
           transition={{ delay: 0.5, bounce: 0 }}
         >
-          <a className="flex items-center space-x-1 group" href={clipUrl}>
-            <p className="transition-transform group-hover:-translate-x-2 whitespace-nowrap">
-              Short clip (1 min)
-            </p>
-            <Icon
-              className="w-6 h-6 transition-transform group-hover:translate-x-2 stroke-brand-700"
-              icon={ARROW_RIGHT_SVG}
-            />
-          </a>
+          <LinkArrow label="Short clip (1 min)" url={clipUrl} />
 
           {(articleUrl || videoUrl) && (
-            <a className="flex items-center space-x-1 group" href={articleUrl || videoUrl}>
-              {articleUrl && (
-                <p className="transition-transform group-hover:-translate-x-2 whitespace-nowrap">
-                  Article
-                </p>
-              )}
-              {videoUrl && (
-                <p className="transition-transform group-hover:-translate-x-2 whitespace-nowrap">
-                  Video
-                </p>
-              )}
-              <Icon
-                className="w-6 h-6 transition-transform group-hover:translate-x-2 stroke-brand-700"
-                icon={ARROW_RIGHT_SVG}
-              />
-            </a>
+            <LinkArrow label={articleUrl ? 'Article' : 'Video'} url={articleUrl || videoUrl} />
           )}
         </motion.div>
       </div>

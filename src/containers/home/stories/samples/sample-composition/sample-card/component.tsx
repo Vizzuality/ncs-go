@@ -4,12 +4,12 @@ import cx from 'classnames';
 
 import { motion } from 'framer-motion';
 
+import LinkArrow from 'containers/home/common/link-arrow';
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
-import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
 
 import type { SampleCardProps } from './types';
@@ -44,39 +44,9 @@ export const SampleCard = ({
     </div>
 
     <div className="flex justify-end pt-4 pb-6 space-y-10 font-sans text-base lg:pt-20 lg:pb-1">
-      {articleUrl && (
-        <motion.a
-          className="absolute flex items-center space-x-1"
-          href={articleUrl}
-          {...IN_VIEW_PROPS}
-          whileHover={{
-            width: '150px',
-            justifyContent: 'space-between',
-            right: '20px',
-            transition: { ease: 'easeOut', duration: 0.5 },
-          }}
-        >
-          <p className="whitespace-nowrap">Read article</p>
-          <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
-        </motion.a>
-      )}
+      {articleUrl && <LinkArrow label="Read article" url={articleUrl} />}
 
-      {videoUrl && (
-        <motion.a
-          className="absolute flex items-center space-x-1 bottom-5"
-          href={videoUrl}
-          {...IN_VIEW_PROPS}
-          whileHover={{
-            width: '150px',
-            justifyContent: 'space-between',
-            right: '20px',
-            transition: { ease: 'easeOut', duration: 0.5 },
-          }}
-        >
-          <p>Watch video</p>
-          <Icon className="w-6 h-6 stroke-gray-900" icon={ARROW_RIGHT_SVG} />
-        </motion.a>
-      )}
+      {videoUrl && <LinkArrow label="Watch video" url={videoUrl} />}
     </div>
   </motion.div>
 );
