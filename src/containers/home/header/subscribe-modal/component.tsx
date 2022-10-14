@@ -37,6 +37,7 @@ const SubscribeModal = () => {
           },
         }
       );
+      setTimeout(() => displayToast(false), 3000);
     },
     [saveSubscribeMutation]
   );

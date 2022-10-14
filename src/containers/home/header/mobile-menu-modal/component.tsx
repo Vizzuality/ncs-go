@@ -4,6 +4,8 @@ import { Form, Field } from 'react-final-form';
 
 import { useUIStore } from 'store/ui';
 
+import { AnimatePresence } from 'framer-motion';
+
 import { useSaveSubscribe } from 'hooks/subscribe';
 
 import { NAV_OPTIONS } from 'containers/home/header/constants';
@@ -24,7 +26,7 @@ const MobileMenuModal = () => {
   const closeMenu = useUIStore((state) => state.closeMenu);
   const menu = useUIStore((state) => state.menu);
 
-  const handleSubmit = useCallback(
+  const onSubmit = useCallback(
     (data) => {
       setSubmitting(true);
       saveSubscribeMutation.mutate(
@@ -39,6 +41,7 @@ const MobileMenuModal = () => {
           },
         }
       );
+      setTimeout(() => displayToast(false), 3000);
     },
     [saveSubscribeMutation]
   );
@@ -68,9 +71,9 @@ const MobileMenuModal = () => {
               </button>
             ))}
           </div>
-          <Form initialValues={{ email: null }} onSubmit={handleSubmit}>
-            {(props) => (
-              <form onSubmit={props.handleSubmit} className="py-6 xl:col-span-6 xl:py-0">
+          <Form initialValues={{ email: null }} onSubmit={onSubmit}>
+            {({ handleSubmit }) => (
+              <form onSubmit={handleSubmit} className="py-6 xl:col-span-6 xl:py-0">
                 <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
                   <Field
                     name="email"
@@ -80,6 +83,7 @@ const MobileMenuModal = () => {
                     {({ input, meta }) => (
                       <div className="relative w-full">
                         <input
+                          id="contact-form"
                           {...input}
                           value={input.value as string}
                           type="email"
@@ -114,17 +118,18 @@ const MobileMenuModal = () => {
             </p>
           </div>
         </Wrapper>
-
-        {toast && (
-          <div className="absolute z-20 right-10 bottom-10">
-            <Toast
-              id="contact"
-              content="You have successfully subscribed."
-              level="success"
-              onDismiss={() => displayToast(false)}
-            />
-          </div>
-        )}
+        <AnimatePresence>
+          {toast && (
+            <div className="absolute z-20 right-10 bottom-10">
+              <Toast
+                id="contact"
+                content="You have successfully subscribed."
+                level="success"
+                onDismiss={() => displayToast(false)}
+              />
+            </div>
+          )}
+        </AnimatePresence>
       </section>
     </FullScreenModal>
   );

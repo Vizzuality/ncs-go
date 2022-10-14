@@ -1,8 +1,8 @@
-import { useCallback, useEffect } from 'react';
+import { useCallback } from 'react';
 
 import cx from 'classnames';
 
-import { motion, useAnimation } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import Icon from 'components/icon';
 
@@ -15,22 +15,11 @@ export const Toast: React.FC<ToastProps> = ({
   id,
   content,
   level = 'info',
-  autoDismiss = true,
   onDismiss,
 }: ToastProps) => {
-  const DURATION = 5;
-  const controls = useAnimation();
+  const DURATION = 1;
 
   const ICON = THEME[level || 'info'].icon;
-
-  useEffect(() => {
-    if (autoDismiss) {
-      controls.start({
-        y: '100%',
-        transition: { duration: DURATION },
-      });
-    }
-  }, [controls, autoDismiss]);
 
   const handleDismiss = useCallback(() => {
     if (onDismiss) {
@@ -40,18 +29,15 @@ export const Toast: React.FC<ToastProps> = ({
 
   return (
     <motion.div
-      layout
+      key="toast"
       initial={{ opacity: 0, x: 25 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
-      transition={{
-        ease: 'anticipate',
-        duration: 0.5,
-      }}
+      transition={{ duration: DURATION }}
     >
       <div
         className={cx({
-          'flex w-full px-4 py-3 text-white text-lg font-sans transition shadow-md rounded-xl ':
+          'flex w-full px-4 py-3 text-white text-base md:text-lg font-sans transition shadow-md rounded-xl':
             true,
           [THEME[level]?.bg]: true,
         })}

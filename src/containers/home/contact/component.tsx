@@ -39,6 +39,7 @@ const Contact: React.FC = () => {
           },
         }
       );
+      setTimeout(() => displayToast(false), 3000);
     },
     [saveSubscribeMutation]
   );
