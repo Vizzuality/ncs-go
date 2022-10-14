@@ -17,6 +17,7 @@ export const ModalContent: FC<ModalContentProps> = ({
   className,
   viewport,
   floating,
+  closeBtn = true,
   getFloatingProps,
   onOpenChange,
 }: ModalContentProps) => {
@@ -56,15 +57,17 @@ export const ModalContent: FC<ModalContentProps> = ({
       })}
     >
       <div className="relative flex flex-col overflow-hidden grow">
-        <button
-          type="button"
-          onClick={() => {
-            onOpenChange(false);
-          }}
-          className="absolute flex items-center px-4 py-4 text-sm text-gray-300 top-6 right-6"
-        >
-          <Icon icon={CLOSE_SVG} className="inline-block w-5 h-5 stroke-black" />
-        </button>
+        {closeBtn && (
+          <button
+            type="button"
+            onClick={() => {
+              onOpenChange(false);
+            }}
+            className="absolute flex items-center px-4 py-4 text-sm text-gray-300 top-6 right-6"
+          >
+            <Icon icon={CLOSE_SVG} className="inline-block w-5 h-5 stroke-black" />
+          </button>
+        )}
 
         {children}
       </div>
