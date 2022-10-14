@@ -47,10 +47,10 @@ const ModalVideo = () => {
         title=""
         size="l"
         open={isOpen}
-        closeBtn={minWidth >= BREAKPOINTS.sm && minWidth < BREAKPOINTS.lg ? false : true}
+        closeBtn={minWidth >= BREAKPOINTS.sm ? false : true}
         onOpenChange={() => close()}
       >
-        <div className="w-full translate-y-full sm:translate-y-0 sm:pt-0 lg:h-full lg:px-10 lg:pb-10 lg:mt-20 aspect-video">
+        <div className="w-full translate-y-full sm:translate-y-0 sm:pt-0 aspect-video">
           <Video
             config={videoConfig}
             playing
