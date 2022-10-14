@@ -44,9 +44,13 @@ export const SampleCard = ({
     </div>
 
     <div className="flex justify-end pt-4 pb-6 space-y-10 font-sans text-base lg:pt-20 lg:pb-1">
-      {articleUrl && <LinkArrow label="Read article" url={articleUrl} />}
+      {articleUrl && (
+        <LinkArrow className={{ arrow: 'stroke-black' }} label="Read article" url={articleUrl} />
+      )}
 
-      {videoUrl && <LinkArrow label="Watch video" url={videoUrl} />}
+      {videoUrl && (
+        <LinkArrow className={{ arrow: 'stroke-black' }} label="Watch video" url={videoUrl} />
+      )}
     </div>
   </motion.div>
 );

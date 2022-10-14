@@ -88,10 +88,18 @@ export const StoryCard = ({
           animate={{ opacity, x }}
           transition={{ delay: 0.5, bounce: 0 }}
         >
-          <LinkArrow label="Short clip (1 min)" url={clipUrl} />
+          <LinkArrow
+            className={{ arrow: 'stroke-brand-700' }}
+            label="Short clip (1 min)"
+            url={clipUrl}
+          />
 
           {(articleUrl || videoUrl) && (
-            <LinkArrow label={articleUrl ? 'Article' : 'Video'} url={articleUrl || videoUrl} />
+            <LinkArrow
+              className={{ arrow: 'stroke-brand-700' }}
+              label={articleUrl ? 'Article' : 'Video'}
+              url={articleUrl || videoUrl}
+            />
           )}
         </motion.div>
       </div>
