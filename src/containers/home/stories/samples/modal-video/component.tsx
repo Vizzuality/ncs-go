@@ -27,6 +27,7 @@ const ModalVideo = () => {
       },
     },
   };
+
   return (
     <>
       <div className="relative">

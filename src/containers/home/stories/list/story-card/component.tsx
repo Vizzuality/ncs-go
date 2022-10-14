@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import cx from 'classnames';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
@@ -24,17 +24,31 @@ export const StoryCard = ({
   title,
   videoUrl,
 }: StoryCardProps) => {
+  const ref = useRef();
+
+  const inView = useInView(ref, {
+    once: true,
+    amount: 0.25,
+  });
+
+  const opacity = inView ? 1 : 0;
+  const x = inView ? 0 : 20;
+
   return (
     <motion.div
+      ref={ref}
       className="relative flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row"
       {...IN_VIEW_PROPS}
+      viewport={{
+        once: true,
+        amount: 0.25,
+      }}
     >
-      <motion.div
+      <div
         className={cx({
           'md:w-2 h-2 md:h-auto w-full': true,
           [PATHWAY_COLOR[pathway]]: true,
         })}
-        {...IN_VIEW_PROPS}
       />
 
       <div
@@ -43,67 +57,66 @@ export const StoryCard = ({
       />
 
       <div className="w-full px-6 py-10 space-y-6 md:px-10 md:py-6">
-        <motion.div className="flex space-x-2.5" {...IN_VIEW_PROPS}>
+        <motion.div
+          animate={{ opacity, x }}
+          transition={{ delay: 0.2, bounce: 0 }}
+          className="flex space-x-2.5 opacity-0"
+        >
           <Icon className="w-6 h-6 stroke-white" icon={LOCATION_SVG} />
           <p className="font-sans">{country}</p>
         </motion.div>
 
         <div className="space-y-2">
-          <motion.h3 className="text-lg font-semibold" {...IN_VIEW_PROPS}>
+          <motion.h3
+            animate={{ opacity, x }}
+            transition={{ delay: 0.3, bounce: 0 }}
+            className="text-lg font-semibold opacity-0"
+          >
             {title}
           </motion.h3>
-          <motion.h4 className="font-sans text-base" {...IN_VIEW_PROPS}>
+          <motion.h4
+            animate={{ opacity, x }}
+            transition={{ delay: 0.4, bounce: 0 }}
+            className="font-sans text-base opacity-0"
+          >
             {description}
           </motion.h4>
         </div>
 
-        <div className="flex flex-col items-end w-full pt-8 space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:flex-row text-brand-700">
-          <motion.a
-            className="absolute flex items-center space-x-1 right-32 lg:right-48 bottom-4"
-            href={clipUrl}
-            {...IN_VIEW_PROPS}
-            whileHover={{
-              width: '180px',
-              justifyContent: 'space-between',
-              right: '180px',
-            }}
-          >
-            <p className="whitespace-nowrap">Short clip (1 min)</p>
-            <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
-          </motion.a>
+        <motion.div
+          className="flex flex-col items-end w-full pt-8 space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand-700"
+          animate={{ opacity, x }}
+          transition={{ delay: 0.5, bounce: 0 }}
+        >
+          <a className="flex items-center space-x-1 group" href={clipUrl}>
+            <p className="transition-transform group-hover:-translate-x-2 whitespace-nowrap">
+              Short clip (1 min)
+            </p>
+            <Icon
+              className="w-6 h-6 transition-transform group-hover:translate-x-2 stroke-brand-700"
+              icon={ARROW_RIGHT_SVG}
+            />
+          </a>
 
-          {articleUrl && (
-            <motion.a
-              className="absolute flex items-center space-x-1 right-9 bottom-4"
-              href={articleUrl}
-              {...IN_VIEW_PROPS}
-              whileHover={{
-                width: '95px',
-                justifyContent: 'space-between',
-                right: '30px',
-              }}
-            >
-              <p>Article</p>
-              <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
-            </motion.a>
+          {(articleUrl || videoUrl) && (
+            <a className="flex items-center space-x-1 group" href={articleUrl || videoUrl}>
+              {articleUrl && (
+                <p className="transition-transform group-hover:-translate-x-2 whitespace-nowrap">
+                  Article
+                </p>
+              )}
+              {videoUrl && (
+                <p className="transition-transform group-hover:-translate-x-2 whitespace-nowrap">
+                  Video
+                </p>
+              )}
+              <Icon
+                className="w-6 h-6 transition-transform group-hover:translate-x-2 stroke-brand-700"
+                icon={ARROW_RIGHT_SVG}
+              />
+            </a>
           )}
-
-          {videoUrl && (
-            <motion.a
-              className="absolute flex items-center space-x-1 right-9 bottom-4"
-              href={videoUrl}
-              {...IN_VIEW_PROPS}
-              whileHover={{
-                width: '90px',
-                justifyContent: 'space-between',
-                right: '30px',
-              }}
-            >
-              <p>Video</p>
-              <Icon className="w-6 h-6 stroke-brand-700" icon={ARROW_RIGHT_SVG} />
-            </motion.a>
-          )}
-        </div>
+        </motion.div>
       </div>
     </motion.div>
   );

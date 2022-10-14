@@ -5,6 +5,7 @@ import useBreakpoint from 'use-breakpoint';
 import ModalVideo from 'containers/home/stories/samples/modal-video';
 import SampleComposition from 'containers/home/stories/samples/sample-composition';
 import Card from 'containers/home/stories/samples/sample-composition/sample-card';
+import SampleMedia from 'containers/home/stories/samples/sample-composition/sample-media';
 import Wrapper from 'containers/wrapper';
 
 import { BREAKPOINTS } from 'styles/styles.config';
@@ -23,12 +24,7 @@ const Samples = () => {
         <div className="lg:space-y-44">
           <SampleComposition
             align="left"
-            media={
-              <div
-                style={{ backgroundImage: `url(/images/home/stories/ghana.png)` }}
-                className="overflow-hidden bg-center bg-no-repeat bg-cover aspect-video"
-              />
-            }
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} />}
             card={
               <Card
                 country="Tanzania"

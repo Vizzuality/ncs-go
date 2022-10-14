@@ -19,6 +19,7 @@ const Home: React.FC = () => {
 
   return (
     <div
+      id="scroll-container"
       className={cx({
         'h-screen overflow-auto': true,
         'snap-y snap-mandatory': section === 'intro',
