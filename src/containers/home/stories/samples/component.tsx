@@ -2,7 +2,6 @@ import React from 'react';
 
 import useBreakpoint from 'use-breakpoint';
 
-import ModalVideo from 'containers/home/stories/samples/modal-video';
 import SampleComposition from 'containers/home/stories/samples/sample-composition';
 import Card from 'containers/home/stories/samples/sample-composition/sample-card';
 import SampleMedia from 'containers/home/stories/samples/sample-composition/sample-media';
@@ -37,7 +36,7 @@ const Samples = () => {
           />
           <SampleComposition
             align="right"
-            media={<ModalVideo />}
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} video />}
             card={
               <Card
                 country="Dominican Republic"
