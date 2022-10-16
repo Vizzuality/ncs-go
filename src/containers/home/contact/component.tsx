@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
-import { motion } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
@@ -17,6 +17,7 @@ import { capitalizeString } from 'lib/utils';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
+  const ref = useRef();
   const [submitting, setSubmitting] = useState(false);
   const [toast, displayToast] = useState(false);
 
@@ -44,21 +45,45 @@ const Contact: React.FC = () => {
     [saveSubscribeMutation]
   );
 
+  const inView = useInView(ref, {
+    once: true,
+    amount: 0.25,
+  });
+
+  const opacity = inView ? 1 : 0;
+
   return (
-    <section className="w-full pb-20 bg-gray-900 scroll-mt-20 lg:scroll-mt-0" id="contact">
+    <motion.section
+      ref={ref}
+      className="w-full pb-20 bg-gray-900 scroll-mt-20 lg:scroll-mt-0"
+      id="contact"
+      {...IN_VIEW_PROPS}
+    >
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
           <div className="space-y-6 font-sans text-white md:col-span-6">
-            <motion.h2 className="text-xl md:text-2xl" {...IN_VIEW_PROPS}>
+            <motion.h2
+              className="text-xl md:text-2xl"
+              animate={{ opacity }}
+              transition={{ delay: 0.2 }}
+            >
               Keep up to date
             </motion.h2>
-            <motion.p className="text-base leading-7 md:text-lg" {...IN_VIEW_PROPS}>
+            <motion.p
+              className="text-base leading-7 md:text-lg"
+              animate={{ opacity }}
+              transition={{ delay: 0.3 }}
+            >
               Subscribe to keep up to date on our progress and be among the first to access our
               platform.
             </motion.p>
 
             {minWidth >= BREAKPOINTS.xl && (
-              <motion.p className="text-sm leading-7 md:text-base opacity-80" {...IN_VIEW_PROPS}>
+              <motion.p
+                className="text-sm leading-7 md:text-base opacity-80"
+                animate={{ opacity }}
+                transition={{ delay: 0.4 }}
+              >
                 Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
                 Global Stocktake in 2023.
               </motion.p>
@@ -75,7 +100,11 @@ const Contact: React.FC = () => {
                     validate={composeValidators([{ presence: true, email: true }])}
                   >
                     {({ input, meta }) => (
-                      <motion.div className="relative w-full" {...IN_VIEW_PROPS}>
+                      <motion.div
+                        className="relative w-full"
+                        animate={{ opacity }}
+                        transition={{ delay: 0.4 }}
+                      >
                         <input
                           {...input}
                           value={input.value as string}
@@ -91,7 +120,7 @@ const Contact: React.FC = () => {
                       </motion.div>
                     )}
                   </Field>
-                  <motion.div {...IN_VIEW_PROPS}>
+                  <motion.div animate={{ opacity }} transition={{ delay: 0.5, bounce: 0 }}>
                     <Button
                       disabled={submitting}
                       size="s"
@@ -109,7 +138,8 @@ const Contact: React.FC = () => {
           {minWidth < BREAKPOINTS.xl && (
             <motion.p
               className="text-sm leading-5 text-white md:text-base opacity-80"
-              {...IN_VIEW_PROPS}
+              animate={{ opacity }}
+              transition={{ delay: 0.4 }}
             >
               Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
               Global Stocktake in 2023.
@@ -128,7 +158,7 @@ const Contact: React.FC = () => {
           />
         </div>
       )}
-    </section>
+    </motion.section>
   );
 };
 

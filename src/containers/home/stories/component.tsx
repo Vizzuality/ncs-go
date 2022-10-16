@@ -23,7 +23,7 @@ const Stories = () => {
   });
 
   return (
-    <div ref={ref} id="stories" className="scroll-mt-20 lg:scroll-mt-0">
+    <div id="stories" className="scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
@@ -32,19 +32,20 @@ const Stories = () => {
             subtitle="Here are some of the stories we have heard from the ground."
           />
         </div>
-        <div className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+        <motion.div
+          className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+          {...IN_VIEW_PROPS}
+        >
           <div className="col-start-1 pb-4 lg:pb-0">
-            <motion.p {...IN_VIEW_PROPS}>
-              Nature-based solutions are ready to be deployed right now, everywhere.
-            </motion.p>
+            <p>Nature-based solutions are ready to be deployed right now, everywhere.</p>
           </div>
           <div className="col-start-2 space-y-4 md:space-y-6">
-            <motion.p {...IN_VIEW_PROPS}>
+            <p>
               From south to north, east to west, people have been taking action and leading the way
               to reverse nature loss and create new sustainable economies.
-            </motion.p>
+            </p>
           </div>
-        </div>
+        </motion.div>
       </Wrapper>
       <Samples />
       <List />

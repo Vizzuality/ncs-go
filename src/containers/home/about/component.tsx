@@ -18,6 +18,8 @@ const About = () => {
 
   const inView = useInView(ref);
 
+  const opacity = inView ? 1 : 0;
+
   const setSection = useHomeStore((state) => state.setSection);
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
@@ -63,8 +65,15 @@ const About = () => {
         )}
 
         <Wrapper>
-          <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
-            <motion.div className="col-start-2 pb-4 lg:pb-0" {...IN_VIEW_PROPS}>
+          <motion.div
+            className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+            {...IN_VIEW_PROPS}
+          >
+            <motion.div
+              className="col-start-2 pb-4 lg:pb-0"
+              animate={{ opacity }}
+              transition={{ delay: 0.2 }}
+            >
               <p>
                 Naturebase will bring together science-based data on nature’s pathways to mitigate
                 climate change across every region of the planet, combining them with the latest
@@ -72,7 +81,11 @@ const About = () => {
                 schemes and of course, loads of case studies.
               </p>
             </motion.div>
-            <div className="col-start-3 space-y-4 md:space-y-6" {...IN_VIEW_PROPS}>
+            <motion.div
+              className="col-start-3 space-y-4 md:space-y-6"
+              animate={{ opacity }}
+              transition={{ delay: 0.3 }}
+            >
               <p>
                 Scientists, practitioners, policymakers and experts can find their way to enact
                 nature’s full transformative potential.
@@ -83,8 +96,8 @@ const About = () => {
                 which of nature’s pathways offer the best potential for reducing emissions at the
                 same time as benefiting local communities and biodiversity.
               </p>
-            </div>
-          </div>
+            </motion.div>
+          </motion.div>
         </Wrapper>
 
         {minWidth >= BREAKPOINTS.md && <AboutVideo />}

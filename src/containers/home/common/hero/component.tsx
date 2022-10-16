@@ -15,14 +15,10 @@ export const Hero = ({ className, subtitle, title }: HeroProps) => (
       [className]: !!className,
     })}
   >
-    <div className="space-y-4">
-      <motion.h2 className="text-base font-semibold tracking-widest uppercase" {...IN_VIEW_PROPS}>
-        {title}
-      </motion.h2>
-      <motion.h3 className="text-lg md:text-2xl" {...IN_VIEW_PROPS}>
-        {subtitle}
-      </motion.h3>
-    </div>
+    <motion.div className="space-y-4" {...IN_VIEW_PROPS}>
+      <h2 className="text-base font-semibold tracking-widest uppercase">{title}</h2>
+      <h3 className="text-lg md:text-2xl">{subtitle}</h3>
+    </motion.div>
   </div>
 );
 
