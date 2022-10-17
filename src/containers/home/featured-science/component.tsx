@@ -9,6 +9,8 @@ import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
 
+import Pathways from './pathways';
+
 const FeaturedScience = () => {
   const ref = useRef();
   const inView = useInView(ref, { once: true, amount: 0.25 });
@@ -26,7 +28,7 @@ const FeaturedScience = () => {
     <motion.div
       ref={ref}
       id="featured-science"
-      className="py-10 lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
+      className="lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
       {...IN_VIEW_PROPS}
     >
       <Wrapper>
@@ -52,6 +54,7 @@ const FeaturedScience = () => {
             </motion.p>
           </div>
         </div>
+
         <div className="pt-4 space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
@@ -60,12 +63,14 @@ const FeaturedScience = () => {
           />
 
           <div className="col-start-3 lg:pt-6">
-            <motion.p animate={{ opacity }} transition={{ delay: 0.4 }}>
+            <p>
               There are 20 science-backed effective approaches, or pathways, to nurture the best of
               what nature can do to limit global warming and preserve our natural world.
-            </motion.p>
+            </p>
           </div>
         </div>
+
+        <Pathways />
       </Wrapper>
     </motion.div>
   );
