@@ -50,8 +50,8 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           <motion.div
             className={cx({
               'mt-[18%] max-w-[320px] lg:max-w-[370px] xl:max-w-[420px]': true,
-              'mr-auto ml-[5%] xl:ml-[10%]': align === 'right',
-              'ml-auto mr-[5%] xl:mr-[10%]': align === 'left',
+              'mr-auto lg:ml-[5%] xl:ml-[10%]': align === 'right',
+              'ml-auto lg:mr-[5%] xl:mr-[10%]': align === 'left',
             })}
             initial={{ opacity: 0.6, x: align === 'left' ? 70 : -70 }}
             whileInView={{ opacity: 1, x: 0 }}
