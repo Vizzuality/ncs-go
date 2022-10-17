@@ -12,11 +12,14 @@ import Steps from './steps';
 const Intro = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
+
   const setSection = useHomeStore((state) => state.setSection);
+  const setSubSection = useHomeStore((state) => state.setSubSection);
 
   useEffect(() => {
     if (inView) {
       setSection('intro');
+      setSubSection(0);
     }
   });
 

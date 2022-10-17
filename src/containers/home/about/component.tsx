@@ -18,6 +18,7 @@ const About = () => {
   const subSectionRef = useRef();
 
   const inView = useInView(ref);
+  const subSectionInView = useInView(subSectionRef);
 
   const opacity = inView ? 1 : 0;
 
@@ -33,7 +34,7 @@ const About = () => {
   });
 
   useEffect(() => {
-    if (subSectionRef) {
+    if (subSectionInView) {
       setSubSection(1);
     }
   });
@@ -74,7 +75,6 @@ const About = () => {
 
         <Wrapper>
           <motion.div
-            ref={subSectionRef}
             className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
             {...IN_VIEW_PROPS}
           >
@@ -99,7 +99,7 @@ const About = () => {
                 Scientists, practitioners, policymakers and experts can find their way to enact
                 nature’s full transformative potential.
               </p>
-              <p>
+              <p ref={subSectionRef}>
                 You will be able to navigate through the different regions and biomes, capturing
                 real up-to-date information at a global, national and local level, and understand
                 which of nature’s pathways offer the best potential for reducing emissions at the

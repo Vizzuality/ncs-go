@@ -46,7 +46,7 @@ const Header: React.FC = () => {
   });
 
   useEffect(() => {
-    setHeader(section !== 'intro' && subSection !== 0);
+    setHeader(section !== 'intro' && subSection === 1);
   }, [section, setHeader, subSection]);
 
   const scrollMenu = useCallback((id) => {
