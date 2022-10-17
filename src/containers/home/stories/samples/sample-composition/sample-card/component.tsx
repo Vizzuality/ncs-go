@@ -30,7 +30,7 @@ export const SampleCard = ({
     <motion.div
       ref={ref}
       className={cx({
-        'lg:p-10 p-4 flex flex-col text-base text-gray-900 text-left h-full relative': true,
+        'lg:p-10 sm:p-6 p-4 flex flex-col text-base text-gray-900 text-left h-full relative': true,
         [PATHWAY_COLOR[pathway]]: true,
       })}
       {...IN_VIEW_PROPS}
@@ -49,7 +49,7 @@ export const SampleCard = ({
         animate={{ opacity }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-lg md:text-xl">{title}</h3>
+        <h3 className="text-lg lg:text-xl">{title}</h3>
         <h4 className="text-base">{description}</h4>
       </motion.div>
 

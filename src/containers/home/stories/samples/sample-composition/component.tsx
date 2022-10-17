@@ -49,7 +49,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
         {minWidth >= BREAKPOINTS.md && (
           <motion.div
             className={cx({
-              'mt-[18%] max-w-[420px]': true,
+              'mt-[18%] max-w-[320px] lg:max-w-[370px] xl:max-w-[420px]': true,
               'mr-auto ml-[5%] xl:ml-[10%]': align === 'right',
               'ml-auto mr-[5%] xl:mr-[10%]': align === 'left',
             })}
