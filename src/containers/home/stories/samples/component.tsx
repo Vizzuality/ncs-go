@@ -20,7 +20,7 @@ const Samples = () => {
       }}
     >
       <Wrapper>
-        <div className="lg:space-y-44">
+        <div className="space-y-10">
           <SampleComposition
             align="left"
             media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} />}
