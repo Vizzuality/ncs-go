@@ -95,11 +95,7 @@ const Contact: React.FC = () => {
             {({ handleSubmit, form }) => {
               formRef.current = form;
               return (
-                <form
-                  className="py-6 xl:col-span-6 xl:py-0"
-                  noValidate
-                  onSubmit={(event) => handleSubmit(event)}
-                >
+                <form className="py-6 xl:col-span-6 xl:py-0" noValidate onSubmit={handleSubmit}>
                   <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
                     <Field
                       name="email"

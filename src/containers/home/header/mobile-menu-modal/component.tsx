@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
@@ -17,6 +17,7 @@ import { composeValidators } from 'components/forms/validations';
 import Toast from 'components/toast';
 
 const MobileMenuModal = () => {
+  const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const [toast, displayToast] = useState(false);
 
@@ -26,7 +27,7 @@ const MobileMenuModal = () => {
   const menu = useUIStore((state) => state.menu);
 
   const onSubmit = useCallback(
-    (data) => {
+    (data, form) => {
       setSubmitting(true);
       saveSubscribeMutation.mutate(
         { data },
@@ -34,6 +35,7 @@ const MobileMenuModal = () => {
           onSuccess: () => {
             setSubmitting(false);
             displayToast(true);
+            form.reset();
           },
           onError: () => {
             setSubmitting(false);
@@ -72,44 +74,47 @@ const MobileMenuModal = () => {
           </div>
           <div className="absolute mx-2 right-1 left-1 bottom-10">
             <Form initialValues={{ email: null }} onSubmit={onSubmit}>
-              {({ handleSubmit }) => (
-                <form onSubmit={handleSubmit} className="py-6 xl:col-span-6 xl:py-0">
-                  <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
-                    <Field
-                      name="email"
-                      component="input"
-                      validate={composeValidators([{ presence: true, email: true }])}
-                    >
-                      {({ input, meta }) => (
-                        <div className="relative w-full">
-                          <input
-                            id="contact-form"
-                            {...input}
-                            value={input.value as string}
-                            type="email"
-                            placeholder="Enter your email"
-                            className="flex w-full px-10 py-4 text-base text-gray-800 transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
-                          />
-                          {meta.error && meta.touched && (
-                            <p className="absolute text-sm text-red-600 top-9 md:top-12 xl:top-full left-10 first-letter:capitalize">
-                              {meta.error}
-                            </p>
-                          )}
-                        </div>
-                      )}
-                    </Field>
-                    <Button
-                      disabled={submitting}
-                      size="s"
-                      theme="secondary"
-                      type="submit"
-                      className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
-                    >
-                      <p>Subscribe</p>
-                    </Button>
-                  </div>
-                </form>
-              )}
+              {({ handleSubmit, form }) => {
+                formRef.current = form;
+                return (
+                  <form className="py-6 xl:col-span-6 xl:py-0" noValidate onSubmit={handleSubmit}>
+                    <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
+                      <Field
+                        name="email"
+                        component="input"
+                        validate={composeValidators([{ presence: true, email: true }])}
+                      >
+                        {({ input, meta }) => (
+                          <div className="relative w-full">
+                            <input
+                              id="contact-form"
+                              {...input}
+                              value={input.value as string}
+                              type="email"
+                              placeholder="Enter your email"
+                              className="flex w-full px-10 py-4 text-base text-gray-800 transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
+                            />
+                            {meta.error && meta.touched && meta.active && (
+                              <p className="absolute text-sm text-red-600 top-9 md:top-12 xl:top-full left-10 first-letter:capitalize">
+                                {meta.error}
+                              </p>
+                            )}
+                          </div>
+                        )}
+                      </Field>
+                      <Button
+                        disabled={submitting}
+                        size="s"
+                        theme="secondary"
+                        type="submit"
+                        className="space-x-4 rounded-full xl:rounded-r-full xl:rounded-l-none"
+                      >
+                        <p>Subscribe</p>
+                      </Button>
+                    </div>
+                  </form>
+                );
+              }}
             </Form>
 
             <p className="text-sm leading-5 text-white">
