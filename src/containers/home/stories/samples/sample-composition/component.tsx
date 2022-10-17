@@ -18,7 +18,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           'relative lg:col-span-10 border border-transparent lg:col-start-2': true,
         })}
       >
-        {minWidth >= BREAKPOINTS.lg && (
+        {minWidth >= BREAKPOINTS.md && (
           <motion.div
             className={cx({
               'aspect-video w-[70%] absolute top-0 left-0': true,
@@ -30,7 +30,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           </motion.div>
         )}
 
-        {minWidth < BREAKPOINTS.lg && (
+        {minWidth < BREAKPOINTS.md && (
           <motion.div
             className="aspect-video w-[96%] absolute top-0 left-0"
             {...IN_VIEW_PROPS}
@@ -46,12 +46,12 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           </motion.div>
         )}
 
-        {minWidth >= BREAKPOINTS.lg && (
+        {minWidth >= BREAKPOINTS.md && (
           <motion.div
             className={cx({
               'mt-[18%] max-w-[420px]': true,
-              'mr-auto ml-[10%]': align === 'right',
-              'ml-auto mr-[10%]': align === 'left',
+              'mr-auto ml-[5%] xl:ml-[10%]': align === 'right',
+              'ml-auto mr-[5%] xl:mr-[10%]': align === 'left',
             })}
             initial={{ opacity: 0.6, x: align === 'left' ? 70 : -70 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -65,7 +65,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           </motion.div>
         )}
 
-        {minWidth < BREAKPOINTS.lg && (
+        {minWidth < BREAKPOINTS.md && (
           <motion.div
             className={cx({
               'mt-[48%]': true,
