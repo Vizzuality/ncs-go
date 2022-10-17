@@ -90,9 +90,11 @@ export function ToastProvider({ children, placement }: ToastProviderProps) {
       {/* Container */}
       <ToastContainer placement={placement}>
         <AnimatePresence initial={false}>
-          {toasts.map((t) => (
-            <Toast key={`${t.id}`} {...t} onDismiss={remove} />
-          ))}
+          <div key="toast">
+            {toasts.map((t) => (
+              <Toast key={`${t.id}`} {...t} onDismiss={remove} />
+            ))}
+          </div>
         </AnimatePresence>
       </ToastContainer>
     </ToastContext.Provider>

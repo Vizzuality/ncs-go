@@ -17,8 +17,6 @@ export const Toast: React.FC<ToastProps> = ({
   level = 'info',
   onDismiss,
 }: ToastProps) => {
-  const DURATION = 1;
-
   const ICON = THEME[level || 'info'].icon;
 
   const handleDismiss = useCallback(() => {
@@ -29,11 +27,15 @@ export const Toast: React.FC<ToastProps> = ({
 
   return (
     <motion.div
-      key="toast"
+      layout
       initial={{ opacity: 0, x: 25 }}
       animate={{ opacity: 1, x: 0 }}
       exit={{ opacity: 0, x: 50 }}
-      transition={{ duration: DURATION }}
+      transition={{
+        ease: 'anticipate',
+        duration: 2.5,
+      }}
+      onAnimationComplete={handleDismiss}
     >
       <div
         className={cx({
@@ -48,8 +50,9 @@ export const Toast: React.FC<ToastProps> = ({
         </div>
 
         <button
+          aria-label="close"
           type="button"
-          className="flex items-center justify-center w-10 h-10 ml-5 shrink-0"
+          className="flex items-center justify-center flex-shrink-0 w-10 h-10 ml-5"
           onClick={handleDismiss}
         >
           <Icon icon={CLOSE_SVG} className="w-3 h-3" />
