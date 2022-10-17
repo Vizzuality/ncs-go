@@ -13,6 +13,8 @@ export interface ModalProps {
 
   theme?: 'light' | 'dark';
 
+  closeBtn?: boolean;
+
   children?: ReactNode;
   /**
    * Class name to assign to the modal
