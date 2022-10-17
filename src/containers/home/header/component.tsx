@@ -31,6 +31,8 @@ const Header: React.FC = () => {
   const section = useHomeStore((state) => state.section);
   const setSection = useHomeStore((state) => state.setSection);
 
+  const subSection = useHomeStore((state) => state.subSection);
+
   const header = useHomeStore((state) => state.header);
   const setHeader = useHomeStore((state) => state.setHeader);
 
@@ -44,8 +46,8 @@ const Header: React.FC = () => {
   });
 
   useEffect(() => {
-    setHeader(section !== 'intro');
-  }, [section, setHeader]);
+    setHeader(section !== 'intro' && subSection !== 0);
+  }, [section, setHeader, subSection]);
 
   const scrollMenu = useCallback((id) => {
     const $scrollEl = document.getElementById(id);
