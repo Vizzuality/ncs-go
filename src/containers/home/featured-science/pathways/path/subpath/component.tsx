@@ -1,8 +1,14 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
+
+import cx from 'classnames';
 
 import { motion } from 'framer-motion';
 
-const SubPath = ({ id, title, color, index, width, height, lenght, center, onClick }) => {
+import Tooltip from './tooltip';
+
+const SubPath = ({ id, title, description, color, index, width, height, lenght, center }) => {
+  const [more, setMore] = useState(false);
+
   const VARIANTS = useMemo(() => {
     const angle = index * (360 / lenght) - 90;
 
@@ -39,26 +45,50 @@ const SubPath = ({ id, title, color, index, width, height, lenght, center, onCli
     };
   }, [width, height, index, center, lenght]);
 
+  const handleClick = useCallback(() => {
+    setMore(!more);
+  }, [more]);
+
   return (
     <motion.div
       key={id}
-      className="absolute top-0 left-0 z-0 flex items-center justify-center cursor-pointer"
+      className={cx({
+        'absolute top-0 left-0 flex items-center justify-center cursor-pointer': true,
+        'z-0': !more,
+        'z-20': more,
+      })}
       variants={VARIANTS}
       initial="initial"
       animate="animate"
       exit="exit"
-      onClick={onClick}
+      onClick={handleClick}
     >
-      <div
-        className="flex items-center justify-center -translate-x-1/2 -translate-y-1/2 rounded-full"
-        style={{
-          width: 120,
-          height: 120,
-          backgroundColor: color,
+      <Tooltip
+        trigger="click"
+        placement="top"
+        portalProps={{
+          enabled: true,
         }}
+        content={
+          <div
+            key="description"
+            className="flex items-center justify-center p-10 text-center bg-white border border-gray-800 w-96"
+          >
+            {description}
+          </div>
+        }
       >
-        <h3 className="px-5 text-sm text-center">{title}</h3>
-      </div>
+        <div
+          className="flex items-center justify-center transition-transform -translate-x-1/2 -translate-y-1/2 rounded-full hover:scale-110"
+          style={{
+            width: 120,
+            height: 120,
+            backgroundColor: color,
+          }}
+        >
+          <h3 className="px-5 text-sm text-center">{title}</h3>
+        </div>
+      </Tooltip>
     </motion.div>
   );
 };

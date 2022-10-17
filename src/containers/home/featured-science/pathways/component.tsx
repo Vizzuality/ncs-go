@@ -13,7 +13,7 @@ const Pathways = () => {
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen xl:h-[calc(100vh_-_100px)] bg-bottom bg-no-repeat"
+      className="relative z-0 w-full h-screen xl:h-[calc(100vh_-_100px)] bg-bottom bg-no-repeat"
       style={{
         backgroundImage: `url(/images/home/pathways/bg.svg)`,
       }}

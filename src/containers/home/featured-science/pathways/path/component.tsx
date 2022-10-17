@@ -122,7 +122,7 @@ const Path = ({
         whileHover="hover"
         transition={{
           type: 'spring',
-          duration: 0.5,
+          duration: 0.75,
           bounce: 0.25,
         }}
         style={{
@@ -158,13 +158,7 @@ const Path = ({
           }}
         >
           <div className="mx-auto w-[120px] h-[120px]">
-            <Image
-              layout="fill"
-              src={`/images/home/pathways/${id}-sm.svg`}
-              width={64}
-              height={64}
-              alt={title}
-            />
+            <Image layout="fill" src={`/images/home/pathways/${id}-sm.svg`} alt={title} />
           </div>
         </motion.div>
       </motion.div>
