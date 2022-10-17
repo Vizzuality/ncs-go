@@ -13,7 +13,6 @@ import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Toast from 'components/toast';
 import { IN_VIEW_PROPS } from 'constants/motion';
-import { capitalizeString } from 'lib/utils';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
@@ -124,8 +123,8 @@ const Contact: React.FC = () => {
                             meta.touched &&
                             meta.active &&
                             minWidth >= BREAKPOINTS.xl && (
-                              <p className="absolute text-sm text-red-600 top-20 left-10">
-                                {capitalizeString(meta.error)}
+                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
+                                {meta.error}
                               </p>
                             )}
                         </motion.div>
