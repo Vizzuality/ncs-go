@@ -71,7 +71,7 @@ export const SampleMedia = ({ backgroundImage, video = false }: SampleMediaProps
         closeBtn={minWidth >= BREAKPOINTS.sm ? false : true}
         onOpenChange={() => close()}
       >
-        <div className="w-full translate-y-full sm:translate-y-0 sm:pt-0 aspect-video">
+        <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
           <Video
             config={videoConfig}
             playing
