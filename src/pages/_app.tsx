@@ -7,7 +7,7 @@ import { useRouter } from 'next/router';
 
 import { QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query';
 
-import ThirdParty from 'containers/third-party';
+// import ThirdParty from 'containers/third-party';
 
 import { GAPage } from 'lib/analytics/ga';
 
@@ -38,7 +38,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         {/* @ts-ignore: https://github.com/artsy/fresnel/issues/281 */}
 
         <MapProvider>
-          <ThirdParty />
+          {/* <ThirdParty /> */}
           <Component {...pageProps} />
         </MapProvider>
       </Hydrate>

@@ -1,10 +1,13 @@
 import React from 'react';
 
+import { motion } from 'framer-motion';
+
 import Hero from 'containers/home/common/hero';
 import StoryCard from 'containers/home/stories/list/story-card';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import { IN_VIEW_PROPS } from 'constants/motion';
 
 import { STORIES } from './constants';
 
@@ -33,7 +36,7 @@ const List = () => {
             ))}
           </div>
         </div>
-        <div className="flex justify-center w-full py-10">
+        <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
           <Button
             className="rounded-full"
             theme="secondary"
@@ -42,7 +45,7 @@ const List = () => {
           >
             Show more stories
           </Button>
-        </div>
+        </motion.div>
       </Wrapper>
     </div>
   );

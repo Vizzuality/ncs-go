@@ -11,12 +11,16 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
+import Toast from 'components/toast';
+import { capitalizeString } from 'lib/utils';
 
 const SubscribeModal = () => {
+  const [submitting, setSubmitting] = useState(false);
+  const [toast, displayToast] = useState(false);
+  const saveSubscribeMutation = useSaveSubscribe({});
+
   const closeMenu = useUIStore((state) => state.closeMenu);
   const menu = useUIStore((state) => state.menu);
-  const [submitting, setSubmitting] = useState(false);
-  const saveSubscribeMutation = useSaveSubscribe({});
 
   const handleSubmit = useCallback(
     (data) => {
@@ -26,12 +30,14 @@ const SubscribeModal = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
+            displayToast(true);
           },
           onError: () => {
             setSubmitting(false);
           },
         }
       );
+      setTimeout(() => displayToast(false), 3000);
     },
     [saveSubscribeMutation]
   );
@@ -66,11 +72,11 @@ const SubscribeModal = () => {
                                 value={input.value as string}
                                 type="email"
                                 placeholder="Enter your email"
-                                className="flex w-full px-10 py-4 text-base text-gray-800 bg-gray-100 border-none rounded-full md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
+                                className="flex w-full px-10 py-4 text-base text-gray-800 transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                               />
                               {meta.error && meta.touched && (
-                                <p className="absolute text-sm text-orange-400 top-9 md:top-12 xl:top-full left-10">
-                                  {meta.error.join('. ')}
+                                <p className="absolute text-sm text-red-600 top-9 md:top-20 left-10">
+                                  {capitalizeString(meta.error)}
                                 </p>
                               )}
                             </div>
@@ -100,6 +106,16 @@ const SubscribeModal = () => {
             </div>
           </Wrapper>
         </div>
+        {toast && (
+          <div className="absolute z-20 right-10 bottom-10">
+            <Toast
+              id="contact"
+              content="You have successfully subscribed."
+              level="success"
+              onDismiss={() => displayToast(false)}
+            />
+          </div>
+        )}
       </FullScreenModal>
     </div>
   );

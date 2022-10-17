@@ -64,7 +64,11 @@ module.exports = {
       current: 'currentColor',
       black: '#000000',
       white: '#FFFFFF',
-      brand: '#5BC89C',
+      brand: {
+        700: '#5BC89C',
+        800: '#55ba93',
+        900: '#4dab89',
+      },
       blue: {
         200: '#CCECFA',
         400: '#8BDCFF',
@@ -85,6 +89,9 @@ module.exports = {
       },
       orange: {
         400: '#FFB053',
+      },
+      red: {
+        600: '#FC1A52',
       },
       yellow: {
         400: '#FFE587',

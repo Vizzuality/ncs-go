@@ -4,8 +4,8 @@ import {
   useRole,
   useDismiss,
   FloatingPortal,
-  FloatingOverlay,
   FloatingFocusManager,
+  FloatingOverlay,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
@@ -47,7 +47,7 @@ export const Modal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <FloatingOverlay lockScroll>
+          <FloatingOverlay lockScroll className="z-50">
             <motion.div
               variants={overlayFramerVariants}
               initial="initial"

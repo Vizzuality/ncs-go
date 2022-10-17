@@ -2,12 +2,14 @@ import React, { useEffect, useRef } from 'react';
 
 import { useHomeStore } from 'store/home';
 
-import { useInView } from 'framer-motion';
+import { motion, useInView } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
 import List from 'containers/home/stories/list';
 import Samples from 'containers/home/stories/samples';
 import Wrapper from 'containers/wrapper';
+
+import { IN_VIEW_PROPS } from 'constants/motion';
 
 const Stories = () => {
   const ref = useRef();
@@ -21,7 +23,7 @@ const Stories = () => {
   });
 
   return (
-    <div ref={ref} id="stories" className="scroll-mt-20 lg:scroll-mt-0">
+    <div id="stories" className="scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
@@ -30,7 +32,10 @@ const Stories = () => {
             subtitle="Here are some of the stories we have heard from the ground."
           />
         </div>
-        <div className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+        <motion.div
+          className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+          {...IN_VIEW_PROPS}
+        >
           <div className="col-start-1 pb-4 lg:pb-0">
             <p>Nature-based solutions are ready to be deployed right now, everywhere.</p>
           </div>
@@ -40,7 +45,7 @@ const Stories = () => {
               to reverse nature loss and create new sustainable economies.
             </p>
           </div>
-        </div>
+        </motion.div>
       </Wrapper>
       <Samples />
       <List />

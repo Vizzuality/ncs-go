@@ -19,10 +19,16 @@ export interface ModalProps {
    */
   size?: 'xs' | 's' | 'default' | 'l' | 'xl';
 
+  /**
+   * interanl button to close the modal
+   */
+  closeBtn?: boolean;
+
   children?: ReactNode;
   /**
    * Class name to assign to the modal
    */
+
   className?: string;
   /**
    * Callback executed when the modal open change

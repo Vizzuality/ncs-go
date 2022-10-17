@@ -1,34 +1,20 @@
 import React from 'react';
 
-import dynamic from 'next/dynamic';
-
 import useBreakpoint from 'use-breakpoint';
 
 import SampleComposition from 'containers/home/stories/samples/sample-composition';
 import Card from 'containers/home/stories/samples/sample-composition/sample-card';
+import SampleMedia from 'containers/home/stories/samples/sample-composition/sample-media';
 import Wrapper from 'containers/wrapper';
 
 import { BREAKPOINTS } from 'styles/styles.config';
 
-const Video = dynamic(() => import('components/video'), {
-  ssr: false,
-});
-
 const Samples = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
-  const videoConfig = {
-    youtube: {
-      playerVars: {
-        controls: true,
-        showinfo: 0,
-        rel: 0,
-      },
-    },
-  };
   return (
     <div
-      className="w-full pt-4 pb-10 lg:pb-0"
+      className="w-full pt-4"
       style={{
         background: minWidth >= BREAKPOINTS.lg && 'linear-gradient(#FFFFFF 90%, #011426 10%',
       }}
@@ -37,12 +23,7 @@ const Samples = () => {
         <div className="lg:space-y-44">
           <SampleComposition
             align="left"
-            media={
-              <div
-                style={{ backgroundImage: `url(/images/stories/ghana.png)` }}
-                className="overflow-hidden bg-center bg-no-repeat bg-cover aspect-video"
-              />
-            }
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} />}
             card={
               <Card
                 country="Tanzania"
@@ -55,18 +36,7 @@ const Samples = () => {
           />
           <SampleComposition
             align="right"
-            media={
-              <Video
-                config={videoConfig}
-                playing
-                loop
-                playBackground="bg-white"
-                playColor="text-gray-900"
-                url="https://youtu.be/6PGyRolwFVo"
-                height="100%"
-                width="100%"
-              />
-            }
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} video />}
             card={
               <Card
                 country="Dominican Republic"

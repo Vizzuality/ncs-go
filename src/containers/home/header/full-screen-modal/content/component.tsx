@@ -14,6 +14,7 @@ export const FullScreenModal: FC<FullScreenModalProps> = ({
   children,
   className,
   theme = 'light',
+  closeBtn = true,
   floating,
   getFloatingProps,
   onOpenChange,
@@ -33,22 +34,24 @@ export const FullScreenModal: FC<FullScreenModalProps> = ({
       })}
     >
       <div className="relative flex flex-col overflow-hidden grow">
-        <button
-          type="button"
-          onClick={() => {
-            onOpenChange(false);
-          }}
-          className="absolute z-50 flex items-center text-sm text-gray-300 top-8 right-9"
-        >
-          <Icon
-            icon={CLOSE_SVG}
-            className={cx({
-              'inline-block w-7 h-7': true,
-              'stroke-black': theme === 'light',
-              'stroke-white': theme === 'dark',
-            })}
-          />
-        </button>
+        {closeBtn && (
+          <button
+            type="button"
+            onClick={() => {
+              onOpenChange(false);
+            }}
+            className="absolute z-50 flex items-center text-sm text-gray-300 top-8 right-9"
+          >
+            <Icon
+              icon={CLOSE_SVG}
+              className={cx({
+                'inline-block w-7 h-7': true,
+                'stroke-black': theme === 'light',
+                'stroke-white': theme === 'dark',
+              })}
+            />
+          </button>
+        )}
 
         {children}
       </div>
