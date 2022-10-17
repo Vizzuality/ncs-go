@@ -3,6 +3,7 @@ import React, { useEffect, useRef } from 'react';
 import { useHomeStore } from 'store/home';
 
 import { motion, useInView } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
 
 import Hero from 'containers/home/common/hero';
 import List from 'containers/home/stories/list';
@@ -10,10 +11,13 @@ import Samples from 'containers/home/stories/samples';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 const Stories = () => {
   const ref = useRef();
   const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
   const setSection = useHomeStore((state) => state.setSection);
 
   useEffect(() => {
@@ -47,8 +51,13 @@ const Stories = () => {
           </div>
         </motion.div>
       </Wrapper>
-      <Samples />
-      <List />
+      {minWidth < BREAKPOINTS.md && <List />}
+      {minWidth >= BREAKPOINTS.md && (
+        <>
+          <Samples />
+          <List />
+        </>
+      )}
     </div>
   );
 };
