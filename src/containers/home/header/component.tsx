@@ -24,10 +24,13 @@ const Header: React.FC = () => {
 
   const [activeMenuOption, setActiveMenuOption] = useState(null);
 
-  const openMenu = useUIStore((state) => state.openMenu);
   const menu = useUIStore((state) => state.menu);
+  const openMenu = useUIStore((state) => state.openMenu);
+  const closeMenu = useUIStore((state) => state.closeMenu);
+
   const section = useHomeStore((state) => state.section);
   const setSection = useHomeStore((state) => state.setSection);
+
   const header = useHomeStore((state) => state.header);
   const setHeader = useHomeStore((state) => state.setHeader);
 
@@ -52,22 +55,21 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <section
-      ref={ref}
-      className="sticky top-0 left-0 z-10 w-full h-24 font-sans text-center text-white bg-gray-900"
-    >
+    <section ref={ref} className="sticky top-0 left-0 z-10 w-full text-white bg-gray-900">
       {minWidth < BREAKPOINTS.lg && header && (
         <>
           <Wrapper>
-            <motion.div className="absolute top-9 right-8" {...IN_VIEW_PROPS}>
-              <MenuButton
-                isOpen={menu}
-                onClick={() => openMenu()}
-                transition={{ ease: 'easeOut', duration: 0.3 }}
-                width={40}
-                height={40}
-              />
-            </motion.div>
+            <div className="relative h-20">
+              <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
+                <MenuButton
+                  isOpen={menu}
+                  onClick={() => (menu ? closeMenu() : openMenu())}
+                  transition={{ ease: 'easeOut', duration: 0.2 }}
+                  width={40}
+                  height={40}
+                />
+              </motion.div>
+            </div>
           </Wrapper>
 
           <MobileMenuModal />

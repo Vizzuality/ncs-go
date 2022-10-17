@@ -16,22 +16,26 @@ const MenuButton = ({
   const top = {
     closed: {
       rotate: 0,
-      translateY: 0,
+      translateY: 1.45,
+      transformOrigin: '50% 50%',
     },
     opened: {
       rotate: 45,
       translateY: 2,
+      transformOrigin: '50% 50%',
     },
   };
 
   const bottom = {
     closed: {
       rotate: 0,
-      translateY: 0,
+      translateY: -1.45,
+      transformOrigin: '50% 50%',
     },
     opened: {
       rotate: -45,
       translateY: -2,
+      transformOrigin: '50% 50%',
     },
   };
   lineProps = {
@@ -43,7 +47,7 @@ const MenuButton = ({
     transition,
     ...lineProps,
   };
-  const unitHeight = 8;
+  const unitHeight = 4;
   const unitWidth = (unitHeight * (width as number)) / (height as number);
 
   return (
