@@ -5,19 +5,20 @@ import { Form, Field } from 'react-final-form';
 import { useUIStore } from 'store/ui';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
+import { useToasts } from 'hooks/toast';
 
 import FullScreenModal from 'containers/home/header/full-screen-modal';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Toast from 'components/toast';
 
 const SubscribeModal = () => {
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
-  const [toast, displayToast] = useState(false);
   const saveSubscribeMutation = useSaveSubscribe({});
+
+  const { addToast } = useToasts();
 
   const closeMenu = useUIStore((state) => state.closeMenu);
   const menu = useUIStore((state) => state.menu);
@@ -30,7 +31,15 @@ const SubscribeModal = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
-            displayToast(true);
+            addToast(
+              'success-contact',
+              <>
+                <p className="text-base">You have successfully subscribed.</p>
+              </>,
+              {
+                level: 'success',
+              }
+            );
             form.reset();
           },
           onError: () => {
@@ -38,9 +47,8 @@ const SubscribeModal = () => {
           },
         }
       );
-      setTimeout(() => displayToast(false), 3000);
     },
-    [saveSubscribeMutation]
+    [saveSubscribeMutation, addToast]
   );
 
   return (
@@ -114,16 +122,6 @@ const SubscribeModal = () => {
             </div>
           </Wrapper>
         </div>
-        {toast && (
-          <div className="absolute z-20 right-10 bottom-10">
-            <Toast
-              id="contact"
-              content="You have successfully subscribed."
-              level="success"
-              onDismiss={() => displayToast(false)}
-            />
-          </div>
-        )}
       </FullScreenModal>
     </div>
   );

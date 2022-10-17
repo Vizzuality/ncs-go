@@ -4,9 +4,8 @@ import { Form, Field } from 'react-final-form';
 
 import { useUIStore } from 'store/ui';
 
-import { AnimatePresence } from 'framer-motion';
-
 import { useSaveSubscribe } from 'hooks/subscribe';
+import { useToasts } from 'hooks/toast';
 
 import { NAV_OPTIONS } from 'containers/home/header/constants';
 import FullScreenModal from 'containers/home/header/full-screen-modal';
@@ -14,13 +13,12 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Toast from 'components/toast';
 
 const MobileMenuModal = () => {
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
-  const [toast, displayToast] = useState(false);
 
+  const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
 
   const closeMenu = useUIStore((state) => state.closeMenu);
@@ -34,7 +32,15 @@ const MobileMenuModal = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
-            displayToast(true);
+            addToast(
+              'success-contact',
+              <>
+                <p className="text-base">You have successfully subscribed.</p>
+              </>,
+              {
+                level: 'success',
+              }
+            );
             form.reset();
           },
           onError: () => {
@@ -42,9 +48,8 @@ const MobileMenuModal = () => {
           },
         }
       );
-      setTimeout(() => displayToast(false), 3000);
     },
-    [saveSubscribeMutation]
+    [saveSubscribeMutation, addToast]
   );
 
   const scrollMenu = useCallback((id) => {
@@ -123,18 +128,6 @@ const MobileMenuModal = () => {
             </p>
           </div>
         </Wrapper>
-        <AnimatePresence>
-          {toast && (
-            <div className="absolute z-20 right-10 bottom-10">
-              <Toast
-                id="contact"
-                content="You have successfully subscribed."
-                level="success"
-                onDismiss={() => displayToast(false)}
-              />
-            </div>
-          )}
-        </AnimatePresence>
       </section>
     </FullScreenModal>
   );

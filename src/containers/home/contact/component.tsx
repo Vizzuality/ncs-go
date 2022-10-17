@@ -6,12 +6,12 @@ import { motion, useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
+import { useToasts } from 'hooks/toast';
 
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Toast from 'components/toast';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
@@ -19,8 +19,8 @@ const Contact: React.FC = () => {
   const ref = useRef();
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
-  const [toast, displayToast] = useState(false);
 
+  const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
@@ -33,7 +33,15 @@ const Contact: React.FC = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
-            displayToast(true);
+            addToast(
+              'success-contact',
+              <>
+                <p className="text-base">You have successfully subscribed.</p>
+              </>,
+              {
+                level: 'success',
+              }
+            );
             form.reset();
           },
           onError: () => {
@@ -41,9 +49,8 @@ const Contact: React.FC = () => {
           },
         }
       );
-      setTimeout(() => displayToast(false), 3000);
     },
-    [saveSubscribeMutation]
+    [saveSubscribeMutation, addToast]
   );
 
   const inView = useInView(ref, {
@@ -155,17 +162,6 @@ const Contact: React.FC = () => {
           )}
         </div>
       </Wrapper>
-
-      {toast && (
-        <div className="absolute z-20 right-10 bottom-10">
-          <Toast
-            id="contact"
-            content="You have successfully subscribed."
-            level="success"
-            onDismiss={() => displayToast(false)}
-          />
-        </div>
-      )}
     </motion.section>
   );
 };
