@@ -13,7 +13,7 @@ const Pathways = () => {
   return (
     <div
       ref={ref}
-      className="relative w-full h-screen bg-bottom bg-no-repeat"
+      className="relative w-full h-screen xl:h-[calc(100vh_-_100px)] bg-bottom bg-no-repeat"
       style={{
         backgroundImage: `url(/images/home/pathways/bg.svg)`,
       }}
@@ -26,6 +26,7 @@ const Pathways = () => {
           canvas={{ width, height }}
           selected={selected}
           selectedIndex={PATHWAYS.findIndex((p) => p.id === selected)}
+          length={PATHWAYS.length}
           onClick={() => {
             setSelected(selected === pathway.id ? null : pathway.id);
           }}
