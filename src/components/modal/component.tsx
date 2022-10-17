@@ -5,6 +5,7 @@ import {
   useDismiss,
   FloatingPortal,
   FloatingFocusManager,
+  FloatingOverlay,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
@@ -46,33 +47,35 @@ export const Modal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <motion.div
-            variants={overlayFramerVariants}
-            initial="initial"
-            animate="animate"
-            exit="exit"
-            className={OVERLAY_CLASSES}
-          >
-            <FloatingFocusManager context={context}>
-              <>
-                {minWidth < BREAKPOINTS.sm && (
-                  <ModalContent
-                    {...props}
-                    floating={floating}
-                    getFloatingProps={getFloatingProps}
-                  />
-                )}
-                {minWidth >= BREAKPOINTS.sm && (
-                  <ModalContent
-                    {...props}
-                    viewport="sm"
-                    floating={floating}
-                    getFloatingProps={getFloatingProps}
-                  />
-                )}
-              </>
-            </FloatingFocusManager>
-          </motion.div>
+          <FloatingOverlay lockScroll className="z-50">
+            <motion.div
+              variants={overlayFramerVariants}
+              initial="initial"
+              animate="animate"
+              exit="exit"
+              className={OVERLAY_CLASSES}
+            >
+              <FloatingFocusManager context={context}>
+                <>
+                  {minWidth < BREAKPOINTS.sm && (
+                    <ModalContent
+                      {...props}
+                      floating={floating}
+                      getFloatingProps={getFloatingProps}
+                    />
+                  )}
+                  {minWidth >= BREAKPOINTS.sm && (
+                    <ModalContent
+                      {...props}
+                      viewport="sm"
+                      floating={floating}
+                      getFloatingProps={getFloatingProps}
+                    />
+                  )}
+                </>
+              </FloatingFocusManager>
+            </motion.div>
+          </FloatingOverlay>
         )}
       </AnimatePresence>
     </FloatingPortal>
