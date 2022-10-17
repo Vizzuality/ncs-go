@@ -91,7 +91,7 @@ const List = () => {
             <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
               <Button
                 className="rounded-full"
-                theme="secondary"
+                theme={minWidth < BREAKPOINTS.md ? 'tertiary' : 'secondary'}
                 size="xs"
                 onClick={() => console.info('Show more stories')}
               >

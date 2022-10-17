@@ -49,12 +49,12 @@ export const SampleCard = ({
         animate={{ opacity }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-xl">{title}</h3>
+        <h3 className="text-lg md:text-xl">{title}</h3>
         <h4 className="text-base">{description}</h4>
       </motion.div>
 
       <motion.div
-        className="flex justify-end pt-4 pb-6 space-y-10 font-sans text-base lg:pt-20 lg:pb-1"
+        className="flex justify-end pt-4 space-y-10 font-sans text-base lg:pt-20 lg:pb-1"
         animate={{ opacity }}
         transition={{ delay: 0.4 }}
       >
