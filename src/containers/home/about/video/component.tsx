@@ -3,20 +3,17 @@ import React from 'react';
 import dynamic from 'next/dynamic';
 
 import { motion } from 'framer-motion';
-import useBreakpoint from 'use-breakpoint';
 
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
-import { BREAKPOINTS } from 'styles/styles.config';
 
 const Video = dynamic(() => import('components/video'), {
   ssr: false,
 });
 
 const AboutVideo = () => {
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
-
   const videoConfig = {
     youtube: {
       playerVars: {
@@ -29,7 +26,7 @@ const AboutVideo = () => {
 
   return (
     <motion.div {...IN_VIEW_PROPS}>
-      {minWidth < BREAKPOINTS.md && (
+      <Media lessThan="md">
         <div className="relative flex justify-center w-full bg-black aspect-video">
           <Video
             config={videoConfig}
@@ -40,8 +37,9 @@ const AboutVideo = () => {
             width="100%"
           />
         </div>
-      )}
-      {minWidth >= BREAKPOINTS.md && (
+      </Media>
+
+      <Media greaterThanOrEqual="md">
         <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
           <Wrapper>
             <div className="relative flex justify-center w-full bg-black aspect-video">
@@ -56,7 +54,7 @@ const AboutVideo = () => {
             </div>
           </Wrapper>
         </div>
-      )}
+      </Media>
     </motion.div>
   );
 };
