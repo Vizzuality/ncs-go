@@ -33,7 +33,7 @@ const Path = ({
 
   const CENTER = useMemo(() => {
     return {
-      x: canvas.width / 2 - width / 2 + width * 0.25,
+      x: canvas.width / 2 - width / 2,
       y: canvas.height / 2 - height / 2,
     };
   }, [width, height, canvas]);

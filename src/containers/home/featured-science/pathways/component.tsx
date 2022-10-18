@@ -4,6 +4,7 @@ import { useElementSize } from 'usehooks-ts';
 
 import { PATHWAYS } from 'containers/home/featured-science/pathways/constants';
 
+import Description from './description';
 import Pathway from './path';
 
 const Pathways = () => {
@@ -32,6 +33,8 @@ const Pathways = () => {
           }}
         />
       ))}
+
+      <Description selected={selected} />
     </div>
   );
 };
