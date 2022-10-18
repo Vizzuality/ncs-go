@@ -10,7 +10,8 @@ const SubPath = ({ id, title, description, color, index, width, height, lenght, 
   const [more, setMore] = useState(false);
 
   const VARIANTS = useMemo(() => {
-    const angle = index * (360 / lenght) - 90;
+    const LENGTH = lenght < 5 ? 8 : lenght;
+    const angle = index * (360 / LENGTH) - 90;
 
     const x = center.x + width / 2 + ((width + width / 2) / 2) * Math.cos((angle * Math.PI) / 180);
     const y =
@@ -72,9 +73,12 @@ const SubPath = ({ id, title, description, color, index, width, height, lenght, 
         content={
           <div
             key="description"
-            className="flex items-center justify-center p-10 text-center bg-white border border-gray-800 w-96"
+            className="flex items-center justify-center p-10 text-center bg-white border border-gray-800 rounded-full w-96 h-96"
           >
-            {description}
+            <div className="space-y-2">
+              <h3>{title}</h3>
+              <p className="text-sm">{description}</p>
+            </div>
           </div>
         }
       >

@@ -113,6 +113,15 @@ const Path = ({
     };
   }, []);
 
+  const TEXT_SMALL_VARIANTS = useMemo(() => {
+    return {
+      initial: { opacity: 0 },
+      static: { opacity: 0 },
+      selected: { opacity: 0 },
+      list: { opacity: 1 },
+    };
+  }, []);
+
   return (
     <>
       <motion.div
@@ -140,8 +149,8 @@ const Path = ({
             duration: 0.125,
           }}
         >
-          <div className="mx-auto w-[120px] h-[120px]">
-            <Image src={`/images/home/pathways/${id}.svg`} width={120} height={120} alt={title} />
+          <div className="relative mx-auto w-[120px] h-[120px]">
+            <Image src={`/images/home/pathways/${id}.svg`} layout="fill" alt={title} />
           </div>
 
           <h3 className="w-full text-lg text-center">
@@ -161,6 +170,17 @@ const Path = ({
             <Image layout="fill" src={`/images/home/pathways/${id}-sm.svg`} alt={title} />
           </div>
         </motion.div>
+
+        <motion.h3
+          variants={TEXT_SMALL_VARIANTS}
+          style={{ scale: 1 / SCALE }}
+          transition={{
+            duration: 0.125,
+          }}
+          className="absolute w-full max-w-[120px] mx-auto mt-5 text-sm text-center top-full origin-top"
+        >
+          {title} <span>({subpaths.length})</span>
+        </motion.h3>
       </motion.div>
 
       <AnimatePresence key="new">
