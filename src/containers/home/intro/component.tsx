@@ -10,21 +10,21 @@ import ScrollSection from './scroll-section';
 import Steps from './steps';
 
 const Intro = () => {
-  const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const sectionRef = useRef();
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
 
   const setSection = useHomeStore((state) => state.setSection);
   const setSubSection = useHomeStore((state) => state.setSubSection);
 
   useEffect(() => {
-    if (inView) {
+    if (inViewSection) {
       setSection('intro');
       setSubSection(0);
     }
   });
 
   return (
-    <section ref={ref} className="relative">
+    <section ref={sectionRef} className="relative">
       <div className="sticky top-0 left-0 z-0 w-full h-screen">
         <Particles />
         <Steps />

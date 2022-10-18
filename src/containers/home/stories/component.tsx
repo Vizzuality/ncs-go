@@ -14,20 +14,22 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 const Stories = () => {
-  const ref = useRef();
-  const inView = useInView(ref);
+  const sectionRef = useRef();
+
+  const inViewSection = useInView(sectionRef);
+
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   const setSection = useHomeStore((state) => state.setSection);
 
   useEffect(() => {
-    if (inView) {
+    if (inViewSection) {
       setSection('stories');
     }
   });
 
   return (
-    <motion.div ref={ref} id="stories" className="scroll-mt-20 lg:scroll-mt-0">
+    <motion.div ref={sectionRef} id="stories" className="scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
