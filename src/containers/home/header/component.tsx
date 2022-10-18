@@ -48,7 +48,7 @@ const Header: React.FC = () => {
   }, [section, setHeader, subSection]);
 
   useEffect(() => {
-    const selectedSection = NAV_OPTIONS.find((opt) => opt.label === section);
+    const selectedSection = NAV_OPTIONS.find((opt) => opt.id === section);
     setSelectedTab(selectedSection);
   }, [section]);
 
@@ -101,7 +101,7 @@ const Header: React.FC = () => {
                     <p className="hover:text-brand-700 py-7">{opt.label}</p>
                     {opt === selectedTab ? (
                       <motion.div
-                        className="absolute left-0 right-0 h-1 bg-white top-full"
+                        className="absolute left-0 right-0 h-[2px] bg-white top-full"
                         layoutId="underline"
                       />
                     ) : null}
