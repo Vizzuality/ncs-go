@@ -48,6 +48,7 @@ const Header: React.FC = () => {
   }, [section, setHeader, subSection]);
 
   useEffect(() => {
+    // !TODO: section should be update when scroll enter on sectionRef under side
     const selectedSection = NAV_OPTIONS.find((opt) => opt.id === section);
     setSelectedTab(selectedSection);
   }, [section]);
