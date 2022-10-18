@@ -20,7 +20,7 @@ const About = () => {
   const subSectionRef = useRef();
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
-  const inViewSection = useInView(sectionRef);
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
   const subSectionInView = useInView(subSectionRef);
 
   const opacity = inView ? 1 : 0;

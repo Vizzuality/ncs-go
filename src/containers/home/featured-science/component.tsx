@@ -14,7 +14,7 @@ const FeaturedScience = () => {
   const sectionRef = useRef();
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
-  const inViewSection = useInView(sectionRef);
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
 
   const opacity = inView ? 1 : 0;

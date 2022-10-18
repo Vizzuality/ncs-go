@@ -26,7 +26,7 @@ const Contact: React.FC = () => {
   const setSection = useHomeStore((state) => state.setSection);
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
-  const inViewSection = useInView(sectionRef);
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
 
   const opacity = inView ? 1 : 0;
 
