@@ -61,15 +61,14 @@ const Contact: React.FC = () => {
   const opacity = inView ? 1 : 0;
 
   return (
-    <motion.section
+    <section
       ref={ref}
       className="w-full pb-20 bg-gray-900 scroll-mt-20 lg:scroll-mt-0"
       id="contact"
-      {...IN_VIEW_PROPS}
     >
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
-          <div className="space-y-6 font-sans text-white md:col-span-6">
+          <motion.div className="space-y-6 font-sans text-white md:col-span-6" {...IN_VIEW_PROPS}>
             <motion.h2
               className="text-xl md:text-2xl"
               animate={{ opacity }}
@@ -96,7 +95,7 @@ const Contact: React.FC = () => {
                 Global Stocktake in 2023.
               </motion.p>
             )}
-          </div>
+          </motion.div>
 
           <Form initialValues={{ email: null }} onSubmit={onSubmit}>
             {({ handleSubmit, form }) => {
@@ -162,7 +161,7 @@ const Contact: React.FC = () => {
           )}
         </div>
       </Wrapper>
-    </motion.section>
+    </section>
   );
 };
 
