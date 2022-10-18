@@ -1,7 +1,5 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
-import cx from 'classnames';
-
 import { useHomeStore } from 'store/home';
 import { useUIStore } from 'store/ui';
 
@@ -22,7 +20,7 @@ import { NAV_OPTIONS } from './constants';
 const Header: React.FC = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'xxs');
 
-  const [activeMenuOption, setActiveMenuOption] = useState(null);
+  const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
 
   const menu = useUIStore((state) => state.menu);
   const openMenu = useUIStore((state) => state.openMenu);
@@ -50,7 +48,8 @@ const Header: React.FC = () => {
   }, [section, setHeader, subSection]);
 
   useEffect(() => {
-    setActiveMenuOption(section);
+    const selectedSection = NAV_OPTIONS.find((opt) => opt.label === section);
+    setSelectedTab(selectedSection);
   }, [section]);
 
   const scrollMenu = useCallback((id) => {
@@ -85,28 +84,30 @@ const Header: React.FC = () => {
       {minWidth >= BREAKPOINTS.lg && header && (
         <>
           <Wrapper>
-            <motion.div
+            <motion.nav
               className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24"
               {...IN_VIEW_PROPS}
             >
-              {NAV_OPTIONS.map((o) => (
-                <button
-                  key={o.id}
-                  onClick={() => {
-                    scrollMenu(o.id);
-                    setActiveMenuOption(o.id);
-                  }}
-                >
-                  <p
-                    className={cx({
-                      'hover:text-brand-700 py-7': true,
-                      'border-b-2 border-white': activeMenuOption === o.id,
-                    })}
+              <ul className="flex items-center justify-end w-full p-0 m-0 space-x-7">
+                {NAV_OPTIONS.map((opt) => (
+                  <li
+                    className="relative flex justify-between m-0 cursor-pointer"
+                    key={opt.label}
+                    onClick={() => {
+                      setSelectedTab(opt);
+                      scrollMenu(opt.id);
+                    }}
                   >
-                    {o.label}
-                  </p>
-                </button>
-              ))}
+                    <p className="hover:text-brand-700 py-7">{opt.label}</p>
+                    {opt === selectedTab ? (
+                      <motion.div
+                        className="absolute left-0 right-0 h-1 bg-white top-full"
+                        layoutId="underline"
+                      />
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
 
               <Button
                 className="rounded-[100px] h-16"
@@ -116,7 +117,7 @@ const Header: React.FC = () => {
               >
                 Subscribe
               </Button>
-            </motion.div>
+            </motion.nav>
           </Wrapper>
 
           <SubscribeModal />
