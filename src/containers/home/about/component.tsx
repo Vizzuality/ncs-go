@@ -8,6 +8,7 @@ import useBreakpoint from 'use-breakpoint';
 import Features from 'containers/home/about/features';
 import AboutVideo from 'containers/home/about/video';
 import Hero from 'containers/home/common/hero';
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
@@ -43,7 +44,7 @@ const About = () => {
 
   return (
     <div ref={sectionRef} id="about" className="scroll-mt-20 lg:scroll-mt-0">
-      {minWidth < BREAKPOINTS.md && (
+      <Media lessThan="md">
         <Wrapper>
           <div className="pt-10 pb-4">
             <Hero
@@ -53,9 +54,12 @@ const About = () => {
             />
           </div>
         </Wrapper>
-      )}
+      </Media>
 
-      {minWidth < BREAKPOINTS.md && <AboutVideo />}
+      <Media lessThan="md">
+        {' '}
+        <AboutVideo />{' '}
+      </Media>
 
       <div
         className="overflow-hidden bg-left-top bg-no-repeat"
@@ -63,7 +67,7 @@ const About = () => {
           backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/about/background.svg)`,
         }}
       >
-        {minWidth >= BREAKPOINTS.md && (
+        <Media greaterThanOrEqual="md">
           <Wrapper>
             <div className="pt-32 pb-0 lg:grid lg:grid-cols-3">
               <Hero
@@ -73,7 +77,7 @@ const About = () => {
               />
             </div>
           </Wrapper>
-        )}
+        </Media>
 
         <Wrapper>
           <motion.div
@@ -112,7 +116,9 @@ const About = () => {
           </motion.div>
         </Wrapper>
 
-        {minWidth >= BREAKPOINTS.md && <AboutVideo />}
+        <Media greaterThanOrEqual="md">
+          <AboutVideo />
+        </Media>
       </div>
 
       <div className="bg-gray-900 md:pb-28">

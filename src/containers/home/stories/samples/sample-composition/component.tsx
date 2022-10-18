@@ -3,14 +3,12 @@ import React from 'react';
 import cx from 'classnames';
 
 import { motion } from 'framer-motion';
-import useBreakpoint from 'use-breakpoint';
+
+import Media from 'containers/media';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
-import { BREAKPOINTS } from 'styles/styles.config';
 
 const SampleComposition = ({ media, card, align = 'right' }) => {
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
-
   return (
     <div className="pt-4 lg:pt-0 lg:grid lg:grid-cols-12">
       <div
@@ -18,7 +16,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           'relative lg:col-span-10 border border-transparent lg:col-start-2': true,
         })}
       >
-        {minWidth >= BREAKPOINTS.md && (
+        <Media greaterThanOrEqual="md">
           <motion.div
             className={cx({
               'aspect-video w-[70%] absolute top-0 left-0': true,
@@ -28,9 +26,9 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           >
             {media}
           </motion.div>
-        )}
+        </Media>
 
-        {minWidth < BREAKPOINTS.md && (
+        <Media lessThan="md">
           <motion.div
             className="aspect-video w-[96%] absolute top-0 left-0"
             {...IN_VIEW_PROPS}
@@ -44,9 +42,9 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           >
             {media}
           </motion.div>
-        )}
+        </Media>
 
-        {minWidth >= BREAKPOINTS.md && (
+        <Media greaterThanOrEqual="md">
           <motion.div
             className={cx({
               'mt-[18%] max-w-[320px] lg:max-w-[370px] xl:max-w-[420px]': true,
@@ -63,9 +61,9 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           >
             <div className="w-full">{card}</div>
           </motion.div>
-        )}
+        </Media>
 
-        {minWidth < BREAKPOINTS.md && (
+        <Media lessThan="md">
           <motion.div
             className={cx({
               'mt-[48%]': true,
@@ -82,7 +80,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           >
             <div className="w-full">{card}</div>
           </motion.div>
-        )}
+        </Media>
       </div>
     </div>
   );

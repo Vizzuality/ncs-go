@@ -5,17 +5,16 @@ import { Form, Field } from 'react-final-form';
 import { useHomeStore } from 'store/home';
 
 import { motion, useInView } from 'framer-motion';
-import useBreakpoint from 'use-breakpoint';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import { IN_VIEW_PROPS } from 'constants/motion';
-import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
   const ref = useRef();
@@ -33,8 +32,6 @@ const Contact: React.FC = () => {
 
   const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
-
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   useEffect(() => {
     if (inViewSection) {
@@ -103,7 +100,7 @@ const Contact: React.FC = () => {
               platform.
             </motion.p>
 
-            {minWidth >= BREAKPOINTS.xl && (
+            <Media greaterThanOrEqual="xl">
               <motion.p
                 className="text-sm leading-7 md:text-base opacity-80"
                 animate={{ opacity }}
@@ -112,7 +109,7 @@ const Contact: React.FC = () => {
                 Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
                 Global Stocktake in 2023.
               </motion.p>
-            )}
+            </Media>
           </motion.div>
 
           <Form initialValues={{ email: null }} onSubmit={onSubmit}>
@@ -139,14 +136,13 @@ const Contact: React.FC = () => {
                             placeholder="Enter your email"
                             className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                           />
-                          {meta.error &&
-                            meta.touched &&
-                            meta.active &&
-                            minWidth >= BREAKPOINTS.xl && (
+                          <Media greaterThanOrEqual="xl">
+                            {meta.error && meta.touched && meta.active && (
                               <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
                                 {meta.error}
                               </p>
                             )}
+                          </Media>
                         </motion.div>
                       )}
                     </Field>
@@ -167,7 +163,7 @@ const Contact: React.FC = () => {
               );
             }}
           </Form>
-          {minWidth < BREAKPOINTS.xl && (
+          <Media lessThan="xl">
             <motion.p
               className="text-sm leading-5 text-white md:text-base opacity-80"
               animate={{ opacity }}
@@ -176,7 +172,7 @@ const Contact: React.FC = () => {
               Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
               Global Stocktake in 2023.
             </motion.p>
-          )}
+          </Media>
         </div>
       </Wrapper>
     </motion.section>

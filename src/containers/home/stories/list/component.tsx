@@ -8,6 +8,7 @@ import StoryCard from 'containers/home/stories/list/story-card';
 import SampleComposition from 'containers/home/stories/samples/sample-composition';
 import Card from 'containers/home/stories/samples/sample-composition/sample-card';
 import SampleMedia from 'containers/home/stories/samples/sample-composition/sample-media';
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -21,7 +22,7 @@ const List = () => {
 
   return (
     <>
-      {minWidth >= BREAKPOINTS.md && (
+      <Media greaterThanOrEqual="md">
         <div className="bg-gray-900 md:py-28">
           <Wrapper>
             <div className="py-10 md:pb-28">
@@ -59,8 +60,9 @@ const List = () => {
             </motion.div>
           </Wrapper>
         </div>
-      )}
-      {minWidth < BREAKPOINTS.md && (
+      </Media>
+
+      <Media lessThan="md">
         <div className="w-full pt-4">
           <Wrapper>
             <div className="lg:space-y-44">
@@ -100,7 +102,7 @@ const List = () => {
             </motion.div>
           </Wrapper>
         </div>
-      )}
+      </Media>
     </>
   );
 };
