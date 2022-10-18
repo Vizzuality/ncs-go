@@ -2,8 +2,6 @@ import React, { useCallback, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
-import { useUIStore } from 'store/ui';
-
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
@@ -13,15 +11,12 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
-const SubscribeModal = () => {
+const SubscribeModal = ({ isOpen, close }) => {
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const saveSubscribeMutation = useSaveSubscribe({});
 
   const { addToast } = useToasts();
-
-  const closeMenu = useUIStore((state) => state.closeMenu);
-  const menu = useUIStore((state) => state.menu);
 
   const onSubmit = useCallback(
     (data, form) => {
@@ -53,7 +48,7 @@ const SubscribeModal = () => {
 
   return (
     <div className="relative">
-      <FullScreenModal open={menu} onOpenChange={() => closeMenu()}>
+      <FullScreenModal open={isOpen} onOpenChange={() => close()}>
         <div className="flex flex-col w-full bg-white">
           <Wrapper>
             <div className="relative flex flex-col items-center justify-center h-screen text-center bg-white">

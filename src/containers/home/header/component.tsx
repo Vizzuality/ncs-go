@@ -1,9 +1,10 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useHomeStore } from 'store/home';
-import { useUIStore } from 'store/ui';
 
 import { motion, useInView } from 'framer-motion';
+
+import { useModal } from 'hooks/modals';
 
 import MobileMenuModal from 'containers/home/header/mobile-menu-modal';
 import MenuButton from 'containers/home/header/mobile-menu-modal/menu-button';
@@ -18,10 +19,8 @@ import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
-
-  const menu = useUIStore((state) => state.menu);
-  const openMenu = useUIStore((state) => state.openMenu);
-  const closeMenu = useUIStore((state) => state.closeMenu);
+  const { isOpen: isOpenMobile, open: openMobile, close: closeMobile } = useModal();
+  const { isOpen: isOpenDesktop, open: openDesktop, close: closeDesktop } = useModal();
 
   const section = useHomeStore((state) => state.section);
   const setSection = useHomeStore((state) => state.setSection);
@@ -45,7 +44,6 @@ const Header: React.FC = () => {
   }, [section, setHeader, subSection]);
 
   useEffect(() => {
-    // !TODO: section should be update when scroll enter on sectionRef under side
     const selectedSection = NAV_OPTIONS.find((opt) => opt.id === section);
     setSelectedTab(selectedSection);
   }, [section]);
@@ -69,8 +67,8 @@ const Header: React.FC = () => {
                   {...IN_VIEW_PROPS}
                 >
                   <MenuButton
-                    isOpen={menu}
-                    onClick={() => (menu ? closeMenu() : openMenu())}
+                    isOpen={isOpenMobile}
+                    onClick={() => (isOpenMobile ? closeMobile() : openMobile())}
                     transition={{ ease: 'easeOut', duration: 0.2 }}
                     width={40}
                     height={40}
@@ -79,7 +77,7 @@ const Header: React.FC = () => {
               </div>
             </Wrapper>
 
-            <MobileMenuModal />
+            <MobileMenuModal isOpen={isOpenMobile} close={closeMobile} />
           </>
         )}
       </Media>
@@ -117,14 +115,14 @@ const Header: React.FC = () => {
                   className="rounded-[100px] h-16"
                   theme="secondary"
                   size="xs"
-                  onClick={() => openMenu()}
+                  onClick={() => openDesktop()}
                 >
                   Subscribe
                 </Button>
               </motion.nav>
             </Wrapper>
 
-            <SubscribeModal />
+            <SubscribeModal isOpen={isOpenDesktop} close={closeDesktop} />
           </>
         )}
       </Media>

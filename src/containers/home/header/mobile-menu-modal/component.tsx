@@ -2,8 +2,6 @@ import React, { useCallback, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
-import { useUIStore } from 'store/ui';
-
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
@@ -14,15 +12,12 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
-const MobileMenuModal = () => {
+const MobileMenuModal = ({ isOpen, close }) => {
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
 
   const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
-
-  const closeMenu = useUIStore((state) => state.closeMenu);
-  const menu = useUIStore((state) => state.menu);
 
   const onSubmit = useCallback(
     (data, form) => {
@@ -60,7 +55,7 @@ const MobileMenuModal = () => {
   }, []);
 
   return (
-    <FullScreenModal open={menu} theme="dark" closeBtn={false} onOpenChange={() => closeMenu()}>
+    <FullScreenModal open={isOpen} theme="dark" closeBtn={false} onOpenChange={() => close()}>
       <section className="z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
         <Wrapper>
           <div className="flex flex-col pt-12 pb-32 space-y-10">
@@ -69,7 +64,7 @@ const MobileMenuModal = () => {
                 key={o.id}
                 className="text-lg text-white"
                 onClick={() => {
-                  closeMenu();
+                  close();
                   scrollMenu(o.id);
                 }}
               >
