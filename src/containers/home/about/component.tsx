@@ -15,9 +15,11 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
   const ref = useRef();
+  const sectionRef = useRef();
   const subSectionRef = useRef();
 
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true, amount: 0.25 });
+  const inViewSection = useInView(sectionRef);
   const subSectionInView = useInView(subSectionRef);
 
   const opacity = inView ? 1 : 0;
@@ -28,7 +30,7 @@ const About = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   useEffect(() => {
-    if (inView) {
+    if (inViewSection) {
       setSection('about');
     }
   });
@@ -40,7 +42,7 @@ const About = () => {
   });
 
   return (
-    <div ref={ref} id="about" className="scroll-mt-20 lg:scroll-mt-0">
+    <div ref={sectionRef} id="about" className="scroll-mt-20 lg:scroll-mt-0">
       {minWidth < BREAKPOINTS.md && (
         <Wrapper>
           <div className="pt-10 pb-4">
@@ -75,6 +77,7 @@ const About = () => {
 
         <Wrapper>
           <motion.div
+            ref={ref}
             className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
             {...IN_VIEW_PROPS}
           >
