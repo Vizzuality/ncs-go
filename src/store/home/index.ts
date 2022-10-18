@@ -1,7 +1,7 @@
 import create from 'zustand';
 import { devtools } from 'zustand/middleware';
 
-type Section = 'intro' | 'header' | 'about' | 'stories' | 'pathways' | 'contact';
+type Section = 'intro' | 'header' | 'about' | 'stories' | 'featured-science' | 'contact';
 
 type HomeState = {
   section: Section;

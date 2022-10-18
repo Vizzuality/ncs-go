@@ -11,14 +11,14 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 
 const FeaturedScience = () => {
   const ref = useRef();
-  const inView = useInView(ref, { once: true, amount: 0.25 });
+  const inView = useInView(ref);
   const setSection = useHomeStore((state) => state.setSection);
 
   const opacity = inView ? 1 : 0;
 
   useEffect(() => {
     if (inView) {
-      setSection('stories');
+      setSection('featured-science');
     }
   });
 

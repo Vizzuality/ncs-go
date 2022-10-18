@@ -15,7 +15,7 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 const Stories = () => {
   const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const inView = useInView(ref);
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   const setSection = useHomeStore((state) => state.setSection);
@@ -27,7 +27,7 @@ const Stories = () => {
   });
 
   return (
-    <div id="stories" className="scroll-mt-20 lg:scroll-mt-0">
+    <motion.div ref={ref} id="stories" className="scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
@@ -58,7 +58,7 @@ const Stories = () => {
           <List />
         </>
       )}
-    </div>
+    </motion.div>
   );
 };
 

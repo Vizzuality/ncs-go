@@ -49,6 +49,10 @@ const Header: React.FC = () => {
     setHeader(section !== 'intro' && subSection === 1);
   }, [section, setHeader, subSection]);
 
+  useEffect(() => {
+    setActiveMenuOption(section);
+  }, [section]);
+
   const scrollMenu = useCallback((id) => {
     const $scrollEl = document.getElementById(id);
     $scrollEl.scrollIntoView({

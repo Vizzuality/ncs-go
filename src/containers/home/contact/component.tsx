@@ -1,6 +1,8 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
+
+import { useHomeStore } from 'store/home';
 
 import { motion, useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
@@ -20,10 +22,22 @@ const Contact: React.FC = () => {
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
 
+  const setSection = useHomeStore((state) => state.setSection);
+
+  const inView = useInView(ref);
+
+  const opacity = inView ? 1 : 0;
+
   const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
+  useEffect(() => {
+    if (inView) {
+      setSection('contact');
+    }
+  });
 
   const onSubmit = useCallback(
     (data, form) => {
@@ -53,22 +67,22 @@ const Contact: React.FC = () => {
     [saveSubscribeMutation, addToast]
   );
 
-  const inView = useInView(ref, {
-    once: true,
-    amount: 0.25,
-  });
-
-  const opacity = inView ? 1 : 0;
-
   return (
-    <section
+    <motion.section
       ref={ref}
       className="w-full pb-20 bg-gray-900 scroll-mt-20 lg:scroll-mt-0"
       id="contact"
     >
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
-          <motion.div className="space-y-6 font-sans text-white md:col-span-6" {...IN_VIEW_PROPS}>
+          <motion.div
+            className="space-y-6 font-sans text-white md:col-span-6"
+            {...IN_VIEW_PROPS}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+          >
             <motion.h2
               className="text-xl md:text-2xl"
               animate={{ opacity }}
@@ -161,7 +175,7 @@ const Contact: React.FC = () => {
           )}
         </div>
       </Wrapper>
-    </section>
+    </motion.section>
   );
 };
 
