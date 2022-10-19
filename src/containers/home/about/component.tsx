@@ -21,7 +21,7 @@ const About = () => {
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
   const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
-  const subSectionInView = useInView(subSectionRef);
+  const subSectionInView = useInView(subSectionRef, { margin: '-100% 0px 0px' });
 
   const opacity = inView ? 1 : 0;
 
@@ -90,7 +90,7 @@ const About = () => {
               animate={{ opacity }}
               transition={{ delay: 0.2 }}
             >
-              <p>
+              <p ref={subSectionRef}>
                 Naturebase will bring together science-based data on nature’s pathways to mitigate
                 climate change across every region of the planet, combining them with the latest
                 information on enabling policy frameworks, mitigation and adaptation plans, finance
@@ -106,7 +106,7 @@ const About = () => {
                 Scientists, practitioners, policymakers and experts can find their way to enact
                 nature’s full transformative potential.
               </p>
-              <p ref={subSectionRef}>
+              <p>
                 You will be able to navigate through the different regions and biomes, capturing
                 real up-to-date information at a global, national and local level, and understand
                 which of nature’s pathways offer the best potential for reducing emissions at the
