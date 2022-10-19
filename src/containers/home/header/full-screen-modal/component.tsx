@@ -14,7 +14,8 @@ import ModalContent from './content';
 import { ModalProps } from './types';
 
 export const FullScreenModal = (props: ModalProps) => {
-  const { open, onOpenChange } = props;
+  const { open, onOpenChange, zIndex = 'z-10' } = props;
+
   const { floating, context } = useFloating({
     open,
     onOpenChange,
@@ -38,7 +39,7 @@ export const FullScreenModal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <FloatingOverlay lockScroll className="z-50">
+          <FloatingOverlay lockScroll className={`${zIndex}`}>
             <FloatingFocusManager context={context}>
               <>
                 <Media lessThan="lg">

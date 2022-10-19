@@ -26,7 +26,7 @@ const PlayControl = ({ playBackground, playColor }) => {
       />
       <motion.div
         className={cx({
-          'absolute z-[1] flex items-center justify-center w-16 h-16 rounded-full md:w-24 md:h-24 xl:w-28 xl:h-28 md:top-4 md:left-4 top-2 left-2':
+          'absolute z-0 flex items-center justify-center w-16 h-16 rounded-full md:w-24 md:h-24 xl:w-28 xl:h-28 md:top-4 md:left-4 top-2 left-2':
             true,
           [playBackground]: true,
         })}

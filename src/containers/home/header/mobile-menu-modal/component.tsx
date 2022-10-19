@@ -55,7 +55,13 @@ const MobileMenuModal = ({ isOpen, close }) => {
   }, []);
 
   return (
-    <FullScreenModal open={isOpen} theme="dark" closeBtn={false} onOpenChange={() => close()}>
+    <FullScreenModal
+      open={isOpen}
+      theme="dark"
+      closeBtn={false}
+      onOpenChange={() => close()}
+      zIndex="z-[9]"
+    >
       <section className="z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
         <Wrapper>
           <div className="flex flex-col pt-12 pb-32 space-y-10">

@@ -48,7 +48,7 @@ const SubscribeModal = ({ isOpen, close }) => {
 
   return (
     <div className="relative">
-      <FullScreenModal open={isOpen} onOpenChange={() => close()}>
+      <FullScreenModal open={isOpen} onOpenChange={() => close()} zIndex="z-50">
         <div className="flex flex-col w-full bg-white">
           <Wrapper>
             <div className="relative flex flex-col items-center justify-center h-screen text-center bg-white">
