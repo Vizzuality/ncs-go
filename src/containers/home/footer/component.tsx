@@ -15,14 +15,14 @@ const Footer: React.FC = () => {
   });
 
   const opacity = inView ? 1 : 0;
+
   return (
-    <motion.section
+    <section
       ref={ref}
       className="pb-10 font-sans text-base text-center text-white bg-gray-900 lg:pb-20 first-letter:w-full"
-      {...IN_VIEW_PROPS}
     >
       <Wrapper>
-        <div className="space-y-20">
+        <motion.div className="space-y-20" {...IN_VIEW_PROPS}>
           <div>
             <motion.p animate={{ opacity }} transition={{ delay: 0.2 }}>
               If you got an idea to make it even better or want submit your case studies, email us
@@ -51,9 +51,9 @@ const Footer: React.FC = () => {
           >
             © 2022 Naturebase by Nature4Climate
           </motion.p>
-        </div>
+        </motion.div>
       </Wrapper>
-    </motion.section>
+    </section>
   );
 };
 

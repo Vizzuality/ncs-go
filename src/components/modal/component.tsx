@@ -8,16 +8,14 @@ import {
   FloatingOverlay,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
-import useBreakpoint from 'use-breakpoint';
 
-import { BREAKPOINTS } from 'styles/styles.config';
+import Media from 'containers/media';
 
 import ModalContent from './content';
 import { OVERLAY_CLASSES } from './content/constants';
 import { ModalProps } from './types';
 
 export const Modal = (props: ModalProps) => {
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
   const { open, onOpenChange, dismissable } = props;
   const { floating, context } = useFloating({
     open,
@@ -57,21 +55,21 @@ export const Modal = (props: ModalProps) => {
             >
               <FloatingFocusManager context={context}>
                 <>
-                  {minWidth < BREAKPOINTS.sm && (
+                  <Media lessThan="sm">
                     <ModalContent
                       {...props}
                       floating={floating}
                       getFloatingProps={getFloatingProps}
                     />
-                  )}
-                  {minWidth >= BREAKPOINTS.sm && (
+                  </Media>
+                  <Media greaterThanOrEqual="sm">
                     <ModalContent
                       {...props}
                       viewport="sm"
                       floating={floating}
                       getFloatingProps={getFloatingProps}
                     />
-                  )}
+                  </Media>
                 </>
               </FloatingFocusManager>
             </motion.div>

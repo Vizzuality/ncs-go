@@ -16,7 +16,7 @@ const StoryButton = {
     theme: {
       control: {
         type: 'select',
-        options: ['primary', 'primary-alt', 'secondary', 'secondary-alt', 'white', 'danger'],
+        options: ['primary', 'secondary', 'tertiary'],
       },
     },
   },

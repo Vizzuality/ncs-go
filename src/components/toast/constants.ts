@@ -9,21 +9,17 @@ export const THEME: ToastTheme = {
   info: {
     icon: INFO_SVG,
     bg: 'from-blue-400 to-blue-700',
-    hoverBg: 'from-blue-100 to-blue-400',
   },
   success: {
     icon: SUCCESS_SVG,
     bg: 'bg-brand-700',
-    hoverBg: 'from-green-100 to-green-400',
   },
   warning: {
     icon: WARNING_SVG,
     bg: 'from-yellow-400 to-yellow-700',
-    hoverBg: 'from-yellow-100 to-yellow-400',
   },
   error: {
     icon: ERROR_SVG,
     bg: 'from-red-400 to-red-700',
-    hoverBg: 'from-red-100 to-red-400',
   },
 };

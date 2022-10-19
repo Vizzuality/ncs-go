@@ -1,30 +1,43 @@
-import React, { useCallback, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import { useHomeStore } from 'store/home';
+
 import { motion, useInView } from 'framer-motion';
-import useBreakpoint from 'use-breakpoint';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
+import { useToasts } from 'hooks/toast';
 
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
-import Toast from 'components/toast';
 import { IN_VIEW_PROPS } from 'constants/motion';
-import { capitalizeString } from 'lib/utils';
-import { BREAKPOINTS } from 'styles/styles.config';
 
 const Contact: React.FC = () => {
   const ref = useRef();
+  const sectionRef = useRef();
   const formRef = useRef(null);
-  const [submitting, setSubmitting] = useState(false);
-  const [toast, displayToast] = useState(false);
 
+  const [submitting, setSubmitting] = useState(false);
+
+  const setSection = useHomeStore((state) => state.setSection);
+
+  const inView = useInView(ref, { once: true, amount: 0.25 });
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
+
+  const opacity = inView ? 1 : 0;
+
+  const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
 
-  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+  useEffect(() => {
+    if (inViewSection) {
+      setSection('contact');
+    }
+  }, [inViewSection, setSection]);
 
   const onSubmit = useCallback(
     (data, form) => {
@@ -34,7 +47,15 @@ const Contact: React.FC = () => {
         {
           onSuccess: () => {
             setSubmitting(false);
-            displayToast(true);
+            addToast(
+              'success-contact',
+              <>
+                <p className="text-base">You have successfully subscribed.</p>
+              </>,
+              {
+                level: 'success',
+              }
+            );
             form.reset();
           },
           onError: () => {
@@ -42,28 +63,27 @@ const Contact: React.FC = () => {
           },
         }
       );
-      setTimeout(() => displayToast(false), 3000);
     },
-    [saveSubscribeMutation]
+    [saveSubscribeMutation, addToast]
   );
-
-  const inView = useInView(ref, {
-    once: true,
-    amount: 0.25,
-  });
-
-  const opacity = inView ? 1 : 0;
 
   return (
     <motion.section
-      ref={ref}
+      ref={sectionRef}
       className="w-full pb-20 bg-gray-900 scroll-mt-20 lg:scroll-mt-0"
       id="contact"
-      {...IN_VIEW_PROPS}
     >
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
-          <div className="space-y-6 font-sans text-white md:col-span-6">
+          <motion.div
+            ref={ref}
+            className="space-y-6 font-sans text-white md:col-span-6"
+            {...IN_VIEW_PROPS}
+            viewport={{
+              once: true,
+              amount: 0.25,
+            }}
+          >
             <motion.h2
               className="text-xl md:text-2xl"
               animate={{ opacity }}
@@ -80,7 +100,7 @@ const Contact: React.FC = () => {
               platform.
             </motion.p>
 
-            {minWidth >= BREAKPOINTS.xl && (
+            <Media greaterThanOrEqual="xl">
               <motion.p
                 className="text-sm leading-7 md:text-base opacity-80"
                 animate={{ opacity }}
@@ -89,18 +109,14 @@ const Contact: React.FC = () => {
                 Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
                 Global Stocktake in 2023.
               </motion.p>
-            )}
-          </div>
+            </Media>
+          </motion.div>
 
           <Form initialValues={{ email: null }} onSubmit={onSubmit}>
             {({ handleSubmit, form }) => {
               formRef.current = form;
               return (
-                <form
-                  className="py-6 xl:col-span-6 xl:py-0"
-                  noValidate
-                  onSubmit={(event) => handleSubmit(event)}
-                >
+                <form className="py-6 xl:col-span-6 xl:py-0" noValidate onSubmit={handleSubmit}>
                   <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
                     <Field
                       name="email"
@@ -120,14 +136,13 @@ const Contact: React.FC = () => {
                             placeholder="Enter your email"
                             className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
                           />
-                          {meta.error &&
-                            meta.touched &&
-                            meta.active &&
-                            minWidth >= BREAKPOINTS.xl && (
-                              <p className="absolute text-sm text-red-600 top-20 left-10">
-                                {capitalizeString(meta.error)}
+                          <Media greaterThanOrEqual="xl">
+                            {meta.error && meta.touched && meta.active && (
+                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
+                                {meta.error}
                               </p>
                             )}
+                          </Media>
                         </motion.div>
                       )}
                     </Field>
@@ -148,7 +163,7 @@ const Contact: React.FC = () => {
               );
             }}
           </Form>
-          {minWidth < BREAKPOINTS.xl && (
+          <Media lessThan="xl">
             <motion.p
               className="text-sm leading-5 text-white md:text-base opacity-80"
               animate={{ opacity }}
@@ -157,20 +172,9 @@ const Contact: React.FC = () => {
               Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
               Global Stocktake in 2023.
             </motion.p>
-          )}
+          </Media>
         </div>
       </Wrapper>
-
-      {toast && (
-        <div className="absolute z-20 right-10 bottom-10">
-          <Toast
-            id="contact"
-            content="You have successfully subscribed."
-            level="success"
-            onDismiss={() => displayToast(false)}
-          />
-        </div>
-      )}
     </motion.section>
   );
 };

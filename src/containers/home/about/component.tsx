@@ -8,6 +8,7 @@ import useBreakpoint from 'use-breakpoint';
 import Features from 'containers/home/about/features';
 import AboutVideo from 'containers/home/about/video';
 import Hero from 'containers/home/common/hero';
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
@@ -15,24 +16,35 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 const About = () => {
   const ref = useRef();
+  const sectionRef = useRef();
+  const subSectionRef = useRef();
 
-  const inView = useInView(ref);
+  const inView = useInView(ref, { once: true, amount: 0.25 });
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
+  const subSectionInView = useInView(subSectionRef, { margin: '-100% 0px 0px' });
 
   const opacity = inView ? 1 : 0;
 
   const setSection = useHomeStore((state) => state.setSection);
+  const setSubSection = useHomeStore((state) => state.setSubSection);
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   useEffect(() => {
-    if (inView) {
+    if (inViewSection) {
       setSection('about');
     }
-  });
+  }, [inViewSection, setSection]);
+
+  useEffect(() => {
+    if (subSectionInView) {
+      setSubSection(1);
+    }
+  }, [subSectionInView, setSubSection]);
 
   return (
-    <div ref={ref} id="about" className="scroll-mt-20 lg:scroll-mt-0">
-      {minWidth < BREAKPOINTS.md && (
+    <div ref={sectionRef} id="about" className="bg-white scroll-mt-20 lg:scroll-mt-0">
+      <Media lessThan="md">
         <Wrapper>
           <div className="pt-10 pb-4">
             <Hero
@@ -42,9 +54,12 @@ const About = () => {
             />
           </div>
         </Wrapper>
-      )}
+      </Media>
 
-      {minWidth < BREAKPOINTS.md && <AboutVideo />}
+      <Media lessThan="md">
+        {' '}
+        <AboutVideo />{' '}
+      </Media>
 
       <div
         className="overflow-hidden bg-left-top bg-no-repeat"
@@ -52,7 +67,7 @@ const About = () => {
           backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/about/background.svg)`,
         }}
       >
-        {minWidth >= BREAKPOINTS.md && (
+        <Media greaterThanOrEqual="md">
           <Wrapper>
             <div className="pt-32 pb-0 lg:grid lg:grid-cols-3">
               <Hero
@@ -62,10 +77,11 @@ const About = () => {
               />
             </div>
           </Wrapper>
-        )}
+        </Media>
 
         <Wrapper>
           <motion.div
+            ref={ref}
             className="pt-4 pb-10 font-sans text-base text-gray-800 lg:py-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
             {...IN_VIEW_PROPS}
           >
@@ -74,7 +90,7 @@ const About = () => {
               animate={{ opacity }}
               transition={{ delay: 0.2 }}
             >
-              <p>
+              <p ref={subSectionRef}>
                 Naturebase will bring together science-based data on nature’s pathways to mitigate
                 climate change across every region of the planet, combining them with the latest
                 information on enabling policy frameworks, mitigation and adaptation plans, finance
@@ -100,7 +116,9 @@ const About = () => {
           </motion.div>
         </Wrapper>
 
-        {minWidth >= BREAKPOINTS.md && <AboutVideo />}
+        <Media greaterThanOrEqual="md">
+          <AboutVideo />
+        </Media>
       </div>
 
       <div className="bg-gray-900 md:pb-28">

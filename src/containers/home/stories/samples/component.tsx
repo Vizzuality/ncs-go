@@ -16,14 +16,14 @@ const Samples = () => {
     <div
       className="w-full pt-4"
       style={{
-        background: minWidth >= BREAKPOINTS.lg && 'linear-gradient(#FFFFFF 90%, #011426 10%',
+        background: minWidth >= BREAKPOINTS.md && 'linear-gradient(#FFFFFF 90%, #011426 10%',
       }}
     >
       <Wrapper>
-        <div className="lg:space-y-44">
+        <div className="space-y-10">
           <SampleComposition
             align="left"
-            media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} />}
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/test.webp)`} />}
             card={
               <Card
                 country="Tanzania"
