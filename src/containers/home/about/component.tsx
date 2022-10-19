@@ -43,7 +43,7 @@ const About = () => {
   }, [subSectionInView, setSubSection]);
 
   return (
-    <div ref={sectionRef} id="about" className="scroll-mt-20 lg:scroll-mt-0">
+    <div ref={sectionRef} id="about" className="bg-white scroll-mt-20 lg:scroll-mt-0">
       <Media lessThan="md">
         <Wrapper>
           <div className="pt-10 pb-4">
