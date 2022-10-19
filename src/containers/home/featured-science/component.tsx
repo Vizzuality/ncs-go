@@ -32,7 +32,7 @@ const FeaturedScience = () => {
       className="py-10 bg-white lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
     >
       <Wrapper>
-        <div
+        <motion.div
           ref={ref}
           className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
           {...IN_VIEW_PROPS}
@@ -57,7 +57,7 @@ const FeaturedScience = () => {
               health and are critical to economic development.
             </motion.p>
           </div>
-        </div>
+        </motion.div>
         <div className="pt-4 space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
