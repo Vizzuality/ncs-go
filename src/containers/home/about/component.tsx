@@ -34,13 +34,13 @@ const About = () => {
     if (inViewSection) {
       setSection('about');
     }
-  });
+  }, [inViewSection, setSection]);
 
   useEffect(() => {
     if (subSectionInView) {
       setSubSection(1);
     }
-  });
+  }, [subSectionInView, setSubSection]);
 
   return (
     <div ref={sectionRef} id="about" className="scroll-mt-20 lg:scroll-mt-0">

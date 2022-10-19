@@ -31,13 +31,13 @@ const Header: React.FC = () => {
   const setHeader = useHomeStore((state) => state.setHeader);
 
   const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px', once: true });
+  const inView = useInView(ref, { margin: '-100% 0px 0px' });
 
   useEffect(() => {
     if (inView) {
       setSection('header');
     }
-  });
+  }, [inView, setSection]);
 
   useEffect(() => {
     setHeader(section !== 'intro' && subSection === 1);

@@ -15,6 +15,7 @@ const Footer: React.FC = () => {
   });
 
   const opacity = inView ? 1 : 0;
+
   return (
     <section
       ref={ref}

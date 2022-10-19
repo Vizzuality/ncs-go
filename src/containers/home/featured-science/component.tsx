@@ -23,7 +23,7 @@ const FeaturedScience = () => {
     if (inViewSection) {
       setSection('featured-science');
     }
-  });
+  }, [inViewSection, setSection]);
 
   return (
     <motion.div

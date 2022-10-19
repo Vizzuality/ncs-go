@@ -4,6 +4,7 @@ import {
   useRole,
   FloatingPortal,
   FloatingFocusManager,
+  FloatingOverlay,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
 
@@ -37,36 +38,38 @@ export const FullScreenModal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <FloatingFocusManager context={context}>
-            <>
-              <Media lessThan="lg">
-                <motion.div
-                  {...overlayFramerVariants}
-                  className="absolute z-50 top-20 left-0 flex flex-col w-full h-[calc(100%-theme(space.20))] pointer-events-none grow"
-                >
-                  <ModalContent
-                    {...props}
-                    floating={floating}
-                    getFloatingProps={getFloatingProps}
-                  />
-                </motion.div>
-              </Media>
+          <FloatingOverlay lockScroll className="z-50">
+            <FloatingFocusManager context={context}>
+              <>
+                <Media lessThan="lg">
+                  <motion.div
+                    {...overlayFramerVariants}
+                    className="absolute z-50 top-20 left-0 flex flex-col w-full h-[calc(100%-theme(space.20))] pointer-events-none grow"
+                  >
+                    <ModalContent
+                      {...props}
+                      floating={floating}
+                      getFloatingProps={getFloatingProps}
+                    />
+                  </motion.div>
+                </Media>
 
-              <Media greaterThanOrEqual="lg">
-                <motion.div
-                  {...overlayFramerVariants}
-                  className="absolute top-0 left-0 z-50 flex flex-col w-full h-full pointer-events-none grow"
-                >
-                  <ModalContent
-                    {...props}
-                    viewport="sm"
-                    floating={floating}
-                    getFloatingProps={getFloatingProps}
-                  />
-                </motion.div>
-              </Media>
-            </>
-          </FloatingFocusManager>
+                <Media greaterThanOrEqual="lg">
+                  <motion.div
+                    {...overlayFramerVariants}
+                    className="absolute top-0 left-0 z-50 flex flex-col w-full h-full pointer-events-none grow"
+                  >
+                    <ModalContent
+                      {...props}
+                      viewport="sm"
+                      floating={floating}
+                      getFloatingProps={getFloatingProps}
+                    />
+                  </motion.div>
+                </Media>
+              </>
+            </FloatingFocusManager>
+          </FloatingOverlay>
         )}
       </AnimatePresence>
     </FloatingPortal>

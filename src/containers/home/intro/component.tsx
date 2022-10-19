@@ -21,7 +21,7 @@ const Intro = () => {
       setSection('intro');
       setSubSection(0);
     }
-  });
+  }, [inViewSection, setSection, setSubSection]);
 
   return (
     <section ref={sectionRef} className="relative">

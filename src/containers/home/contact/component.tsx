@@ -37,7 +37,7 @@ const Contact: React.FC = () => {
     if (inViewSection) {
       setSection('contact');
     }
-  });
+  }, [inViewSection, setSection]);
 
   const onSubmit = useCallback(
     (data, form) => {

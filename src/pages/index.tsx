@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import cx from 'classnames';
 
@@ -17,14 +17,14 @@ import Stories from 'containers/home/stories';
 const Home: React.FC = () => {
   const section = useHomeStore((state) => state.section);
 
+  useEffect(() => {
+    document.documentElement.className = cx({
+      'snap-y snap-mandatory': section === 'intro',
+    });
+  }, [section]);
+
   return (
-    <div
-      id="scroll-container"
-      className={cx({
-        'h-screen overflow-auto': true,
-        'snap-y snap-mandatory': section === 'intro',
-      })}
-    >
+    <div>
       <Head>
         <title>NCS - GO</title>
       </Head>
