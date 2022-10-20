@@ -3,13 +3,13 @@
 @tailwind utilities;
 
 @font-face {
-  font-family: "Silka";
-  src: url("../../public/fonts/Silka-Regular.otf");
+  font-family: "SpaceGrotesk";
+  src: url("../../public/fonts/SpaceGrotesk-Regular.ttf");
 }
 
 @font-face {
-  font-family: "Silka-SemiBold";
-  src: url("../../public/fonts/Silka-SemiBold.otf");
+  font-family: "SpaceGrotesk-SemiBold";
+  src: url("../../public/fonts/SpaceGrotesk-SemiBold.ttf");
 }
 
 @-webkit-keyframes autofill {

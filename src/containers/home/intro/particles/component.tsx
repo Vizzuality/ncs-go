@@ -6,7 +6,7 @@ import Logo from './logo';
 
 const Particles = () => {
   return (
-    <div className="w-full h-full" style={{ background: '#011426' }}>
+    <div className="w-full h-full bg-gray-900">
       <Canvas
         orthographic
         camera={{ zoom: 100 }}

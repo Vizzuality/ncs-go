@@ -18,8 +18,8 @@ module.exports = {
   theme: {
     screens: TAILWIND_BREAKPOINTS,
     fontFamily: {
-      sans: ['Silka'],
-      semibold: ['Silka-SemiBold'],
+      sans: ['SpaceGrotesk'],
+      semibold: ['SpaceGrotesk-SemiBold'],
     },
     fontSize: {
       sm: [
@@ -65,36 +65,37 @@ module.exports = {
       black: '#000000',
       white: '#FFFFFF',
       brand: {
-        700: '#5BC89C',
-        800: '#55ba93',
-        900: '#4dab89',
+        700: '#00CC99',
+        800: '#00bd90',
+        900: '#03af87',
       },
+      beige: '#F0EDE8',
       blue: {
-        200: '#CCECFA',
-        400: '#8BDCFF',
+        200: '#D6F1F3',
+        400: '#A2E6EE',
+        600: '#4FB8DA',
+        800: '#2078AC',
       },
       brown: {
-        200: '#F5E2AF',
-        400: '#DAAA62',
+        200: '#FBE4C9',
+        400: '#F0B884',
       },
-      gray: {
-        100: '#F1F2F3',
-        400: '#B5BBBF',
-        800: '#2F3E4F',
-        900: '#011426',
-      },
-      green: {
-        200: '#BAE870',
+      forest: {
+        200: '#C1ECD2',
         400: '#61CF77',
       },
-      orange: {
-        400: '#FFB053',
+      grassland: {
+        200: '#F1FABE',
+        400: '#C9EC80',
+      },
+      gray: {
+        100: '#F6F5F2',
+        400: '#CAC9C8',
+        800: '#263C44',
+        900: '#1E2D3A',
       },
       red: {
-        600: '#FC1A52',
-      },
-      yellow: {
-        400: '#FFE587',
+        600: '#E23248',
       },
     },
   },
