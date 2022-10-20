@@ -8,7 +8,6 @@ export interface ToastThemeOption {
     viewBox: string;
   };
   bg: string;
-  hoverBg: string;
 }
 
 export type ToastContent = ReactNode | string;
@@ -16,7 +15,6 @@ export interface ToastProps {
   id: string;
   content: ToastContent;
   level: Level;
-  autoDismiss?: boolean;
   onDismiss?: (id: string) => void;
 }
 

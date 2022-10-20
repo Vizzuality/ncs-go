@@ -15,6 +15,8 @@ export interface ModalProps {
 
   closeBtn?: boolean;
 
+  zIndex?: string;
+
   children?: ReactNode;
   /**
    * Class name to assign to the modal

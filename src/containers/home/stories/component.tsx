@@ -7,23 +7,26 @@ import { motion, useInView } from 'framer-motion';
 import Hero from 'containers/home/common/hero';
 import List from 'containers/home/stories/list';
 import Samples from 'containers/home/stories/samples';
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
 
 const Stories = () => {
-  const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px' });
+  const sectionRef = useRef();
+
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
+
   const setSection = useHomeStore((state) => state.setSection);
 
   useEffect(() => {
-    if (inView) {
+    if (inViewSection) {
       setSection('stories');
     }
   });
 
   return (
-    <div id="stories" className="scroll-mt-20 lg:scroll-mt-0">
+    <motion.div ref={sectionRef} id="stories" className="bg-white scroll-mt-20 lg:scroll-mt-0">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-3">
           <Hero
@@ -47,9 +50,16 @@ const Stories = () => {
           </div>
         </motion.div>
       </Wrapper>
-      <Samples />
-      <List />
-    </div>
+
+      <Media lessThan="md">
+        <List />
+      </Media>
+
+      <Media greaterThanOrEqual="md">
+        <Samples />
+        <List />
+      </Media>
+    </motion.div>
   );
 };
 

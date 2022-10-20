@@ -13,26 +13,32 @@ import Pathways from './pathways';
 
 const FeaturedScience = () => {
   const ref = useRef();
+  const sectionRef = useRef();
+
   const inView = useInView(ref, { once: true, amount: 0.25 });
+  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
   const setSection = useHomeStore((state) => state.setSection);
 
   const opacity = inView ? 1 : 0;
 
   useEffect(() => {
-    if (inView) {
-      setSection('stories');
+    if (inViewSection) {
+      setSection('featured-science');
     }
-  });
+  }, [inViewSection, setSection]);
 
   return (
     <motion.div
-      ref={ref}
+      ref={sectionRef}
       id="featured-science"
-      className="lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
-      {...IN_VIEW_PROPS}
+      className="py-10 bg-white lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
     >
       <Wrapper>
-        <div className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+        <motion.div
+          ref={ref}
+          className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+          {...IN_VIEW_PROPS}
+        >
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
             title="featured science"
@@ -53,7 +59,7 @@ const FeaturedScience = () => {
               health and are critical to economic development.
             </motion.p>
           </div>
-        </div>
+        </motion.div>
 
         <div className="pt-4 space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
           <Hero
