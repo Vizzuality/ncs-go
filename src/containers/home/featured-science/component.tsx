@@ -31,7 +31,7 @@ const FeaturedScience = () => {
     <motion.div
       ref={sectionRef}
       id="featured-science"
-      className="py-10 bg-white lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
+      className="bg-white lg:pt-32 scroll-mt-20 lg:scroll-mt-0"
     >
       <Wrapper>
         <motion.div

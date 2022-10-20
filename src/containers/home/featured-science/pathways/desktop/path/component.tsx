@@ -3,6 +3,9 @@ import React, { useMemo } from 'react';
 import Image from 'next/image';
 
 import { AnimatePresence, motion } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
+
+import { BREAKPOINTS } from 'styles/styles.config';
 
 import Subpath from './subpath';
 
@@ -18,6 +21,8 @@ const Path = ({
   length,
   onClick,
 }) => {
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
   const { width, height } = useMemo(() => {
     return {
       width: canvas.width / 4,
@@ -29,7 +34,12 @@ const Path = ({
   const NOT_SELECTED = selected && selected !== id;
 
   const INDEX = selectedIndex < index ? index - 1 : index;
-  const SCALE = NOT_SELECTED ? 0.4 : 1;
+  const SCALE = useMemo(() => {
+    if (NOT_SELECTED) {
+      return minWidth >= BREAKPOINTS['2xl'] ? 0.4 : 0.3;
+    }
+    return 1;
+  }, [minWidth, NOT_SELECTED]);
 
   const CENTER = useMemo(() => {
     return {
