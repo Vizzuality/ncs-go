@@ -40,7 +40,7 @@ const AboutVideo = () => {
       </Media>
 
       <Media greaterThanOrEqual="md">
-        <div style={{ background: 'linear-gradient(#FFFFFF 50%, #011426 50%' }}>
+        <div style={{ background: 'linear-gradient(#FFFEFA 50%, #1E2D3A 50%' }}>
           <Wrapper>
             <div className="relative flex justify-center w-full bg-black aspect-video">
               <Video

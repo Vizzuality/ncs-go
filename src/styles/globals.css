@@ -12,6 +12,11 @@
   src: url("../../public/fonts/SpaceGrotesk-SemiBold.ttf");
 }
 
+@font-face {
+  font-family: "SpaceGrotesk-Bold";
+  src: url("../../public/fonts/SpaceGrotesk-Bold.ttf");
+}
+
 @-webkit-keyframes autofill {
   0%,
   100% {
