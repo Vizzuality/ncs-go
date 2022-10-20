@@ -76,7 +76,6 @@ module.exports = {
         600: '#4FB8DA',
         800: '#2078AC',
       },
-
       brown: {
         200: '#FBE4C9',
         400: '#F0B884',
