@@ -16,7 +16,7 @@ export const THEME: ToastTheme = {
   },
   warning: {
     icon: WARNING_SVG,
-    bg: 'from-yellow-400 to-yellow-700',
+    bg: 'from-grassland-200 to-grassland-400',
   },
   error: {
     icon: ERROR_SVG,
