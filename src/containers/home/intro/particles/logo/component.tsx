@@ -18,9 +18,9 @@ const ParticlesLogo = () => {
       <Circles count={12} size={2.5} color={0x2078ac} radius={60} startAngle={45} />
       <Circles count={12} size={2.5} color={0x2078ac} radius={60} startAngle={45} />
 
-      {/* White dots */}
-      <Circles count={12} size={5} color={0xffffff} radius={40} startAngle={0} />
-      <Circles count={12} size={2} color={0xffffff} radius={40} startAngle={0} />
+      {/* Beige dots */}
+      <Circles count={12} size={5} color={0xf0ede8} radius={40} startAngle={0} />
+      <Circles count={12} size={2} color={0xf0ede8} radius={40} startAngle={0} />
 
       {/* Red dots */}
       <Circles //

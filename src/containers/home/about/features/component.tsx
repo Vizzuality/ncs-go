@@ -12,7 +12,7 @@ const Features = () => {
       <Wrapper>
         <div className="py-10 md:py-32 lg:grid lg:grid-cols-3">
           <Hero
-            className="col-span-2 col-start-1 text-white"
+            className="col-span-2 col-start-1 text-beige"
             title="Features"
             subtitle="A home base for all decision-makers interested in unlocking the power of nature to preserve our living planet."
           />

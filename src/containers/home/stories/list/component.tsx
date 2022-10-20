@@ -26,7 +26,7 @@ const List = () => {
         <div className="bg-gray-900 md:py-28">
           <Wrapper>
             <div className="py-10 md:pb-28">
-              <Hero className="text-white" subtitle="Want more examples?" />
+              <Hero className="text-beige" subtitle="Want more examples?" />
             </div>
 
             <div className="xl:grid xl:grid-cols-12">
