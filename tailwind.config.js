@@ -18,8 +18,8 @@ module.exports = {
   theme: {
     screens: TAILWIND_BREAKPOINTS,
     fontFamily: {
-      sans: ['Silka'],
-      semibold: ['Silka-SemiBold'],
+      sans: ['SpaceGrotesk'],
+      semibold: ['SpaceGrotesk-SemiBold'],
     },
     fontSize: {
       sm: [
