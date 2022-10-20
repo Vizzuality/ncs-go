@@ -20,6 +20,7 @@ module.exports = {
     fontFamily: {
       sans: ['SpaceGrotesk'],
       semibold: ['SpaceGrotesk-SemiBold'],
+      bold: ['SpaceGrotesk-Bold'],
     },
     fontSize: {
       sm: [
