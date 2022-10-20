@@ -46,7 +46,7 @@ export const StoryCard = ({
     >
       <div
         className={cx({
-          'md:w-2 h-2 md:h-auto w-full': true,
+          'md:w-3 h-2 md:h-auto w-full': true,
           [PATHWAY_COLOR[pathway]]: true,
         })}
       />
