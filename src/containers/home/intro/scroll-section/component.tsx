@@ -6,18 +6,21 @@ import { useInView } from 'framer-motion';
 
 export interface ScrollSectionProps {
   step: number;
+  animationStep: number;
 }
 
-const ScrollSection = ({ step }: ScrollSectionProps) => {
+const ScrollSection = ({ step, animationStep }: ScrollSectionProps) => {
   const ref = useRef();
   const isInView = useInView(ref, { amount: 0.5 });
   const setStep = useHomeStore((state) => state.setStep);
+  const setAnimationStep = useHomeStore((state) => state.setAnimationStep);
 
   useEffect(() => {
     if (isInView) {
       setStep(step);
+      setAnimationStep(animationStep);
     }
-  }, [step, setStep, isInView]);
+  }, [step, animationStep, setStep, setAnimationStep, isInView]);
 
   return (
     <div

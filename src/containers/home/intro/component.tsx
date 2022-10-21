@@ -32,8 +32,8 @@ const Intro = () => {
 
       {/* Remove the same height as the sticky one by using the margin */}
       <div className="-mt-[99vh]">
-        {STEPS.map(({ id }) => (
-          <ScrollSection key={id} step={id} />
+        {STEPS.map(({ id, animationStep }) => (
+          <ScrollSection key={id} step={id} animationStep={animationStep} />
         ))}
       </div>
     </section>

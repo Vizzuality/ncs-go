@@ -17,7 +17,7 @@ export interface CirclesProps {
 }
 
 const Circles = ({ count, radius, color, size, startAngle }: CirclesProps) => {
-  const step = useHomeStore((state) => state.step);
+  const step = useHomeStore((state) => state.animationStep);
   const { width, height } = useThree((state) => state.viewport);
 
   const positions = useMemo(() => {
