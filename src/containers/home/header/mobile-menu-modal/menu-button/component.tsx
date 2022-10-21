@@ -17,12 +17,12 @@ const MenuButton = ({
     closed: {
       rotate: 0,
       translateY: 1.45,
-      transformOrigin: '50% 50%',
+      transformorigin: '50% 50%',
     },
     opened: {
       rotate: 45,
       translateY: 2,
-      transformOrigin: '50% 50%',
+      transformorigin: '50% 50%',
     },
   };
 
@@ -30,12 +30,12 @@ const MenuButton = ({
     closed: {
       rotate: 0,
       translateY: -1.45,
-      transformOrigin: '50% 50%',
+      transformorigin: '50% 50%',
     },
     opened: {
       rotate: -45,
       translateY: -2,
-      transformOrigin: '50% 50%',
+      transformorigin: '50% 50%',
     },
   };
   lineProps = {
