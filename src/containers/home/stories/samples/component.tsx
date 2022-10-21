@@ -23,7 +23,7 @@ const Samples = () => {
         <div className="space-y-10">
           <SampleComposition
             align="left"
-            media={<SampleMedia backgroundImage={`url(/images/home/stories/test.webp)`} />}
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/test-1.jpg)`} />}
             card={
               <Card
                 country="Tanzania"
@@ -36,7 +36,7 @@ const Samples = () => {
           />
           <SampleComposition
             align="right"
-            media={<SampleMedia backgroundImage={`url(/images/home/stories/ghana.png)`} video />}
+            media={<SampleMedia backgroundImage={`url(/images/home/stories/test-2.jpg)`} video />}
             card={
               <Card
                 country="Dominican Republic"

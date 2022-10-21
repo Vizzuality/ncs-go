@@ -82,6 +82,7 @@ const Header: React.FC = () => {
           <Wrapper>
             <motion.nav
               className="flex items-center justify-end space-x-12 text-lg border-b border-gray-900"
+              initial={{ opacity: 0 }}
               animate={{
                 opacity: header ? 1 : 0,
               }}
