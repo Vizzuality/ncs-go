@@ -24,6 +24,7 @@ const ScrollSection = ({ step, animationStep }: ScrollSectionProps) => {
 
   return (
     <div
+      id={`scroll-${step}`}
       ref={ref}
       className="relative w-full h-screen pointer-events-none snap-start snap-always"
     />

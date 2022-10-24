@@ -5,6 +5,7 @@ import { useHomeStore } from 'store/home';
 import { useInView } from 'framer-motion';
 
 import { STEPS } from './constants';
+import Navigation from './navigation';
 import Particles from './particles';
 import ScrollSection from './scroll-section';
 import Steps from './steps';
@@ -26,6 +27,7 @@ const Intro = () => {
       <div className="sticky top-0 left-0 z-0 w-full h-screen">
         <Particles />
         <Steps />
+        <Navigation />
       </div>
 
       {/* Remove the same height as the sticky one by using the margin */}
