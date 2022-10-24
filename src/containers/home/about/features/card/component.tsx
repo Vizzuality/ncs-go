@@ -4,6 +4,8 @@ import { motion, useInView } from 'framer-motion';
 
 import Icon from 'components/icon';
 
+import ARROW_TOP_RIGHT_SVG from 'svgs/arrow-top-right.svg?sprite';
+
 import type { FeatureCardProps } from './types';
 
 export const FeatureCard = ({ index, title, icon }: FeatureCardProps) => {
@@ -19,7 +21,7 @@ export const FeatureCard = ({ index, title, icon }: FeatureCardProps) => {
   return (
     <motion.div
       ref={ref}
-      className="group p-10 space-y-2 text-base cursor-pointer text-left text-white transition duration-300 ease-out bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-20 outline outline-1 outline-gray-800"
+      className="relative group hover:z-10 p-10 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28 outline outline-1 outline-gray-800"
       whileInView={{
         opacity: 1,
       }}
@@ -44,6 +46,10 @@ export const FeatureCard = ({ index, title, icon }: FeatureCardProps) => {
       >
         {title}
       </motion.h3>
+      <Icon
+        className="absolute hidden w-8 h-8 -top-2 stroke-black right-4 group-hover:block"
+        icon={ARROW_TOP_RIGHT_SVG}
+      />
     </motion.div>
   );
 };
