@@ -93,7 +93,6 @@ const Header: React.FC = () => {
                     className="relative flex justify-between m-0 cursor-pointer"
                     key={opt.label}
                     onClick={() => {
-                      setSelectedTab(opt);
                       scrollMenu(opt.id);
                     }}
                   >

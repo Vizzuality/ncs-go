@@ -14,7 +14,7 @@ export const FeatureCard = ({ index, description, icon }: FeatureCardProps) => {
   });
 
   const opacity = inView ? 1 : 0;
-  const y = inView ? 0 : -20;
+  const y = inView ? 0 : 20;
 
   return (
     <motion.div
