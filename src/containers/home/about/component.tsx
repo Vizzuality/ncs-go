@@ -34,7 +34,7 @@ const About = () => {
   }, [inViewSection, setSection]);
 
   return (
-    <div ref={sectionRef} id="about" className="bg-white snap-start snap-always">
+    <div ref={sectionRef} id="about" className="bg-white snap-start snap-always scroll-mt-20">
       <Media lessThan="md">
         <Wrapper>
           <div className="pt-10 pb-4">
