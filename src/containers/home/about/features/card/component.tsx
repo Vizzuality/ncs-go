@@ -19,7 +19,7 @@ export const FeatureCard = ({ index, title, icon }: FeatureCardProps) => {
   return (
     <motion.div
       ref={ref}
-      className="p-10 space-y-2 text-base text-left text-white bg-gray-900 md:space-y-6 md:text-lg6 md:pt-20 outline outline-1 outline-gray-800"
+      className="group p-10 space-y-2 text-base cursor-pointer text-left text-white transition duration-300 ease-out bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-20 outline outline-1 outline-gray-800"
       whileInView={{
         opacity: 1,
       }}
@@ -32,10 +32,13 @@ export const FeatureCard = ({ index, title, icon }: FeatureCardProps) => {
       }}
     >
       <motion.div animate={{ opacity, y }} transition={{ delay: 0.2 + index * 0.1, bounce: 0 }}>
-        <Icon className="w-12 h-12 md:w-16 md:h-16" icon={icon} />
+        <Icon
+          className="w-12 h-12 md:w-16 md:h-16 group-hover:stroke-black stroke-white"
+          icon={icon}
+        />
       </motion.div>
       <motion.h3
-        className="h-12 font-sans"
+        className="h-12 font-sans group-hover:text-black"
         animate={{ opacity, y }}
         transition={{ delay: 0.3 + index * 0.1, bounce: 0 }}
       >
