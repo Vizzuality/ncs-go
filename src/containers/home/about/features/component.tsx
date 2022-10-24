@@ -18,10 +18,10 @@ const Features = () => {
           />
         </div>
 
-        <div className="grid -mx-4 md:grid-flow-col md:grid-rows-4 xl:grid-rows-2 md:mx-0">
+        <div className="grid -mx-4 md:grid-cols-2 xl:grid-cols-4 md:mx-0">
           {FEATURES.map((f, i) => (
             <div key={f.key} className={`order-${f.key}`}>
-              <FeatureCard description={f.title} icon={f.icon} index={i} />
+              <FeatureCard title={f.title} icon={f.icon} index={i} />
             </div>
           ))}
         </div>

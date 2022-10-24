@@ -6,7 +6,7 @@ import Icon from 'components/icon';
 
 import type { FeatureCardProps } from './types';
 
-export const FeatureCard = ({ index, description, icon }: FeatureCardProps) => {
+export const FeatureCard = ({ index, title, icon }: FeatureCardProps) => {
   const ref = useRef();
   const inView = useInView(ref, {
     once: true,
@@ -19,7 +19,7 @@ export const FeatureCard = ({ index, description, icon }: FeatureCardProps) => {
   return (
     <motion.div
       ref={ref}
-      className="p-10 space-y-2 text-base text-left text-white bg-gray-900 md:space-y-6 md:text-lg md:h-96 lg:h-80 xl:h-96 md:pt-20 outline outline-1 outline-gray-800"
+      className="p-10 space-y-2 text-base text-left text-white bg-gray-900 md:space-y-6 md:text-lg6 md:pt-20 outline outline-1 outline-gray-800"
       whileInView={{
         opacity: 1,
       }}
@@ -35,11 +35,11 @@ export const FeatureCard = ({ index, description, icon }: FeatureCardProps) => {
         <Icon className="w-12 h-12 md:w-16 md:h-16" icon={icon} />
       </motion.div>
       <motion.h3
-        className="font-sans"
+        className="h-12 font-sans"
         animate={{ opacity, y }}
         transition={{ delay: 0.3 + index * 0.1, bounce: 0 }}
       >
-        {description}
+        {title}
       </motion.h3>
     </motion.div>
   );
