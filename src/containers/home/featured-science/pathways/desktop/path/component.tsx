@@ -1,4 +1,6 @@
-import React, { useMemo } from 'react';
+import React, { useMemo, useState } from 'react';
+
+import cx from 'classnames';
 
 import Image from 'next/image';
 
@@ -21,6 +23,7 @@ const Path = ({
   length,
   onClick,
 }) => {
+  const [animating, setAnimating] = useState(false);
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   const { width, height } = useMemo(() => {
@@ -33,14 +36,6 @@ const Path = ({
   const SELECTED = selected === id;
   const NOT_SELECTED = selected && selected !== id;
 
-  const INDEX = selectedIndex < index ? index - 1 : index;
-  const SCALE = useMemo(() => {
-    if (NOT_SELECTED) {
-      return minWidth >= BREAKPOINTS['2xl'] ? 0.4 : 0.3;
-    }
-    return 1;
-  }, [minWidth, NOT_SELECTED]);
-
   const CENTER = useMemo(() => {
     return {
       x: canvas.width / 2 - width / 2,
@@ -49,16 +44,29 @@ const Path = ({
   }, [width, height, canvas]);
 
   const ANIMATE = useMemo(() => {
-    if (selected === id) {
+    if (SELECTED) {
       return 'selected';
     }
 
-    if (!!selected) {
+    if (NOT_SELECTED) {
       return 'list';
     }
 
     return 'static';
-  }, [id, selected]);
+  }, [SELECTED, NOT_SELECTED]);
+
+  const INDEX = useMemo(() => {
+    if (selectedIndex < 0) return index;
+
+    return selectedIndex < index ? index - 1 : index;
+  }, [index, selectedIndex]);
+
+  const SCALE = useMemo(() => {
+    if (NOT_SELECTED) {
+      return minWidth >= BREAKPOINTS['2xl'] ? 0.4 : 0.3;
+    }
+    return 1;
+  }, [minWidth, NOT_SELECTED]);
 
   const LIST_HEIGHT = useMemo(() => {
     const arr = new Array(length - 1);
@@ -135,7 +143,11 @@ const Path = ({
   return (
     <>
       <motion.div
-        className="absolute top-0 left-0 z-10 flex items-center justify-center rounded-full cursor-pointer"
+        className={cx({
+          'absolute top-0 left-0 z-10 flex items-center justify-center rounded-full cursor-pointer':
+            true,
+          'pointer-events-none': animating,
+        })}
         variants={VARIANTS}
         animate={ANIMATE}
         whileHover="hover"
@@ -148,6 +160,16 @@ const Path = ({
           width: width,
           height: height,
           backgroundColor: color,
+        }}
+        onAnimationStart={(v) => {
+          if (v !== 'hover') {
+            setAnimating(true);
+          }
+        }}
+        onAnimationComplete={(v) => {
+          if (v !== 'hover') {
+            setAnimating(false);
+          }
         }}
         onClick={onClick}
       >
