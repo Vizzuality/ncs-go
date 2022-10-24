@@ -8,6 +8,7 @@ import { STEPS } from './constants';
 import Navigation from './navigation';
 import Particles from './particles';
 import ScrollSection from './scroll-section';
+import Skip from './skip';
 import Steps from './steps';
 
 const Intro = () => {
@@ -28,6 +29,7 @@ const Intro = () => {
         <Particles />
         <Steps />
         <Navigation />
+        <Skip />
       </div>
 
       {/* Remove the same height as the sticky one by using the margin */}

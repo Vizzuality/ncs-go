@@ -8,7 +8,7 @@ export const THEME = {
 };
 
 export const SIZE = {
-  xs: 'text-base md:text-lg px-6 py-4',
+  xs: 'text-base px-6 py-2',
   s: 'text-base md:text-lg px-10 py-4 md:py-5',
   base: 'text-lg px-10 py-6',
 };

@@ -41,8 +41,10 @@ const Header: React.FC = () => {
   const scrollTo = useCallback((id) => {
     const $scrollEl = document.getElementById(id);
     const $header = headerRef.current;
-    const yOffset = -$header.getBoundingClientRect().height;
-    const y = $scrollEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+    const y =
+      $scrollEl.getBoundingClientRect().top +
+      window.pageYOffset +
+      -$header.getBoundingClientRect().height;
 
     window.scrollTo({
       top: y,
@@ -52,6 +54,7 @@ const Header: React.FC = () => {
 
   return (
     <motion.nav
+      id="header"
       ref={headerRef}
       className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900"
       initial={{ y: '-100%' }}
@@ -86,7 +89,7 @@ const Header: React.FC = () => {
         <>
           <Wrapper>
             <div className="flex items-center justify-end space-x-12 text-lg border-b border-gray-900">
-              <ul className="flex items-center justify-end w-full p-0 m-0 space-x-7">
+              <ul className="flex items-center justify-end w-full p-0 m-0 space-x-12">
                 {NAV_OPTIONS.map((opt) => (
                   <li
                     className="relative flex justify-between m-0 cursor-pointer"
@@ -110,7 +113,7 @@ const Header: React.FC = () => {
               <Button
                 className="rounded-[100px] h-16"
                 theme="secondary"
-                size="xs"
+                size="s"
                 onClick={() => openDesktop()}
               >
                 Subscribe
