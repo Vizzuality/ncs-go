@@ -14,14 +14,12 @@ const Intro = () => {
   const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
 
   const setSection = useHomeStore((state) => state.setSection);
-  const setSubSection = useHomeStore((state) => state.setSubSection);
 
   useEffect(() => {
     if (inViewSection) {
       setSection('intro');
-      setSubSection(0);
     }
-  }, [inViewSection, setSection, setSubSection]);
+  }, [inViewSection, setSection]);
 
   return (
     <section ref={sectionRef} className="relative">

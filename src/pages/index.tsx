@@ -18,9 +18,11 @@ const Home: React.FC = () => {
   const section = useHomeStore((state) => state.section);
 
   useEffect(() => {
-    document.documentElement.className = cx({
-      'snap-y snap-mandatory': section === 'intro',
-    });
+    setTimeout(() => {
+      document.documentElement.className = cx({
+        'snap-y snap-mandatory': section === 'intro',
+      });
+    }, 100);
   }, [section]);
 
   return (
@@ -29,9 +31,9 @@ const Home: React.FC = () => {
         <title>NCS - GO</title>
       </Head>
 
-      <Intro />
-
       <Header />
+
+      <Intro />
 
       <About />
 

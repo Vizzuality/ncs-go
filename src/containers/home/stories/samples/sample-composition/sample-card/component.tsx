@@ -8,7 +8,6 @@ import LinkArrow from 'containers/home/common/link-arrow';
 import { PATHWAY_COLOR } from 'containers/home/stories/constants';
 
 import Icon from 'components/icon';
-import { IN_VIEW_PROPS } from 'constants/motion';
 
 import LOCATION_SVG from 'svgs/location.svg?sprite';
 
@@ -27,13 +26,12 @@ export const SampleCard = ({
   const opacity = inView ? 1 : 0;
 
   return (
-    <motion.div
+    <div
       ref={ref}
       className={cx({
         'lg:p-10 sm:p-6 p-4 flex flex-col text-base text-gray-900 text-left h-full relative': true,
         [PATHWAY_COLOR[pathway]]: true,
       })}
-      {...IN_VIEW_PROPS}
     >
       <motion.div
         className="flex space-x-2 xl:space-x-2.5 pb-4 xl:pb-10"
@@ -66,7 +64,7 @@ export const SampleCard = ({
           <LinkArrow className={{ arrow: 'stroke-black' }} label="Watch video" url={videoUrl} />
         )}
       </motion.div>
-    </motion.div>
+    </div>
   );
 };
 

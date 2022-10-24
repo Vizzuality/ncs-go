@@ -28,15 +28,11 @@ const FeaturedScience = () => {
   }, [inViewSection, setSection]);
 
   return (
-    <motion.div
-      ref={sectionRef}
-      id="featured-science"
-      className="bg-white lg:pt-32 scroll-mt-20 lg:scroll-mt-0 snap-start snap-always"
-    >
+    <motion.div ref={sectionRef} id="featured-science" className="bg-white">
       <Wrapper>
         <motion.div
           ref={ref}
-          className="pb-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+          className="pt-10 pb-4 font-sans text-base text-gray-800 lg:pb-20 lg:pt-32 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
           {...IN_VIEW_PROPS}
         >
           <Hero
@@ -69,7 +65,7 @@ const FeaturedScience = () => {
           />
 
           <div className="col-start-3 lg:pt-6">
-            <motion.p animate={{ opacity }} transition={{ delay: 0.2 }}>
+            <motion.p animate={{ opacity }} transition={{ delay: 0.4 }}>
               There are 20 science-backed effective approaches, or pathways, to nurture the best of
               what nature can do to limit global warming and preserve our natural world.There are 20
               science-backed effective approaches, or pathways, to nurture the best of what nature

@@ -2,7 +2,7 @@ import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { useHomeStore } from 'store/home';
 
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import { useModal } from 'hooks/modals';
 
@@ -18,45 +18,50 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
+  const headerRef = useRef(null);
+
   const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
+
   const { isOpen: isOpenMobile, open: openMobile, close: closeMobile } = useModal();
   const { isOpen: isOpenDesktop, open: openDesktop, close: closeDesktop } = useModal();
 
   const section = useHomeStore((state) => state.section);
-  const setSection = useHomeStore((state) => state.setSection);
-
-  const subSection = useHomeStore((state) => state.subSection);
-
   const header = useHomeStore((state) => state.header);
   const setHeader = useHomeStore((state) => state.setHeader);
 
-  const ref = useRef();
-  const inView = useInView(ref, { margin: '-100% 0px 0px' });
-
   useEffect(() => {
-    if (inView) {
-      setSection('header');
-    }
-  }, [inView, setSection]);
-
-  useEffect(() => {
-    setHeader(section !== 'intro' && subSection === 1);
-  }, [section, setHeader, subSection]);
+    setHeader(section !== 'intro');
+  }, [section, setHeader]);
 
   useEffect(() => {
     const selectedSection = NAV_OPTIONS.find((opt) => opt.id === section);
     setSelectedTab(selectedSection);
   }, [section]);
 
-  const scrollMenu = useCallback((id) => {
+  const scrollTo = useCallback((id) => {
     const $scrollEl = document.getElementById(id);
-    $scrollEl.scrollIntoView({
+    const $header = headerRef.current;
+    const yOffset = -$header.getBoundingClientRect().height;
+    const y = $scrollEl.getBoundingClientRect().top + window.pageYOffset + yOffset;
+
+    window.scrollTo({
+      top: y,
       behavior: 'smooth',
     });
   }, []);
 
   return (
-    <section ref={ref} className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900">
+    <motion.nav
+      ref={headerRef}
+      className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900"
+      initial={{ y: '-100%' }}
+      animate={{
+        y: header ? '0%' : '-100%',
+      }}
+      transition={{
+        bounce: 0,
+      }}
+    >
       <Media lessThan="lg">
         <>
           <Wrapper>
@@ -73,27 +78,21 @@ const Header: React.FC = () => {
             </div>
           </Wrapper>
 
-          <MobileMenuModal isOpen={isOpenMobile} close={closeMobile} />
+          <MobileMenuModal isOpen={isOpenMobile} close={closeMobile} onScrollTo={scrollTo} />
         </>
       </Media>
 
       <Media greaterThanOrEqual="lg">
         <>
           <Wrapper>
-            <motion.nav
-              className="flex items-center justify-end space-x-12 text-lg border-b border-gray-900"
-              initial={{ opacity: 0 }}
-              animate={{
-                opacity: header ? 1 : 0,
-              }}
-            >
+            <div className="flex items-center justify-end space-x-12 text-lg border-b border-gray-900">
               <ul className="flex items-center justify-end w-full p-0 m-0 space-x-7">
                 {NAV_OPTIONS.map((opt) => (
                   <li
                     className="relative flex justify-between m-0 cursor-pointer"
                     key={opt.label}
                     onClick={() => {
-                      scrollMenu(opt.id);
+                      scrollTo(opt.id);
                     }}
                   >
                     <p className="hover:text-brand-700 py-7">{opt.label}</p>
@@ -116,13 +115,13 @@ const Header: React.FC = () => {
               >
                 Subscribe
               </Button>
-            </motion.nav>
+            </div>
           </Wrapper>
 
           <SubscribeModal isOpen={isOpenDesktop} close={closeDesktop} />
         </>
       </Media>
-    </section>
+    </motion.nav>
   );
 };
 
