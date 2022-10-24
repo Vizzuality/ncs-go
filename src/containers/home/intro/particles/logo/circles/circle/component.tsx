@@ -30,7 +30,7 @@ export interface CirclesProps {
 }
 
 const Circles = ({ p, size, color, noise }: CirclesProps) => {
-  const step = useHomeStore((state) => state.step);
+  const step = useHomeStore((state) => state.animationStep);
   const DURATION = 500;
 
   const meshRef = useRef(null);
@@ -55,9 +55,9 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
 
   useFrame(() => {
     if (step !== materialRef.current.uStep) {
-      materialRef.current.uProgress = 0;
+      materialRef.current.uPrevStep = step;
       materialRef.current.uPrevPos = [p.x, p.y, p.z];
-      materialRef.current.uPrevStep = materialRef.current.uStep;
+      materialRef.current.uProgress = 0;
     }
 
     materialRef.current.uStep = step;

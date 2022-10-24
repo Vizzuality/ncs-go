@@ -6,10 +6,15 @@ type Section = 'intro' | 'header' | 'about' | 'stories' | 'featured-science' | '
 type HomeState = {
   section: Section;
   setSection: (section: Section) => void;
+
   subSection: number;
   setSubSection: (subSection: number) => void;
+
   step: number;
   setStep: (step: number) => void;
+  animationStep: number;
+  setAnimationStep: (step: number) => void;
+
   header: boolean;
   setHeader: (header: boolean) => void;
 };
@@ -24,6 +29,8 @@ const useHomeStore = create<HomeState, [['zustand/devtools', never]]>(
 
     step: 0,
     setStep: (step) => set(() => ({ step: step })),
+    animationStep: 0,
+    setAnimationStep: (step) => set(() => ({ animationStep: step })),
 
     header: false,
     setHeader: (header) => set(() => ({ header })),

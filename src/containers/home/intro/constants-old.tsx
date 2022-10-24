@@ -121,13 +121,12 @@ export const IMAGES = ({ width, height }) => [
 export const STEPS = [
   {
     id: 0,
-    animationStep: 0,
     content: (
-      <div className="relative px-4">
+      <div className="relative">
         <div className="max-w-2xl">
           <p>
-            Nature can provide <span className="text-blue-600">up to 30%</span> of the emissions
-            reductions needed to meet the Paris Agreement targets.
+            Nature can provide up to 30% of the emissions reductions needed to meet the Paris
+            Agreement targets.
           </p>
         </div>
       </div>
@@ -164,23 +163,21 @@ export const STEPS = [
   },
   {
     id: 1,
-    animationStep: 0,
     content: (
-      <div className="relative px-4">
-        <div className="max-w-2xl">
-          <p>
-            But effective nature and climate <span className="text-red-600">action</span> needs{' '}
-            <span className="text-red-600">more</span> than just commitments.
-          </p>
+      <div className="relative -translate-y-20">
+        <div className="w-48 h-48 mx-auto" />
+        <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
+          <p>But effective nature and climate action needs more than just commitments.</p>
         </div>
       </div>
     ),
-    getPositions: ({ width, height, count }) => {
+    getPositions: ({ radius, count }) => {
       let pos = [];
 
       for (let i = 0; i < count; i++) {
-        const x = Math.random() * width - width / 2;
-        const y = -0.75 + Math.random() * height - height / 2;
+        const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
+        const x = ((radius * 0.6) / 100) * Math.cos((-randomAngle * Math.PI) / 180);
+        const y = ((radius * 0.6) / 100) * Math.sin((-randomAngle * Math.PI) / 180);
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -188,44 +185,43 @@ export const STEPS = [
     },
     getAnimations: () => {
       return {
-        initial: {
-          y: 0.75,
-          rotateZ: 0,
-        },
         animate: {
           y: 0.75,
-          rotateZ: 0,
+          rotateZ: -360 * (Math.PI / 180),
         },
         transition: {
           duration: 0.1,
+          rotateZ: {
+            duration: 50,
+            repeat: Infinity,
+            repeatType: 'loop',
+            ease: 'linear',
+          },
         },
       };
     },
     getNoise: () => {
-      return 0.5;
+      return 0.75;
     },
   },
   {
     id: 2,
-    animationStep: 2,
     content: (
-      <div className="relative px-4 -translate-y-20">
+      <div className="relative -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
         <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p>Science. Policy. People.</p>
-          <p>
-            They all need to come <span className="text-blue-800">together</span>.
-          </p>
+          <p>They all need to come together.</p>
         </div>
       </div>
     ),
-    getPositions: ({ radius, count }) => {
+    getPositions: ({ count }) => {
       let pos = [];
 
       for (let i = 0; i < count; i++) {
         const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-        const x = ((radius * 0.6) / 100) * Math.cos((-randomAngle * Math.PI) / 180);
-        const y = ((radius * 0.6) / 100) * Math.sin((-randomAngle * Math.PI) / 180);
+        const x = Math.cos((-randomAngle * Math.PI) / 180);
+        const y = Math.sin((-randomAngle * Math.PI) / 180);
         const z = 0;
         pos.push({ id: i, x, y, z });
       }
@@ -238,9 +234,8 @@ export const STEPS = [
           rotateZ: -360 * (Math.PI / 180),
         },
         transition: {
-          duration: 0.1,
           rotateZ: {
-            duration: 25,
+            duration: 50,
             repeat: Infinity,
             repeatType: 'loop',
             ease: 'linear',
@@ -249,33 +244,31 @@ export const STEPS = [
       };
     },
     getNoise: () => {
-      return 0.75;
+      return 0.125;
     },
   },
   {
     id: 3,
-    animationStep: 2,
     content: (
-      <div className="relative px-4 -translate-y-20">
+      <div className="relative -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
         <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p>
-            To <span className="text-brand-700">protect, manage and restore</span> our natural
-            ecosystems, creating jobs, protecting livelihoods, increasing biodiversity - and
-            absorbing carbon from the atmosphere.
+            To protect, manage and restore our natural ecosystems, creating jobs, protecting
+            livelihoods, increasing biodiversity - and absorbing carbon from the atmosphere.
           </p>
         </div>
       </div>
     ),
-    getPositions: ({ radius, count }) => {
+    getPositions: ({ count }) => {
       let pos = [];
 
+      // const RECT_POINTS = getRectPoints(120, 2, 2);
+      const SPIRAL_POINTS = getSpiralPoints(120, 1.15, 0);
+
       for (let i = 0; i < count; i++) {
-        const randomAngle = i * (360 / count) - 90 + Math.random() * 180;
-        const x = ((radius * 0.6) / 100) * Math.cos((-randomAngle * Math.PI) / 180);
-        const y = ((radius * 0.6) / 100) * Math.sin((-randomAngle * Math.PI) / 180);
-        const z = 0;
-        pos.push({ id: i, x, y, z });
+        const { x, y, z } = SPIRAL_POINTS[Math.floor(Math.random() * SPIRAL_POINTS.length)];
+        pos.push({ id: i, x, y: y + 0.0001, z });
       }
       return pos;
     },
@@ -286,9 +279,8 @@ export const STEPS = [
           rotateZ: -360 * (Math.PI / 180),
         },
         transition: {
-          duration: 0.1,
           rotateZ: {
-            duration: 25,
+            duration: 50,
             repeat: Infinity,
             repeatType: 'loop',
             ease: 'linear',
@@ -297,14 +289,13 @@ export const STEPS = [
       };
     },
     getNoise: () => {
-      return 0.75;
+      return 0.075;
     },
   },
   {
     id: 4,
-    animationStep: 4,
     content: (
-      <div className="relative px-4 -translate-y-20">
+      <div className="relative -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
         <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p className="uppercase tracking-[0.32em]">Coming soon</p>
@@ -341,9 +332,8 @@ export const STEPS = [
   },
   {
     id: 5,
-    animationStep: 4,
     content: (
-      <div className="relative px-4 -translate-y-20">
+      <div className="relative -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
         <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <h1 className="text-2xl font-semibold tracking-wider md:text-3xl">naturebase</h1>

@@ -27,7 +27,7 @@ export const SampleMedia = ({ backgroundImage, video = false }: SampleMediaProps
     offset: ['start end', 'end start'],
   });
 
-  const bgPos = useTransform(scrollYProgress, [0, 1], [`50% 0%`, `50% 100%`]);
+  const bgPos = useTransform(scrollYProgress, [0, 1], [`50% 100%`, `50% 0%`]);
 
   const videoConfig = {
     youtube: {

@@ -56,75 +56,71 @@ const Header: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="sticky top-0 left-0 z-10 w-full text-white bg-gray-900">
+    <section ref={ref} className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900">
       <Media lessThan="lg">
-        {header && (
-          <>
-            <Wrapper>
-              <div className="relative h-20">
-                <motion.div
-                  className="absolute -translate-y-1/2 top-1/2 right-2"
-                  {...IN_VIEW_PROPS}
-                >
-                  <MenuButton
-                    isOpen={isOpenMobile}
-                    onClick={() => (isOpenMobile ? closeMobile() : openMobile())}
-                    transition={{ ease: 'easeOut', duration: 0.2 }}
-                    width={40}
-                    height={40}
-                  />
-                </motion.div>
-              </div>
-            </Wrapper>
+        <>
+          <Wrapper>
+            <div className="relative h-20">
+              <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
+                <MenuButton
+                  isOpen={isOpenMobile}
+                  onClick={() => (isOpenMobile ? closeMobile() : openMobile())}
+                  transition={{ ease: 'easeOut', duration: 0.2 }}
+                  width={40}
+                  height={40}
+                />
+              </motion.div>
+            </div>
+          </Wrapper>
 
-            <MobileMenuModal isOpen={isOpenMobile} close={closeMobile} />
-          </>
-        )}
+          <MobileMenuModal isOpen={isOpenMobile} close={closeMobile} />
+        </>
       </Media>
 
       <Media greaterThanOrEqual="lg">
-        {header && (
-          <>
-            <Wrapper>
-              <motion.nav
-                className="flex items-center justify-end h-20 space-x-12 text-lg lg:h-24"
-                {...IN_VIEW_PROPS}
+        <>
+          <Wrapper>
+            <motion.nav
+              className="flex items-center justify-end space-x-12 text-lg border-b border-gray-900"
+              initial={{ opacity: 0 }}
+              animate={{
+                opacity: header ? 1 : 0,
+              }}
+            >
+              <ul className="flex items-center justify-end w-full p-0 m-0 space-x-7">
+                {NAV_OPTIONS.map((opt) => (
+                  <li
+                    className="relative flex justify-between m-0 cursor-pointer"
+                    key={opt.label}
+                    onClick={() => {
+                      scrollMenu(opt.id);
+                    }}
+                  >
+                    <p className="hover:text-brand-700 py-7">{opt.label}</p>
+
+                    {opt === selectedTab && (
+                      <motion.div
+                        className="absolute left-0 right-0 h-[3px] bg-white bottom-0"
+                        layoutId="underline"
+                      />
+                    )}
+                  </li>
+                ))}
+              </ul>
+
+              <Button
+                className="rounded-[100px] h-16"
+                theme="secondary"
+                size="xs"
+                onClick={() => openDesktop()}
               >
-                <ul className="flex items-center justify-end w-full p-0 m-0 space-x-7">
-                  {NAV_OPTIONS.map((opt) => (
-                    <li
-                      className="relative flex justify-between m-0 cursor-pointer"
-                      key={opt.label}
-                      onClick={() => {
-                        setSelectedTab(opt);
-                        scrollMenu(opt.id);
-                      }}
-                    >
-                      <p className="hover:text-brand-700 py-7">{opt.label}</p>
-                      {opt === selectedTab ? (
-                        <motion.div
-                          className="absolute left-0 right-0 h-[2px] bg-white top-full"
-                          layoutId="underline"
-                        />
-                      ) : null}
-                    </li>
-                  ))}
-                </ul>
+                Subscribe
+              </Button>
+            </motion.nav>
+          </Wrapper>
 
-                <Button
-                  className="rounded-[100px] h-16"
-                  theme="secondary"
-                  size="xs"
-                  onClick={() => openDesktop()}
-                >
-                  Subscribe
-                </Button>
-              </motion.nav>
-            </Wrapper>
-
-            <SubscribeModal isOpen={isOpenDesktop} close={closeDesktop} />
-          </>
-        )}
+          <SubscribeModal isOpen={isOpenDesktop} close={closeDesktop} />
+        </>
       </Media>
     </section>
   );
