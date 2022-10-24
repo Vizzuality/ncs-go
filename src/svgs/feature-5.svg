@@ -1,18 +1,6 @@
-<svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g clip-path="url(#clip0_146_365)">
-<circle cx="24" cy="24" r="15" fill="#5BC89C"/>
-<path d="M2.37891 2.12134L8.74287 8.4853" stroke="white"/>
-<path d="M8.69873 4.19849V8.44113H4.45609" stroke="white"/>
-<path d="M2.37891 45.8787L8.74287 39.5147" stroke="white"/>
-<path d="M8.69873 43.8015V39.5589H4.45609" stroke="white"/>
-<path d="M45.6211 2.12134L39.2571 8.4853" stroke="white"/>
-<path d="M39.3013 4.19849V8.44113H43.5439" stroke="white"/>
-<path d="M45.6211 45.8787L39.2571 39.5147" stroke="white"/>
-<path d="M39.3013 43.8015V39.5589H43.5439" stroke="white"/>
-</g>
-<defs>
-<clipPath id="clip0_146_365">
-<rect width="48" height="48" fill="white"/>
-</clipPath>
-</defs>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="39.7847" cy="25" r="8" transform="rotate(90 39.7847 25)" fill="#00CC99"/>
+<circle cx="53.7847" cy="49.2487" r="8" transform="rotate(90 53.7847 49.2487)" fill="#00CC99"/>
+<circle cx="26" cy="49.1244" r="8" transform="rotate(90 26 49.1244)" fill="#00CC99"/>
+<circle cx="40" cy="40" r="39.5" stroke="#FFFEFA" stroke-dasharray="4 4"/>
 </svg>
