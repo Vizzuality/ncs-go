@@ -12,7 +12,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
-const MobileMenuModal = ({ isOpen, close }) => {
+const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -47,13 +47,6 @@ const MobileMenuModal = ({ isOpen, close }) => {
     [saveSubscribeMutation, addToast]
   );
 
-  const scrollMenu = useCallback((id) => {
-    const $scrollEl = document.getElementById(id);
-    $scrollEl.scrollIntoView({
-      behavior: 'smooth',
-    });
-  }, []);
-
   return (
     <FullScreenModal
       open={isOpen}
@@ -71,7 +64,7 @@ const MobileMenuModal = ({ isOpen, close }) => {
                 className="text-lg text-white"
                 onClick={() => {
                   close();
-                  scrollMenu(o.id);
+                  onScrollTo(o.id);
                 }}
               >
                 {o.label}

@@ -17,16 +17,13 @@ import { BREAKPOINTS } from 'styles/styles.config';
 const About = () => {
   const ref = useRef();
   const sectionRef = useRef();
-  const subSectionRef = useRef();
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
   const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
-  const subSectionInView = useInView(subSectionRef, { margin: '-100% 0px 0px' });
 
   const opacity = inView ? 1 : 0;
 
   const setSection = useHomeStore((state) => state.setSection);
-  const setSubSection = useHomeStore((state) => state.setSubSection);
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
@@ -36,18 +33,8 @@ const About = () => {
     }
   }, [inViewSection, setSection]);
 
-  useEffect(() => {
-    if (subSectionInView) {
-      setSubSection(1);
-    }
-  }, [subSectionInView, setSubSection]);
-
   return (
-    <div
-      ref={sectionRef}
-      id="about"
-      className="bg-white scroll-mt-20 lg:scroll-mt-0 snap-start snap-always"
-    >
+    <div ref={sectionRef} id="about" className="bg-white snap-start snap-always">
       <Media lessThan="md">
         <Wrapper>
           <div className="pt-10 pb-4">
@@ -94,7 +81,7 @@ const About = () => {
               animate={{ opacity }}
               transition={{ delay: 0.2 }}
             >
-              <p ref={subSectionRef}>
+              <p>
                 Naturebase will bring together science-based data on nature’s pathways to mitigate
                 climate change across every region of the planet, combining them with the latest
                 information on enabling policy frameworks, mitigation and adaptation plans, finance

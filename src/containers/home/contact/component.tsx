@@ -68,11 +68,7 @@ const Contact: React.FC = () => {
   );
 
   return (
-    <motion.section
-      ref={sectionRef}
-      className="w-full pb-20 bg-gray-900 scroll-mt-20 lg:scroll-mt-0"
-      id="contact"
-    >
+    <motion.section ref={sectionRef} className="w-full pb-20 bg-gray-900" id="contact">
       <Wrapper>
         <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
           <motion.div
