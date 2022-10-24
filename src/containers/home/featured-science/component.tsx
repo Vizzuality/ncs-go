@@ -69,10 +69,12 @@ const FeaturedScience = () => {
           />
 
           <div className="col-start-3 lg:pt-6">
-            <p>
+            <motion.p animate={{ opacity }} transition={{ delay: 0.2 }}>
               There are 20 science-backed effective approaches, or pathways, to nurture the best of
-              what nature can do to limit global warming and preserve our natural world.
-            </p>
+              what nature can do to limit global warming and preserve our natural world.There are 20
+              science-backed effective approaches, or pathways, to nurture the best of what nature
+              can do to limit global warming and preserve our natural world.
+            </motion.p>
           </div>
         </div>
 
