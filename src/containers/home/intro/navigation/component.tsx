@@ -27,9 +27,9 @@ const Navigation = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1, transition: { delay: 1 } }}
       key="step-navigation"
-      className="absolute left-0 z-10 w-full bottom-10"
+      className="md:absolute md:left-0 md:z-10 md:w-full md:bottom-4"
     >
-      <div className="flex flex-col items-center justify-center">
+      <div className="absolute left-0 flex flex-col items-center justify-center w-full bottom-full">
         <AnimatePresence>
           {step === 0 && (
             <motion.div

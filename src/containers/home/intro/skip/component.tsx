@@ -24,7 +24,7 @@ const Skip = () => {
       initial={{ opacity: 0, y: -5 }}
       animate={{ opacity: 1, y: 0, transition: { delay: 1 } }}
       key="step-navigation"
-      className="absolute z-10 right-6 bottom-7"
+      className=""
     >
       <Button
         theme="secondary"
