@@ -31,7 +31,7 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
       {publisher && <meta property="article:publisher" content={publisher} key="publisher" />}
       {section && <meta property="article:section" content={section} key="section" />}
       {tag && <meta property="article:tag" content={tag} key="tag" />}
-      <meta property="og:image" /* content={FB_IMAGE} */ key="image" />
+      <meta property="og:image" /* content={SM_IMAGE} */ key="image" />
       {imageURL && <meta property="og:image:secure_url" content={imageURL} key="imageURL" />}
       {imageWidth && <meta property="og:image:width" content={imageWidth} key="imageWidth" />}
       {imageHeight && <meta property="og:image:height" content={imageHeight} key="imageHeight" />}
