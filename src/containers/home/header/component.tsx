@@ -1,5 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
+import Image from 'next/image';
+
 import { useHomeStore } from 'store/home';
 
 import { motion } from 'framer-motion';
@@ -38,17 +40,16 @@ const Header: React.FC = () => {
     setSelectedTab(selectedSection);
   }, [section]);
 
-  const scrollTo = useCallback((id) => {
+  const scrollTo = useCallback((id, h) => {
     const $scrollEl = document.getElementById(id);
     const $header = headerRef.current;
-    const y =
-      $scrollEl.getBoundingClientRect().top +
-      window.pageYOffset +
-      -$header.getBoundingClientRect().height;
+
+    const yOffset = h ? $header.getBoundingClientRect().height : 0;
+    const y = $scrollEl.getBoundingClientRect().top + window.pageYOffset + -yOffset;
 
     window.scrollTo({
       top: y,
-      behavior: 'smooth',
+      behavior: h ? 'smooth' : 'auto',
     });
   }, []);
 
@@ -68,7 +69,22 @@ const Header: React.FC = () => {
       <Media lessThan="lg">
         <>
           <Wrapper>
-            <div className="relative h-20">
+            <div className="relative flex items-center justify-between h-20">
+              <button
+                className="w-[180px] h-[40px] shrink-0"
+                onClick={() => {
+                  scrollTo('intro', false);
+                }}
+              >
+                <Image
+                  src="/images/logo-horizontal.svg"
+                  alt="Logo"
+                  width={180}
+                  height={40}
+                  layout="responsive"
+                />
+              </button>
+
               <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
                 <MenuButton
                   isOpen={isOpenMobile}
@@ -88,14 +104,29 @@ const Header: React.FC = () => {
       <Media greaterThanOrEqual="lg">
         <>
           <Wrapper>
-            <div className="flex items-center justify-end space-x-12 text-lg border-b border-gray-900">
+            <div className="flex items-center justify-between space-x-12 text-lg border-b border-gray-900">
+              <button
+                className="w-[180px] h-[40px] shrink-0"
+                onClick={() => {
+                  scrollTo('intro', false);
+                }}
+              >
+                <Image
+                  src="/images/logo-horizontal.svg"
+                  alt="Logo"
+                  width={180}
+                  height={40}
+                  layout="responsive"
+                />
+              </button>
+
               <ul className="flex items-center justify-end w-full p-0 m-0 space-x-12">
                 {NAV_OPTIONS.map((opt) => (
                   <li
                     className="relative flex justify-between m-0 cursor-pointer"
                     key={opt.label}
                     onClick={() => {
-                      scrollTo(opt.id);
+                      scrollTo(opt.id, true);
                     }}
                   >
                     <p className="hover:text-brand-700 py-7">{opt.label}</p>
