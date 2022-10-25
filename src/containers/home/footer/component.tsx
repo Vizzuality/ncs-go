@@ -27,15 +27,15 @@ const Footer: React.FC = () => {
             <motion.p animate={{ opacity }} transition={{ delay: 0.2 }}>
               If you got an idea to make it even better or want submit your case studies, email us
               at{' '}
-              <a className="text-brand-700 hover:underline" href="mailto:loremipsum@email.com">
-                loremipsum@email.com.
+              <a className="text-brand-700 hover:underline" href="mailto:info@nature4climate.org">
+                info@nature4climate.org.
               </a>
             </motion.p>
             <motion.p animate={{ opacity }} transition={{ delay: 0.3 }}>
               Sign up for the Nature4Climate newsletter{' '}
               <a
                 className="text-brand-700 hover:underline"
-                href="#"
+                href="https://nature4climate.org/keep-in-touch"
                 target="_blank"
                 rel="noreferrer noopener"
               >
