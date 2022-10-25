@@ -52,7 +52,7 @@ export const StoryCard = ({
         })}
       />
 
-      <div className="overflow-hidden md:aspect-auto aspect-video md:w-6/12 xl:w-5/12 xl:h-full">
+      <div className="overflow-hidden md:aspect-auto aspect-video md:w-6/12 xl:w-5/12 xl:h-full shrink-0">
         <motion.div
           className="w-full h-full bg-center bg-no-repeat bg-cover"
           initial={false}

@@ -15,6 +15,7 @@ const Skip = () => {
 
     window.scrollTo({
       top: y,
+      // behavior: 'smooth',
     });
   }, []);
 
