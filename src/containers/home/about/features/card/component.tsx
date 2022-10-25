@@ -27,7 +27,7 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
     <>
       <motion.div
         ref={ref}
-        className="mb-4 md:mb-0 bg-gray-800 relative group hover:z-10 p-10 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out md:bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28 outline outline-1 outline-gray-800"
+        className="mb-4 md:mb-0 bg-gray-800 relative group hover:z-10 py-10 px-6 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out md:bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28 outline outline-1 outline-gray-800"
         whileInView={{
           opacity: 1,
         }}
@@ -54,7 +54,7 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
           {title}
         </motion.h3>
         <Icon
-          className="absolute hidden w-8 h-8 -top-2 stroke-black right-4 group-hover:block"
+          className="absolute w-8 h-8 lg:hidden top-4 sm:top-5 md:top-1 lg:top-0 stroke-white lg:stroke-black right-6 group-hover:block"
           icon={ARROW_TOP_RIGHT_SVG}
         />
       </motion.div>
