@@ -24,14 +24,14 @@ const Intro = () => {
   }, [inViewSection, setSection]);
 
   return (
-    <section ref={sectionRef} className="relative">
+    <section id="intro" ref={sectionRef} className="relative">
       <div className="sticky top-0 left-0 z-0 w-full h-screen">
         <Particles />
         <Steps />
-        <div className="absolute left-0 z-10 flex items-center justify-between w-full px-6 md:justify-end bottom-10">
-          <Navigation />
-          <Skip />
-        </div>
+        <Navigation />
+        <Skip />
+        {/* <div className="absolute left-0 z-10 flex items-center justify-between w-full px-6 md:justify-end bottom-10">
+        </div> */}
       </div>
 
       {/* Remove the same height as the sticky one by using the margin */}

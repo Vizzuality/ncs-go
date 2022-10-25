@@ -52,12 +52,13 @@ const About = () => {
         <AboutVideo />{' '}
       </Media>
 
-      <div
-        className="overflow-hidden bg-left-top bg-no-repeat"
-        style={{
-          backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/about/background.svg)`,
-        }}
-      >
+      <div className="relative overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-full bg-left-top bg-no-repeat pointer-events-none"
+          style={{
+            backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/about/background.svg)`,
+          }}
+        />
         <Media greaterThanOrEqual="md">
           <Wrapper>
             <div className="pt-32 pb-0 lg:grid lg:grid-cols-3">

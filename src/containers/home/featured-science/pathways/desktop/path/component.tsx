@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 
 import cx from 'classnames';
 
@@ -140,6 +140,14 @@ const Path = ({
     };
   }, []);
 
+  const handleClick = useCallback(
+    (e) => {
+      setAnimating(true);
+      onClick(e);
+    },
+    [onClick]
+  );
+
   return (
     <>
       <motion.div
@@ -161,17 +169,10 @@ const Path = ({
           height: height,
           backgroundColor: color,
         }}
-        onAnimationStart={(v) => {
-          if (v !== 'hover') {
-            setAnimating(true);
-          }
+        onAnimationComplete={() => {
+          setAnimating(false);
         }}
-        onAnimationComplete={(v) => {
-          if (v !== 'hover') {
-            setAnimating(false);
-          }
-        }}
-        onClick={onClick}
+        onClick={handleClick}
       >
         {/* BIG BALL */}
         <motion.div
