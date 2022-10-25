@@ -41,7 +41,7 @@ const Circles = ({ p, size, color, noise }: CirclesProps) => {
   const prevVelocity = useRef([0, 0]);
   const prevNoise = useRef(noise);
 
-  const COLOR = new Color(color);
+  const COLOR = new Color(color).convertLinearToSRGB();
 
   const velocity = useMemo(() => {
     const random1 = Math.random();
