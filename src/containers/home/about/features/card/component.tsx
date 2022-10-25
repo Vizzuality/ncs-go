@@ -27,7 +27,7 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
     <>
       <motion.div
         ref={ref}
-        className="relative group hover:z-10 p-10 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28 outline outline-1 outline-gray-800"
+        className="mb-4 md:mb-0 bg-gray-800 relative group hover:z-10 p-10 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out md:bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28 outline outline-1 outline-gray-800"
         whileInView={{
           opacity: 1,
         }}
@@ -60,10 +60,10 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
       </motion.div>
 
       <Modal title={title} size="default" open={isOpen} onOpenChange={close} dismissable>
-        <div className="p-16 overflow-auto text-gray-900 grow">
-          <Icon className="my-8 w-28 h-28 stroke-black" icon={icon} />
-          <h2 className="mb-4 text-xl">{title}</h2>
-          <p className="text-base" dangerouslySetInnerHTML={{ __html: description }} />
+        <div className="p-6 overflow-auto text-gray-900 md:p-16 grow">
+          <Icon className="w-20 h-20 mt-20 mb-8 md:mt-8 md:w-28 md:h-28 stroke-black" icon={icon} />
+          <h2 className="mb-4 text-lg md:text-xl">{title}</h2>
+          <p className="text-base list-inside" dangerouslySetInnerHTML={{ __html: description }} />
         </div>
       </Modal>
     </>
