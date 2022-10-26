@@ -57,7 +57,7 @@ const Header: React.FC = () => {
     <motion.nav
       id="header"
       ref={headerRef}
-      className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900"
+      className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900 border-b border-gray-800"
       initial={{ y: '-100%' }}
       animate={{
         y: header ? '0%' : '-100%',
