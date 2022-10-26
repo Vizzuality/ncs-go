@@ -19,7 +19,7 @@ const Footer: React.FC = () => {
   return (
     <section
       ref={ref}
-      className="pb-10 font-sans text-base text-center text-white bg-gray-900 lg:pb-20 first-letter:w-full"
+      className="pb-10 font-sans text-base text-center text-white bg-gray-900 lg:pb-6 first-letter:w-full"
     >
       <Wrapper>
         <motion.div className="space-y-10 lg:space-y-20" {...IN_VIEW_PROPS}>
