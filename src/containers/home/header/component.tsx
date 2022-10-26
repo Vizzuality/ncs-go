@@ -143,7 +143,7 @@ const Header: React.FC = () => {
 
               <Button
                 className="rounded-[100px] h-16"
-                theme="secondary"
+                theme="primary"
                 size="s"
                 onClick={() => openDesktop()}
               >
