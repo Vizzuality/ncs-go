@@ -57,7 +57,7 @@ const FeaturedScience = () => {
           </div>
         </motion.div>
 
-        <div className="space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
+        <div className="space-y-4 font-sans text-base text-gray-800 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
             title="Pathways"
