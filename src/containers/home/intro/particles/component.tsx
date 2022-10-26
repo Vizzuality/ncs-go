@@ -1,5 +1,5 @@
 import { Canvas } from '@react-three/fiber';
-import * as THREE from 'three';
+import { NoToneMapping } from 'three';
 
 // import Images from './images';
 import Logo from './logo';
@@ -10,7 +10,8 @@ const Particles = () => {
       <Canvas
         orthographic
         camera={{ zoom: 100 }}
-        gl={{ antialias: true, toneMapping: THREE.NoToneMapping }}
+        gl={{ antialias: true, toneMapping: NoToneMapping }}
+        linear
       >
         {/* Light */}
         <ambientLight />

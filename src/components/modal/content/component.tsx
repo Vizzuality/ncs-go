@@ -65,7 +65,7 @@ export const ModalContent: FC<ModalContentProps> = ({
             }}
             className="absolute flex items-center px-4 py-4 text-sm text-gray-300 top-6 right-6"
           >
-            <Icon icon={CLOSE_SVG} className="inline-block w-5 h-5 stroke-black" />
+            <Icon icon={CLOSE_SVG} className="inline-block w-6 h-6 lg:w-10 lg:h-10 stroke-black" />
           </button>
         )}
 

@@ -64,7 +64,7 @@ const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
                 className="text-lg text-white"
                 onClick={() => {
                   close();
-                  onScrollTo(o.id);
+                  onScrollTo(o.id, true);
                 }}
               >
                 {o.label}

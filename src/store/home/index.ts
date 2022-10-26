@@ -21,9 +21,9 @@ const useHomeStore = create<HomeState, [['zustand/devtools', never]]>(
     section: 'intro',
     setSection: (section) => set(() => ({ section })),
 
-    step: 0,
+    step: 5,
     setStep: (step) => set(() => ({ step: step })),
-    animationStep: 0,
+    animationStep: 5,
     setAnimationStep: (step) => set(() => ({ animationStep: step })),
 
     header: false,
