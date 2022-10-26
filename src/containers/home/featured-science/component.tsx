@@ -32,7 +32,7 @@ const FeaturedScience = () => {
       <Wrapper>
         <motion.div
           ref={ref}
-          className="pt-10 pb-4 font-sans text-base text-gray-800 lg:pb-20 lg:pt-32 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
+          className="py-10 font-sans text-base text-gray-800 lg:pb-20 lg:pt-32 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10"
           {...IN_VIEW_PROPS}
         >
           <Hero
@@ -57,7 +57,7 @@ const FeaturedScience = () => {
           </div>
         </motion.div>
 
-        <div className="pt-4 space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
+        <div className="space-y-4 font-sans text-base text-gray-800 xl:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10 lg:pt-20">
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
             title="Pathways"
@@ -66,10 +66,10 @@ const FeaturedScience = () => {
 
           <div className="col-start-3 lg:pt-6">
             <motion.p animate={{ opacity }} transition={{ delay: 0.4 }}>
-              There are 20 science-backed effective approaches, or pathways, to nurture the best of
-              what nature can do to limit global warming and preserve our natural world.There are 20
-              science-backed effective approaches, or pathways, to nurture the best of what nature
-              can do to limit global warming and preserve our natural world.
+              Learn about the nature-based approaches to mitigate climate change through land use
+              and management, which avoid emissions and enhance sequestration across forests,
+              wetlands, grasslands and agricultural lands to reduce the global concentration of
+              atmospheric of carbon dioxide.
             </motion.p>
           </div>
         </div>
