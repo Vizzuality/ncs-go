@@ -16,7 +16,7 @@ const Samples = () => {
     <div
       className="w-full pt-4"
       style={{
-        background: minWidth >= BREAKPOINTS.md && 'linear-gradient(#FFFEFA 90%, #1E2D3A 10%',
+        background: minWidth >= BREAKPOINTS.md && 'linear-gradient(#FFFEFA 84%, #1E2D3A 16%',
       }}
     >
       <Wrapper>

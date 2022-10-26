@@ -92,9 +92,9 @@ const List = () => {
 
             <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
               <Button
-                className="rounded-full"
+                className="w-full rounded-full"
                 theme={minWidth < BREAKPOINTS.md ? 'tertiary' : 'secondary'}
-                size="xs"
+                size="s"
                 onClick={() => console.info('Show more stories')}
               >
                 Show more stories

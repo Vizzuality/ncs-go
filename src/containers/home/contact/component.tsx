@@ -68,9 +68,9 @@ const Contact: React.FC = () => {
   );
 
   return (
-    <motion.section ref={sectionRef} className="w-full pb-20 bg-gray-900" id="contact">
+    <motion.section ref={sectionRef} className="w-full pb-10 bg-gray-900 lg:pb-20" id="contact">
       <Wrapper>
-        <div className="items-center pt-10 pb-20 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
+        <div className="items-center py-10 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
           <motion.div
             ref={ref}
             className="space-y-6 font-sans text-white md:col-span-6"
