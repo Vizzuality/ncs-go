@@ -2,8 +2,7 @@ import React, { useCallback, useMemo, useState } from 'react';
 
 import cx from 'classnames';
 
-import Image from 'next/image';
-
+import { useRive } from '@rive-app/react-canvas';
 import { AnimatePresence, motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
@@ -25,6 +24,16 @@ const Path = ({
 }) => {
   const [animating, setAnimating] = useState(false);
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
+  const { rive, RiveComponent } = useRive({
+    src: `/images/home/pathways/${id}.riv`,
+    autoplay: false,
+  });
+
+  const { rive: smallRive, RiveComponent: SmallRiveComponent } = useRive({
+    src: `/images/home/pathways/${id}-sm.riv`,
+    autoplay: false,
+  });
 
   const { width, height } = useMemo(() => {
     return {
@@ -148,6 +157,16 @@ const Path = ({
     [onClick]
   );
 
+  const handleMouseEnter = useCallback(() => {
+    if (rive) rive.play();
+    if (smallRive) smallRive.play();
+  }, [rive, smallRive]);
+
+  const handleMouseLeave = useCallback(() => {
+    if (rive) rive.reset();
+    if (smallRive) smallRive.reset();
+  }, [rive, smallRive]);
+
   return (
     <>
       <motion.div
@@ -173,6 +192,8 @@ const Path = ({
           setAnimating(false);
         }}
         onClick={handleClick}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
       >
         {/* BIG BALL */}
         <motion.div
@@ -183,7 +204,8 @@ const Path = ({
           }}
         >
           <div className="relative mx-auto w-[120px] h-[120px]">
-            <Image src={`/images/home/pathways/${id}.svg`} layout="fill" alt={title} />
+            <RiveComponent />
+            {/* <Image src={`/images/home/pathways/${id}.svg`} layout="fill" alt={title} /> */}
           </div>
 
           <h3 className="w-full text-lg text-center">
@@ -200,7 +222,8 @@ const Path = ({
           }}
         >
           <div className="mx-auto w-[120px] h-[120px]">
-            <Image layout="fill" src={`/images/home/pathways/${id}-sm.svg`} alt={title} />
+            <SmallRiveComponent />
+            {/* <Image layout="fill" src={`/images/home/pathways/${id}-sm.svg`} alt={title} /> */}
           </div>
         </motion.div>
 
