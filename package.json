@@ -30,6 +30,7 @@
     "@react-aria/overlays": "3.10.0",
     "@react-three/drei": "9.32.3",
     "@react-three/fiber": "8.8.6",
+    "@rive-app/react-canvas": "^3.0.32",
     "@sendgrid/client": "7.7.0",
     "@storybook/react": "6.5.10",
     "@tailwindcss/forms": "0.5.1",
