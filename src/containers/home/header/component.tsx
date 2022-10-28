@@ -47,7 +47,7 @@ const Header: React.FC = () => {
     const yOffset = h ? $header.getBoundingClientRect().height : 0;
     const y = $scrollEl.getBoundingClientRect().top + window.pageYOffset + -yOffset;
 
-    window.scrollTo({
+    window.scroll({
       top: y,
       behavior: h ? 'smooth' : 'auto',
     });
