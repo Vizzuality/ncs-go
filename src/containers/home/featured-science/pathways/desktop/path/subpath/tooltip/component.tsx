@@ -12,6 +12,10 @@ import {
 } from '@floating-ui/react-dom-interactions';
 import { motion, AnimatePresence } from 'framer-motion';
 
+import Icon from 'components/icon';
+
+import CLOSE_SVG from 'svgs/close.svg?sprite';
+
 import { TooltipProps } from './types';
 
 export const Tooltip = ({
@@ -74,7 +78,18 @@ export const Tooltip = ({
                 e.preventDefault();
                 setOpen(false);
               }}
+              className="relative"
             >
+              <button
+                onClick={() => {
+                  setOpen(false);
+                }}
+                className="absolute flex items-center space-x-2 text-gray-900 -translate-x-1/2 top-10 left-1/2"
+              >
+                <span className="text-sm">Close</span>
+                <Icon icon={CLOSE_SVG} className="w-3 h-3 stroke-gray-900" />
+              </button>
+
               {content}
             </motion.div>
           )}

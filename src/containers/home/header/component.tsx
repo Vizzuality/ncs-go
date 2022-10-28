@@ -74,6 +74,7 @@ const Header: React.FC = () => {
                 className="w-[180px] h-[40px] shrink-0"
                 onClick={() => {
                   scrollTo('intro', false);
+                  closeMobile();
                 }}
               >
                 <Image

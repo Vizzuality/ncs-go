@@ -9,7 +9,7 @@ import PLUS_SVG from 'svgs/plus.svg?sprite';
 
 import Subpath from './subpath';
 
-const Path = ({ id, title, color, selected, subpaths, onClick }) => {
+const Path = ({ id, title, description, color, selected, subpaths, onClick }) => {
   const SELECTED = selected === id;
 
   return (
@@ -25,19 +25,22 @@ const Path = ({ id, title, color, selected, subpaths, onClick }) => {
           <Image src={`/images/home/pathways/${id}.svg`} layout="fill" alt={title} />
         </div>
 
-        <h3 className="w-full">
-          {title} <span>({subpaths.length})</span>
-        </h3>
+        <h3 className="w-full">{title}</h3>
 
         <Icon icon={SELECTED ? MINUS_SVG : PLUS_SVG} className="w-10 h-10 text-gray-900 shrink-0" />
       </div>
 
       {SELECTED && (
-        <div className="-mt-2 space-y-2">
-          {subpaths.map((subpath) => (
-            <Subpath key={subpath.id} {...subpath} />
-          ))}
-        </div>
+        <>
+          <div className="p-4 border border-gray-800">
+            <p>{description}</p>
+          </div>
+          <div className="-mt-2 space-y-2">
+            {subpaths.map((subpath) => (
+              <Subpath key={subpath.id} {...subpath} />
+            ))}
+          </div>
+        </>
       )}
     </>
   );

@@ -3195,6 +3195,24 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@rive-app/canvas@npm:1.0.93":
+  version: 1.0.93
+  resolution: "@rive-app/canvas@npm:1.0.93"
+  checksum: bae5964dab85a9e26f04e9825ff81e13e5be8ec8230d0e8a5636be826a0811b0c8219bfeec3782a8ffc5d76c46cd24d5cca524e3cd81eff7467f87d7fd00299d
+  languageName: node
+  linkType: hard
+
+"@rive-app/react-canvas@npm:^3.0.32":
+  version: 3.0.32
+  resolution: "@rive-app/react-canvas@npm:3.0.32"
+  dependencies:
+    "@rive-app/canvas": 1.0.93
+  peerDependencies:
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: 3c28507a34a58170b53962d02ef58e7136cf5d2092a038be2c91d50a872cf9ec01fd0b75ae88b57a4a393dac9a80872158c019a042edfae00aa47566fe03fb9d
+  languageName: node
+  linkType: hard
+
 "@rushstack/eslint-patch@npm:1.0.8":
   version: 1.0.8
   resolution: "@rushstack/eslint-patch@npm:1.0.8"
@@ -13430,6 +13448,7 @@ __metadata:
     "@react-aria/overlays": 3.10.0
     "@react-three/drei": 9.32.3
     "@react-three/fiber": 8.8.6
+    "@rive-app/react-canvas": ^3.0.32
     "@sendgrid/client": 7.7.0
     "@storybook/addon-actions": 6.5.10
     "@storybook/addon-essentials": 6.5.10
