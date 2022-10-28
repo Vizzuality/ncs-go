@@ -73,7 +73,7 @@ const SubPath = ({ id, title, description, color, index, width, height, lenght, 
         content={
           <div
             key="description"
-            className="flex items-center justify-center p-10 text-center bg-white border border-gray-800 rounded-full w-96 h-96"
+            className="flex items-center justify-center p-10 text-center text-gray-800 bg-white border border-gray-800 rounded-full w-96 h-96"
           >
             <div className="space-y-2">
               <h3>{title}</h3>
