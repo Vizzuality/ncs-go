@@ -208,9 +208,7 @@ const Path = ({
             {/* <Image src={`/images/home/pathways/${id}.svg`} layout="fill" alt={title} /> */}
           </div>
 
-          <h3 className="w-full text-lg text-center">
-            {title} <span>({subpaths.length})</span>
-          </h3>
+          <h3 className="w-full text-lg text-center">{title}</h3>
         </motion.div>
 
         {/* SMALL BALL */}
