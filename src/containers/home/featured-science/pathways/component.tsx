@@ -16,7 +16,7 @@ const Pathways = () => {
   return (
     <div>
       <Media greaterThanOrEqual="xl">
-        <div ref={ref} className="relative z-0 w-full h-screen xl:h-[90vh] bg-bottom bg-no-repeat">
+        <div ref={ref} className="relative z-0 w-full h-screen xl:h-[95vh] bg-bottom bg-no-repeat">
           {PATHWAYS.map((pathway, index) => (
             <DesktopPathway
               {...pathway}
