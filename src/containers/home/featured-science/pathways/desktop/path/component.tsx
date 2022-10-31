@@ -233,7 +233,7 @@ const Path = ({
           }}
           className="absolute w-full max-w-[120px] mx-auto mt-5 text-sm text-center top-full origin-top"
         >
-          {title} <span>({subpaths.length})</span>
+          {title}
         </motion.h3>
       </motion.div>
 
