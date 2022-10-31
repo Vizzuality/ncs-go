@@ -42,7 +42,7 @@ const AboutVideo = () => {
       <Media greaterThanOrEqual="md">
         <div style={{ background: 'linear-gradient(#FFFEFA 50%, #1E2D3A 50%' }}>
           <Wrapper>
-            <div className="relative flex justify-center w-full bg-black aspect-video">
+            <div className="relative flex justify-center bg-black lg:mx-28 aspect-video">
               <Video
                 config={videoConfig}
                 playing

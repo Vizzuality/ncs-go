@@ -54,7 +54,7 @@ const SubscribeModal = ({ isOpen, close }) => {
             <div className="relative flex flex-col items-center justify-center h-screen text-center bg-white">
               <div className="space-y-16 mx-60">
                 <div className="flex flex-col mx-4 space-y-6 font-sans text-gray-800">
-                  <h2 className="text-3xl">Keep up to date</h2>
+                  <h2 className="text-4xl">Keep up to date</h2>
                   <p className="text-lg leading-7">
                     Keep up to date on our progress and be among the first to access our platform.
                   </p>

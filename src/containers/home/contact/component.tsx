@@ -81,7 +81,7 @@ const Contact: React.FC = () => {
             }}
           >
             <motion.h2
-              className="text-xl md:text-2xl"
+              className="text-xl md:text-3xl"
               animate={{ opacity }}
               transition={{ delay: 0.2 }}
             >

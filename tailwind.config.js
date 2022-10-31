@@ -48,12 +48,18 @@ module.exports = {
         },
       ],
       '2xl': [
+        '2.5rem',
+        {
+          lineHeight: '3rem',
+        },
+      ],
+      '3xl': [
         '3rem',
         {
           lineHeight: '3.5rem',
         },
       ],
-      '3xl': [
+      '4xl': [
         '3.5rem',
         {
           lineHeight: '4rem',

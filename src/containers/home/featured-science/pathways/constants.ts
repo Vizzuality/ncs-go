@@ -33,7 +33,7 @@ export const PATHWAYS = [
         title: 'Forest-based Agroforestry',
         color: '#C1ECD2',
         description:
-          'Increased carbon storage from adding or protecting trees in crop or Savannas. This could include silvopasture (trees in grazing lands), tree intercropping/alley cropping (trees in rows with annual crops in between), riparian buffers',
+          'Increased carbon storage from adding or protecting trees in crop or savannas. This could include multistrata systems (e.g. shade-grown cacao), tree monocrops (e.g. orchard, rubber), or short rotation coppices.',
       },
       {
         id: 'forest-fire-management',
@@ -47,14 +47,14 @@ export const PATHWAYS = [
         title: 'Avoided Woodfuel Harvest in Forests',
         color: '#C1ECD2',
         description:
-          'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves.',
+          'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves in forests.',
       },
       {
         id: 'reforestation',
         title: 'Reforestation',
         color: '#C1ECD2',
         description:
-          'Increased sequestration from restoration of forest cover, that is, transitioning non-forest land uses to forest land uses in places where forests historically occurred.',
+          'Increased sequestration from restoration of forest cover, that is, transitioning from non-forest land uses to forest land uses in places where forests have historically occurred.',
       },
     ],
   },
@@ -71,21 +71,21 @@ export const PATHWAYS = [
         title: 'Cropland-based Agroforestry',
         color: '#FBE4C9',
         description:
-          'Increased carbon storage from adding or protecting trees in crop or pasture lands. This could include silvopasture (trees in grazing lands), tree intercropping/alley cropping (trees in rows with annual crops in between), riparian buffers, shelterbelts/windbreaks, and/or farmer-managed natural regeneration (changing management to allow trees to naturally regrow in some areas).',
+          'Increased carbon storage from adding or protecting trees in croplands. This could include tree intercropping/alley cropping (trees in rows with annual crops in between), riparian buffers, boundary plantings (shelterbelts, windbreaks), and/or farmer-managed natural regeneration (changing management to allow trees to naturally regrow in some areas).',
       },
       {
         id: 'reduce-emissions-in-croplands',
-        title: 'Reduce Emissions in Croplands',
+        title: 'Reduced Emissions in Croplands',
         color: '#FBE4C9',
         description:
-          'Reduced emissions in agricultural soils by protecting and restoring soil health, conserving water (rice management), and reducing use of fertilizer (nutrient management) ',
+          'Reduced emissions in agricultural soils by protecting and restoring soil health, conserving water (rice management), and reducing the use of fertilizer (nutrient management).',
       },
       {
         id: 'increase-soil-carbon-in-croplands',
-        title: 'Increase Soil Carbon in Croplands',
+        title: 'Increased Soil Carbon in Croplands',
         color: '#FBE4C9',
         description:
-          'Increased sequestration in agricultural soils by protecting and restoring soil health through activities such as Cover Crops, Reduced Tillage, and Biochar',
+          'Increased sequestration in agricultural soils by protecting and restoring soil health through activities such as cover crops, reduced tillage, and biochar.',
       },
     ],
   },
@@ -108,7 +108,7 @@ export const PATHWAYS = [
         id: 'avoided-peatland-conversion',
         title: 'Avoided Peatland Conversion',
         description:
-          'Avoided emissions by preventing degradation and/ or loss of freshwater wetlands (primarily peatlands) from peat fires, drainage, dredging, eutrophication from fertilizers, or other anthropogenic disturbances. ',
+          'Avoided emissions by preventing degradation and/or loss of peatlands from fire, drainage, dredging, eutrophication from fertilizers, or other anthropogenic disturbances.',
         color: '#D6F1F3',
       },
       {
@@ -131,7 +131,7 @@ export const PATHWAYS = [
     id: 'grasslands',
     title: 'Grasslands, Shrublands, and Savannas',
     description:
-      'This biome include prairies, steppes, shrublands, tundra, savannas, and other habitats with tree cover less than 25%. This includes grazed and un-grazed lands.',
+      'This biome includes prairies, steppes, shrublands, tundra, savannas, and other habitats with tree cover less than 25%. This includes grazed and un-grazed lands.',
     color: '#C9EC80',
 
     subpaths: [
@@ -140,56 +140,56 @@ export const PATHWAYS = [
         title: 'Avoided Grassland Conversion',
         color: '#F1FABE',
         description:
-          'Avoided emissions by preventing conversion of native or managed grasslands and shrublands to cropland. ',
+          'Avoided emissions by preventing the conversion of native or managed grasslands and shrublands to croplands. ',
       },
       {
         id: 'grassland-restoration',
         title: 'Grassland Restoration',
         color: '#F1FABE',
         description:
-          'Increased sequestration from restoring cropland to grasslands areas with limitations on agricultural production, grassland or shrubland in places where those systems historically occurred.',
+          'Increased sequestration from restoring cropland to grassland areas with limitations on agricultural production, in places where grassland or shrubland systems have historically occurred.',
       },
       {
         id: 'reduce-emissions-in-grazing-lands',
-        title: 'Reduce Emissions in Grazing Lands',
+        title: 'Reduced Emissions in Grazing Lands',
         color: '#F1FABE',
         description:
-          'Avoided methane emissions due to reduced enteric fermentation the result of improved livestock breeds and management techniques that increase reproductive performance, animal health, and weight gain, and the associated reduction in total animal numbers needed to supply the same level of meat and milk demand',
+          'Avoided methane emissions due to reduced enteric fermentation as the result of improved livestock breeding and management techniques that increase reproductive performance, animal health and weight gain, and the associated reduction in total animal numbers needed to supply the same level of meat and milk demand.',
       },
       {
         id: 'increase-soil-carbon-in-grazing-lands',
-        title: 'Increase Soil Carbon in Grazing Lands',
+        title: 'Increased Soil Carbon in Grazing Lands',
         color: '#F1FABE',
         description:
-          'Additional soil carbon sequestration due to sowing legumes in planted pastures and grazing optimization on rangeland and planted pastures',
+          'Additional soil carbon sequestration due to sowing legumes in planted pastures and grazing optimization on rangelands and planted pastures',
       },
       {
         id: 'avoided-woodfuel-harvest-in-savannas',
         title: 'Avoided Woodfuel Harvest in Savannas',
         color: '#F1FABE',
         description:
-          'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves. ',
+          'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves in savannas. ',
       },
       {
         id: 'savannasbased-agroforestry',
         title: 'Savannas-based Agroforestry',
         color: '#F1FABE',
         description:
-          'Increased carbon storage from adding or protecting trees in crop or Savannas. This could include silvopasture (trees in grazing lands), tree intercropping/alley cropping (trees in rows with annual crops in between), riparian buffers',
+          'Increased carbon storage from adding or protecting trees in croplands or savannas, including silvopasture (trees in grazing lands).',
       },
       {
         id: 'avoided-shrubland-conversion',
         title: 'Avoided Shrubland Conversion',
         color: '#F1FABE',
         description:
-          'Avoided emissions from preventing human conversion of shrublands to non-forest land uses such as agricultural, urban, or industrial lands. ',
+          'Avoided emissions from preventing human conversion of shrublands to non-shrubland land uses such as agricultural, urban, or industrial lands. ',
       },
       {
         id: 'savanna-fire-management',
         title: 'Savanna Fire Management',
         color: '#F1FABE',
         description:
-          'Avoided emissions in fire-prone savannas through management practices such as prescribed burning to reduce the risk of high-intensity wildfire or shifting timing of burns to reduce GHG emissions. In wetter forests where fires are less frequent, implementing fire control practices along forest edges to avoid human-caused fires.       ',
+          'Avoided emissions in fire-prone savannas through management practices (such as prescribed burning or shifting timing of burns) to reduce the risk of high-intensity wildfire and reduce GHG emissions. In wetter forests with infrequent fires, practices include implementing fire control practices along forest edges to avoid human-caused fires.',
       },
     ],
   },
