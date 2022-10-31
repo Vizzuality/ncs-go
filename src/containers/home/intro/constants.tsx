@@ -169,8 +169,8 @@ export const STEPS = [
       <div className="relative px-4">
         <div className="max-w-2xl">
           <p>
-            But effective nature and climate <span className="text-red-600">action</span> needs{' '}
-            <span className="text-red-600">more</span> than just commitments.
+            But effectively combatting climate change needs{' '}
+            <span className="text-red-600"> more action</span> than just commitments.
           </p>
         </div>
       </div>
