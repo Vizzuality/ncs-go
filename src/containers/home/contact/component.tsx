@@ -13,6 +13,7 @@ import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import Select from 'components/forms/select';
 import { composeValidators } from 'components/forms/validations';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
@@ -131,6 +132,70 @@ const Contact: React.FC = () => {
                             type="email"
                             placeholder="Enter your email"
                             className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
+                          />
+                          <Media greaterThanOrEqual="xl">
+                            {meta.error && meta.touched && meta.active && (
+                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
+                                {meta.error}
+                              </p>
+                            )}
+                          </Media>
+                        </motion.div>
+                      )}
+                    </Field>
+
+                    <Field
+                      name="uniqueName"
+                      component="input"
+                      validate={composeValidators([{ presence: true }])}
+                    >
+                      {({ input, meta }) => (
+                        <motion.div
+                          className="relative w-full"
+                          animate={{ opacity }}
+                          transition={{ delay: 0.4 }}
+                        >
+                          <input
+                            {...input}
+                            value={input.value as string}
+                            type="text"
+                            placeholder="Enter your name"
+                            className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
+                          />
+                          <Media greaterThanOrEqual="xl">
+                            {meta.error && meta.touched && meta.active && (
+                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
+                                {meta.error}
+                              </p>
+                            )}
+                          </Media>
+                        </motion.div>
+                      )}
+                    </Field>
+
+                    <Field
+                      name="role"
+                      component="input"
+                      validate={composeValidators([{ presence: true }])}
+                    >
+                      {({ input, meta }) => (
+                        <motion.div
+                          className="relative w-full"
+                          animate={{ opacity }}
+                          transition={{ delay: 0.4 }}
+                        >
+                          <Select
+                            {...input}
+                            id="role"
+                            theme="light"
+                            size="base"
+                            meta={meta}
+                            options={[
+                              { label: 'Role 1', value: 'role-1' },
+                              { label: 'Role 2', value: 'role-2' },
+                              { label: 'Role 3', value: 'role-3' },
+                              { label: 'Role 4', value: 'role-4' },
+                            ]}
                           />
                           <Media greaterThanOrEqual="xl">
                             {meta.error && meta.touched && meta.active && (
