@@ -8,7 +8,7 @@ const Contact = (req: NextApiRequest, res: NextApiResponse): void => {
     const { email } = req.body;
 
     const data = {
-      list_ids: ['d0be73c6-0b0f-41ce-9323-9a2d504f5d1b'],
+      list_ids: ['8d7fd667-65bc-422a-ab83-6f039a358f58'],
       contacts: [
         {
           email,
