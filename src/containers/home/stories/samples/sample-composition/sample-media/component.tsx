@@ -73,7 +73,7 @@ export const SampleMedia = ({ backgroundImage, video = false }: SampleMediaProps
             url="https://youtu.be/6PGyRolwFVo"
             height="100%"
             width="100%"
-            muted
+            muted={true}
           />
         </div>
       </Modal>
