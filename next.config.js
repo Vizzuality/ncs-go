@@ -1,6 +1,6 @@
 const withPlugins = require('next-compose-plugins');
 const withOptimizedImages = require('next-optimized-images');
-
+const withTM = require('next-transpile-modules')(['three']);
 /**
  * @type {import('next').NextConfig}
  */
@@ -11,6 +11,12 @@ const nextConfig = {
     if (!isServer) {
       config.resolve.fallback.fs = false;
     }
+
+    config.module.rules.push({
+      test: /\.(glsl|vs|fs|vert|frag)$/,
+      use: ['raw-loader', 'glslify-loader'],
+    });
+
     return config;
   },
 
@@ -22,6 +28,7 @@ const nextConfig = {
 
 module.exports = withPlugins(
   [
+    withTM(),
     withOptimizedImages({
       optimizeImages: false,
     }),

@@ -1,5 +1,11 @@
 import { ReactNode, FocusEventHandler } from 'react';
 
+import {
+  GetPropsCommonOptions,
+  UseMultipleSelectionGetDropdownProps,
+  UseSelectGetToggleButtonPropsOptions,
+} from 'downshift';
+
 interface SelectThemeProps {
   theme: 'dark' | 'light';
   size: 'base' | 's';
@@ -52,6 +58,12 @@ export interface SelectMenuProps extends SelectStatusProps, SelectThemeProps {
 export interface SelectToggleProps extends SelectStatusProps, SelectDataProps, SelectThemeProps {
   opened: boolean;
   selectedItems: SelectOptionProps[];
-  getToggleButtonProps: (e?: unknown) => void;
-  getDropdownProps?: (e?: unknown) => void;
+  getToggleButtonProps: (
+    options?: UseSelectGetToggleButtonPropsOptions,
+    otherOptions?: GetPropsCommonOptions
+  ) => any;
+  getDropdownProps?: (
+    options?: UseMultipleSelectionGetDropdownProps,
+    extraOptions?: GetPropsCommonOptions
+  ) => any;
 }

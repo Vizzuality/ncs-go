@@ -2,8 +2,6 @@
 import type { DocumentContext, DocumentInitialProps } from 'next/document';
 import Document, { Html, Head, Main, NextScript } from 'next/document';
 
-import { mediaStyles } from 'components/media-query';
-
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext): Promise<DocumentInitialProps> {
     const initialProps = await Document.getInitialProps(ctx);
@@ -13,10 +11,8 @@ class MyDocument extends Document {
   render(): JSX.Element {
     return (
       <Html>
-        <Head>
-          <style type="text/css" dangerouslySetInnerHTML={{ __html: mediaStyles }} />
-        </Head>
-        <body>
+        <Head />
+        <body className="bg-gray-900">
           <Main />
           <NextScript />
         </body>

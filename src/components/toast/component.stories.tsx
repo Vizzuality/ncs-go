@@ -19,6 +19,6 @@ const Template: Story<ToastProps> = (args: ToastProps) => {
 
 export const Default = Template.bind({});
 Default.args = {
-  content: 'Source name',
+  content: 'You have successfully subscribed.',
   level: 'success',
 };

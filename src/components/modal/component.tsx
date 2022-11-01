@@ -4,12 +4,12 @@ import {
   useRole,
   useDismiss,
   FloatingPortal,
-  FloatingOverlay,
   FloatingFocusManager,
+  FloatingOverlay,
 } from '@floating-ui/react-dom-interactions';
 import { AnimatePresence, motion } from 'framer-motion';
 
-import { Media } from 'components/media-query';
+import Media from 'containers/media';
 
 import ModalContent from './content';
 import { OVERLAY_CLASSES } from './content/constants';
@@ -45,7 +45,7 @@ export const Modal = (props: ModalProps) => {
     <FloatingPortal>
       <AnimatePresence>
         {open && (
-          <FloatingOverlay lockScroll>
+          <FloatingOverlay lockScroll className="z-50">
             <motion.div
               variants={overlayFramerVariants}
               initial="initial"
@@ -55,20 +55,14 @@ export const Modal = (props: ModalProps) => {
             >
               <FloatingFocusManager context={context}>
                 <>
-                  <Media
-                    lessThan="sm"
-                    className="absolute flex flex-col w-full h-full pointer-events-none grow"
-                  >
+                  <Media lessThan="sm">
                     <ModalContent
                       {...props}
                       floating={floating}
                       getFloatingProps={getFloatingProps}
                     />
                   </Media>
-                  <Media
-                    greaterThanOrEqual="sm"
-                    className="absolute flex flex-col w-full h-full pointer-events-none grow"
-                  >
+                  <Media greaterThanOrEqual="sm">
                     <ModalContent
                       {...props}
                       viewport="sm"

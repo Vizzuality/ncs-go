@@ -21,7 +21,7 @@ export const ConfirmationPrompt: FC<ConfirmationPromptProps> = ({
   <Modal
     open={open}
     title={title}
-    size="s"
+    size="default"
     dismissable={dismissible}
     onOpenChange={(o) => {
       onDismiss(o);

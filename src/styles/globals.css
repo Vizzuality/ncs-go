@@ -2,6 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+@font-face {
+  font-family: "SpaceGrotesk";
+  src: url("../../public/fonts/SpaceGrotesk-Regular.ttf");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk-SemiBold";
+  src: url("../../public/fonts/SpaceGrotesk-SemiBold.ttf");
+}
+
+@font-face {
+  font-family: "SpaceGrotesk-Bold";
+  src: url("../../public/fonts/SpaceGrotesk-Bold.ttf");
+}
+
 @-webkit-keyframes autofill {
   0%,
   100% {
@@ -33,4 +48,6 @@
       backdrop-filter: blur(4px);
     }
   }
+
 }
+
