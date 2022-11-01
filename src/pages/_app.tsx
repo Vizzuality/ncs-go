@@ -9,7 +9,7 @@ import { QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query
 
 import { ToastProvider } from 'hooks/toast';
 
-// import ThirdParty from 'containers/third-party';
+import ThirdParty from 'containers/third-party';
 
 import { GAPage } from 'lib/analytics/ga';
 
@@ -40,7 +40,7 @@ const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
         {/* @ts-ignore: https://github.com/artsy/fresnel/issues/281 */}
         <ToastProvider placement="bottom-right" defaultAutoDismiss defaultAutoDismissTime={5000}>
           <MapProvider>
-            {/* <ThirdParty /> */}
+            <ThirdParty />
             <Component {...pageProps} />
           </MapProvider>
         </ToastProvider>
