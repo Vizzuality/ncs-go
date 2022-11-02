@@ -5,9 +5,8 @@ import { useHomeStore } from 'store/home';
 import { motion, useInView } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
-import List from 'containers/home/stories/list';
+// import List from 'containers/home/stories/list';
 import Samples from 'containers/home/stories/samples';
-import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
@@ -51,14 +50,33 @@ const Stories = () => {
         </motion.div>
       </Wrapper>
 
-      <Media lessThan="md">
+      {/* <Media lessThan="md">
         <List />
-      </Media>
+      </Media> */}
 
-      <Media greaterThanOrEqual="md">
-        <Samples />
-        <List />
-      </Media>
+      <Samples />
+
+      <div className="bg-gray-900">
+        <Wrapper>
+          <div className="pt-10 pb-10 space-y-4 lg:space-y-0 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-12">
+            <Hero className="col-span-5 col-start-1 text-white" subtitle="Want more examples?" />
+
+            <div className="col-span-4 col-start-7 text-white">
+              <p className="md:text-lg">
+                Discover how people and organisations worldwide are investing in initiatives that
+                protect, restore and improve land management.
+              </p>
+            </div>
+          </div>
+        </Wrapper>
+      </div>
+
+      <iframe
+        loading="lazy"
+        src="https://devn4c.wpengine.com/case-studies-map-embed/"
+        className="w-full h-[calc(100vh_-_89px)]"
+      />
+      {/* <List /> */}
     </motion.section>
   );
 };

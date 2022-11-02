@@ -211,7 +211,7 @@ export const STEPS = [
     content: (
       <div className="relative px-4 -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
-        <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
+        <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p>Science. Policy. People.</p>
 
           <p>
@@ -259,7 +259,7 @@ export const STEPS = [
     content: (
       <div className="relative px-4 -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
-        <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
+        <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p>
             To <span className="text-brand-700">protect, manage and restore</span> our natural
             ecosystems — creating jobs, protecting livelihoods, increasing biodiversity, and
@@ -307,7 +307,7 @@ export const STEPS = [
     content: (
       <div className="relative px-4 -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
-        <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
+        <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p className="uppercase tracking-[0.32em]">Coming soon</p>
         </div>
       </div>
@@ -346,7 +346,7 @@ export const STEPS = [
     content: (
       <div className="relative px-4 -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
-        <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
+        <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <h1 className="text-3xl font-semibold tracking-wider md:text-4xl">naturebase</h1>
           <h2 className="md:text-lg">natural climate solutions in action</h2>
         </div>

@@ -14,13 +14,13 @@ const Samples = () => {
 
   return (
     <div
-      className="w-full pt-4"
+      className="w-full pb-10"
       style={{
         background: minWidth >= BREAKPOINTS.md && 'linear-gradient(#FFFEFA 84%, #1E2D3A 16%',
       }}
     >
       <Wrapper>
-        <div className="space-y-10">
+        <div className="space-y-5 md:space-y-10">
           <SampleComposition
             align="left"
             media={<SampleMedia backgroundImage={`url(/images/home/stories/test-1.jpg)`} />}
