@@ -179,6 +179,8 @@ const Contact: React.FC = () => {
                                 size="base"
                                 status="none"
                                 theme="dark"
+                                placeholder=""
+                                clearSelectionActive={false}
                               />
                             </div>
                           </motion.div>
