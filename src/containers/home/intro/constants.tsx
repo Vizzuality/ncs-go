@@ -126,8 +126,8 @@ export const STEPS = [
       <div className="relative px-4">
         <div className="max-w-2xl">
           <p>
-            Nature can provide <span className="text-blue-600">up to 30%</span> of the emissions
-            reductions needed to meet the Paris Agreement targets.
+            Nature can provide <span className="text-blue-600">one third</span> of the climate
+            benefits needed to meet Paris Agreement targets.
           </p>
         </div>
       </div>
@@ -169,8 +169,8 @@ export const STEPS = [
       <div className="relative px-4">
         <div className="max-w-2xl">
           <p>
-            But effectively combatting climate change needs{' '}
-            <span className="text-red-600"> more action</span> than just commitments.
+            But we need more than ambitious nature-based commitments; we need{' '}
+            <span className="text-red-600">action</span>.
           </p>
         </div>
       </div>
@@ -213,8 +213,9 @@ export const STEPS = [
         <div className="w-48 h-48 mx-auto" />
         <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p>Science. Policy. People.</p>
+
           <p>
-            They all need to come <span className="text-blue-800">together</span>.
+            Coming <span className="text-blue-800">together</span> for action.
           </p>
         </div>
       </div>
@@ -261,7 +262,7 @@ export const STEPS = [
         <div className="absolute w-screen max-w-2xl mt-10 text-center -translate-x-1/2 left-1/2 top-full">
           <p>
             To <span className="text-brand-700">protect, manage and restore</span> our natural
-            ecosystems, creating jobs, protecting livelihoods, increasing biodiversity - and
+            ecosystems — creating jobs, protecting livelihoods, increasing biodiversity, and
             absorbing carbon from the atmosphere.
           </p>
         </div>
