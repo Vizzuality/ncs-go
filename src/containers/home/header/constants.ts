@@ -11,8 +11,4 @@ export const NAV_OPTIONS = [
     id: 'featured-science',
     label: 'Featured science',
   },
-  {
-    id: 'contact',
-    label: 'Contact us',
-  },
 ];
