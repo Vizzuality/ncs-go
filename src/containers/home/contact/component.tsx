@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
                         className="w-full"
                       >
                         <Button
-                          disabled={submitting && !form.getState().valid}
+                          disabled={!submitting && !form.getState().valid}
                           size="xs"
                           theme="primary"
                           type="submit"
