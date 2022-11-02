@@ -16,7 +16,7 @@ function buildClassName({ className, disabled, size, theme }) {
     [THEME[theme]]: true,
     [SIZE[size]]: true,
     [className]: !!className,
-    'bg-gray-400 text-gray-800 text-opacity-50 pointer-events-none': disabled,
+    'bg-gray-800 text-opacity-50 pointer-events-none': disabled,
   });
 }
 

@@ -102,6 +102,8 @@ const Contact: React.FC = () => {
             <Form initialValues={{ email: null }} onSubmit={onSubmit}>
               {({ handleSubmit, form }) => {
                 formRef.current = form;
+
+                console.log({ form: form.getState().values });
                 return (
                   <form noValidate onSubmit={handleSubmit}>
                     <div className="flex flex-col justify-between w-full space-y-4">
@@ -164,11 +166,7 @@ const Contact: React.FC = () => {
                         )}
                       </Field>
 
-                      <Field
-                        name="interest"
-                        component="input"
-                        validate={composeValidators([{ presence: true }])}
-                      >
+                      <Field name="interest" component="input">
                         {() => (
                           <motion.div
                             className="relative w-full space-y-2"
@@ -199,6 +197,7 @@ const Contact: React.FC = () => {
                       >
                         <Button
                           disabled={submitting}
+                          // !form.getState().values.email || !form.getState().values.uniqueName
                           size="xs"
                           theme="primary"
                           type="submit"
