@@ -159,7 +159,7 @@ const Contact: React.FC = () => {
                         )}
                       </Field>
 
-                      <Field name="interest" component="input">
+                      <Field name="interests" component="input">
                         {() => (
                           <motion.div
                             className="relative w-full space-y-2"
