@@ -1,5 +1,6 @@
 const forms = require('@tailwindcss/forms');
 const lineClamp = require('@tailwindcss/line-clamp');
+const typography = require('@tailwindcss/typography');
 
 const { TAILWIND_BREAKPOINTS } = require('./src/styles/styles.config');
 
@@ -14,7 +15,7 @@ module.exports = {
     './src/layouts/**/*.@(tsx|ts)',
     './src/pages/**/*.tsx',
   ],
-  plugins: [forms, lineClamp],
+  plugins: [forms, lineClamp, typography],
   theme: {
     screens: TAILWIND_BREAKPOINTS,
     fontFamily: {
