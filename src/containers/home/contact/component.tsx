@@ -177,32 +177,18 @@ const Contact: React.FC = () => {
                       component="input"
                       validate={composeValidators([{ presence: true }])}
                     >
-                      {({ /* input, */ meta }) => (
+                      {() => (
                         <motion.div
                           className="relative w-full"
                           animate={{ opacity }}
                           transition={{ delay: 0.4 }}
                         >
-                          {/* <Select
-                            {...input}
-                            id="role"
-                            theme="light"
-                            size="base"
-                            meta={meta}
-                            options={[
-                              { label: 'Role 1', value: 'role-1' },
-                              { label: 'Role 2', value: 'role-2' },
-                              { label: 'Role 3', value: 'role-3' },
-                              { label: 'Role 4', value: 'role-4' },
-                            ]}
-                          /> */}
-                          <Media greaterThanOrEqual="xl">
-                            {meta.error && meta.touched && meta.active && (
-                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
-                                {meta.error}
-                              </p>
-                            )}
-                          </Media>
+                          <select className="block w-full h-16 px-10 py-4 m-0 font-sans text-gray-800 transition ease-in-out bg-white bg-no-repeat border border-solid rounded-full appearance-none form-select bg-clip-padding focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                            <option selected>Role</option>
+                            <option value="1">One</option>
+                            <option value="2">Two</option>
+                            <option value="3">Three</option>
+                          </select>
                         </motion.div>
                       )}
                     </Field>
