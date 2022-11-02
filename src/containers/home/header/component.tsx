@@ -5,6 +5,7 @@ import Image from 'next/image';
 import { useHomeStore } from 'store/home';
 
 import { motion } from 'framer-motion';
+import { usePlausible } from 'next-plausible';
 
 import { useModal } from 'hooks/modals';
 
@@ -20,6 +21,7 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
+  const plausible = usePlausible();
   const headerRef = useRef(null);
 
   const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
@@ -74,6 +76,7 @@ const Header: React.FC = () => {
                 className="w-[180px] h-[40px] shrink-0"
                 onClick={() => {
                   scrollTo('intro', false);
+                  plausible('navigate-to', { props: { section: 'intro' } });
                   closeMobile();
                 }}
               >
@@ -89,7 +92,15 @@ const Header: React.FC = () => {
               <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
                 <MenuButton
                   isOpen={isOpenMobile}
-                  onClick={() => (isOpenMobile ? closeMobile() : openMobile())}
+                  onClick={() => {
+                    if (isOpenMobile) {
+                      closeMobile();
+                      plausible('mobile-menu', { props: { action: 'close' } });
+                    } else {
+                      openMobile();
+                      plausible('mobile-menu', { props: { action: 'open' } });
+                    }
+                  }}
                   transition={{ ease: 'easeOut', duration: 0.2 }}
                   width={40}
                   height={40}
@@ -110,6 +121,7 @@ const Header: React.FC = () => {
                 className="w-[180px] h-[40px] shrink-0"
                 onClick={() => {
                   scrollTo('intro', false);
+                  plausible('navigate-to', { props: { section: 'intro' } });
                 }}
               >
                 <Image
@@ -128,6 +140,7 @@ const Header: React.FC = () => {
                     key={opt.label}
                     onClick={() => {
                       scrollTo(opt.id, true);
+                      plausible('navigate-to', { props: { section: opt.id } });
                     }}
                   >
                     <p className="hover:text-brand-700 py-7">{opt.label}</p>
@@ -146,7 +159,10 @@ const Header: React.FC = () => {
                 className="rounded-[100px] h-16"
                 theme="primary"
                 size="s"
-                onClick={() => openDesktop()}
+                onClick={() => {
+                  openDesktop();
+                  plausible('navigate-to', { props: { section: 'contact' } });
+                }}
               >
                 Subscribe
               </Button>

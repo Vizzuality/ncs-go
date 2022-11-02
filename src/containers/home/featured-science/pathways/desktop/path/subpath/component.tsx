@@ -3,10 +3,13 @@ import React, { useCallback, useMemo, useState } from 'react';
 import cx from 'classnames';
 
 import { motion } from 'framer-motion';
+import { usePlausible } from 'next-plausible';
 
 import Tooltip from './tooltip';
 
 const SubPath = ({ id, title, description, color, index, width, height, lenght, center }) => {
+  const plausible = usePlausible();
+
   const [more, setMore] = useState(false);
 
   const VARIANTS = useMemo(() => {
@@ -48,7 +51,8 @@ const SubPath = ({ id, title, description, color, index, width, height, lenght, 
 
   const handleClick = useCallback(() => {
     setMore(!more);
-  }, [more]);
+    plausible('subpathways', { props: { pathway: id } });
+  }, [more, id, plausible]);
 
   return (
     <motion.div
