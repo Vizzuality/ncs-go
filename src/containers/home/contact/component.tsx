@@ -13,6 +13,7 @@ import { useToasts } from 'hooks/toast';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import Select from 'components/forms/select';
 import { composeValidators } from 'components/forms/validations';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
@@ -166,19 +167,20 @@ const Contact: React.FC = () => {
                             <label className="pl-4 text-lg font-semibold text-gray-100">
                               I am interested in
                             </label>
-                            <select
-                              {...input}
-                              className="block w-full h-16 px-4 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700"
-                            >
-                              <option selected>{''}</option>
-                              {INTERESTS.map(({ label, value }) => {
-                                return (
-                                  <option key={value} value={value}>
-                                    {label}
-                                  </option>
-                                );
-                              })}
-                            </select>
+                            <div className="relative">
+                              <Select
+                                {...input}
+                                id="interests"
+                                maxHeight={300}
+                                multiple
+                                onChange={input.onChange}
+                                options={INTERESTS}
+                                prefix=""
+                                size="base"
+                                status="none"
+                                theme="dark"
+                              />
+                            </div>
                           </motion.div>
                         )}
                       </Field>

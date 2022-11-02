@@ -1,7 +1,8 @@
 const THEME = {
   dark: {
-    container: 'text-white bg-transparent ring-1 ring-gray-400 rounded-3xl',
-    open: 'ring-2 ring-blue-400 bg-gray-700 text-white rounded-2xl',
+    container:
+      'block w-full h-16 px-4 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700',
+    open: 'ring-2 ring-brand-700 bg-gray-800 text-gray-400 rounded-lg',
     closed: 'border-gray-400 text-gray-400',
     prefix: {
       base: 'text-white',
