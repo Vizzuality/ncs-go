@@ -57,11 +57,21 @@ export const SampleCard = ({
         transition={{ delay: 0.4 }}
       >
         {articleUrl && (
-          <LinkArrow className={{ arrow: 'stroke-black' }} label="Read article" url={articleUrl} />
+          <LinkArrow
+            className={{ arrow: 'stroke-black' }}
+            fullAnimate
+            label="Read article"
+            url={articleUrl}
+          />
         )}
 
         {videoUrl && (
-          <LinkArrow className={{ arrow: 'stroke-black' }} label="Watch video" url={videoUrl} />
+          <LinkArrow
+            className={{ arrow: 'stroke-black' }}
+            fullAnimate
+            label="Watch video"
+            url={videoUrl}
+          />
         )}
       </motion.div>
     </div>
