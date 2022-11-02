@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
@@ -25,6 +25,8 @@ const Contact: React.FC = () => {
   const sectionRef = useRef();
   const formRef = useRef(null);
 
+  const [submitting, setSubmitting] = useState(false);
+
   const setSection = useHomeStore((state) => state.setSection);
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
@@ -43,11 +45,13 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
+      setSubmitting(true);
       saveSubscribeMutation.mutate(
         { data },
         {
           onSuccess: () => {
             plausible('subscribe');
+            setSubmitting(false);
             addToast(
               'success-contact',
               <>
@@ -59,7 +63,9 @@ const Contact: React.FC = () => {
             );
             form.reset();
           },
-          onError: () => {},
+          onError: () => {
+            setSubmitting(false);
+          },
         }
       );
     },
@@ -183,7 +189,7 @@ const Contact: React.FC = () => {
                         className="w-full"
                       >
                         <Button
-                          disabled={!form.getState().valid}
+                          disabled={submitting && !form.getState().valid}
                           size="xs"
                           theme="primary"
                           type="submit"
