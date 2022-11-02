@@ -67,13 +67,11 @@ export const SampleMedia = ({ backgroundImage, video = false }: SampleMediaProps
         <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
           <Video
             config={videoConfig}
-            playing
             light={false}
             loop
             url="https://youtu.be/6PGyRolwFVo"
             height="100%"
             width="100%"
-            muted
           />
         </div>
       </Modal>
