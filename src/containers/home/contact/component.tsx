@@ -46,9 +46,11 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
+      const { uniqueName, email, interests } = data;
+      const parsedData = { uniqueName, email, interests: interests ? interests.toString() : null };
       setSubmitting(true);
       saveSubscribeMutation.mutate(
-        { data },
+        { data: parsedData },
         {
           onSuccess: () => {
             plausible('subscribe');
