@@ -13,7 +13,6 @@ import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
-import Select from 'components/forms/select';
 import { composeValidators } from 'components/forms/validations';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
@@ -178,13 +177,13 @@ const Contact: React.FC = () => {
                       component="input"
                       validate={composeValidators([{ presence: true }])}
                     >
-                      {({ input, meta }) => (
+                      {({ /* input, */ meta }) => (
                         <motion.div
                           className="relative w-full"
                           animate={{ opacity }}
                           transition={{ delay: 0.4 }}
                         >
-                          <Select
+                          {/* <Select
                             {...input}
                             id="role"
                             theme="light"
@@ -196,7 +195,7 @@ const Contact: React.FC = () => {
                               { label: 'Role 3', value: 'role-3' },
                               { label: 'Role 4', value: 'role-4' },
                             ]}
-                          />
+                          /> */}
                           <Media greaterThanOrEqual="xl">
                             {meta.error && meta.touched && meta.active && (
                               <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
