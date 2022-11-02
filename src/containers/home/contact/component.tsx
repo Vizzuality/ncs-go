@@ -9,7 +9,6 @@ import { motion, useInView } from 'framer-motion';
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
-import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -105,7 +104,7 @@ const Contact: React.FC = () => {
                         component="input"
                         validate={composeValidators([{ presence: true }])}
                       >
-                        {({ input, meta }) => (
+                        {({ input }) => (
                           <motion.div
                             className="relative w-full space-y-2"
                             animate={{ opacity }}
@@ -118,13 +117,6 @@ const Contact: React.FC = () => {
                               type="text"
                               className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
                             />
-                            <Media greaterThanOrEqual="xl">
-                              {meta.error && meta.touched && meta.active && (
-                                <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
-                                  {meta.error}
-                                </p>
-                              )}
-                            </Media>
                           </motion.div>
                         )}
                       </Field>
@@ -133,7 +125,7 @@ const Contact: React.FC = () => {
                         component="input"
                         validate={composeValidators([{ presence: true, email: true }])}
                       >
-                        {({ input, meta }) => (
+                        {({ input }) => (
                           <motion.div
                             className="relative w-full space-y-2"
                             animate={{ opacity }}
@@ -148,19 +140,12 @@ const Contact: React.FC = () => {
                               type="email"
                               className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
                             />
-                            <Media greaterThanOrEqual="xl">
-                              {meta.error && meta.touched && meta.active && (
-                                <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
-                                  {meta.error}
-                                </p>
-                              )}
-                            </Media>
                           </motion.div>
                         )}
                       </Field>
 
                       <Field name="interests" component="input">
-                        {() => (
+                        {({ input }) => (
                           <motion.div
                             className="relative w-full space-y-2"
                             animate={{ opacity }}
@@ -169,15 +154,20 @@ const Contact: React.FC = () => {
                             <label className="pl-4 text-lg font-semibold text-gray-100">
                               I am interested in
                             </label>
-                            <select className="block w-full h-16 px-3 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700">
-                              <option selected></option>
-                              <option value="1"> NCS/NbS</option>
-                              <option value="1">Indigenous Rights and Land Tenure</option>
-                              <option value="2">Policy</option>
-                              <option value="3">Finance</option>
-                              <option value="3">Markets</option>
-                              <option value="3">Philanthropy</option>
-                              <option value="3">Communications</option>
+                            <select
+                              {...input}
+                              className="block w-full h-16 px-3 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700"
+                            >
+                              <option selected>{''}</option>
+                              <option value="NCS/NbS">NCS/NbS</option>
+                              <option value="Indigenous Rights and Land Tenure">
+                                Indigenous Rights and Land Tenure
+                              </option>
+                              <option value="Policy">Policy</option>
+                              <option value="Finance">Finance</option>
+                              <option value="Markets">Markets</option>
+                              <option value="Philanthropy">Philanthropy</option>
+                              <option value="Communications">Communications</option>
                             </select>
                           </motion.div>
                         )}
