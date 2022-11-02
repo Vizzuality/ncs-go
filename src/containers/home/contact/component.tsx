@@ -16,6 +16,8 @@ import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
+import { INTERESTS } from './constants';
+
 const Contact: React.FC = () => {
   const plausible = usePlausible();
 
@@ -160,18 +162,16 @@ const Contact: React.FC = () => {
                             </label>
                             <select
                               {...input}
-                              className="block w-full h-16 px-3 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700"
+                              className="block w-full h-16 px-4 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700"
                             >
                               <option selected>{''}</option>
-                              <option value="NCS/NbS">NCS/NbS</option>
-                              <option value="Indigenous Rights and Land Tenure">
-                                Indigenous Rights and Land Tenure
-                              </option>
-                              <option value="Policy">Policy</option>
-                              <option value="Finance">Finance</option>
-                              <option value="Markets">Markets</option>
-                              <option value="Philanthropy">Philanthropy</option>
-                              <option value="Communications">Communications</option>
+                              {INTERESTS.map(({ label, value }) => {
+                                return (
+                                  <option key={value} value={value}>
+                                    {label}
+                                  </option>
+                                );
+                              })}
                             </select>
                           </motion.div>
                         )}
