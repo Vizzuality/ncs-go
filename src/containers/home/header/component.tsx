@@ -10,7 +10,6 @@ import { useModal } from 'hooks/modals';
 
 import MobileMenuModal from 'containers/home/header/mobile-menu-modal';
 import MenuButton from 'containers/home/header/mobile-menu-modal/menu-button';
-import SubscribeModal from 'containers/home/header/subscribe-modal';
 import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
@@ -25,7 +24,6 @@ const Header: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
 
   const { isOpen: isOpenMobile, open: openMobile, close: closeMobile } = useModal();
-  const { isOpen: isOpenDesktop, open: openDesktop, close: closeDesktop } = useModal();
 
   const section = useHomeStore((state) => state.section);
   const header = useHomeStore((state) => state.header);
@@ -146,14 +144,14 @@ const Header: React.FC = () => {
                 className="rounded-[100px] h-16"
                 theme="primary"
                 size="s"
-                onClick={() => openDesktop()}
+                onClick={() => {
+                  scrollTo('contact', true);
+                }}
               >
                 Subscribe
               </Button>
             </div>
           </Wrapper>
-
-          <SubscribeModal isOpen={isOpenDesktop} close={closeDesktop} />
         </>
       </Media>
     </motion.nav>
