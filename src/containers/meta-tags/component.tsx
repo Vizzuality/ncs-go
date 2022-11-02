@@ -21,6 +21,7 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
 }: MetaTagsProps) => {
   return (
     <Head>
+      {title && <title>{title}</title>}
       {name && <meta property="og:site_name" content={name} key="name" />}
       {title && <meta property="og:title" content={title} key="title" />}
       {description && <meta property="og:description" content={description} key="description" />}
