@@ -2,6 +2,8 @@ import React, { useCallback, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import { usePlausible } from 'next-plausible';
+
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
@@ -13,6 +15,8 @@ import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
 const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
+  const plausible = usePlausible();
+
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
 
@@ -65,6 +69,7 @@ const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
                 onClick={() => {
                   close();
                   onScrollTo(o.id, true);
+                  plausible('navigate-to', { props: { section: o.id } });
                 }}
               >
                 {o.label}

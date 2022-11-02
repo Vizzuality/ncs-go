@@ -1,10 +1,13 @@
 import { useCallback } from 'react';
 
 import { motion } from 'framer-motion';
+import { usePlausible } from 'next-plausible';
 
 import Button from 'components/button';
 
 const Skip = () => {
+  const plausible = usePlausible();
+
   const scrollTo = useCallback((id) => {
     const $scrollEl = document.getElementById(id);
     const $header = document.getElementById('header');
@@ -31,6 +34,7 @@ const Skip = () => {
         size="xs"
         onClick={() => {
           scrollTo('about');
+          plausible('skip-intro');
         }}
       >
         Skip intro

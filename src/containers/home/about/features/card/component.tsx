@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 
 import { motion, useInView } from 'framer-motion';
+import { usePlausible } from 'next-plausible';
 
 import { useModal } from 'hooks/modals';
 
@@ -12,6 +13,8 @@ import ARROW_TOP_RIGHT_SVG from 'svgs/arrow-top-right.svg?sprite';
 import type { FeatureCardProps } from './types';
 
 export const FeatureCard = ({ index, title, icon, description }: FeatureCardProps) => {
+  const plausible = usePlausible();
+
   const { isOpen, open, close } = useModal();
 
   const ref = useRef();
@@ -38,7 +41,10 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
           once: true,
           amount: 0.25,
         }}
-        onClick={open}
+        onClick={() => {
+          open();
+          plausible('features', { props: { section: 'title' } });
+        }}
       >
         <motion.div animate={{ opacity, y }} transition={{ delay: 0.2 + index * 0.1, bounce: 0 }}>
           <Icon
