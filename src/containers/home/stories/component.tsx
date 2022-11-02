@@ -31,7 +31,7 @@ const Stories = () => {
           <Hero
             className="col-span-2 col-start-1 text-gray-800"
             title="Stories"
-            subtitle="Here are some of the stories we have heard from the ground."
+            subtitle="Stories we are hearing from around the world."
           />
         </div>
         <motion.div
@@ -39,12 +39,12 @@ const Stories = () => {
           {...IN_VIEW_PROPS}
         >
           <div className="col-start-1 pb-4 lg:pb-0">
-            <p>Nature-based solutions are ready to be deployed right now, everywhere.</p>
+            <p>Natural climate solutions are ready to be deployed now, across the globe.</p>
           </div>
           <div className="col-start-2 space-y-4 md:space-y-6">
             <p>
               From south to north, east to west, people have been taking action and leading the way
-              to reverse nature loss and create new sustainable economies.
+              to unlock the power of nature for our collective future.
             </p>
           </div>
         </motion.div>
