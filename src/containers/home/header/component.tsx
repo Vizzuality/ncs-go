@@ -11,7 +11,6 @@ import { useModal } from 'hooks/modals';
 
 import MobileMenuModal from 'containers/home/header/mobile-menu-modal';
 import MenuButton from 'containers/home/header/mobile-menu-modal/menu-button';
-import SubscribeModal from 'containers/home/header/subscribe-modal';
 import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
@@ -27,7 +26,6 @@ const Header: React.FC = () => {
   const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
 
   const { isOpen: isOpenMobile, open: openMobile, close: closeMobile } = useModal();
-  const { isOpen: isOpenDesktop, open: openDesktop, close: closeDesktop } = useModal();
 
   const section = useHomeStore((state) => state.section);
   const header = useHomeStore((state) => state.header);
@@ -160,7 +158,7 @@ const Header: React.FC = () => {
                 theme="primary"
                 size="s"
                 onClick={() => {
-                  openDesktop();
+                  scrollTo('contact', true);
                   plausible('navigate-to', { props: { section: 'contact' } });
                 }}
               >
@@ -168,8 +166,6 @@ const Header: React.FC = () => {
               </Button>
             </div>
           </Wrapper>
-
-          <SubscribeModal isOpen={isOpenDesktop} close={closeDesktop} />
         </>
       </Media>
     </motion.nav>
