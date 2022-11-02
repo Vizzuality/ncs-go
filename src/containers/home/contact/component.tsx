@@ -70,35 +70,145 @@ const Contact: React.FC = () => {
   return (
     <motion.section ref={sectionRef} className="w-full pb-10 bg-gray-900 lg:pb-20" id="contact">
       <Wrapper>
-        <div className="items-center py-10 border-b border-gray-800 xl:py-24 xl:grid xl:grid-cols-12 xl:gap-24">
-          <motion.div
-            ref={ref}
-            className="space-y-6 font-sans text-white md:col-span-6"
-            {...IN_VIEW_PROPS}
-            viewport={{
-              once: true,
-              amount: 0.25,
-            }}
-          >
-            <motion.h2
-              className="text-xl md:text-3xl"
-              animate={{ opacity }}
-              transition={{ delay: 0.2 }}
+        <div className="pb-10 border-b border-gray-800 md:py-24 md:grid md:grid-cols-12 md:gap-24">
+          <div className="space-y-14 md:col-span-6 md:col-start-4">
+            <motion.div
+              ref={ref}
+              className="space-y-6 font-sans text-center text-white"
+              {...IN_VIEW_PROPS}
+              viewport={{
+                once: true,
+                amount: 0.25,
+              }}
             >
-              Keep up to date
-            </motion.h2>
-            <motion.p
-              className="text-base leading-7 md:text-lg"
-              animate={{ opacity }}
-              transition={{ delay: 0.3 }}
-            >
-              Subscribe to keep up to date on our progress and be among the first to access our
-              platform.
-            </motion.p>
-
-            <Media greaterThanOrEqual="xl">
+              <motion.h2
+                className="text-xl md:text-3xl"
+                animate={{ opacity }}
+                transition={{ delay: 0.2 }}
+              >
+                Keep up to date
+              </motion.h2>
               <motion.p
-                className="text-sm leading-7 md:text-base opacity-80"
+                className="text-base leading-7"
+                animate={{ opacity }}
+                transition={{ delay: 0.3 }}
+              >
+                Subscribe to keep up to date on our progress and be among the first to access our
+                platform. Naturebase is set to launch ahead of the UNFCCC Climate Change Conference
+                COP28 and Global Stocktake in 2023.
+              </motion.p>
+            </motion.div>
+
+            <Form initialValues={{ email: null }} onSubmit={onSubmit}>
+              {({ handleSubmit, form }) => {
+                formRef.current = form;
+                return (
+                  <form className="py-6" noValidate onSubmit={handleSubmit}>
+                    <div className="flex flex-col justify-between w-full space-y-4">
+                      <Field
+                        name="uniqueName"
+                        component="input"
+                        validate={composeValidators([{ presence: true }])}
+                      >
+                        {({ input, meta }) => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <label className="pl-4 text-lg font-semibold text-gray-100">Name</label>
+                            <input
+                              {...input}
+                              value={input.value as string}
+                              type="text"
+                              className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
+                            />
+                            <Media greaterThanOrEqual="xl">
+                              {meta.error && meta.touched && meta.active && (
+                                <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
+                                  {meta.error}
+                                </p>
+                              )}
+                            </Media>
+                          </motion.div>
+                        )}
+                      </Field>
+                      <Field
+                        name="email"
+                        component="input"
+                        validate={composeValidators([{ presence: true, email: true }])}
+                      >
+                        {({ input, meta }) => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <label className="pl-4 text-lg font-semibold text-gray-100">
+                              Email
+                            </label>
+                            <input
+                              {...input}
+                              value={input.value as string}
+                              type="email"
+                              className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
+                            />
+                            <Media greaterThanOrEqual="xl">
+                              {meta.error && meta.touched && meta.active && (
+                                <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
+                                  {meta.error}
+                                </p>
+                              )}
+                            </Media>
+                          </motion.div>
+                        )}
+                      </Field>
+
+                      <Field
+                        name="role"
+                        component="input"
+                        validate={composeValidators([{ presence: true }])}
+                      >
+                        {() => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <label className="pl-4 text-lg font-semibold text-gray-100">Role</label>
+                            <select className="block w-full h-16 px-3 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700">
+                              <option selected>Select your role</option>
+                              <option value="1">Scientist</option>
+                              <option value="2">Student</option>
+                              <option value="3">Researcher</option>
+                            </select>
+                          </motion.div>
+                        )}
+                      </Field>
+
+                      <motion.div
+                        animate={{ opacity }}
+                        transition={{ delay: 0.5, bounce: 0 }}
+                        className="mx-36"
+                      >
+                        <Button
+                          disabled={submitting}
+                          size="xs"
+                          theme="primary"
+                          type="submit"
+                          className="w-full py-5 mt-10"
+                        >
+                          <p>Subscribe</p>
+                        </Button>
+                      </motion.div>
+                    </div>
+                  </form>
+                );
+              }}
+            </Form>
+            <Media lessThan="md">
+              <motion.p
+                className="text-sm leading-5 text-white md:text-base opacity-80"
                 animate={{ opacity }}
                 transition={{ delay: 0.4 }}
               >
@@ -106,119 +216,7 @@ const Contact: React.FC = () => {
                 Global Stocktake in 2023.
               </motion.p>
             </Media>
-          </motion.div>
-
-          <Form initialValues={{ email: null }} onSubmit={onSubmit}>
-            {({ handleSubmit, form }) => {
-              formRef.current = form;
-              return (
-                <form className="py-6 xl:col-span-6 xl:py-0" noValidate onSubmit={handleSubmit}>
-                  <div className="flex flex-col justify-between w-full space-y-4 xl:flex-row xl:space-y-0">
-                    <Field
-                      name="email"
-                      component="input"
-                      validate={composeValidators([{ presence: true, email: true }])}
-                    >
-                      {({ input, meta }) => (
-                        <motion.div
-                          className="relative w-full"
-                          animate={{ opacity }}
-                          transition={{ delay: 0.4 }}
-                        >
-                          <input
-                            {...input}
-                            value={input.value as string}
-                            type="email"
-                            placeholder="Enter your email"
-                            className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
-                          />
-                          <Media greaterThanOrEqual="xl">
-                            {meta.error && meta.touched && meta.active && (
-                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
-                                {meta.error}
-                              </p>
-                            )}
-                          </Media>
-                        </motion.div>
-                      )}
-                    </Field>
-
-                    <Field
-                      name="uniqueName"
-                      component="input"
-                      validate={composeValidators([{ presence: true }])}
-                    >
-                      {({ input, meta }) => (
-                        <motion.div
-                          className="relative w-full"
-                          animate={{ opacity }}
-                          transition={{ delay: 0.4 }}
-                        >
-                          <input
-                            {...input}
-                            value={input.value as string}
-                            type="text"
-                            placeholder="Enter your name"
-                            className="flex w-full px-10 py-4 text-base transition duration-300 ease-in-out delay-150 bg-gray-100 border-none rounded-full focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 focus:bg-white md:text-lg md:py-5 xl:rounded-l-full xl:rounded-r-none placeholder:text-gray-400"
-                          />
-                          <Media greaterThanOrEqual="xl">
-                            {meta.error && meta.touched && meta.active && (
-                              <p className="absolute text-sm text-red-600 top-20 left-10 first-letter:capitalize">
-                                {meta.error}
-                              </p>
-                            )}
-                          </Media>
-                        </motion.div>
-                      )}
-                    </Field>
-
-                    <Field
-                      name="role"
-                      component="input"
-                      validate={composeValidators([{ presence: true }])}
-                    >
-                      {() => (
-                        <motion.div
-                          className="relative w-full"
-                          animate={{ opacity }}
-                          transition={{ delay: 0.4 }}
-                        >
-                          <select className="block w-full h-16 px-10 py-4 m-0 font-sans text-gray-800 transition ease-in-out bg-white bg-no-repeat border border-solid rounded-full appearance-none form-select bg-clip-padding focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
-                            <option selected>Role</option>
-                            <option value="1">One</option>
-                            <option value="2">Two</option>
-                            <option value="3">Three</option>
-                          </select>
-                        </motion.div>
-                      )}
-                    </Field>
-
-                    <motion.div animate={{ opacity }} transition={{ delay: 0.5, bounce: 0 }}>
-                      <Button
-                        disabled={submitting}
-                        size="s"
-                        theme="primary"
-                        type="submit"
-                        className="w-full space-x-4 xl:rounded-r-full xl:rounded-l-none"
-                      >
-                        <p>Subscribe</p>
-                      </Button>
-                    </motion.div>
-                  </div>
-                </form>
-              );
-            }}
-          </Form>
-          <Media lessThan="xl">
-            <motion.p
-              className="text-sm leading-5 text-white md:text-base opacity-80"
-              animate={{ opacity }}
-              transition={{ delay: 0.4 }}
-            >
-              Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
-              Global Stocktake in 2023.
-            </motion.p>
-          </Media>
+          </div>
         </div>
       </Wrapper>
     </motion.section>
