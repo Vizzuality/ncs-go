@@ -68,13 +68,13 @@ const Contact: React.FC = () => {
   );
 
   return (
-    <motion.section ref={sectionRef} className="w-full pb-10 bg-gray-900 lg:pb-20" id="contact">
+    <motion.section ref={sectionRef} className="w-full py-10 bg-gray-900 lg:pb-20" id="contact">
       <Wrapper>
-        <div className="pb-10 border-b border-gray-800 md:py-24 md:grid md:grid-cols-12 md:gap-24">
-          <div className="space-y-14 md:col-span-6 md:col-start-4">
+        <div className="pb-10 border-b border-gray-800 md:pb-10 lg:grid lg:grid-cols-12">
+          <div className="space-y-14 lg:col-span-6 lg:col-start-4">
             <motion.div
               ref={ref}
-              className="space-y-6 font-sans text-center text-white"
+              className="space-y-6 font-sans text-left text-white sm:text-center"
               {...IN_VIEW_PROPS}
               viewport={{
                 once: true,
@@ -103,7 +103,7 @@ const Contact: React.FC = () => {
               {({ handleSubmit, form }) => {
                 formRef.current = form;
                 return (
-                  <form className="py-6" noValidate onSubmit={handleSubmit}>
+                  <form noValidate onSubmit={handleSubmit}>
                     <div className="flex flex-col justify-between w-full space-y-4">
                       <Field
                         name="uniqueName"
@@ -165,7 +165,7 @@ const Contact: React.FC = () => {
                       </Field>
 
                       <Field
-                        name="role"
+                        name="interest"
                         component="input"
                         validate={composeValidators([{ presence: true }])}
                       >
@@ -175,12 +175,18 @@ const Contact: React.FC = () => {
                             animate={{ opacity }}
                             transition={{ delay: 0.4 }}
                           >
-                            <label className="pl-4 text-lg font-semibold text-gray-100">Role</label>
+                            <label className="pl-4 text-lg font-semibold text-gray-100">
+                              I am interested in
+                            </label>
                             <select className="block w-full h-16 px-3 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700">
-                              <option selected>Select your role</option>
-                              <option value="1">Scientist</option>
-                              <option value="2">Student</option>
-                              <option value="3">Researcher</option>
+                              <option selected></option>
+                              <option value="1"> NCS/NbS</option>
+                              <option value="1">Indigenous Rights and Land Tenure</option>
+                              <option value="2">Policy</option>
+                              <option value="3">Finance</option>
+                              <option value="3">Markets</option>
+                              <option value="3">Philanthropy</option>
+                              <option value="3">Communications</option>
                             </select>
                           </motion.div>
                         )}
@@ -189,14 +195,14 @@ const Contact: React.FC = () => {
                       <motion.div
                         animate={{ opacity }}
                         transition={{ delay: 0.5, bounce: 0 }}
-                        className="mx-36"
+                        className="w-full"
                       >
                         <Button
                           disabled={submitting}
                           size="xs"
                           theme="primary"
                           type="submit"
-                          className="w-full py-5 mt-10"
+                          className="w-full py-4 mx-auto mt-10 text-lg lg:w-1/2"
                         >
                           <p>Subscribe</p>
                         </Button>
@@ -206,16 +212,6 @@ const Contact: React.FC = () => {
                 );
               }}
             </Form>
-            <Media lessThan="md">
-              <motion.p
-                className="text-sm leading-5 text-white md:text-base opacity-80"
-                animate={{ opacity }}
-                transition={{ delay: 0.4 }}
-              >
-                Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
-                Global Stocktake in 2023.
-              </motion.p>
-            </Media>
           </div>
         </div>
       </Wrapper>
