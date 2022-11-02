@@ -5,6 +5,7 @@ import { Form, Field } from 'react-final-form';
 import { useHomeStore } from 'store/home';
 
 import { motion, useInView } from 'framer-motion';
+import { usePlausible } from 'next-plausible';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
@@ -16,6 +17,8 @@ import { composeValidators } from 'components/forms/validations';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
 const Contact: React.FC = () => {
+  const plausible = usePlausible();
+
   const ref = useRef();
   const sectionRef = useRef();
   const formRef = useRef(null);
@@ -42,6 +45,7 @@ const Contact: React.FC = () => {
         { data },
         {
           onSuccess: () => {
+            plausible('subscribe');
             addToast(
               'success-contact',
               <>
@@ -57,7 +61,7 @@ const Contact: React.FC = () => {
         }
       );
     },
-    [saveSubscribeMutation, addToast]
+    [saveSubscribeMutation, addToast, plausible]
   );
 
   return (

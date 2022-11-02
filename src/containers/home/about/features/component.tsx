@@ -15,7 +15,7 @@ const Features = () => {
           <Hero
             className="col-span-2 col-start-1 text-beige"
             title="Features"
-            subtitle="A home base for all decision-makers interested in unlocking the power of nature to preserve our living planet."
+            subtitle="A starting point to unlock the power of nature for a livable future."
           />
         </div>
 

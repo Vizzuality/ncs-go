@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 
 import cx from 'classnames';
 
-import Head from 'next/head';
 import { useRouter } from 'next/router';
 
 import { useHomeStore } from 'store/home';
@@ -30,13 +29,9 @@ const Home: React.FC = () => {
 
   return (
     <div>
-      <Head>
-        <title>NCS - GO</title>
-      </Head>
-
       <MetaTags
         name="Natur4Climate"
-        title="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
+        title="Naturebase"
         description="Naturebase will bring together science-based data on nature’s pathways to mitigate climate change across every region of the planet, combining them with the latest information on enabling policy frameworks, mitigation and adaptation plans, finance schemes and of course, loads of case studies."
         url={`${process.env.NEXT_PUBLIC_VERCEL_URL || process.env.NEXT_PUBLIC_URL}${asPath}`}
         type="article"
