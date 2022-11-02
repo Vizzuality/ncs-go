@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
@@ -21,8 +21,6 @@ const Contact: React.FC = () => {
   const sectionRef = useRef();
   const formRef = useRef(null);
 
-  const [submitting, setSubmitting] = useState(false);
-
   const setSection = useHomeStore((state) => state.setSection);
 
   const inView = useInView(ref, { once: true, amount: 0.25 });
@@ -41,12 +39,10 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
-      setSubmitting(true);
       saveSubscribeMutation.mutate(
         { data },
         {
           onSuccess: () => {
-            setSubmitting(false);
             addToast(
               'success-contact',
               <>
@@ -58,9 +54,7 @@ const Contact: React.FC = () => {
             );
             form.reset();
           },
-          onError: () => {
-            setSubmitting(false);
-          },
+          onError: () => {},
         }
       );
     },
@@ -103,7 +97,6 @@ const Contact: React.FC = () => {
               {({ handleSubmit, form }) => {
                 formRef.current = form;
 
-                console.log({ form: form.getState().values });
                 return (
                   <form noValidate onSubmit={handleSubmit}>
                     <div className="flex flex-col justify-between w-full space-y-4">
@@ -196,8 +189,7 @@ const Contact: React.FC = () => {
                         className="w-full"
                       >
                         <Button
-                          disabled={submitting}
-                          // !form.getState().values.email || !form.getState().values.uniqueName
+                          disabled={!form.getState().valid}
                           size="xs"
                           theme="primary"
                           type="submit"
