@@ -44,7 +44,7 @@ const Description = ({ selected }) => {
               <LinkArrow
                 className={{ arrow: 'stroke-brand-700', label: 'text-brand-700' }}
                 label="Learn more"
-                url="#"
+                url={link}
               />
             )}
           </div>

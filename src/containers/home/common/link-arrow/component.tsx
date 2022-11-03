@@ -9,11 +9,15 @@ import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
 import type { LinkArrowProps } from './types';
 
 export const LinkArrow = ({ className, label, url }: LinkArrowProps) => (
-  <a className="flex items-center space-x-1 group" href={url}>
+  <a
+    className="flex items-center space-x-1 group"
+    href={url}
+    target="_blank"
+    rel="noopener noreferrer"
+  >
     <p
       className={cx({
         'transition-transform  whitespace-nowrap': true,
-        'group-hover:-translate-x-2': true,
         [className.label]: className.label,
       })}
     >
