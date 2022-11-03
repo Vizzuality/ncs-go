@@ -1,4 +1,4 @@
-import { useEffect, useRef, useMemo, FC } from 'react';
+import { useEffect, useRef, useMemo, FC, useCallback } from 'react';
 
 // import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
@@ -22,6 +22,7 @@ import Toggle from 'components/forms/select/toggle';
 import { SelectProps, SelectOptionProps } from 'components/forms/select/types';
 
 export const MultiSelect: FC<SelectProps> = ({
+  id,
   theme = 'dark',
   size = 'base',
   maxHeight = 300,
@@ -76,42 +77,42 @@ export const MultiSelect: FC<SelectProps> = ({
     return opts;
   }, [getOptions]);
 
-  const getInitialSelected = getOptions.filter((o) => initialValues.includes(`${o.value}`));
+  const getInitialSelected = useMemo(() => {
+    return getOptions.filter((o) => initialValues.includes(`${o.value}`));
+  }, [getOptions, initialValues]);
 
-  const getSelected = values ? getOptions.filter((o) => values.includes(`${o.value}`)) : null;
+  const getSelected = useMemo(() => {
+    return values ? getOptions.filter((o) => values.includes(`${o.value}`)) : null;
+  }, [getOptions, values]);
 
   const isSelected = (selected: SelectOptionProps, selectedItms: SelectOptionProps[]) =>
     selectedItms.some((i) => i.value === selected.value);
 
-  const handleSelectedItem = ({
-    option,
-    selectedItems,
-    addSelectedItem,
-    removeSelectedItem,
-    setSelectedItems,
-    reset,
-  }) => {
-    switch (option.value) {
-      case 'batch-clear-selection':
-        reset();
-        break;
-      case 'batch-selection':
-        setSelectedItems(getOptionsEnabled);
-        break;
-      default:
-        if (option.disabled) {
+  const handleSelectedItem = useCallback(
+    ({ option, selectedItems, addSelectedItem, removeSelectedItem, setSelectedItems, reset }) => {
+      switch (option.value) {
+        case 'batch-clear-selection':
+          reset();
           break;
-        }
+        case 'batch-selection':
+          setSelectedItems(getOptionsEnabled);
+          break;
+        default:
+          if (option.disabled) {
+            break;
+          }
 
-        if (isSelected(option, selectedItems)) {
-          removeSelectedItem(option);
-          break;
-        } else {
-          addSelectedItem(option);
-          break;
-        }
-    }
-  };
+          if (isSelected(option, selectedItems)) {
+            removeSelectedItem(option);
+            break;
+          } else {
+            addSelectedItem(option);
+            break;
+          }
+      }
+    },
+    [getOptionsEnabled]
+  );
 
   const {
     getDropdownProps,
@@ -133,8 +134,7 @@ export const MultiSelect: FC<SelectProps> = ({
       if (
         type === useMultipleSelection.stateChangeTypes.FunctionAddSelectedItem ||
         type === useMultipleSelection.stateChangeTypes.FunctionRemoveSelectedItem ||
-        type === useMultipleSelection.stateChangeTypes.FunctionSetSelectedItems ||
-        type === useMultipleSelection.stateChangeTypes.FunctionReset
+        type === useMultipleSelection.stateChangeTypes.FunctionSetSelectedItems
       ) {
         onSelect(changes.selectedItems);
       }
@@ -145,6 +145,7 @@ export const MultiSelect: FC<SelectProps> = ({
 
   const { isOpen, highlightedIndex, getToggleButtonProps, getMenuProps, getItemProps, closeMenu } =
     useSelect<SelectOptionProps>({
+      id: `${id}-select`,
       items: getOptions,
       itemToString: (item) => item.label, // How the selected options is announced to screen readers
       stateReducer: (st, actionAndChanges) => {
@@ -185,6 +186,7 @@ export const MultiSelect: FC<SelectProps> = ({
   const referenceHidden =
     attributes?.popper?.['data-popper-reference-hidden'] ||
     attributes?.popper?.['data-popper-reference-scaped'];
+
   useEffect(() => {
     if (referenceHidden) {
       closeMenu();

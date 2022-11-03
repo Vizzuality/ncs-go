@@ -5,16 +5,16 @@ const THEME = {
     open: 'ring-2 ring-brand-700 bg-gray-900 text-gray-400 rounded-lg pt-0',
     closed: 'border-gray-800 text-gray-400',
     prefix: {
-      base: 'text-white',
+      base: 'text-base md:text-lg text-gray-400',
     },
     icon: {
-      closed: 'text-white',
+      closed: 'text-gray-400',
       open: 'text-blue-500 transform rotate-180',
       disabled: 'text-gray-400',
     },
     item: {
       base: 'text-base text-gray-400',
-      highlighted: 'text-base bg-gray-700 text-white',
+      highlighted: 'text-base bg-gray-700 text-gray-400',
       disabled: 'text-base opacity-50 pointer-events-none',
     },
   },
@@ -23,7 +23,7 @@ const THEME = {
     open: 'ring-2 ring-blue-400 bg-white text-gray-600 rounded-2xl',
     closed: 'text-gray-400',
     prefix: {
-      base: 'text-gray-800',
+      base: 'text-base md:text-lg text-gray-800',
     },
     icon: {
       closed: 'text-gray-600',

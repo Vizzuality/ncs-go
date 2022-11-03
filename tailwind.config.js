@@ -90,7 +90,7 @@ module.exports = {
       },
       forest: {
         200: '#C1ECD2',
-        400: '#61CF77',
+        400: '#60CBA5',
       },
       grassland: {
         200: '#F1FABE',
