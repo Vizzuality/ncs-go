@@ -167,10 +167,10 @@ export const STEPS = [
     animationStep: 0,
     content: (
       <div className="relative px-4">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <p>
-            But we need more than ambitious nature-based commitments; we need{' '}
-            <span className="text-red-600">action</span>.
+            But we need more than ambitious commitments. <br />
+            We need <span className="text-red-600">action</span>.
           </p>
         </div>
       </div>
