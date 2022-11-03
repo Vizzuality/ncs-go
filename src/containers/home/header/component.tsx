@@ -6,6 +6,7 @@ import { useHomeStore } from 'store/home';
 
 import { motion } from 'framer-motion';
 import { usePlausible } from 'next-plausible';
+import useBreakpoint from 'use-breakpoint';
 
 import { useModal } from 'hooks/modals';
 
@@ -16,12 +17,15 @@ import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import { IN_VIEW_PROPS } from 'constants/motion';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
   const plausible = usePlausible();
   const headerRef = useRef(null);
+
+  const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
   const [selectedTab, setSelectedTab] = useState(NAV_OPTIONS[0]);
 
@@ -40,18 +44,30 @@ const Header: React.FC = () => {
     setSelectedTab(selectedSection);
   }, [section]);
 
-  const scrollTo = useCallback((id, h) => {
-    const $scrollEl = document.getElementById(id);
-    const $header = headerRef.current;
+  const scrollTo = useCallback(
+    (id, h) => {
+      const DELAY = minWidth < BREAKPOINTS.md ? 501 : 0;
 
-    const yOffset = h ? $header.getBoundingClientRect().height : 0;
-    const y = $scrollEl.getBoundingClientRect().top + window.pageYOffset + -yOffset;
+      setTimeout(() => {
+        const getPageYOffset = () => {
+          return (
+            window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+          );
+        };
+        const $scrollEl = document.getElementById(id);
+        const $header = headerRef.current;
 
-    window.scrollTo({
-      top: y,
-      behavior: h ? 'smooth' : 'auto',
-    });
-  }, []);
+        const yOffset = h ? $header.getBoundingClientRect().height : 0;
+        const y = $scrollEl.getBoundingClientRect().top + getPageYOffset() + -yOffset;
+
+        window.scrollTo({
+          top: y,
+          behavior: h ? 'smooth' : 'auto',
+        });
+      }, DELAY);
+    },
+    [minWidth]
+  );
 
   return (
     <motion.nav
