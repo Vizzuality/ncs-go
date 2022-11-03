@@ -20,6 +20,6 @@ export const THEME: ToastTheme = {
   },
   error: {
     icon: ERROR_SVG,
-    bg: 'from-red-400 to-red-700',
+    bg: 'bg-red-600',
   },
 };
