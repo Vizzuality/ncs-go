@@ -42,7 +42,7 @@ const THEME = {
     valid: 'ring-green-500',
   },
   sizes: {
-    base: 'pr-10 pl-4 py-6 text-base',
+    base: 'pr-10 pl-4 py-6 md:py-4 text-base',
     s: 'pl-4 pr-10 py-1.5 text-sm',
   },
 };

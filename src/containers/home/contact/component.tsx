@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
@@ -38,6 +38,14 @@ const Contact: React.FC = () => {
 
   const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
+
+  const INITIAL_VALUES = useMemo(() => {
+    return {
+      name: '',
+      email: '',
+      interests: [],
+    };
+  }, []);
 
   useEffect(() => {
     if (inViewSection) {
@@ -121,7 +129,7 @@ const Contact: React.FC = () => {
               </motion.p>
             </motion.div>
 
-            <Form initialValues={{ email: null }} onSubmit={onSubmit}>
+            <Form initialValues={INITIAL_VALUES} onSubmit={onSubmit}>
               {({ handleSubmit, form }) => {
                 formRef.current = form;
 
