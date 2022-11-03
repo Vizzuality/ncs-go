@@ -105,7 +105,6 @@ export const StoryCard = ({
           <LinkArrow
             className={{ arrow: 'stroke-brand-700' }}
             label="Short clip (1 min)"
-            fullAnimate
             url={clipUrl}
           />
 

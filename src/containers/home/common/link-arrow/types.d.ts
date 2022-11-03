@@ -3,7 +3,6 @@ export interface LinkArrowProps {
     arrow: string;
     label?: string;
   };
-  fullAnimate?: boolean;
   label: string;
   url: string;
 }
