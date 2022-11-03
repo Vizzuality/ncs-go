@@ -56,7 +56,7 @@ const Pathways = () => {
                   plausible('pathways', { props: { pathway: pathway.id } });
                 }
 
-                plausible('pathways', { props: { pathway: pathway.id } });
+                setSelected(selected === pathway.id ? null : pathway.id);
               }}
             />
           ))}
