@@ -113,7 +113,6 @@ export const StoryCard = ({
             <LinkArrow
               className={{ arrow: 'stroke-brand-700' }}
               label={articleUrl ? 'Article' : 'Video'}
-              fullAnimate
               url={articleUrl || videoUrl}
             />
           )}

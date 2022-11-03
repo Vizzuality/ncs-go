@@ -9,11 +9,19 @@ const Skip = () => {
   const plausible = usePlausible();
 
   const scrollTo = useCallback((id) => {
+    document.documentElement.className = '';
+
+    const getPageYOffset = () => {
+      return (
+        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
+      );
+    };
+
     const $scrollEl = document.getElementById(id);
     const $header = document.getElementById('header');
     const y =
       $scrollEl.getBoundingClientRect().top +
-      window.pageYOffset +
+      getPageYOffset() +
       -$header.getBoundingClientRect().height;
 
     window.scrollTo({

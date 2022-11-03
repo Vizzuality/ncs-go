@@ -14,11 +14,11 @@ import LOCATION_SVG from 'svgs/location.svg?sprite';
 import type { SampleCardProps } from './types';
 
 export const SampleCard = ({
-  articleUrl,
-  country,
-  description,
-  pathway,
   title,
+  description,
+  country,
+  pathway,
+  articleUrl,
   videoUrl,
 }: SampleCardProps) => {
   const ref = useRef();
@@ -51,29 +51,25 @@ export const SampleCard = ({
         <h4 className="text-base">{description}</h4>
       </motion.div>
 
-      <motion.div
-        className="flex justify-end pt-4 space-y-10 font-sans text-base lg:pt-20 lg:pb-1"
-        animate={{ opacity }}
-        transition={{ delay: 0.4 }}
-      >
-        {articleUrl && (
-          <LinkArrow
-            className={{ arrow: 'stroke-black' }}
-            fullAnimate
-            label="Read article"
-            url={articleUrl}
-          />
-        )}
+      {(articleUrl || videoUrl) && (
+        <motion.div
+          className="flex justify-end pt-4 space-y-10 font-sans text-base lg:pt-20 lg:pb-1"
+          animate={{ opacity }}
+          transition={{ delay: 0.4 }}
+        >
+          {articleUrl && (
+            <LinkArrow
+              className={{ arrow: 'stroke-black' }}
+              label="Read article"
+              url={articleUrl}
+            />
+          )}
 
-        {videoUrl && (
-          <LinkArrow
-            className={{ arrow: 'stroke-black' }}
-            fullAnimate
-            label="Watch video"
-            url={videoUrl}
-          />
-        )}
-      </motion.div>
+          {videoUrl && (
+            <LinkArrow className={{ arrow: 'stroke-black' }} label="Watch video" url={videoUrl} />
+          )}
+        </motion.div>
+      )}
     </div>
   );
 };
