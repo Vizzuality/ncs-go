@@ -65,7 +65,7 @@ export const SelectToggle: FC<SelectToggleProps> = ({
 
       <span
         className={cx({
-          'text-sm leading-none': true,
+          'text-base leading-none': true,
           [THEME[theme].prefix.base]: selectedItems.length,
         })}
       >
