@@ -13,6 +13,7 @@ import { useToasts } from 'hooks/toast';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import Select from 'components/forms/select';
 import { composeValidators } from 'components/forms/validations';
 import Loading from 'components/loading';
 import { IN_VIEW_PROPS } from 'constants/motion';
@@ -46,9 +47,11 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
+      const { name, email, interests } = data;
+      const parsedData = { name, email, interests: interests ? interests.toString() : null };
       setSubmitting(true);
       saveSubscribeMutation.mutate(
-        { data },
+        { data: parsedData },
         {
           onSuccess: () => {
             plausible('subscribe');
@@ -126,7 +129,7 @@ const Contact: React.FC = () => {
                   <form noValidate onSubmit={handleSubmit}>
                     <div className="flex flex-col justify-between w-full space-y-6">
                       <Field
-                        name="uniqueName"
+                        name="name"
                         component="input"
                         validate={composeValidators([{ presence: true }])}
                       >
@@ -180,20 +183,23 @@ const Contact: React.FC = () => {
                             <label className="pl-4 text-lg font-semibold text-gray-100">
                               I am interested in
                             </label>
-                            <select
-                              {...input}
-                              defaultValue={input.value as string}
-                              className="block w-full h-16 px-4 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700"
-                            >
-                              <option value={null}>Select...</option>
-                              {INTERESTS.map(({ label, value }) => {
-                                return (
-                                  <option key={value} value={value}>
-                                    {label}
-                                  </option>
-                                );
-                              })}
-                            </select>
+                            <div className="relative">
+                              <Select
+                                {...input}
+                                id="interests"
+                                selected={input.value as string[]}
+                                maxHeight={300}
+                                multiple
+                                onChange={input.onChange}
+                                options={INTERESTS}
+                                prefix=""
+                                size="base"
+                                status="none"
+                                theme="dark"
+                                placeholder="Select..."
+                                clearSelectionActive={false}
+                              />
+                            </div>
                           </motion.div>
                         )}
                       </Field>
