@@ -94,7 +94,7 @@ export const FEATURES = [
   },
   {
     key: '4',
-    title: 'Human rights',
+    title: 'Human Rights',
     icon: HUMAN_PERSPECTIVES_SVG,
     description: (
       <>

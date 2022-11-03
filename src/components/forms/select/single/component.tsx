@@ -21,6 +21,7 @@ import Toggle from 'components/forms/select/toggle';
 import { SelectProps, SelectOptionProps } from 'components/forms/select/types';
 
 export const SingleSelect: FC<SelectProps> = ({
+  id,
   theme = 'dark',
   size = 'base',
   maxHeight = 300,
@@ -90,6 +91,7 @@ export const SingleSelect: FC<SelectProps> = ({
     closeMenu,
     reset,
   } = useSelect<SelectOptionProps>({
+    id: `${id}-select`,
     items: getOptions,
     ...(typeof values !== 'undefined' && {
       selectedItem: getSelected,

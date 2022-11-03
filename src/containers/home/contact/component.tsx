@@ -190,7 +190,6 @@ const Contact: React.FC = () => {
                                 selected={input.value as string[]}
                                 maxHeight={300}
                                 multiple
-                                onChange={input.onChange}
                                 options={INTERESTS}
                                 prefix=""
                                 size="base"
@@ -198,6 +197,7 @@ const Contact: React.FC = () => {
                                 theme="dark"
                                 placeholder="Select..."
                                 clearSelectionActive={false}
+                                onChange={input.onChange}
                               />
                             </div>
                           </motion.div>

@@ -1,5 +1,9 @@
 export const INTERESTS = [
   {
+    label: 'NCS/NbS',
+    value: 'NCS/NbS',
+  },
+  {
     label: 'Indigenous Rights and Land Tenure',
     value: 'Indigenous Rights and Land Tenure',
   },
