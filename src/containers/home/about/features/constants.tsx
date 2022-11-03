@@ -43,25 +43,51 @@ export const FEATURES = [
     description: (
       <>
         <p>
-          Natural Climate Solutions (NCS) also deliver significant “co-benefits” to biodiversity,
-          climate adaptation, and human well-being.
+          Natural Climate Solutions (NCS) can deliver benefits to biodiversity, human adaptation to
+          climate change, and human well-being in addition to their carbon mitigation benefit.
+          Understanding how these additional benefits vary by NCS intervention, local context,
+          population, country, and other factors is critical to identifying areas where NCS
+          implementation can have the greatest outcomes and tradeoffs. We are systematically
+          identifying the evidence-base on additional NCS benefits, generating new evidence on the
+          biodiversity, adaptation, and human well-being co-benefits for NCS interventions.
+        </p>
+        <p>We are doing this through multiple interrelated projects including:</p>
+        <ul>
+          <li>
+            A machine learning-based systematic evidence map of more than 800,000 papers on the
+            biodiversity and human well-being co-benefits of NCS
+          </li>
+          <li>
+            Estimating impacts of peatland restoration, agroforestry, and mangrove restoration and
+            protection in on biodiversity and human well-being in demonstration landscapes
+          </li>
+          <li>
+            Estimating the global contribution of several NCS pathways to human adaptation, and
+            biodiversity through ecosystem service and landscape connectivity models, respectively.{' '}
+          </li>
+        </ul>
+        <p>
+          Together, these products provide foundational evidence needed by decision-makers to
+          determine whether and how NCS implementation serves as an instrumental tool in advancing
+          the well-being of both nature and people.
         </p>
       </>
     ),
   },
   {
     key: '3',
-    title: 'Policy Database',
+    title: 'Policies for Action',
     icon: POLICY_DATABASE_SVG,
     description: (
       <>
         <p>
           We have a unique opportunity to drive significant political commitment and finance towards
-          sustainable land on a livable planet. But to build this nature-positive future, we must
-          integrate natural climate solutions into decision-making. Naturebase will catalogue and
-          existing government initiatives that have the power to incentivize or deter
-          climate-effective activities: legislation, subsidies, budget allocations, and incentive
-          programs relevant to geographies and activities selected by the naturebase user.
+          sustainable land-use on a livable planet. Governments have the power to unlock the
+          incredible potential of Natural Climate Solutions (NCS) and Nature-based Solutions (NbS).
+          To build a nature-positive future, we must integrate natural climate solutions into
+          decision-making. Naturebase will identify effective government initiatives and public
+          policies that support nature by linking existing government initiatives to specific
+          geographies, including legislation, subsidies, budget allocations, and incentive programs.
         </p>
       </>
     ),

@@ -1,4 +1,4 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import cx from 'classnames';
 
@@ -29,6 +29,12 @@ export const Toast: React.FC<ToastProps> = ({
     }
   }, [id, onDismiss]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      handleDismiss();
+    }, 5000);
+  }, [handleDismiss]);
+
   return (
     <motion.div
       layout
@@ -37,9 +43,8 @@ export const Toast: React.FC<ToastProps> = ({
       exit={{ opacity: 0, x: minWidth >= BREAKPOINTS.md && 50 }}
       transition={{
         ease: 'anticipate',
-        duration: 2.5,
+        duration: 0.5,
       }}
-      onAnimationComplete={handleDismiss}
     >
       <div
         className={cx({

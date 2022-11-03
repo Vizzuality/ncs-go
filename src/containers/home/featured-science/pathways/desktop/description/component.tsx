@@ -2,6 +2,7 @@ import React from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
+import LinkArrow from 'containers/home/common/link-arrow';
 import { PATHWAYS } from 'containers/home/featured-science/pathways/constants';
 
 import Icon from 'components/icon';
@@ -9,7 +10,7 @@ import Icon from 'components/icon';
 import INFO_SVG from 'svgs/info.svg?sprite';
 
 const Description = ({ selected }) => {
-  const { description } = PATHWAYS.find((pathway) => pathway.id === selected) || {};
+  const { description, link } = PATHWAYS.find((pathway) => pathway.id === selected) || {};
 
   return (
     <AnimatePresence>
@@ -39,6 +40,13 @@ const Description = ({ selected }) => {
             <Icon icon={INFO_SVG} className="w-6 h-6" />
 
             <div className="text-gray-900">{description}</div>
+            {link && (
+              <LinkArrow
+                className={{ arrow: 'stroke-brand-700', label: 'text-brand-700' }}
+                label="Learn more"
+                url={link}
+              />
+            )}
           </div>
         </motion.div>
       )}

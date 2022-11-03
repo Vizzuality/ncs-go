@@ -15,6 +15,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import Select from 'components/forms/select';
 import { composeValidators } from 'components/forms/validations';
+import Loading from 'components/loading';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
 import { INTERESTS } from './constants';
@@ -68,6 +69,15 @@ const Contact: React.FC = () => {
           },
           onError: () => {
             setSubmitting(false);
+            addToast(
+              'error-contact',
+              <>
+                <p className="text-base">Oops! Something went wrong</p>
+              </>,
+              {
+                level: 'error',
+              }
+            );
           },
         }
       );
@@ -76,7 +86,11 @@ const Contact: React.FC = () => {
   );
 
   return (
-    <motion.section ref={sectionRef} className="w-full py-10 bg-gray-900 lg:pb-20" id="contact">
+    <motion.section
+      ref={sectionRef}
+      className="w-full py-10 bg-gray-900 lg:py-20 xl:py-32"
+      id="contact"
+    >
       <Wrapper>
         <div className="pb-10 border-b border-gray-800 md:pb-10 lg:grid lg:grid-cols-12">
           <div className="space-y-14 lg:col-span-6 lg:col-start-4">
@@ -113,7 +127,7 @@ const Contact: React.FC = () => {
 
                 return (
                   <form noValidate onSubmit={handleSubmit}>
-                    <div className="flex flex-col justify-between w-full space-y-4">
+                    <div className="flex flex-col justify-between w-full space-y-6">
                       <Field
                         name="uniqueName"
                         component="input"
@@ -199,8 +213,12 @@ const Contact: React.FC = () => {
                           size="xs"
                           theme="primary"
                           type="submit"
-                          className="w-full py-4 mx-auto mt-10 text-lg lg:w-1/2"
+                          className="relative w-full py-4 mx-auto mt-10 overflow-hidden text-lg lg:w-1/2"
                         >
+                          <Loading
+                            visible={submitting}
+                            className="absolute flex items-center justify-center w-full h-full bg-brand-700/50"
+                          />
                           <p>Subscribe</p>
                         </Button>
                       </motion.div>

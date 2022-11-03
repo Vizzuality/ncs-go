@@ -73,7 +73,7 @@ const List = () => {
                   media={
                     <SampleMedia
                       backgroundImage={`url(/images/home/stories/${s.image})`}
-                      video={!!s.videoUrl}
+                      video={s.videoUrl}
                     />
                   }
                   card={
