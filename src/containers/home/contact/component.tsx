@@ -124,7 +124,7 @@ const Contact: React.FC = () => {
 
                 return (
                   <form noValidate onSubmit={handleSubmit}>
-                    <div className="flex flex-col justify-between w-full space-y-4">
+                    <div className="flex flex-col justify-between w-full space-y-6">
                       <Field
                         name="uniqueName"
                         component="input"
@@ -182,9 +182,10 @@ const Contact: React.FC = () => {
                             </label>
                             <select
                               {...input}
+                              defaultValue={input.value as string}
                               className="block w-full h-16 px-4 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none form-select bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700"
                             >
-                              <option selected>{''}</option>
+                              <option value={null}>Select...</option>
                               {INTERESTS.map(({ label, value }) => {
                                 return (
                                   <option key={value} value={value}>
