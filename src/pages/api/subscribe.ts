@@ -5,14 +5,14 @@ sendgridClient.setApiKey(process.env.SENDGRID_API_KEY_SUBSCRIPTION);
 
 const Contact = (req: NextApiRequest, res: NextApiResponse): void => {
   if (req.method === 'PUT') {
-    const { email, uniqueName, interests } = req.body;
+    const { email, name, interests } = req.body;
 
     const data = {
       list_ids: ['8d7fd667-65bc-422a-ab83-6f039a358f58'],
       contacts: [
         {
           email,
-          unique_name: uniqueName,
+          unique_name: name,
           custom_fields: { e5_T: interests },
         },
       ],

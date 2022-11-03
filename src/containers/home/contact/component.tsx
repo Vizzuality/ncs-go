@@ -47,8 +47,8 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
-      const { uniqueName, email, interests } = data;
-      const parsedData = { uniqueName, email, interests: interests ? interests.toString() : null };
+      const { name, email, interests } = data;
+      const parsedData = { name, email, interests: interests ? interests.toString() : null };
       setSubmitting(true);
       saveSubscribeMutation.mutate(
         { data: parsedData },
@@ -129,7 +129,7 @@ const Contact: React.FC = () => {
                   <form noValidate onSubmit={handleSubmit}>
                     <div className="flex flex-col justify-between w-full space-y-6">
                       <Field
-                        name="uniqueName"
+                        name="name"
                         component="input"
                         validate={composeValidators([{ presence: true }])}
                       >
@@ -187,6 +187,7 @@ const Contact: React.FC = () => {
                               <Select
                                 {...input}
                                 id="interests"
+                                selected={input.value as string[]}
                                 maxHeight={300}
                                 multiple
                                 onChange={input.onChange}
@@ -195,7 +196,7 @@ const Contact: React.FC = () => {
                                 size="base"
                                 status="none"
                                 theme="dark"
-                                placeholder=""
+                                placeholder="Select..."
                                 clearSelectionActive={false}
                               />
                             </div>

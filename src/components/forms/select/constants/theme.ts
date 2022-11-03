@@ -1,7 +1,7 @@
 const THEME = {
   dark: {
     container:
-      'block w-full h-16 px-4 py-4 m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700',
+      'block w-full m-0 font-sans text-lg text-gray-400 transition ease-in-out bg-gray-800 bg-no-repeat border border-gray-800 rounded-lg appearance-none bg-clip-padding focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700',
     open: 'ring-2 ring-brand-700 bg-gray-800 text-gray-400 rounded-lg pt-0',
     closed: 'border-gray-400 text-gray-400',
     prefix: {
@@ -42,7 +42,7 @@ const THEME = {
     valid: 'ring-green-500',
   },
   sizes: {
-    base: 'pr-10 pl-4 py-2 text-base',
+    base: 'pr-10 pl-4 py-6 text-base',
     s: 'pl-4 pr-10 py-1.5 text-sm',
   },
 };
