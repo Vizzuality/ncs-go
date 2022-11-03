@@ -58,7 +58,7 @@ const Stories = () => {
 
       <div className="bg-gray-900">
         <Wrapper>
-          <div className="pt-10 pb-10 space-y-4 lg:space-y-0 lg:pb-20 lg:pt-32 lg:grid lg:grid-cols-12">
+          <div className="pt-10 pb-10 space-y-4 lg:space-y-0 lg:pb-20 lg:pt-20 lg:grid lg:grid-cols-12">
             <Hero className="col-span-5 col-start-1 text-white" subtitle="Want more examples?" />
 
             <div className="col-span-4 col-start-7 text-white">
