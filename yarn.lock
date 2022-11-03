@@ -4697,6 +4697,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@tailwindcss/typography@npm:0.5.7":
+  version: 0.5.7
+  resolution: "@tailwindcss/typography@npm:0.5.7"
+  dependencies:
+    lodash.castarray: ^4.4.0
+    lodash.isplainobject: ^4.0.6
+    lodash.merge: ^4.6.2
+    postcss-selector-parser: 6.0.10
+  peerDependencies:
+    tailwindcss: "*"
+  checksum: 27686a455d13367c6ee4473e0579f1fc0e9de1de4606845101f8943eb94c5d00a18fecac60111028b9cb2f3253ea16a9a6f889d3711214b5baaa153f021fbc47
+  languageName: node
+  linkType: hard
+
 "@tanstack/query-core@npm:^4.0.0-beta.1":
   version: 4.6.1
   resolution: "@tanstack/query-core@npm:4.6.1"
@@ -12522,6 +12536,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"lodash.castarray@npm:^4.4.0":
+  version: 4.4.0
+  resolution: "lodash.castarray@npm:4.4.0"
+  checksum: fca8c7047e0ae2738b0b2503fb00157ae0ff6d8a1b716f87ed715b22560e09de438c75b65e01a7e44ceb41c5b31dce2eb576e46db04beb9c699c498e03cbd00f
+  languageName: node
+  linkType: hard
+
 "lodash.clamp@npm:^4.0.3":
   version: 4.0.3
   resolution: "lodash.clamp@npm:4.0.3"
@@ -13459,6 +13480,7 @@ __metadata:
     "@storybook/react": 6.5.10
     "@tailwindcss/forms": 0.5.1
     "@tailwindcss/line-clamp": 0.4.0
+    "@tailwindcss/typography": 0.5.7
     "@tanstack/react-query": 4.0.10
     "@types/gtag.js": 0.0.5
     "@types/react": 18.0.15
@@ -13501,6 +13523,7 @@ __metadata:
     next-auth: 4.3.4
     next-compose-plugins: 2.2.1
     next-optimized-images: 2.6.2
+    next-plausible: 3.6.4
     next-transpile-modules: 9.0.0
     postcss: 8.4.13
     prettier: 2.3.0
@@ -13592,6 +13615,17 @@ __metadata:
     raw-loader: ^2.0.0
     url-loader: ^1.1.2
   checksum: e9356f8ca0b63152cfa4c02e938ce0beebc28bdfde7cdc9b9a310740c9e1493bdb85184d4b446f5156280a84930ccdbf5fa4469c3e4c9b4b519080aaec9903f1
+  languageName: node
+  linkType: hard
+
+"next-plausible@npm:3.6.4":
+  version: 3.6.4
+  resolution: "next-plausible@npm:3.6.4"
+  peerDependencies:
+    next: ^11.1.0 || ^12.0.0 || ^13.0.0
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0
+    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
+  checksum: d0716df0be9ad5ab713fe4981760414aef61ff98d228f690c657d75e4b722350f385d115fbea0d7ff58855f1286a30df5eaaa20f56237e4910e2cb003c8b540e
   languageName: node
   linkType: hard
 
@@ -14823,7 +14857,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.10, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.6":
+"postcss-selector-parser@npm:6.0.10, postcss-selector-parser@npm:^6.0.0, postcss-selector-parser@npm:^6.0.10, postcss-selector-parser@npm:^6.0.2, postcss-selector-parser@npm:^6.0.4, postcss-selector-parser@npm:^6.0.6":
   version: 6.0.10
   resolution: "postcss-selector-parser@npm:6.0.10"
   dependencies:

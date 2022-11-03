@@ -2,6 +2,8 @@ import React, { useCallback, useRef, useState } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
+import { usePlausible } from 'next-plausible';
+
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
@@ -12,6 +14,8 @@ import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 
 const SubscribeModal = ({ isOpen, close }) => {
+  const plausible = usePlausible();
+
   const formRef = useRef(null);
   const [submitting, setSubmitting] = useState(false);
   const saveSubscribeMutation = useSaveSubscribe({});
@@ -25,6 +29,7 @@ const SubscribeModal = ({ isOpen, close }) => {
         { data },
         {
           onSuccess: () => {
+            plausible('subscribe');
             setSubmitting(false);
             addToast(
               'success-contact',
@@ -43,7 +48,7 @@ const SubscribeModal = ({ isOpen, close }) => {
         }
       );
     },
-    [saveSubscribeMutation, addToast]
+    [saveSubscribeMutation, addToast, plausible]
   );
 
   return (

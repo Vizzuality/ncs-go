@@ -16,8 +16,8 @@ export const Hero = ({ className, subtitle, title }: HeroProps) => (
     })}
   >
     <motion.div className="space-y-4" {...IN_VIEW_PROPS}>
-      <h2 className="text-base font-bold tracking-widest uppercase">{title}</h2>
-      <h3 className="text-lg lg:text-2xl 2xl:text-3xl">{subtitle}</h3>
+      {title && <h2 className="text-base font-bold tracking-widest uppercase">{title}</h2>}
+      {subtitle && <h3 className="text-lg lg:text-2xl 2xl:text-3xl">{subtitle}</h3>}
     </motion.div>
   </div>
 );

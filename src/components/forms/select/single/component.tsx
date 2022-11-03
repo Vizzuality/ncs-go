@@ -171,7 +171,6 @@ export const SingleSelect: FC<SelectProps> = ({
           getToggleButtonProps={getToggleButtonProps}
         />
       </div>
-
       {/* Menu */}
       {createPortal(
         <div

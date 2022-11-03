@@ -16,7 +16,7 @@ const Video = dynamic(() => import('components/video'), {
   ssr: false,
 });
 
-export const SampleMedia = ({ backgroundImage, video = false }: SampleMediaProps) => {
+export const SampleMedia = ({ backgroundImage, video }: SampleMediaProps) => {
   const targetRef = useRef(null);
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
@@ -65,16 +65,7 @@ export const SampleMedia = ({ backgroundImage, video = false }: SampleMediaProps
         onOpenChange={() => close()}
       >
         <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
-          <Video
-            config={videoConfig}
-            playing
-            light={false}
-            loop
-            url="https://youtu.be/6PGyRolwFVo"
-            height="100%"
-            width="100%"
-            muted
-          />
+          <Video config={videoConfig} light={false} loop url={video} height="100%" width="100%" />
         </div>
       </Modal>
     </div>

@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 
 import { motion, useInView } from 'framer-motion';
+import { usePlausible } from 'next-plausible';
 
 import { useModal } from 'hooks/modals';
 
@@ -12,6 +13,8 @@ import ARROW_TOP_RIGHT_SVG from 'svgs/arrow-top-right.svg?sprite';
 import type { FeatureCardProps } from './types';
 
 export const FeatureCard = ({ index, title, icon, description }: FeatureCardProps) => {
+  const plausible = usePlausible();
+
   const { isOpen, open, close } = useModal();
 
   const ref = useRef();
@@ -27,7 +30,10 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
     <>
       <motion.div
         ref={ref}
-        className="mb-4 md:mb-0 bg-gray-800 relative group hover:z-10 py-10 px-6 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out md:bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28 outline outline-1 outline-gray-800"
+        className="mb-4 md:mb-0 bg-gray-800 relative group hover:z-10 py-10 px-6 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out md:bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28"
+        style={{
+          boxShadow: '0 0 0 1px #263C44',
+        }}
         whileInView={{
           opacity: 1,
         }}
@@ -38,7 +44,10 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
           once: true,
           amount: 0.25,
         }}
-        onClick={open}
+        onClick={() => {
+          open();
+          plausible('features', { props: { section: 'title' } });
+        }}
       >
         <motion.div animate={{ opacity, y }} transition={{ delay: 0.2 + index * 0.1, bounce: 0 }}>
           <Icon
@@ -63,7 +72,7 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
         <div className="p-6 overflow-auto text-gray-900 md:p-16 grow">
           <Icon className="w-20 h-20 mt-20 mb-8 md:mt-8 md:w-28 md:h-28 stroke-black" icon={icon} />
           <h2 className="mb-4 text-lg md:text-xl">{title}</h2>
-          <p className="text-base list-inside" dangerouslySetInnerHTML={{ __html: description }} />
+          <div className="prose">{description}</div>
         </div>
       </Modal>
     </>

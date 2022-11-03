@@ -15,7 +15,7 @@ const Features = () => {
           <Hero
             className="col-span-2 col-start-1 text-beige"
             title="Features"
-            subtitle="A home base for all decision-makers interested in unlocking the power of nature to preserve our living planet."
+            subtitle="A starting point to unlock the power of nature for a livable future."
           />
         </div>
 
@@ -27,7 +27,7 @@ const Features = () => {
           <p className="font-sans text-lg text-white">Click on each feature to learn more.</p>
         </Media>
 
-        <div className="relative z-0 grid pt-10 md:grid-cols-2 xl:grid-cols-4 md:mx-0">
+        <div className="relative z-0 grid gap-px pt-10 md:grid-cols-2 xl:grid-cols-4 md:mx-0">
           {FEATURES.map((f, i) => (
             <div key={f.key} className={`order-${f.key}`}>
               <FeatureCard index={i} title={f.title} icon={f.icon} description={f.description} />

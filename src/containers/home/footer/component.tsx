@@ -23,14 +23,14 @@ const Footer: React.FC = () => {
     >
       <Wrapper>
         <motion.div className="space-y-10 lg:space-y-20" {...IN_VIEW_PROPS}>
-          <div>
+          <div className="max-w-xl mx-auto">
             <motion.p animate={{ opacity }} transition={{ delay: 0.2 }}>
               If you would like to provide feedback or submit your case studies please contact us at{' '}
               <a className="text-brand-700 hover:underline" href="mailto:info@nature4climate.org">
                 info@nature4climate.org.
               </a>
             </motion.p>
-            <motion.p animate={{ opacity }} transition={{ delay: 0.3 }}>
+            {/* <motion.p animate={{ opacity }} transition={{ delay: 0.3 }}>
               Sign up for the Nature4Climate newsletter{' '}
               <a
                 className="text-brand-700 hover:underline"
@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
               >
                 here.
               </a>
-            </motion.p>
+            </motion.p> */}
           </div>
 
           <motion.p

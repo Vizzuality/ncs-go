@@ -1,10 +1,12 @@
-import { useCallback } from 'react';
+import { useCallback, useEffect } from 'react';
 
 import cx from 'classnames';
 
 import { motion } from 'framer-motion';
+import useBreakpoint from 'use-breakpoint';
 
 import Icon from 'components/icon';
+import { BREAKPOINTS } from 'styles/styles.config';
 
 import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
 
@@ -17,6 +19,8 @@ export const Toast: React.FC<ToastProps> = ({
   level = 'info',
   onDismiss,
 }: ToastProps) => {
+  const { minWidth } = useBreakpoint(BREAKPOINTS);
+
   const ICON = THEME[level || 'info'].icon;
 
   const handleDismiss = useCallback(() => {
@@ -25,21 +29,26 @@ export const Toast: React.FC<ToastProps> = ({
     }
   }, [id, onDismiss]);
 
+  useEffect(() => {
+    setTimeout(() => {
+      handleDismiss();
+    }, 5000);
+  }, [handleDismiss]);
+
   return (
     <motion.div
       layout
-      initial={{ opacity: 0, x: 25 }}
-      animate={{ opacity: 1, x: 0 }}
-      exit={{ opacity: 0, x: 50 }}
+      initial={{ opacity: 0, x: minWidth >= BREAKPOINTS.md && 25 }}
+      animate={{ opacity: 1, x: minWidth >= BREAKPOINTS.md && 0 }}
+      exit={{ opacity: 0, x: minWidth >= BREAKPOINTS.md && 50 }}
       transition={{
         ease: 'anticipate',
-        duration: 2.5,
+        duration: 0.5,
       }}
-      onAnimationComplete={handleDismiss}
     >
       <div
         className={cx({
-          'flex w-full px-4 py-3 text-white text-base md:text-lg font-sans transition shadow-md rounded-xl':
+          'flex w-full px-4 py-3 text-white text-sm sm:text-base md:text-lg font-sans transition shadow-md rounded-xl':
             true,
           [THEME[level]?.bg]: true,
         })}

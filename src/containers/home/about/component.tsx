@@ -41,7 +41,7 @@ const About = () => {
             <Hero
               className="text-gray-800"
               title="About Naturebase"
-              subtitle="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
+              subtitle="Naturebase will be an online platform that helps decision makers put Natural Climate Solutions into action."
             />
           </div>
         </Wrapper>
@@ -65,7 +65,7 @@ const About = () => {
               <Hero
                 className="text-gray-800 lg:col-span-2 lg:col-start-1"
                 title="About Naturebase"
-                subtitle="Naturebase is a new interactive platform that will bring together science-based data to mitigate climate change."
+                subtitle="Naturebase will be an online platform that helps decision makers put Natural Climate Solutions into action."
               />
             </div>
           </Wrapper>
@@ -83,10 +83,11 @@ const About = () => {
               transition={{ delay: 0.2 }}
             >
               <p>
-                Naturebase will bring together science-based data on nature’s pathways to mitigate
-                climate change across every region of the planet, combining them with the latest
-                information on enabling policy frameworks, mitigation and adaptation plans, finance
-                schemes and of course, loads of case studies.
+                Naturebase will deliver information grounded in science, lighting up pathways to
+                protect, manage, and restore nature for measurable climate benefits. Bringing
+                together the latest research, policies, and feasibility considerations, Naturebase
+                will guide near-term action for decision-makers, practitioners, resource managers,
+                and investors.
               </p>
             </motion.div>
             <motion.div
@@ -95,14 +96,14 @@ const About = () => {
               transition={{ delay: 0.3 }}
             >
               <p>
-                Scientists, practitioners, policymakers and experts can find their way to enact
-                nature’s full transformative potential.
+                Farmers, foresters, governments, and local communities will learn where to deploy
+                natural climate solutions to achieve their climate targets in consideration of their
+                own needs and interests.
               </p>
               <p>
-                You will be able to navigate through the different regions and biomes, capturing
-                real up-to-date information at a global, national and local level, and understand
-                which of nature’s pathways offer the best potential for reducing emissions at the
-                same time as benefiting local communities and biodiversity.
+                Users will be able to explore and compare target areas across forests, wetlands,
+                grasslands, and agricultural lands, while considering issues such as land tenure,
+                opportunity cost, financing opportunities, and enabling conditions.
               </p>
             </motion.div>
           </motion.div>

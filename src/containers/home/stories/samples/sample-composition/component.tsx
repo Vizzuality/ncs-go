@@ -32,9 +32,9 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
         <Media greaterThanOrEqual="md">
           <motion.div
             className={cx({
-              'mt-[18%] max-w-[320px] lg:max-w-[370px] xl:max-w-[420px]': true,
-              'mr-auto lg:ml-[5%] xl:ml-[10%]': align === 'right',
-              'ml-auto lg:mr-[5%] xl:mr-[10%]': align === 'left',
+              'mt-[18%] max-w-[320px] lg:max-w-[450px] xl:max-w-[500px]': true,
+              'mr-auto lg:ml-[5%] xl:ml-[5%]': align === 'right',
+              'ml-auto lg:mr-[5%] xl:mr-[5%]': align === 'left',
             })}
             initial={{ opacity: 0, x: align === 'left' ? 20 : -20 }}
             whileInView={{ opacity: 1, x: 0 }}
