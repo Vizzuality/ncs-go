@@ -30,7 +30,7 @@ const Home: React.FC = () => {
   return (
     <div>
       <MetaTags
-        name="Natur4Climate"
+        name="Nature4Climate"
         title="Naturebase"
         description="Naturebase will bring together science-based data on nature’s pathways to mitigate climate change across every region of the planet, combining them with the latest information on enabling policy frameworks, mitigation and adaptation plans, finance schemes and of course, loads of case studies."
         url={`${process.env.NEXT_PUBLIC_VERCEL_URL || process.env.NEXT_PUBLIC_URL}${asPath}`}

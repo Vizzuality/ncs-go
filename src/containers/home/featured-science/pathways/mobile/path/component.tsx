@@ -2,6 +2,8 @@ import React from 'react';
 
 import Image from 'next/image';
 
+import LinkArrow from 'containers/home/common/link-arrow';
+
 import Icon from 'components/icon';
 
 import MINUS_SVG from 'svgs/minus.svg?sprite';
@@ -9,7 +11,7 @@ import PLUS_SVG from 'svgs/plus.svg?sprite';
 
 import Subpath from './subpath';
 
-const Path = ({ id, title, description, color, selected, subpaths, onClick }) => {
+const Path = ({ id, title, description, link, color, selected, subpaths, onClick }) => {
   const SELECTED = selected === id;
 
   return (
@@ -32,8 +34,16 @@ const Path = ({ id, title, description, color, selected, subpaths, onClick }) =>
 
       {SELECTED && (
         <>
-          <div className="p-4 border border-gray-800">
+          <div className="p-4 space-y-5 border border-gray-800">
             <p>{description}</p>
+
+            {link && (
+              <LinkArrow
+                className={{ arrow: 'stroke-brand-700', label: 'text-brand-700' }}
+                label="Learn more"
+                url={link}
+              />
+            )}
           </div>
           <div className="-mt-2 space-y-2">
             {subpaths.map((subpath) => (
