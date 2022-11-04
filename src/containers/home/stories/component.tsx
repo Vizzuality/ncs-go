@@ -71,11 +71,15 @@ const Stories = () => {
         </Wrapper>
       </div>
 
-      <iframe
-        loading="lazy"
-        src="https://devn4c.wpengine.com/case-studies-map-embed/"
-        className="w-full h-[calc(100vh_-_89px)]"
-      />
+      <Wrapper>
+        <div className="py-10">
+          <iframe
+            loading="lazy"
+            src="https://devn4c.wpengine.com/case-studies-map-embed/"
+            className="w-full h-[calc(100vh_-_100px)]"
+          />
+        </div>
+      </Wrapper>
       {/* <List /> */}
     </motion.section>
   );
