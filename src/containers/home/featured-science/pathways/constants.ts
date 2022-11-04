@@ -5,7 +5,7 @@ export const PATHWAYS = [
     description:
       'Forests include any land that is not considered cropland with tree cover naturally greater than 25%, including tropical rainforests, dry forests, boreal forests, and tree plantations managed for wood products.',
     color: '#60CBA5',
-    link: null,
+    link: 'https://nature4climate.org/natures-solutions/natures-pathways/',
 
     subpaths: [
       {
@@ -65,7 +65,7 @@ export const PATHWAYS = [
     description:
       'Croplands include any lands managed for annual or perennial crops, including agroforestry systems such as cacao, coffee, and intercropping.',
     color: '#F0B884',
-    link: null,
+    link: 'https://nature4climate.org/natures-solutions/natures-pathways/',
 
     subpaths: [
       {
@@ -97,7 +97,7 @@ export const PATHWAYS = [
     description:
       'Wetlands include freshwater ecosystems, such as peatlands and freshwater mineral wetlands, as well as salty coastal ecosystems, such as mangroves, salt marshes, and seagrass meadows.',
     color: '#A2E6EE',
-    link: null,
+    link: 'https://nature4climate.org/natures-solutions/natures-pathways/',
 
     subpaths: [
       {
@@ -136,7 +136,7 @@ export const PATHWAYS = [
     description:
       'This biome includes prairies, steppes, shrublands, tundra, savannas, and other habitats with tree cover less than 25%. This includes grazed and un-grazed lands.',
     color: '#C9EC80',
-    link: null,
+    link: 'https://nature4climate.org/natures-solutions/natures-pathways/',
 
     subpaths: [
       {
