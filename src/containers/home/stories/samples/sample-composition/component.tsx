@@ -26,7 +26,7 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
         </Media>
 
         <Media lessThan="md">
-          <div className="aspect-video w-[96%] absolute top-0 left-0">{media}</div>
+          <div className="aspect-video w-full sm:w-[96%] absolute top-0 left-0">{media}</div>
         </Media>
 
         <Media greaterThanOrEqual="md">
@@ -52,8 +52,8 @@ const SampleComposition = ({ media, card, align = 'right' }) => {
           <motion.div
             className={cx({
               'mt-[48%]': true,
-              'ml-[4%]': align === 'right',
-              'mr-[4%]': align === 'left',
+              'sm:ml-[4%]': align === 'right',
+              'sm:mr-[4%]': align === 'left',
             })}
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
