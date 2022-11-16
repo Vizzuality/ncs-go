@@ -29,4 +29,15 @@ export const STORIES = [
     image: '/images/home/stories/dominican-republic.png',
     video: 'https://www.youtube.com/watch?v=3fLjjrugGU4',
   },
+
+  {
+    id: '3',
+    title: 'Panama: the return of an ancestral forest',
+    description:
+      'After being displaced due to the construction of a dam, the Panamean Indigenous tribe of Alto Bayano are rescuing their forests and culture with traditional knowledge and nature-based solutions such as reforestation, forest protection and agroforestry, as well as the selling of carbon credits.',
+    country: 'Panama',
+    pathway: 'forests',
+    image: '/images/home/stories/panama.jpg',
+    video: 'https://www.youtube.com/watch?v=JvqROaZLbvU&ab',
+  },
 ];
