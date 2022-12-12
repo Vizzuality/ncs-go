@@ -82,7 +82,7 @@ Here's a step by step guide on how to address vulnerabilities found in productio
 |-------------------------|-------------------------------------------------------------------------|------------------------------------:|
 | NEXT_PUBLIC_API_URL  | URL of the API. | http://localhost:3000   |
 | STORYBOOK_API_URL  | URL of the API for storybook. |  http://localhost:6006  |
-| SENDGRID_API_KEY_SUBSCRIPTION  | Full Access key to authenticate access to SendGrid e-mail platform services.  |    |
+| SENDGRID_API_KEY_SUBSCRIPTION  | Key to authenticate access to SendGrid e-mail platform services.  |    |
 
 
 
