@@ -81,10 +81,8 @@ Here's a step by step guide on how to address vulnerabilities found in productio
 | Variable name           | Description                                                             |  Default value                      |
 |-------------------------|-------------------------------------------------------------------------|------------------------------------:|
 | NEXT_PUBLIC_API_URL  | URL of the API. | http://localhost:3000   |
-| STORYBOOK_API_URL  | URL of the API for storybook. |    |
-| NEXT_PUBLIC_MAPBOX_API_TOKEN  | Mapbox token. |    |
-| STORYBOOK_MAPBOX_API_TOKEN  | Mapbox token for storybook. |    |
-| NEXT_PUBLIC_GA_TRACKING_ID  | Google Analytics tracking ID. If you're working with an Google Analytics 4 property, you have a Measurement ID instead of a Tracking ID. |    |
+| STORYBOOK_API_URL  | URL of the API for storybook. |  http://localhost:6006  |
+| SENDGRID_API_KEY_SUBSCRIPTION  | Full Access key to authenticate access to SendGrid e-mail platform services.  |    |
 
 
 
