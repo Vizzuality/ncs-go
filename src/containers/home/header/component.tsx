@@ -174,8 +174,8 @@ const Header: React.FC = () => {
                 theme="primary"
                 size="s"
                 onClick={() => {
-                  scrollTo('contact', true);
-                  plausible('navigate-to', { props: { section: 'contact' } });
+                  scrollTo('subscribe', true);
+                  plausible('navigate-to', { props: { section: 'subscribe' } });
                 }}
               >
                 Subscribe

@@ -20,7 +20,7 @@ const Home: React.FC = () => {
   const section = useHomeStore((state) => state.section);
 
   useEffect(() => {
-    if (asPath !== '/#contact') {
+    if (asPath !== '/#subscribe') {
       setTimeout(() => {
         document.documentElement.className = cx({
           'snap-y snap-mandatory': section === 'intro',

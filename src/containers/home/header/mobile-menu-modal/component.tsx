@@ -44,7 +44,7 @@ const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
               className="w-full rounded-full"
               onClick={() => {
                 close();
-                onScrollTo('contact', true);
+                onScrollTo('subscribe', true);
               }}
             >
               <p>Subscribe</p>
