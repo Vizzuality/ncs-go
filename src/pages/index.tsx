@@ -20,12 +20,14 @@ const Home: React.FC = () => {
   const section = useHomeStore((state) => state.section);
 
   useEffect(() => {
-    setTimeout(() => {
-      document.documentElement.className = cx({
-        'snap-y snap-mandatory': section === 'intro',
-      });
-    }, 100);
-  }, [section]);
+    if (asPath !== '/#contact') {
+      setTimeout(() => {
+        document.documentElement.className = cx({
+          'snap-y snap-mandatory': section === 'intro',
+        });
+      }, 100);
+    }
+  }, [asPath, section]);
 
   return (
     <div>
