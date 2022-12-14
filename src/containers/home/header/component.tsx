@@ -1,6 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 
 import { useHomeStore } from 'store/home';
 
@@ -23,6 +24,7 @@ import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
   const plausible = usePlausible();
+  const router = useRouter();
   const headerRef = useRef(null);
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
@@ -153,6 +155,9 @@ const Header: React.FC = () => {
                     className="relative flex justify-between m-0 cursor-pointer"
                     key={opt.label}
                     onClick={() => {
+                      router.push('', undefined, {
+                        scroll: false,
+                      });
                       scrollTo(opt.id, true);
                       plausible('navigate-to', { props: { section: opt.id } });
                     }}
@@ -174,8 +179,8 @@ const Header: React.FC = () => {
                 theme="primary"
                 size="s"
                 onClick={() => {
-                  scrollTo('contact', true);
-                  plausible('navigate-to', { props: { section: 'contact' } });
+                  scrollTo('subscribe', true);
+                  plausible('navigate-to', { props: { section: 'subscribe' } });
                 }}
               >
                 Subscribe

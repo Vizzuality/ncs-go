@@ -49,7 +49,7 @@ const Contact: React.FC = () => {
 
   useEffect(() => {
     if (inViewSection) {
-      setSection('contact');
+      setSection('subscribe');
     }
   }, [inViewSection, setSection]);
 
@@ -97,7 +97,7 @@ const Contact: React.FC = () => {
     <motion.section
       ref={sectionRef}
       className="w-full py-10 bg-gray-900 lg:py-20 xl:py-32"
-      id="contact"
+      id="subscribe"
     >
       <Wrapper>
         <div className="pb-10 border-b border-gray-800 md:pb-10 lg:grid lg:grid-cols-12">
