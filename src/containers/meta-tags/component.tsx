@@ -21,6 +21,7 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
 }: MetaTagsProps) => {
   return (
     <Head>
+      <meta name="google-site-verification" content="_NwCXH-BZqeRMPET3NZQ3PRG4_6GyLNosO0uOBnMyLs" />
       {title && <title>{title}</title>}
       {name && <meta property="og:site_name" content={name} key="name" />}
       {title && <meta property="og:title" content={title} key="title" />}
