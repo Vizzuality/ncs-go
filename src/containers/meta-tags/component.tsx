@@ -22,10 +22,10 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
   return (
     <Head>
       <meta name="google-site-verification" content="_NwCXH-BZqeRMPET3NZQ3PRG4_6GyLNosO0uOBnMyLs" />
+      {description && <meta name="description" content={description} />}
       {title && <title>{title}</title>}
       {name && <meta property="og:site_name" content={name} key="name" />}
       {title && <meta property="og:title" content={title} key="title" />}
-      {description && <meta property="og:description" content={description} key="description" />}
       {url && <meta property="og:url" content={url} key="url" />}
       {type && <meta property="og:type" content={type} key="type" />}
       {publisher && <meta property="article:publisher" content={publisher} key="publisher" />}
