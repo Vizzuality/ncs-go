@@ -7,7 +7,6 @@ import { MetaTagsProps } from './types';
 export const MetaTags: React.FC<MetaTagsProps> = ({
   name,
   title,
-  description,
   url,
   type,
   publisher,
@@ -21,8 +20,10 @@ export const MetaTags: React.FC<MetaTagsProps> = ({
 }: MetaTagsProps) => {
   return (
     <Head>
+      <meta name="robots" content="NOODP" />
       <meta name="google-site-verification" content="_NwCXH-BZqeRMPET3NZQ3PRG4_6GyLNosO0uOBnMyLs" />
-      {description && <meta name="description" content={description} />}
+      <meta name="description" content="Nature climate solutions in action." />
+      <meta name="robots" content="nosnippet" />
       {title && <title>{title}</title>}
       {name && <meta property="og:site_name" content={name} key="name" />}
       {title && <meta property="og:title" content={title} key="title" />}
