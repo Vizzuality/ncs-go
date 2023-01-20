@@ -34,6 +34,7 @@ const Home: React.FC = () => {
       <MetaTags
         name="Nature4Climate"
         title="Naturebase"
+        description="Nature climate solutions in action."
         url={`${process.env.NEXT_PUBLIC_VERCEL_URL || process.env.NEXT_PUBLIC_URL}${asPath}`}
         type="article"
         twitterCard="summary"

@@ -1,6 +1,7 @@
 export interface MetaTagsProps {
   name: string;
   title: string;
+  description: string;
   url?: string;
   type: string;
   publisher?: string;
