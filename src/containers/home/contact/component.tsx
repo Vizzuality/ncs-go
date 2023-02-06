@@ -123,9 +123,12 @@ const Contact: React.FC = () => {
                 animate={{ opacity }}
                 transition={{ delay: 0.3 }}
               >
-                Subscribe to keep up to date on our progress and be among the first to access our
-                platform. Naturebase is set to launch ahead of the UNFCCC Climate Change Conference
-                COP28 and Global Stocktake in 2023.
+                Naturebase is set to launch ahead of the UNFCCC Climate Change Conference COP28 and
+                Global Stocktake in 2023.
+                <br />
+                <br />
+                We need your help. Sign up to join the naturebase community & test our beta version
+                of the tool.
               </motion.p>
             </motion.div>
 
