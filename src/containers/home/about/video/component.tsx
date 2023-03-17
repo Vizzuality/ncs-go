@@ -32,7 +32,7 @@ const AboutVideo = () => {
             config={videoConfig}
             playing
             loop
-            url="https://youtu.be/myPC6FfFgV8"
+            url="https://youtu.be/shGJFJ1lgGY"
             height="100%"
             width="100%"
           />
@@ -47,7 +47,7 @@ const AboutVideo = () => {
                 config={videoConfig}
                 playing
                 loop
-                url="https://youtu.be/myPC6FfFgV8"
+                url="https://youtu.be/shGJFJ1lgGY"
                 height="100%"
                 width="100%"
               />
