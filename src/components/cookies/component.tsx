@@ -1,5 +1,3 @@
-import Link from 'next/link';
-
 import { AnimatePresence, motion } from 'framer-motion';
 
 import Button from 'components/button';
@@ -34,18 +32,18 @@ export const Cookies: React.FC<CookiesProps> = ({ open, onAccept, onReject }: Co
           >
             <div className="flex flex-col space-y-5 lg:flex-row lg:justify-between lg:items-center lg:space-x-5 lg:space-y-0">
               <p className="text-base">
-                This website uses cookies to ensure you get the best experience on our website. Read
-                our{' '}
+                This website uses cookies to ensure you get the best experience on our website.
+                {/* Read our{' '}
                 <Link href="/privacy-policy">
                   <a className="font-semibold text-black underline">cookie policy</a>
                 </Link>{' '}
-                to know more.
+                to know more. */}
               </p>
               <div className="flex justify-end gap-3">
-                <Button theme="secondary" size="base" onClick={onReject}>
+                <Button theme="tertiary" size="xs" onClick={onReject}>
                   Deny
                 </Button>
-                <Button theme="primary" size="base" onClick={onAccept}>
+                <Button theme="primary" size="xs" onClick={onAccept}>
                   Accept
                 </Button>
               </div>
