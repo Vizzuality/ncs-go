@@ -1,10 +1,10 @@
 const withPlugins = require('next-compose-plugins');
 const withOptimizedImages = require('next-optimized-images');
 const withTM = require('next-transpile-modules')(['three']);
+
 /**
  * @type {import('next').NextConfig}
  */
-
 const nextConfig = {
   // ? https://github.com/vercel/next.js/issues/7755#issuecomment-812805708
   webpack: (config, { isServer }) => {
