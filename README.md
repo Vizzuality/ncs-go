@@ -49,6 +49,11 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
+## Deploy to production
+
+Deployment to production (an AWS EC2 instance) is done automatically using [Capistrano](https://capistranorb.com/) and
+[Capistrano actions](https://github.com/miloserdow/capistrano-deploy) through a GitHub action.
+
 ## Contribution rules
 
 Please, **create a PR** for any improvement or feature you want to add. Try to not commit directly anything on the `main` branch.
