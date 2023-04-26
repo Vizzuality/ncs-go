@@ -5,7 +5,7 @@ import { MapProvider } from 'react-map-gl';
 import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 
-import { QueryClient, QueryClientProvider, Hydrate } from '@tanstack/react-query';
+import { QueryClient, QueryClientProvider, Hydrate, DehydratedState } from '@tanstack/react-query';
 import PlausibleProvider from 'next-plausible';
 
 import { ToastProvider } from 'hooks/toast';
@@ -16,7 +16,10 @@ import { GAPage } from 'lib/analytics/ga';
 
 import 'styles/globals.css';
 
-const MyApp: React.FC<AppProps> = ({ Component, pageProps }: AppProps) => {
+const MyApp: React.FC<AppProps<{ dehydratedState: DehydratedState }>> = ({
+  Component,
+  pageProps,
+}: AppProps<{ dehydratedState: DehydratedState }>) => {
   const router = useRouter();
 
   // Never ever instantiate the client outside a component, hook or callback as it can leak data
