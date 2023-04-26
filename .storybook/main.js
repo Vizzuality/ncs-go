@@ -23,7 +23,12 @@ module.exports = {
         },
       },
     },
-    'storybook-addon-swc',
+    {
+      name: 'storybook-addon-swc',
+      options: {
+        enable: false
+      },
+    },
   ],
   core: {
     builder: 'webpack5',

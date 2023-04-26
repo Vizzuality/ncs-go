@@ -5,7 +5,6 @@ This is a project template which could be used to the creation of new projects. 
 - Based on [Next.js](https://nextjs.org/)
 - [Tailwind](https://tailwindcss.com/) as CSS Framework
 - Reusable components such as forms, modals, icons, and other most use components
-- Authentication based on [Next-Auth](https://next-auth.js.org/) already implemented
 - [Redux](https://redux.js.org/) and [Redux-Toolkit](https://redux-toolkit.js.org/)
 - [Typescript](https://www.typescriptlang.org/) already configured
 - [Cypress](https://www.cypress.io/) as testing client
@@ -49,6 +48,11 @@ First, we recommend to read the guideline about [how to use Vercel](https://vizz
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out the [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
+## Deploy to production
+
+Deployment to production (an AWS EC2 instance) is done automatically using [Capistrano](https://capistranorb.com/) and
+[Capistrano actions](https://github.com/miloserdow/capistrano-deploy) through a GitHub action.
 
 ## Contribution rules
 
