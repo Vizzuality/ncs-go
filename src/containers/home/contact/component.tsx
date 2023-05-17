@@ -5,7 +5,6 @@ import { Form, Field } from 'react-final-form';
 import { useHomeStore } from 'store/home';
 
 import { motion, useInView } from 'framer-motion';
-import { usePlausible } from 'next-plausible';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
@@ -17,12 +16,11 @@ import Select from 'components/forms/select';
 import { composeValidators } from 'components/forms/validations';
 import Loading from 'components/loading';
 import { IN_VIEW_PROPS } from 'constants/motion';
+import { GAEvent } from 'lib/analytics/ga';
 
 import { INTERESTS } from './constants';
 
 const Contact: React.FC = () => {
-  const plausible = usePlausible();
-
   const ref = useRef();
   const sectionRef = useRef();
   const formRef = useRef(null);
@@ -53,6 +51,15 @@ const Contact: React.FC = () => {
     }
   }, [inViewSection, setSection]);
 
+  const sendAnalyticsEvent = () => {
+    GAEvent({
+      action: 'select_content',
+      params: {
+        content_type: 'subscribe',
+      },
+    });
+  };
+
   const onSubmit = useCallback(
     (data, form) => {
       const { name, email, interests } = data;
@@ -62,7 +69,7 @@ const Contact: React.FC = () => {
         { data: parsedData },
         {
           onSuccess: () => {
-            plausible('subscribe');
+            sendAnalyticsEvent();
             setSubmitting(false);
             addToast(
               'success-contact',
@@ -90,7 +97,7 @@ const Contact: React.FC = () => {
         }
       );
     },
-    [saveSubscribeMutation, addToast, plausible]
+    [saveSubscribeMutation, addToast]
   );
 
   return (
