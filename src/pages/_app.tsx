@@ -6,7 +6,6 @@ import type { AppProps } from 'next/app';
 import { useRouter } from 'next/router';
 
 import { QueryClient, QueryClientProvider, Hydrate, DehydratedState } from '@tanstack/react-query';
-import PlausibleProvider from 'next-plausible';
 
 import { ToastProvider } from 'hooks/toast';
 
@@ -39,19 +38,17 @@ const MyApp: React.FC<AppProps<{ dehydratedState: DehydratedState }>> = ({
   }, [router.events, handleRouteChangeCompleted]);
 
   return (
-    <PlausibleProvider domain="naturebase.org">
-      <QueryClientProvider client={queryClient}>
-        <Hydrate state={pageProps.dehydratedState}>
-          {/* @ts-ignore: https://github.com/artsy/fresnel/issues/281 */}
-          <ToastProvider placement="bottom-right" defaultAutoDismiss defaultAutoDismissTime={5000}>
-            <MapProvider>
-              <ThirdParty />
-              <Component {...pageProps} />
-            </MapProvider>
-          </ToastProvider>
-        </Hydrate>
-      </QueryClientProvider>
-    </PlausibleProvider>
+    <QueryClientProvider client={queryClient}>
+      <Hydrate state={pageProps.dehydratedState}>
+        {/* @ts-ignore: https://github.com/artsy/fresnel/issues/281 */}
+        <ToastProvider placement="bottom-right" defaultAutoDismiss defaultAutoDismissTime={5000}>
+          <MapProvider>
+            <ThirdParty />
+            <Component {...pageProps} />
+          </MapProvider>
+        </ToastProvider>
+      </Hydrate>
+    </QueryClientProvider>
   );
 };
 
