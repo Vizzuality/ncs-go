@@ -13508,7 +13508,6 @@ __metadata:
     next: 12.3.4
     next-compose-plugins: 2.2.1
     next-optimized-images: 2.6.2
-    next-plausible: 3.6.4
     next-transpile-modules: 9.0.0
     postcss: 8.4.13
     prettier: 2.3.0
@@ -13576,17 +13575,6 @@ __metadata:
     raw-loader: ^2.0.0
     url-loader: ^1.1.2
   checksum: e9356f8ca0b63152cfa4c02e938ce0beebc28bdfde7cdc9b9a310740c9e1493bdb85184d4b446f5156280a84930ccdbf5fa4469c3e4c9b4b519080aaec9903f1
-  languageName: node
-  linkType: hard
-
-"next-plausible@npm:3.6.4":
-  version: 3.6.4
-  resolution: "next-plausible@npm:3.6.4"
-  peerDependencies:
-    next: ^11.1.0 || ^12.0.0 || ^13.0.0
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0
-    react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
-  checksum: d0716df0be9ad5ab713fe4981760414aef61ff98d228f690c657d75e4b722350f385d115fbea0d7ff58855f1286a30df5eaaa20f56237e4910e2cb003c8b540e
   languageName: node
   linkType: hard
 

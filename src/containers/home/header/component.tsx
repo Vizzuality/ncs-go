@@ -6,7 +6,6 @@ import { useRouter } from 'next/router';
 import { useHomeStore } from 'store/home';
 
 import { motion } from 'framer-motion';
-import { usePlausible } from 'next-plausible';
 import useBreakpoint from 'use-breakpoint';
 
 import { useModal } from 'hooks/modals';
@@ -23,7 +22,6 @@ import { BREAKPOINTS } from 'styles/styles.config';
 import { NAV_OPTIONS } from './constants';
 
 const Header: React.FC = () => {
-  const plausible = usePlausible();
   const router = useRouter();
   const headerRef = useRef(null);
 
@@ -92,7 +90,6 @@ const Header: React.FC = () => {
                 className="w-[180px] h-[40px] shrink-0"
                 onClick={() => {
                   scrollTo('intro', false);
-                  plausible('navigate-to', { props: { section: 'intro' } });
                   closeMobile();
                 }}
               >
@@ -111,10 +108,8 @@ const Header: React.FC = () => {
                   onClick={() => {
                     if (isOpenMobile) {
                       closeMobile();
-                      plausible('mobile-menu', { props: { action: 'close' } });
                     } else {
                       openMobile();
-                      plausible('mobile-menu', { props: { action: 'open' } });
                     }
                   }}
                   transition={{ ease: 'easeOut', duration: 0.2 }}
@@ -137,7 +132,6 @@ const Header: React.FC = () => {
                 className="w-[180px] h-[40px] shrink-0"
                 onClick={() => {
                   scrollTo('intro', false);
-                  plausible('navigate-to', { props: { section: 'intro' } });
                 }}
               >
                 <Image
@@ -159,7 +153,6 @@ const Header: React.FC = () => {
                         scroll: false,
                       });
                       scrollTo(opt.id, true);
-                      plausible('navigate-to', { props: { section: opt.id } });
                     }}
                   >
                     <p className="hover:text-brand-700 py-7">{opt.label}</p>
@@ -180,7 +173,6 @@ const Header: React.FC = () => {
                 size="s"
                 onClick={() => {
                   scrollTo('subscribe', true);
-                  plausible('navigate-to', { props: { section: 'subscribe' } });
                 }}
               >
                 Subscribe

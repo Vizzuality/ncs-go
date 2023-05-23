@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 
-import { usePlausible } from 'next-plausible';
 import { useElementSize } from 'usehooks-ts';
 
 import { PATHWAYS } from 'containers/home/featured-science/pathways/constants';
@@ -11,8 +10,6 @@ import DesktopPathway from './desktop/path';
 import MobilePathway from './mobile/path';
 
 const Pathways = () => {
-  const plausible = usePlausible();
-
   const [selected, setSelected] = useState<string>();
   const [ref, { width, height }] = useElementSize();
 
@@ -29,12 +26,7 @@ const Pathways = () => {
               selected={selected}
               selectedIndex={PATHWAYS.findIndex((p) => p.id === selected)}
               length={PATHWAYS.length}
-              onClick={() => {
-                if (selected !== pathway.id) {
-                  plausible('pathways', { props: { pathway: pathway.id } });
-                }
-                setSelected(selected === pathway.id ? null : pathway.id);
-              }}
+              onClick={() => setSelected(selected === pathway.id ? null : pathway.id)}
             />
           ))}
 
@@ -51,13 +43,7 @@ const Pathways = () => {
               // index={index}
               selected={selected}
               // length={PATHWAYS.length}
-              onClick={() => {
-                if (selected !== pathway.id) {
-                  plausible('pathways', { props: { pathway: pathway.id } });
-                }
-
-                setSelected(selected === pathway.id ? null : pathway.id);
-              }}
+              onClick={() => setSelected(selected === pathway.id ? null : pathway.id)}
             />
           ))}
         </div>
