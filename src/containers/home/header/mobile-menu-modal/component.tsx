@@ -2,8 +2,6 @@ import React from 'react';
 
 import { useRouter } from 'next/router';
 
-import { usePlausible } from 'next-plausible';
-
 import { NAV_OPTIONS } from 'containers/home/header/constants';
 import FullScreenModal from 'containers/home/header/full-screen-modal';
 import Wrapper from 'containers/wrapper';
@@ -12,7 +10,6 @@ import Button from 'components/button';
 
 const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
   const router = useRouter();
-  const plausible = usePlausible();
 
   return (
     <FullScreenModal
@@ -35,7 +32,6 @@ const MobileMenuModal = ({ isOpen, close, onScrollTo }) => {
                     scroll: false,
                   });
                   onScrollTo(o.id, true);
-                  plausible('navigate-to', { props: { section: o.id } });
                 }}
               >
                 {o.label}
