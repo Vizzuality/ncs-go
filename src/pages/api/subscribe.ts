@@ -5,7 +5,6 @@ sendgridClient.setApiKey(process.env.SENDGRID_API_KEY_SUBSCRIPTION);
 
 const Contact = (req: NextApiRequest, res: NextApiResponse): void => {
   if (req.method === 'PUT') {
-    console.log('REQUEST BODY', req);
     const { email, name, organization, role, interview } = req.body;
 
     const data = {
