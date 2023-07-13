@@ -18,7 +18,7 @@ import Loading from 'components/loading';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { GAEvent } from 'lib/analytics/ga';
 
-import { INTERESTS } from './constants';
+import { INTERVIEW_INTERESTED, ORGANIZATIONS, ROLES } from './constants';
 
 const Contact: React.FC = () => {
   const ref = useRef();
@@ -191,7 +191,7 @@ const Contact: React.FC = () => {
                         )}
                       </Field>
 
-                      <Field name="interests" component="input">
+                      <Field name="organization" component="input">
                         {({ input }) => (
                           <motion.div
                             className="relative w-full space-y-2"
@@ -199,16 +199,78 @@ const Contact: React.FC = () => {
                             transition={{ delay: 0.4 }}
                           >
                             <label className="pl-4 text-lg font-semibold text-gray-100">
-                              I am interested in
+                              What type of organization do you represent?
                             </label>
                             <div className="relative">
                               <Select
                                 {...input}
-                                id="interests"
+                                id="organization"
                                 selected={input.value as string[]}
                                 maxHeight={300}
-                                multiple
-                                options={INTERESTS}
+                                options={ORGANIZATIONS}
+                                prefix=""
+                                size="base"
+                                status="none"
+                                theme="dark"
+                                placeholder="Select..."
+                                clearSelectionActive={false}
+                                onChange={input.onChange}
+                              />
+                            </div>
+                          </motion.div>
+                        )}
+                      </Field>
+
+                      <Field name="role" component="input">
+                        {({ input }) => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <label className="pl-4 text-lg font-semibold text-gray-100">
+                              In my role I am responsible for:
+                            </label>
+                            <div className="relative">
+                              <Select
+                                {...input}
+                                id="role"
+                                selected={input.value as string[]}
+                                maxHeight={300}
+                                options={ROLES}
+                                prefix=""
+                                size="base"
+                                status="none"
+                                theme="dark"
+                                placeholder="Select..."
+                                clearSelectionActive={false}
+                                onChange={input.onChange}
+                              />
+                            </div>
+                          </motion.div>
+                        )}
+                      </Field>
+
+                      <Field name="interview" component="input">
+                        {({ input }) => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <div className="pl-4">
+                              <label className="text-lg font-semibold text-gray-100">
+                                Would you be interested in participating in a 1-hour interview about
+                                NCS & Naturebase with our research team?
+                              </label>
+                            </div>
+                            <div className="relative">
+                              <Select
+                                {...input}
+                                id="interview"
+                                selected={input.value as string[]}
+                                maxHeight={300}
+                                options={INTERVIEW_INTERESTED}
                                 prefix=""
                                 size="base"
                                 status="none"
