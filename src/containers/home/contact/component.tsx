@@ -41,7 +41,11 @@ const Contact: React.FC = () => {
     return {
       name: '',
       email: '',
-      interests: [],
+      organization: '',
+      organizationOther: '',
+      role: '',
+      roleOther: '',
+      interview: '',
     };
   }, []);
 
@@ -62,8 +66,15 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
-      const { name, email, interests } = data;
-      const parsedData = { name, email, interests: interests ? interests.toString() : null };
+      const { name, email, organization, organizationOther, role, roleOther, interview } = data;
+      const parsedData = {
+        name,
+        email,
+        organization: organization === 'Other' ? organizationOther : organization,
+        role: role === 'Other' ? roleOther : role,
+        interview,
+      };
+
       setSubmitting(true);
       saveSubscribeMutation.mutate(
         { data: parsedData },
@@ -221,6 +232,30 @@ const Contact: React.FC = () => {
                         )}
                       </Field>
 
+                      {form.getState().values.organization === 'Other' && (
+                        <Field
+                          name="organizationOther"
+                          component="input"
+                          // validate={composeValidators([{ presence: false }])}
+                        >
+                          {({ input }) => (
+                            <motion.div
+                              className="relative w-full space-y-2"
+                              animate={{ opacity }}
+                              transition={{ delay: 0.4 }}
+                            >
+                              <input
+                                {...input}
+                                placeholder="Please specify"
+                                value={input.value as string}
+                                type="text"
+                                className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
+                              />
+                            </motion.div>
+                          )}
+                        </Field>
+                      )}
+
                       <Field name="role" component="input">
                         {({ input }) => (
                           <motion.div
@@ -250,6 +285,30 @@ const Contact: React.FC = () => {
                           </motion.div>
                         )}
                       </Field>
+
+                      {form.getState().values.role === 'Other' && (
+                        <Field
+                          name="roleOther"
+                          component="input"
+                          // validate={composeValidators([{ presence: false }])}
+                        >
+                          {({ input }) => (
+                            <motion.div
+                              className="relative w-full space-y-2"
+                              animate={{ opacity }}
+                              transition={{ delay: 0.4 }}
+                            >
+                              <input
+                                {...input}
+                                placeholder="Please specify"
+                                value={input.value as string}
+                                type="text"
+                                className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
+                              />
+                            </motion.div>
+                          )}
+                        </Field>
+                      )}
 
                       <Field name="interview" component="input">
                         {({ input }) => (

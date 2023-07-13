@@ -16,8 +16,8 @@ export const ORGANIZATIONS = [
     value: 'Government Agency',
   },
   {
-    label: 'Other (allow them to type in)',
-    value: 'Other (allow them to type in)',
+    label: 'Other',
+    value: 'Other',
   },
 ];
 
@@ -43,8 +43,8 @@ export const ROLES = [
     value: 'Developing/implementing communications plans related to NCS',
   },
   {
-    label: 'Other (allow them to type in)',
-    value: 'Other (allow them to type in)',
+    label: 'Other',
+    value: 'Other',
   },
 ];
 
