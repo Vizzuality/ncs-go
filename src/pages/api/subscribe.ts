@@ -13,7 +13,7 @@ const Contact = (req: NextApiRequest, res: NextApiResponse): void => {
         {
           email,
           unique_name: name,
-          custom_fields: { e6_T: organization, e7_T: role, e8_T: interview },
+          custom_fields: { e6_T: interview, e7_T: role, e8_T: organization },
         },
       ],
     };
