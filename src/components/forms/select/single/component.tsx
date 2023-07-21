@@ -1,6 +1,6 @@
 import { useEffect, useRef, useMemo, FC } from 'react';
 
-import { createPortal } from 'react-dom';
+// import { createPortal } from 'react-dom';
 import { usePopper } from 'react-popper';
 
 import cx from 'classnames';
@@ -174,75 +174,76 @@ export const SingleSelect: FC<SelectProps> = ({
         />
       </div>
       {/* Menu */}
-      {createPortal(
-        <div
-          className={cx({
-            'z-50': true,
-            // The content of `<Menu />` must always be in the DOM so that Downshift can get the ref
-            // to the `<ul />` element through `getMenuProps`
-            invisible: !isOpen,
-          })}
-          ref={menuRef}
-          style={styles.popper}
-          {...attributes.popper}
+      {/* {createPortal( */}
+      <div
+        className={cx({
+          'z-50': true,
+          // The content of `<Menu />` must always be in the DOM so that Downshift can get the ref
+          // to the `<ul />` element through `getMenuProps`
+          invisible: !isOpen,
+        })}
+        ref={menuRef}
+        style={styles.popper}
+        {...attributes.popper}
+      >
+        <Menu
+          theme={theme}
+          size={size}
+          status={status}
+          disabled={disabled}
+          opened={isOpen}
+          attributes={attributes}
         >
-          <Menu
+          <Toggle
+            options={options}
             theme={theme}
             size={size}
             status={status}
+            prefix={prefix}
             disabled={disabled}
             opened={isOpen}
-            attributes={attributes}
-          >
-            <Toggle
-              options={options}
-              theme={theme}
-              size={size}
-              status={status}
-              prefix={prefix}
-              disabled={disabled}
-              opened={isOpen}
-              selectedItems={selectedItems}
-              placeholder={placeholder}
-              getToggleButtonProps={getToggleButtonProps}
-            />
+            selectedItems={selectedItems}
+            placeholder={placeholder}
+            getToggleButtonProps={getToggleButtonProps}
+          />
 
-            <ul
-              {...getMenuProps({ onFocus, onBlur })}
-              className={cx({
-                'py-1 overflow-y-auto overflow-x-hidden': true,
-              })}
-              style={{
-                maxHeight,
-              }}
-            >
-              {getOptions.map((option, index) => (
-                <li
+          <ul
+            {...getMenuProps({ onFocus, onBlur })}
+            className={cx({
+              'py-1 overflow-y-auto overflow-x-hidden': true,
+            })}
+            style={{
+              maxHeight,
+            }}
+          >
+            {getOptions.map((option, index) => (
+              <li
+                className={cx({
+                  'px-4 py-1 mt-0.5 cursor-pointer': true,
+                  [THEME[theme].item.base]: highlightedIndex !== index,
+                  [THEME[theme].item.disabled]: option.disabled,
+                  [THEME[theme].item.highlighted]:
+                    (highlightedIndex === index && !option.disabled) ||
+                    isSelected(option, selectedItems),
+                })}
+                key={`${option.value}`}
+                {...getItemProps({ item: option, index, disabled: option.disabled })}
+              >
+                <span
                   className={cx({
-                    'px-4 py-1 mt-0.5 cursor-pointer': true,
-                    [THEME[theme].item.base]: highlightedIndex !== index,
-                    [THEME[theme].item.disabled]: option.disabled,
-                    [THEME[theme].item.highlighted]:
-                      (highlightedIndex === index && !option.disabled) ||
-                      isSelected(option, selectedItems),
+                    'ml-6': !!option.checkbox,
                   })}
-                  key={`${option.value}`}
-                  {...getItemProps({ item: option, index, disabled: option.disabled })}
                 >
-                  <span
-                    className={cx({
-                      'ml-6': !!option.checkbox,
-                    })}
-                  >
-                    {option.label}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </Menu>
-        </div>,
-        document.body
-      )}
+                  {option.label}
+                </span>
+              </li>
+            ))}
+          </ul>
+        </Menu>
+      </div>
+      {/* ,
+         document.body
+       )} */}
     </div>
   );
 };

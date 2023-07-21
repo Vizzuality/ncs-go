@@ -5,7 +5,7 @@ const THEME = {
     open: 'ring-2 ring-brand-700 bg-gray-900 text-gray-400 rounded-lg pt-0',
     closed: 'border-gray-800 text-gray-400',
     prefix: {
-      base: 'text-base md:text-lg text-gray-400',
+      base: 'text-base md:text-lg text-gray-400 text-left',
     },
     icon: {
       closed: 'text-gray-400',
@@ -23,7 +23,7 @@ const THEME = {
     open: 'ring-2 ring-blue-400 bg-white text-gray-600 rounded-2xl',
     closed: 'text-gray-400',
     prefix: {
-      base: 'text-base md:text-lg text-gray-800',
+      base: 'text-base md:text-lg text-gray-800 text-left',
     },
     icon: {
       closed: 'text-gray-600',

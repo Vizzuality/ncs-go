@@ -18,7 +18,7 @@ import Loading from 'components/loading';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { GAEvent } from 'lib/analytics/ga';
 
-import { INTERESTS } from './constants';
+import { INTERVIEW_INTERESTED, ORGANIZATIONS, ROLES } from './constants';
 
 const Contact: React.FC = () => {
   const ref = useRef();
@@ -41,7 +41,11 @@ const Contact: React.FC = () => {
     return {
       name: '',
       email: '',
-      interests: [],
+      organization: '',
+      organizationOther: '',
+      role: '',
+      roleOther: '',
+      interview: '',
     };
   }, []);
 
@@ -62,8 +66,15 @@ const Contact: React.FC = () => {
 
   const onSubmit = useCallback(
     (data, form) => {
-      const { name, email, interests } = data;
-      const parsedData = { name, email, interests: interests ? interests.toString() : null };
+      const { name, email, organization, organizationOther, role, roleOther, interview } = data;
+      const parsedData = {
+        name,
+        email,
+        organization: organization === 'Other' ? organizationOther : organization,
+        role: role === 'Other' ? roleOther : role,
+        interview,
+      };
+
       setSubmitting(true);
       saveSubscribeMutation.mutate(
         { data: parsedData },
@@ -191,7 +202,7 @@ const Contact: React.FC = () => {
                         )}
                       </Field>
 
-                      <Field name="interests" component="input">
+                      <Field name="organization" component="input">
                         {({ input }) => (
                           <motion.div
                             className="relative w-full space-y-2"
@@ -199,16 +210,126 @@ const Contact: React.FC = () => {
                             transition={{ delay: 0.4 }}
                           >
                             <label className="pl-4 text-lg font-semibold text-gray-100">
-                              I am interested in
+                              What type of organization do you represent?
                             </label>
                             <div className="relative">
                               <Select
                                 {...input}
-                                id="interests"
+                                id="organization"
                                 selected={input.value as string[]}
                                 maxHeight={300}
-                                multiple
-                                options={INTERESTS}
+                                options={ORGANIZATIONS}
+                                prefix=""
+                                size="base"
+                                status="none"
+                                theme="dark"
+                                placeholder="Select..."
+                                clearSelectionActive={false}
+                                onChange={input.onChange}
+                              />
+                            </div>
+                          </motion.div>
+                        )}
+                      </Field>
+
+                      {form.getState().values.organization === 'Other' && (
+                        <Field
+                          name="organizationOther"
+                          component="input"
+                          // validate={composeValidators([{ presence: false }])}
+                        >
+                          {({ input }) => (
+                            <motion.div
+                              className="relative w-full space-y-2"
+                              animate={{ opacity }}
+                              transition={{ delay: 0.4 }}
+                            >
+                              <input
+                                {...input}
+                                placeholder="Please specify"
+                                value={input.value as string}
+                                type="text"
+                                className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
+                              />
+                            </motion.div>
+                          )}
+                        </Field>
+                      )}
+
+                      <Field name="role" component="input">
+                        {({ input }) => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <label className="pl-4 text-lg font-semibold text-gray-100">
+                              In my role I am responsible for:
+                            </label>
+                            <div className="relative">
+                              <Select
+                                {...input}
+                                id="role"
+                                selected={input.value as string[]}
+                                maxHeight={300}
+                                options={ROLES}
+                                prefix=""
+                                size="base"
+                                status="none"
+                                theme="dark"
+                                placeholder="Select..."
+                                clearSelectionActive={false}
+                                onChange={input.onChange}
+                              />
+                            </div>
+                          </motion.div>
+                        )}
+                      </Field>
+
+                      {form.getState().values.role === 'Other' && (
+                        <Field
+                          name="roleOther"
+                          component="input"
+                          // validate={composeValidators([{ presence: false }])}
+                        >
+                          {({ input }) => (
+                            <motion.div
+                              className="relative w-full space-y-2"
+                              animate={{ opacity }}
+                              transition={{ delay: 0.4 }}
+                            >
+                              <input
+                                {...input}
+                                placeholder="Please specify"
+                                value={input.value as string}
+                                type="text"
+                                className="flex w-full h-16 p-4 text-base text-gray-400 transition duration-300 ease-in-out delay-150 bg-gray-900 border border-gray-800 rounded-lg focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 md:text-lg md:py-5"
+                              />
+                            </motion.div>
+                          )}
+                        </Field>
+                      )}
+
+                      <Field name="interview" component="input">
+                        {({ input }) => (
+                          <motion.div
+                            className="relative w-full space-y-2"
+                            animate={{ opacity }}
+                            transition={{ delay: 0.4 }}
+                          >
+                            <div className="pl-4">
+                              <label className="text-lg font-semibold text-gray-100">
+                                Would you be interested in participating in a 1-hour interview about
+                                NCS & Naturebase with our research team?
+                              </label>
+                            </div>
+                            <div className="relative">
+                              <Select
+                                {...input}
+                                id="interview"
+                                selected={input.value as string[]}
+                                maxHeight={300}
+                                options={INTERVIEW_INTERESTED}
                                 prefix=""
                                 size="base"
                                 status="none"
