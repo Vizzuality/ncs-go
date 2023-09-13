@@ -308,7 +308,7 @@ export const STEPS = [
       <div className="relative px-4 -translate-y-20">
         <div className="w-48 h-48 mx-auto" />
         <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
-          <p className="uppercase tracking-[0.32em]">Coming soon</p>
+          <p className="uppercase tracking-[0.32em]">November 2023</p>
         </div>
       </div>
     ),
