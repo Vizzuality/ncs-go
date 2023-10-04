@@ -39,7 +39,6 @@ const List = () => {
         if (filters.categories.length > 0) {
           if (!filters.categories.includes(story.category)) return false;
         }
-
         if (filters.media.length > 0) {
           if (!filters.media.some((m: MediaType) => story.media.includes(m))) return false;
         }
@@ -116,7 +115,7 @@ const List = () => {
 
             <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
               <Button
-                className="rounded-full"
+                className="rounded-full border-gray-800 text-gray-800"
                 theme="secondary"
                 size="xs"
                 onClick={() => console.info('Show more stories')}
