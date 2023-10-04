@@ -5,8 +5,8 @@ import { useHomeStore } from 'store/home';
 import { motion, useInView } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
-import List from 'containers/home/stories/list';
-import Samples from 'containers/home/stories/samples';
+import List from 'containers/stories-page/list';
+import Samples from 'containers/stories-page/samples';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
