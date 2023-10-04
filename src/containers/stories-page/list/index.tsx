@@ -3,7 +3,6 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
-import Hero from 'containers/home/common/hero';
 import StoryCard from 'containers/home/stories/list/story-card';
 import SampleComposition from 'containers/home/stories/samples/sample-composition';
 import Card from 'containers/home/stories/samples/sample-composition/sample-card';
@@ -12,6 +11,7 @@ import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import MultiSelect from 'components/ui/multiselect';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
@@ -20,16 +20,63 @@ import { STORIES } from './constants';
 const List = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
 
+  const STORY_TYPE_OPTIONS = [
+    { value: 'Factsheets', label: 'Factsheets' },
+    { value: 'News', label: 'News' },
+    { value: 'Stories from the ground', label: 'Stories from the ground' },
+  ];
+
+  const MEDIA_TYPE_OPTIONS = [
+    { value: 'Article', label: 'Article' },
+    { value: 'Clip', label: 'Clip' },
+    { value: 'Video', label: 'Video' },
+  ];
+
+  const COUNTRY_OPTIONS = [
+    { value: 'Dominican Republic', label: 'Dominican Republic' },
+    { value: 'Ghana', label: 'Ghana' },
+    { value: 'Panama', label: 'Panama' },
+    { value: 'Tanzania', label: 'Tanzania' },
+  ];
+
   return (
     <>
       <Media greaterThanOrEqual="md">
-        <div className="bg-gray-900 md:py-28">
+        <div className="bg-beige md:py-28">
           <Wrapper>
-            <div className="py-10 md:pb-28">
-              <Hero className="text-beige" subtitle="Want more examples?" />
-            </div>
-
             <div className="xl:grid xl:grid-cols-12">
+              <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 mb-12">
+                <p className="text-gray-800 text-base">Filter by:</p>
+                <div className="flex space-x-3">
+                  <div className="xl:w-1/3">
+                    <MultiSelect
+                      id="story_type"
+                      placeholder="Story type"
+                      options={STORY_TYPE_OPTIONS}
+                      // values={filters.type}
+                      // onSelect={(v) => setFilters({ ...filters, pathways: v })}
+                    />
+                  </div>
+                  <div className="xl:w-1/3">
+                    <MultiSelect
+                      id="media_type"
+                      placeholder="Media type"
+                      options={MEDIA_TYPE_OPTIONS}
+                      // values={filters.type}
+                      // onSelect={(v) => setFilters({ ...filters, pathways: v })}
+                    />
+                  </div>
+                  <div className="xl:w-1/3">
+                    <MultiSelect
+                      id="country"
+                      placeholder="Country"
+                      options={COUNTRY_OPTIONS}
+                      // values={filters.type}
+                      // onSelect={(v) => setFilters({ ...filters, pathways: v })}
+                    />
+                  </div>
+                </div>
+              </div>
               <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2">
                 {STORIES.map((s) => (
                   <div key={s.id}>

@@ -2,12 +2,10 @@ import React, { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 
 import { Listbox, Transition } from '@headlessui/react';
 import { HiCheck } from 'react-icons/hi';
+import { HiChevronDown } from 'react-icons/hi2';
 
-import Icon from 'components/icon';
 import Loading from 'components/loading';
 import { cn } from 'utils/cn';
-
-import ARROW_FILLED_DOWN_SVG from 'svgs/ui/arrow-filled-down.svg?sprite';
 
 export interface MultiSelectProps {
   id: string | number;
@@ -91,7 +89,7 @@ export const MultiSelect = (props: MultiSelectProps): JSX.Element => {
   }, [onSelect]);
 
   return (
-    <div className="w-full max-w-[185px] text-sm text-text">
+    <div className="w-full text-sm text-text">
       <Listbox
         as="div"
         className="space-y-1"
@@ -106,10 +104,9 @@ export const MultiSelect = (props: MultiSelectProps): JSX.Element => {
               <span className="inline-block w-full">
                 <Listbox.Button
                   className={cn({
-                    'relative w-full cursor-pointer rounded-lg border border-accents py-2.5 pl-4 text-left text-base leading-5 transition duration-150 ease-in-out':
+                    'relative w-full cursor-pointer rounded-lg bg-cream-400 py-5 pl-4 text-left text-base leading-5 transition duration-150 ease-in-out':
                       true,
                     'border-grey-0/40 text-grey-0/40 border': disabled,
-                    'bg-transparent': !!open,
                   })}
                 >
                   <span className="block truncate">{SELECTED}</span>
@@ -120,9 +117,9 @@ export const MultiSelect = (props: MultiSelectProps): JSX.Element => {
                       iconClassName="w-3 h-3"
                     />
 
-                    {!loading && open && <Icon icon={ARROW_FILLED_DOWN_SVG} className="h-2 w-3" />}
+                    {!loading && open && <HiChevronDown size={16} className="fill-gray-800" />}
                     {!loading && !open && (
-                      <Icon icon={ARROW_FILLED_DOWN_SVG} className="h-2 w-3 rotate-180" />
+                      <HiChevronDown size={16} className="rotate-180 fill-gray-800" />
                     )}
                   </span>
                 </Listbox.Button>
@@ -138,7 +135,7 @@ export const MultiSelect = (props: MultiSelectProps): JSX.Element => {
               >
                 <Listbox.Options
                   static
-                  className="overflow-y-auto bg-white text-base leading-6 focus:outline-none"
+                  className="overflow-y-auto bg-cream-400 text-base leading-6 focus:outline-none"
                 >
                   {(batchSelectionActive || clearSelectionActive) && (
                     <div className="flex space-x-5 px-5 pt-1 text-sm">
