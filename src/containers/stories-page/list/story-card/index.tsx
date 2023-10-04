@@ -13,14 +13,14 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 import LOCATION_SVG from 'svgs/location.svg?sprite';
 
 export const StoryCard = ({
-  articleUrl,
-  clipUrl,
+  article,
+  clip,
   country,
   description,
   image,
   pathway,
   title,
-  videoUrl,
+  video,
   category,
 }) => {
   const ref = useRef();
@@ -110,14 +110,14 @@ export const StoryCard = ({
           <LinkArrow
             className={{ arrow: 'stroke-brand-700' }}
             label="Short clip (1 min)"
-            url={clipUrl}
+            url={clip}
           />
 
-          {(articleUrl || videoUrl) && (
+          {(article || video) && (
             <LinkArrow
               className={{ arrow: 'stroke-brand-700' }}
-              label={articleUrl ? 'Article' : 'Video'}
-              url={articleUrl || videoUrl}
+              label={article ? 'Article' : 'Video'}
+              url={article || video}
             />
           )}
         </motion.div>

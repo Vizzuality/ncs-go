@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
+
+import { useUIStore } from 'store/ui';
 
 import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import Media from 'containers/media';
+import {
+  CATEGORY_OPTIONS,
+  MEDIA_OPTIONS,
+  COUNTRY_OPTIONS,
+} from 'containers/stories-page/list/constants';
 import StoryCard from 'containers/stories-page/list/story-card';
 import SampleComposition from 'containers/stories-page/samples/sample-composition';
 import Card from 'containers/stories-page/samples/sample-composition/sample-card';
@@ -14,30 +21,41 @@ import Button from 'components/button';
 import MultiSelect from 'components/ui/multiselect';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
+import { MediaType, Story } from 'types';
 
 import { STORIES } from './constants';
 
 const List = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+  const filters = useUIStore((state) => state.filters);
+  const setFilters = useUIStore((state) => state.setFilters);
 
-  const STORY_TYPE_OPTIONS = [
-    { value: 'Factsheets', label: 'Factsheets' },
-    { value: 'News', label: 'News' },
-    { value: 'Stories from the ground', label: 'Stories from the ground' },
-  ];
+  const [dataFiltered, setDataFiltered] = useState<Story[]>(STORIES);
 
-  const MEDIA_TYPE_OPTIONS = [
-    { value: 'Article', label: 'Article' },
-    { value: 'Clip', label: 'Clip' },
-    { value: 'Video', label: 'Video' },
-  ];
+  useEffect(() => {
+    const activedFilters = Object.values(filters).some((f) => f.length > 0);
+    const dataFinalFiltered = () => {
+      const data = STORIES.filter((story) => {
+        if (filters.categories.length > 0) {
+          if (!filters.categories.includes(story.category)) return false;
+        }
 
-  const COUNTRY_OPTIONS = [
-    { value: 'Dominican Republic', label: 'Dominican Republic' },
-    { value: 'Ghana', label: 'Ghana' },
-    { value: 'Panama', label: 'Panama' },
-    { value: 'Tanzania', label: 'Tanzania' },
-  ];
+        if (filters.media.length > 0) {
+          if (!filters.media.some((m: MediaType) => story.media.includes(m))) return false;
+        }
+        if (filters.countries.length > 0) {
+          if (!filters.countries.includes(story.country)) return false;
+        }
+
+        return true;
+      });
+      return data;
+    };
+
+    if (activedFilters) return setDataFiltered(dataFinalFiltered());
+
+    if (!activedFilters) return setDataFiltered(STORIES);
+  }, [filters]);
 
   return (
     <>
@@ -50,45 +68,45 @@ const List = () => {
                 <div className="flex space-x-3">
                   <div className="xl:w-1/3">
                     <MultiSelect
-                      id="story_type"
+                      id="categories"
                       placeholder="Story type"
-                      options={STORY_TYPE_OPTIONS}
-                      // values={filters.type}
-                      // onSelect={(v) => setFilters({ ...filters, pathways: v })}
+                      options={CATEGORY_OPTIONS}
+                      values={filters.categories}
+                      onSelect={(v) => setFilters({ ...filters, categories: v })}
                     />
                   </div>
                   <div className="xl:w-1/3">
                     <MultiSelect
-                      id="media_type"
+                      id="media"
                       placeholder="Media type"
-                      options={MEDIA_TYPE_OPTIONS}
-                      // values={filters.type}
-                      // onSelect={(v) => setFilters({ ...filters, pathways: v })}
+                      options={MEDIA_OPTIONS}
+                      values={filters.media}
+                      onSelect={(v) => setFilters({ ...filters, media: v })}
                     />
                   </div>
                   <div className="xl:w-1/3">
                     <MultiSelect
-                      id="country"
+                      id="countries"
                       placeholder="Country"
                       options={COUNTRY_OPTIONS}
-                      // values={filters.type}
-                      // onSelect={(v) => setFilters({ ...filters, pathways: v })}
+                      values={filters.countries}
+                      onSelect={(v) => setFilters({ ...filters, countries: v })}
                     />
                   </div>
                 </div>
               </div>
               <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2">
-                {STORIES.map((s) => (
+                {dataFiltered.map((s) => (
                   <div key={s.id}>
                     <StoryCard
-                      articleUrl={s.articleUrl}
-                      clipUrl={s.clipUrl}
+                      article={s.article}
+                      clip={s.clip}
                       country={s.country}
                       description={s.description}
                       image={s.image}
                       pathway={s.pathway}
                       title={s.title}
-                      videoUrl={s.videoUrl}
+                      video={s.video}
                       category={s.category}
                     />
                   </div>
@@ -121,7 +139,7 @@ const List = () => {
                   media={
                     <SampleMedia
                       backgroundImage={`url(/images/home/stories/${s.image})`}
-                      video={s.videoUrl}
+                      video={s.video}
                     />
                   }
                   card={
@@ -130,8 +148,8 @@ const List = () => {
                       title={s.title}
                       description={s.description}
                       pathway={s.pathway}
-                      articleUrl={s.articleUrl}
-                      videoUrl={s.videoUrl}
+                      article={s.article}
+                      video={s.video}
                     />
                   }
                 />

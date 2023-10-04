@@ -34,14 +34,14 @@ const List = () => {
                 {STORIES.map((s) => (
                   <div key={s.id}>
                     <StoryCard
-                      articleUrl={s.articleUrl}
-                      clipUrl={s.clipUrl}
+                      article={s.article}
+                      clip={s.clip}
                       country={s.country}
                       description={s.description}
                       image={s.image}
                       pathway={s.pathway}
                       title={s.title}
-                      videoUrl={s.videoUrl}
+                      video={s.video}
                     />
                   </div>
                 ))}
@@ -73,7 +73,7 @@ const List = () => {
                   media={
                     <SampleMedia
                       backgroundImage={`url(/images/home/stories/${s.image})`}
-                      video={s.videoUrl}
+                      video={s.video}
                     />
                   }
                   card={
@@ -82,8 +82,8 @@ const List = () => {
                       title={s.title}
                       description={s.description}
                       pathway={s.pathway}
-                      articleUrl={s.articleUrl}
-                      videoUrl={s.videoUrl}
+                      article={s.article}
+                      video={s.video}
                     />
                   }
                 />
