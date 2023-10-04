@@ -12,8 +12,6 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 
 import LOCATION_SVG from 'svgs/location.svg?sprite';
 
-import type { StoryCardProps } from './types';
-
 export const StoryCard = ({
   articleUrl,
   clipUrl,
@@ -23,7 +21,8 @@ export const StoryCard = ({
   pathway,
   title,
   videoUrl,
-}: StoryCardProps) => {
+  category,
+}) => {
   const ref = useRef();
 
   const inView = useInView(ref, {
@@ -38,7 +37,7 @@ export const StoryCard = ({
   return (
     <motion.div
       ref={ref}
-      className="relative flex flex-col w-full h-full text-base text-left text-white bg-gray-800 md:flex-row"
+      className="relative flex flex-col w-full h-full text-base text-left text-gray-800 bg-cream-400 md:flex-row"
       {...IN_VIEW_PROPS}
       viewport={{
         once: true,
@@ -47,7 +46,7 @@ export const StoryCard = ({
     >
       <div
         className={cx({
-          'md:w-3 h-2 md:h-auto w-full': true,
+          'md:w-4 h-2 md:h-auto w-full': true,
           [PATHWAY_COLOR[pathway]]: true,
         })}
       />
@@ -71,10 +70,16 @@ export const StoryCard = ({
           initial={false}
           animate={{ opacity, x }}
           transition={{ duration: 0.125, delay: 0.2, bounce: 0 }}
-          className="flex space-x-2.5 opacity-0"
+          className="opacity-0 flex justify-between w-full"
         >
-          <Icon className="w-6 h-6 stroke-white" icon={LOCATION_SVG} />
-          <p className="font-sans">{country}</p>
+          <div className="flex space-x-2.5">
+            <Icon className="w-6 h-6 stroke-gray-800" icon={LOCATION_SVG} />
+            <p className="font-sans">{country}</p>
+          </div>
+
+          <div className="bg-beige px-2 flex items-center py-1">
+            <p className="text-gray-800 text-sm">{category}</p>
+          </div>
         </motion.div>
 
         <div className="space-y-2">
@@ -97,7 +102,7 @@ export const StoryCard = ({
         </div>
 
         <motion.div
-          className="flex flex-col items-end w-full pt-8 space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand-700"
+          className="flex flex-col items-end w-full space-y-10 text-base font-semibold md:justify-end md:space-y-0 md:space-x-10 md:flex-row text-brand-700"
           initial={false}
           animate={{ opacity, x }}
           transition={{ duration: 0.125, delay: 0.5, bounce: 0 }}

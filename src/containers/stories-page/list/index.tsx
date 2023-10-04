@@ -3,11 +3,11 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
-import StoryCard from 'containers/home/stories/list/story-card';
-import SampleComposition from 'containers/home/stories/samples/sample-composition';
-import Card from 'containers/home/stories/samples/sample-composition/sample-card';
-import SampleMedia from 'containers/home/stories/samples/sample-composition/sample-media';
 import Media from 'containers/media';
+import StoryCard from 'containers/stories-page/list/story-card';
+import SampleComposition from 'containers/stories-page/samples/sample-composition';
+import Card from 'containers/stories-page/samples/sample-composition/sample-card';
+import SampleMedia from 'containers/stories-page/samples/sample-composition/sample-media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -89,6 +89,7 @@ const List = () => {
                       pathway={s.pathway}
                       title={s.title}
                       videoUrl={s.videoUrl}
+                      category={s.category}
                     />
                   </div>
                 ))}

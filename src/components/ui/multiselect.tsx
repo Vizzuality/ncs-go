@@ -131,7 +131,7 @@ export const MultiSelect = (props: MultiSelectProps): JSX.Element => {
                 leave="transition ease-in duration-100"
                 leaveFrom="opacity-100"
                 leaveTo="opacity-0"
-                className="shadow-select absolute z-50 !mt-1 w-full overflow-y-auto rounded-lg border border-accents"
+                className="shadow-select absolute z-50 !mt-1 w-full overflow-y-auto rounded-lg border-none"
               >
                 <Listbox.Options
                   static
