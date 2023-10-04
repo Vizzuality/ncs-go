@@ -1,31 +1,17 @@
-import React, { useEffect, useRef } from 'react';
+import React from 'react';
 
-import { useHomeStore } from 'store/home';
-
-import { motion, useInView } from 'framer-motion';
+import { motion } from 'framer-motion';
 
 import Hero from 'containers/home/common/hero';
-import List from 'containers/stories-page/list';
-import Samples from 'containers/stories-page/samples';
+import List from 'containers/news-page/list';
+import Samples from 'containers/news-page/samples';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
 
-const Stories = () => {
-  const sectionRef = useRef();
-
-  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
-
-  const setSection = useHomeStore((state) => state.setSection);
-
-  useEffect(() => {
-    if (inViewSection) {
-      setSection('stories');
-    }
-  });
-
+const News = () => {
   return (
-    <motion.section ref={sectionRef} id="stories" className="overflow-x-hidden bg-white">
+    <motion.section id="stories" className="overflow-x-hidden bg-white">
       <Wrapper>
         <div className="pt-10 pb-4 lg:pb-10 lg:pt-44 lg:grid lg:grid-cols-3">
           <Hero
@@ -56,4 +42,4 @@ const Stories = () => {
   );
 };
 
-export default Stories;
+export default News;
