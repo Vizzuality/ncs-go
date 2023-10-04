@@ -1,8 +1,8 @@
 export interface SampleCardProps {
-  articleUrl?: string;
+  article?: string;
   country: string;
   description: string;
   pathway: string;
   title: string;
-  videoUrl?: string;
+  video?: string;
 }

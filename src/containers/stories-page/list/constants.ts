@@ -8,9 +8,10 @@ export const STORIES: Story[] = [
     description: 'Local communities are using GIS technology to map forest cover, youth-led.',
     image: 'test-1.jpg',
     pathway: 'forest',
-    clipUrl: '#',
-    videoUrl: '#',
+    clip: '#',
+    video: '#',
     category: 'Stories from the ground',
+    media: ['Clip', 'Video'],
   },
   {
     id: 2,
@@ -20,9 +21,10 @@ export const STORIES: Story[] = [
       'Indigenous-led with key financial schemes to protect biodiversity and benefit local people.',
     image: 'test-2.jpg',
     pathway: 'croplands',
-    clipUrl: '#',
-    videoUrl: '#',
+    clip: '#',
+    video: '#',
     category: 'News',
+    media: ['Clip', 'Video'],
   },
   {
     id: 3,
@@ -32,9 +34,10 @@ export const STORIES: Story[] = [
       'Indigenous-led with key financial schemes to protect biodiversity and benefit local people.',
     image: 'test-3.jpg',
     pathway: 'forest',
-    clipUrl: '#',
-    videoUrl: '#',
+    clip: '#',
+    video: '#',
     category: 'Stories from the ground',
+    media: ['Clip', 'Video'],
   },
   {
     id: 4,
@@ -43,9 +46,10 @@ export const STORIES: Story[] = [
     description: 'Mangroves and coral reefs restoration.',
     image: 'test-4.jpg',
     pathway: 'wetlands',
-    clipUrl: '#',
-    videoUrl: '#',
+    clip: '#',
+    video: '#',
     category: 'Factsheets',
+    media: ['Clip', 'Video'],
   },
   {
     id: 5,
@@ -55,9 +59,10 @@ export const STORIES: Story[] = [
       'Indigenous-led with key financial schemes to protect biodiversity and benefit local people.',
     image: 'test-1.jpg',
     pathway: 'croplands',
-    articleUrl: '#',
-    clipUrl: '#',
+    article: '#',
+    clip: '#',
     category: 'News',
+    media: ['Article', 'Clip'],
   },
   {
     id: 6,
@@ -66,9 +71,10 @@ export const STORIES: Story[] = [
     description: 'Local communities are using GIS technology to map forest cover, youth-led.',
     image: 'test-3.jpg',
     pathway: 'savana',
-    articleUrl: '#',
-    clipUrl: '#',
+    article: '#',
+    clip: '#',
     category: 'Stories from the ground',
+    media: ['Article', 'Clip'],
   },
   {
     id: 7,
@@ -77,8 +83,28 @@ export const STORIES: Story[] = [
     description: 'Local communities are using GIS technology to map forest cover, youth-led.',
     image: 'test-2.jpg',
     pathway: 'grasslands',
-    clipUrl: '#',
-    videoUrl: '#',
+    clip: '#',
+    video: '#',
     category: 'Stories from the ground',
+    media: ['Clip', 'Video'],
   },
+];
+
+export const CATEGORY_OPTIONS = [
+  { value: 'Factsheets', label: 'Factsheets' },
+  { value: 'News', label: 'News' },
+  { value: 'Stories from the ground', label: 'Stories from the ground' },
+];
+
+export const MEDIA_OPTIONS = [
+  { value: 'Article', label: 'Article' },
+  { value: 'Clip', label: 'Clip' },
+  { value: 'Video', label: 'Video' },
+];
+
+export const COUNTRY_OPTIONS = [
+  { value: 'Dominican Republic', label: 'Dominican Republic' },
+  { value: 'Ghana', label: 'Ghana' },
+  { value: 'Panama', label: 'Panama' },
+  { value: 'Tanzania', label: 'Tanzania' },
 ];

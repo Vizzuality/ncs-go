@@ -18,8 +18,8 @@ export const SampleCard = ({
   description,
   country,
   pathway,
-  articleUrl,
-  videoUrl,
+  article,
+  video,
 }: SampleCardProps) => {
   const ref = useRef();
   const inView = useInView(ref, { once: true, amount: 0.25 });
@@ -51,22 +51,18 @@ export const SampleCard = ({
         <h4 className="text-base">{description}</h4>
       </motion.div>
 
-      {(articleUrl || videoUrl) && (
+      {(article || video) && (
         <motion.div
           className="flex justify-end pt-4 space-y-10 font-sans text-base lg:pt-20 lg:pb-1"
           animate={{ opacity }}
           transition={{ delay: 0.4 }}
         >
-          {articleUrl && (
-            <LinkArrow
-              className={{ arrow: 'stroke-black' }}
-              label="Read article"
-              url={articleUrl}
-            />
+          {article && (
+            <LinkArrow className={{ arrow: 'stroke-black' }} label="Read article" url={article} />
           )}
 
-          {videoUrl && (
-            <LinkArrow className={{ arrow: 'stroke-black' }} label="Watch video" url={videoUrl} />
+          {video && (
+            <LinkArrow className={{ arrow: 'stroke-black' }} label="Watch video" url={video} />
           )}
         </motion.div>
       )}
