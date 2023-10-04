@@ -88,6 +88,9 @@ module.exports = {
         200: '#FBE4C9',
         400: '#F0B884',
       },
+      cream: {
+        400: '#F9F7F3',
+      },
       forest: {
         200: '#C1ECD2',
         400: '#60CBA5',
