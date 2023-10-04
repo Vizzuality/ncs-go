@@ -1,4 +1,6 @@
-export const STORIES = [
+import { Story } from 'types';
+
+export const STORIES: Story[] = [
   {
     id: 1,
     country: 'Ghana',
@@ -8,6 +10,7 @@ export const STORIES = [
     pathway: 'forest',
     clipUrl: '#',
     videoUrl: '#',
+    category: 'Stories from the ground',
   },
   {
     id: 2,
@@ -19,6 +22,7 @@ export const STORIES = [
     pathway: 'croplands',
     clipUrl: '#',
     videoUrl: '#',
+    category: 'News',
   },
   {
     id: 3,
@@ -30,6 +34,7 @@ export const STORIES = [
     pathway: 'forest',
     clipUrl: '#',
     videoUrl: '#',
+    category: 'Stories from the ground',
   },
   {
     id: 4,
@@ -40,6 +45,7 @@ export const STORIES = [
     pathway: 'wetlands',
     clipUrl: '#',
     videoUrl: '#',
+    category: 'Factsheets',
   },
   {
     id: 5,
@@ -51,6 +57,7 @@ export const STORIES = [
     pathway: 'croplands',
     articleUrl: '#',
     clipUrl: '#',
+    category: 'News',
   },
   {
     id: 6,
@@ -61,6 +68,7 @@ export const STORIES = [
     pathway: 'savana',
     articleUrl: '#',
     clipUrl: '#',
+    category: 'Stories from the ground',
   },
   {
     id: 7,
@@ -71,5 +79,6 @@ export const STORIES = [
     pathway: 'grasslands',
     clipUrl: '#',
     videoUrl: '#',
+    category: 'Stories from the ground',
   },
 ];

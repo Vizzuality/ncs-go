@@ -1,8 +1,14 @@
-/**
- * This is an example of a type/interface that's used in more than just
- * one place throughout the app.
- */
-export interface TypeExample {
-  id: string;
-  anyProperty: number;
+export type Category = 'News' | 'Factsheets' | 'Stories from the ground';
+
+export interface Story {
+  id: number;
+  articleUrl?: string;
+  clipUrl: string;
+  country: string;
+  description: string;
+  image: string;
+  pathway: string;
+  title: string;
+  videoUrl?: string;
+  category: Category;
 }
