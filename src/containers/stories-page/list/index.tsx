@@ -59,10 +59,10 @@ const List = () => {
   return (
     <>
       <Media greaterThanOrEqual="md">
-        <div className="bg-beige md:py-28">
+        <div className="bg-beige md:pb-28 md:pt-72">
           <Wrapper>
             <div className="xl:grid xl:grid-cols-12">
-              <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 mb-12">
+              <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 my-12">
                 <p className="text-gray-800 text-base">Filter by:</p>
                 <div className="flex space-x-3">
                   <div className="xl:w-1/3">
@@ -115,7 +115,7 @@ const List = () => {
 
             <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
               <Button
-                className="rounded-full border-gray-800 text-gray-800"
+                className="rounded-full border-gray-800 text-gray-800 hover:text-cream-400"
                 theme="secondary"
                 size="xs"
                 onClick={() => console.info('Show more stories')}

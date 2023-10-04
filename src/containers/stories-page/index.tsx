@@ -49,7 +49,9 @@ const Stories = () => {
 
       <Samples />
 
-      <List />
+      <div className="-mt-72">
+        <List />
+      </div>
     </motion.section>
   );
 };
