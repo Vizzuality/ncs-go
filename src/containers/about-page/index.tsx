@@ -2,20 +2,15 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import Hero from 'containers/home/common/hero';
 import Wrapper from 'containers/wrapper';
 
 const About = () => {
   return (
-    <div id="about" className="bg-white lg:pt-44">
+    <div id="about" className="bg-white pt-44 w-full">
       <Wrapper>
-        <div className="pt-10 pb-4">
-          <Hero className="text-gray-800" subtitle="What is naturebase?" />
-        </div>
-      </Wrapper>
+        <h2 className="text-gray-800 pb-6 font-sans text-xl">What is naturebase?</h2>
 
-      <Wrapper>
-        <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:pb-20 lg:pt-10 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+        <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
           <div className="col-start-1 pb-4 lg:pb-0">
             <p>
               An open data platform designed to identify where, why and how to implement
@@ -44,15 +39,11 @@ const About = () => {
 
       <section>
         <Wrapper>
-          <div className="pt-32 pb-0 lg:grid lg:grid-cols-3">
-            <Hero
-              className="text-gray-800 lg:col-span-2 lg:col-start-1"
-              subtitle="Who's with us?"
-            />
+          <div className="pt-32 lg:grid lg:grid-cols-3">
+            <h2 className="text-gray-800 pb-6 font-sans text-xl">Who&apos;s with us?</h2>
           </div>
-        </Wrapper>
-        <Wrapper>
-          <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:pb-20 lg:pt-10 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+
+          <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
             <div className="col-start-1 col-end-3 pb-4 lg:pb-0">
               <p>
                 Naturebase is a product of a collaborative effort between scientists and developers
@@ -68,12 +59,10 @@ const About = () => {
       <section className="bg-beige">
         <Wrapper>
           <div className="pt-32 pb-0 lg:grid lg:grid-cols-3">
-            <Hero className="text-gray-800 lg:col-span-2 lg:col-start-1" subtitle="What we want?" />
+            <h2 className="text-gray-800 pb-6 font-sans text-xl">What we want?</h2>
           </div>
-        </Wrapper>
 
-        <Wrapper>
-          <div className="pt-4 pb-10 font-sans text-base text-gray-800 lg:pb-20 lg:pt-10 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+          <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
             <div className="col-start-1 pb-4 lg:pb-0">
               <p>
                 Nature can deliver up to one-third of the mitigation solutions that are required to

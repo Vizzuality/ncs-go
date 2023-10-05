@@ -5,68 +5,20 @@ import Link from 'next/link';
 
 import { motion } from 'framer-motion';
 
-import { useModal } from 'hooks/modals';
-
-import MenuButton from 'containers/home/header/mobile-menu-modal/menu-button';
 import Media from 'containers/media';
 import { NAV_OPTIONS } from 'containers/navbar/constants';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
-import { IN_VIEW_PROPS } from 'constants/motion';
 
-const Navbar = (): JSX.Element => {
-  const [page, setPage] = useState(null);
-  console.log({ page });
-
-  const { isOpen: isOpenMobile, open: openMobile, close: closeMobile } = useModal();
+const Navbar: React.FC = () => {
+  const [page, setPage] = useState(NAV_OPTIONS[0]);
 
   return (
     <nav
       id="header"
       className="fixed top-0 left-0 z-10 w-full text-white bg-gray-900 border-b border-gray-800 text-base"
     >
-      <Media lessThan="lg">
-        <>
-          <Wrapper>
-            <div className="relative flex items-center justify-between h-20">
-              <button
-                className="w-[180px] h-[40px] shrink-0"
-                onClick={() => {
-                  closeMobile();
-                }}
-              >
-                <Image
-                  src="/images/logo-horizontal.svg"
-                  alt="Logo"
-                  width={180}
-                  height={40}
-                  layout="responsive"
-                />
-              </button>
-
-              <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
-                <MenuButton
-                  isOpen={isOpenMobile}
-                  onClick={() => {
-                    if (isOpenMobile) {
-                      closeMobile();
-                    } else {
-                      openMobile();
-                    }
-                  }}
-                  transition={{ ease: 'easeOut', duration: 0.2 }}
-                  width={40}
-                  height={40}
-                />
-              </motion.div>
-            </div>
-          </Wrapper>
-
-          {/* <MobileMenuModal isOpen={isOpenMobile} close={closeMobile} onScrollTo={scrollTo} /> */}
-        </>
-      </Media>
-
       <Media greaterThanOrEqual="lg">
         <>
           <Wrapper>
@@ -86,14 +38,14 @@ const Navbar = (): JSX.Element => {
                   <Link key={opt.label} href={opt.href} passHref>
                     <button
                       className="relative flex justify-between m-0 cursor-pointer"
-                      onClick={() => setPage(opt.id)}
+                      onClick={() => setPage(opt)}
                     >
-                      <p className="hover:text-brand-700 py-7">{opt.label}</p>
+                      <p className="hover:text-brand-700 py-5">{opt.label}</p>
 
-                      {opt.id === page && (
+                      {opt === page && (
                         <motion.div
                           className="absolute left-0 right-0 h-[3px] bg-white bottom-0"
-                          layoutId="underline-navbar"
+                          layoutId="underline"
                         />
                       )}
                     </button>
