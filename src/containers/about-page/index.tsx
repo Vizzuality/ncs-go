@@ -4,6 +4,15 @@ import Image from 'next/image';
 
 import Wrapper from 'containers/wrapper';
 
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from 'components/ui/accordion';
+
+import { FAQS } from './constants';
+
 const About = () => {
   return (
     <div id="about" className="bg-white pt-44 w-full">
@@ -95,6 +104,16 @@ const About = () => {
           <h2 className="text-gray-800 pb-6 font-sans text-xl pt-20  lg:grid lg:grid-cols-3">
             FAQ
           </h2>
+          <div className="flex flex-col space-y-2">
+            {FAQS.map((faq, idx) => (
+              <Accordion type="single" collapsible key={idx}>
+                <AccordionItem value="item-1">
+                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionContent>{faq.answer}</AccordionContent>
+                </AccordionItem>
+              </Accordion>
+            ))}
+          </div>
         </Wrapper>
       </section>
     </div>

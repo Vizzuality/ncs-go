@@ -90,6 +90,7 @@ module.exports = {
       },
       cream: {
         400: '#F9F7F3',
+        700: '#E1DDD5',
       },
       forest: {
         200: '#C1ECD2',
