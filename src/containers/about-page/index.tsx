@@ -10,7 +10,7 @@ const About = () => {
       <Wrapper>
         <h2 className="text-gray-800 pb-6 font-sans text-xl">What is naturebase?</h2>
 
-        <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+        <div className="pb-10 font-sans text-base text-gray-800 lg:pb-24 lg:grid lg:grid-cols-3 lg:gap-10">
           <div className="col-start-1 pb-4 lg:pb-0">
             <p>
               An open data platform designed to identify where, why and how to implement
@@ -39,12 +39,12 @@ const About = () => {
 
       <section>
         <Wrapper>
-          <div className="pt-32 lg:grid lg:grid-cols-3">
-            <h2 className="text-gray-800 pb-6 font-sans text-xl">Who&apos;s with us?</h2>
-          </div>
+          <h2 className="lg:grid lg:grid-cols-3 pt-20 text-gray-800 pb-6 font-sans text-xl">
+            Who&apos;s with us?
+          </h2>
 
-          <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
-            <div className="col-start-1 col-end-3 pb-4 lg:pb-0">
+          <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 lg:grid lg:grid-cols-3 lg:gap-10">
+            <div className="col-start-1 col-end-2 pb-4 lg:pb-0">
               <p>
                 Naturebase is a product of a collaborative effort between scientists and developers
                 at The Nature Conservancy, with contributions by numerous organisations across the
@@ -56,13 +56,13 @@ const About = () => {
         </Wrapper>
       </section>
 
-      <section className="bg-beige">
+      <section className="bg-beige pb-24">
         <Wrapper>
-          <div className="pt-32 pb-0 lg:grid lg:grid-cols-3">
-            <h2 className="text-gray-800 pb-6 font-sans text-xl">What we want?</h2>
-          </div>
+          <h2 className="text-gray-800 pb-6 font-sans text-xl pt-20  lg:grid lg:grid-cols-3">
+            What we want?
+          </h2>
 
-          <div className="pb-10 font-sans text-base text-gray-800 lg:pb-20 md:text-lg lg:grid lg:grid-cols-3 lg:gap-10">
+          <div className="font-sans text-base text-gray-800 lg:grid lg:grid-cols-3 lg:gap-10">
             <div className="col-start-1 pb-4 lg:pb-0">
               <p>
                 Nature can deliver up to one-third of the mitigation solutions that are required to
@@ -90,6 +90,13 @@ const About = () => {
         layout="responsive"
         objectFit="contain"
       />
+      <section className="bg-beige pb-24">
+        <Wrapper>
+          <h2 className="text-gray-800 pb-6 font-sans text-xl pt-20  lg:grid lg:grid-cols-3">
+            FAQ
+          </h2>
+        </Wrapper>
+      </section>
     </div>
   );
 };
