@@ -33,7 +33,7 @@ const AccordionTrigger = React.forwardRef<
         onClick={() => setOpen(!open)}
         ref={ref}
         className={cn(
-          'bg-cream-400 rounded-lg flex flex-1 items-center justify-between p-6 text-left font-semibold transition-all [&[data-state=open]>svg]:rotate-180',
+          'bg-cream-400 text-lg rounded-lg flex flex-1 items-center justify-between p-6 text-left font-semibold transition-all [&[data-state=open]>svg]:rotate-180',
           className
         )}
         {...props}

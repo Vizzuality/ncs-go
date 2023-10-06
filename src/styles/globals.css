@@ -50,5 +50,10 @@
     }
   }
 
+  .dangerouslySetInnerHTML b {
+    font-family: 'SpaceGrotesk-Bold';
+  }
 }
+
+
 

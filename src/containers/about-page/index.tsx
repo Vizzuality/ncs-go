@@ -99,17 +99,21 @@ const About = () => {
         layout="responsive"
         objectFit="contain"
       />
-      <section className="bg-beige pb-24">
+      <section className="bg-beige pb-24 text-gray-800 pt-20">
         <Wrapper>
-          <h2 className="text-gray-800 pb-6 font-sans text-xl pt-20  lg:grid lg:grid-cols-3">
-            FAQ
-          </h2>
+          <h3 className="text-xs pb-2 font-semibold">FAQ</h3>
+          <h2 className="pb-10 font-sans text-xl lg:grid lg:grid-cols-3">Got a question?</h2>
           <div className="flex flex-col space-y-2">
             {FAQS.map((faq, idx) => (
               <Accordion type="single" collapsible key={idx}>
                 <AccordionItem value="item-1">
                   <AccordionTrigger>{faq.question}</AccordionTrigger>
-                  <AccordionContent>{faq.answer}</AccordionContent>
+                  <AccordionContent>
+                    <div
+                      className="dangerouslySetInnerHTML"
+                      dangerouslySetInnerHTML={{ __html: faq.answer }}
+                    />
+                  </AccordionContent>
                 </AccordionItem>
               </Accordion>
             ))}
