@@ -1,17 +1,18 @@
-import React from 'react';
-
 import { useRouter } from 'next/router';
 
-import Footer from 'containers/home/footer';
-import Header from 'containers/home/header';
 import MetaTags from 'containers/meta-tags';
-import StoriesPage from 'containers/stories-page';
+import Navbar from 'containers/navbar';
 
-const Stories = (): JSX.Element => {
+type LayoutProps = {
+  children: React.ReactNode;
+};
+
+const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
+  const { children } = props;
   const { asPath } = useRouter();
 
   return (
-    <div>
+    <>
       <MetaTags
         name="Nature4Climate"
         title="Naturebase"
@@ -21,14 +22,13 @@ const Stories = (): JSX.Element => {
         twitterCard="summary"
         twitterSite="@Nature4Climate"
       />
+      <main className="flex w-full flex-col items-center">
+        <Navbar />
 
-      <Header />
-
-      <StoriesPage />
-
-      <Footer />
-    </div>
+        {children}
+      </main>
+    </>
   );
 };
 
-export default Stories;
+export default Layout;

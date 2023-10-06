@@ -19,7 +19,6 @@ const nextConfig = {
 
     return config;
   },
-
   // ? https://nextjs.org/docs/advanced-features/compiler#why-swc
   swcMinify: false,
   // ? https://nextjs.org/docs/advanced-features/output-file-tracing#automatically-copying-traced-files
