@@ -89,7 +89,7 @@ const Involved = () => {
             </div>
             <div className="space-y-6 mt-44">
               <div className="bg-beige p-10 text-gray-800 space-y-6 mt-6">
-                <Icon icon={NEWSLETTER_SVG} className="w-12 h-12" />
+                <Icon icon={NEWSLETTER_SVG} className="w-12 h-12 stroke-gray-800" />
                 <h4 className="text-2lg">Subscribe to our newsletter</h4>
                 <p>
                   Naturebase is constantly evolving. Stay tuned to what’s happening backstage as our

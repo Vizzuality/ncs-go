@@ -1,14 +1,13 @@
 import React from 'react';
 
-import Footer from 'containers/home/footer';
-import Layout from 'layouts';
 import NewsPage from 'containers/news-page';
+
+import Layout from 'layouts';
 
 const News = (): JSX.Element => {
   return (
     <Layout>
       <NewsPage />
-      <Footer />
     </Layout>
   );
 };

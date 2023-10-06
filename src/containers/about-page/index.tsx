@@ -16,7 +16,7 @@ import { FAQS } from './constants';
 
 const About = () => {
   return (
-    <div id="about" className="bg-white pt-24 w-full">
+    <div id="naturbase" className="bg-white pt-24 w-full">
       <section>
         <Wrapper className="py-20">
           <Hero title="What is naturebase" subtitle="Open data platform" />
@@ -49,7 +49,7 @@ const About = () => {
         />
       </section>
 
-      <section>
+      <section id="who">
         <Wrapper className="py-20">
           <Hero title="Who is with us" subtitle="Collaborative effort" />
 
@@ -64,7 +64,7 @@ const About = () => {
         </Wrapper>
       </section>
 
-      <section className="bg-beige">
+      <section id="what" className="bg-beige">
         <Wrapper className="py-20">
           <Hero title="What we want?" subtitle="Data accessibility" />
 
@@ -96,7 +96,7 @@ const About = () => {
         layout="responsive"
         objectFit="contain"
       />
-      <section className="bg-beige pb-24 text-gray-800 py-20">
+      <section id="faq" className="bg-beige pb-24 text-gray-800 py-20">
         <Wrapper>
           <Hero title="Faq" subtitle="Got a question?" />
           <div className="flex flex-col space-y-2">

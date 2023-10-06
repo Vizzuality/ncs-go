@@ -1,7 +1,7 @@
 import React from 'react';
 
 // import ScienceDataPage from 'containers/about-page';
-import Footer from 'containers/home/footer';
+
 import Layout from 'layouts';
 
 const ScienceData = (): JSX.Element => {
@@ -9,7 +9,6 @@ const ScienceData = (): JSX.Element => {
     <Layout>
       Science data
       {/* <ScienceDataPage /> */}
-      <Footer />
     </Layout>
   );
 };

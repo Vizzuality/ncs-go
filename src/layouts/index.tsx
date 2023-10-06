@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router';
 
+import Footer from 'containers/footer';
 import MetaTags from 'containers/meta-tags';
 import Navbar from 'containers/navbar';
 
@@ -26,6 +27,7 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
         <Navbar />
 
         {children}
+        <Footer />
       </main>
     </>
   );
