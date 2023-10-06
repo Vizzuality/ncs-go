@@ -22,7 +22,7 @@ export const Hero = ({
     })}
   >
     <motion.div className="space-y-4 text-gray-800 pb-10" {...IN_VIEW_PROPS}>
-      {title && <h2 className="text-xxs font-bold tracking-widest uppercase">{title}</h2>}
+      {title && <h2 className="text-sm font-bold tracking-widest uppercase">{title}</h2>}
       {subtitle && <h3 className="text-xl font-sans">{subtitle}</h3>}
     </motion.div>
   </div>

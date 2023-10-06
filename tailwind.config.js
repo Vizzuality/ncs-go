@@ -42,6 +42,12 @@ module.exports = {
           lineHeight: '2rem',
         },
       ],
+      '2lg': [
+        '1.5rem',
+        {
+          lineHeight: '2.25rem',
+        },
+      ],
       xl: [
         '2rem',
         {
@@ -103,6 +109,7 @@ module.exports = {
       gray: {
         100: '#F6F5F2',
         400: '#CAC9C8',
+        600: '#7D898D',
         800: '#263C44',
         900: '#1E2D3A',
       },

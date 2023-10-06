@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Footer from 'containers/home/footer';
-import Layout from 'containers/layouts';
+import Layout from 'layouts';
 import NewsPage from 'containers/news-page';
 
 const News = (): JSX.Element => {
