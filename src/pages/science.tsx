@@ -2,6 +2,8 @@ import React from 'react';
 
 // import ScienceDataPage from 'containers/about-page';
 
+import Join from 'containers/join';
+
 import Layout from 'layouts';
 
 const ScienceData = (): JSX.Element => {
@@ -9,6 +11,7 @@ const ScienceData = (): JSX.Element => {
     <Layout>
       Science data
       {/* <ScienceDataPage /> */}
+      <Join />
     </Layout>
   );
 };
