@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { motion } from 'framer-motion';
 
@@ -12,6 +13,14 @@ import Button from 'components/button';
 
 const Navbar: React.FC = () => {
   const [page, setPage] = useState(NAV_OPTIONS[0]);
+
+  const { asPath } = useRouter();
+
+  useEffect(() => {
+    const currPage = NAV_OPTIONS.find((navOption) => navOption.href.startsWith(asPath));
+    if (!currPage) return;
+    setPage(currPage);
+  }, [asPath]);
 
   return (
     <nav
