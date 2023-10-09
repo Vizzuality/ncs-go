@@ -1,8 +1,10 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+
+import { useHomeStore } from 'store/home';
 
 import { motion } from 'framer-motion';
 
@@ -12,6 +14,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 
 const Navbar: React.FC = () => {
+  const headerRef = useRef(null);
   const [page, setPage] = useState(null);
 
   const { route } = useRouter();
@@ -22,10 +25,25 @@ const Navbar: React.FC = () => {
     setPage(currPage);
   }, [route]);
 
+  const section = useHomeStore((state) => state.section);
+  const header = useHomeStore((state) => state.header);
+  const setHeader = useHomeStore((state) => state.setHeader);
+
+  useEffect(() => {
+    setHeader(section !== 'intro');
+  }, [section, setHeader]);
   return (
-    <nav
+    <motion.nav
       id="header"
+      ref={headerRef}
       className="fixed top-0 left-0 z-20 w-full text-white bg-gray-900 border-b border-gray-800 text-base"
+      initial={{ y: '-100%' }}
+      animate={{
+        y: header ? '0%' : '-100%',
+      }}
+      transition={{
+        bounce: 0,
+      }}
     >
       <Wrapper>
         <div className="flex items-center justify-between space-x-12 text-lg border-b border-gray-900">
@@ -47,7 +65,7 @@ const Navbar: React.FC = () => {
                   onClick={() => setPage(opt)}
                 >
                   <p className="hover:text-brand-700 py-5">{opt.label}</p>
-                  {opt === page && (
+                  {route !== '/' && opt === page && (
                     <motion.div
                       className="absolute left-0 right-0 h-[3px] bg-white bottom-0"
                       layoutId="underline"
@@ -68,7 +86,7 @@ const Navbar: React.FC = () => {
           </Button>
         </div>
       </Wrapper>
-    </nav>
+    </motion.nav>
   );
 };
 

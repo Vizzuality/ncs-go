@@ -8,9 +8,9 @@ import { useHomeStore } from 'store/home';
 
 import Footer from 'containers/footer';
 import HomePage from 'containers/home-page';
-import Header from 'containers/home-page/header';
 import Intro from 'containers/home-page/intro';
 import MetaTags from 'containers/meta-tags';
+import Navbar from 'containers/navbar';
 
 const Home: React.FC = () => {
   const { asPath } = useRouter();
@@ -38,8 +38,7 @@ const Home: React.FC = () => {
         twitterSite="@Nature4Climate"
       />
 
-      <Header />
-
+      <Navbar />
       <Intro />
 
       <HomePage />
