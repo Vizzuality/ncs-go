@@ -1,8 +1,7 @@
 import React from 'react';
 
-// import ScienceDataPage from 'containers/about-page';
-
 import Join from 'containers/join';
+import ScienceDataPage from 'containers/science-page';
 
 import Layout from 'layouts';
 
@@ -10,7 +9,7 @@ const ScienceData = (): JSX.Element => {
   return (
     <Layout>
       Science data
-      {/* <ScienceDataPage /> */}
+      <ScienceDataPage />
       <Join />
     </Layout>
   );
