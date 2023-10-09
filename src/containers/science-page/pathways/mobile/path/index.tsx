@@ -6,8 +6,8 @@ import LinkArrow from 'containers/home_old/common/link-arrow';
 
 import Icon from 'components/icon';
 
-import MINUS_SVG from 'svgs/minus.svg?sprite';
-import PLUS_SVG from 'svgs/plus.svg?sprite';
+import MINUS_SVG from 'svgs/ui/minus.svg?sprite';
+import PLUS_SVG from 'svgs/ui/plus.svg?sprite';
 
 import Subpath from './subpath';
 

@@ -6,7 +6,7 @@ import { motion } from 'framer-motion';
 
 import Icon from 'components/icon';
 
-import CLOSE_SVG from 'svgs/close.svg?sprite';
+import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
 
 import type { FullScreenModalProps } from './types';
 

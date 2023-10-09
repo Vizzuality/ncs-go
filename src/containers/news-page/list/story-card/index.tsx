@@ -10,7 +10,7 @@ import { PATHWAY_COLOR } from 'containers/home_old/stories/constants';
 import Icon from 'components/icon';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
-import LOCATION_SVG from 'svgs/location.svg?sprite';
+import LOCATION_SVG from 'svgs/ui/location.svg?sprite';
 
 export const StoryCard = ({
   article,

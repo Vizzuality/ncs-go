@@ -7,7 +7,7 @@ import { useModal } from 'hooks/modals';
 import Icon from 'components/icon';
 import Modal from 'components/modal';
 
-import ARROW_TOP_RIGHT_SVG from 'svgs/arrow-top-right.svg?sprite';
+import ARROW_TOP_RIGHT_SVG from 'svgs/ui/arrow-top-right.svg?sprite';
 
 import type { FeatureCardProps } from './types';
 

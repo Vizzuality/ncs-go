@@ -1,7 +1,7 @@
-import SUCCESS_SVG from 'svgs/checkmark.svg?sprite';
-import ERROR_SVG from 'svgs/checkmark.svg?sprite';
-import INFO_SVG from 'svgs/checkmark.svg?sprite';
-import WARNING_SVG from 'svgs/checkmark.svg?sprite';
+import SUCCESS_SVG from 'svgs/ui/checkmark.svg?sprite';
+import ERROR_SVG from 'svgs/ui/checkmark.svg?sprite';
+import INFO_SVG from 'svgs/ui/checkmark.svg?sprite';
+import WARNING_SVG from 'svgs/ui/checkmark.svg?sprite';
 
 import type { ToastTheme } from './types';
 

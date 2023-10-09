@@ -4,7 +4,7 @@ import cx from 'classnames';
 
 import Icon from 'components/icon';
 
-import ARROW_RIGHT_SVG from 'svgs/arrow-right.svg?sprite';
+import ARROW_RIGHT_SVG from 'svgs/ui/arrow-right.svg?sprite';
 
 import type { LinkArrowProps } from './types';
 

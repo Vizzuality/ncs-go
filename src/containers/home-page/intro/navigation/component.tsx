@@ -6,7 +6,7 @@ import { AnimatePresence, motion } from 'framer-motion';
 
 import Icon from 'components/icon';
 
-import SCROLL_SVG from 'svgs/scroll.svg?sprite';
+import SCROLL_SVG from 'svgs/ui/scroll.svg?sprite';
 
 import { STEPS } from '../constants';
 
