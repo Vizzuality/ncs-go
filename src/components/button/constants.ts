@@ -4,7 +4,7 @@ export const THEME = {
   secondary:
     'text-white bg-transparent border border-white whitespace-nowrap hover:bg-brand-800 hover:border-brand-800 transition ease-in-out delay-150 duration-300',
   tertiary:
-    'text-black bg-transparent border border-black hover:text-white whitespace-nowrap hover:bg-brand-800 hover:border-brand-800 transition ease-in-out delay-150 duration-300',
+    'text-gray-900 bg-transparent border border-gray-900 hover:text-white whitespace-nowrap hover:bg-brand-800 hover:border-brand-800 transition ease-in-out delay-150 duration-300',
 };
 
 export const SIZE = {

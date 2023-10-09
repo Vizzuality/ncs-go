@@ -52,9 +52,9 @@ const Involved = () => {
           layout="responsive"
           objectFit="contain"
         />
-        <section className="-mt-44 z-10 relative pb-20">
+        <section className="-mt-56 z-10 relative pb-20">
           <Wrapper className="grid grid-cols-2 gap-6">
-            <div className="space-y-6">
+            <div className="space-y-6 -mt-20">
               <div className="bg-brand-700 p-10 text-gray-800 space-y-6">
                 <Image
                   src={'/images/involved/mock-app.png'}
@@ -72,6 +72,12 @@ const Involved = () => {
                   features such as mapping and saving your project areas and information for a quick
                   reference check and access to the ideas portal.
                 </p>
+
+                <div className="w-full flex justify-end">
+                  <Button theme="tertiary" size="xs" className="py-3 h-12">
+                    Launch map
+                  </Button>
+                </div>
               </div>
               <div className="bg-beige p-10 text-gray-800 space-y-6">
                 <Icon icon={EMAIL_SVG} className="w-12 h-12" />
@@ -87,7 +93,7 @@ const Involved = () => {
                 </div>
               </div>
             </div>
-            <div className="space-y-6 mt-44">
+            <div className="space-y-6 mt-56">
               <div className="bg-beige p-10 text-gray-800 space-y-6 mt-6">
                 <Icon icon={NEWSLETTER_SVG} className="w-12 h-12 stroke-gray-800" />
                 <h4 className="text-2lg">Subscribe to our newsletter</h4>
