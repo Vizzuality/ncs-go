@@ -45,7 +45,7 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
       >
         <motion.div animate={{ opacity, y }} transition={{ delay: 0.2 + index * 0.1, bounce: 0 }}>
           <Icon
-            className="w-12 h-12 md:w-16 md:h-16 group-hover:stroke-black stroke-white"
+            className="w-12 h-12 md:w-16 md:h-16 group-hover:stroke-black stroke-gray-800"
             icon={icon}
           />
         </motion.div>
@@ -64,7 +64,10 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
 
       <Modal title={title} size="default" open={isOpen} onOpenChange={close} dismissable>
         <div className="p-6 overflow-auto text-gray-900 md:p-16 grow">
-          <Icon className="w-20 h-20 mt-20 mb-8 md:mt-8 md:w-28 md:h-28 stroke-black" icon={icon} />
+          <Icon
+            className="w-20 h-20 mt-20 mb-8 md:mt-8 md:w-28 md:h-28 stroke-gray-800"
+            icon={icon}
+          />
           <h2 className="mb-4 text-lg md:text-xl">{title}</h2>
           <div className="prose">{description}</div>
         </div>

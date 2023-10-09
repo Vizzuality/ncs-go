@@ -37,17 +37,17 @@ const About = () => {
         <div
           className="absolute top-0 left-0 w-full h-full bg-left-top bg-no-repeat pointer-events-none"
           style={{
-            backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/about/background.svg)`,
+            backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/background.svg)`,
           }}
         />
 
         <Wrapper className="pb-72">
-          <div className="pt-44 w-1/2 space-y-10" ref={sectionRef}>
+          <div className="pt-56 w-1/2 space-y-10" ref={sectionRef}>
             <h2 className="text-3xl font-sans max-w-lg">
               Unlock Nature’s potential to mitigate climate change with naturebase
             </h2>
             <div className="flex space-x-2">
-              <Button theme="tertiary" size="xs" className="py-3 h-12">
+              <Button theme="primary" size="xs" className="py-3 h-12">
                 Launch map
               </Button>
               <Button theme="tertiary" size="xs" className="py-3 h-12 border-none space-x-2 group">
@@ -59,7 +59,7 @@ const About = () => {
               </Button>
             </div>
           </div>
-          <div className="absolute left-1/2 ml-10 top-24 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
+          <div className="absolute left-1/2 ml-10 top-40 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
         </Wrapper>
       </div>
 

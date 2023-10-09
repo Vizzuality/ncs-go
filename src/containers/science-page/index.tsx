@@ -40,7 +40,7 @@ const Science = () => {
         objectFit="contain"
       />
 
-      <section id="who">
+      <section id="pathways">
         <Wrapper className="py-20">
           <Hero title="NCS pathways" subtitle="Pathways to mitigate climate change" />
 
