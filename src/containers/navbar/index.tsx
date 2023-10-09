@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 
 import { motion } from 'framer-motion';
 
@@ -11,7 +12,15 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 
 const Navbar: React.FC = () => {
-  const [page, setPage] = useState(NAV_OPTIONS[0]);
+  const [page, setPage] = useState(null);
+
+  const { route } = useRouter();
+
+  useEffect(() => {
+    const currPage = NAV_OPTIONS.find((navOption) => navOption.href.startsWith(route));
+    if (!currPage) return;
+    setPage(currPage);
+  }, [route]);
 
   return (
     <nav
@@ -38,7 +47,6 @@ const Navbar: React.FC = () => {
                   onClick={() => setPage(opt)}
                 >
                   <p className="hover:text-brand-700 py-5">{opt.label}</p>
-
                   {opt === page && (
                     <motion.div
                       className="absolute left-0 right-0 h-[3px] bg-white bottom-0"
