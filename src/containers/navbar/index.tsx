@@ -30,8 +30,14 @@ const Navbar: React.FC = () => {
   const setHeader = useHomeStore((state) => state.setHeader);
 
   useEffect(() => {
-    setHeader(section !== 'intro');
-  }, [section, setHeader]);
+    if (route !== '/') {
+      setHeader(true);
+    }
+    if (route === '/' && section !== 'intro') {
+      setHeader(true);
+    }
+  }, [section, setHeader, route]);
+
   return (
     <motion.nav
       id="header"

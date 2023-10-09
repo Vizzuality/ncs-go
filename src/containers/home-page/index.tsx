@@ -16,10 +16,10 @@ import { BREAKPOINTS } from 'styles/styles.config';
 
 import VIDEO_SVG from 'svgs/ui/video.svg?sprite';
 
-const About = () => {
+const HomePage = () => {
   const sectionRef = useRef();
 
-  const inViewSection = useInView(sectionRef, { margin: '-100% 0px 0px' });
+  const inViewSection = useInView(sectionRef, { margin: '0px 0px 0px' });
 
   const setSection = useHomeStore((state) => state.setSection);
 
@@ -42,8 +42,8 @@ const About = () => {
         />
 
         <Wrapper className="pb-72">
-          <div className="pt-56 w-1/2 space-y-10" ref={sectionRef}>
-            <h2 className="text-3xl font-sans max-w-lg">
+          <div className="pt-56 w-1/2 space-y-10">
+            <h2 className="text-3xl font-sans max-w-lg" ref={sectionRef}>
               Unlock Nature’s potential to mitigate climate change with naturebase
             </h2>
             <div className="flex space-x-2">
@@ -92,4 +92,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default HomePage;
