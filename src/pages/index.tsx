@@ -6,13 +6,10 @@ import { useRouter } from 'next/router';
 
 import { useHomeStore } from 'store/home';
 
-import About from 'containers/home_old/about';
-import Contact from 'containers/home_old/contact';
-import FeaturedScience from 'containers/home_old/featured-science';
-import Footer from 'containers/home_old/footer';
-import Header from 'containers/home_old/header';
-import Intro from 'containers/home_old/intro';
-import Stories from 'containers/home_old/stories';
+import Footer from 'containers/footer';
+import About from 'containers/home/about';
+import Header from 'containers/home/header';
+import Intro from 'containers/home/intro';
 import MetaTags from 'containers/meta-tags';
 
 const Home: React.FC = () => {
@@ -30,7 +27,7 @@ const Home: React.FC = () => {
   }, [asPath, section]);
 
   return (
-    <div>
+    <>
       <MetaTags
         name="Nature4Climate"
         title="Naturebase"
@@ -47,14 +44,8 @@ const Home: React.FC = () => {
 
       <About />
 
-      <Stories />
-
-      <FeaturedScience />
-
-      <Contact />
-
       <Footer />
-    </div>
+    </>
   );
 };
 
