@@ -2,8 +2,8 @@ import React from 'react';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
-import LinkArrow from 'containers/home/common/link-arrow';
-import { PATHWAYS } from 'containers/home/featured-science/pathways/constants';
+import LinkArrow from 'containers/home_old/common/link-arrow';
+import { PATHWAYS } from 'containers/home_old/featured-science/pathways/constants';
 
 const Description = ({ selected }) => {
   const { description, link } = PATHWAYS.find((pathway) => pathway.id === selected) || {};

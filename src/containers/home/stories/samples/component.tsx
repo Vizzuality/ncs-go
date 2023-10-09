@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { STORIES } from 'containers/home/stories/constants';
-import SampleComposition from 'containers/home/stories/samples/sample-composition';
-import Card from 'containers/home/stories/samples/sample-composition/sample-card';
-import SampleMedia from 'containers/home/stories/samples/sample-composition/sample-media';
+import { STORIES } from 'containers/home_old/stories/constants';
+import SampleComposition from 'containers/home_old/stories/samples/sample-composition';
+import Card from 'containers/home_old/stories/samples/sample-composition/sample-card';
+import SampleMedia from 'containers/home_old/stories/samples/sample-composition/sample-media';
 import Wrapper from 'containers/wrapper';
 
 const Samples = () => {

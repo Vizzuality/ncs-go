@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 import { useElementSize } from 'usehooks-ts';
 
-import { PATHWAYS } from 'containers/home/featured-science/pathways/constants';
+import { PATHWAYS } from 'containers/home_old/featured-science/pathways/constants';
 import Media from 'containers/media';
 
 import DesktopDescription from './desktop/description';

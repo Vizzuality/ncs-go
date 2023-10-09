@@ -2,7 +2,7 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import LinkArrow from 'containers/home/common/link-arrow';
+import LinkArrow from 'containers/home_old/common/link-arrow';
 
 import Icon from 'components/icon';
 

@@ -4,8 +4,8 @@ import cx from 'classnames';
 
 import { motion, useInView } from 'framer-motion';
 
-import LinkArrow from 'containers/home/common/link-arrow';
-import { PATHWAY_COLOR } from 'containers/home/stories/constants';
+import LinkArrow from 'containers/home_old/common/link-arrow';
+import { PATHWAY_COLOR } from 'containers/home_old/stories/constants';
 
 import Icon from 'components/icon';
 import { IN_VIEW_PROPS } from 'constants/motion';
