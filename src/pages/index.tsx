@@ -7,9 +7,9 @@ import { useRouter } from 'next/router';
 import { useHomeStore } from 'store/home';
 
 import Footer from 'containers/footer';
-import About from 'containers/home/about';
-import Header from 'containers/home/header';
-import Intro from 'containers/home/intro';
+import HomePage from 'containers/home-page';
+import Header from 'containers/home-page/header';
+import Intro from 'containers/home-page/intro';
 import MetaTags from 'containers/meta-tags';
 
 const Home: React.FC = () => {
@@ -42,7 +42,7 @@ const Home: React.FC = () => {
 
       <Intro />
 
-      <About />
+      <HomePage />
 
       <Footer />
     </>

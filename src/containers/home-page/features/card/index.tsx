@@ -27,9 +27,9 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
     <>
       <motion.div
         ref={ref}
-        className="mb-4 md:mb-0 bg-gray-800 relative group hover:z-10 py-10 px-6 space-y-2 text-base cursor-pointer text-left text-white transition duration-400 ease-out md:bg-gray-900 hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg6 md:pt-28"
+        className="mb-4 md:mb-0 bg-beige relative group hover:z-10 py-10 px-6 space-y-2 text-base cursor-pointer text-left text-gray-800 transition duration-400 ease-out hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg md:pt-28"
         style={{
-          boxShadow: '0 0 0 1px #263C44',
+          boxShadow: '0 0 0 1px #E1DDD5',
         }}
         whileInView={{
           opacity: 1,

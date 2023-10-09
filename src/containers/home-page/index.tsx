@@ -1,11 +1,13 @@
 import React, { useEffect, useRef } from 'react';
 
+import Image from 'next/image';
+
 import { useHomeStore } from 'store/home';
 
 import { useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
-import Features from 'containers/home/about/features';
+import Features from 'containers/home-page/features';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -51,19 +53,40 @@ const About = () => {
               <Button theme="tertiary" size="xs" className="py-3 h-12 border-none space-x-2 group">
                 <Icon
                   icon={VIDEO_SVG}
-                  className="h-6 w-6 stroke-gray-900 group-hover:stroke-white transition ease-in-out delay-150 duration-300"
+                  className="h-6 w-6 stroke-gray-800 group-hover:stroke-white transition ease-in-out delay-150 duration-300"
                 />
-                <p className="text-base font-semibold">Watch video</p>
+                <p className="text-base font-semibold text-gray-800">Watch video</p>
               </Button>
             </div>
           </div>
           <div className="absolute left-1/2 ml-10 top-24 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
         </Wrapper>
       </div>
-
-      <div className="bg-gray-900 md:pb-28">
-        <Features />
-      </div>
+      <Image
+        src={'/images/home/01.png'}
+        alt={'What nature can do for the climate?'}
+        width={1120}
+        height={428}
+        layout="responsive"
+        objectFit="contain"
+      />
+      <section className="bg-beige py-20 text-gray-800">
+        <Wrapper>
+          <div className="w-2/3 flex flex-col pb-10 max-w-xl">
+            <h2 className="font-sans text-xl pb-10">
+              A home base for all decision-makers interested in unlocking the power of nature to
+              preserve our living planet.
+            </h2>
+            <p className="text-base pb-4">
+              Naturebase is a new interactive platform that will bring together science-based data
+              on nature’s pathways to identify where, why and how to implement high-integrity
+              nature-based projects with the highest carbon mitigation impact whilst protecting
+              livelihoods and biodiversity.
+            </p>
+          </div>
+          <Features />
+        </Wrapper>
+      </section>
     </div>
   );
 };
