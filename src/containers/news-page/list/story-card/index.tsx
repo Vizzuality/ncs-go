@@ -14,7 +14,6 @@ import LOCATION_SVG from 'svgs/location.svg?sprite';
 
 export const StoryCard = ({
   article,
-  clip,
   country,
   description,
   image,
@@ -61,7 +60,7 @@ export const StoryCard = ({
             bounce: 0,
             duration: 0.5,
           }}
-          style={{ backgroundImage: `url(/images/home/stories/${image})` }}
+          style={{ backgroundImage: `url(/images/news/stories/${image})` }}
         ></motion.div>
       </div>
 
@@ -107,12 +106,6 @@ export const StoryCard = ({
           animate={{ opacity, x }}
           transition={{ duration: 0.125, delay: 0.5, bounce: 0 }}
         >
-          <LinkArrow
-            className={{ arrow: 'stroke-brand-700' }}
-            label="Short clip (1 min)"
-            url={clip}
-          />
-
           {(article || video) && (
             <LinkArrow
               className={{ arrow: 'stroke-brand-700' }}

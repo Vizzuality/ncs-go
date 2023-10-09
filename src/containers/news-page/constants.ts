@@ -1,3 +1,5 @@
+import { Story } from 'types';
+
 export const PATHWAY_COLOR = {
   forests: 'bg-forest-400',
   wetlands: 'bg-blue-400',
@@ -7,37 +9,41 @@ export const PATHWAY_COLOR = {
   savanas: 'bg-brown-400',
 };
 
-export const STORIES = [
+export const STORIES: Story[] = [
   {
-    id: '1',
-    title: 'From Peru to Ghana: How technology is transforming community-led reforestation',
+    id: 2,
+    country: 'Tanzania',
+    title: 'Carbon project on conservation site',
     description:
-      'Peruvian activist Betty Rubio travels to Africa to share her experience using drone and GIS technology to monitor forest cover and support reforestation efforts in a local community in Ghana. Together with local youth, they engage in replanting and monitoring growth of native plants with cultural and economic value, providing synergies with national climate and development targets.',
-    country: 'Ghana',
-    pathway: 'forests',
-    image: '/images/home/stories/ghana.png',
-    video: 'https://www.youtube.com/watch?v=h7vOGztctM0',
+      'Indigenous-led with key financial schemes to protect biodiversity and benefit local people.',
+    image: '/images/news/stories/test-2.jpg',
+    pathway: 'croplands',
+    clip: '#',
+    video: '#',
+    category: 'News',
+    media: ['Clip', 'Video'],
   },
-
   {
-    id: '2',
-    title: 'Water resilience: resisting the tide in the Dominican Republic',
-    description:
-      'Reef restoration, mangroves, agroforestry. Local communities, scientists and public and private organisations in the Dominican Republic are finding solutions in nature to increase resilience and adapt to climate impacts.',
-    country: 'Dominican republic',
+    id: 4,
+    country: 'Dominican Republic',
+    title: 'Coastal resilience project',
+    description: 'Mangroves and coral reefs restoration.',
+    image: '/images/news/stories/test-4.jpg',
     pathway: 'wetlands',
-    image: '/images/home/stories/dominican-republic.png',
-    video: 'https://www.youtube.com/watch?v=3fLjjrugGU4',
+    clip: '#',
+    video: '#',
+    category: 'Factsheets',
+    media: ['Clip', 'Video'],
   },
 
-  {
-    id: '3',
-    title: 'Panama: the return of an ancestral forest',
-    description:
-      'After being displaced due to the construction of a dam, the Panamean Indigenous tribe of Alto Bayano are rescuing their forests and culture with traditional knowledge and nature-based solutions such as reforestation, forest protection and agroforestry, as well as the selling of carbon credits.',
-    country: 'Panama',
-    pathway: 'forests',
-    image: '/images/home/stories/panama.jpg',
-    video: 'https://www.youtube.com/watch?v=JvqROaZLbvU&ab',
-  },
+  // {
+  //   id: '2',
+  //   title: 'Water resilience: resisting the tide in the Dominican Republic',
+  //   description:
+  //     'Reef restoration, mangroves, agroforestry. Local communities, scientists and public and private organisations in the Dominican Republic are finding solutions in nature to increase resilience and adapt to climate impacts.',
+  //   country: 'Dominican republic',
+  //   pathway: 'wetlands',
+  //   image: '/images/news/stories/dominican-republic.png',
+  //   video: 'https://www.youtube.com/watch?v=3fLjjrugGU4',
+  // },
 ];

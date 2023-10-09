@@ -99,7 +99,6 @@ const List = () => {
                   <div key={s.id}>
                     <StoryCard
                       article={s.article}
-                      clip={s.clip}
                       country={s.country}
                       description={s.description}
                       image={s.image}
