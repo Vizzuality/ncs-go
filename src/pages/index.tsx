@@ -6,6 +6,8 @@ import { useRouter } from 'next/router';
 
 import { useHomeStore } from 'store/home';
 
+import { useLocalStorage } from 'usehooks-ts';
+
 import Footer from 'containers/footer';
 import HomePage from 'containers/home-page';
 import Intro from 'containers/home-page/intro';
@@ -15,6 +17,14 @@ import Navbar from 'containers/navbar';
 const Home: React.FC = () => {
   const { asPath } = useRouter();
   const section = useHomeStore((state) => state.section);
+
+  const [introDisplayed, setIntroDisplayed] = useLocalStorage('INTRO', false);
+
+  useEffect(() => {
+    if (section === 'home') {
+      setIntroDisplayed(true);
+    }
+  }, [setIntroDisplayed, section]);
 
   useEffect(() => {
     if (asPath !== '/#subscribe') {
@@ -39,7 +49,8 @@ const Home: React.FC = () => {
       />
 
       <Navbar />
-      <Intro />
+
+      {!introDisplayed && <Intro />}
 
       <HomePage />
 

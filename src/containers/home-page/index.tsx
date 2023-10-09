@@ -27,12 +27,12 @@ const About = () => {
 
   useEffect(() => {
     if (inViewSection) {
-      setSection('about');
+      setSection('home');
     }
   }, [inViewSection, setSection]);
 
   return (
-    <div ref={sectionRef} id="about" className="bg-white snap-start snap-always scroll-mt-20">
+    <div id="home" className="bg-white snap-start snap-always scroll-mt-20">
       <div className="relative overflow-hidden">
         <div
           className="absolute top-0 left-0 w-full h-full bg-left-top bg-no-repeat pointer-events-none"
@@ -42,7 +42,7 @@ const About = () => {
         />
 
         <Wrapper className="pb-72">
-          <div className="pt-44 w-1/2 space-y-10">
+          <div className="pt-44 w-1/2 space-y-10" ref={sectionRef}>
             <h2 className="text-3xl font-sans max-w-lg">
               Unlock Nature’s potential to mitigate climate change with naturebase
             </h2>
@@ -62,6 +62,7 @@ const About = () => {
           <div className="absolute left-1/2 ml-10 top-24 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
         </Wrapper>
       </div>
+
       <Image
         src={'/images/home/01.png'}
         alt={'What nature can do for the climate?'}
