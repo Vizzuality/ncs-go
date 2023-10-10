@@ -6,18 +6,25 @@ import { useRouter } from 'next/router';
 
 import { useHomeStore } from 'store/home';
 
-import About from 'containers/home_old/about';
-import Contact from 'containers/home_old/contact';
-import FeaturedScience from 'containers/home_old/featured-science';
-import Footer from 'containers/home_old/footer';
-import Header from 'containers/home_old/header';
-import Intro from 'containers/home_old/intro';
-import Stories from 'containers/home_old/stories';
+import { useLocalStorage } from 'usehooks-ts';
+
+import Footer from 'containers/footer';
+import HomePage from 'containers/home-page';
+import Intro from 'containers/home-page/intro';
 import MetaTags from 'containers/meta-tags';
+import Navbar from 'containers/navbar';
 
 const Home: React.FC = () => {
   const { asPath } = useRouter();
   const section = useHomeStore((state) => state.section);
+
+  const [introDisplayed, setIntroDisplayed] = useLocalStorage('INTRO', false);
+
+  useEffect(() => {
+    if (section === 'home') {
+      setIntroDisplayed(true);
+    }
+  }, [setIntroDisplayed, section]);
 
   useEffect(() => {
     if (asPath !== '/#subscribe') {
@@ -30,7 +37,7 @@ const Home: React.FC = () => {
   }, [asPath, section]);
 
   return (
-    <div>
+    <>
       <MetaTags
         name="Nature4Climate"
         title="Naturebase"
@@ -41,20 +48,14 @@ const Home: React.FC = () => {
         twitterSite="@Nature4Climate"
       />
 
-      <Header />
+      <Navbar />
 
-      <Intro />
+      {!introDisplayed && <Intro />}
 
-      <About />
-
-      <Stories />
-
-      <FeaturedScience />
-
-      <Contact />
+      <HomePage />
 
       <Footer />
-    </div>
+    </>
   );
 };
 

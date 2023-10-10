@@ -8,7 +8,6 @@ import Layout from 'layouts';
 const ScienceData = (): JSX.Element => {
   return (
     <Layout>
-      Science data
       <ScienceDataPage />
       <Join />
     </Layout>

@@ -1,9 +1,9 @@
 import React from 'react';
 
-import { STORIES } from 'containers/home_old/stories/constants';
-import SampleComposition from 'containers/home_old/stories/samples/sample-composition';
-import Card from 'containers/home_old/stories/samples/sample-composition/sample-card';
-import SampleMedia from 'containers/home_old/stories/samples/sample-composition/sample-media';
+import { STORIES } from 'containers/news-page/constants';
+import SampleComposition from 'containers/news-page/samples/sample-composition';
+import Card from 'containers/news-page/samples/sample-composition/sample-card';
+import SampleMedia from 'containers/news-page/samples/sample-composition/sample-media';
 import Wrapper from 'containers/wrapper';
 
 const Samples = () => {
@@ -15,13 +15,15 @@ const Samples = () => {
             <SampleComposition
               key={story.id}
               align={i % 2 === 0 ? 'left' : 'right'}
-              media={<SampleMedia backgroundImage={`url(${story.image})`} video={story.video} />}
+              media={<SampleMedia backgroundImage={`url(${story.image})`} />}
               card={
                 <Card
+                  article={story.article}
                   country={story.country}
                   title={story.title}
                   description={story.description}
                   pathway={story.pathway}
+                  video={story.video}
                 />
               }
             />

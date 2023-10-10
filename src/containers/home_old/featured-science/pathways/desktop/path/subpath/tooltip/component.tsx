@@ -14,7 +14,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 import Icon from 'components/icon';
 
-import CLOSE_SVG from 'svgs/close.svg?sprite';
+import CLOSE_SVG from 'svgs/ui/close.svg?sprite';
 
 import { TooltipProps } from './types';
 

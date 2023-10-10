@@ -4,8 +4,8 @@ import cx from 'classnames';
 
 import Icon from 'components/icon';
 
-import MINUS_SVG from 'svgs/minus.svg?sprite';
-import PLUS_SVG from 'svgs/plus.svg?sprite';
+import MINUS_SVG from 'svgs/ui/minus.svg?sprite';
+import PLUS_SVG from 'svgs/ui/plus.svg?sprite';
 
 const SubPath = ({ id, title, description, color }) => {
   const [more, setMore] = useState(false);
