@@ -1,3 +1,4 @@
+'use client';
 import React, { useEffect, useRef } from 'react';
 
 import Image from 'next/image';
@@ -7,11 +8,15 @@ import { useHomeStore } from 'store/home';
 import { useInView } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
+import { useModal } from 'hooks/modals';
+
 import Features from 'containers/home-page/features';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
 import Icon from 'components/icon';
+import Modal from 'components/modal';
+import Video from 'components/video';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 import VIDEO_SVG from 'svgs/ui/video.svg?sprite';
@@ -22,8 +27,19 @@ const HomePage = () => {
   const inViewSection = useInView(sectionRef, { margin: '0px 0px 0px' });
 
   const setSection = useHomeStore((state) => state.setSection);
+  const { isOpen, open, close } = useModal();
 
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
+
+  const videoConfig = {
+    youtube: {
+      playerVars: {
+        controls: true,
+        showinfo: 0,
+        rel: 0,
+      },
+    },
+  };
 
   useEffect(() => {
     if (inViewSection) {
@@ -50,13 +66,40 @@ const HomePage = () => {
               <Button theme="primary" size="xs" className="py-3 h-12">
                 Launch map
               </Button>
-              <Button theme="tertiary" size="xs" className="py-3 h-12 border-none space-x-2 group">
+
+              <Button
+                theme="tertiary"
+                size="xs"
+                className="py-3 h-12 border-none space-x-2 group"
+                onClick={() => open()}
+              >
                 <Icon
                   icon={VIDEO_SVG}
                   className="h-6 w-6 stroke-gray-800 group-hover:stroke-white transition ease-in-out delay-150 duration-300"
                 />
-                <p className="text-base font-semibold text-gray-800">Watch video</p>
+                <p className="text-base font-semibold text-gray-800 group-hover:text-white transition ease-in-out delay-150 duration-300">
+                  Watch video
+                </p>
               </Button>
+
+              <Modal
+                title=""
+                size="l"
+                open={isOpen}
+                closeBtn={minWidth >= BREAKPOINTS.sm ? false : true}
+                onOpenChange={() => close()}
+              >
+                <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
+                  <Video
+                    config={videoConfig}
+                    light={false}
+                    loop
+                    url="https://youtu.be/shGJFJ1lgGY"
+                    height="100%"
+                    width="100%"
+                  />
+                </div>
+              </Modal>
             </div>
           </div>
           <div className="absolute left-1/2 ml-10 top-40 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
