@@ -2,8 +2,10 @@ import ADDITIONAL_BENEFITS_SVG from 'svgs/features/additional-benefits.svg?sprit
 import CASE_STUDIES_SVG from 'svgs/features/case-studies.svg?sprite';
 import CLIMATE_MITIGATION_SVG from 'svgs/features/climate-mitigation.svg?sprite';
 import FEASIBILITY_SVG from 'svgs/features/feasibility.svg?sprite';
-import HUMAN_PERSPECTIVES_SVG from 'svgs/features/human-perspectives.svg?sprite';
+import FINANCIAL_SVG from 'svgs/features/financial.svg?sprite';
+import HUMAN_RIGHTS_SVG from 'svgs/features/human-rights.svg?sprite';
 // import MITIGATION_COSTS_SVG from 'svgs/features/mitigation-costs.svg?sprite';
+import IDEAS_SVG from 'svgs/features/ideas.svg?sprite';
 import POLICY_DATABASE_SVG from 'svgs/features/policy-database.svg?sprite';
 import PROTOTYPING_NETWORK_SVG from 'svgs/features/prototyping-network.svg?sprite';
 
@@ -38,7 +40,7 @@ export const FEATURES = [
   },
   {
     key: '2',
-    title: 'Additional Benefits',
+    title: 'Ecosystem services and additional benefits',
     icon: ADDITIONAL_BENEFITS_SVG,
     description: (
       <>
@@ -76,7 +78,7 @@ export const FEATURES = [
   },
   {
     key: '3',
-    title: 'Policies for Action',
+    title: 'Enabling Policies',
     icon: POLICY_DATABASE_SVG,
     description: (
       <>
@@ -94,31 +96,6 @@ export const FEATURES = [
   },
   {
     key: '4',
-    title: 'Human Rights',
-    icon: HUMAN_PERSPECTIVES_SVG,
-    description: (
-      <>
-        <p>
-          Natural climate solutions (NCS) practitioners must take bold steps to ensure that projects
-          not only avoid adverse human rights impacts but actively promote Indigenous People and
-          Local Communities (IPLC) rights, self-determination, well-being, and equity, including
-          full entitlement to benefits. The broader NCS community must strive to do this not only
-          because it is the right thing to do, but also because it will ensure the long-term
-          viability and sustainability of NCS projects.
-        </p>
-        <p>
-          Naturebase will showcase a new NCS Human Rights Toolset specially designed to help screen
-          existing and proposed NCS projects for ongoing or potential future risks to human rights
-          and self-determination. Because NCS is rooted in land use strategies, and IPLCs steward a
-          disproportionate amount of the NCS opportunity globally, Naturebase intends to both
-          respect and support IPLCs in their own pursuit of informed and self-determined climate and
-          land use decision-making.
-        </p>
-      </>
-    ),
-  },
-  {
-    key: '5',
     title: 'Feasibility Constraints',
     icon: FEASIBILITY_SVG,
     description: (
@@ -140,8 +117,8 @@ export const FEATURES = [
     ),
   },
   {
-    key: '6',
-    title: 'Case Studies',
+    key: '5',
+    title: 'Real-world examples',
     icon: CASE_STUDIES_SVG,
     description: (
       <>
@@ -154,7 +131,7 @@ export const FEATURES = [
     ),
   },
   {
-    key: '7',
+    key: '6',
     title: 'Learning Network',
     icon: PROTOTYPING_NETWORK_SVG,
     description: (
@@ -178,6 +155,42 @@ export const FEATURES = [
       </>
     ),
   },
+  {
+    key: '7',
+    title: 'Financial assessment tool',
+    icon: FINANCIAL_SVG,
+  },
+  {
+    key: '8',
+    title: 'Human Rights tool',
+    icon: HUMAN_RIGHTS_SVG,
+    description: (
+      <>
+        <p>
+          Natural climate solutions (NCS) practitioners must take bold steps to ensure that projects
+          not only avoid adverse human rights impacts but actively promote Indigenous People and
+          Local Communities (IPLC) rights, self-determination, well-being, and equity, including
+          full entitlement to benefits. The broader NCS community must strive to do this not only
+          because it is the right thing to do, but also because it will ensure the long-term
+          viability and sustainability of NCS projects.
+        </p>
+        <p>
+          Naturebase will showcase a new NCS Human Rights Toolset specially designed to help screen
+          existing and proposed NCS projects for ongoing or potential future risks to human rights
+          and self-determination. Because NCS is rooted in land use strategies, and IPLCs steward a
+          disproportionate amount of the NCS opportunity globally, Naturebase intends to both
+          respect and support IPLCs in their own pursuit of informed and self-determined climate and
+          land use decision-making.
+        </p>
+      </>
+    ),
+  },
+  {
+    key: '9',
+    title: 'Ideas portal',
+    icon: IDEAS_SVG,
+  },
+
   // {
   //   key: '8',
   //   title: 'Mitigation Costs',
