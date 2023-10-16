@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import React from 'react';
 
 import Image from 'next/image';
@@ -12,7 +13,7 @@ import {
   AccordionTrigger,
 } from 'components/ui/accordion';
 
-import { FAQS } from './constants';
+import { FAQS, PARTNERS } from './constants';
 
 const About = () => {
   return (
@@ -60,6 +61,13 @@ const About = () => {
               environmental sector and academia.{' '}
               <span className="font-semibold">These include:</span>
             </p>
+          </div>
+          <div className="grid grid-cols-3 gap-20 py-20">
+            {PARTNERS.map((partner, idx) => (
+              <div key={idx} className="w-full flex items-center justify-center">
+                <img src={partner.logo} alt={partner.name} />
+              </div>
+            ))}
           </div>
         </Wrapper>
       </section>
