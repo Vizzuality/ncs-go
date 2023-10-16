@@ -301,48 +301,48 @@ export const STEPS = [
       return 0.75;
     },
   },
+  // {
+  //   id: 4,
+  //   animationStep: 4,
+  //   content: (
+  //     <div className="relative px-4 -translate-y-20">
+  //       <div className="w-48 h-48 mx-auto" />
+  //       <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
+  //         <p className="uppercase tracking-[0.32em]">November 2023</p>
+  //       </div>
+  //     </div>
+  //   ),
+  //   getPositions: ({ radius, count, startAngle }) => {
+  //     let pos = [];
+
+  //     for (let i = 0; i < count; i++) {
+  //       const angle = i * (360 / count) - 90 + startAngle;
+
+  //       const x = (radius / 100) * Math.cos((-angle * Math.PI) / 180);
+  //       const y = (radius / 100) * Math.sin((-angle * Math.PI) / 180);
+  //       const z = 0;
+  //       pos.push({ id: i, x, y, z });
+  //     }
+  //     return pos;
+  //   },
+  //   getAnimations: () => {
+  //     return {
+  //       animate: {
+  //         y: 0.75,
+  //         rotateZ: 0,
+  //       },
+  //       transition: {
+  //         duration: 0.1,
+  //       },
+  //     };
+  //   },
+  //   getNoise: () => {
+  //     return 0.0;
+  //   },
+  // },
   {
     id: 4,
-    animationStep: 4,
-    content: (
-      <div className="relative px-4 -translate-y-20">
-        <div className="w-48 h-48 mx-auto" />
-        <div className="absolute w-screen max-w-2xl px-4 mt-10 text-center -translate-x-1/2 left-1/2 top-full">
-          <p className="uppercase tracking-[0.32em]">November 2023</p>
-        </div>
-      </div>
-    ),
-    getPositions: ({ radius, count, startAngle }) => {
-      let pos = [];
-
-      for (let i = 0; i < count; i++) {
-        const angle = i * (360 / count) - 90 + startAngle;
-
-        const x = (radius / 100) * Math.cos((-angle * Math.PI) / 180);
-        const y = (radius / 100) * Math.sin((-angle * Math.PI) / 180);
-        const z = 0;
-        pos.push({ id: i, x, y, z });
-      }
-      return pos;
-    },
-    getAnimations: () => {
-      return {
-        animate: {
-          y: 0.75,
-          rotateZ: 0,
-        },
-        transition: {
-          duration: 0.1,
-        },
-      };
-    },
-    getNoise: () => {
-      return 0.0;
-    },
-  },
-  {
-    id: 5,
-    animationStep: 4,
+    animationStep: 3,
     content: (
       <div className="relative px-4 -translate-y-20">
         <div className="w-48 h-48 mx-auto" />

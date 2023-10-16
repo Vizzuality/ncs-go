@@ -1,32 +1,8 @@
-import { useCallback } from 'react';
-
 import { motion } from 'framer-motion';
 
 import Button from 'components/button';
 
 const Skip = () => {
-  const scrollTo = useCallback((id) => {
-    document.documentElement.className = '';
-
-    const getPageYOffset = () => {
-      return (
-        window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-      );
-    };
-
-    const $scrollEl = document.getElementById(id);
-    const $header = document.getElementById('header');
-    const y =
-      $scrollEl.getBoundingClientRect().top +
-      getPageYOffset() +
-      -$header.getBoundingClientRect().height;
-
-    window.scrollTo({
-      top: y,
-      // behavior: 'smooth',
-    });
-  }, []);
-
   return (
     <motion.div
       initial={{ opacity: 0, y: -5 }}
@@ -34,8 +10,8 @@ const Skip = () => {
       key="step-navigation"
       className="absolute z-20 top-4 md:top-auto md:bottom-7 right-4"
     >
-      <Button theme="secondary" size="xs" onClick={() => scrollTo('about')}>
-        Skip intro
+      <Button theme="secondary" size="xs">
+        <a href="#home">Skip intro</a>
       </Button>
     </motion.div>
   );
