@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useCallback } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
 import Link from 'next/link';
+
+import { useSaveSubscribe } from 'hooks/subscribe';
+import { useToasts } from 'hooks/toast';
 
 import Wrapper from 'containers/wrapper';
 
@@ -16,10 +19,43 @@ import NATUREBASE_SVG from 'svgs/logos/naturebase.svg?sprite';
 import NEWSLETTER_SVG from 'svgs/ui/newsletter.svg?sprite';
 
 const Footer: React.FC = () => {
-  //!TODO: Configure Sendgrid
-  const onSubmit = (data) => {
-    console.info('onSubmit', data);
-  };
+  const { addToast } = useToasts();
+  const saveSubscribeMutation = useSaveSubscribe({});
+
+  const onSubmit = useCallback(
+    (data, form) => {
+      saveSubscribeMutation.mutate(
+        { data },
+        {
+          onSuccess: () => {
+            addToast(
+              'success-contact',
+              <>
+                <p className="text-base">You have successfully subscribed.</p>
+              </>,
+              {
+                level: 'success',
+              }
+            );
+            form.reset();
+          },
+          onError: () => {
+            addToast(
+              'error-contact',
+              <>
+                <p className="text-base">Oops! Something went wrong</p>
+              </>,
+              {
+                level: 'error',
+              }
+            );
+          },
+        }
+      );
+    },
+    [addToast, saveSubscribeMutation]
+  );
+
   return (
     <section className="w-full pt-14 pb-4 bg-gray-900">
       <Wrapper>
