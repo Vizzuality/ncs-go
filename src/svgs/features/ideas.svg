@@ -1,7 +1,5 @@
-<svg width="47" height="48" viewBox="0 0 47 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-<g id="Frame">
-<path id="Vector" d="M16.8 39.4004H30.8" stroke="#263C44" stroke-linecap="square" stroke-linejoin="round"/>
-<path id="Vector_2" d="M18.8999 45.7002H28.6999" stroke="#263C44" stroke-linecap="square" stroke-linejoin="round"/>
-<ellipse id="Ellipse 80" cx="23.8001" cy="17.0003" rx="14.7" ry="14.7" fill="#00CC99"/>
-</g>
+<svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M24 62H44" stroke="#263C44" stroke-linecap="square" stroke-linejoin="round"/>
+<path d="M27 71H41" stroke="#263C44" stroke-linecap="square" stroke-linejoin="round"/>
+<circle cx="34" cy="30" r="21" fill="#00CC99"/>
 </svg>
