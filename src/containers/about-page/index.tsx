@@ -18,7 +18,7 @@ import { FAQS, PARTNERS } from './constants';
 
 const About = () => {
   return (
-    <div id="naturbase" className="bg-white pt-24 w-full">
+    <div id="naturbase" className="bg-white pt-12 md:pt-24 w-full">
       <section>
         <Wrapper className="lg:py-20 pt-20 pb-10">
           <Hero title="What is naturebase" subtitle="Open data platform" />

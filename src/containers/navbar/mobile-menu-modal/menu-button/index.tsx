@@ -34,7 +34,8 @@ const MenuButton = ({
     },
     opened: {
       rotate: -45,
-      translateY: -2,
+      translateY: 2,
+      translateX: -2.75,
       transformorigin: '50% 50%',
     },
   };

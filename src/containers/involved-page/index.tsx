@@ -59,7 +59,7 @@ const Involved = () => {
   );
 
   return (
-    <div id="involved" className="bg-white pt-24 w-full">
+    <div id="involved" className="bg-white pt-12 md:pt-24 w-full">
       <section>
         <Wrapper className="pb-10 pt-20 md:py-20">
           <Hero
@@ -67,7 +67,7 @@ const Involved = () => {
             subtitle="Naturebase is a platform made by people for people."
           />
 
-          <div className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10">
+          <div className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10 space-y-4 md:space-y-0">
             <div className="md:col-start-1 md:col-end-3">
               <p>
                 Naturebase is a platform made by people who care about nature and climate change and
@@ -75,7 +75,7 @@ const Involved = () => {
                 on the path of recovery.
               </p>
             </div>
-            <div className="col-start-1 col-end-3 text-lg">
+            <div className="col-start-1 col-end-3 text-base md:text-lg">
               <p>There are several ways you can take action with us:</p>
             </div>
           </div>
@@ -89,7 +89,7 @@ const Involved = () => {
           layout="responsive"
           objectFit="contain"
         />
-        <section className="md:-mt-56 z-10 relative md:pb-20">
+        <section className="md:-mt-56 z-10 -mt-1 relative md:pb-20">
           <Wrapper className="md:grid md:grid-cols-2 md:gap-6 px-0 md:px-4">
             <div className="md:space-y-6 md:-mt-20">
               <div className="bg-brand-700 py-10 px-4 md:p-10 text-gray-800 space-y-4 md:space-y-6">

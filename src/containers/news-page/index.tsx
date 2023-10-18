@@ -10,7 +10,7 @@ import Wrapper from 'containers/wrapper';
 
 const News = () => {
   return (
-    <motion.section id="stories" className="overflow-x-hidden bg-white w-full pt-44">
+    <motion.section id="stories" className="overflow-x-hidden bg-white w-full pt-32 md:pt-44">
       <Wrapper className="md:grid md:grid-cols-3 md:pb-20">
         <div className="col-start-1 col-end-3">
           <Hero

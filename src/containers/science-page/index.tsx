@@ -8,7 +8,7 @@ import Wrapper from 'containers/wrapper';
 
 const Science = () => {
   return (
-    <div id="naturbase" className="bg-white w-full pt-44">
+    <div id="naturbase" className="bg-white w-full pt-32 md:pt-44">
       <Wrapper className="pb-10 md:pb-20">
         <Hero title="Nature climate solutions" subtitle="What nature can do for the climate?" />
 

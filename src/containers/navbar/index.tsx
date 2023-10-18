@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useRef, useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import Image from 'next/image';
 import Link from 'next/link';
@@ -45,33 +45,11 @@ const Navbar: React.FC = () => {
     }
   }, [section, setHeader, route]);
 
-  const scrollTo = useCallback((id, h) => {
-    const DELAY = 501;
-
-    setTimeout(() => {
-      const getPageYOffset = () => {
-        return (
-          window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0
-        );
-      };
-      const $scrollEl = document.getElementById(id);
-      const $header = headerRef.current;
-
-      const yOffset = h ? $header.getBoundingClientRect().height : 0;
-      const y = $scrollEl.getBoundingClientRect().top + getPageYOffset() + -yOffset;
-
-      window.scrollTo({
-        top: y,
-        behavior: h ? 'smooth' : 'auto',
-      });
-    }, DELAY);
-  }, []);
-
   return (
     <motion.nav
       id="header"
       ref={headerRef}
-      className="fixed top-0 left-0 z-20 w-full text-white bg-gray-900 border-b border-gray-800 text-base"
+      className="fixed top-0 left-0 z-20 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
       initial={{ y: '-100%' }}
       animate={{
         y: header ? '0%' : '-100%',
@@ -123,26 +101,11 @@ const Navbar: React.FC = () => {
           </div>
         </Wrapper>
       </Media>
+
       <Media lessThan="md">
         <>
           <Wrapper>
             <div className="relative flex items-center justify-between h-20">
-              <button
-                className="w-[180px] h-[40px] shrink-0"
-                onClick={() => {
-                  scrollTo('intro', false);
-                  closeMobile();
-                }}
-              >
-                <Image
-                  src="/images/logo-horizontal.svg"
-                  alt="Logo"
-                  width={180}
-                  height={40}
-                  layout="responsive"
-                />
-              </button>
-
               <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
                 <MenuButton
                   isOpen={isOpenMobile}
