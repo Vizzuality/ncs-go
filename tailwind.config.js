@@ -42,6 +42,12 @@ module.exports = {
           lineHeight: '2rem',
         },
       ],
+      '2lg': [
+        '1.5rem',
+        {
+          lineHeight: '2.25rem',
+        },
+      ],
       xl: [
         '2rem',
         {
@@ -88,6 +94,10 @@ module.exports = {
         200: '#FBE4C9',
         400: '#F0B884',
       },
+      cream: {
+        400: '#F9F7F3',
+        700: '#E1DDD5',
+      },
       forest: {
         200: '#C1ECD2',
         400: '#60CBA5',
@@ -99,6 +109,7 @@ module.exports = {
       gray: {
         100: '#F6F5F2',
         400: '#CAC9C8',
+        600: '#7D898D',
         800: '#263C44',
         900: '#1E2D3A',
       },

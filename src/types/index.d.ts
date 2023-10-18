@@ -1,8 +1,17 @@
-/**
- * This is an example of a type/interface that's used in more than just
- * one place throughout the app.
- */
-export interface TypeExample {
-  id: string;
-  anyProperty: number;
+export type Category = 'News' | 'Factsheets' | 'Stories from the ground';
+
+export type MediaType = 'Article' | 'Clip' | 'Video';
+
+export interface Story {
+  id: number;
+  article?: string;
+  clip: string;
+  country: string;
+  description: string;
+  image: string;
+  pathway: string;
+  title: string;
+  video?: string;
+  category: Category;
+  media: MediaType[];
 }

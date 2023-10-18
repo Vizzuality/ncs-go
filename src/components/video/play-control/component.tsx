@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 
 import Icon from 'components/icon';
 
-import PLAY_SVG from 'svgs/play.svg?sprite';
+import PLAY_SVG from 'svgs/ui/play.svg?sprite';
 
 const PlayControl = ({ playBackground, playColor }) => {
   const playMotion = {

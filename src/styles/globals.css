@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 @font-face {
   font-family: "SpaceGrotesk";
   src: url("../../public/fonts/SpaceGrotesk-Regular.ttf");
@@ -23,6 +24,11 @@
     color: #666;
     background: transparent;
   }
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -49,5 +55,10 @@
     }
   }
 
+  .dangerouslySetInnerHTML b {
+    font-family: 'SpaceGrotesk-Bold';
+  }
 }
+
+
 
