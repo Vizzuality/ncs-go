@@ -33,15 +33,19 @@ const AccordionTrigger = React.forwardRef<
         onClick={() => setOpen(!open)}
         ref={ref}
         className={cn(
-          'bg-cream-400 text-lg rounded-lg flex flex-1 items-center justify-between p-6 text-left font-semibold transition-all [&[data-state=open]>svg]:rotate-180',
+          'bg-cream-400 text-base md:text-lg rounded-lg flex flex-1 items-center justify-between p-6 text-left md:font-semibold transition-all [&[data-state=open]>svg]:rotate-180',
           className
         )}
         {...props}
       >
-        {children}
+        <div className="w-2/3 md:w-5/6">{children}</div>
 
-        {open && <HiMinusSmall size={16} className="fill-gray-800 h-4 w-4 shrink-0" />}
-        {!open && <HiPlusSmall size={16} className="fill-gray-800 h-4 w-4 shrink-0 " />}
+        {open && (
+          <HiMinusSmall size={16} className="fill-gray-800 md:h-4 md:w-4 h-6 w-6 shrink-0" />
+        )}
+        {!open && (
+          <HiPlusSmall size={16} className="fill-gray-800 md:h-4 md:w-4 h-6 w-6 shrink-0 " />
+        )}
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );
