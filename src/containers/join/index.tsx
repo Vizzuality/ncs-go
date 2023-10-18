@@ -8,7 +8,7 @@ const Join = (): JSX.Element => (
   <div className="bg-brand-700 w-full">
     <Wrapper className="py-10 md:py-20 flex md:flex-row md:space-x-24 flex-col-reverse">
       <div className="flex flex-col space-y-6 md:w-1/2">
-        <h3 className="font-sans leading-8 text-[24px] md:text-xl">
+        <h3 className="font-sans leading-8 text-2lg md:text-xl">
           Join the naturebase community and be among the first to test the tool
         </h3>
         <p className="font-sans text-base">

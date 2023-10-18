@@ -106,7 +106,7 @@ const Footer: React.FC = () => {
           </div>
           <div className="lg:space-y-6 space-y-4">
             <Icon icon={NEWSLETTER_SVG} className="h-8 lg:h-10 lg:w-10 w-8 stroke-white" />
-            <h2 className="text-[24px] lg:text-3xl font-sans text-white">Stay tunned</h2>
+            <h2 className="text-2lg lg:text-3xl font-sans text-white">Stay tunned</h2>
             <p className="font-sans text-white text-base">Subscribe to our newsletter</p>
             <Form initialValues={{ email: '' }} onSubmit={onSubmit}>
               {({ handleSubmit, form }) => {

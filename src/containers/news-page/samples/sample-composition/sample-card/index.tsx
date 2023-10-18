@@ -48,7 +48,7 @@ export const SampleCard = ({
         animate={{ opacity }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-[24px] leading-8 lg:text-xl">{title}</h3>
+        <h3 className="text-2lg leading-8 lg:text-xl">{title}</h3>
         <h4 className="text-base">{description}</h4>
       </motion.div>
 
