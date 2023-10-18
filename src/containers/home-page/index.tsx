@@ -59,12 +59,12 @@ const HomePage = () => {
         />
 
         <Wrapper className="pb-10 md:pb-72">
-          <div className="md:pt-56 pt-52 md:w-1/2 space-y-10">
+          <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
             <h2 className="text-xl md:text-3xl font-sans max-w-lg" ref={sectionRef}>
               Unlock Nature’s potential to mitigate climate change with naturebase
             </h2>
             <Media lessThan="md">
-              <div className="border-8 rounded-3xl border-gray-900 w-full h-[239px]" />
+              <div className="border-8 rounded-3xl border-gray-900 w-full h-[214px]" />
             </Media>
             <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
               <Button theme="primary" size="xs" className="py-3 h-12">
