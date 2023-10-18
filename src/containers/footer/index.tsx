@@ -57,13 +57,13 @@ const Footer: React.FC = () => {
   );
 
   return (
-    <section className="w-full pt-14 pb-4 bg-gray-900">
+    <section className="w-full pt-10 lg:pt-14 pb-4 bg-gray-900">
       <Wrapper>
-        <div className="flex justify-between">
-          <div className="space-y-20">
-            <Icon icon={NATUREBASE_SVG} className="h-16 w-96 -ml-12" />
+        <div className="flex lg:flex-row flex-col justify-between space-y-10 lg:space-y-0">
+          <div className="space-y-10 lg:space-y-20">
+            <Icon icon={NATUREBASE_SVG} className="h-16 w-56 lg:w-96 lg:-ml-12" />
             <div>
-              <div className="flex text-white font-sans text-base space-x-6">
+              <div className="flex flex-col lg:flex-row text-white font-sans text-base lg:space-x-6 space-y-4 lg:space-y-0">
                 <div className="space-y-4">
                   <Link href={'/about'}>About</Link>
                   <div className="opacity-60 flex flex-col space-y-1">
@@ -90,15 +90,15 @@ const Footer: React.FC = () => {
               </div>
             </div>
           </div>
-          <div className="space-y-6">
-            <Icon icon={NEWSLETTER_SVG} className="h-10 w-10 stroke-white" />
-            <h2 className="text-3xl font-sans text-white">Stay tunned</h2>
+          <div className="lg:space-y-6 space-y-4">
+            <Icon icon={NEWSLETTER_SVG} className="h-8 lg:h-10 lg:w-10 w-8 stroke-white" />
+            <h2 className="text-[24px] lg:text-3xl font-sans text-white">Stay tunned</h2>
             <p className="font-sans text-white text-base">Subscribe to our newsletter</p>
             <Form initialValues={{ email: '' }} onSubmit={onSubmit}>
               {({ handleSubmit, form }) => {
                 return (
                   <form noValidate onSubmit={handleSubmit}>
-                    <div className="flex justify-between w-full">
+                    <div className="flex lg:flex-row flex-col justify-between w-full space-y-4 lg:space-y-0">
                       <Field
                         name="email"
                         component="input"
@@ -112,7 +112,7 @@ const Footer: React.FC = () => {
                               type="email"
                               placeholder="Enter your email"
                               className={cn({
-                                'flex min-w-[287px] h-12 px-6 text-base text-gray-800 placeholder:text-gray-600 transition duration-300 ease-in-out delay-150 bg-white border-none rounded-l-3xl focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 ':
+                                'flex rounded-3xl w-full lg:rounded-r-none min-w-[287px] h-12 px-6 text-base text-gray-800 placeholder:text-gray-600 transition duration-300 ease-in-out delay-150 bg-white border-none lg:rounded-l-3xl focus:outline-none focus:ring-inset focus:ring-2 focus:ring-brand-700 ':
                                   true,
                                 'ring-2 ring-red-600 focus:ring-red-600':
                                   form.getState().submitFailed && meta.error,
@@ -126,7 +126,7 @@ const Footer: React.FC = () => {
                         size="xs"
                         theme="primary"
                         type="submit"
-                        className="rounded-l-none h-12"
+                        className="lg:rounded-l-none h-12"
                       >
                         <p>Subscribe</p>
                       </Button>
@@ -137,7 +137,7 @@ const Footer: React.FC = () => {
             </Form>
           </div>
         </div>
-        <div className="flex justify-between items-end pt-28">
+        <div className="flex justify-between items-end pt-10 lg:pt-28">
           <Icon icon={NATURE4CLIMATE_SVG} className="h-14 w-28" />
 
           <p className="text-sm text-white opacity-60 font-sans">Supported by Bezos Earth Fund</p>
