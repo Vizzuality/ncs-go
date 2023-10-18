@@ -27,7 +27,9 @@ const Path = ({ id, title, description, link, color, selected, subpaths, onClick
           <Image src={`/images/home/pathways/${id}.svg`} layout="fill" alt={title} />
         </div>
 
-        <h3 className="w-full">{title}</h3>
+        <h3 className="w-full">
+          {title} {subpaths.length && <span>({subpaths.length})</span>}
+        </h3>
 
         <Icon icon={SELECTED ? MINUS_SVG : PLUS_SVG} className="w-10 h-10 text-gray-900 shrink-0" />
       </div>
@@ -38,11 +40,13 @@ const Path = ({ id, title, description, link, color, selected, subpaths, onClick
             <p>{description}</p>
 
             {link && (
-              <LinkArrow
-                className={{ arrow: 'stroke-brand-700', label: 'text-brand-700' }}
-                label="Learn more"
-                url={link}
-              />
+              <div className="w-full flex justify-end">
+                <LinkArrow
+                  className={{ arrow: 'stroke-brand-700', label: 'text-brand-700' }}
+                  label="Learn more"
+                  url={link}
+                />
+              </div>
             )}
           </div>
           <div className="-mt-2 space-y-2">

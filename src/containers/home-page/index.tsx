@@ -11,6 +11,7 @@ import useBreakpoint from 'use-breakpoint';
 import { useModal } from 'hooks/modals';
 
 import Features from 'containers/home-page/features';
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -57,12 +58,15 @@ const HomePage = () => {
           }}
         />
 
-        <Wrapper className="pb-72">
-          <div className="pt-56 w-1/2 space-y-10">
-            <h2 className="text-3xl font-sans max-w-lg" ref={sectionRef}>
+        <Wrapper className="pb-10 md:pb-72">
+          <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
+            <h2 className="text-xl md:text-3xl font-sans max-w-lg" ref={sectionRef}>
               Unlock Nature’s potential to mitigate climate change with naturebase
             </h2>
-            <div className="flex space-x-2">
+            <Media lessThan="md">
+              <div className="border-8 rounded-3xl border-gray-900 w-full h-[214px]" />
+            </Media>
+            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
               <Button theme="primary" size="xs" className="py-3 h-12">
                 Launch map
               </Button>
@@ -102,7 +106,9 @@ const HomePage = () => {
               </Modal>
             </div>
           </div>
-          <div className="absolute left-1/2 ml-10 top-40 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
+          <Media greaterThanOrEqual="md">
+            <div className="absolute left-1/2 ml-10 top-40 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
+          </Media>
         </Wrapper>
       </div>
 
@@ -114,10 +120,10 @@ const HomePage = () => {
         layout="responsive"
         objectFit="contain"
       />
-      <section className="bg-beige py-20 text-gray-800">
+      <section className="bg-beige py-10 md:py-20 text-gray-800">
         <Wrapper>
-          <div className="w-2/3 flex flex-col pb-10 max-w-xl">
-            <h2 className="font-sans text-xl pb-10">
+          <div className="md:w-2/3 flex flex-col md:pb-10 max-w-xl">
+            <h2 className="font-sans leading-7 md:leading-10 text-lg md:text-xl pb-4 md:pb-10">
               A home base for all decision-makers interested in unlocking the power of nature to
               preserve our living planet.
             </h2>

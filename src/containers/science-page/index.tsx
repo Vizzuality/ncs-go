@@ -9,17 +9,17 @@ import Wrapper from 'containers/wrapper';
 const Science = () => {
   return (
     <div id="naturbase" className="bg-white w-full pt-44">
-      <Wrapper className="pb-20">
+      <Wrapper className="pb-10 md:pb-20">
         <Hero title="Nature climate solutions" subtitle="What nature can do for the climate?" />
 
-        <div className="font-sans text-base text-gray-800 grid grid-cols-3 gap-10">
-          <div className="col-start-1">
+        <div className="font-sans text-base space-y-4 md:space-y-0 text-gray-800 md:grid md:grid-cols-3 md:gap-10">
+          <div className="md:col-start-1">
             <p>
               Natural climate solution pathways protect, manage, and restore nature in forests,
               croplands, wetlands, and grasslands.
             </p>
           </div>
-          <div className="col-start-2">
+          <div className="md:col-start-2">
             <p>
               Science shows that natural climate solutions can deliver up to one-third of the
               emission reductions required to stabilise the planet and avoid the worst impacts of
@@ -41,11 +41,11 @@ const Science = () => {
       />
 
       <section id="pathways">
-        <Wrapper className="py-20">
+        <Wrapper className="py-10 md:py-20">
           <Hero title="NCS pathways" subtitle="Pathways to mitigate climate change" />
 
-          <div className="font-sans text-base text-gray-800 grid grid-cols-3 gap-10">
-            <p className="col-start-1 col-end-3">
+          <div className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10">
+            <p className="md:col-start-1 md:col-end-3">
               Learn more about the nature-based approaches to mitigate climate change (also known as
               natural climate solutions), which avoid emissions and enhance sequestration across
               forests, wetlands, grasslands and agricultural lands.{' '}

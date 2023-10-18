@@ -1,12 +1,12 @@
 import { Story } from 'types';
 
 export const PATHWAY_COLOR = {
-  forests: 'bg-forest-400',
+  forest: 'bg-forest-400',
   wetlands: 'bg-blue-400',
   croplands: 'bg-grassland-400',
   grasslands: 'bg-brown-400',
   shrublands: 'bg-brown-400',
-  savanas: 'bg-brown-400',
+  savana: 'bg-brown-400',
 };
 
 export const STORIES: Story[] = [

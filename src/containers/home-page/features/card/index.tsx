@@ -27,7 +27,7 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
     <>
       <motion.div
         ref={ref}
-        className="mb-4 md:mb-0 bg-beige relative group hover:z-10 py-10 px-6 space-y-2 text-base cursor-pointer text-left text-gray-800 transition duration-400 ease-out hover:ease-in hover:bg-white hover:scale-[103%] md:space-y-6 md:text-lg md:pt-28"
+        className="mb-4 md:mb-0 bg-beige relative group hover:z-10 py-10 px-6 text-base cursor-pointer text-left text-gray-800 transition duration-400 ease-out hover:ease-in hover:bg-white hover:scale-[103%] space-y-6 md:text-lg md:pt-28"
         style={{
           boxShadow: '0 0 0 1px #E1DDD5',
         }}
@@ -50,14 +50,14 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
           />
         </motion.div>
         <motion.h3
-          className="h-12 font-sans group-hover:text-black"
+          className="md:h-12 font-sans group-hover:text-black text-[14px] md:text-base"
           animate={{ opacity, y }}
           transition={{ delay: 0.3 + index * 0.1, bounce: 0 }}
         >
           {title}
         </motion.h3>
         <Icon
-          className="absolute w-8 h-8 lg:hidden top-4 sm:top-5 md:top-1 lg:top-0 stroke-white lg:stroke-black right-6 group-hover:block"
+          className="absolute w-6 h-6 md:w-8 md:h-8 lg:hidden top-0 md:top-5 lg:top-0 stroke-gray-800 right-6 group-hover:block"
           icon={ARROW_TOP_RIGHT_SVG}
         />
       </motion.div>

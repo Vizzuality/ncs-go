@@ -4,10 +4,10 @@ import cx from 'classnames';
 
 import { motion, useInView } from 'framer-motion';
 
-import LinkArrow from 'containers/home_old/common/link-arrow';
-import { PATHWAY_COLOR } from 'containers/home_old/stories/constants';
+import { PATHWAY_COLOR } from 'containers/news-page/constants';
 
 import Icon from 'components/icon';
+import LinkArrow from 'components/link-arrow';
 
 import LOCATION_SVG from 'svgs/ui/location.svg?sprite';
 
@@ -29,7 +29,8 @@ export const SampleCard = ({
     <div
       ref={ref}
       className={cx({
-        'lg:p-10 sm:p-6 p-4 flex flex-col text-base text-gray-900 text-left h-full relative': true,
+        'ml-4 md:ml-0 lg:p-10 sm:p-6 p-4 flex flex-col text-base text-gray-900 text-left h-full relative':
+          true,
         [PATHWAY_COLOR[pathway]]: true,
       })}
     >
@@ -43,11 +44,11 @@ export const SampleCard = ({
       </motion.div>
 
       <motion.div
-        className="space-y-2.5 font-sans"
+        className="space-y-2.5 font-sans pb-6 md:pb-0"
         animate={{ opacity }}
         transition={{ delay: 0.3 }}
       >
-        <h3 className="text-lg lg:text-xl">{title}</h3>
+        <h3 className="text-2lg leading-8 lg:text-xl">{title}</h3>
         <h4 className="text-base">{description}</h4>
       </motion.div>
 
