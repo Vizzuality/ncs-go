@@ -7,7 +7,9 @@ import { FEATURES } from './constants';
 const Features = () => {
   return (
     <>
-      <h3 className="font-sans text-lg text-gray-800">Click on each feature to learn more.</h3>
+      <h3 className="font-sans text-base md:text-lg text-gray-800">
+        Click on each feature to learn more.
+      </h3>
 
       <div className="relative z-0 grid gap-px pt-10 md:grid-cols-2 xl:grid-cols-3 md:mx-0">
         {FEATURES.map((f, i) => (
