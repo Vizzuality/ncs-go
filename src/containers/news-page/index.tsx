@@ -3,6 +3,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import Hero from 'containers/hero';
+import Media from 'containers/media';
 import List from 'containers/news-page/list';
 import Samples from 'containers/news-page/samples';
 import Wrapper from 'containers/wrapper';
@@ -10,7 +11,7 @@ import Wrapper from 'containers/wrapper';
 const News = () => {
   return (
     <motion.section id="stories" className="overflow-x-hidden bg-white w-full pt-44">
-      <Wrapper className="grid grid-cols-3 pb-20">
+      <Wrapper className="md:grid md:grid-cols-3 md:pb-20">
         <div className="col-start-1 col-end-3">
           <Hero
             title="News"
@@ -25,9 +26,11 @@ const News = () => {
         </div>
       </Wrapper>
 
-      <Samples />
+      <Media greaterThanOrEqual="md">
+        <Samples />
+      </Media>
 
-      <div className="-mt-72">
+      <div className="md:-mt-72">
         <List />
       </div>
     </motion.section>

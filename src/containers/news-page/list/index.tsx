@@ -31,6 +31,7 @@ const List = () => {
   const setFilters = useUIStore((state) => state.setFilters);
 
   const [dataFiltered, setDataFiltered] = useState<Story[]>(STORIES);
+  const [displayedStories, setDisplayedStories] = useState<Story[]>(STORIES.slice(0, 3));
 
   useEffect(() => {
     const activedFilters = Object.values(filters).some((f) => f.length > 0);
@@ -65,7 +66,7 @@ const List = () => {
               <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 my-12">
                 <p className="text-gray-800 text-base">Filter by:</p>
                 <div className="flex space-x-3">
-                  <div className="xl:w-1/3">
+                  <div className="w-1/3">
                     <MultiSelect
                       id="categories"
                       placeholder="Story type"
@@ -74,7 +75,7 @@ const List = () => {
                       onSelect={(v) => setFilters({ ...filters, categories: v })}
                     />
                   </div>
-                  <div className="xl:w-1/3">
+                  <div className="w-1/3">
                     <MultiSelect
                       id="media"
                       placeholder="Media type"
@@ -83,7 +84,7 @@ const List = () => {
                       onSelect={(v) => setFilters({ ...filters, media: v })}
                     />
                   </div>
-                  <div className="xl:w-1/3">
+                  <div className="w-1/3">
                     <MultiSelect
                       id="countries"
                       placeholder="Country"
@@ -111,8 +112,13 @@ const List = () => {
                 ))}
               </div>
             </div>
+            {!dataFiltered.length && (
+              <div className="h-24 items-center w-full text-gray-800 font-sans flex justify-center">
+                <p>There are not results</p>
+              </div>
+            )}
 
-            <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
+            {/* <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
               <Button
                 className="rounded-full border-gray-800 text-gray-800 hover:text-cream-400"
                 theme="secondary"
@@ -121,7 +127,7 @@ const List = () => {
               >
                 Show more stories
               </Button>
-            </motion.div>
+            </motion.div> */}
           </Wrapper>
         </div>
       </Media>
@@ -129,14 +135,14 @@ const List = () => {
       <Media lessThan="md">
         <div className="w-full pt-4">
           <Wrapper>
-            <div className="lg:space-y-44">
-              {STORIES.map((s) => (
+            <div className="space-y-4">
+              {displayedStories.map((s) => (
                 <SampleComposition
                   key={s.id}
                   align="right"
                   media={
                     <SampleMedia
-                      backgroundImage={`url(/images/home/stories/${s.image})`}
+                      backgroundImage={`url(/images/news/stories/${s.image})`}
                       video={s.video}
                     />
                   }
@@ -159,7 +165,7 @@ const List = () => {
                 className="w-full rounded-full"
                 theme={minWidth < BREAKPOINTS.md ? 'tertiary' : 'secondary'}
                 size="s"
-                onClick={() => console.info('Show more stories')}
+                onClick={() => setDisplayedStories(STORIES)}
               >
                 Show more stories
               </Button>

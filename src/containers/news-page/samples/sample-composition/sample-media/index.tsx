@@ -43,7 +43,7 @@ export const SampleMedia = ({ backgroundImage, video }: SampleMediaProps) => {
     <div className="relative w-full h-full">
       <motion.div
         ref={targetRef}
-        className="w-full h-full overflow-hidden bg-center bg-no-repeat bg-cover"
+        className="md:w-full h-full overflow-hidden bg-center bg-no-repeat bg-cover w-auto mr-4 md:mr-0"
         style={{
           backgroundImage,
           backgroundPosition: bgPos,

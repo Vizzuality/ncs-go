@@ -66,19 +66,33 @@ const Footer: React.FC = () => {
               <div className="flex flex-col lg:flex-row text-white font-sans text-base lg:space-x-6 space-y-4 lg:space-y-0">
                 <div className="space-y-4">
                   <Link href={'/about'}>About</Link>
-                  <div className="opacity-60 flex flex-col space-y-1">
-                    <a href="about#naturbase">About Naturebase</a>
-                    <a href="about#who">Who is with us?</a>
-                    <a href="about#what">What we want?</a>
-                    <a href="about#faq">FAQ</a>
+                  <div className="flex flex-col space-y-1">
+                    <a href="about#naturbase" className="opacity-60 hover:opacity-100">
+                      About Naturebase
+                    </a>
+                    <a href="about#who" className="opacity-60 hover:opacity-100">
+                      Who is with us?
+                    </a>
+                    <a href="about#what" className="opacity-60 hover:opacity-100">
+                      What we want?
+                    </a>
+                    <a href="about#faq" className="opacity-60 hover:opacity-100">
+                      FAQ
+                    </a>
                   </div>
                 </div>
                 <div className="space-y-4">
                   <Link href={'/science'}>Science and data</Link>
-                  <div className="opacity-60 flex flex-col space-y-1">
-                    <a href="science#pathways">NCS pathways</a>
-                    <a href="science#data">Data sources</a>
-                    <a href="science#authors">Key authors</a>
+                  <div className="flex flex-col space-y-1">
+                    <a href="science#pathways" className="opacity-60 hover:opacity-100">
+                      NCS pathways
+                    </a>
+                    <a href="science#data" className="opacity-60 hover:opacity-100">
+                      Data sources
+                    </a>
+                    <a href="science#authors" className="opacity-60 hover:opacity-100">
+                      Key authors
+                    </a>
                   </div>
                 </div>
                 <div className="space-y-4">
