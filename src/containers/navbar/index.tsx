@@ -108,6 +108,19 @@ const Navbar: React.FC = () => {
         <>
           <Wrapper>
             <div className="relative flex items-center justify-between h-20">
+              {!isOpenMobile && (
+                <Link href="/" passHref>
+                  <div className="w-[180px] h-[40px] shrink-0 cursor-pointer">
+                    <Image
+                      src="/images/logo-horizontal.svg"
+                      alt="Logo"
+                      width={180}
+                      height={40}
+                      layout="responsive"
+                    />
+                  </div>
+                </Link>
+              )}
               <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
                 <MenuButton
                   isOpen={isOpenMobile}
