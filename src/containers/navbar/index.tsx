@@ -61,15 +61,17 @@ const Navbar: React.FC = () => {
       <Media greaterThanOrEqual="md">
         <Wrapper>
           <div className="flex items-center justify-between space-x-12 text-lg border-b border-gray-900">
-            <button className="w-[180px] h-[40px] shrink-0" onClick={() => {}}>
-              <Image
-                src="/images/logo-horizontal.svg"
-                alt="Logo"
-                width={180}
-                height={40}
-                layout="responsive"
-              />
-            </button>
+            <Link href="/" passHref>
+              <div className="w-[180px] h-[40px] shrink-0 cursor-pointer">
+                <Image
+                  src="/images/logo-horizontal.svg"
+                  alt="Logo"
+                  width={180}
+                  height={40}
+                  layout="responsive"
+                />
+              </div>
+            </Link>
 
             <ul className="flex items-center justify-end w-full p-0 m-0 space-x-12">
               {NAV_OPTIONS.map((opt) => (
@@ -78,10 +80,10 @@ const Navbar: React.FC = () => {
                     className="relative flex justify-between m-0 cursor-pointer"
                     onClick={() => setPage(opt)}
                   >
-                    <p className="hover:text-brand-700 py-5">{opt.label}</p>
+                    <p className="hover:text-brand-700 text-base py-6">{opt.label}</p>
                     {route !== '/' && opt === page && (
                       <motion.div
-                        className="absolute left-0 right-0 h-[3px] bg-white bottom-0"
+                        className="absolute left-0 right-0 h-[3px] bg-white -bottom-px"
                         layoutId="underline"
                       />
                     )}
@@ -91,12 +93,12 @@ const Navbar: React.FC = () => {
             </ul>
 
             <Button
-              className="rounded-[100px] whitespace-nowrap h-12"
+              className="rounded-[100px] whitespace-nowrap h-12 px-6"
               theme="primary"
               size="s"
               onClick={() => {}}
             >
-              Launch Map
+              <p className="text-base">Launch Map</p>
             </Button>
           </div>
         </Wrapper>
@@ -106,6 +108,19 @@ const Navbar: React.FC = () => {
         <>
           <Wrapper>
             <div className="relative flex items-center justify-between h-20">
+              {!isOpenMobile && (
+                <Link href="/" passHref>
+                  <div className="w-[180px] h-[40px] shrink-0 cursor-pointer">
+                    <Image
+                      src="/images/logo-horizontal.svg"
+                      alt="Logo"
+                      width={180}
+                      height={40}
+                      layout="responsive"
+                    />
+                  </div>
+                </Link>
+              )}
               <motion.div className="absolute -translate-y-1/2 top-1/2 right-2" {...IN_VIEW_PROPS}>
                 <MenuButton
                   isOpen={isOpenMobile}

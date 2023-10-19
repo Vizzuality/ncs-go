@@ -40,12 +40,8 @@ const AccordionTrigger = React.forwardRef<
       >
         <div className="w-2/3 md:w-5/6">{children}</div>
 
-        {open && (
-          <HiMinusSmall size={16} className="fill-gray-800 md:h-4 md:w-4 h-6 w-6 shrink-0" />
-        )}
-        {!open && (
-          <HiPlusSmall size={16} className="fill-gray-800 md:h-4 md:w-4 h-6 w-6 shrink-0 " />
-        )}
+        {open && <HiMinusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
+        {!open && <HiPlusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
       </AccordionPrimitive.Trigger>
     </AccordionPrimitive.Header>
   );

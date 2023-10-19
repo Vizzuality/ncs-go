@@ -16,7 +16,7 @@ import { cn } from 'utils/cn';
 
 import NATURE4CLIMATE_SVG from 'svgs/logos/Nature4Climate.svg?sprite';
 import NATUREBASE_SVG from 'svgs/logos/naturebase.svg?sprite';
-import NEWSLETTER_SVG from 'svgs/ui/newsletter.svg?sprite';
+import NEWSLETTER_SVG from 'svgs/ui/newsletter-white.svg?sprite';
 
 const Footer: React.FC = () => {
   const { addToast } = useToasts();
@@ -105,7 +105,7 @@ const Footer: React.FC = () => {
             </div>
           </div>
           <div className="lg:space-y-6 space-y-4">
-            <Icon icon={NEWSLETTER_SVG} className="h-8 lg:h-10 lg:w-10 w-8 stroke-white" />
+            <Icon icon={NEWSLETTER_SVG} className="h-8 lg:h-10 lg:w-10 w-8" />
             <h2 className="text-2lg lg:text-3xl font-sans text-white">Stay tunned</h2>
             <p className="font-sans text-white text-base">Subscribe to our newsletter</p>
             <Form initialValues={{ email: '' }} onSubmit={onSubmit}>
