@@ -117,10 +117,10 @@ export const MultiSelect = (props: MultiSelectProps): JSX.Element => {
                       iconClassName="w-3 h-3"
                     />
 
-                    {!loading && open && <HiChevronDown size={16} className="fill-gray-800" />}
-                    {!loading && !open && (
-                      <HiChevronDown size={16} className="rotate-180 fill-gray-800" />
+                    {!loading && open && (
+                      <HiChevronDown size={16} className="fill-gray-800 rotate-180" />
                     )}
+                    {!loading && !open && <HiChevronDown size={16} className="fill-gray-800" />}
                   </span>
                 </Listbox.Button>
               </span>

@@ -111,7 +111,11 @@ const Involved = () => {
                 </p>
 
                 <div className="w-full flex justify-end">
-                  <Button theme="tertiary" size="xs" className="py-3 h-12 w-full md:w-auto">
+                  <Button
+                    theme="tertiary"
+                    size="xs"
+                    className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
+                  >
                     Launch map
                   </Button>
                 </div>
@@ -119,7 +123,7 @@ const Involved = () => {
 
               <Media lessThan="md">
                 <div className="bg-beige py-10 px-4 text-gray-800 space-y-4">
-                  <Icon icon={NEWSLETTER_SVG} className="w-10 h-10 stroke-gray-800" />
+                  <Icon icon={NEWSLETTER_SVG} className="w-10 h-10" />
                   <h4 className="text-2lg">Subscribe to our newsletter</h4>
                   <p>
                     Naturebase is constantly evolving. Stay tuned to what’s happening backstage as
@@ -187,7 +191,7 @@ const Involved = () => {
             <div className="md:space-y-6 md:mt-56">
               <Media greaterThanOrEqual="md">
                 <div className="bg-beige p-10 text-gray-800 space-y-6 mt-6">
-                  <Icon icon={NEWSLETTER_SVG} className="w-12 h-12 stroke-gray-800" />
+                  <Icon icon={NEWSLETTER_SVG} className="w-12 h-12" />
                   <h4 className="text-2lg">Subscribe to our newsletter</h4>
                   <p>
                     Naturebase is constantly evolving. Stay tuned to what’s happening backstage as

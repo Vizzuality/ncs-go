@@ -52,64 +52,64 @@ const HomePage = () => {
     <div id="home" className="bg-white snap-start snap-always scroll-mt-20">
       <div className="relative overflow-hidden">
         <div
-          className="absolute top-0 left-0 w-full h-full bg-left-top bg-no-repeat pointer-events-none"
+          className="left-0 w-full h-full bg-[left_top_4.5rem] bg-no-repeat"
           style={{
             backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/background.svg)`,
           }}
-        />
+        >
+          <Wrapper className="z-10 pb-10 md:pb-44">
+            <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
+              <h2 className="text-xl md:text-3xl font-sans max-w-lg text-gray-800" ref={sectionRef}>
+                Unlock Nature’s potential to mitigate climate change with naturebase
+              </h2>
+              <Media lessThan="md">
+                <div className="border-8 rounded-3xl border-gray-900 w-full h-[214px]" />
+              </Media>
+              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
+                <Button theme="primary" size="xs" className="py-3 h-12">
+                  Launch map
+                </Button>
 
-        <Wrapper className="pb-10 md:pb-72">
-          <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
-            <h2 className="text-xl md:text-3xl font-sans max-w-lg" ref={sectionRef}>
-              Unlock Nature’s potential to mitigate climate change with naturebase
-            </h2>
-            <Media lessThan="md">
-              <div className="border-8 rounded-3xl border-gray-900 w-full h-[214px]" />
-            </Media>
-            <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
-              <Button theme="primary" size="xs" className="py-3 h-12">
-                Launch map
-              </Button>
-
-              <Button
-                theme="tertiary"
-                size="xs"
-                className="py-3 h-12 border-none space-x-2 group"
-                onClick={() => open()}
-              >
-                <Icon
-                  icon={VIDEO_SVG}
-                  className="h-6 w-6 stroke-gray-800 group-hover:stroke-white transition ease-in-out delay-150 duration-300"
-                />
-                <p className="text-base font-semibold text-gray-800 group-hover:text-white transition ease-in-out delay-150 duration-300">
-                  Watch video
-                </p>
-              </Button>
-
-              <Modal
-                title=""
-                size="l"
-                open={isOpen}
-                closeBtn={minWidth >= BREAKPOINTS.sm ? false : true}
-                onOpenChange={() => close()}
-              >
-                <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
-                  <Video
-                    config={videoConfig}
-                    light={false}
-                    loop
-                    url="https://youtu.be/shGJFJ1lgGY"
-                    height="100%"
-                    width="100%"
+                <Button
+                  theme="secondary"
+                  size="xs"
+                  className="py-3 h-12 border-none space-x-2 group hover:bg-transparent"
+                  onClick={() => open()}
+                >
+                  <Icon
+                    icon={VIDEO_SVG}
+                    className="h-6 w-6 stroke-gray-800 group-hover:stroke-brand-700 transition ease-in-out delay-150 duration-300"
                   />
-                </div>
-              </Modal>
+                  <p className="text-base font-semibold text-gray-800 group-hover:text-brand-700 transition ease-in-out delay-150 duration-300">
+                    Watch video
+                  </p>
+                </Button>
+
+                <Modal
+                  title=""
+                  size="l"
+                  open={isOpen}
+                  closeBtn={minWidth >= BREAKPOINTS.sm ? false : true}
+                  onOpenChange={() => close()}
+                >
+                  <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
+                    <Video
+                      config={videoConfig}
+                      light={false}
+                      loop
+                      url="https://youtu.be/shGJFJ1lgGY"
+                      height="100%"
+                      width="100%"
+                    />
+                  </div>
+                </Modal>
+              </div>
             </div>
-          </div>
-          <Media greaterThanOrEqual="md">
-            <div className="absolute left-1/2 ml-10 top-40 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
-          </Media>
-        </Wrapper>
+            <Media greaterThanOrEqual="md">
+              <div className="absolute left-1/2 ml-10 top-36 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
+            </Media>
+          </Wrapper>
+        </div>
       </div>
 
       <Image
