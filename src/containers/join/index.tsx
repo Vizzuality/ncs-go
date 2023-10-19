@@ -17,7 +17,11 @@ const Join = (): JSX.Element => (
           access to the ideas portal.
         </p>
         <div>
-          <Button theme="tertiary" size="xs" className="py-3 h-12 w-full md:w-auto">
+          <Button
+            theme="tertiary"
+            size="xs"
+            className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
+          >
             Launch map
           </Button>
         </div>
