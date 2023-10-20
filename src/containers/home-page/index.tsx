@@ -55,7 +55,7 @@ const HomePage = () => {
           <Wrapper className="z-20 pb-10 md:pb-44">
             <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
               <h2
-                className="text-xl max-w-sm lg:text-2xl xl:text-3xl font-sans lg:max-w-md xl:max-w-lg text-gray-800"
+                className="text-xl max-w-sm xl:text-3xl font-sans xl:max-w-lg text-gray-800"
                 ref={sectionRef}
               >
                 Unlock Nature’s potential to mitigate climate change with naturebase
