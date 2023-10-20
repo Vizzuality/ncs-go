@@ -50,20 +50,18 @@ const HomePage = () => {
 
   return (
     <div id="home" className="bg-white snap-start snap-always scroll-mt-20">
-      <div className="relative overflow-hidden">
-        <div
-          className="left-0 w-full h-full bg-[left_top_4.5rem] bg-no-repeat"
-          style={{
-            backgroundImage: minWidth >= BREAKPOINTS.md && `url(/images/home/background.svg)`,
-          }}
-        >
-          <Wrapper className="z-10 pb-10 md:pb-44">
+      <div className="overflow-hidden">
+        <div className="relative after:content-[''] after:absolute after:z-10 after:opacity-20 w-full after:top-16 after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover md:after:bg-[url('/images/home/background.svg')]">
+          <Wrapper className="z-20 pb-10 md:pb-44">
             <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
-              <h2 className="text-xl md:text-3xl font-sans max-w-lg text-gray-800" ref={sectionRef}>
+              <h2
+                className="text-xl max-w-sm lg:text-2xl xl:text-3xl font-sans lg:max-w-md xl:max-w-lg text-gray-800"
+                ref={sectionRef}
+              >
                 Unlock Nature’s potential to mitigate climate change with naturebase
               </h2>
               <Media lessThan="md">
-                <div className="border-8 rounded-3xl border-gray-900 w-full h-[214px]" />
+                <div className="border-8 rounded-3xl border-gray-900 w-auto h-[206px] bg-[url('/images/home/mockup.png')] bg-cover bg-no-repeat" />
               </Media>
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
                 <Button theme="primary" size="xs" className="py-3 h-12">
@@ -106,7 +104,7 @@ const HomePage = () => {
               </div>
             </div>
             <Media greaterThanOrEqual="md">
-              <div className="absolute left-1/2 ml-10 top-36 border-8 rounded-3xl border-gray-900 w-[785px] h-[488px]" />
+              <div className="bg-[url('/images/home/mockup.png')] absolute z-20 right-0 top-52 mr-24 border-8 bg-no-repeat bg-cover rounded-3xl border-gray-900 w-[492px] h-[320px]" />
             </Media>
           </Wrapper>
         </div>
