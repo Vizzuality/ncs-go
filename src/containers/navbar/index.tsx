@@ -24,6 +24,7 @@ const Navbar: React.FC = () => {
   const [page, setPage] = useState(null);
 
   const { route } = useRouter();
+
   const { isOpen: isOpenMobile, open: openMobile, close: closeMobile } = useModal();
 
   useEffect(() => {
@@ -33,7 +34,6 @@ const Navbar: React.FC = () => {
   }, [route]);
 
   const section = useHomeStore((state) => state.section);
-  const header = useHomeStore((state) => state.header);
   const setHeader = useHomeStore((state) => state.setHeader);
 
   useEffect(() => {
@@ -49,14 +49,14 @@ const Navbar: React.FC = () => {
     <motion.nav
       id="header"
       ref={headerRef}
-      className="fixed top-0 left-0 z-20 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
-      initial={{ y: '-100%' }}
-      animate={{
-        y: header ? '0%' : '-100%',
-      }}
-      transition={{
-        bounce: 0,
-      }}
+      className="fixed top-0 left-0 z-30 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
+      // initial={{ y: '-100%' }}
+      // animate={{
+      //   y: header ? '0%' : '-100%',
+      // }}
+      // transition={{
+      //   bounce: 0,
+      // }}
     >
       <Media greaterThanOrEqual="md">
         <Wrapper>
