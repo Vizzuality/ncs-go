@@ -2,9 +2,8 @@ import React from 'react';
 
 import Image from 'next/image';
 
-import LinkArrow from 'containers/home_old/common/link-arrow';
-
 import Icon from 'components/icon';
+import LinkArrow from 'components/link-arrow';
 
 import MINUS_SVG from 'svgs/ui/minus.svg?sprite';
 import PLUS_SVG from 'svgs/ui/plus.svg?sprite';

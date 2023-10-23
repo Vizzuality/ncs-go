@@ -1,7 +1,7 @@
 export const PATHWAYS = [
   {
-    id: 'forests',
-    title: 'Forests',
+    id: 'forest',
+    title: 'Forest',
     description:
       'Forests include any land that is not considered cropland with tree cover naturally greater than 25%, including tropical rainforests, dry forests, boreal forests, and tree plantations managed for wood products.',
     color: '#60CBA5',
@@ -13,49 +13,28 @@ export const PATHWAYS = [
         title: 'Avoided Forest Conversion',
         color: '#C1ECD2',
         description:
-          'Avoided emissions from preventing human conversion of forest to non-forest land uses such as agricultural, urban, or industrial lands.',
+          'Avoidable emissions from preventing permanent human conversion of forest to non-forest land uses such as agricultural, urban, or industrial lands.',
       },
       {
         id: 'climate-smart-forestry',
         title: 'Climate Smart Forestry',
         color: '#C1ECD2',
         description:
-          'Avoided emissions and/or increased sequestration in working forests. Potential management activities could include reduced-impact logging practices, deferred harvest (an intentional reduction in forest harvesting intensity, including cessation of logging on some parcels), enhanced forest regeneration in post-harvest stands and other actions. ',
+          'Avoided emissions and/or increased sequestration in working forests. Potential management activities could include reduced-impact logging practices, deferred harvest (an intentional reduction in forest harvesting intensity, including cessation of logging on some parcels), enhanced forest regeneration in post-harvest stands and other actions.',
       },
       {
-        id: 'forest-plantation-management',
-        title: 'Forest Plantation Management',
+        id: 'reduced-woodfuel-harvest-in-forests',
+        title: 'Reduced Woodfuel Harvest in Forests',
         color: '#C1ECD2',
         description:
-          'Increased sequestration in forest stands through strategies such as extending rotation length (time between harvest cycles) in even-aged, intensively managed plantations. Some NCS analyses have also considered carbon stored in wood products.',
-      },
-      {
-        id: 'forest-based-agroforestry',
-        title: 'Forest-based Agroforestry',
-        color: '#C1ECD2',
-        description:
-          'Increased carbon storage from adding or protecting trees in crop or savannas. This could include multistrata systems (e.g. shade-grown cacao), tree monocrops (e.g. orchard, rubber), or short rotation coppices.',
-      },
-      {
-        id: 'forest-fire-management',
-        title: 'Forest Fire Management',
-        color: '#C1ECD2',
-        description:
-          'Avoided emissions in fire-prone forests through management practices such as prescribed burning to reduce the risk of high-intensity wildfire or shifting timing of burns to reduce GHG emissions. In wetter forests where fires are less frequent, implementing fire control practices along forest edges to avoid human-caused fires.',
-      },
-      {
-        id: 'avoided-woodfuel-harvest-in-forests',
-        title: 'Avoided Woodfuel Harvest in Forests',
-        color: '#C1ECD2',
-        description:
-          'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves in forests.',
+          'Avoided emissions due to reduced harvest of woodfuel from forest biomes used for cooking and heating, without reducing heating or cooking utility.',
       },
       {
         id: 'reforestation',
         title: 'Reforestation',
         color: '#C1ECD2',
         description:
-          'Increased sequestration from restoration of forest cover, that is, transitioning from non-forest land uses to forest land uses in places where forests have historically occurred.',
+          'Increased sequestration from restoration of forest cover, that is, transitioning from non-forest (<30% tree cover) to forest (>60% tree cover) in places where forests have historically occurred. Reforestation can occur as a natural process (regeneration) or through tree planting. Croplands and urban areas are not considered reforestation opportunities.',
       },
     ],
   },
@@ -175,11 +154,11 @@ export const PATHWAYS = [
           'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves in savannas. ',
       },
       {
-        id: 'savannasbased-agroforestry',
+        id: 'savannabased-agroforestry',
         title: 'Savannas-based Agroforestry',
         color: '#F1FABE',
         description:
-          'Increased carbon storage from adding or protecting trees in croplands or savannas, including silvopasture (trees in grazing lands).',
+          'Increased carbon sequestration in above- and belowground tree biomass and soil carbon due to integration of trees into grazing lands.',
       },
       {
         id: 'avoided-shrubland-conversion',
