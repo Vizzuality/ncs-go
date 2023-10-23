@@ -55,7 +55,7 @@ const HomePage = () => {
   return (
     <div id="home" className="bg-white snap-start snap-always scroll-mt-20">
       <div className="overflow-hidden">
-        <div className="relative after:content-[''] after:absolute after:z-10 after:opacity-20 w-full after:top-16 after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover md:after:bg-[url('/images/home/background.svg')]">
+        <div className="relative after:content-[''] after:absolute after:z-10 after:opacity-20 w-full after:top-16 after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
           <Wrapper className="z-20 pb-10 md:pb-44">
             <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
               <h2
@@ -64,7 +64,7 @@ const HomePage = () => {
               >
                 Unlock Nature’s potential to mitigate climate change with naturebase
               </h2>
-              <Media lessThan="md">
+              <Media lessThan="lg">
                 <div className="border-8 rounded-3xl border-gray-900 w-auto h-[206px] bg-[url('/images/home/mockup.png')] bg-cover bg-no-repeat" />
               </Media>
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
@@ -107,8 +107,8 @@ const HomePage = () => {
                 </Modal>
               </div>
             </div>
-            <Media greaterThanOrEqual="md">
-              <div className="bg-[url('/images/home/mockup.png')] absolute z-20 right-0 top-52 mr-24 border-8 bg-no-repeat bg-cover rounded-3xl border-gray-900 w-[492px] h-[320px]" />
+            <Media greaterThanOrEqual="lg">
+              <div className="bg-[url('/images/home/mockup.png')] absolute z-20 right-0 top-52 mr-24 3xl:mr-72 4xl:mr-96 border-8 bg-no-repeat bg-cover rounded-3xl border-gray-900 w-[492px] h-[320px]" />
             </Media>
           </Wrapper>
         </div>
