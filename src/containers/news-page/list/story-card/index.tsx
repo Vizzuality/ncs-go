@@ -4,10 +4,10 @@ import cx from 'classnames';
 
 import { motion, useInView } from 'framer-motion';
 
-import LinkArrow from 'containers/home_old/common/link-arrow';
-import { PATHWAY_COLOR } from 'containers/home_old/stories/constants';
+import { PATHWAY_COLOR } from 'containers/news-page/constants';
 
 import Icon from 'components/icon';
+import LinkArrow from 'components/link-arrow';
 import { IN_VIEW_PROPS } from 'constants/motion';
 
 import LOCATION_SVG from 'svgs/ui/location.svg?sprite';
