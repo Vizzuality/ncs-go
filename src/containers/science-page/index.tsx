@@ -1,12 +1,19 @@
-import React from 'react';
+import React, { useRef } from 'react';
 
 import Image from 'next/image';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Hero from 'containers/hero';
 import Pathways from 'containers/science-page/pathways';
 import Wrapper from 'containers/wrapper';
 
 const Science = () => {
+  const imageRef = useRef();
+  const { scrollYProgress } = useScroll({ target: imageRef, offset: ['0 1', '1 1'] });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['-42%', '0%']);
+
   return (
     <div id="naturbase" className="bg-white w-full pt-32 md:pt-44">
       <Wrapper className="pb-10 md:pb-20">
@@ -31,15 +38,18 @@ const Science = () => {
         </div>
       </Wrapper>
 
-      <Image
-        src={'/images/science/01.png'}
-        alt={'What nature can do for the climate?'}
-        width={1120}
-        height={448}
-        layout="responsive"
-        objectFit="contain"
-      />
-
+      <div className="h-[428px] overflow-hidden w-full">
+        <motion.div ref={imageRef} style={{ y }} className="w-full">
+          <Image
+            src={'/images/science/01.jpg'}
+            alt={'What nature can do for the climate?'}
+            width={1280}
+            height={728}
+            layout="responsive"
+            objectFit="contain"
+          />
+        </motion.div>
+      </div>
       <section id="pathways">
         <Wrapper className="py-10 md:py-20">
           <Hero title="NCS pathways" subtitle="Pathways to mitigate climate change" />

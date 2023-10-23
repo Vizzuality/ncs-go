@@ -116,7 +116,7 @@ const HomePage = () => {
       <div className="h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRef} style={{ y }} className="w-full">
           <Image
-            src={'/images/home/scroll-01.jpg'}
+            src={'/images/home/01.jpg'}
             alt={'What nature can do for the climate?'}
             width={1280}
             height={728}

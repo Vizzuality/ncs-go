@@ -1,8 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
 import Image from 'next/image';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
@@ -21,8 +23,13 @@ import IDEA_SVG from 'svgs/ui/idea.svg?sprite';
 import NEWSLETTER_SVG from 'svgs/ui/newsletter.svg?sprite';
 
 const Involved = () => {
+  const imageRef = useRef();
   const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
+
+  const { scrollYProgress } = useScroll({ target: imageRef, offset: ['0 1', '1 1'] });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['-42%', '0%']);
 
   const onSubmit = useCallback(
     (data, form) => {
@@ -81,14 +88,18 @@ const Involved = () => {
           </div>
         </Wrapper>
 
-        <Image
-          src={'/images/involved/01.png'}
-          alt={'Naturebase is a platform made by people for people.'}
-          width={1024}
-          height={410}
-          layout="responsive"
-          objectFit="contain"
-        />
+        <div className="h-[428px] overflow-hidden w-full">
+          <motion.div ref={imageRef} style={{ y }} className="w-full">
+            <Image
+              src={'/images/involved/01.jpg'}
+              alt={'Naturebase is a platform made by people for people.'}
+              width={1280}
+              height={728}
+              layout="responsive"
+              objectFit="contain"
+            />
+          </motion.div>
+        </div>
         <section className="md:-mt-56 z-10 -mt-1 relative md:pb-20">
           <Wrapper className="md:grid md:grid-cols-2 md:gap-6 px-0 md:px-4">
             <div className="md:space-y-6 md:-mt-20">

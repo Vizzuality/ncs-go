@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
-import React from 'react';
+import React, { useRef } from 'react';
 
 import Image from 'next/image';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import Hero from 'containers/hero';
 import Media from 'containers/media';
@@ -17,6 +19,22 @@ import {
 import { FAQS, PARTNERS } from './constants';
 
 const About = () => {
+  const imageRefUp = useRef();
+  const imageRefDown = useRef();
+  const { scrollYProgress: scrollYProgressUp } = useScroll({
+    target: imageRefUp,
+    offset: ['0 1', '1 1'],
+  });
+
+  const { scrollYProgress: scrollYProgressDown } = useScroll({
+    target: imageRefDown,
+    offset: ['0 1', '1 1'],
+  });
+
+  const yUp = useTransform(scrollYProgressUp, [0, 1], ['-42%', '0%']);
+
+  const yDown = useTransform(scrollYProgressDown, [0, 1], ['-42%', '0%']);
+
   return (
     <div id="naturbase" className="bg-white pt-12 md:pt-24 w-full">
       <section>
@@ -41,14 +59,18 @@ const About = () => {
           </div>
         </Wrapper>
 
-        <Image
-          src={'/images/about/01.png'}
-          alt={'What is naturebase?'}
-          width={1280}
-          height={448}
-          layout="responsive"
-          objectFit="contain"
-        />
+        <div className="h-[428px] overflow-hidden w-full">
+          <motion.div ref={imageRefUp} style={{ y: yUp }} className="w-full">
+            <Image
+              src={'/images/about/01.jpg'}
+              alt={'What is naturebase?'}
+              width={1280}
+              height={728}
+              layout="responsive"
+              objectFit="cover"
+            />
+          </motion.div>
+        </div>
       </section>
 
       <section id="who">
@@ -97,14 +119,18 @@ const About = () => {
         </Wrapper>
       </section>
 
-      <Image
-        src={'/images/about/02.png'}
-        alt={'What we want'}
-        width={1074}
-        height={410}
-        layout="responsive"
-        objectFit="contain"
-      />
+      <div className="h-[428px] overflow-hidden w-full">
+        <motion.div ref={imageRefDown} style={{ y: yDown }} className="w-full">
+          <Image
+            src={'/images/about/02.jpg'}
+            alt={'What we want'}
+            width={1280}
+            height={728}
+            layout="responsive"
+            objectFit="contain"
+          />
+        </motion.div>
+      </div>
       <section id="faq" className="bg-beige md:pb-24 text-gray-800 py-10 md:py-20">
         <Wrapper>
           <Hero title="Faq" subtitle="Got a question?" />
