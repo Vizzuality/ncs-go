@@ -9,6 +9,7 @@ import { useModal } from 'hooks/modals';
 
 import Modal from 'components/modal';
 import PlayControl from 'components/video/play-control';
+import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
 
 import type { SampleMediaProps } from './types';
@@ -42,6 +43,7 @@ export const SampleMedia = ({ backgroundImage, video }: SampleMediaProps) => {
   return (
     <div className="relative w-full h-full">
       <motion.div
+        {...IN_VIEW_PROPS}
         ref={targetRef}
         className="md:w-full h-full overflow-hidden bg-center bg-no-repeat bg-cover w-auto mr-4 md:mr-0"
         style={{

@@ -1,11 +1,14 @@
 import Image from 'next/image';
 
+import { motion } from 'framer-motion';
+
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
+import { IN_VIEW_PROPS } from 'constants/motion';
 
 const Join = (): JSX.Element => (
-  <div className="bg-brand-700 w-full">
+  <motion.div className="bg-brand-700 w-full" {...IN_VIEW_PROPS}>
     <Wrapper className="py-10 md:py-20 flex md:flex-row md:space-x-24 flex-col-reverse">
       <div className="flex flex-col space-y-6 md:w-1/2">
         <h3 className="font-sans leading-8 text-2lg md:text-xl">
@@ -38,7 +41,7 @@ const Join = (): JSX.Element => (
         />
       </div>
     </Wrapper>
-  </div>
+  </motion.div>
 );
 
 export default Join;

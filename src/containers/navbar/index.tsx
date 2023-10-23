@@ -49,9 +49,9 @@ const Navbar: React.FC = () => {
     <nav
       id="header"
       ref={headerRef}
-      className="fixed top-0 left-0 z-20 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
+      className="fixed top-0 left-0 z-50 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
     >
-      <Media greaterThanOrEqual="md">
+      <Media greaterThanOrEqual="lg">
         <Wrapper>
           <div className="flex items-center justify-between space-x-12 text-lg border-b border-gray-900">
             <Link href="/" passHref>
@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
         </Wrapper>
       </Media>
 
-      <Media lessThan="md">
+      <Media lessThan="lg">
         <>
           <Wrapper>
             <div className="relative flex items-center justify-between h-20">

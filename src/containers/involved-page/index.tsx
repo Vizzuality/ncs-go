@@ -1,8 +1,10 @@
-import React, { useCallback } from 'react';
+import React, { useCallback, useRef } from 'react';
 
 import { Form, Field } from 'react-final-form';
 
 import Image from 'next/image';
+
+import { motion, useScroll, useTransform } from 'framer-motion';
 
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
@@ -14,6 +16,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Icon from 'components/icon';
+import { IN_VIEW_PROPS } from 'constants/motion';
 import { cn } from 'utils/cn';
 
 import EMAIL_SVG from 'svgs/ui/email.svg?sprite';
@@ -21,8 +24,13 @@ import IDEA_SVG from 'svgs/ui/idea.svg?sprite';
 import NEWSLETTER_SVG from 'svgs/ui/newsletter.svg?sprite';
 
 const Involved = () => {
+  const imageRef = useRef();
   const { addToast } = useToasts();
   const saveSubscribeMutation = useSaveSubscribe({});
+
+  const { scrollYProgress } = useScroll({ target: imageRef, offset: ['0 1', '1 1'] });
+
+  const y = useTransform(scrollYProgress, [0, 1], ['-42%', '0%']);
 
   const onSubmit = useCallback(
     (data, form) => {
@@ -67,7 +75,10 @@ const Involved = () => {
             subtitle="Naturebase is a platform made by people for people."
           />
 
-          <div className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10 space-y-4 md:space-y-0">
+          <motion.div
+            className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10 space-y-4 md:space-y-0"
+            {...IN_VIEW_PROPS}
+          >
             <div className="md:col-start-1 md:col-end-3">
               <p>
                 Naturebase is a platform made by people who care about nature and climate change and
@@ -78,21 +89,28 @@ const Involved = () => {
             <div className="col-start-1 col-end-3 text-base md:text-lg">
               <p>There are several ways you can take action with us:</p>
             </div>
-          </div>
+          </motion.div>
         </Wrapper>
 
-        <Image
-          src={'/images/involved/01.png'}
-          alt={'Naturebase is a platform made by people for people.'}
-          width={1024}
-          height={410}
-          layout="responsive"
-          objectFit="contain"
-        />
+        <motion.div className="md:h-[428px] overflow-hidden w-full" {...IN_VIEW_PROPS}>
+          <motion.div ref={imageRef} style={{ y }} className="w-full">
+            <Image
+              src={'/images/involved/01.jpg'}
+              alt={'Naturebase is a platform made by people for people.'}
+              width={1280}
+              height={728}
+              layout="responsive"
+              objectFit="contain"
+            />
+          </motion.div>
+        </motion.div>
         <section className="md:-mt-56 z-10 -mt-1 relative md:pb-20">
           <Wrapper className="md:grid md:grid-cols-2 md:gap-6 px-0 md:px-4">
             <div className="md:space-y-6 md:-mt-20">
-              <div className="bg-brand-700 py-10 px-4 md:p-10 text-gray-800 space-y-4 md:space-y-6">
+              <motion.div
+                className="bg-brand-700 py-10 px-4 md:p-10 text-gray-800 space-y-4 md:space-y-6"
+                {...IN_VIEW_PROPS}
+              >
                 <Image
                   src={'/images/involved/mock-app.png'}
                   alt={'Join the naturebase community and be among the first to test the tool'}
@@ -119,10 +137,13 @@ const Involved = () => {
                     Launch map
                   </Button>
                 </div>
-              </div>
+              </motion.div>
 
               <Media lessThan="md">
-                <div className="bg-beige py-10 px-4 text-gray-800 space-y-4">
+                <motion.div
+                  className="bg-beige py-10 px-4 text-gray-800 space-y-4"
+                  {...IN_VIEW_PROPS}
+                >
                   <Icon icon={NEWSLETTER_SVG} className="w-10 h-10" />
                   <h4 className="text-2lg">Subscribe to our newsletter</h4>
                   <p>
@@ -171,10 +192,13 @@ const Involved = () => {
                       );
                     }}
                   </Form>
-                </div>
+                </motion.div>
               </Media>
 
-              <div className="bg-beige border-t border-b border-cream-700 md:border-none md:p-10 py-10 px-4 text-gray-800 space-y-4 md:space-y-6">
+              <motion.div
+                className="bg-beige border-t border-b border-cream-700 md:border-none md:p-10 py-10 px-4 text-gray-800 space-y-4 md:space-y-6"
+                {...IN_VIEW_PROPS}
+              >
                 <Icon icon={EMAIL_SVG} className="md:w-12 md:h-12 w-10 h-10" />
                 <h4 className="text-2lg">Get in touch with the team</h4>
                 <p>Still have questions? Drop us an e-mail.</p>
@@ -186,11 +210,14 @@ const Involved = () => {
                     </a>
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             </div>
             <div className="md:space-y-6 md:mt-56">
               <Media greaterThanOrEqual="md">
-                <div className="bg-beige p-10 text-gray-800 space-y-6 mt-6">
+                <motion.div
+                  className="bg-beige p-10 text-gray-800 space-y-6 mt-6"
+                  {...IN_VIEW_PROPS}
+                >
                   <Icon icon={NEWSLETTER_SVG} className="w-12 h-12" />
                   <h4 className="text-2lg">Subscribe to our newsletter</h4>
                   <p>
@@ -239,9 +266,12 @@ const Involved = () => {
                       );
                     }}
                   </Form>
-                </div>
+                </motion.div>
               </Media>
-              <div className="bg-beige px-4 py-10 md:p-10 text-gray-800 space-y-4 md:space-y-6">
+              <motion.div
+                className="bg-beige px-4 py-10 md:p-10 text-gray-800 space-y-4 md:space-y-6"
+                {...IN_VIEW_PROPS}
+              >
                 <Icon icon={IDEA_SVG} className="md:w-12 md:h-12 w-10 h-10" />
                 <h4 className="text-2lg">Submit your feedback and ideas</h4>
                 <p>
@@ -254,7 +284,7 @@ const Involved = () => {
                     Launch ideas portal
                   </Button>
                 </div>
-              </div>
+              </motion.div>
             </div>
           </Wrapper>
         </section>

@@ -3,8 +3,10 @@
 import * as React from 'react';
 
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
+import { motion } from 'framer-motion';
 import { HiMinusSmall, HiPlusSmall } from 'react-icons/hi2';
 
+import { IN_VIEW_PROPS } from 'constants/motion';
 import { cn } from 'utils/cn';
 
 const Accordion = AccordionPrimitive.Root;
@@ -28,22 +30,24 @@ const AccordionTrigger = React.forwardRef<
   const [open, setOpen] = React.useState(false);
 
   return (
-    <AccordionPrimitive.Header className="flex [&[data-state=open]>button]:bg-cream-700">
-      <AccordionPrimitive.Trigger
-        onClick={() => setOpen(!open)}
-        ref={ref}
-        className={cn(
-          'bg-cream-400 text-base md:text-lg rounded-lg flex flex-1 items-center justify-between p-6 text-left md:font-semibold transition-all [&[data-state=open]>svg]:rotate-180',
-          className
-        )}
-        {...props}
-      >
-        <div className="w-2/3 md:w-5/6">{children}</div>
+    <motion.div {...IN_VIEW_PROPS}>
+      <AccordionPrimitive.Header className="flex [&[data-state=open]>button]:bg-cream-700">
+        <AccordionPrimitive.Trigger
+          onClick={() => setOpen(!open)}
+          ref={ref}
+          className={cn(
+            'bg-cream-400 text-base md:text-lg rounded-lg flex flex-1 items-center justify-between p-6 text-left md:font-semibold transition-all [&[data-state=open]>svg]:rotate-180',
+            className
+          )}
+          {...props}
+        >
+          <div className="w-2/3 md:w-5/6">{children}</div>
 
-        {open && <HiMinusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
-        {!open && <HiPlusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
-      </AccordionPrimitive.Trigger>
-    </AccordionPrimitive.Header>
+          {open && <HiMinusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
+          {!open && <HiPlusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
+        </AccordionPrimitive.Trigger>
+      </AccordionPrimitive.Header>
+    </motion.div>
   );
 });
 AccordionTrigger.displayName = AccordionPrimitive.Trigger.displayName;
