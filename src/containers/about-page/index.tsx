@@ -15,6 +15,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from 'components/ui/accordion';
+import { IN_VIEW_PROPS } from 'constants/motion';
 
 import { FAQS, PARTNERS } from './constants';
 
@@ -41,7 +42,10 @@ const About = () => {
         <Wrapper className="lg:py-20 pt-20 pb-10">
           <Hero title="What is naturebase" subtitle="Open data platform" />
 
-          <div className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10">
+          <motion.div
+            className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10"
+            {...IN_VIEW_PROPS}
+          >
             <div className="md:col-start-1">
               <p>
                 An open data platform designed to identify where, why and how to implement
@@ -56,7 +60,7 @@ const About = () => {
                 information on ecosystem and human benefits, enabling policies and case studies.
               </p>
             </div>
-          </div>
+          </motion.div>
         </Wrapper>
 
         <div className="md:h-[428px] overflow-hidden w-full">

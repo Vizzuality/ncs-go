@@ -4,7 +4,7 @@ export const IN_VIEW_PROPS = {
   },
   initial: { opacity: 0 },
   transition: {
-    duration: 0.25,
+    duration: 0.3,
     delay: 0.25,
   },
   viewport: {
