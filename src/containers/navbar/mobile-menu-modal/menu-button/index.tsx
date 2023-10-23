@@ -21,7 +21,8 @@ const MenuButton = ({
     },
     opened: {
       rotate: 45,
-      translateY: 2,
+      translateY: 2.5,
+      translateX: 0,
       transformorigin: '50% 50%',
     },
   };
@@ -34,8 +35,8 @@ const MenuButton = ({
     },
     opened: {
       rotate: -45,
-      translateY: 2,
-      translateX: -2.75,
+      translateY: -1.45,
+      translateX: 0,
       transformorigin: '50% 50%',
     },
   };
