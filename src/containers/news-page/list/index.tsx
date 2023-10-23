@@ -63,7 +63,10 @@ const List = () => {
         <div className="bg-beige md:pb-28 md:pt-72">
           <Wrapper>
             <div className="xl:grid xl:grid-cols-12">
-              <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 my-12">
+              <motion.div
+                className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 my-12"
+                {...IN_VIEW_PROPS}
+              >
                 <p className="text-gray-800 text-base">Filter by:</p>
                 <div className="flex space-x-3">
                   <div className="w-1/3">
@@ -94,7 +97,7 @@ const List = () => {
                     />
                   </div>
                 </div>
-              </div>
+              </motion.div>
               <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2">
                 {dataFiltered.map((s) => (
                   <div key={s.id}>

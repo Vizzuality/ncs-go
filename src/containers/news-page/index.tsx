@@ -8,6 +8,8 @@ import List from 'containers/news-page/list';
 import Samples from 'containers/news-page/samples';
 import Wrapper from 'containers/wrapper';
 
+import { IN_VIEW_PROPS } from 'constants/motion';
+
 const News = () => {
   return (
     <motion.section id="stories" className="overflow-x-hidden bg-white w-full pt-32 md:pt-44">
@@ -18,11 +20,11 @@ const News = () => {
             subtitle="Get inspired with real nature-based, community-led action on the ground."
           />
 
-          <p>
+          <motion.p {...IN_VIEW_PROPS}>
             Natural climate solutions are ready to be deployed now, across the globe. From south to
             north, east to west, people have been taking action and leading the way to unlock the
             power of nature for our collective future.
-          </p>
+          </motion.p>
         </div>
       </Wrapper>
 
