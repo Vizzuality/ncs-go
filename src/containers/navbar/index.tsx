@@ -49,7 +49,7 @@ const Navbar: React.FC = () => {
     <nav
       id="header"
       ref={headerRef}
-      className="fixed top-0 left-0 z-20 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
+      className="fixed top-0 left-0 z-50 w-full text-white bg-gray-900 md:border-b border-gray-800 text-base"
     >
       <Media greaterThanOrEqual="md">
         <Wrapper>

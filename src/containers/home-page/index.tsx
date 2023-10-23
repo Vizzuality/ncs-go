@@ -5,7 +5,7 @@ import Image from 'next/image';
 
 import { useHomeStore } from 'store/home';
 
-import { useInView } from 'framer-motion';
+import { motion, useInView, useScroll, useTransform } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import { useModal } from 'hooks/modals';
@@ -24,6 +24,10 @@ import VIDEO_SVG from 'svgs/ui/video.svg?sprite';
 
 const HomePage = () => {
   const sectionRef = useRef();
+  const imageRef = useRef();
+  const { scrollYProgress } = useScroll({ target: imageRef });
+
+  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
 
   const inViewSection = useInView(sectionRef, { margin: '0px 0px 0px' });
 
@@ -109,15 +113,16 @@ const HomePage = () => {
           </Wrapper>
         </div>
       </div>
-
-      <Image
-        src={'/images/home/01.png'}
-        alt={'What nature can do for the climate?'}
-        width={1120}
-        height={428}
-        layout="responsive"
-        objectFit="contain"
-      />
+      <motion.div ref={imageRef} style={{ y }}>
+        <Image
+          src={'/images/home/01.png'}
+          alt={'What nature can do for the climate?'}
+          width={1120}
+          height={428}
+          layout="responsive"
+          objectFit="contain"
+        />
+      </motion.div>
       <section className="bg-beige py-10 md:py-20 text-gray-800">
         <Wrapper>
           <div className="md:w-2/3 flex flex-col md:pb-10 max-w-xl">
