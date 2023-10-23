@@ -38,7 +38,7 @@ const Science = () => {
         </div>
       </Wrapper>
 
-      <div className="h-[428px] overflow-hidden w-full">
+      <div className="md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRef} style={{ y }} className="w-full">
           <Image
             src={'/images/science/01.jpg'}

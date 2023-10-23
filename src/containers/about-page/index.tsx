@@ -59,7 +59,7 @@ const About = () => {
           </div>
         </Wrapper>
 
-        <div className="h-[428px] overflow-hidden w-full">
+        <div className="md:h-[428px] overflow-hidden w-full">
           <motion.div ref={imageRefUp} style={{ y: yUp }} className="w-full">
             <Image
               src={'/images/about/01.jpg'}
@@ -119,7 +119,7 @@ const About = () => {
         </Wrapper>
       </section>
 
-      <div className="h-[428px] overflow-hidden w-full">
+      <div className="md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRefDown} style={{ y: yDown }} className="w-full">
           <Image
             src={'/images/about/02.jpg'}

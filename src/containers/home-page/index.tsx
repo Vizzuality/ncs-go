@@ -113,7 +113,7 @@ const HomePage = () => {
           </Wrapper>
         </div>
       </div>
-      <div className="h-[428px] overflow-hidden w-full">
+      <div className="md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRef} style={{ y }} className="w-full">
           <Image
             src={'/images/home/01.jpg'}
