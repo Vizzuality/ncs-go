@@ -52,21 +52,21 @@ export const PATHWAYS = [
         title: 'Cropland-based Agroforestry',
         color: '#FBE4C9',
         description:
-          'Increased carbon storage from adding or protecting trees in croplands. This could include tree intercropping/alley cropping (trees in rows with annual crops in between), riparian buffers, boundary plantings (shelterbelts, windbreaks), and/or farmer-managed natural regeneration (changing management to allow trees to naturally regrow in some areas).',
+          'Additional carbon sequestration in above- and below-ground tree biomass and soil carbon due to integration of trees into croplands at levels that do not reduce crop yields.',
       },
       {
         id: 'reduce-emissions-in-croplands',
         title: 'Reduced Emissions in Croplands',
         color: '#FBE4C9',
         description:
-          'Reduced emissions in agricultural soils by protecting and restoring soil health, conserving water (rice management), and reducing the use of fertilizer (nutrient management).',
+          'Reduced methane emissions from rice cultivation through improved water management practices.',
       },
       {
         id: 'increase-soil-carbon-in-croplands',
         title: 'Increased Soil Carbon in Croplands',
         color: '#FBE4C9',
         description:
-          'Increased sequestration in agricultural soils by protecting and restoring soil health through activities such as cover crops, reduced tillage, and biochar.',
+          'Increased sequestration in agricultural soils by protecting and restoring soil health through activities such as cover crops, reduced tillage, green manure, and biochar.',
       },
     ],
   },
@@ -80,38 +80,38 @@ export const PATHWAYS = [
 
     subpaths: [
       {
-        id: 'avoided-coastal-wetland-impacts',
-        title: 'Avoided Coastal Wetland Impacts',
+        id: 'avoided-coastal-wetland-conversion',
+        title: 'Avoided Coastal Wetland Conversion',
         description:
-          'Avoided emissions by preventing degradation and/or loss of saltwater wetlands (including mangroves, salt marshes, and seagrass beds) from drainage, dredging, eutrophication, or other anthropogenic disturbances. ',
+          'Avoided emissions of above-ground biomass and soil carbon due to avoided degradation and/or loss of coastal wetlands (mangroves, tidal marshes, and seagrass meadows).',
         color: '#D6F1F3',
       },
       {
         id: 'avoided-peatland-conversion',
         title: 'Avoided Peatland Conversion',
         description:
-          'Avoided emissions by preventing degradation and/or loss of peatlands from fire, drainage, dredging, eutrophication from fertilizers, or other anthropogenic disturbances.',
+          'Avoided emissions of above- and below-ground biomass and soil carbon due to peatland drainage and vegetation loss in tropical, temperate, and boreal peatlands.',
         color: '#D6F1F3',
       },
       {
         id: 'coastal-wetland-restoration',
         title: 'Coastal Wetland Restoration',
         description:
-          'Avoided emissions by restoring degraded saltwater wetlands (including mangroves, salt marshes, and seagrass beds) through activities such as rewetting or increasing salinity by reestablishing hydrologic connectivity, as well as increased sequestration by restoring vegetation. ',
+          'Enhanced sequestration in above-ground biomass and soil carbon from restoration activities in coastal wetlands (mangroves, tidal marshes, and seagrass meadows).',
         color: '#D6F1F3',
       },
       {
         id: 'peatland-restoration',
         title: 'Peatland Restoration',
         description:
-          'Avoided emissions from degraded hydric soils by restoring the hydrologic function of drained or converted freshwater wetlands (primarily peatlands) and increased sequestration by restoring vegetation.',
+          'Avoided oxidation of soil carbon (CO2 and CH4) due to soil re-wetting in tropical, temperate, and boreal peatlands.',
         color: '#D6F1F3',
       },
     ],
   },
   {
     id: 'grasslands',
-    title: 'Grasslands, Shrublands, and Savannas',
+    title: 'Grasslands, Shrublands, and Savanna',
     description:
       'This biome includes prairies, steppes, shrublands, tundra, savannas, and other habitats with tree cover less than 25%. This includes grazed and un-grazed lands.',
     color: '#C9EC80',
@@ -123,35 +123,34 @@ export const PATHWAYS = [
         title: 'Avoided Grassland Conversion',
         color: '#F1FABE',
         description:
-          'Avoided emissions by preventing the conversion of native or managed grasslands and shrublands to croplands. ',
+          'Avoided soil carbon emissions by avoiding the conversion of grasslands (including savannas and shrublands) to cropland.',
       },
       {
         id: 'grassland-restoration',
         title: 'Grassland Restoration',
         color: '#F1FABE',
-        description:
-          'Increased sequestration from restoring cropland to grassland areas with limitations on agricultural production, in places where grassland or shrubland systems have historically occurred.',
+        description: 'Increased sequestration from restoring degraded grass and shrubland.',
       },
       {
         id: 'reduce-emissions-in-grazing-lands',
         title: 'Reduced Emissions in Grazing Lands',
         color: '#F1FABE',
         description:
-          'Avoided methane emissions due to reduced enteric fermentation as the result of improved livestock breeding and management techniques that increase reproductive performance, animal health and weight gain, and the associated reduction in total animal numbers needed to supply the same level of meat and milk demand.',
+          'Avoided methane emissions from cattle enteric fermentation, manure management, and productivity improvements.',
       },
       {
         id: 'increase-soil-carbon-in-grazing-lands',
         title: 'Increased Soil Carbon in Grazing Lands',
         color: '#F1FABE',
         description:
-          'Additional soil carbon sequestration due to sowing legumes in planted pastures and grazing optimization on rangelands and planted pastures',
+          'Increase soil carbon in managed pastures and grazing lands through stocking density and pasture management.',
       },
       {
-        id: 'avoided-woodfuel-harvest-in-savannas',
-        title: 'Avoided Woodfuel Harvest in Savannas',
+        id: 'reduced-woodfuel-harvest-in-forests',
+        title: 'Reduced Woodfuel Harvest in Forests',
         color: '#F1FABE',
         description:
-          'Avoided emissions due to reduced harvest of wood used as fuel for cooking and heating, primarily through use of more efficient cookstoves in savannas. ',
+          'Avoided emissions due to reduced harvest of woodfuel from savanna biomes used for cooking and heating, without reducing heating or cooking utility.',
       },
       {
         id: 'savannabased-agroforestry',
@@ -165,14 +164,13 @@ export const PATHWAYS = [
         title: 'Avoided Shrubland Conversion',
         color: '#F1FABE',
         description:
-          'Avoided emissions from preventing human conversion of shrublands to non-shrubland land uses such as agricultural, urban, or industrial lands. ',
+          'Avoided emissions by preventing the conversion of native or managed shrublands to croplands.',
       },
       {
         id: 'savanna-fire-management',
         title: 'Savanna Fire Management',
         color: '#F1FABE',
-        description:
-          'Avoided emissions in fire-prone savannas through management practices (such as prescribed burning or shifting timing of burns) to reduce the risk of high-intensity wildfire and reduce GHG emissions. In wetter forests with infrequent fires, practices include implementing fire control practices along forest edges to avoid human-caused fires.',
+        description: 'Avoided emissions from improved fire management in savannas.',
       },
     ],
   },
