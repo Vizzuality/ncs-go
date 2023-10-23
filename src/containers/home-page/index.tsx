@@ -25,9 +25,9 @@ import VIDEO_SVG from 'svgs/ui/video.svg?sprite';
 const HomePage = () => {
   const sectionRef = useRef();
   const imageRef = useRef();
-  const { scrollYProgress } = useScroll({ target: imageRef });
+  const { scrollYProgress } = useScroll({ target: imageRef, offset: ['0 1', '1 1'] });
 
-  const y = useTransform(scrollYProgress, [0, 1], [-300, 300]);
+  const y = useTransform(scrollYProgress, [0, 1], ['-42%', '0%']);
 
   const inViewSection = useInView(sectionRef, { margin: '0px 0px 0px' });
 
@@ -113,16 +113,18 @@ const HomePage = () => {
           </Wrapper>
         </div>
       </div>
-      <motion.div ref={imageRef} style={{ y }}>
-        <Image
-          src={'/images/home/01.png'}
-          alt={'What nature can do for the climate?'}
-          width={1120}
-          height={428}
-          layout="responsive"
-          objectFit="contain"
-        />
-      </motion.div>
+      <div className="h-[428px] overflow-hidden w-full">
+        <motion.div ref={imageRef} style={{ y }} className="w-full">
+          <Image
+            src={'/images/home/scroll-01.jpg'}
+            alt={'What nature can do for the climate?'}
+            width={1280}
+            height={728}
+            layout="responsive"
+            objectFit="cover"
+          />
+        </motion.div>
+      </div>
       <section className="bg-beige py-10 md:py-20 text-gray-800">
         <Wrapper>
           <div className="md:w-2/3 flex flex-col md:pb-10 max-w-xl">
