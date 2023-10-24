@@ -92,7 +92,7 @@ const Involved = () => {
           </motion.div>
         </Wrapper>
 
-        <motion.div className="md:h-[428px] overflow-hidden w-full" {...IN_VIEW_PROPS}>
+        <motion.div className="h-[180px] md:h-[428px] overflow-hidden w-full" {...IN_VIEW_PROPS}>
           <motion.div ref={imageRef} style={{ y }} className="w-full">
             <Image
               src={'/images/involved/01.jpg'}

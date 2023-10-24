@@ -15,7 +15,7 @@ const MobileMenuModal = ({ isOpen, close }) => {
       theme="dark"
       closeBtn={false}
       onOpenChange={() => close()}
-      zIndex="z-[9]"
+      zIndex="z-[10]"
     >
       <section className="z-10 w-full h-screen font-sans text-center text-white bg-gray-900">
         <Wrapper className="flex flex-col justify-between h-[60vh]">
