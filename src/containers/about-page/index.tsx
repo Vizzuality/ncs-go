@@ -37,27 +37,27 @@ const About = () => {
   const yDown = useTransform(scrollYProgressDown, [0, 1], ['-42%', '0%']);
 
   return (
-    <div id="naturbase" className="bg-white pt-12 md:pt-24 w-full">
+    <div id="naturbase" className="bg-white pt-12 md:pt-20 w-full">
       <section>
-        <div className="relative lg:after:content-[''] lg:after:absolute lg:after:z-0 lg:after:opacity-20 w-full after:-top-28 after:h-[130%] after:bottom-0 after:left-[60%] 2xl:after:left-[67%] 3xl:after:left-[72%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
+        <div className="relative lg:after:content-[''] lg:after:absolute lg:after:z-0 lg:after:opacity-20 w-full after:-top-32 after:h-[130%] after:bottom-0 after:left-[60%] 2xl:after:left-[67%] 3xl:after:left-[72%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
           <Wrapper className="lg:py-20 pt-20 pb-10">
             <div className="max-w-xl">
               <Hero subtitle="Unlock Nature’s Potential with naturebase" />
             </div>
 
             <motion.div
-              className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:w-1/2"
+              className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:grid md:grid-cols-12"
               {...IN_VIEW_PROPS}
             >
-              <p className="text-lg mb-20">
+              <p className="text-lg mb-20 md:col-span-7">
                 An open data platform designed to{' '}
                 <span className="text-blue-800">identify where, why and how</span> to implement
                 high-integrity nature-based projects with the highest carbon mitigation impact
                 whilst protecting livelihoods and biodiversity.
               </p>
 
-              <h4 className="text-[24px] pb-7">How does it works?</h4>
-              <p className="text-base">
+              <h4 className="text-[24px] pb-7 md:col-span-7">How does it works?</h4>
+              <p className="text-base md:col-span-7">
                 Backed by peer-reviewed scientific data, the application shows users the emissions
                 reduction potential for each pathway - everywhere on the planet. This is
                 complemented with information on ecosystem and human benefits, enabling policies and

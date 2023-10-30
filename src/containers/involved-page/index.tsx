@@ -67,26 +67,26 @@ const Involved = () => {
   );
 
   return (
-    <div id="involved" className="bg-white pt-12 md:pt-24 w-full">
+    <div id="involved" className="bg-white pt-12 md:pt-20 w-full">
       <section>
-        <Wrapper className="pb-10 pt-20 md:py-20">
-          <Hero
-            title="Get involved"
-            subtitle="Naturebase is a platform made by people for people."
-          />
+        <Wrapper className="pb-10 pt-20 md:py-20 md:grid md:grid-cols-12">
+          <div className="md:col-span-7">
+            <Hero subtitle="Naturebase is a platform made by people for people." />
+          </div>
 
           <motion.div
-            className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10 space-y-4 md:space-y-0"
+            className="font-sans text-base text-gray-800 flex-col flex space-y-6 md:col-span-7"
             {...IN_VIEW_PROPS}
           >
-            <div className="md:col-start-1 md:col-end-3">
+            <div className="text-lg">
               <p>
-                Naturebase is a platform made by people who care about nature and climate change and
-                for people who want to change business as usual and put nature and our climate back
-                on the path of recovery.
+                Naturebase is a platform made by{' '}
+                <span className="text-blue-800">people who care about nature</span> and climate
+                change and for those who are ready to change business as usual and put nature and
+                our climate back on the path of recovery.
               </p>
             </div>
-            <div className="col-start-1 col-end-3 text-base md:text-lg">
+            <div className="text-base">
               <p>There are several ways you can take action with us:</p>
             </div>
           </motion.div>
