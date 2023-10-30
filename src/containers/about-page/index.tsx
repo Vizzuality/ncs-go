@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
-import React, { useRef } from 'react';
+import React, { useRef, useState } from 'react';
 
 import Image from 'next/image';
 
@@ -9,6 +9,7 @@ import Hero from 'containers/hero';
 import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
+import Icon from 'components/icon';
 import {
   Accordion,
   AccordionContent,
@@ -16,12 +17,16 @@ import {
   AccordionTrigger,
 } from 'components/ui/accordion';
 import { IN_VIEW_PROPS } from 'constants/motion';
+import { cn } from 'utils/cn';
 
-import { FAQS, PARTNERS } from './constants';
+import { FAQS, PARTNERS, USERS } from './constants';
 
 const About = () => {
+  const [user, setUser] = useState(USERS[0]);
+
   const imageRefUp = useRef();
   const imageRefDown = useRef();
+
   const { scrollYProgress: scrollYProgressUp } = useScroll({
     target: imageRefUp,
     offset: ['0 1', '1 1'],
@@ -79,6 +84,61 @@ const About = () => {
           </motion.div>
         </div>
       </section>
+      <section>
+        <Wrapper className="py-20">
+          <Hero subtitle="Our Mission" />
+          <motion.div
+            className="font-sans text-base text-gray-800 md:grid md:grid-cols-12 md:gap-10"
+            {...IN_VIEW_PROPS}
+          >
+            <p className="md:col-span-5">
+              Nature can deliver up to one-third of the mitigation solutions that are required to
+              stabilize the planet whilst also providing ecosystem and human well-being benefits -
+              such as improving water and air quality, public health and building communities that
+              are resilient to extreme weather events such as flooding and drought.
+            </p>
+            <p className="md:col-span-5">
+              Knowing where, why and how to deploy these interventions is critical to unlocking
+              nature’s potential towards achieving these goals. Naturebase is designed to fill data
+              accessibility gaps that often stifle action.
+            </p>
+          </motion.div>
+        </Wrapper>
+      </section>
+
+      <section className="bg-beige">
+        <Wrapper className="py-20">
+          <Hero subtitle="Who can use naturebase?" />
+          <div className="flex border border-cream-700">
+            <div className="w-1/3 flex flex-col divide-y divide-cream-700">
+              {USERS.map((u, idx) => (
+                <button
+                  key={idx}
+                  className={cn({
+                    'p-8 text-left hover:bg-white': true,
+                    'bg-white': user?.name === u.name,
+                  })}
+                  onMouseEnter={() => setUser(u)}
+                >
+                  {u.name}
+                </button>
+              ))}
+            </div>
+
+            <div className="w-2/3 flex flex-col bg-white ">
+              {!!user && (
+                <div className="space-y-8 p-12">
+                  <Icon
+                    className="w-12 h-12 md:w-16 md:h-16 group-hover:stroke-black stroke-gray-800"
+                    icon={user.icon}
+                  />
+                  <p>{user.description}</p>
+                </div>
+              )}
+            </div>
+          </div>
+        </Wrapper>
+      </section>
 
       <section id="who">
         <Wrapper className="py-10 md:py-20">
@@ -110,33 +170,6 @@ const About = () => {
               </motion.div>
             ))}
           </div>
-        </Wrapper>
-      </section>
-
-      <section id="what" className="bg-beige">
-        <Wrapper className="py-10 md:py-20">
-          <Hero title="What we want?" subtitle="Data accessibility" />
-
-          <motion.div
-            className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10 space-y-4 md:space-y-0"
-            {...IN_VIEW_PROPS}
-          >
-            <div className="md:col-start-1">
-              <p>
-                Nature can deliver up to one-third of the mitigation solutions that are required to
-                stabilize the planet whilst also providing ecosystem and human well-being benefits
-                such as improving water and air quality, public health and building communities that
-                are resilient to extreme weather events such as flooding and drought.
-              </p>
-            </div>
-            <div className="md:col-start-2">
-              <p>
-                Knowing where, why and how to deploy these interventions is critical to unlocking
-                nature’s potential towards achieving these goals. Naturebase is designed to fill
-                data accessibility gaps that often stifle action.
-              </p>
-            </div>
-          </motion.div>
         </Wrapper>
       </section>
 

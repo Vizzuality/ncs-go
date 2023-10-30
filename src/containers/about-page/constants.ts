@@ -1,3 +1,47 @@
+import FUNDERS_SVG from 'svgs/users/funders.svg?sprite';
+import GOVERMENTS_SVG from 'svgs/users/governments.svg?sprite';
+import INDIGENOUS_SVG from 'svgs/users/indigenous.svg?sprite';
+import MANAGERS_SVG from 'svgs/users/managers.svg?sprite';
+import POLICY_MAKERS_SVG from 'svgs/users/policy-makers.svg?sprite';
+
+export const USERS = [
+  {
+    id: 'policy-makers',
+    name: 'Policymakers, practitioners and technical experts',
+    icon: POLICY_MAKERS_SVG,
+    description:
+      'Naturebase can serve policymakers, practitioners and technical experts on their journey to identify, analyze and make informed decisions on nature and climate planning and implementation.',
+  },
+  {
+    id: 'managers',
+    name: 'Project managers',
+    icon: MANAGERS_SVG,
+    description:
+      'It can also help project managers maximise their mitigation outcomes by combining different strategies and providing guidance on how to deliver high-integrity projects that safeguard human rights.',
+  },
+  {
+    id: 'indigenous',
+    name: 'Indigenous Peoples and local communities',
+    icon: INDIGENOUS_SVG,
+    description:
+      'For Indigenous Peoples and local communities, it can help attract direct finance for their invaluable work as stewards of nature, and elevate their voices, claims and stories. Naturebase also provides guidance on high-integrity NCS implementation - including a human rights screener - and inspiring case studies that showcase what meaningful engagement, safeguards and leadership looks like.',
+  },
+  {
+    id: 'funders',
+    name: 'Funders',
+    icon: FUNDERS_SVG,
+    description:
+      'Funders, on the other hand, can use naturebase as a first step to identify where and what to invest in, as well as learn more about the many benefits and returns investing in nature can provide.',
+  },
+  {
+    id: 'governments',
+    name: 'Governments',
+    icon: GOVERMENTS_SVG,
+    description:
+      'For governments, naturebase works as a guide for better, more comprehensive nature and climate planning and delivery, as well as a tool to attract and direct finance for nature.',
+  },
+];
+
 export const PARTNERS = [
   { name: 'The Nature Conservancy', logo: '/images/logos/nature_conservancy.png' },
   { name: 'Nature For Climate', logo: '/images/logos/nature_4_climate.png' },
