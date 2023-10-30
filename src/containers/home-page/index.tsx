@@ -128,15 +128,11 @@ const HomePage = () => {
       <section className="bg-beige py-10 md:py-20 text-gray-800">
         <Wrapper>
           <div className="md:w-2/3 flex flex-col md:pb-10 max-w-xl">
-            <h2 className="font-sans leading-7 md:leading-10 text-lg md:text-xl pb-4 md:pb-10">
-              A home base for all decision-makers interested in unlocking the power of nature to
-              preserve our living planet.
-            </h2>
-            <p className="text-base pb-4">
-              Naturebase is a new interactive platform that will bring together science-based data
-              on nature’s pathways to identify where, why and how to implement high-integrity
-              nature-based projects with the highest carbon mitigation impact whilst protecting
-              livelihoods and biodiversity.
+            <p className="text-lg">
+              Naturebase is a <span className="text-blue-800">new interactive platform</span> that
+              will bring together science-based data on nature’s pathways to identify where, why and
+              how to implement high-integrity nature-based projects with the highest carbon
+              mitigation impact whilst improving livelihoods and protecting biodiversity.
             </p>
           </div>
           <Features />

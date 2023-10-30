@@ -39,30 +39,33 @@ const About = () => {
   return (
     <div id="naturbase" className="bg-white pt-12 md:pt-24 w-full">
       <section>
-        <Wrapper className="lg:py-20 pt-20 pb-10">
-          <Hero title="What is naturebase" subtitle="Open data platform" />
+        <div className="relative lg:after:content-[''] lg:after:absolute lg:after:z-0 lg:after:opacity-20 w-full after:-top-28 after:h-[130%] after:bottom-0 after:left-[60%] 2xl:after:left-[67%] 3xl:after:left-[72%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
+          <Wrapper className="lg:py-20 pt-20 pb-10">
+            <div className="max-w-xl">
+              <Hero subtitle="Unlock Nature’s Potential with naturebase" />
+            </div>
 
-          <motion.div
-            className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10"
-            {...IN_VIEW_PROPS}
-          >
-            <div className="md:col-start-1">
-              <p>
-                An open data platform designed to identify where, why and how to implement
+            <motion.div
+              className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:w-1/2"
+              {...IN_VIEW_PROPS}
+            >
+              <p className="text-lg mb-20">
+                An open data platform designed to{' '}
+                <span className="text-blue-800">identify where, why and how</span> to implement
                 high-integrity nature-based projects with the highest carbon mitigation impact
                 whilst protecting livelihoods and biodiversity.
               </p>
-            </div>
-            <div className="md:col-start-2">
-              <p>
-                Backed by peer-reviewed scientific data, the application shows users the emissions
-                reduction potential for each pathway everywhere on the planet, complemented with
-                information on ecosystem and human benefits, enabling policies and case studies.
-              </p>
-            </div>
-          </motion.div>
-        </Wrapper>
 
+              <h4 className="text-[24px] pb-7">How does it works?</h4>
+              <p className="text-base">
+                Backed by peer-reviewed scientific data, the application shows users the emissions
+                reduction potential for each pathway - everywhere on the planet. This is
+                complemented with information on ecosystem and human benefits, enabling policies and
+                case studies to support effective decision-making and high-integrity climate action.
+              </p>
+            </motion.div>
+          </Wrapper>
+        </div>
         <div className="h-[180px] md:h-[428px] overflow-hidden w-full">
           <motion.div ref={imageRefUp} style={{ y: yUp }} className="w-full" {...IN_VIEW_PROPS}>
             <Image
@@ -79,17 +82,21 @@ const About = () => {
 
       <section id="who">
         <Wrapper className="py-10 md:py-20">
-          <Hero title="Who is with us" subtitle="Collaborative effort" />
+          <Hero subtitle="Our Experts" />
 
-          <motion.div
-            className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10"
-            {...IN_VIEW_PROPS}
-          >
-            <p className="md:col-start-1 md:col-end-3">
-              Naturebase is a product of a collaborative effort between scientists and developers at
-              The Nature Conservancy, with contributions by numerous organisations across the
-              environmental sector and academia.{' '}
-              <span className="md:font-semibold">These include:</span>
+          <motion.div className="font-sans text-base text-gray-800 md:w-1/2" {...IN_VIEW_PROPS}>
+            <p className="">
+              Naturebase is a product of a collaborative effort between scientists and developers at{' '}
+              <a
+                className="text-brand-700 hover:underline"
+                href="https://www.nature.org/en-us"
+                target="_blank"
+                rel="noreferrer"
+              >
+                The Nature Conservancy
+              </a>
+              , with contributions by numerous organisations across the environmental sector and
+              academia. These include:
             </p>
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-20 py-10 md:py-20 mx-4 md:mx-0">
@@ -147,7 +154,7 @@ const About = () => {
       </div>
       <section id="faq" className="bg-beige md:pb-24 text-gray-800 py-10 md:py-20">
         <Wrapper>
-          <Hero title="Faq" subtitle="Got a question?" />
+          <Hero subtitle="Got a question?" />
           <Media lessThan="md">
             <motion.div
               className="space-y-4 font-sans text-base text-gray-800 pb-10"
