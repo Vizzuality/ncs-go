@@ -12,8 +12,8 @@ export const Hero = ({
   title,
 }: {
   className?: string;
-  subtitle: string;
-  title: string;
+  subtitle?: string;
+  title?: string;
 }) => (
   <div
     className={cx({

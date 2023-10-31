@@ -21,14 +21,14 @@ const MobileMenuModal = ({ isOpen, close }) => {
         <Wrapper className="flex flex-col justify-between h-[60vh]">
           <div className="flex flex-col pt-12 pb-32 space-y-10">
             {NAV_OPTIONS.map((o) => (
-              <Link key={o.id} href={o.href} className="text-lg text-white">
-                {o.label}
+              <Link key={o.id} href={o.href} className="text-lg text-white" passHref>
+                <div onClick={() => close()}>{o.label}</div>
               </Link>
             ))}
           </div>
           <div className="flex justify-center">
             <Button theme="primary" size="xs" className="py-3 h-12 w-full">
-              Launch map
+              Launch app
             </Button>
           </div>
         </Wrapper>

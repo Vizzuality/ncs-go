@@ -12,18 +12,16 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 
 const News = () => {
   return (
-    <motion.section id="stories" className="overflow-x-hidden bg-white w-full pt-32 md:pt-44">
+    <motion.section id="stories" className="overflow-x-hidden bg-white w-full pt-32 md:pt-40">
       <Wrapper className="md:grid md:grid-cols-3 md:pb-20">
         <div className="col-start-1 col-end-3">
-          <Hero
-            title="News"
-            subtitle="Get inspired with real nature-based, community-led action on the ground."
-          />
+          <Hero subtitle="Get inspired with real nature-based, community-led action on the ground." />
 
-          <motion.p {...IN_VIEW_PROPS}>
+          <motion.p {...IN_VIEW_PROPS} className="text-lg leading-7">
             Natural climate solutions are ready to be deployed now, across the globe. From south to
-            north, east to west, people have been taking action and leading the way to unlock the
-            power of nature for our collective future.
+            north, east to west,{' '}
+            <span className="text-blue-800">people have been taking action</span> and leading the
+            way to unlock the power of nature for our collective future.
           </motion.p>
         </div>
       </Wrapper>

@@ -98,6 +98,7 @@ export const FEATURES = [
     key: '4',
     title: 'Feasibility Constraints',
     icon: FEASIBILITY_SVG,
+    tag: 'upcoming',
     description: (
       <>
         <p>
@@ -159,6 +160,7 @@ export const FEATURES = [
     key: '7',
     title: 'Financial assessment tool',
     icon: FINANCIAL_SVG,
+    tag: 'upcoming',
   },
   {
     key: '8',
@@ -189,6 +191,7 @@ export const FEATURES = [
     key: '9',
     title: 'Ideas portal',
     icon: IDEAS_SVG,
+    tag: 'new',
   },
 
   // {

@@ -67,26 +67,26 @@ const Involved = () => {
   );
 
   return (
-    <div id="involved" className="bg-white pt-12 md:pt-24 w-full">
+    <div id="involved" className="bg-white pt-12 md:pt-20 w-full">
       <section>
-        <Wrapper className="pb-10 pt-20 md:py-20">
-          <Hero
-            title="Get involved"
-            subtitle="Naturebase is a platform made by people for people."
-          />
+        <Wrapper className="pb-10 pt-20 md:py-20 md:grid md:grid-cols-12">
+          <div className="md:col-span-7">
+            <Hero subtitle="Naturebase is a platform made by people for people." />
+          </div>
 
           <motion.div
-            className="font-sans text-base text-gray-800 md:grid md:grid-cols-3 md:gap-10 space-y-4 md:space-y-0"
+            className="font-sans text-base text-gray-800 flex-col flex space-y-6 md:col-span-7"
             {...IN_VIEW_PROPS}
           >
-            <div className="md:col-start-1 md:col-end-3">
+            <div className="text-lg leading-7">
               <p>
-                Naturebase is a platform made by people who care about nature and climate change and
-                for people who want to change business as usual and put nature and our climate back
-                on the path of recovery.
+                Naturebase is a platform made by{' '}
+                <span className="text-blue-800">people who care about nature</span> and climate
+                change and for those who are ready to change business as usual and put nature and
+                our climate back on the path of recovery.
               </p>
             </div>
-            <div className="col-start-1 col-end-3 text-base md:text-lg">
+            <div className="text-base">
               <p>There are several ways you can take action with us:</p>
             </div>
           </motion.div>
@@ -113,15 +113,13 @@ const Involved = () => {
               >
                 <Image
                   src={'/images/involved/mock-app.png'}
-                  alt={'Join the naturebase community and be among the first to test the tool'}
+                  alt={'Be among the first to test'}
                   width={416}
                   height={240}
                   layout="responsive"
                   objectFit="contain"
                 />
-                <h4 className="text-2lg">
-                  Join the naturebase community and be among the first to test the tool
-                </h4>
+                <h4 className="text-2lg">Be among the first to test</h4>
                 <p>
                   By creating a user profile on the naturebase app you get access to exclusive
                   features such as mapping and saving your project areas and information for a quick
@@ -134,7 +132,7 @@ const Involved = () => {
                     size="xs"
                     className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
                   >
-                    Launch map
+                    Launch app
                   </Button>
                 </div>
               </motion.div>
@@ -144,7 +142,8 @@ const Involved = () => {
                   className="bg-beige py-10 px-4 text-gray-800 space-y-4"
                   {...IN_VIEW_PROPS}
                 >
-                  <Icon icon={NEWSLETTER_SVG} className="w-10 h-10" />
+                  <Icon icon={NEWSLETTER_SVG} className="w-20 h-20 rounded-full bg-brand-700 p-6" />
+
                   <h4 className="text-2lg">Subscribe to our newsletter</h4>
                   <p>
                     Naturebase is constantly evolving. Stay tuned to what’s happening backstage as
@@ -199,17 +198,22 @@ const Involved = () => {
                 className="bg-beige border-t border-b border-cream-700 md:border-none md:p-10 py-10 px-4 text-gray-800 space-y-4 md:space-y-6"
                 {...IN_VIEW_PROPS}
               >
-                <Icon icon={EMAIL_SVG} className="md:w-12 md:h-12 w-10 h-10" />
+                <Icon
+                  icon={EMAIL_SVG}
+                  className="w-20 h-20 md:w-24 md:h-24 rounded-full bg-brand-700 p-6"
+                />
                 <h4 className="text-2lg">Get in touch with the team</h4>
-                <p>Still have questions? Drop us an e-mail.</p>
-
-                <div className="w-full flex justify-end">
-                  <Button theme="tertiary" size="xs" className="py-3 h-12 w-full md:w-auto">
-                    <a href="mailto:info@naturebase.org" target="_blank" rel="noreferrer">
-                      Send email
-                    </a>
-                  </Button>
-                </div>
+                <p>
+                  Still have questions? Contact{' '}
+                  <a
+                    href="mailto:info@naturebase.org"
+                    target="_blank"
+                    rel="noreferrer"
+                    className="text-brand-700 hover:underline"
+                  >
+                    info@naturebase.org
+                  </a>
+                </p>
               </motion.div>
             </div>
             <div className="md:space-y-6 md:mt-56">
@@ -218,7 +222,7 @@ const Involved = () => {
                   className="bg-beige p-10 text-gray-800 space-y-6 mt-6"
                   {...IN_VIEW_PROPS}
                 >
-                  <Icon icon={NEWSLETTER_SVG} className="w-12 h-12" />
+                  <Icon icon={NEWSLETTER_SVG} className="w-24 h-24 rounded-full bg-brand-700 p-6" />
                   <h4 className="text-2lg">Subscribe to our newsletter</h4>
                   <p>
                     Naturebase is constantly evolving. Stay tuned to what’s happening backstage as
@@ -272,7 +276,10 @@ const Involved = () => {
                 className="bg-beige px-4 py-10 md:p-10 text-gray-800 space-y-4 md:space-y-6"
                 {...IN_VIEW_PROPS}
               >
-                <Icon icon={IDEA_SVG} className="md:w-12 md:h-12 w-10 h-10" />
+                <Icon
+                  icon={IDEA_SVG}
+                  className="md:w-24 md:h-24 rounded-full bg-brand-700 p-6 w-20 h-20"
+                />
                 <h4 className="text-2lg">Submit your feedback and ideas</h4>
                 <p>
                   We want to hear from you! Share your ideas to make naturebase work even better for
