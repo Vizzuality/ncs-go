@@ -5,6 +5,7 @@ import * as React from 'react';
 import * as AccordionPrimitive from '@radix-ui/react-accordion';
 import { motion } from 'framer-motion';
 import { HiMinusSmall, HiPlusSmall } from 'react-icons/hi2';
+import { MdOutlineKeyboardArrowDown, MdOutlineKeyboardArrowUp } from 'react-icons/md';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { cn } from 'utils/cn';
@@ -31,7 +32,13 @@ const AccordionTrigger = React.forwardRef<
 
   return (
     <motion.div {...IN_VIEW_PROPS}>
-      <AccordionPrimitive.Header className="flex [&[data-state=open]>button]:bg-cream-700">
+      <AccordionPrimitive.Header
+        className={cn({
+          flex: true,
+          '[&[data-state=open]>button]:bg-cream-700': className.includes('plus-minus'),
+          '[&[data-state=open]>button]:bg-cream-400': className.includes('default'),
+        })}
+      >
         <AccordionPrimitive.Trigger
           onClick={() => setOpen(!open)}
           ref={ref}
@@ -43,8 +50,26 @@ const AccordionTrigger = React.forwardRef<
         >
           <div className="w-2/3 md:w-5/6">{children}</div>
 
-          {open && <HiMinusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
-          {!open && <HiPlusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
+          {className.includes('plus-minus') && (
+            <>
+              {open && <HiMinusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
+              {!open && <HiPlusSmall size={24} className="fill-gray-800 h-7 w-7 shrink-0" />}
+            </>
+          )}
+
+          {className.includes('default') && (
+            <>
+              {open && (
+                <MdOutlineKeyboardArrowDown size={20} className="fill-gray-80 h-7 w-7 shrink-0" />
+              )}
+              {!open && (
+                <MdOutlineKeyboardArrowUp
+                  size={20}
+                  className="fill-gray-800 h-7 w-7 shrink-0 rotate-180"
+                />
+              )}
+            </>
+          )}
         </AccordionPrimitive.Trigger>
       </AccordionPrimitive.Header>
     </motion.div>

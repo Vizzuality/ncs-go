@@ -1,4 +1,5 @@
 /* eslint-disable @next/next/no-img-element */
+
 import React, { useRef, useState } from 'react';
 
 import Image from 'next/image';
@@ -54,14 +55,14 @@ const About = () => {
               className="font-sans flex flex-col space-y-4 md:space-y-0 text-base text-gray-800 md:grid md:grid-cols-12"
               {...IN_VIEW_PROPS}
             >
-              <p className="text-lg mb-20 md:col-span-7">
+              <p className="text-lg mb-4 md:mb-20 md:col-span-7">
                 An open data platform designed to{' '}
                 <span className="text-blue-800">identify where, why and how</span> to implement
                 high-integrity nature-based projects with the highest carbon mitigation impact
                 whilst protecting livelihoods and biodiversity.
               </p>
 
-              <h4 className="text-[24px] pb-7 md:col-span-7">How does it works?</h4>
+              <h4 className="text-[24px] md:pb-7 md:col-span-7">How does it works?</h4>
               <p className="text-base md:col-span-7">
                 Backed by peer-reviewed scientific data, the application shows users the emissions
                 reduction potential for each pathway - everywhere on the planet. This is
@@ -109,34 +110,53 @@ const About = () => {
       <section className="bg-beige">
         <Wrapper className="py-20">
           <Hero subtitle="Who can use naturebase?" />
-          <div className="flex border border-cream-700">
-            <div className="w-1/3 flex flex-col divide-y divide-cream-700">
+          <Media greaterThanOrEqual="md">
+            <div className="flex border border-cream-700">
+              <div className="w-1/3 flex flex-col divide-y divide-cream-700">
+                {USERS.map((u, idx) => (
+                  <button
+                    key={idx}
+                    className={cn({
+                      'p-8 text-left hover:bg-white': true,
+                      'bg-white': user?.name === u.name,
+                    })}
+                    onMouseEnter={() => setUser(u)}
+                  >
+                    {u.name}
+                  </button>
+                ))}
+              </div>
+
+              <div className="w-2/3 flex flex-col bg-white ">
+                {!!user && (
+                  <div className="space-y-8 p-12">
+                    <Icon
+                      className="w-12 h-12 md:w-16 md:h-16 group-hover:stroke-black stroke-gray-800"
+                      icon={user.icon}
+                    />
+                    <p>{user.description}</p>
+                  </div>
+                )}
+              </div>
+            </div>
+          </Media>
+          <Media lessThan="md">
+            {' '}
+            <div className="flex flex-col border border-cream-700">
               {USERS.map((u, idx) => (
-                <button
-                  key={idx}
-                  className={cn({
-                    'p-8 text-left hover:bg-white': true,
-                    'bg-white': user?.name === u.name,
-                  })}
-                  onMouseEnter={() => setUser(u)}
-                >
-                  {u.name}
-                </button>
+                <Accordion type="single" collapsible key={idx}>
+                  <AccordionItem value="item-1">
+                    <AccordionTrigger className="default rounded-none border-b border-cream-700 bg-beige">
+                      {u.name}
+                    </AccordionTrigger>
+                    <AccordionContent className="rounded-none bg-cream-400 mt-0">
+                      <p>{u.description}</p>
+                    </AccordionContent>
+                  </AccordionItem>
+                </Accordion>
               ))}
             </div>
-
-            <div className="w-2/3 flex flex-col bg-white ">
-              {!!user && (
-                <div className="space-y-8 p-12">
-                  <Icon
-                    className="w-12 h-12 md:w-16 md:h-16 group-hover:stroke-black stroke-gray-800"
-                    icon={user.icon}
-                  />
-                  <p>{user.description}</p>
-                </div>
-              )}
-            </div>
-          </div>
+          </Media>
         </Wrapper>
       </section>
 
@@ -210,7 +230,7 @@ const About = () => {
             {FAQS.map((faq, idx) => (
               <Accordion type="single" collapsible key={idx}>
                 <AccordionItem value="item-1">
-                  <AccordionTrigger>{faq.question}</AccordionTrigger>
+                  <AccordionTrigger className="plus-minus">{faq.question}</AccordionTrigger>
                   <AccordionContent>
                     <div
                       className="dangerouslySetInnerHTML"
