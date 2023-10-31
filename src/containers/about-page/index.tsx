@@ -160,7 +160,7 @@ const About = () => {
         </Wrapper>
       </section>
 
-      <section id="who">
+      <section id="who" className="scroll-mt-16">
         <Wrapper className="py-10 md:py-20">
           <Hero subtitle="Our Experts" />
 
@@ -205,7 +205,7 @@ const About = () => {
           />
         </motion.div>
       </div>
-      <section id="faq" className="bg-beige md:pb-24 text-gray-800 py-10 md:py-20">
+      <section id="faq" className="bg-beige md:pb-24 text-gray-800 py-10 md:py-20 scroll-mt-16">
         <Wrapper>
           <Hero subtitle="Got a question?" />
           <Media lessThan="md">
