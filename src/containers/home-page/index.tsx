@@ -127,7 +127,7 @@ const HomePage = () => {
       </div>
       <section className="bg-beige py-10 md:py-20 text-gray-800">
         <Wrapper>
-          <div className="md:w-2/3 flex flex-col md:pb-10 max-w-xl">
+          <div className="md:w-2/3 flex flex-col pb-4 md:pb-10 max-w-xl">
             <p className="text-lg leading-7">
               Naturebase is a <span className="text-blue-800">new interactive platform</span> that
               will bring together science-based data on nature’s pathways to identify where, why and

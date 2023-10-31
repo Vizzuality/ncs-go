@@ -52,7 +52,7 @@ const Science = () => {
         </motion.div>
       </Wrapper>
 
-      <div className="h-[180px] md:h-[428px] overflow-hidden w-full">
+      <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRef} style={{ y }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
             src={'/images/science/01.jpg'}
@@ -65,7 +65,7 @@ const Science = () => {
         </motion.div>
       </div>
       <section id="pathways" className="scroll-mt-16">
-        <Wrapper className="py-10 md:pt-20 md: pb-0">
+        <Wrapper className="py-10 md:pt-20 md:pb-0">
           <Hero subtitle="Pathways to mitigate climate change" />
 
           <motion.div
@@ -97,7 +97,7 @@ const Science = () => {
             {...IN_VIEW_PROPS}
           >
             <div className="md:col-span-5">
-              <p className="leading-7 text-lg">
+              <p className="md:leading-7 md:text-lg">
                 The full version of the naturebase platform is currently under development and this
                 includes the full breadth of datasets. This beta version includes accurate{' '}
                 <span className="text-red-600">
@@ -140,7 +140,7 @@ const Science = () => {
               <ul className="flex flex-col space-y-4 py-6">
                 {DATA_SOURCES.map((s, idx) => (
                   <li key={idx} className="flex space-x-4 items-center">
-                    <Icon className="w-9 h-9" icon={SCIENCE_CHECKMARK_SVG} />
+                    <Icon className="w-6 h-6 md:w-9 md:h-9" icon={SCIENCE_CHECKMARK_SVG} />
                     <p>{s.label}</p>
                   </li>
                 ))}
@@ -153,7 +153,7 @@ const Science = () => {
           </motion.div>
         </Wrapper>
       </section>
-      <div className="h-[180px] md:h-[428px] overflow-hidden w-full">
+      <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRef} style={{ y }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
             src={'/images/science/02.jpg'}
@@ -188,7 +188,7 @@ const Science = () => {
               </div>
             </div>
             <div className="md:col-span-7">
-              <p className="text-lg leading-7">
+              <p className="md:text-lg md:leading-7">
                 The specific methodology and input data used to calculate the mitigation potential
                 will vary among pathways, but all adhere to the{' '}
                 <span className="text-blue-800">
@@ -231,7 +231,7 @@ const Science = () => {
           </motion.div>
         </Wrapper>
       </section>
-      <div className="h-[180px] md:h-[428px] overflow-hidden w-full">
+      <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRef} style={{ y }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
             src={'/images/science/03.jpg'}
@@ -252,7 +252,7 @@ const Science = () => {
             {...IN_VIEW_PROPS}
           >
             <div className="md:col-span-5">
-              <p className="text-lg leading-7">
+              <p className="md:text-lg md:leading-7">
                 In 2020, the <span className="text-blue-800">Bezos Earth Fund</span> pledged a $10
                 billion fund over a decade to fight the impact of climate change. The Nature
                 Conservancy received a portion of this gift to dramatically expand the scientific

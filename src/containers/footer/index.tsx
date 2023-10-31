@@ -73,8 +73,8 @@ const Footer: React.FC = () => {
                     <a href="about#who" className="opacity-60 hover:opacity-100">
                       Who is with us?
                     </a>
-                    <a href="about#what" className="opacity-60 hover:opacity-100">
-                      What we want?
+                    <a href="about#users" className="opacity-60 hover:opacity-100">
+                      Who can use?
                     </a>
                     <a href="about#faq" className="opacity-60 hover:opacity-100">
                       FAQ

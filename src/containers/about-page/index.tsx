@@ -39,6 +39,7 @@ const About = () => {
   });
 
   const yUp = useTransform(scrollYProgressUp, [0, 1], ['-42%', '0%']);
+  const yUpMobile = useTransform(scrollYProgressUp, [0, 1], ['-82%', '0%']);
 
   const yDown = useTransform(scrollYProgressDown, [0, 1], ['-42%', '0%']);
 
@@ -72,21 +73,40 @@ const About = () => {
             </motion.div>
           </Wrapper>
         </div>
-        <div className="h-[180px] md:h-[428px] overflow-hidden w-full">
-          <motion.div ref={imageRefUp} style={{ y: yUp }} className="w-full" {...IN_VIEW_PROPS}>
-            <Image
-              src={'/images/about/01.jpg'}
-              alt={'What is naturebase?'}
-              width={1280}
-              height={728}
-              layout="responsive"
-              objectFit="cover"
-            />
-          </motion.div>
+        <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
+          <Media lessThan="md">
+            <motion.div
+              ref={imageRefUp}
+              style={{ y: yUpMobile }}
+              className="w-full"
+              {...IN_VIEW_PROPS}
+            >
+              <Image
+                src={'/images/about/01.jpg'}
+                alt={'What is naturebase?'}
+                width={1280}
+                height={728}
+                layout="responsive"
+                objectFit="cover"
+              />
+            </motion.div>
+          </Media>
+          <Media greaterThanOrEqual="md">
+            <motion.div ref={imageRefUp} style={{ y: yUp }} className="w-full" {...IN_VIEW_PROPS}>
+              <Image
+                src={'/images/about/01.jpg'}
+                alt={'What is naturebase?'}
+                width={1280}
+                height={728}
+                layout="responsive"
+                objectFit="cover"
+              />
+            </motion.div>
+          </Media>
         </div>
       </section>
       <section>
-        <Wrapper className="py-20">
+        <Wrapper className="py-10 md:py-20">
           <Hero subtitle="Our Mission" />
           <motion.div
             className="font-sans text-base text-gray-800 md:grid md:grid-cols-12 md:gap-10"
@@ -107,8 +127,8 @@ const About = () => {
         </Wrapper>
       </section>
 
-      <section className="bg-beige">
-        <Wrapper className="py-20">
+      <section id="users" className="bg-beige scroll-mt-16">
+        <Wrapper className="py-10 md:py-20">
           <Hero subtitle="Who can use naturebase?" />
           <Media greaterThanOrEqual="md">
             <div className="flex border border-cream-700">
@@ -142,7 +162,7 @@ const About = () => {
           </Media>
           <Media lessThan="md">
             {' '}
-            <div className="flex flex-col border border-cream-700">
+            <div id="users" className="flex flex-col border border-cream-700 scroll-mt-16">
               {USERS.map((u, idx) => (
                 <Accordion type="single" collapsible key={idx}>
                   <AccordionItem value="item-1">
