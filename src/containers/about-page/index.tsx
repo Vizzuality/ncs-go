@@ -57,7 +57,7 @@ const About = () => {
               {...IN_VIEW_PROPS}
             >
               <p className="text-lg mb-4 md:mb-20 md:col-span-7 leading-7">
-                An open data platform designed to{' '}
+                A nature and climate data platform designed to{' '}
                 <span className="text-blue-800">identify where, why and how</span> to implement
                 high-integrity nature-based projects with the highest carbon mitigation impact
                 whilst protecting livelihoods and biodiversity.

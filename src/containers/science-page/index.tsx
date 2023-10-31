@@ -201,7 +201,16 @@ const Science = () => {
                 Solution activities derived from original geospatial analysis using the latest
                 satellite and peer-reviewed datasets of current land systems, varied geospatial
                 data, and carbon emissions/sequestration estimates informed by a review of
-                peer-reviewed publications. For more information see our data download section.
+                peer-reviewed publications. For more information see our{' '}
+                <a
+                  href="https://app.naturebase.org/data"
+                  target="_blank"
+                  className="text-brand-700 hover:underline"
+                  rel="noreferrer"
+                >
+                  Data page
+                </a>
+                .
               </p>
             </div>
           </motion.div>

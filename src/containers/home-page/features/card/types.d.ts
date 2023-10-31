@@ -5,4 +5,5 @@ export interface FeatureCardProps {
   icon: any;
   title: string;
   description: ReactNode;
+  tag?: string;
 }

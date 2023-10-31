@@ -12,7 +12,13 @@ const Features = () => {
       <div className="relative z-0 grid gap-px pt-8 md:pt-10 md:grid-cols-2 xl:grid-cols-3 md:mx-0">
         {FEATURES.map((f, i) => (
           <div key={f.key} className={`order-${f.key}`}>
-            <FeatureCard index={i} title={f.title} icon={f.icon} description={f.description} />
+            <FeatureCard
+              index={i}
+              title={f.title}
+              icon={f.icon}
+              description={f.description}
+              tag={f.tag}
+            />
           </div>
         ))}
       </div>

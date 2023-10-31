@@ -11,7 +11,7 @@ import ARROW_TOP_RIGHT_SVG from 'svgs/ui/arrow-top-right.svg?sprite';
 
 import type { FeatureCardProps } from './types';
 
-export const FeatureCard = ({ index, title, icon, description }: FeatureCardProps) => {
+export const FeatureCard = ({ index, title, icon, description, tag }: FeatureCardProps) => {
   const { isOpen, open, close } = useModal();
 
   const ref = useRef();
@@ -49,13 +49,19 @@ export const FeatureCard = ({ index, title, icon, description }: FeatureCardProp
             icon={icon}
           />
         </motion.div>
-        <motion.h3
-          className="md:h-12 font-sans group-hover:text-black text-[14px] md:text-base"
+        <motion.div
+          className="flex flex-row space-x-2 items-center"
           animate={{ opacity, y }}
           transition={{ delay: 0.3 + index * 0.1, bounce: 0 }}
         >
-          {title}
-        </motion.h3>
+          <h3 className="font-sans group-hover:text-black text-[14px] md:text-base">{title}</h3>
+          {tag && (
+            <div className="text-white rounded-lg bg-blue-800 px-2 text-[14px] h-6 flex items-center">
+              {tag}
+            </div>
+          )}
+        </motion.div>
+
         <Icon
           className="absolute w-6 h-6 md:w-8 md:h-8 lg:hidden top-0 md:top-5 lg:top-0 stroke-gray-800 right-6 group-hover:block"
           icon={ARROW_TOP_RIGHT_SVG}
