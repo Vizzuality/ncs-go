@@ -78,7 +78,7 @@ const Involved = () => {
             className="font-sans text-base text-gray-800 flex-col flex space-y-6 md:col-span-7"
             {...IN_VIEW_PROPS}
           >
-            <div className="text-lg">
+            <div className="text-lg leading-7">
               <p>
                 Naturebase is a platform made by{' '}
                 <span className="text-blue-800">people who care about nature</span> and climate
