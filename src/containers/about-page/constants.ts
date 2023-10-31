@@ -27,18 +27,18 @@ export const USERS = [
       'For Indigenous Peoples and local communities, it can help attract direct finance for their invaluable work as stewards of nature, and elevate their voices, claims and stories. Naturebase also provides guidance on high-integrity NCS implementation - including a human rights screener - and inspiring case studies that showcase what meaningful engagement, safeguards and leadership looks like.',
   },
   {
-    id: 'funders',
-    name: 'Funders',
-    icon: FUNDERS_SVG,
-    description:
-      'Funders, on the other hand, can use naturebase as a first step to identify where and what to invest in, as well as learn more about the many benefits and returns investing in nature can provide.',
-  },
-  {
     id: 'governments',
     name: 'Governments',
     icon: GOVERMENTS_SVG,
     description:
       'For governments, naturebase works as a guide for better, more comprehensive nature and climate planning and delivery, as well as a tool to attract and direct finance for nature.',
+  },
+  {
+    id: 'funders',
+    name: 'Funders',
+    icon: FUNDERS_SVG,
+    description:
+      'Funders, on the other hand, can use naturebase as a first step to identify where and what to invest in, as well as learn more about the many benefits and returns investing in nature can provide.',
   },
 ];
 

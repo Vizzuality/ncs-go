@@ -69,7 +69,7 @@ const HomePage = () => {
               </Media>
               <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
                 <Button theme="primary" size="xs" className="py-3 h-12">
-                  Launch map
+                  Launch app
                 </Button>
 
                 <Button

@@ -184,8 +184,11 @@ const About = () => {
         <Wrapper className="py-10 md:py-20">
           <Hero subtitle="Our Experts" />
 
-          <motion.div className="font-sans text-base text-gray-800 md:w-1/2" {...IN_VIEW_PROPS}>
-            <p className="">
+          <motion.div
+            className="font-sans text-base text-gray-800 md:grid md:grid-cols-12"
+            {...IN_VIEW_PROPS}
+          >
+            <p className="md:col-span-6">
               Naturebase is a product of a collaborative effort between scientists and developers at{' '}
               <a
                 className="text-brand-700 hover:underline"

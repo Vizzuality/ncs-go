@@ -91,7 +91,7 @@ const Navbar: React.FC = () => {
               size="s"
               onClick={() => {}}
             >
-              <p className="text-base">Launch Map</p>
+              <p className="text-base">Launch app</p>
             </Button>
           </div>
         </Wrapper>
