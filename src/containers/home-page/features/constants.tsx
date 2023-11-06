@@ -192,6 +192,18 @@ export const FEATURES = [
     title: 'Ideas portal',
     icon: IDEAS_SVG,
     tag: 'new',
+    description: (
+      <>
+        <p>
+          Naturebase is a product of collaborative effort across the scientific community, nonprofit
+          organizations, intergovernmental agencies and others dedicated to the mission of unlocking
+          nature’s potential to address the climate and biodiversity crises. Our beta version
+          includes the option to provide feedback and submit ideas, where users can contribute to
+          shaping the platform and helping us make it just the right tool for enabling action
+          everywhere in the world.
+        </p>
+      </>
+    ),
   },
 
   // {
