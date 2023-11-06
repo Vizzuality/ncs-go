@@ -19,10 +19,29 @@ import SATELLITE_SVG from 'svgs/science/methodology/satellite.svg?sprite';
 import { DATA_SOURCES } from './constants';
 
 const Science = () => {
-  const imageRef = useRef();
-  const { scrollYProgress } = useScroll({ target: imageRef, offset: ['0 1', '1 1'] });
+  const imageRefOne = useRef();
+  const imageRefTwo = useRef();
+  const imageRefThree = useRef();
 
-  const y = useTransform(scrollYProgress, [0, 1], ['-42%', '0%']);
+  const { scrollYProgress: scrollYProgressOne } = useScroll({
+    target: imageRefOne,
+    offset: ['0 1', '1 1'],
+  });
+
+  const { scrollYProgress: scrollYProgressTwo } = useScroll({
+    target: imageRefTwo,
+    offset: ['0 1', '1 1'],
+  });
+
+  const { scrollYProgress: scrollYProgressThree } = useScroll({
+    target: imageRefThree,
+    offset: ['0 1', '1 1'],
+  });
+  const yOne = useTransform(scrollYProgressOne, [0, 1], ['-42%', '0%']);
+
+  const yTwo = useTransform(scrollYProgressTwo, [0, 1], ['-42%', '0%']);
+
+  const yThree = useTransform(scrollYProgressThree, [0, 1], ['-42%', '0%']);
 
   return (
     <div id="naturbase" className="bg-white w-full pt-32 md:pt-40">
@@ -53,7 +72,7 @@ const Science = () => {
       </Wrapper>
 
       <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
-        <motion.div ref={imageRef} style={{ y }} className="w-full" {...IN_VIEW_PROPS}>
+        <motion.div ref={imageRefOne} style={{ y: yOne }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
             src={'/images/science/01.jpg'}
             alt={'What nature can do for the climate?'}
@@ -154,7 +173,7 @@ const Science = () => {
         </Wrapper>
       </section>
       <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
-        <motion.div ref={imageRef} style={{ y }} className="w-full" {...IN_VIEW_PROPS}>
+        <motion.div ref={imageRefTwo} style={{ y: yTwo }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
             src={'/images/science/02.jpg'}
             alt={''}
@@ -241,7 +260,7 @@ const Science = () => {
         </Wrapper>
       </section>
       <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
-        <motion.div ref={imageRef} style={{ y }} className="w-full" {...IN_VIEW_PROPS}>
+        <motion.div ref={imageRefThree} style={{ y: yThree }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
             src={'/images/science/03.jpg'}
             alt={''}
