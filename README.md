@@ -64,7 +64,7 @@ Please, **create a PR** for any improvement or feature you want to add. Try to n
 
 When vulnerabilities are detected, a warning message is displayed at the top of the repository. The list of alerts can be found in the Dependabot alerts page.
 
-Here's a step by step guide on how to address vulnerabilities found in production code:
+Here's a step-by-step guide on how to address vulnerabilities found in production code:
 
 1. Go to the Dependabot alerts page and locate the front-end vulnerability to address
 2. Identify if the vulnerability affects production code:
@@ -82,10 +82,11 @@ Here's a step by step guide on how to address vulnerabilities found in productio
 ## Env variables
 
 
-| Variable name           | Description                                                             |  Default value                      |
-|-------------------------|-------------------------------------------------------------------------|------------------------------------:|
-| SENDGRID_API_KEY_SUBSCRIPTION  | Key to authenticate access to SendGrid e-mail platform services.  |    |
-| NEXT_PUBLIC_GA_TRACKING_ID  |  Google Analytics tracking ID.  |    |
+| Variable name                 | Description                                                      | Default value |
+|-------------------------------|------------------------------------------------------------------|--------------:|
+| SENDGRID_API_KEY_SUBSCRIPTION | Key to authenticate access to SendGrid e-mail platform services. |               |
+| NEXT_PUBLIC_GA_TRACKING_ID    | Google Analytics tracking ID.                                    |               |
+| NEXT_PUBLIC_GTM_TRACKING_ID   | Google Tag Manager tracking ID.                                  |               |
 
 
 
