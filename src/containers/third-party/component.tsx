@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
 
 import useCookie from 'react-use-cookie';
 
@@ -11,6 +11,7 @@ import { GA_TRACKING_ID, GTM_TRACKING_ID } from 'lib/analytics/ga';
 
 const ThirdParty: React.FC = () => {
   const [consentCookie, setConsentCookie] = useCookie('consent', undefined);
+  const [mounted, setMounted] = useState(false);
 
   const consent = useMemo(() => {
     if (consentCookie === 'true') return true;
@@ -26,6 +27,8 @@ const ThirdParty: React.FC = () => {
   };
 
   useEffect(() => {
+    setMounted(true);
+
     if (!consentCookie) {
       openCookies();
     }
@@ -33,7 +36,7 @@ const ThirdParty: React.FC = () => {
 
   return (
     <>
-      {consent && (
+      {mounted && consent && (
         <>
           {/* Third Party Script needing cookies */}
           {/* Global site tag (gtag.js) - Google Analytics */}
