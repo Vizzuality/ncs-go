@@ -58,6 +58,12 @@ html {
   .dangerouslySetInnerHTML b {
     font-family: 'SpaceGrotesk-Bold';
   }
+  .dangerouslySetInnerHTML a {
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 }
 
 

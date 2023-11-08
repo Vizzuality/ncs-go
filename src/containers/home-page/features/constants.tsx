@@ -78,7 +78,7 @@ export const FEATURES = [
   },
   {
     key: '3',
-    title: 'Enabling Policies',
+    title: 'Enabling policies',
     icon: POLICY_DATABASE_SVG,
     description: (
       <>
@@ -96,7 +96,7 @@ export const FEATURES = [
   },
   {
     key: '4',
-    title: 'Feasibility Constraints',
+    title: 'Feasibility constraints',
     icon: FEASIBILITY_SVG,
     tag: 'upcoming',
     description: (
@@ -164,7 +164,7 @@ export const FEATURES = [
   },
   {
     key: '8',
-    title: 'Human Rights tool',
+    title: 'Human Rights Screening Tool',
     icon: HUMAN_RIGHTS_SVG,
     description: (
       <>
@@ -189,7 +189,7 @@ export const FEATURES = [
   },
   {
     key: '9',
-    title: 'Ideas portal',
+    title: 'Ideas and feedback option',
     icon: IDEAS_SVG,
     tag: 'new',
     description: (

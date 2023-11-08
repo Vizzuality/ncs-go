@@ -69,7 +69,7 @@ export const FAQS = [
   {
     question: 'How are natural climate solutions different from Nature-based solutions?',
     answer:
-      'Natural climate solutions are a subset of Nature-based solutions (NbS) that are focused on climate mitigation benefits. We have continued to use the term NCS to denote the specific accounting framework we have developed but encourage substituting the term NbS, or simply “nature,” as useful and appropriate for the audience.',
+      'Natural Climate Solutions (NCS) are a subset of Nature-based solutions (NbS) that are focused on climate mitigation benefits. We have continued to use the term NCS to denote the specific accounting framework we have developed but encourage substituting the term NbS, or simply “nature,” as useful and appropriate for the audience.',
   },
   {
     question: 'Who can use naturebase?',
@@ -79,7 +79,7 @@ export const FAQS = [
   {
     question: 'What features are currently available?',
     answer:
-      '<div><p> Naturebase will continue to evolve with new features and additional datasets. The current beta version includes accurate data for 18 out of 25 natural climate solutions pathways and activities, including: </p><br/> <div><li>Reforestation</li><li>Avoided Forest Conversion</li> <li>Reduced Impact Logging for Climate Mitigation (RIL-C)</li><li>Reduced Woodfuel Harvest in Forests (RWF)</li><li>Reduced Woodfuel Harvest in Savannas (RWS)</li><li>Savanna burning</li><li>Increased Soil Carbon in Grazing Lands</li><li>Feed Management and Additives</li><li>Grassland Restoration (GrR)</li><li>Silvopasture</li><li>Trees in Croplands</li><li>Rice Cultivation</li><li>Cover Crops</li><li>Biochar</li><li>Reduced Tillage</li><li>Mangrove Protection</li><li>Mangrove Restoration</li><li>Peatland Restoration (PeR)</li></div><br/><p>Additional data on mitigation potential for avoided shrubland conversion (ASC), avoided grassland conversion (AGC), avoided peatland drainage (APC), seagrass protection, saltmarsh protection, seagrass restoration, and saltmarsh restoration will be released soon. Whilst all pathway data available now is accurate to the indicated level of certainty, global and national totals for mitigation potential may increase as new pathways are included.</p></div>',
+      '<div><p>Naturebase will continue to evolve with new features and additional datasets. The current beta version includes accurate data for 18 out of 25 natural climate solutions pathways and activities, including:</p><br/> <div><li>Reforestation</li><li>Avoided Forest Conversion</li> <li>Reduced Impact Logging for Climate Mitigation (RIL-C)</li><li>Reduced Woodfuel Harvest in Forests (RWF)</li><li>Reduced Woodfuel Harvest in Savannas (RWS)</li><li>Savanna burning</li><li>Increased Soil Carbon in Grazing Lands</li><li>Feed Management and Additives</li><li>Grassland Restoration (GrR)</li><li>Silvopasture</li><li>Trees in Croplands</li><li>Rice Cultivation</li><li>Cover Crops</li><li>Biochar</li><li>Reduced Tillage</li><li>Mangrove Protection</li><li>Mangrove Restoration</li><li>Peatland Restoration (PeR)</li></div><br/><p>Additional data on mitigation potential for avoided shrubland conversion (ASC), avoided grassland conversion (AGC), avoided peatland drainage (APC), seagrass protection, saltmarsh protection, seagrass restoration, and saltmarsh restoration will be released soon. Whilst all pathway data available now is accurate to the indicated level of certainty, global and national totals for mitigation potential may increase as new pathways are included.</p></div>',
   },
   {
     question: 'How is naturebase different from other platforms?',
@@ -95,7 +95,7 @@ export const FAQS = [
   {
     question: 'Who is building this platform?',
     answer:
-      '<div><p>Naturebase is supported by the <a href="https://www.nature4climate.org" target="_blank"><Nature4Climate/a> coalition and developed by global experts at The Nature Conservancy, Conservation International, the World Resources Institute,  the Global Mangrove Alliance and the Clean Cooking Alliance, with contributions from numerous other organizations across the environmental sector. As a free online tool that is built upon public transparent, open source, peer-reviewed science and designed to serve the movement, naturebase does not intend to promote specific brands nor include any for-profit features.</p></div>',
+      '<div><p>Naturebase is supported by the <a href="https://www.nature4climate.org" target="_blank">Nature4Climate</a> coalition and developed by global experts at The Nature Conservancy, Conservation International, the World Resources Institute,  the Global Mangrove Alliance and the Clean Cooking Alliance, with contributions from numerous other organizations across the environmental sector. As a free online tool that is built upon public transparent, open source, peer-reviewed science and designed to serve the movement, naturebase does not intend to promote specific brands nor include any for-profit features.</p></div>',
   },
   {
     question: 'Who is funding naturebase?',
