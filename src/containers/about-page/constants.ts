@@ -43,21 +43,50 @@ export const USERS = [
 ];
 
 export const PARTNERS = [
-  { name: 'The Nature Conservancy', logo: '/images/logos/nature_conservancy.png' },
-  { name: 'Nature For Climate', logo: '/images/logos/nature_4_climate.png' },
-  { name: 'Conservation International', logo: '/images/logos/conservation_international.png' },
-  { name: 'Clarke University', logo: '/images/logos/clarke_university.png' },
-  { name: 'World Resources Institute', logo: '/images/logos/world_resources_institute.png' },
-  { name: 'World Wildlife Fund', logo: '/images/logos/wwf.png' },
+  {
+    name: 'The Nature Conservancy',
+    logo: '/images/logos/nature_conservancy.png',
+    link: 'https://www.nature.org/en-us',
+  },
+  {
+    name: 'Nature For Climate',
+    logo: '/images/logos/nature_4_climate.png',
+    link: 'https://nature4climate.org',
+  },
+  {
+    name: 'Conservation International',
+    logo: '/images/logos/conservation_international.png',
+    link: 'https://www.conservation.org',
+  },
+  {
+    name: 'Clarke University',
+    logo: '/images/logos/clarke_university.png',
+    link: 'https://clarke.edu',
+  },
+  {
+    name: 'World Resources Institute',
+    logo: '/images/logos/world_resources_institute.png',
+    link: 'https://www.wri.org',
+  },
+  {
+    name: 'World Wildlife Fund',
+    logo: '/images/logos/wwf.png',
+    link: 'https://www.worldwildlife.org',
+  },
   {
     name: 'Woodwell Climate Research Center',
     logo: '/images/logos/woodwell_climate_research.png',
+    link: 'https://www.woodwellclimate.org',
   },
-  { name: 'Cornell University', logo: '/images/logos/cornell_university.png' },
-  { name: 'Slu', logo: '/images/logos/slu.png' },
-  { name: 'Sei', logo: '/images/logos/sei.png' },
-  { name: 'Eth Zurich', logo: '/images/logos/eth.png' },
-  { name: 'Vizzuality', logo: '/images/logos/vizzuality.png' },
+  {
+    name: 'Cornell University',
+    logo: '/images/logos/cornell_university.png',
+    link: 'https://www.cornell.edu',
+  },
+  { name: 'Slu', logo: '/images/logos/slu.png', link: 'https://www.slu.se' },
+  { name: 'Sei', logo: '/images/logos/sei.png', link: 'https://www.sei.org' },
+  { name: 'Eth Zurich', logo: '/images/logos/eth.png', link: 'https://ethz.ch/en.html' },
+  { name: 'Vizzuality', logo: '/images/logos/vizzuality.png', link: 'https://www.vizzuality.com' },
 ];
 
 export const FAQS = [

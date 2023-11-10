@@ -204,13 +204,15 @@ const About = () => {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-20 py-10 md:py-20 mx-4 md:mx-0">
             {PARTNERS.map((partner, idx) => (
-              <motion.div
+              <motion.a
                 key={idx}
+                href={partner.link}
+                target="_blank"
                 className="w-full flex items-center justify-center"
                 {...IN_VIEW_PROPS}
               >
                 <img src={partner.logo} alt={partner.name} />
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </Wrapper>
