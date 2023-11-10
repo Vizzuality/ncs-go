@@ -90,9 +90,6 @@ const Footer: React.FC = () => {
                     <a href="science#data" className="opacity-60 hover:opacity-100">
                       Data sources
                     </a>
-                    <a href="science#authors" className="opacity-60 hover:opacity-100">
-                      Key authors
-                    </a>
                   </div>
                 </div>
                 <div className="space-y-4">

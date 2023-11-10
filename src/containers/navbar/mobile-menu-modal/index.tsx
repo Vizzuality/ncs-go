@@ -28,7 +28,9 @@ const MobileMenuModal = ({ isOpen, close }) => {
           </div>
           <div className="flex justify-center">
             <Button theme="primary" size="xs" className="py-3 h-12 w-full">
-              Launch app
+              <a href="https://app.naturebase.org" target="_blank" rel="noreferrer">
+                Launch app
+              </a>
             </Button>
           </div>
         </Wrapper>

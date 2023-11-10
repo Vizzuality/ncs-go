@@ -132,7 +132,9 @@ const Involved = () => {
                     size="xs"
                     className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
                   >
-                    Launch app
+                    <a href="https://app.naturebase.org" target="_blank" rel="noreferrer">
+                      Launch app
+                    </a>
                   </Button>
                 </div>
               </motion.div>

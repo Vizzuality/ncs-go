@@ -235,30 +235,7 @@ const Science = () => {
           </motion.div>
         </Wrapper>
       </section>
-      <section id="authors" className="bg-beige scroll-mt-16">
-        <Wrapper className="py-10 md:py-20">
-          <Hero subtitle="Key authors" />
 
-          <motion.div
-            className="font-sans text-base space-y-4 md:space-y-0 text-gray-800 md:grid md:grid-cols-12 md:gap-10"
-            {...IN_VIEW_PROPS}
-          >
-            <div className="md:col-span-5">
-              <p>
-                The research and scientific papers which appear on naturebase are from teams of{' '}
-                <span className="text-red-600">scientists and researchers</span> across the world.
-              </p>
-            </div>
-            <div className="md:col-span-7">
-              <p>
-                Naturebase was born out of the creative, expert brains of the NCS Science team at
-                The Nature Conservancy, with contributions by numerous organisations across the
-                environmental sector.
-              </p>
-            </div>
-          </motion.div>
-        </Wrapper>
-      </section>
       <div className="h-[142px] md:h-[428px] overflow-hidden w-full">
         <motion.div ref={imageRefThree} style={{ y: yThree }} className="w-full" {...IN_VIEW_PROPS}>
           <Image
@@ -271,32 +248,6 @@ const Science = () => {
           />
         </motion.div>
       </div>
-      <section>
-        <Wrapper className="py-10 md:py-20">
-          <Hero subtitle="Funding" />
-
-          <motion.div
-            className="font-sans text-base space-y-4 md:space-y-0 text-gray-800 md:grid md:grid-cols-12 md:gap-10"
-            {...IN_VIEW_PROPS}
-          >
-            <div className="md:col-span-5">
-              <p className="md:text-lg md:leading-7">
-                In 2020, the <span className="text-blue-800">Bezos Earth Fund</span> pledged a $10
-                billion fund over a decade to fight the impact of climate change. The Nature
-                Conservancy received a portion of this gift to dramatically expand the scientific
-                tools needed to take natural climate solutions to scale, across the globe.
-              </p>
-            </div>
-            <div className="md:col-span-5">
-              <p>
-                The funding is also focused on building equitable solutions that benefit communities
-                impacted by climate change by engaging diverse community stakeholders, indigenous
-                leadership, and others. As part of this scope of work, we developed naturebase.
-              </p>
-            </div>
-          </motion.div>
-        </Wrapper>
-      </section>
     </div>
   );
 };

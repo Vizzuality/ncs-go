@@ -91,7 +91,14 @@ const Navbar: React.FC = () => {
               size="s"
               onClick={() => {}}
             >
-              <p className="text-base">Launch app</p>
+              <a
+                href="https://app.naturebase.org"
+                target="_blank"
+                rel="noreferrer"
+                className="text-base"
+              >
+                Launch app
+              </a>
             </Button>
           </div>
         </Wrapper>
