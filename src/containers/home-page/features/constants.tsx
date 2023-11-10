@@ -56,16 +56,17 @@ export const FEATURES = [
         <p>We are doing this through multiple interrelated projects including:</p>
         <ul>
           <li>
-            A machine learning-based systematic evidence map of more than 800,000 papers on the
-            biodiversity and human well-being co-benefits of NCS
+            Showing the ranked impact of several NCS pathways on seven ecosystem services: nitrogen
+            retention, sediment retention, water quality, pollination, coastal protection, green
+            water storage, and water availability.
           </li>
           <li>
-            Estimating impacts of peatland restoration, agroforestry, and mangrove restoration and
-            protection in on biodiversity and human well-being in demonstration landscapes
+            A machine learning-based systematic evidence map of more than 200,000 scientific
+            articles on the biodiversity and human well-being co-benefits of NCS – Coming soon.
           </li>
           <li>
-            Estimating the global contribution of several NCS pathways to human adaptation, and
-            biodiversity through ecosystem service and landscape connectivity models, respectively.{' '}
+            Estimating the global contribution of several NCS pathways to improving and maintaining
+            landscape connectivity – Coming soon.
           </li>
         </ul>
         <p>
@@ -168,22 +169,23 @@ export const FEATURES = [
     icon: HUMAN_RIGHTS_SVG,
     description: (
       <>
-        <p>
-          Natural climate solutions (NCS) practitioners must take bold steps to ensure that projects
-          not only avoid adverse human rights impacts but actively promote Indigenous People and
-          Local Communities (IPLC) rights, self-determination, well-being, and equity, including
-          full entitlement to benefits. The broader NCS community must strive to do this not only
-          because it is the right thing to do, but also because it will ensure the long-term
-          viability and sustainability of NCS projects.
-        </p>
-        <p>
-          Naturebase will showcase a new NCS Human Rights Toolset specially designed to help screen
-          existing and proposed NCS projects for ongoing or potential future risks to human rights
-          and self-determination. Because NCS is rooted in land use strategies, and IPLCs steward a
-          disproportionate amount of the NCS opportunity globally, Naturebase intends to both
-          respect and support IPLCs in their own pursuit of informed and self-determined climate and
-          land use decision-making.
-        </p>
+        <div>
+          <p>
+            Natural climate solutions (NCS) practitioners must take bold steps to ensure that
+            projects not only avoid adverse human rights impacts but actively promote Indigenous
+            People and Local Communities (IPLC) rights, self-determination, well-being, and equity,
+            including full entitlement to benefits. The broader NCS community must strive to do this
+            not only because it is the right thing to do, but also because it will ensure the
+            long-term viability and sustainability of NCS projects. This{' '}
+            <a href="https://humanrights.naturebase.org" target="_blank" rel="noreferrer">
+              Human Rights Screening Tool
+            </a>
+            , sponsored by The Nature Conservancy, provides a process that will help field teams
+            identify project risks from a human rights-based perspective and prioritize those risks
+            for further attention and collaborative action. It represents a first step to fulfil the
+            larger responsibility of human rights due diligence.
+          </p>
+        </div>
       </>
     ),
   },

@@ -81,9 +81,9 @@ const Involved = () => {
             <div className="text-lg leading-7">
               <p>
                 Naturebase is a platform made by{' '}
-                <span className="text-blue-800">people who care about nature</span> and climate
-                change and for those who are ready to change business as usual and put nature and
-                our climate back on the path of recovery.
+                <span className="text-blue-800">people who care about nature</span>, people and
+                climate change and for those who are ready to change business as usual and put
+                nature and our climate back on the path of recovery.
               </p>
             </div>
             <div className="text-base">

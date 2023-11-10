@@ -48,6 +48,12 @@ html {
     @apply bg-opacity-40;
   }
 
+  .prose a {
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
   @supports (backdrop-filter: blur(4px)) {
     .bg-blur {
       @apply bg-opacity-20;
