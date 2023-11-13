@@ -94,12 +94,12 @@ const Science = () => {
             <p className="md:col-span-7">
               Learn more about the nature-based approaches to mitigate climate change (also known as
               natural climate solutions), which avoid emissions and enhance sequestration across
-              forests, wetlands, grasslands and agricultural lands.{' '}
+              forests, wetlands, grasslands and agricultural lands. Visit{' '}
               <a
                 href="https://www.nature4climate.org"
                 className="font-semibold text-brand-700 hover:underline"
               >
-                Visit www.nature4climate.org
+                www.nature4climate.org
               </a>{' '}
               to learn more.
             </p>
