@@ -140,10 +140,14 @@ export const FEATURES = [
       <>
         <p>
           Building on the expertise of on-the-ground practitioners Naturebase will highlight a
-          growing natural climate solutions learning network, designed to field test and evaluate
-          high-impact strategies that can be scaled and replicated around the world. The network
-          brings together field staff and scientists from existing projects in diverse ecosystems.
-          Each project is a means to field test the impact and efficacy of different approaches.
+          growing{' '}
+          <a href="https://ncsprototypingnetwork.naturebase.org" target="_blank" rel="noreferrer">
+            natural climate solutions learning network
+          </a>
+          , designed to field test and evaluate high-impact strategies that can be scaled and
+          replicated around the world. The network brings together field staff and scientists from
+          existing projects in diverse ecosystems. Each project is a means to field test the impact
+          and efficacy of different approaches.
         </p>
         <p>
           Local project teams will work with the prototyping team to measure mitigation and evaluate
@@ -162,6 +166,22 @@ export const FEATURES = [
     title: 'Financial assessment tool',
     icon: FINANCIAL_SVG,
     tag: 'upcoming',
+    description: (
+      <>
+        <div>
+          <p>
+            As the world increasingly understands the potential of natural climate solutions, there
+            has been unprecedented momentum on both public and private funding sources to fill the
+            ambition versus implementation gap. In this context, a{' '}
+            <a href="#" target="_blank">
+              new financial tool
+            </a>{' '}
+            was developed to highlight a recent study identifying finance gaps and opportunities for
+            high-impact natural climate solutions implementation.
+          </p>
+        </div>
+      </>
+    ),
   },
   {
     key: '8',

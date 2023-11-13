@@ -54,7 +54,7 @@ const Science = () => {
         >
           <div className="md:col-span-5">
             <p className="text-lg leading-7">
-              Natural climate solution pathways{' '}
+              Natural Climate Solutions pathways{' '}
               <span className="text-blue-800">protect, manage, and restore</span> nature in forests,
               croplands, wetlands, and grasslands.
             </p>
@@ -85,7 +85,7 @@ const Science = () => {
       </div>
       <section id="pathways" className="scroll-mt-16">
         <Wrapper className="py-10 md:pt-20 md:pb-0">
-          <Hero subtitle="Pathways to mitigate climate change" />
+          <Hero subtitle="Pathways" />
 
           <motion.div
             className="font-sans text-base text-gray-800 md:grid md:grid-cols-12 md:gap-10"
@@ -96,10 +96,10 @@ const Science = () => {
               natural climate solutions), which avoid emissions and enhance sequestration across
               forests, wetlands, grasslands and agricultural lands.{' '}
               <a
-                href="https://www.n4c.org"
+                href="https://www.nature4climate.org"
                 className="font-semibold text-brand-700 hover:underline"
               >
-                Visit n4c.org
+                Visit www.nature4climate.org
               </a>{' '}
               to learn more.
             </p>
