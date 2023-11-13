@@ -90,9 +90,6 @@ const Footer: React.FC = () => {
                     <a href="science#data" className="opacity-60 hover:opacity-100">
                       Data sources
                     </a>
-                    <a href="science#authors" className="opacity-60 hover:opacity-100">
-                      Key authors
-                    </a>
                   </div>
                 </div>
                 <div className="space-y-4">
@@ -151,11 +148,16 @@ const Footer: React.FC = () => {
             </Form>
           </div>
         </div>
-        <div className="flex justify-between items-end pt-10 lg:pt-28">
+        <a
+          className="flex justify-between items-end pt-10 lg:pt-28"
+          href="https://nature4climate.org"
+          rel="noreferrer"
+          target="_blank"
+        >
           <Icon icon={NATURE4CLIMATE_SVG} className="h-14 w-28" />
 
           <p className="text-sm text-white opacity-60 font-sans">Supported by Bezos Earth Fund</p>
-        </div>
+        </a>
       </Wrapper>
     </section>
   );

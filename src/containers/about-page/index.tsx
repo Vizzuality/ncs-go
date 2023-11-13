@@ -49,7 +49,7 @@ const About = () => {
         <div className="relative lg:after:content-[''] lg:after:absolute lg:after:z-0 lg:after:opacity-20 w-full after:-top-32 after:h-[130%] after:bottom-0 after:left-[60%] 2xl:after:left-[67%] 3xl:after:left-[72%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
           <Wrapper className="lg:py-20 pt-20 pb-10">
             <div className="max-w-xl">
-              <Hero subtitle="Unlock Nature’s Potential with naturebase" />
+              <Hero subtitle="What is naturebase?" />
             </div>
 
             <motion.div
@@ -57,13 +57,13 @@ const About = () => {
               {...IN_VIEW_PROPS}
             >
               <p className="text-lg mb-4 md:mb-20 md:col-span-7 leading-7">
-                A nature and climate data platform designed to{' '}
+                A natural climate solution web platform designed to{' '}
                 <span className="text-blue-800">identify where, why and how</span> to implement
                 high-integrity nature-based projects with the highest carbon mitigation impact
                 whilst protecting livelihoods and biodiversity.
               </p>
 
-              <h4 className="text-[24px] md:pb-7 md:col-span-7">How does it works?</h4>
+              <h4 className="text-[24px] md:pb-7 md:col-span-7">How does it work?</h4>
               <p className="text-base md:col-span-7">
                 Backed by peer-reviewed scientific data, the application shows users the emissions
                 reduction potential for each pathway - everywhere on the planet. This is
@@ -113,7 +113,7 @@ const About = () => {
             {...IN_VIEW_PROPS}
           >
             <p className="md:col-span-5">
-              Nature can deliver up to one-third of the mitigation solutions that are required to
+              Nature can deliver up to one-third of the mitigation required that are required to
               stabilize the planet whilst also providing ecosystem and human well-being benefits -
               such as improving water and air quality, public health and building communities that
               are resilient to extreme weather events such as flooding and drought.
@@ -204,13 +204,15 @@ const About = () => {
           </motion.div>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-10 md:gap-20 py-10 md:py-20 mx-4 md:mx-0">
             {PARTNERS.map((partner, idx) => (
-              <motion.div
+              <motion.a
                 key={idx}
+                href={partner.link}
+                target="_blank"
                 className="w-full flex items-center justify-center"
                 {...IN_VIEW_PROPS}
               >
                 <img src={partner.logo} alt={partner.name} />
-              </motion.div>
+              </motion.a>
             ))}
           </div>
         </Wrapper>

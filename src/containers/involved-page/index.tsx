@@ -81,9 +81,9 @@ const Involved = () => {
             <div className="text-lg leading-7">
               <p>
                 Naturebase is a platform made by{' '}
-                <span className="text-blue-800">people who care about nature</span> and climate
-                change and for those who are ready to change business as usual and put nature and
-                our climate back on the path of recovery.
+                <span className="text-blue-800">people who care about nature</span>, people and
+                climate change and for those who are ready to change business as usual and put
+                nature and our climate back on the path of recovery.
               </p>
             </div>
             <div className="text-base">
@@ -132,7 +132,9 @@ const Involved = () => {
                     size="xs"
                     className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
                   >
-                    Launch app
+                    <a href="https://app.naturebase.org" target="_blank" rel="noreferrer">
+                      Launch app
+                    </a>
                   </Button>
                 </div>
               </motion.div>

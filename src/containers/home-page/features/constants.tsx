@@ -40,6 +40,32 @@ export const FEATURES = [
   },
   {
     key: '2',
+    title: 'Human Rights Screening Tool',
+    icon: HUMAN_RIGHTS_SVG,
+    description: (
+      <>
+        <div>
+          <p>
+            Natural climate solutions (NCS) practitioners must take bold steps to ensure that
+            projects not only avoid adverse human rights impacts but actively promote Indigenous
+            People and Local Communities (IPLC) rights, self-determination, well-being, and equity,
+            including full entitlement to benefits. The broader NCS community must strive to do this
+            not only because it is the right thing to do, but also because it will ensure the
+            long-term viability and sustainability of NCS projects. This{' '}
+            <a href="https://humanrights.naturebase.org" target="_blank" rel="noreferrer">
+              Human Rights Screening Tool
+            </a>
+            , sponsored by The Nature Conservancy, provides a process that will help field teams
+            identify project risks from a human rights-based perspective and prioritize those risks
+            for further attention and collaborative action. It represents a first step to fulfil the
+            larger responsibility of human rights due diligence.
+          </p>
+        </div>
+      </>
+    ),
+  },
+  {
+    key: '3',
     title: 'Ecosystem services and additional benefits',
     icon: ADDITIONAL_BENEFITS_SVG,
     description: (
@@ -56,16 +82,17 @@ export const FEATURES = [
         <p>We are doing this through multiple interrelated projects including:</p>
         <ul>
           <li>
-            A machine learning-based systematic evidence map of more than 800,000 papers on the
-            biodiversity and human well-being co-benefits of NCS
+            Showing the ranked impact of several NCS pathways on seven ecosystem services: nitrogen
+            retention, sediment retention, water quality, pollination, coastal protection, green
+            water storage, and water availability.
           </li>
           <li>
-            Estimating impacts of peatland restoration, agroforestry, and mangrove restoration and
-            protection in on biodiversity and human well-being in demonstration landscapes
+            A machine learning-based systematic evidence map of more than 200,000 scientific
+            articles on the biodiversity and human well-being co-benefits of NCS – Coming soon.
           </li>
           <li>
-            Estimating the global contribution of several NCS pathways to human adaptation, and
-            biodiversity through ecosystem service and landscape connectivity models, respectively.{' '}
+            Estimating the global contribution of several NCS pathways to improving and maintaining
+            landscape connectivity – Coming soon.
           </li>
         </ul>
         <p>
@@ -77,7 +104,7 @@ export const FEATURES = [
     ),
   },
   {
-    key: '3',
+    key: '4',
     title: 'Enabling policies',
     icon: POLICY_DATABASE_SVG,
     description: (
@@ -95,7 +122,90 @@ export const FEATURES = [
     ),
   },
   {
-    key: '4',
+    key: '5',
+    title: 'Financial assessment tool',
+    icon: FINANCIAL_SVG,
+    tag: 'upcoming',
+    description: (
+      <>
+        <div>
+          <p>
+            As the world increasingly understands the potential of natural climate solutions, there
+            has been unprecedented momentum on both public and private funding sources to fill the
+            ambition versus implementation gap. In this context, a{' '}
+            <a href="#" target="_blank">
+              new financial tool
+            </a>{' '}
+            was developed to highlight a recent study identifying finance gaps and opportunities for
+            high-impact natural climate solutions implementation.
+          </p>
+        </div>
+      </>
+    ),
+  },
+  {
+    key: '6',
+    title: 'Learning Network',
+    icon: PROTOTYPING_NETWORK_SVG,
+    description: (
+      <>
+        <p>
+          Building on the expertise of on-the-ground practitioners Naturebase will highlight a
+          growing{' '}
+          <a href="https://ncsprototypingnetwork.naturebase.org" target="_blank" rel="noreferrer">
+            natural climate solutions learning network
+          </a>
+          , designed to field test and evaluate high-impact strategies that can be scaled and
+          replicated around the world. The network brings together field staff and scientists from
+          existing projects in diverse ecosystems. Each project is a means to field test the impact
+          and efficacy of different approaches.
+        </p>
+        <p>
+          Local project teams will work with the prototyping team to measure mitigation and evaluate
+          project impact, assess feasibility, ensure equitable implementation, and identify
+          opportunities to scale. The network will also provide a cross-project community of
+          learning and collaboration, and a constant feedback loop to improve implementation through
+          adaptive management. Data and case studies from pilot projects will be available to
+          researchers and decision-makers around the world through the development of innovative
+          tools.
+        </p>
+      </>
+    ),
+  },
+  {
+    key: '7',
+    title: 'Real-world examples',
+    icon: CASE_STUDIES_SVG,
+    description: (
+      <>
+        <p>
+          Naturebase will provide the most comprehensive compilation natural climate solution
+          projects already underway. See projects in your area of interest. Identify trends and
+          gaps. Stimulate learning, and share successes.
+        </p>
+      </>
+    ),
+  },
+  {
+    key: '8',
+    title: 'Ideas and feedback option',
+    icon: IDEAS_SVG,
+    tag: 'new',
+    description: (
+      <>
+        <p>
+          Naturebase is a product of collaborative effort across the scientific community, nonprofit
+          organizations, intergovernmental agencies and others dedicated to the mission of unlocking
+          nature’s potential to address the climate and biodiversity crises. Our beta version
+          includes the option to provide feedback and submit ideas, where users can contribute to
+          shaping the platform and helping us make it just the right tool for enabling action
+          everywhere in the world.
+        </p>
+      </>
+    ),
+  },
+  {
+    key: '9',
     title: 'Feasibility constraints',
     icon: FEASIBILITY_SVG,
     tag: 'upcoming',
@@ -117,119 +227,4 @@ export const FEATURES = [
       </>
     ),
   },
-  {
-    key: '5',
-    title: 'Real-world examples',
-    icon: CASE_STUDIES_SVG,
-    description: (
-      <>
-        <p>
-          Naturebase will provide the most comprehensive compilation natural climate solution
-          projects already underway. See projects in your area of interest. Identify trends and
-          gaps. Stimulate learning, and share successes.
-        </p>
-      </>
-    ),
-  },
-  {
-    key: '6',
-    title: 'Learning Network',
-    icon: PROTOTYPING_NETWORK_SVG,
-    description: (
-      <>
-        <p>
-          Building on the expertise of on-the-ground practitioners Naturebase will highlight a
-          growing natural climate solutions learning network, designed to field test and evaluate
-          high-impact strategies that can be scaled and replicated around the world. The network
-          brings together field staff and scientists from existing projects in diverse ecosystems.
-          Each project is a means to field test the impact and efficacy of different approaches.
-        </p>
-        <p>
-          Local project teams will work with the prototyping team to measure mitigation and evaluate
-          project impact, assess feasibility, ensure equitable implementation, and identify
-          opportunities to scale. The network will also provide a cross-project community of
-          learning and collaboration, and a constant feedback loop to improve implementation through
-          adaptive management. Data and case studies from pilot projects will be available to
-          researchers and decision-makers around the world through the development of innovative
-          tools.
-        </p>
-      </>
-    ),
-  },
-  {
-    key: '7',
-    title: 'Financial assessment tool',
-    icon: FINANCIAL_SVG,
-    tag: 'upcoming',
-  },
-  {
-    key: '8',
-    title: 'Human Rights Screening Tool',
-    icon: HUMAN_RIGHTS_SVG,
-    description: (
-      <>
-        <p>
-          Natural climate solutions (NCS) practitioners must take bold steps to ensure that projects
-          not only avoid adverse human rights impacts but actively promote Indigenous People and
-          Local Communities (IPLC) rights, self-determination, well-being, and equity, including
-          full entitlement to benefits. The broader NCS community must strive to do this not only
-          because it is the right thing to do, but also because it will ensure the long-term
-          viability and sustainability of NCS projects.
-        </p>
-        <p>
-          Naturebase will showcase a new NCS Human Rights Toolset specially designed to help screen
-          existing and proposed NCS projects for ongoing or potential future risks to human rights
-          and self-determination. Because NCS is rooted in land use strategies, and IPLCs steward a
-          disproportionate amount of the NCS opportunity globally, Naturebase intends to both
-          respect and support IPLCs in their own pursuit of informed and self-determined climate and
-          land use decision-making.
-        </p>
-      </>
-    ),
-  },
-  {
-    key: '9',
-    title: 'Ideas and feedback option',
-    icon: IDEAS_SVG,
-    tag: 'new',
-    description: (
-      <>
-        <p>
-          Naturebase is a product of collaborative effort across the scientific community, nonprofit
-          organizations, intergovernmental agencies and others dedicated to the mission of unlocking
-          nature’s potential to address the climate and biodiversity crises. Our beta version
-          includes the option to provide feedback and submit ideas, where users can contribute to
-          shaping the platform and helping us make it just the right tool for enabling action
-          everywhere in the world.
-        </p>
-      </>
-    ),
-  },
-
-  // {
-  //   key: '8',
-  //   title: 'Mitigation Costs',
-  //   icon: MITIGATION_COSTS_SVG,
-  //   description: (
-  //     <>
-  //       <p>
-  //         Building on research to target NCS investments where interventions are most likely to
-  //         achieve significant climate change mitigation at the lowest cost to society, Naturebase
-  //         will demonstrate how much restoration, protection, and management activities could reduce
-  //         climate change at various carbon market prices. Using marginal abatement cost (MACC)
-  //         analysis we can provide several pieces of useful information. For one, MACC curves
-  //         indicate the total mitigation that can be achieved at up to any given unit cost ($ tCO2e).
-  //       </p>
-  //       <p>
-  //         This is important for identifying projects whose unit cost of mitigation (i.e., MACC) is
-  //         equal to or less than a given carbon price. These MACC curves are useful because they
-  //         allow comparisons among individual NCS activity and between NCS and other mitigation
-  //         options, both with respect to mitigation potential and costs. In addition to facilitating
-  //         comparison among mitigation options, information about the MACC of available mitigation
-  //         options –both NCS and non-NCS– allows identification of the cost- effective mitigation
-  //         portfolio for any desired total level of mitigation.
-  //       </p>
-  //     </>
-  //   ),
-  // },
 ];

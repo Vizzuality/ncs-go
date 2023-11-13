@@ -43,21 +43,50 @@ export const USERS = [
 ];
 
 export const PARTNERS = [
-  { name: 'The Nature Conservancy', logo: '/images/logos/nature_conservancy.png' },
-  { name: 'Nature For Climate', logo: '/images/logos/nature_4_climate.png' },
-  { name: 'Conservation International', logo: '/images/logos/conservation_international.png' },
-  { name: 'Clarke University', logo: '/images/logos/clarke_university.png' },
-  { name: 'World Resources Institute', logo: '/images/logos/world_resources_institute.png' },
-  { name: 'World Wildlife Fund', logo: '/images/logos/wwf.png' },
+  {
+    name: 'The Nature Conservancy',
+    logo: '/images/logos/nature_conservancy.png',
+    link: 'https://www.nature.org/en-us',
+  },
+  {
+    name: 'Nature For Climate',
+    logo: '/images/logos/nature_4_climate.png',
+    link: 'https://nature4climate.org',
+  },
+  {
+    name: 'Conservation International',
+    logo: '/images/logos/conservation_international.png',
+    link: 'https://www.conservation.org',
+  },
+  {
+    name: 'Clarke University',
+    logo: '/images/logos/clarke_university.png',
+    link: 'https://clarke.edu',
+  },
+  {
+    name: 'World Resources Institute',
+    logo: '/images/logos/world_resources_institute.png',
+    link: 'https://www.wri.org',
+  },
+  {
+    name: 'World Wildlife Fund',
+    logo: '/images/logos/wwf.png',
+    link: 'https://www.worldwildlife.org',
+  },
   {
     name: 'Woodwell Climate Research Center',
     logo: '/images/logos/woodwell_climate_research.png',
+    link: 'https://www.woodwellclimate.org',
   },
-  { name: 'Cornell University', logo: '/images/logos/cornell_university.png' },
-  { name: 'Slu', logo: '/images/logos/slu.png' },
-  { name: 'Sei', logo: '/images/logos/sei.png' },
-  { name: 'Eth Zurich', logo: '/images/logos/eth.png' },
-  { name: 'Vizzuality', logo: '/images/logos/vizzuality.png' },
+  {
+    name: 'Cornell University',
+    logo: '/images/logos/cornell_university.png',
+    link: 'https://www.cornell.edu',
+  },
+  { name: 'Slu', logo: '/images/logos/slu.png', link: 'https://www.slu.se' },
+  { name: 'Sei', logo: '/images/logos/sei.png', link: 'https://www.sei.org' },
+  { name: 'Eth Zurich', logo: '/images/logos/eth.png', link: 'https://ethz.ch/en.html' },
+  { name: 'Vizzuality', logo: '/images/logos/vizzuality.png', link: 'https://www.vizzuality.com' },
 ];
 
 export const FAQS = [
@@ -70,11 +99,6 @@ export const FAQS = [
     question: 'How are natural climate solutions different from Nature-based solutions?',
     answer:
       'Natural Climate Solutions (NCS) are a subset of Nature-based solutions (NbS) that are focused on climate mitigation benefits. We have continued to use the term NCS to denote the specific accounting framework we have developed but encourage substituting the term NbS, or simply “nature,” as useful and appropriate for the audience.',
-  },
-  {
-    question: 'Who can use naturebase?',
-    answer:
-      '<ul><li>Naturebase can serve <b>policymakers, practitioners and technical experts</b> on their journey to identify, analyze and make informed decisions on nature and climate planning and implementation. </li> <br/><li>It can also help <b>project managers</b> maximise their mitigation outcomes by combining different strategies and providing guidance on how to deliver high-integrity projects that safeguard human rights. </li><br/><li>For <b>Indigenous Peoples and local communities</b>, it can help attract direct finance for their invaluable work as stewards of nature, and elevate their voices, claims and stories. Naturebase also provides guidance on high-integrity NCS implementation - including a human rights screener - and inspiring case studies that showcase what meaningful engagement, safeguards and leadership looks like. </li><br/><li>For <b>governments</b>, naturebase works as a guide for better, more comprehensive nature and climate planning and delivery, as well as a tool to attract and direct finance on nature.</li><br/><li><b>Funders</b>, on the other hand, can use naturebase as a first step to identify where and what to invest in, as well as learn more about the many benefits and returns investing in nature can provide.  </li></ul>',
   },
   {
     question: 'What features are currently available?',
@@ -90,7 +114,7 @@ export const FAQS = [
     question:
       'How is naturebase inclusive of diverse voices and ensuring the tool aligns with the rights of Indigenous peoples and local communities?',
     answer:
-      '<div><p>Indigenous Peoples and local communities (IPLC) steward a quarter of the world’s lands and 80% of the world’s biodiversity. We recognize that IPLCs are the true stewards of lands and waters – and have been deploying natural climate solutions since time immemorial. Naturebase intends to both respect and support these communities in their own pursuit of informed and self-determined climate and land use decision-making. </p><br/><p>The platform includes the NCS Human Rights Toolset, which was specially designed to help screen existing and proposed projects for ongoing or potential future risks to human rights and agency.  Beyond that, sensitive data such as land tenure, as well as those uploaded onto the platform will not be publicly shared, conforming with principles of Free, Prior, and Informed Consent (FPIC).</p></div>',
+      '<div><p>Indigenous Peoples and local communities (IPLC) steward a quarter of the world’s lands and 80% of the world’s biodiversity. We recognize that IPLCs are the true stewards of lands and waters – and have been deploying natural climate solutions since time immemorial. Naturebase intends to both respect and support these communities in their own pursuit of informed and self-determined climate and land use decision-making. </p><br/><p>The platform includes the <a href="https://humanrights.naturebase.org" target="_blank">NCS Human Rights Toolset</a>, which was specially designed to help screen existing and proposed projects for ongoing or potential future risks to human rights and agency.  Beyond that, sensitive data such as land tenure, as well as those uploaded onto the platform will not be publicly shared, conforming with principles of Free, Prior, and Informed Consent (FPIC).</p></div>',
   },
   {
     question: 'Who is building this platform?',
