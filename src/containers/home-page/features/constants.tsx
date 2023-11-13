@@ -40,6 +40,32 @@ export const FEATURES = [
   },
   {
     key: '2',
+    title: 'Human Rights Screening Tool',
+    icon: HUMAN_RIGHTS_SVG,
+    description: (
+      <>
+        <div>
+          <p>
+            Natural climate solutions (NCS) practitioners must take bold steps to ensure that
+            projects not only avoid adverse human rights impacts but actively promote Indigenous
+            People and Local Communities (IPLC) rights, self-determination, well-being, and equity,
+            including full entitlement to benefits. The broader NCS community must strive to do this
+            not only because it is the right thing to do, but also because it will ensure the
+            long-term viability and sustainability of NCS projects. This{' '}
+            <a href="https://humanrights.naturebase.org" target="_blank" rel="noreferrer">
+              Human Rights Screening Tool
+            </a>
+            , sponsored by The Nature Conservancy, provides a process that will help field teams
+            identify project risks from a human rights-based perspective and prioritize those risks
+            for further attention and collaborative action. It represents a first step to fulfil the
+            larger responsibility of human rights due diligence.
+          </p>
+        </div>
+      </>
+    ),
+  },
+  {
+    key: '3',
     title: 'Ecosystem services and additional benefits',
     icon: ADDITIONAL_BENEFITS_SVG,
     description: (
@@ -78,7 +104,7 @@ export const FEATURES = [
     ),
   },
   {
-    key: '3',
+    key: '4',
     title: 'Enabling policies',
     icon: POLICY_DATABASE_SVG,
     description: (
@@ -96,39 +122,24 @@ export const FEATURES = [
     ),
   },
   {
-    key: '4',
-    title: 'Feasibility constraints',
-    icon: FEASIBILITY_SVG,
+    key: '5',
+    title: 'Financial assessment tool',
+    icon: FINANCIAL_SVG,
     tag: 'upcoming',
     description: (
       <>
-        <p>
-          Science has shown the immense potential of natural climate solutions, but we know
-          comparatively little about what impedes action. Naturebase will leverage from the largest
-          ever global survey of these feasibility constraints such as lack of access to capital,
-          insufficient training, perverse incentives or market forces, or governance barriers.
-        </p>
-        <p>
-          Understanding where these constraints occur and how they relate to implementation will
-          guide decision-makers to target investment where interventions are most likely to achieve
-          near-term climate change mitigation at the lowest cost to society. But it will also
-          provide the information necessary for developing targeted interventions that can remove
-          the most persistent barriers over the longer term.
-        </p>
-      </>
-    ),
-  },
-  {
-    key: '5',
-    title: 'Real-world examples',
-    icon: CASE_STUDIES_SVG,
-    description: (
-      <>
-        <p>
-          Naturebase will provide the most comprehensive compilation natural climate solution
-          projects already underway. See projects in your area of interest. Identify trends and
-          gaps. Stimulate learning, and share successes.
-        </p>
+        <div>
+          <p>
+            As the world increasingly understands the potential of natural climate solutions, there
+            has been unprecedented momentum on both public and private funding sources to fill the
+            ambition versus implementation gap. In this context, a{' '}
+            <a href="#" target="_blank">
+              new financial tool
+            </a>{' '}
+            was developed to highlight a recent study identifying finance gaps and opportunities for
+            high-impact natural climate solutions implementation.
+          </p>
+        </div>
       </>
     ),
   },
@@ -163,54 +174,20 @@ export const FEATURES = [
   },
   {
     key: '7',
-    title: 'Financial assessment tool',
-    icon: FINANCIAL_SVG,
-    tag: 'upcoming',
+    title: 'Real-world examples',
+    icon: CASE_STUDIES_SVG,
     description: (
       <>
-        <div>
-          <p>
-            As the world increasingly understands the potential of natural climate solutions, there
-            has been unprecedented momentum on both public and private funding sources to fill the
-            ambition versus implementation gap. In this context, a{' '}
-            <a href="#" target="_blank">
-              new financial tool
-            </a>{' '}
-            was developed to highlight a recent study identifying finance gaps and opportunities for
-            high-impact natural climate solutions implementation.
-          </p>
-        </div>
+        <p>
+          Naturebase will provide the most comprehensive compilation natural climate solution
+          projects already underway. See projects in your area of interest. Identify trends and
+          gaps. Stimulate learning, and share successes.
+        </p>
       </>
     ),
   },
   {
     key: '8',
-    title: 'Human Rights Screening Tool',
-    icon: HUMAN_RIGHTS_SVG,
-    description: (
-      <>
-        <div>
-          <p>
-            Natural climate solutions (NCS) practitioners must take bold steps to ensure that
-            projects not only avoid adverse human rights impacts but actively promote Indigenous
-            People and Local Communities (IPLC) rights, self-determination, well-being, and equity,
-            including full entitlement to benefits. The broader NCS community must strive to do this
-            not only because it is the right thing to do, but also because it will ensure the
-            long-term viability and sustainability of NCS projects. This{' '}
-            <a href="https://humanrights.naturebase.org" target="_blank" rel="noreferrer">
-              Human Rights Screening Tool
-            </a>
-            , sponsored by The Nature Conservancy, provides a process that will help field teams
-            identify project risks from a human rights-based perspective and prioritize those risks
-            for further attention and collaborative action. It represents a first step to fulfil the
-            larger responsibility of human rights due diligence.
-          </p>
-        </div>
-      </>
-    ),
-  },
-  {
-    key: '9',
     title: 'Ideas and feedback option',
     icon: IDEAS_SVG,
     tag: 'new',
@@ -227,31 +204,27 @@ export const FEATURES = [
       </>
     ),
   },
-
-  // {
-  //   key: '8',
-  //   title: 'Mitigation Costs',
-  //   icon: MITIGATION_COSTS_SVG,
-  //   description: (
-  //     <>
-  //       <p>
-  //         Building on research to target NCS investments where interventions are most likely to
-  //         achieve significant climate change mitigation at the lowest cost to society, Naturebase
-  //         will demonstrate how much restoration, protection, and management activities could reduce
-  //         climate change at various carbon market prices. Using marginal abatement cost (MACC)
-  //         analysis we can provide several pieces of useful information. For one, MACC curves
-  //         indicate the total mitigation that can be achieved at up to any given unit cost ($ tCO2e).
-  //       </p>
-  //       <p>
-  //         This is important for identifying projects whose unit cost of mitigation (i.e., MACC) is
-  //         equal to or less than a given carbon price. These MACC curves are useful because they
-  //         allow comparisons among individual NCS activity and between NCS and other mitigation
-  //         options, both with respect to mitigation potential and costs. In addition to facilitating
-  //         comparison among mitigation options, information about the MACC of available mitigation
-  //         options –both NCS and non-NCS– allows identification of the cost- effective mitigation
-  //         portfolio for any desired total level of mitigation.
-  //       </p>
-  //     </>
-  //   ),
-  // },
+  {
+    key: '9',
+    title: 'Feasibility constraints',
+    icon: FEASIBILITY_SVG,
+    tag: 'upcoming',
+    description: (
+      <>
+        <p>
+          Science has shown the immense potential of natural climate solutions, but we know
+          comparatively little about what impedes action. Naturebase will leverage from the largest
+          ever global survey of these feasibility constraints such as lack of access to capital,
+          insufficient training, perverse incentives or market forces, or governance barriers.
+        </p>
+        <p>
+          Understanding where these constraints occur and how they relate to implementation will
+          guide decision-makers to target investment where interventions are most likely to achieve
+          near-term climate change mitigation at the lowest cost to society. But it will also
+          provide the information necessary for developing targeted interventions that can remove
+          the most persistent barriers over the longer term.
+        </p>
+      </>
+    ),
+  },
 ];
