@@ -7,6 +7,7 @@ import Link from 'next/link';
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
+import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -57,7 +58,7 @@ const Footer: React.FC = () => {
   );
 
   return (
-    <section className="w-full pt-10 lg:pt-14 pb-4 bg-gray-900">
+    <section className="w-full pt-10 lg:pt-14 bg-gray-900">
       <Wrapper>
         <div className="flex lg:flex-row flex-col justify-between space-y-10 lg:space-y-0">
           <div className="space-y-10 lg:space-y-20">
@@ -148,17 +149,83 @@ const Footer: React.FC = () => {
             </Form>
           </div>
         </div>
-        <a
-          className="flex justify-between items-end pt-10 lg:pt-28"
-          href="https://nature4climate.org"
-          rel="noreferrer"
-          target="_blank"
-        >
-          <Icon icon={NATURE4CLIMATE_SVG} className="h-14 w-28" />
-
-          <p className="text-sm text-white opacity-60 font-sans">Supported by Bezos Earth Fund</p>
-        </a>
       </Wrapper>
+      <div className="bg-gray-800 py-6 mt-14">
+        <Media lessThan="lg">
+          <Wrapper className="pb-12">
+            <p className="font-sans text-white opacity-60 text-[14px]">
+              Additional{' '}
+              <a
+                href="https://conservationgateway.org/Pages/Terms-of-Use.aspx"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                Terms of Use
+              </a>{' '}
+              and data limitations when working with naturebase data apply. By using this website
+              you agree to the full{' '}
+              <a
+                href="https://www.nature.org/en-us/about-us/who-we-are/accountability/terms-of-use"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                Legal Disclosures
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://www.nature.org/en-us/about-us/who-we-are/accountability/privacy-policy"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                Privacy Statements
+              </a>
+              .
+            </p>
+          </Wrapper>
+        </Media>
+        <Wrapper className="flex justify-between items-center">
+          <Media greaterThanOrEqual="lg">
+            <p className="font-sans text-white opacity-60 text-[14px] max-w-lg">
+              Additional{' '}
+              <a
+                href="https://conservationgateway.org/Pages/Terms-of-Use.aspx"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                Terms of Use
+              </a>{' '}
+              and data limitations when working with naturebase data apply. By using this website
+              you agree to the full{' '}
+              <a
+                href="https://www.nature.org/en-us/about-us/who-we-are/accountability/terms-of-use"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                Legal Disclosures
+              </a>{' '}
+              and{' '}
+              <a
+                href="https://www.nature.org/en-us/about-us/who-we-are/accountability/privacy-policy"
+                target="_blank"
+                rel="noreferrer"
+                className="underline hover:no-underline"
+              >
+                Privacy Statements
+              </a>
+              .
+            </p>
+          </Media>
+          <p className="text-base text-white opacity-60 font-sans">Supported by Bezos Earth Fund</p>
+          <a href="https://nature4climate.org" rel="noreferrer" target="_blank">
+            <Icon icon={NATURE4CLIMATE_SVG} className="h-14 w-28" />
+          </a>
+        </Wrapper>
+      </div>
     </section>
   );
 };
