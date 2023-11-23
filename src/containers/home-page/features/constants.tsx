@@ -133,9 +133,9 @@ export const FEATURES = [
             As the world increasingly understands the potential of natural climate solutions, there
             has been unprecedented momentum on both public and private funding sources to fill the
             ambition versus implementation gap. In this context, a{' '}
-            <a href="#" target="_blank">
-              new financial tool
-            </a>{' '}
+            {/* <a href="#" target="_blank"> */}
+            new financial tool
+            {/* </a>{' '} */}
             was developed to highlight a recent study identifying finance gaps and opportunities for
             high-impact natural climate solutions implementation.
           </p>
@@ -153,7 +153,10 @@ export const FEATURES = [
         <p>
           Building on the expertise of on-the-ground practitioners Naturebase will highlight a
           growing natural climate solutions learning network, designed to evaluate high-impact
-          strategies that can be scaled and replicated around the world. The NCS Prototyping Network
+          strategies that can be scaled and replicated around the world. The{' '}
+          {/* <a href="#" target="_blank"> */}
+          NCS Prototyping Network
+          {/* </a>{' '} */}
           brings together field staff and scientists from existing projects in diverse ecosystems.
           Each project is a means to field test the impact and efficacy of different approaches.
         </p>
