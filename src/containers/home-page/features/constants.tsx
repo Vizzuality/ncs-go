@@ -133,9 +133,9 @@ export const FEATURES = [
             As the world increasingly understands the potential of natural climate solutions, there
             has been unprecedented momentum on both public and private funding sources to fill the
             ambition versus implementation gap. In this context, a{' '}
-            <a href="#" target="_blank">
-              new financial tool
-            </a>{' '}
+            {/* <a href="#" target="_blank"> */}
+            new financial tool
+            {/* </a>{' '} */}
             was developed to highlight a recent study identifying finance gaps and opportunities for
             high-impact natural climate solutions implementation.
           </p>
@@ -147,27 +147,28 @@ export const FEATURES = [
     key: '6',
     title: 'Learning Network',
     icon: PROTOTYPING_NETWORK_SVG,
+    tag: 'upcoming',
     description: (
       <>
         <p>
           Building on the expertise of on-the-ground practitioners Naturebase will highlight a
-          growing{' '}
-          <a href="https://ncsprototypingnetwork.naturebase.org" target="_blank" rel="noreferrer">
-            natural climate solutions learning network
-          </a>
-          , designed to field test and evaluate high-impact strategies that can be scaled and
-          replicated around the world. The network brings together field staff and scientists from
-          existing projects in diverse ecosystems. Each project is a means to field test the impact
-          and efficacy of different approaches.
+          growing natural climate solutions learning network, designed to evaluate high-impact
+          strategies that can be scaled and replicated around the world. The{' '}
+          {/* <a href="#" target="_blank"> */}
+          NCS Prototyping Network
+          {/* </a>{' '} */}
+          brings together field staff and scientists from existing projects in diverse ecosystems.
+          Each project is a means to field test the impact and efficacy of different approaches.
         </p>
         <p>
-          Local project teams will work with the prototyping team to measure mitigation and evaluate
-          project impact, assess feasibility, ensure equitable implementation, and identify
-          opportunities to scale. The network will also provide a cross-project community of
-          learning and collaboration, and a constant feedback loop to improve implementation through
-          adaptive management. Data and case studies from pilot projects will be available to
-          researchers and decision-makers around the world through the development of innovative
-          tools.
+          Local project teams from across The Nature Conservancy are working together with the
+          global climate team to generate foundational data in understudied systems, expand
+          monitoring activities, assess feasibility, measure mitigation and co-benefits, evaluate
+          project impact, advance equitable implementation, and identify opportunities to scale.
+          Data and case studies from pilot projects will be available to researchers and
+          decision-makers around the world through the development of innovative tools and data. The
+          network also provides a cross-project community of learning and collaboration and a
+          constant feedback loop to improve implementation through adaptive management.
         </p>
       </>
     ),

@@ -12,16 +12,7 @@ import { IN_VIEW_PROPS } from 'constants/motion';
 
 import LOCATION_SVG from 'svgs/ui/location.svg?sprite';
 
-export const StoryCard = ({
-  article,
-  country,
-  description,
-  image,
-  pathway,
-  title,
-  video,
-  category,
-}) => {
+export const StoryCard = ({ article, country, description, image, pathway, title, video }) => {
   const ref = useRef();
 
   const inView = useInView(ref, {
@@ -71,14 +62,16 @@ export const StoryCard = ({
           transition={{ duration: 0.125, delay: 0.2, bounce: 0 }}
           className="opacity-0 flex justify-between w-full"
         >
-          <div className="flex space-x-2.5">
-            <Icon className="w-6 h-6 stroke-gray-800" icon={LOCATION_SVG} />
-            <p className="font-sans">{country}</p>
-          </div>
-
+          {country && (
+            <div className="flex space-x-2.5">
+              <Icon className="w-6 h-6 stroke-gray-800" icon={LOCATION_SVG} />
+              <p className="font-sans">{country}</p>
+            </div>
+          )}
+          {/*
           <div className="bg-beige px-2 flex items-center py-1">
             <p className="text-gray-800 text-sm">{category}</p>
-          </div>
+          </div> */}
         </motion.div>
 
         <div className="space-y-2">

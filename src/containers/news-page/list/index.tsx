@@ -1,16 +1,16 @@
-import React, { useEffect, useState } from 'react';
+import React, { /* useEffect, */ useState } from 'react';
 
-import { useUIStore } from 'store/ui';
+// import { useUIStore } from 'store/ui';
 
 import { motion } from 'framer-motion';
 import useBreakpoint from 'use-breakpoint';
 
 import Media from 'containers/media';
-import {
-  CATEGORY_OPTIONS,
-  MEDIA_OPTIONS,
-  COUNTRY_OPTIONS,
-} from 'containers/news-page/list/constants';
+// import {
+//   CATEGORY_OPTIONS,
+//   MEDIA_OPTIONS,
+//   COUNTRY_OPTIONS,
+// } from 'containers/news-page/list/constants';
 import StoryCard from 'containers/news-page/list/story-card';
 import SampleComposition from 'containers/news-page/samples/sample-composition';
 import Card from 'containers/news-page/samples/sample-composition/sample-card';
@@ -18,52 +18,52 @@ import SampleMedia from 'containers/news-page/samples/sample-composition/sample-
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
-import MultiSelect from 'components/ui/multiselect';
+// import MultiSelect from 'components/ui/multiselect';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { BREAKPOINTS } from 'styles/styles.config';
-import { MediaType, Story } from 'types';
+import { /* MediaType, */ Story } from 'types';
 
 import { STORIES } from './constants';
 
 const List = () => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
-  const filters = useUIStore((state) => state.filters);
-  const setFilters = useUIStore((state) => state.setFilters);
+  // const filters = useUIStore((state) => state.filters);
+  // const setFilters = useUIStore((state) => state.setFilters);
 
-  const [dataFiltered, setDataFiltered] = useState<Story[]>(STORIES);
+  // const [dataFiltered, setDataFiltered] = useState<Story[]>(STORIES);
   const [displayedStories, setDisplayedStories] = useState<Story[]>(STORIES.slice(0, 3));
 
-  useEffect(() => {
-    const activedFilters = Object.values(filters).some((f) => f.length > 0);
-    const dataFinalFiltered = () => {
-      const data = STORIES.filter((story) => {
-        if (filters.categories.length > 0) {
-          if (!filters.categories.includes(story.category)) return false;
-        }
-        if (filters.media.length > 0) {
-          if (!filters.media.some((m: MediaType) => story.media.includes(m))) return false;
-        }
-        if (filters.countries.length > 0) {
-          if (!filters.countries.includes(story.country)) return false;
-        }
+  // useEffect(() => {
+  //   const activedFilters = Object.values(filters).some((f) => f.length > 0);
+  //   const dataFinalFiltered = () => {
+  //     const data = STORIES.filter((story) => {
+  //       if (filters.categories.length > 0) {
+  //         if (!filters.categories.includes(story.category)) return false;
+  //       }
+  //       if (filters.media.length > 0) {
+  //         if (!filters.media.some((m: MediaType) => story.media.includes(m))) return false;
+  //       }
+  //       if (filters.countries.length > 0) {
+  //         if (!filters.countries.includes(story.country)) return false;
+  //       }
 
-        return true;
-      });
-      return data;
-    };
+  //       return true;
+  //     });
+  //     return data;
+  //   };
 
-    if (activedFilters) return setDataFiltered(dataFinalFiltered());
+  //   if (activedFilters) return setDataFiltered(dataFinalFiltered());
 
-    if (!activedFilters) return setDataFiltered(STORIES);
-  }, [filters]);
+  //   if (!activedFilters) return setDataFiltered(STORIES);
+  // }, [filters]);
 
   return (
     <>
       <Media greaterThanOrEqual="md">
         <div className="bg-beige md:pb-28 md:pt-72">
           <Wrapper>
-            <div className="xl:grid xl:grid-cols-12">
-              <motion.div
+            <div className="xl:grid xl:grid-cols-12 pt-16">
+              {/* <motion.div
                 className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 my-12"
                 {...IN_VIEW_PROPS}
               >
@@ -97,9 +97,9 @@ const List = () => {
                     />
                   </div>
                 </div>
-              </motion.div>
+              </motion.div> */}
               <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2">
-                {dataFiltered.map((s) => (
+                {STORIES.map((s) => (
                   <div key={s.id}>
                     <StoryCard
                       article={s.article}
@@ -109,17 +109,17 @@ const List = () => {
                       pathway={s.pathway}
                       title={s.title}
                       video={s.video}
-                      category={s.category}
+                      // category={s.category}
                     />
                   </div>
                 ))}
               </div>
             </div>
-            {!dataFiltered.length && (
+            {/* {!dataFiltered.length && (
               <div className="h-24 items-center w-full text-gray-800 font-sans flex justify-center">
                 <p>There are not results</p>
               </div>
-            )}
+            )} */}
 
             {/* <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
               <Button
