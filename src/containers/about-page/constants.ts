@@ -69,11 +69,6 @@ export const PARTNERS = [
     link: 'https://www.wri.org',
   },
   {
-    name: 'World Wildlife Fund',
-    logo: '/images/logos/wwf.png',
-    link: 'https://www.worldwildlife.org',
-  },
-  {
     name: 'Woodwell Climate Research Center',
     logo: '/images/logos/woodwell_climate_research.png',
     link: 'https://www.woodwellclimate.org',

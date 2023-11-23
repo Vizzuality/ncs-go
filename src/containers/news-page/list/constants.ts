@@ -4,8 +4,10 @@ export const STORIES: Story[] = [
   {
     id: 1,
     country: 'Ghana',
-    title: 'Reforestation project',
-    description: 'Local communities are using GIS technology to map forest cover, youth-led.',
+    title:
+      'Unlocking the potential: N4C launches interactive database showing opportunities for high-integrity nature-based projects',
+    description:
+      'Nature4Climate unveiled the beta version of naturebase, a free platform designed for policymakers, practitioners, and other decision-makers to identify strategies for implementing impactful nature-based projects, covering carbon mitigation, biodiversity preservation, and livelihood enhancement across global, national, and subnational scales.',
     image: 'test-1.jpg',
     pathway: 'forest',
     clip: null,
@@ -36,6 +38,7 @@ export const STORIES: Story[] = [
     pathway: 'forest',
     clip: null,
     video: null,
+    article: 'https://nature4climate.org/naturebase-panama',
     category: 'Stories from the ground',
     media: ['Clip', 'Video'],
   },
