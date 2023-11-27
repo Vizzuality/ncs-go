@@ -10,7 +10,8 @@ export const STORIES: Story[] = [
       'Nature4Climate unveiled the beta version of naturebase, a free platform designed for policymakers, practitioners, and other decision-makers to identify strategies for implementing impactful nature-based projects, covering carbon mitigation, biodiversity preservation, and livelihood enhancement across global, national, and subnational scales.',
     image: 'test-1.jpg',
     pathway: 'forest',
-    article: 'https://nature4climate.org/naturebase-beta-launch',
+    article:
+      'https://nature4climate.org/unlocking-the-potential-n4c-launches-interactive-database-showing-opportunities-for-high-integrity-nature-based-projects',
     clip: null,
     video: null,
     category: 'Stories from the ground',
@@ -24,7 +25,8 @@ export const STORIES: Story[] = [
       'Follow Peruvian activist Betty Rubio’s trip to Ghana to share her expertise in monitoring and reporting technologies for reforestation and native plant growing in the Bowkrom Community.',
     image: 'peru-ghana.jpg',
     pathway: 'croplands',
-    article: 'https://nature4climate.org/naturebase-peru-ghana',
+    article:
+      'https://nature4climate.org/from-peru-to-ghana-how-technology-is-transforming-community-reforestation',
     clip: null,
     video: null,
     category: 'News',
@@ -38,7 +40,7 @@ export const STORIES: Story[] = [
       'Follow the Embera People in their efforts to restore 90 hectares in Panama, planting 90,000 native species and implementing strategies such as avoiding forest conversion, reforestation, and agroforestry, while rewarding ancestral knowledge through carbon credits.',
     image: 'panama-01.jpg',
     pathway: 'forest',
-    article: 'https://nature4climate.org/naturebase-panama',
+    article: 'https://nature4climate.org/panama-the-return-of-an-ancestral-forest',
     clip: null,
     video: null,
     category: 'Stories from the ground',
@@ -52,7 +54,8 @@ export const STORIES: Story[] = [
       'Nature is a fundamental element of survival in coastal countries, especially in the Caribbean, where communities rely on the well-being of ecosystems like forests, reefs, and mangroves for protection and economic sustainability. In the Dominican Republic, scientists and local organizations are actively collaborating to develop innovative solutions that enhance resilience and adapt to the impacts of climate change.',
     image: 'test-4.jpg',
     pathway: 'wetlands',
-    article: 'https://nature4climate.org/naturebase-dominican-republic',
+    article:
+      'https://nature4climate.org/water-resilience-resisting-the-tide-in-the-dominican-republic',
     clip: null,
     video: null,
     category: 'Factsheets',

@@ -44,7 +44,7 @@ const About = () => {
   const yDown = useTransform(scrollYProgressDown, [0, 1], ['-42%', '0%']);
 
   return (
-    <div id="naturbase" className="bg-white pt-12 md:pt-20 w-full">
+    <div id="naturebase" className="bg-white pt-12 md:pt-20 w-full">
       <section>
         <div className="relative lg:after:content-[''] lg:after:absolute lg:after:z-0 lg:after:opacity-20 w-full after:-top-32 after:h-[130%] after:bottom-0 after:left-[60%] 2xl:after:left-[67%] 3xl:after:left-[72%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
           <Wrapper className="lg:py-20 pt-20 pb-10">

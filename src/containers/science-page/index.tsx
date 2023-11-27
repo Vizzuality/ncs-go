@@ -44,7 +44,7 @@ const Science = () => {
   const yThree = useTransform(scrollYProgressThree, [0, 1], ['-42%', '0%']);
 
   return (
-    <div id="naturbase" className="bg-white w-full pt-32 md:pt-40">
+    <div className="bg-white w-full pt-32 md:pt-40">
       <Wrapper className="pb-10 md:pb-20">
         <Hero subtitle="What can nature do for the climate?" />
 
