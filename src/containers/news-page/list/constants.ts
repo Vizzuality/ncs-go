@@ -52,7 +52,7 @@ export const STORIES: Story[] = [
     title: 'Water resilience: resisting the tide in the Dominican Republic',
     description:
       'Nature is a fundamental element of survival in coastal countries, especially in the Caribbean, where communities rely on the well-being of ecosystems like forests, reefs, and mangroves for protection and economic sustainability. In the Dominican Republic, scientists and local organizations are actively collaborating to develop innovative solutions that enhance resilience and adapt to the impacts of climate change.',
-    image: 'test-4.jpg',
+    image: 'dominican-republic.jpg',
     pathway: 'wetlands',
     article:
       'https://nature4climate.org/water-resilience-resisting-the-tide-in-the-dominican-republic',
