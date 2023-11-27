@@ -68,7 +68,7 @@ const Footer: React.FC = () => {
                 <div className="space-y-4">
                   <Link href={'/about'}>About</Link>
                   <div className="flex flex-col space-y-1">
-                    <a href="about#naturbase" className="opacity-60 hover:opacity-100">
+                    <a href="about#naturebase" className="opacity-60 hover:opacity-100">
                       About Naturebase
                     </a>
                     <a href="about#who" className="opacity-60 hover:opacity-100">
