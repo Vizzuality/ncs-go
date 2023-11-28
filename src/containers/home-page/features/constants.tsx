@@ -125,7 +125,7 @@ export const FEATURES = [
     key: '5',
     title: 'Financial assessment tool',
     icon: FINANCIAL_SVG,
-    tag: 'upcoming',
+    tag: 'new',
     description: (
       <>
         <div>
