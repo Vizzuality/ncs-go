@@ -133,9 +133,9 @@ export const FEATURES = [
             As the world increasingly understands the potential of natural climate solutions, there
             has been unprecedented momentum on both public and private funding sources to fill the
             ambition versus implementation gap. In this context, a{' '}
-            {/* <a href="#" target="_blank"> */}
-            new financial tool
-            {/* </a>{' '} */}
+            <a href="http://fundingncs.naturebase.org" target="_blank" rel="noreferrer">
+              new financial tool
+            </a>{' '}
             was developed to highlight a recent study identifying finance gaps and opportunities for
             high-impact natural climate solutions implementation.
           </p>
