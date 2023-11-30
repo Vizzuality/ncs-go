@@ -211,7 +211,7 @@ const About = () => {
                 className="w-full flex items-center justify-center"
                 {...IN_VIEW_PROPS}
               >
-                <img src={partner.logo} alt={partner.name} />
+                <img src={partner.logo} alt={partner.name} className="max-h-24 p-2" />
               </motion.a>
             ))}
           </div>

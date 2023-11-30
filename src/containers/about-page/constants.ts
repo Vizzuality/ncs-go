@@ -45,7 +45,7 @@ export const USERS = [
 export const PARTNERS = [
   {
     name: 'The Nature Conservancy',
-    logo: '/images/logos/nature_conservancy.png',
+    logo: '/images/logos/nature_conservancy.jpg',
     link: 'https://www.nature.org/en-us',
   },
   {
@@ -63,21 +63,21 @@ export const PARTNERS = [
     logo: '/images/logos/clarke_university.png',
     link: 'https://clarke.edu',
   },
-  {
-    name: 'World Resources Institute',
-    logo: '/images/logos/world_resources_institute.png',
-    link: 'https://www.wri.org',
-  },
+  // {
+  //   name: 'World Resources Institute',
+  //   logo: '/images/logos/world_resources_institute.png',
+  //   link: 'https://www.wri.org',
+  // },
   {
     name: 'Woodwell Climate Research Center',
     logo: '/images/logos/woodwell_climate_research.png',
     link: 'https://www.woodwellclimate.org',
   },
-  {
-    name: 'Cornell University',
-    logo: '/images/logos/cornell_university.png',
-    link: 'https://www.cornell.edu',
-  },
+  // {
+  //   name: 'Cornell University',
+  //   logo: '/images/logos/cornell_university.png',
+  //   link: 'https://www.cornell.edu',
+  // },
   { name: 'Slu', logo: '/images/logos/slu.png', link: 'https://www.slu.se' },
   { name: 'Sei', logo: '/images/logos/sei.png', link: 'https://www.sei.org' },
   { name: 'Eth Zurich', logo: '/images/logos/eth.png', link: 'https://ethz.ch/en.html' },
