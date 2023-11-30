@@ -55,7 +55,7 @@ const HomePage = () => {
   return (
     <div id="home" className="bg-white snap-start snap-always scroll-mt-20">
       <div className="overflow-hidden">
-        <div className="relative after:content-[''] 4xl:after:-top-24 4xl:after:left-[55%] 3xl:after:left-[50%] after:absolute after:z-10 after:opacity-20 w-full after:top-10 2xl:after:top-0 2xl:after:left-[45%] after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
+        <div className="relative lg:after:content-[''] 4xl:after:-top-24 4xl:after:left-[55%] 3xl:after:left-[50%] lg:after:absolute after:z-10 after:opacity-20 w-full after:top-10 2xl:after:top-0 2xl:after:left-[45%] after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
           <Wrapper className="z-20 pb-10 md:pb-44">
             <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
               <h2
