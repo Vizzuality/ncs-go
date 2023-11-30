@@ -147,16 +147,16 @@ export const FEATURES = [
     key: '6',
     title: 'Learning Network',
     icon: PROTOTYPING_NETWORK_SVG,
-    tag: 'upcoming',
+    tag: 'new',
     description: (
       <>
         <p>
           Building on the expertise of on-the-ground practitioners Naturebase will highlight a
           growing natural climate solutions learning network, designed to evaluate high-impact
           strategies that can be scaled and replicated around the world. The{' '}
-          {/* <a href="#" target="_blank"> */}
-          NCS Prototyping Network
-          {/* </a>{' '} */}
+          <a href="https://ncsprototypingnetwork.naturebase.org" target="_blank" rel="noreferrer">
+            NCS Prototyping Network
+          </a>{' '}
           brings together field staff and scientists from existing projects in diverse ecosystems.
           Each project is a means to field test the impact and efficacy of different approaches.
         </p>
