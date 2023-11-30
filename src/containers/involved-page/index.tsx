@@ -290,7 +290,13 @@ const Involved = () => {
 
                 <div className="w-full flex justify-end">
                   <Button theme="tertiary" size="xs" className="py-3 h-12 w-full md:w-auto">
-                    Launch ideas portal
+                    <a
+                      href="https://forms.office.com/pages/responsepage.aspx?id=wW2-eY7Xu0uyK9mUwKQXpwvCXbOSDCJFmdiahlhlRYNUMVNFTEVLR0FTQ0pLNTBBV0RUVTVGMDJEWS4u"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Launch ideas portal
+                    </a>
                   </Button>
                 </div>
               </motion.div>
