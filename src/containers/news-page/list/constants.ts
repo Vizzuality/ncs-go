@@ -61,32 +61,35 @@ export const STORIES: Story[] = [
     category: 'Factsheets',
     media: ['Article'],
   },
-  // 4th DECEMBER 2023
-  // {
-  //   id: 5,
-  //   country: 'Tanzania',
-  //   title: 'Nature and community-based solutions: how carbon revenues transformed land use and management in Tanzania',
-  //   description:
-  //     'Indigenous communities in Tanzania are making history by selling high-integrity carbon credits, recognizing their millennia-long dedication to preserving East Africa's forests. With 60% of the revenue managed by these communities, funds are reinvested in health, education, and local business development, showcasing the transformative impact of nature-positive initiatives.',
-  //   image: 'test-1.jpg',
-  //   pathway: 'croplands',
-  //   article: 'https://nature4climate.org/naturebase-tanzania',
-  //   clip: null,
-  //   category: 'News',
-  //   media: ['Article'],
-  // },
-  // {
-  //   id: 6,
-  //   country: 'Indonesia',
-  //   title: 'Wetlands for livelihoods: how local communities thrive in protecting mangroves and peatlands in Borneo',
-  //   description: 'Dedicated to restoring the Teluk Semanting Mangrove, the village embraces the mantra: "more mangroves, more blessings," as they plant Rhizophora seedlings. Indonesia holds the third-highest potential globally for carbon sequestration through natural climate solutions. Protecting Indonesia's remaining wetland ecosystems is crucial for meeting greenhouse gas emissions goals by the end of the decade, all while serving as a vital source of income for local communities.',
-  //   image: 'test-3.jpg',
-  //   pathway: 'savana',
-  //   article: 'https://nature4climate.org/naturebase-indonesia,
-  //   clip: null,
-  //   category: 'Stories from the ground',
-  //   media: ['Article'],
-  // },
+  {
+    id: 5,
+    country: 'Tanzania',
+    title:
+      'Nature and community-based solutions: how carbon revenues transformed land use and management in Tanzania',
+    description:
+      "Indigenous communities in Tanzania are making history by selling high-integrity carbon credits, recognizing their millennia-long dedication to preserving East Africa's forests. With 60% of the revenue managed by these communities, funds are reinvested in health, education, and local business development, showcasing the transformative impact of nature-positive initiatives.",
+    image: 'test-1.jpg',
+    pathway: 'croplands',
+    article: 'https://nature4climate.org/naturebase-tanzania',
+    clip: null,
+    category: 'News',
+    media: ['Article'],
+  },
+
+  {
+    id: 6,
+    country: 'Indonesia',
+    title:
+      'Wetlands for livelihoods: how local communities thrive in protecting mangroves and peatlands in Borneo',
+    description:
+      'Dedicated to restoring the Teluk Semanting Mangrove, the village embraces the mantra: "more mangroves, more blessings", as they plant Rhizophora seedlings. Indonesia holds the third-highest potential globally for carbon sequestration through natural climate solutions. Protecting Indonesia´s remaining wetland ecosystems is crucial for meeting greenhouse gas emissions goals by the end of the decade, all while serving as a vital source of income for local communities.',
+    image: 'test-3.jpg',
+    pathway: 'savana',
+    article: 'https://nature4climate.org/naturebase-indonesia',
+    clip: null,
+    category: 'Stories from the ground',
+    media: ['Article'],
+  },
 ];
 
 export const CATEGORY_OPTIONS = [
