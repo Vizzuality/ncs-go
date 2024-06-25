@@ -101,7 +101,7 @@ const HomePage = () => {
                       config={videoConfig}
                       light={false}
                       loop
-                      url="https://youtu.be/dkXPon9UQxw?si=mMyOH2BqkdD5cq6H"
+                      url="https://youtu.be/mElqcD07Tk8?si=mMoMxgD6BB0FKF-h"
                       height="100%"
                       width="100%"
                     />
