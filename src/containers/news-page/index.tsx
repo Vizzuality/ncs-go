@@ -18,7 +18,7 @@ const News = () => {
           <Hero subtitle="Get inspired with real nature-based, community-led action on the ground." />
 
           <motion.p {...IN_VIEW_PROPS} className="text-lg leading-7">
-            Natural climate solutions are ready to be deployed now, across the globe. From south to
+            Natural Climate Solutions are ready to be deployed now, across the globe. From south to
             north, east to west,{' '}
             <span className="text-blue-800">people have been taking action</span> and leading the
             way to unlock the power of nature for our collective future.

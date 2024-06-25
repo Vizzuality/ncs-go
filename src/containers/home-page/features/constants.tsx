@@ -46,7 +46,7 @@ export const FEATURES = [
       <>
         <div>
           <p>
-            Natural climate solutions (NCS) practitioners must take bold steps to ensure that
+            Natural Climate Solutions (NCS) practitioners must take bold steps to ensure that
             projects not only avoid adverse human rights impacts but actively promote Indigenous
             People and Local Communities (IPLC) rights, self-determination, well-being, and equity,
             including full entitlement to benefits. The broader NCS community must strive to do this
@@ -113,7 +113,7 @@ export const FEATURES = [
           We have a unique opportunity to drive significant political commitment and finance towards
           sustainable land-use on a livable planet. Governments have the power to unlock the
           incredible potential of Natural Climate Solutions (NCS) and Nature-based Solutions (NbS).
-          To build a nature-positive future, we must integrate natural climate solutions into
+          To build a nature-positive future, we must integrate Natural Climate Solutions into
           decision-making. Naturebase will identify effective government initiatives and public
           policies that support nature by linking existing government initiatives to specific
           geographies, including legislation, subsidies, budget allocations, and incentive programs.
@@ -130,14 +130,14 @@ export const FEATURES = [
       <>
         <div>
           <p>
-            As the world increasingly understands the potential of natural climate solutions, there
+            As the world increasingly understands the potential of Natural Climate Solutions, there
             has been unprecedented momentum on both public and private funding sources to fill the
             ambition versus implementation gap. In this context, a{' '}
             <a href="http://fundingncs.naturebase.org" target="_blank" rel="noreferrer">
               new financial tool
             </a>{' '}
             was developed to highlight a recent study identifying finance gaps and opportunities for
-            high-impact natural climate solutions implementation.
+            high-impact Natural Climate Solutions implementation.
           </p>
         </div>
       </>
@@ -152,7 +152,7 @@ export const FEATURES = [
       <>
         <p>
           Building on the expertise of on-the-ground practitioners Naturebase will highlight a
-          growing natural climate solutions learning network, designed to evaluate high-impact
+          growing Natural Climate Solutions learning network, designed to evaluate high-impact
           strategies that can be scaled and replicated around the world. The{' '}
           <a href="https://ncsprototypingnetwork.naturebase.org" target="_blank" rel="noreferrer">
             NCS Prototyping Network
@@ -213,7 +213,7 @@ export const FEATURES = [
     description: (
       <>
         <p>
-          Science has shown the immense potential of natural climate solutions, but we know
+          Science has shown the immense potential of Natural Climate Solutions, but we know
           comparatively little about what impedes action. Naturebase will leverage from the largest
           ever global survey of these feasibility constraints such as lack of access to capital,
           insufficient training, perverse incentives or market forces, or governance barriers.

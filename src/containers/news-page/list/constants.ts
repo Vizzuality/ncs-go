@@ -79,7 +79,7 @@ export const STORIES: Story[] = [
   //   id: 6,
   //   country: 'Indonesia',
   //   title: 'Wetlands for livelihoods: how local communities thrive in protecting mangroves and peatlands in Borneo',
-  //   description: 'Dedicated to restoring the Teluk Semanting Mangrove, the village embraces the mantra: "more mangroves, more blessings," as they plant Rhizophora seedlings. Indonesia holds the third-highest potential globally for carbon sequestration through natural climate solutions. Protecting Indonesia's remaining wetland ecosystems is crucial for meeting greenhouse gas emissions goals by the end of the decade, all while serving as a vital source of income for local communities.',
+  //   description: 'Dedicated to restoring the Teluk Semanting Mangrove, the village embraces the mantra: "more mangroves, more blessings," as they plant Rhizophora seedlings. Indonesia holds the third-highest potential globally for carbon sequestration through Natural Climate Solutions. Protecting Indonesia's remaining wetland ecosystems is crucial for meeting greenhouse gas emissions goals by the end of the decade, all while serving as a vital source of income for local communities.',
   //   image: 'test-3.jpg',
   //   pathway: 'savana',
   //   article: 'https://nature4climate.org/naturebase-indonesia,

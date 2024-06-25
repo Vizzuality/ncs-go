@@ -61,7 +61,7 @@ const Science = () => {
           </div>
           <div className="md:col-span-5">
             <p className="text-base md:mt-1">
-              Science shows that natural climate solutions can deliver up to one-third of the
+              Science shows that Natural Climate Solutions can deliver up to one-third of the
               emission reductions required to stabilise the planet and avoid the worst impacts of
               climate. This whilst also providing ecosystem and human well-being benefits such as
               improving water and air quality, public health and building communities that are
@@ -93,7 +93,7 @@ const Science = () => {
           >
             <p className="md:col-span-7">
               Learn more about the nature-based approaches to mitigate climate change (also known as
-              natural climate solutions), which avoid emissions and enhance sequestration across
+              Natural Climate Solutions), which avoid emissions and enhance sequestration across
               forests, wetlands, grasslands and agricultural lands. Visit{' '}
               <a
                 href="https://www.nature4climate.org"
@@ -120,7 +120,7 @@ const Science = () => {
                 The full version of the naturebase platform is currently under development and this
                 includes the full breadth of datasets. This beta version includes accurate{' '}
                 <span className="text-red-600">
-                  data for 18 out of 25 natural climate solutions
+                  data for 18 out of 25 Natural Climate Solutions
                 </span>{' '}
                 pathways and activities.
               </p>
@@ -210,9 +210,7 @@ const Science = () => {
               <p className="md:text-lg md:leading-7">
                 The specific methodology and input data used to calculate the mitigation potential
                 will vary among pathways, but all adhere to the{' '}
-                <span className="text-blue-800">
-                  core principles of natural climate solutions. 
-                </span>
+                <span className="text-blue-800">core principles of Natural Climate Solutions.</span>
               </p>
               <br />
               <p>

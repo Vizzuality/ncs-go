@@ -113,13 +113,13 @@ const Involved = () => {
               >
                 <Image
                   src={'/images/involved/mock-app.png'}
-                  alt={'Be among the first to test'}
+                  alt={'Be among the first to try'}
                   width={416}
                   height={240}
                   layout="responsive"
                   objectFit="contain"
                 />
-                <h4 className="text-2lg">Be among the first to test</h4>
+                <h4 className="text-2lg">Be among the first to try</h4>
                 <p>
                   By creating a user profile on the naturebase app you get access to exclusive
                   features such as mapping and saving your project areas and information for a quick

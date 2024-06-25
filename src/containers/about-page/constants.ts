@@ -86,30 +86,30 @@ export const PARTNERS = [
 
 export const FAQS = [
   {
-    question: 'What are natural climate solutions?',
+    question: 'What are Natural Climate Solutions?',
     answer:
-      '<p>Natural climate solutions (NCS) are actions to <b>protect, better manage</b> and <b>restore</b> nature to reduce greenhouse gas emissions and store carbon. Science shows that— if deployed alongside other rapid decarbonization efforts such as cutting out fossil-fuel use and accelerating renewable energy—nature can help us avoid the worst impacts of climate change and deliver a third of the emission reductions needed by 2030.</p>',
+      '<p>Natural Climate Solutions (NCS) are actions to <b>protect, better manage</b> and <b>restore</b> nature to reduce greenhouse gas emissions and store carbon. Science shows that— if deployed alongside other rapid decarbonization efforts such as cutting out fossil-fuel use and accelerating renewable energy—nature can help us avoid the worst impacts of climate change and deliver a third of the emission reductions needed by 2030.</p>',
   },
   {
-    question: 'How are natural climate solutions different from Nature-based solutions?',
+    question: 'How are Natural Climate Solutions different from Nature-based solutions?',
     answer:
       'Natural Climate Solutions (NCS) are a subset of Nature-based solutions (NbS) that are focused on climate mitigation benefits. We have continued to use the term NCS to denote the specific accounting framework we have developed but encourage substituting the term NbS, or simply “nature,” as useful and appropriate for the audience.',
   },
   {
     question: 'What features are currently available?',
     answer:
-      '<div><p>Naturebase will continue to evolve with new features and additional datasets. The current beta version includes accurate data for 18 out of 25 natural climate solutions pathways and activities, including:</p><br/> <div><li>Reforestation</li><li>Avoided Forest Conversion</li> <li>Reduced Impact Logging for Climate Mitigation (RIL-C)</li><li>Reduced Woodfuel Harvest in Forests (RWF)</li><li>Reduced Woodfuel Harvest in Savannas (RWS)</li><li>Savanna burning</li><li>Increased Soil Carbon in Grazing Lands</li><li>Feed Management and Additives</li><li>Grassland Restoration (GrR)</li><li>Silvopasture</li><li>Trees in Croplands</li><li>Rice Cultivation</li><li>Cover Crops</li><li>Biochar</li><li>Reduced Tillage</li><li>Mangrove Protection</li><li>Mangrove Restoration</li><li>Peatland Restoration (PeR)</li></div><br/><p>Additional data on mitigation potential for avoided shrubland conversion (ASC), avoided grassland conversion (AGC), avoided peatland drainage (APC), seagrass protection, saltmarsh protection, seagrass restoration, and saltmarsh restoration will be released soon. Whilst all pathway data available now is accurate to the indicated level of certainty, global and national totals for mitigation potential may increase as new pathways are included.</p></div>',
+      '<div><p>Naturebase will continue to evolve with new features and additional datasets. The current beta version includes accurate data for 18 out of 25 Natural Climate Solutions pathways and activities, including:</p><br/> <div><li>Reforestation</li><li>Avoided Forest Conversion</li> <li>Reduced Impact Logging for Climate Mitigation (RIL-C)</li><li>Reduced Woodfuel Harvest in Forests (RWF)</li><li>Reduced Woodfuel Harvest in Savannas (RWS)</li><li>Savanna burning</li><li>Increased Soil Carbon in Grazing Lands</li><li>Feed Management and Additives</li><li>Grassland Restoration (GrR)</li><li>Silvopasture</li><li>Trees in Croplands</li><li>Rice Cultivation</li><li>Cover Crops</li><li>Biochar</li><li>Reduced Tillage</li><li>Mangrove Protection</li><li>Mangrove Restoration</li><li>Peatland Restoration (PeR)</li></div><br/><p>Additional data on mitigation potential for avoided shrubland conversion (ASC), avoided grassland conversion (AGC), avoided peatland drainage (APC), seagrass protection, saltmarsh protection, seagrass restoration, and saltmarsh restoration will be released soon. Whilst all pathway data available now is accurate to the indicated level of certainty, global and national totals for mitigation potential may increase as new pathways are included.</p></div>',
   },
   {
     question: 'How is naturebase different from other platforms?',
     answer:
-      'While many existing platforms serve the purpose of monitoring and reporting of progress around different natural ecosystems, such as the tracking of deforestation rates, naturebase focuses on identifying opportunities to protect, restore and sustainably manage nature to reduce the impacts of climate change. Our platform offers the largest database of peer-reviewed science on natural climate solutions, combined with additional resources such as co-benefits, policies, and financing. It also includes all identified activities for natural climate solutions at the global, national and subnational levels.',
+      'While many existing platforms serve the purpose of monitoring and reporting of progress around different natural ecosystems, such as the tracking of deforestation rates, naturebase focuses on identifying opportunities to protect, restore and sustainably manage nature to reduce the impacts of climate change. Our platform offers the largest database of peer-reviewed science on Natural Climate Solutions, combined with additional resources such as co-benefits, policies, and financing. It also includes all identified activities for Natural Climate Solutions at the global, national and subnational levels.',
   },
   {
     question:
       'How is naturebase inclusive of diverse voices and ensuring the tool aligns with the rights of Indigenous peoples and local communities?',
     answer:
-      '<div><p>Indigenous Peoples and local communities (IPLC) steward a quarter of the world’s lands and 80% of the world’s biodiversity. We recognize that IPLCs are the true stewards of lands and waters – and have been deploying natural climate solutions since time immemorial. Naturebase intends to both respect and support these communities in their own pursuit of informed and self-determined climate and land use decision-making. </p><br/><p>The platform includes the <a href="https://humanrights.naturebase.org" target="_blank">NCS Human Rights Toolset</a>, which was specially designed to help screen existing and proposed projects for ongoing or potential future risks to human rights and agency.  Beyond that, sensitive data such as land tenure, as well as those uploaded onto the platform will not be publicly shared, conforming with principles of Free, Prior, and Informed Consent (FPIC).</p></div>',
+      '<div><p>Indigenous Peoples and local communities (IPLC) steward a quarter of the world’s lands and 80% of the world’s biodiversity. We recognize that IPLCs are the true stewards of lands and waters – and have been deploying Natural Climate Solutions since time immemorial. Naturebase intends to both respect and support these communities in their own pursuit of informed and self-determined climate and land use decision-making. </p><br/><p>The platform includes the <a href="https://humanrights.naturebase.org" target="_blank">NCS Human Rights Toolset</a>, which was specially designed to help screen existing and proposed projects for ongoing or potential future risks to human rights and agency.  Beyond that, sensitive data such as land tenure, as well as those uploaded onto the platform will not be publicly shared, conforming with principles of Free, Prior, and Informed Consent (FPIC).</p></div>',
   },
   {
     question: 'Who is building this platform?',
@@ -119,12 +119,12 @@ export const FAQS = [
   {
     question: 'Who is funding naturebase?',
     answer:
-      'In 2020, the Bezos Earth Fund pledged a $10 billion fund over a decade to fight the impact of climate change. The Nature Conservancy received a portion of this gift to dramatically expand the scientific tools needed to take natural climate solutions to scale, across the globe. The funding is also focused on building equitable solutions that benefit communities impacted by climate change by engaging diverse community stakeholders, indigenous leadership, and others.',
+      'In 2020, the Bezos Earth Fund pledged a $10 billion fund over a decade to fight the impact of climate change. The Nature Conservancy received a portion of this gift to dramatically expand the scientific tools needed to take Natural Climate Solutions to scale, across the globe. The funding is also focused on building equitable solutions that benefit communities impacted by climate change by engaging diverse community stakeholders, indigenous leadership, and others.',
   },
   {
     question: 'Which data sources does naturebase use?',
     answer:
-      'The specific methodology and input data used to calculate the mitigation potential will vary among pathways, but all adhere to the core principles of natural climate solutions. Each spatial datasets presented here estimate the mitigation potential of Natural Climate Solution activities derived from original geospatial analysis using the latest satellite and peer-reviewed datasets of current land systems, varied geospatial data, and carbon emissions/sequestration estimates informed by a review of peer-reviewed publications. For more information see our data download section.',
+      'The specific methodology and input data used to calculate the mitigation potential will vary among pathways, but all adhere to the core principles of Natural Climate Solutions. Each spatial datasets presented here estimate the mitigation potential of Natural Climate Solution activities derived from original geospatial analysis using the latest satellite and peer-reviewed datasets of current land systems, varied geospatial data, and carbon emissions/sequestration estimates informed by a review of peer-reviewed publications. For more information see our data download section.',
   },
   {
     question: 'How recent is the data and how often is it updated?',
