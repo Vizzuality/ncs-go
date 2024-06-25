@@ -107,9 +107,9 @@ export const FAQS = [
   },
   {
     question:
-      'How is naturebase inclusive of diverse voices and ensuring the tool aligns with the rights of Indigenous peoples and local communities?',
+      'How is naturebase inclusive of diverse voices and ensuring the tool aligns with the rights of Indigenous Peoples and local communities?',
     answer:
-      '<div><p>Indigenous Peoples and local communities (IPLC) steward a quarter of the world’s lands and 80% of the world’s biodiversity. We recognize that IPLCs are the true stewards of lands and waters – and have been deploying Natural Climate Solutions since time immemorial. Naturebase intends to both respect and support these communities in their own pursuit of informed and self-determined climate and land use decision-making. </p><br/><p>The platform includes the <a href="https://humanrights.naturebase.org" target="_blank">NCS Human Rights Toolset</a>, which was specially designed to help screen existing and proposed projects for ongoing or potential future risks to human rights and agency.  Beyond that, sensitive data such as land tenure, as well as those uploaded onto the platform will not be publicly shared, conforming with principles of Free, Prior, and Informed Consent (FPIC).</p></div>',
+      '<div><p>Indigenous Peoples and local communities (IP&LCs) steward a quarter of the world’s lands and 80% of the world’s biodiversity. We recognize that IP&LCs are the true stewards of lands and waters – and have been deploying Natural Climate Solutions since time immemorial. Naturebase intends to both respect and support these communities in their own pursuit of informed and self-determined climate and land use decision-making. </p><br/><p>The platform includes the <a href="https://humanrights.naturebase.org" target="_blank">NCS Human Rights Toolset</a>, which was specially designed to help screen existing and proposed projects for ongoing or potential future risks to human rights and agency.  Beyond that, sensitive data such as land tenure, as well as those uploaded onto the platform will not be publicly shared, conforming with principles of Free, Prior, and Informed Consent (FPIC).</p></div>',
   },
   {
     question: 'Who is building this platform?',

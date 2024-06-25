@@ -48,10 +48,10 @@ export const FEATURES = [
           <p>
             Natural Climate Solutions (NCS) practitioners must take bold steps to ensure that
             projects not only avoid adverse human rights impacts but actively promote Indigenous
-            People and Local Communities (IPLC) rights, self-determination, well-being, and equity,
-            including full entitlement to benefits. The broader NCS community must strive to do this
-            not only because it is the right thing to do, but also because it will ensure the
-            long-term viability and sustainability of NCS projects. This{' '}
+            People and Local Communities (IP&LCs) rights, self-determination, well-being, and
+            equity, including full entitlement to benefits. The broader NCS community must strive to
+            do this not only because it is the right thing to do, but also because it will ensure
+            the long-term viability and sustainability of NCS projects. This{' '}
             <a href="https://humanrights.naturebase.org" target="_blank" rel="noreferrer">
               Human Rights Screening Tool
             </a>
