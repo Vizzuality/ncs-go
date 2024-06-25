@@ -96,10 +96,12 @@ const Science = () => {
               Natural Climate Solutions), which avoid emissions and enhance sequestration across
               forests, wetlands, grasslands and agricultural lands. Visit{' '}
               <a
-                href="https://www.nature4climate.org"
+                href="https://nature4climate.org/natures-solutions/natures-pathways/"
                 className="font-semibold text-brand-700 hover:underline"
+                target="_blank"
+                rel="noreferrer"
               >
-                www.nature4climate.org
+                Nature&apos;s Pathway
               </a>{' '}
               to learn more.
             </p>
