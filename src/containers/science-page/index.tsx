@@ -109,40 +109,9 @@ const Science = () => {
           <Pathways />
         </Wrapper>
       </section>
-      <section className="bg-beige">
-        <Wrapper className="py-10 md:py-20">
-          <Hero subtitle="Naturebase Beta" />
-
-          <motion.div
-            className="font-sans text-base space-y-4 md:space-y-0 text-gray-800 md:grid md:grid-cols-12 md:gap-10"
-            {...IN_VIEW_PROPS}
-          >
-            <div className="md:col-span-5">
-              <p className="md:leading-7 md:text-lg">
-                The full version of the naturebase platform is currently under development and this
-                includes the full breadth of datasets. This beta version includes accurate{' '}
-                <span className="text-red-600">
-                  data for 18 out of 25 Natural Climate Solutions
-                </span>{' '}
-                pathways and activities.
-              </p>
-            </div>
-            <div className="md:col-span-7">
-              <p>
-                Additional data on mitigation potential for avoided shrubland conversion (ASC),
-                avoided grassland conversion (AGC), avoided peatland drainage (APC), seagrass
-                protection, saltmarsh protection, seagrass restoration, and saltmarsh restoration is
-                coming. This will affect global and national totals calculated for mitigation
-                potential.
-              </p>
-            </div>
-          </motion.div>
-        </Wrapper>
-      </section>
       <section id="data" className="scroll-mt-16">
         <Wrapper className="py-10 md:py-20">
           <Hero subtitle="Data sources" />
-
           <motion.div
             className="font-sans text-base space-y-4 md:space-y-0 text-gray-800 md:grid md:grid-cols-12 md:gap-10"
             {...IN_VIEW_PROPS}
