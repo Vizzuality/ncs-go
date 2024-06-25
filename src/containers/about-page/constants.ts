@@ -124,7 +124,7 @@ export const FAQS = [
   {
     question: 'Which data sources does naturebase use?',
     answer:
-      'The specific methodology and input data used to calculate the mitigation potential will vary among pathways, but all adhere to the core principles of Natural Climate Solutions. Each spatial datasets presented here estimate the mitigation potential of Natural Climate Solution activities derived from original geospatial analysis using the latest satellite and peer-reviewed datasets of current land systems, varied geospatial data, and carbon emissions/sequestration estimates informed by a review of peer-reviewed publications. For more information see our data download section.',
+      'The specific methodology and input data used to calculate the mitigation potential will vary among pathways, but all adhere to the core principles of Natural Climate Solutions. Each spatial datasets presented here estimate the mitigation potential of Natural Climate Solution activities derived from original geospatial analysis using the latest satellite and peer-reviewed datasets of current land systems, varied geospatial data, and carbon emissions/sequestration estimates informed by peer-reviewed publications. For more information see our data download section.',
   },
   {
     question: 'How recent is the data and how often is it updated?',
