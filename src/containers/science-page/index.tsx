@@ -147,7 +147,7 @@ const Science = () => {
           >
             <div className="md:col-span-5">
               <p>
-                Naturebase.org integrates an array of data and information acquired through various
+                naturebase.org integrates an array of data and information acquired through various
                 technologies, including satellite data analysis and land system modelling, machine
                 learning, and qualitative research. It meticulously assembles and validates existing
                 knowledge rooted in peer-reviewed scientific research, presenting a comprehensive
