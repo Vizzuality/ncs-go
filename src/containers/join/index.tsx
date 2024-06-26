@@ -12,7 +12,7 @@ const Join = (): JSX.Element => (
     <Wrapper className="py-10 md:py-20 flex md:flex-row md:space-x-24 flex-col-reverse">
       <div className="flex flex-col space-y-6 md:w-1/2">
         <h3 className="font-sans leading-8 text-2lg md:text-xl">
-          Join the naturebase community and be among the first to test the tool
+          Join the naturebase community and be among the first to try the tool
         </h3>
         <p className="font-sans text-base">
           By creating a user profile on the naturebase app you get access to exclusive features such
@@ -35,7 +35,7 @@ const Join = (): JSX.Element => (
       <div className="md:w-1/2 mb-10 md:mb-0">
         <Image
           src={'/images/involved/mock-app.png'}
-          alt={'Join the naturebase community and be among the first to test the tool'}
+          alt={'Join the naturebase community and be among the first to try the tool'}
           width={416}
           height={240}
           layout="responsive"
