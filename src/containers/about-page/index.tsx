@@ -113,10 +113,10 @@ const About = () => {
             {...IN_VIEW_PROPS}
           >
             <p className="md:col-span-5">
-              Nature can deliver up to one-third of the mitigation solutions required to stabilize
-              the planet whilst also providing ecosystem and human well-being benefits such as
-              improving water and air quality, public health and building communities that are
-              resilient to extreme weather events such as flooding and drought.
+              Nature can deliver up to one-third of the mitigation required to stabilize the planet
+              whilst also providing ecosystem and human well-being benefits such as improving water
+              and air quality, public health and building communities that are resilient to extreme
+              weather events such as flooding and drought.
             </p>
             <p className="md:col-span-5">
               Knowing where, why and how to deploy these interventions is critical to unlocking
@@ -239,8 +239,8 @@ const About = () => {
               {...IN_VIEW_PROPS}
             >
               <p>
-                Nature can deliver up to one-third of the mitigation solutions required to stabilize
-                the planet whilst also providing ecosystem and human well-being benefits such as
+                Nature can deliver up to one-third of the mitigation required to stabilize the
+                planet whilst also providing ecosystem and human well-being benefits such as
                 improving water and air quality, public health and building communities that are
                 resilient to extreme weather events such as flooding and drought.
               </p>
