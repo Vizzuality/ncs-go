@@ -125,7 +125,6 @@ export const FEATURES = [
     key: '5',
     title: 'Financial assessment tool',
     icon: FINANCIAL_SVG,
-    tag: 'new',
     description: (
       <>
         <div>
@@ -147,7 +146,6 @@ export const FEATURES = [
     key: '6',
     title: 'Learning Network',
     icon: PROTOTYPING_NETWORK_SVG,
-    tag: 'new',
     description: (
       <>
         <p>
@@ -191,7 +189,6 @@ export const FEATURES = [
     key: '8',
     title: 'Ideas and feedback option',
     icon: IDEAS_SVG,
-    tag: 'new',
     description: (
       <>
         <p>
