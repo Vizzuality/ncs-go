@@ -22,12 +22,15 @@ import NEWSLETTER_SVG from 'svgs/ui/newsletter-white.svg?sprite';
 
 const Footer: React.FC = () => {
   const { addToast } = useToasts();
+
   const saveSubscribeMutation = useSaveSubscribe({});
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const onSubmit = useCallback(
     async (data, form) => {
       const captchaValue = recaptchaRef.current.getValue();
+      // Check if reCAPTCHA is verified
       if (!captchaValue) {
+        // Captcha is not clicked on the frontend
         addToast(
           'error-contact',
           <>
@@ -38,14 +41,18 @@ const Footer: React.FC = () => {
           }
         );
       } else {
-        // Backend verification of reCAPTCHA
-        const res = await fetch('http://localhost:8000/verify', {
+        // If captcha is verified, check Backend verification of reCAPTCHA
+        const origin =
+          typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+
+        const res = await fetch(`${origin}/api/verify`, {
           method: 'POST',
           body: JSON.stringify({ captchaValue }),
           headers: {
             'content-type': 'application/json',
           },
         });
+
         const recaptchaVerifyData = await res.json();
         if (recaptchaVerifyData.success) {
           // Make Form submission
@@ -78,6 +85,7 @@ const Footer: React.FC = () => {
             }
           );
         } else {
+          // reCAPTCHA backend validation failed
           addToast(
             'error-contact',
             <>
