@@ -1,6 +1,7 @@
-import React, { useCallback } from 'react';
+import React, { useRef, useCallback } from 'react';
 
 import { Form, Field } from 'react-final-form';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import Link from 'next/link';
 
@@ -21,38 +22,81 @@ import NEWSLETTER_SVG from 'svgs/ui/newsletter-white.svg?sprite';
 
 const Footer: React.FC = () => {
   const { addToast } = useToasts();
-  const saveSubscribeMutation = useSaveSubscribe({});
 
+  const saveSubscribeMutation = useSaveSubscribe({});
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
   const onSubmit = useCallback(
-    (data, form) => {
-      saveSubscribeMutation.mutate(
-        { data },
-        {
-          onSuccess: () => {
-            addToast(
-              'success-contact',
-              <>
-                <p className="text-base">You have successfully subscribed.</p>
-              </>,
-              {
-                level: 'success',
-              }
-            );
-            form.reset();
+    async (data, form) => {
+      const captchaValue = recaptchaRef.current.getValue();
+      // Check if reCAPTCHA is verified
+      if (!captchaValue) {
+        // Captcha is not clicked on the frontend
+        addToast(
+          'error-contact',
+          <>
+            <p className="text-base">Please verify the reCAPTCHA</p>
+          </>,
+          {
+            level: 'error',
+          }
+        );
+      } else {
+        // If captcha is verified, check Backend verification of reCAPTCHA
+        const origin =
+          typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+
+        const res = await fetch(`${origin}/api/verify`, {
+          method: 'POST',
+          body: JSON.stringify({ captchaValue }),
+          headers: {
+            'content-type': 'application/json',
           },
-          onError: () => {
-            addToast(
-              'error-contact',
-              <>
-                <p className="text-base">Oops! Something went wrong</p>
-              </>,
-              {
-                level: 'error',
-              }
-            );
-          },
+        });
+
+        const recaptchaVerifyData = await res.json();
+        if (recaptchaVerifyData.success) {
+          // Make Form submission
+          saveSubscribeMutation.mutate(
+            { data },
+            {
+              onSuccess: () => {
+                addToast(
+                  'success-contact',
+                  <>
+                    <p className="text-base">You have successfully subscribed.</p>
+                  </>,
+                  {
+                    level: 'success',
+                  }
+                );
+                form.reset();
+              },
+              onError: () => {
+                addToast(
+                  'error-contact',
+                  <>
+                    <p className="text-base">Oops! Something went wrong</p>
+                  </>,
+                  {
+                    level: 'error',
+                  }
+                );
+              },
+            }
+          );
+        } else {
+          // reCAPTCHA backend validation failed
+          addToast(
+            'error-contact',
+            <>
+              <p className="text-base">reCAPTCHA validation failed</p>
+            </>,
+            {
+              level: 'error',
+            }
+          );
         }
-      );
+      }
     },
     [addToast, saveSubscribeMutation]
   );
@@ -143,6 +187,7 @@ const Footer: React.FC = () => {
                         <p>Subscribe</p>
                       </Button>
                     </div>
+                    <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_SITE_KEY} />
                   </form>
                 );
               }}
