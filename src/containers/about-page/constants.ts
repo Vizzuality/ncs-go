@@ -59,15 +59,25 @@ export const PARTNERS = [
     link: 'https://www.conservation.org',
   },
   {
+    name: 'World Resources Institute',
+    logo: '/images/logos/wri.svg',
+    link: 'https://www.wri.org/',
+  },
+  {
+    name: 'Clean Cooking Alliance',
+    logo: '/images/logos/clean-cooking-alliance.png',
+    link: 'https://cleancooking.org/',
+  },
+  {
+    name: 'Global Mangrove Alliance',
+    logo: '/images/logos/global-mangrove-alliance.png',
+    link: 'https://www.mangrovealliance.org/',
+  },
+  {
     name: 'Clarke University',
     logo: '/images/logos/clarke_university.png',
     link: 'https://clarke.edu',
   },
-  // {
-  //   name: 'World Resources Institute',
-  //   logo: '/images/logos/world_resources_institute.png',
-  //   link: 'https://www.wri.org',
-  // },
   {
     name: 'Woodwell Climate Research Center',
     logo: '/images/logos/woodwell_climate_research.png',
