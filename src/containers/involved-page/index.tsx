@@ -16,6 +16,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Icon from 'components/icon';
+import Video from 'components/video';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { cn } from 'utils/cn';
 
@@ -107,35 +108,44 @@ const Involved = () => {
         <section className="md:-mt-56 z-10 -mt-1 relative md:pb-20">
           <Wrapper className="md:grid md:grid-cols-2 md:gap-6 px-0 md:px-4">
             <div className="md:space-y-6 md:-mt-20">
-              <motion.div
-                className="bg-brand-700 py-10 px-4 md:p-10 text-gray-800 space-y-4 md:space-y-6"
-                {...IN_VIEW_PROPS}
-              >
-                <Image
-                  src={'/images/involved/mock-app.png'}
-                  alt={'Be among the first to try'}
-                  width={416}
-                  height={240}
-                  layout="responsive"
-                  objectFit="contain"
-                />
-                <h4 className="text-2lg">Be among the first to try</h4>
-                <p>
-                  By creating a user profile on the naturebase app you get access to exclusive
-                  features such as mapping and saving your project areas and information for a quick
-                  reference check and access to the ideas portal.
-                </p>
+              <motion.div className="bg-brand-700 text-gray-800" {...IN_VIEW_PROPS}>
+                <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
+                  <Video
+                    config={{
+                      youtube: {
+                        playerVars: {
+                          controls: true,
+                          showinfo: 0,
+                          rel: 0,
+                        },
+                      },
+                    }}
+                    light={false}
+                    loop
+                    url="https://www.youtube.com/watch?v=nu5fd-ATaL8&list=PLZwFPkUsoHXkKe3atQmn8Xr83BSDPNCTx&ab_channel=Nature4Climate"
+                    height="100%"
+                    width="100%"
+                  />
+                </div>
+                <div className="px-4 md:p-10 space-y-4 md:space-y-6">
+                  <h4 className="text-2lg">Be among the first to try</h4>
+                  <p>
+                    By creating a user profile on the naturebase app you get access to exclusive
+                    features such as mapping and saving your project areas and information for a
+                    quick reference check and access to the ideas portal.
+                  </p>
 
-                <div className="w-full flex justify-end">
-                  <Button
-                    theme="tertiary"
-                    size="xs"
-                    className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
-                  >
-                    <a href="https://app.naturebase.org" target="_blank" rel="noreferrer">
-                      Launch app
-                    </a>
-                  </Button>
+                  <div className="w-full flex justify-end">
+                    <Button
+                      theme="tertiary"
+                      size="xs"
+                      className="py-3 h-12 w-full md:w-auto hover:bg-gray-800"
+                    >
+                      <a href="https://app.naturebase.org" target="_blank" rel="noreferrer">
+                        Launch app
+                      </a>
+                    </Button>
+                  </div>
                 </div>
               </motion.div>
 
