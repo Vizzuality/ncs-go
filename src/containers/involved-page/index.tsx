@@ -16,13 +16,14 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Icon from 'components/icon';
-import Video from 'components/video';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { cn } from 'utils/cn';
 
 import EMAIL_SVG from 'svgs/ui/email.svg?sprite';
 import IDEA_SVG from 'svgs/ui/idea.svg?sprite';
 import NEWSLETTER_SVG from 'svgs/ui/newsletter.svg?sprite';
+
+import InvolvedVideo from './involved-video';
 
 const Involved = () => {
   const imageRef = useRef();
@@ -110,22 +111,7 @@ const Involved = () => {
             <div className="md:space-y-6 md:-mt-20">
               <motion.div className="bg-brand-700 text-gray-800" {...IN_VIEW_PROPS}>
                 <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
-                  <Video
-                    config={{
-                      youtube: {
-                        playerVars: {
-                          controls: true,
-                          showinfo: 0,
-                          rel: 0,
-                        },
-                      },
-                    }}
-                    light={false}
-                    loop
-                    url="https://www.youtube.com/watch?v=nu5fd-ATaL8&list=PLZwFPkUsoHXkKe3atQmn8Xr83BSDPNCTx&ab_channel=Nature4Climate"
-                    height="100%"
-                    width="100%"
-                  />
+                  <InvolvedVideo />
                 </div>
                 <div className="px-4 md:p-10 space-y-4 md:space-y-6">
                   <h4 className="text-2lg">Be among the first to try</h4>
