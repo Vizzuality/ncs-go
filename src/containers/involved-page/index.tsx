@@ -9,6 +9,7 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import { useSaveSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
+import CampaignVideo from 'containers/campaign-video';
 import Hero from 'containers/hero';
 import Media from 'containers/media';
 import Wrapper from 'containers/wrapper';
@@ -22,8 +23,6 @@ import { cn } from 'utils/cn';
 import EMAIL_SVG from 'svgs/ui/email.svg?sprite';
 import IDEA_SVG from 'svgs/ui/idea.svg?sprite';
 import NEWSLETTER_SVG from 'svgs/ui/newsletter.svg?sprite';
-
-import InvolvedVideo from './involved-video';
 
 const Involved = () => {
   const imageRef = useRef();
@@ -109,11 +108,11 @@ const Involved = () => {
         <section className="md:-mt-56 z-10 -mt-1 relative md:pb-20">
           <Wrapper className="md:grid md:grid-cols-2 md:gap-6 px-0 md:px-4">
             <div className="md:space-y-6 md:-mt-20">
-              <motion.div className="bg-brand-700 text-gray-800" {...IN_VIEW_PROPS}>
-                <div className="absolute left-0 w-full -translate-y-1/2 sm:static top-1/2 sm:translate-y-0 sm:pt-0 aspect-video">
-                  <InvolvedVideo />
+              <motion.div className="bg-brand-700 text-gray-800 relative" {...IN_VIEW_PROPS}>
+                <div className="w-full">
+                  <CampaignVideo />
                 </div>
-                <div className="px-4 md:p-10 space-y-4 md:space-y-6">
+                <div className="p-4 md:p-10 space-y-4 md:space-y-6">
                   <h4 className="text-2lg">Be among the first to try</h4>
                   <p>
                     By creating a user profile on the naturebase app you get access to exclusive

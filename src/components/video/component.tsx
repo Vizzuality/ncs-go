@@ -19,6 +19,7 @@ export const Video: FC<VideoProps> = ({
   url,
   height,
   width,
+  ...props
 }: VideoProps) => (
   <ReactPlayer
     className={cx({
@@ -32,6 +33,7 @@ export const Video: FC<VideoProps> = ({
     playing={playing}
     config={config}
     playIcon={<PlayControl playBackground={playBackground} playColor={playColor} />}
+    {...props}
   />
 );
 
