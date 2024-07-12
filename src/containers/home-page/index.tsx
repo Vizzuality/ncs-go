@@ -55,19 +55,28 @@ const HomePage = () => {
   return (
     <div id="home" className="bg-white snap-start snap-always scroll-mt-20">
       <div className="overflow-hidden">
-        <div className="relative lg:after:content-[''] 4xl:after:-top-24 4xl:after:left-[55%] 3xl:after:left-[50%] lg:after:absolute after:z-10 after:opacity-20 w-full after:top-10 2xl:after:top-0 2xl:after:left-[45%] after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
-          <Wrapper className="z-20 pb-10 md:pb-44">
-            <div className="md:pt-56 pt-32 md:w-1/2 space-y-10">
+        <div className="relative lg:after:content-[''] 4xl:after:-top-24 4xl:after:left-[55%] 3xl:after:left-[50%] lg:after:absolute after:z-0 after:opacity-20 w-full after:top-10 2xl:after:top-0 2xl:after:left-[45%] after:bottom-0 after:left-[40%] after:right-0 after:bg-no-repeat after:bg-cover lg:after:bg-[url('/images/home/background.svg')]">
+          <Wrapper className="pb-8 lg:pb-14 pt-32 lg:pt-60">
+            <div className="relative lg:w-1/2 space-y-10 lg:bg-beige p-0 lg:p-10 z-20">
               <h2
-                className="text-xl max-w-sm xl:text-3xl font-sans xl:max-w-lg text-gray-800"
+                className="text-2xl lg:text-3xl font-sans lg:max-w-lg text-gray-800"
                 ref={sectionRef}
               >
                 Unlock nature’s potential to mitigate climate change with naturebase
               </h2>
               <Media lessThan="lg">
-                <div className="border-8 rounded-3xl border-gray-900 w-auto h-[206px] bg-[url('/images/home/mockup.png')] bg-cover bg-no-repeat" />
+                <div className="shadow-lg">
+                  <Image
+                    src={'/images/home/mockup.png'}
+                    alt={'Unlock nature’s potential to mitigate climate change with naturebase'}
+                    width={343}
+                    height={216}
+                    layout="responsive"
+                    objectFit="cover"
+                  />
+                </div>
               </Media>
-              <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-2">
+              <div className="flex flex-col lg:flex-row space-y-4 md:space-y-0 md:space-x-2">
                 <Button theme="primary" size="xs" className="py-3 h-12">
                   <a href="https://app.naturebase.org" target="_blank" rel="noreferrer">
                     Launch app
@@ -110,7 +119,7 @@ const HomePage = () => {
               </div>
             </div>
             <Media greaterThanOrEqual="lg">
-              <div className="bg-[url('/images/home/mockup.png')] absolute z-20 right-0 top-52 mr-24 2xl:right-32 3xl:right-60 4xl:right-72 border-8 bg-no-repeat bg-cover rounded-3xl border-gray-900 w-[492px] h-[320px]" />
+              <div className="bg-[url('/images/home/mockup.png')] absolute z-10 right-0 top-32 mr-24 2xl:right-32 3xl:right-60 4xl:right-72 bg-no-repeat bg-cover w-[768px] h-[483px] shadow-lg" />
             </Media>
           </Wrapper>
         </div>
