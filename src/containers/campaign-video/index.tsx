@@ -6,7 +6,7 @@ const Video = dynamic(() => import('components/video'), {
 });
 
 const CampaignVideo = () => (
-  <Video light={false} url="/videos/campaign.mp4" height="100%" width="100%" controls playing />
+  <Video light={false} url="/videos/campaign.mp4" height="100%" width="100%" controls />
 );
 
 export default CampaignVideo;
