@@ -71,6 +71,7 @@ html {
     }
   }
 }
-
-
-
+/* Hide the Recaptcha badge for the invisible recaptcha. We display some text with links instead */
+.grecaptcha-badge {
+  visibility: hidden;
+}

@@ -27,76 +27,65 @@ const Footer: React.FC = () => {
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const onSubmit = useCallback(
     async (data, form) => {
-      const captchaValue = recaptchaRef.current.getValue();
-      // Check if reCAPTCHA is verified
-      if (!captchaValue) {
-        // Captcha is not clicked on the frontend
+      const captchaToken = await recaptchaRef.current.executeAsync();
+      recaptchaRef.current.reset();
+
+      // Check Backend verification of reCAPTCHA
+      const origin =
+        typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
+
+      const res = await fetch(`${origin}/api/verify`, {
+        method: 'POST',
+        body: JSON.stringify({ captchaValue: captchaToken }),
+        headers: {
+          'content-type': 'application/json',
+        },
+      });
+
+      const recaptchaVerifyData = await res.json();
+      if (recaptchaVerifyData.success) {
+        // Make Form submission
+        saveSubscribeMutation.mutate(
+          { data },
+          {
+            onSuccess: () => {
+              addToast(
+                'success-contact',
+                <>
+                  <p className="text-base">You have successfully subscribed.</p>
+                </>,
+                {
+                  level: 'success',
+                }
+              );
+              form.reset();
+            },
+            onError: () => {
+              addToast(
+                'error-contact',
+                <>
+                  <p className="text-base">Oops! Something went wrong</p>
+                </>,
+                {
+                  level: 'error',
+                }
+              );
+            },
+          }
+        );
+      } else {
+        // reCAPTCHA backend validation failed
         addToast(
           'error-contact',
           <>
-            <p className="text-base">Please verify the reCAPTCHA</p>
+            <p className="text-base">reCAPTCHA validation failed</p>
           </>,
           {
             level: 'error',
           }
         );
-      } else {
-        // If captcha is verified, check Backend verification of reCAPTCHA
-        const origin =
-          typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
-
-        const res = await fetch(`${origin}/api/verify`, {
-          method: 'POST',
-          body: JSON.stringify({ captchaValue }),
-          headers: {
-            'content-type': 'application/json',
-          },
-        });
-
-        const recaptchaVerifyData = await res.json();
-        if (recaptchaVerifyData.success) {
-          // Make Form submission
-          saveSubscribeMutation.mutate(
-            { data },
-            {
-              onSuccess: () => {
-                addToast(
-                  'success-contact',
-                  <>
-                    <p className="text-base">You have successfully subscribed.</p>
-                  </>,
-                  {
-                    level: 'success',
-                  }
-                );
-                form.reset();
-              },
-              onError: () => {
-                addToast(
-                  'error-contact',
-                  <>
-                    <p className="text-base">Oops! Something went wrong</p>
-                  </>,
-                  {
-                    level: 'error',
-                  }
-                );
-              },
-            }
-          );
-        } else {
-          // reCAPTCHA backend validation failed
-          addToast(
-            'error-contact',
-            <>
-              <p className="text-base">reCAPTCHA validation failed</p>
-            </>,
-            {
-              level: 'error',
-            }
-          );
-        }
       }
+      // }
     },
     [addToast, saveSubscribeMutation]
   );
@@ -188,7 +177,34 @@ const Footer: React.FC = () => {
                       </Button>
                     </div>
                     {process.env.NEXT_PUBLIC_SITE_KEY && (
-                      <ReCAPTCHA ref={recaptchaRef} sitekey={process.env.NEXT_PUBLIC_SITE_KEY} />
+                      <>
+                        <ReCAPTCHA
+                          ref={recaptchaRef}
+                          size="invisible"
+                          sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
+                        />
+                        <div className="text-gray-400 mt-2 text-sm">
+                          This site is protected by reCAPTCHA and the Google{' '}
+                          <a
+                            href="https://policies.google.com/privacy"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="underline hover:text-white"
+                          >
+                            Privacy Policy
+                          </a>{' '}
+                          and{' '}
+                          <a
+                            href="https://policies.google.com/terms"
+                            target="_blank"
+                            rel="noreferrer"
+                            className="underline hover:text-white"
+                          >
+                            Terms of Service
+                          </a>{' '}
+                          apply.
+                        </div>
+                      </>
                     )}
                   </form>
                 );
