@@ -26,6 +26,13 @@
   }
 }
 
+@keyframes autofill {
+  0%, 100% {
+    color: #666;
+    background: transparent;
+  }
+}
+
 html {
   scroll-behavior: smooth;
   overflow-x: hidden;
