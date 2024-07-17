@@ -5,7 +5,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 
 import Link from 'next/link';
 
-import { useSaveSubscribe } from 'hooks/subscribe';
+import { useSaveSubscribe, onSubmitSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
 import Media from 'containers/media';
@@ -14,6 +14,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Icon from 'components/icon';
+import ReCaptcha from 'components/recaptcha';
 import { cn } from 'utils/cn';
 
 import NATURE4CLIMATE_SVG from 'svgs/logos/Nature4Climate.svg?sprite';
@@ -26,67 +27,7 @@ const Footer: React.FC = () => {
   const saveSubscribeMutation = useSaveSubscribe({});
   const recaptchaRef = useRef<ReCAPTCHA>(null);
   const onSubmit = useCallback(
-    async (data, form) => {
-      const captchaToken = await recaptchaRef.current.executeAsync();
-      recaptchaRef.current.reset();
-
-      // Check Backend verification of reCAPTCHA
-      const origin =
-        typeof window !== 'undefined' && window.location.origin ? window.location.origin : '';
-
-      const res = await fetch(`${origin}/api/verify`, {
-        method: 'POST',
-        body: JSON.stringify({ captchaValue: captchaToken }),
-        headers: {
-          'content-type': 'application/json',
-        },
-      });
-
-      const recaptchaVerifyData = await res.json();
-      if (recaptchaVerifyData.success) {
-        // Make Form submission
-        saveSubscribeMutation.mutate(
-          { data },
-          {
-            onSuccess: () => {
-              addToast(
-                'success-contact',
-                <>
-                  <p className="text-base">You have successfully subscribed.</p>
-                </>,
-                {
-                  level: 'success',
-                }
-              );
-              form.reset();
-            },
-            onError: () => {
-              addToast(
-                'error-contact',
-                <>
-                  <p className="text-base">Oops! Something went wrong</p>
-                </>,
-                {
-                  level: 'error',
-                }
-              );
-            },
-          }
-        );
-      } else {
-        // reCAPTCHA backend validation failed
-        addToast(
-          'error-contact',
-          <>
-            <p className="text-base">reCAPTCHA validation failed</p>
-          </>,
-          {
-            level: 'error',
-          }
-        );
-      }
-      // }
-    },
+    (data, form) => onSubmitSubscribe(data, form, recaptchaRef, addToast, saveSubscribeMutation),
     [addToast, saveSubscribeMutation]
   );
 
@@ -176,36 +117,7 @@ const Footer: React.FC = () => {
                         <p>Subscribe</p>
                       </Button>
                     </div>
-                    {process.env.NEXT_PUBLIC_SITE_KEY && (
-                      <>
-                        <ReCAPTCHA
-                          ref={recaptchaRef}
-                          size="invisible"
-                          sitekey={process.env.NEXT_PUBLIC_SITE_KEY}
-                        />
-                        <div className="text-gray-400 mt-2 text-sm">
-                          This site is protected by reCAPTCHA and the Google{' '}
-                          <a
-                            href="https://policies.google.com/privacy"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline hover:text-white"
-                          >
-                            Privacy Policy
-                          </a>{' '}
-                          and{' '}
-                          <a
-                            href="https://policies.google.com/terms"
-                            target="_blank"
-                            rel="noreferrer"
-                            className="underline hover:text-white"
-                          >
-                            Terms of Service
-                          </a>{' '}
-                          apply.
-                        </div>
-                      </>
-                    )}
+                    <ReCaptcha recaptchaRef={recaptchaRef} />
                   </form>
                 );
               }}

@@ -1,12 +1,13 @@
 import React, { useCallback, useRef } from 'react';
 
 import { Form, Field } from 'react-final-form';
+import ReCAPTCHA from 'react-google-recaptcha';
 
 import Image from 'next/image';
 
 import { motion, useScroll, useTransform } from 'framer-motion';
 
-import { useSaveSubscribe } from 'hooks/subscribe';
+import { useSaveSubscribe, onSubmitSubscribe } from 'hooks/subscribe';
 import { useToasts } from 'hooks/toast';
 
 import CampaignVideo from 'containers/campaign-video';
@@ -17,6 +18,7 @@ import Wrapper from 'containers/wrapper';
 import Button from 'components/button';
 import { composeValidators } from 'components/forms/validations';
 import Icon from 'components/icon';
+import ReCaptcha from 'components/recaptcha';
 import { IN_VIEW_PROPS } from 'constants/motion';
 import { cn } from 'utils/cn';
 
@@ -30,40 +32,12 @@ const Involved = () => {
   const saveSubscribeMutation = useSaveSubscribe({});
 
   const { scrollYProgress } = useScroll({ target: imageRef, offset: ['0 1', '1 1'] });
+  const recaptchaRef = useRef<ReCAPTCHA>(null);
 
   const y = useTransform(scrollYProgress, [0, 1], ['-42%', '0%']);
 
   const onSubmit = useCallback(
-    (data, form) => {
-      saveSubscribeMutation.mutate(
-        { data },
-        {
-          onSuccess: () => {
-            addToast(
-              'success-contact',
-              <>
-                <p className="text-base">You have successfully subscribed.</p>
-              </>,
-              {
-                level: 'success',
-              }
-            );
-            form.reset();
-          },
-          onError: () => {
-            addToast(
-              'error-contact',
-              <>
-                <p className="text-base">Oops! Something went wrong</p>
-              </>,
-              {
-                level: 'error',
-              }
-            );
-          },
-        }
-      );
-    },
+    (data, form) => onSubmitSubscribe(data, form, recaptchaRef, addToast, saveSubscribeMutation),
     [addToast, saveSubscribeMutation]
   );
 
@@ -188,6 +162,7 @@ const Involved = () => {
                       );
                     }}
                   </Form>
+                  <ReCaptcha recaptchaRef={recaptchaRef} variant="light" />
                 </motion.div>
               </Media>
 
@@ -267,6 +242,7 @@ const Involved = () => {
                       );
                     }}
                   </Form>
+                  <ReCaptcha recaptchaRef={recaptchaRef} variant="light" />
                 </motion.div>
               </Media>
               <motion.div
