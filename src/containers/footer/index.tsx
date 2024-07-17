@@ -117,7 +117,7 @@ const Footer: React.FC = () => {
                         <p>Subscribe</p>
                       </Button>
                     </div>
-                    <ReCaptcha recaptchaRef={recaptchaRef} />
+                    <ReCaptcha recaptchaRef={recaptchaRef} className="mt-6" />
                   </form>
                 );
               }}
