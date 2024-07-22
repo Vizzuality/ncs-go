@@ -12,9 +12,9 @@ import Media from 'containers/media';
 //   COUNTRY_OPTIONS,
 // } from 'containers/news-page/list/constants';
 import StoryCard from 'containers/news-page/list/story-card';
-import SampleComposition from 'containers/news-page/samples/sample-composition';
-import Card from 'containers/news-page/samples/sample-composition/sample-card';
-import SampleMedia from 'containers/news-page/samples/sample-composition/sample-media';
+import SampleComposition from 'containers/news-page/samples';
+import Card from 'containers/news-page/samples/sample-card';
+import SampleMedia from 'containers/news-page/samples/sample-media';
 import Wrapper from 'containers/wrapper';
 
 import Button from 'components/button';
@@ -109,7 +109,6 @@ const List = () => {
                       pathway={s.pathway}
                       title={s.title}
                       video={s.video}
-                      // category={s.category}
                     />
                   </div>
                 ))}

@@ -1,6 +1,22 @@
 import { Story } from 'types';
 
-// The first two country stories will be featured
+export const HIGHLIGHTS: Story[] = [
+  {
+    id: 1,
+    country: null,
+    title: null,
+    description:
+      '<div>The Nature in Action series is a naturebase collaboration with community-led filmmakers from <a href="https://ifnotusthenwho.me/" target="_blank" rel="noreferrer">If Not Us Then Who?</a> to showcases stories of individuals and communities at the forefront of nature protection and recovery. The episodes emphasize successful implementation of nature-based solutions projects and the strong leadership of Indigenous Peoples and local communities. These stories effectively bridge science, policy, and action, positively influencing climate discussions and decision-making for impactful nature-based action, using naturebase data. Watch the episodes:<div>',
+    image: null,
+    pathway: null,
+    clip: null,
+    video:
+      'https://www.youtube.com/watch?v=dkXPon9UQxw&list=PLZwFPkUsoHXkDJlefkD1oKGKra38a5SBJ&index=1&t=1s&ab_channel=Nature4Climate',
+    category: null,
+    media: ['Video'],
+  },
+];
+
 export const STORIES: Story[] = [
   {
     id: 1,

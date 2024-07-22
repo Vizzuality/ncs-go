@@ -3,9 +3,8 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 import Hero from 'containers/hero';
-import Media from 'containers/media';
+import Highlight from 'containers/news-page/highlight';
 import List from 'containers/news-page/list';
-import Samples from 'containers/news-page/samples';
 import Wrapper from 'containers/wrapper';
 
 import { IN_VIEW_PROPS } from 'constants/motion';
@@ -26,9 +25,7 @@ const News = () => {
         </div>
       </Wrapper>
 
-      <Media greaterThanOrEqual="md">
-        <Samples />
-      </Media>
+      <Highlight />
 
       <div className="md:-mt-72">
         <List />
