@@ -126,20 +126,20 @@ export const STORIES: Story[] = [
   },
   // 4th DECEMBER 2023
   // TODO: Missing link
-  // {
-  //   id: 5,
-  //   country: 'Tanzania',
-  //   title:
-  //     'Nature and community-based solutions: how carbon revenues transformed land use and management in Tanzania',
-  //   description:
-  //     "Indigenous communities in Tanzania are making history by selling high-integrity carbon credits, recognizing their millennia-long dedication to preserving East Africa's forests. With 60% of the revenue managed by these communities, funds are reinvested in health, education, and local business development, showcasing the transformative impact of nature-positive initiatives.",
-  //   image: 'test-1.jpg',
-  //   pathway: 'croplands',
-  //   article: 'https://nature4climate.org/naturebase-tanzania',
-  //   clip: null,
-  //   category: 'News',
-  //   media: ['Article'],
-  // },
+  {
+    id: 5,
+    country: 'Tanzania',
+    title:
+      'Nature and community-based solutions: how carbon revenues transformed land use and management in Tanzania',
+    description:
+      "Indigenous communities in Tanzania are making history by selling high-integrity carbon credits, recognizing their millennia-long dedication to preserving East Africa's forests. With 60% of the revenue managed by these communities, funds are reinvested in health, education, and local business development, showcasing the transformative impact of nature-positive initiatives.",
+    image: 'test-1.jpg',
+    pathway: 'croplands',
+    article: null, // 'https://nature4climate.org/naturebase-tanzania',
+    clip: null,
+    category: 'News',
+    media: ['Article'],
+  },
 ];
 
 export const CATEGORY_OPTIONS = [
