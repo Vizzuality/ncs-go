@@ -23,7 +23,6 @@ export const StoryCard = ({ article, country, description, image, pathway, title
   const opacity = inView ? 1 : 0;
   const x = inView ? 0 : 10;
   const backgroundPosition = inView ? '50% 0%' : '75% 0%';
-
   return (
     <motion.div
       ref={ref}
@@ -68,10 +67,6 @@ export const StoryCard = ({ article, country, description, image, pathway, title
               <p className="font-sans">{country}</p>
             </div>
           )}
-          {/*
-          <div className="bg-beige px-2 flex items-center py-1">
-            <p className="text-gray-800 text-sm">{category}</p>
-          </div> */}
         </motion.div>
 
         <div className="space-y-2">
