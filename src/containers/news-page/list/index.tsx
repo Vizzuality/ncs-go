@@ -163,14 +163,16 @@ const List = () => {
             </div>
 
             <motion.div className="flex justify-center w-full py-10" {...IN_VIEW_PROPS}>
-              <Button
-                className="w-full rounded-full"
-                theme={minWidth < BREAKPOINTS.md ? 'tertiary' : 'secondary'}
-                size="s"
-                onClick={() => setDisplayedStories(STORIES)}
-              >
-                Show more stories
-              </Button>
+              {displayedStories.length !== STORIES.length && (
+                <Button
+                  className="w-full rounded-full"
+                  theme={minWidth < BREAKPOINTS.md ? 'tertiary' : 'secondary'}
+                  size="s"
+                  onClick={() => setDisplayedStories(STORIES)}
+                >
+                  Show more stories
+                </Button>
+              )}
             </motion.div>
           </Wrapper>
         </div>
