@@ -35,6 +35,21 @@ export const STORIES: Story[] = [
     media: ['Article'],
   },
   {
+    id: 2,
+    country: 'Ghana',
+    title: 'From Peru to Ghana: how technology is transforming community reforestation',
+    description:
+      'Follow Peruvian activist Betty Rubio’s trip to Ghana to share her expertise in monitoring and reporting technologies for reforestation and native plant growing in the Bowkrom Community.',
+    image: 'peru-ghana.jpg',
+    pathway: 'croplands',
+    article:
+      'https://nature4climate.org/from-peru-to-ghana-how-technology-is-transforming-community-reforestation',
+    clip: null,
+    video: null,
+    category: 'News',
+    media: ['Article'],
+  },
+  {
     id: 6,
     country: 'Indonesia',
     title:
