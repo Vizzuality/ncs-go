@@ -1,6 +1,8 @@
 'use client';
 import React from 'react';
 
+import Wrapper from 'containers/wrapper';
+
 import dynamic from 'next/dynamic';
 
 const Video = dynamic(() => import('components/video'), {
@@ -9,24 +11,24 @@ const Video = dynamic(() => import('components/video'), {
 
 import { motion } from 'framer-motion';
 
-import Wrapper from 'containers/wrapper';
-
-import LinkButton from 'components/button';
+import LinkArrow from 'components/link-arrow';
 
 const Highlight = () => {
   return (
     <div className="w-full pt-12 md:pt-0">
-      <Video
-        light={false}
-        url="https://www.youtube.com/watch?v=dkXPon9UQxw&list=PLZwFPkUsoHXkDJlefkD1oKGKra38a5SBJ&index=1&t=1s"
-        height="719px"
-        width="100%"
-        controls
-      />
-      <div className="lg:max-w-[1440px] lg:mx-auto px-0 xl:px-[100px]">
-        <Wrapper>
+      <Wrapper className="px-0">
+        <Video
+          light={false}
+          url="https://www.youtube.com/watch?v=dkXPon9UQxw&list=PLZwFPkUsoHXkDJlefkD1oKGKra38a5SBJ&index=1&t=1s"
+          height="719px"
+          width="100%"
+          controls
+        />
+      </Wrapper>
+      <div className="bg-none md:bg-beige">
+        <Wrapper className="px-0">
           <motion.div
-            className="max-w-[680px] ml-auto lg:px-2"
+            className="w-full ml-auto bg-beige"
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
@@ -35,12 +37,12 @@ const Highlight = () => {
               delay: 0.25,
             }}
           >
-            <div className="ml-4 md:ml-0 lg:p-10 sm:p-6 p-4 flex flex-col gap-4 text-base text-gray-900 items-end h-full relative bg-brown-400">
+            <div className="lg:p-10 sm:p-6 p-4 flex flex-col lg:flex-row gap-10 text-base text-gray-900 items-end h-full relative bg-brand-700">
               <div>
                 The Nature in Action series is a naturebase collaboration with community-led
                 filmmakers from{' '}
                 <a
-                  className="underline text-gray-600 hover:text-black"
+                  className="underline text-black hover:text-gray-600"
                   href="https://ifnotusthenwho.me/"
                   target="_blank"
                   rel="noreferrer"
@@ -54,16 +56,11 @@ const Highlight = () => {
                 positively influencing climate discussions and decision-making for impactful
                 nature-based action, using naturebase data. Watch the episodes:
               </div>
-              <LinkButton
-                theme="tertiary"
-                size="xs"
-                className="max-w-[102px]"
-                target="_blank"
-                rel="noreferrer"
-                href="https://www.youtube.com/watch?v=dkXPon9UQxw&list=PLZwFPkUsoHXkDJlefkD1oKGKra38a5SBJ&index=1&t=1s&ab_channel=Nature4Climate"
-              >
-                Play All
-              </LinkButton>
+              <LinkArrow
+                className={{ arrow: 'stroke-grey-900' }}
+                label={'Play All'}
+                url="https://www.youtube.com/watch?v=dkXPon9UQxw&list=PLZwFPkUsoHXkDJlefkD1oKGKra38a5SBJ&index=1&t=1s&ab_channel=Nature4Climate"
+              />
             </div>
           </motion.div>
         </Wrapper>

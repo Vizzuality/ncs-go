@@ -1,5 +1,6 @@
 import React, { /* useEffect, */ useState } from 'react';
 
+import cx from 'classnames';
 // import { useUIStore } from 'store/ui';
 
 import { motion } from 'framer-motion';
@@ -25,7 +26,7 @@ import { /* MediaType, */ Story } from 'types';
 
 import { STORIES } from './constants';
 
-const List = () => {
+const List = ({ className }: { className?: string }) => {
   const { minWidth } = useBreakpoint(BREAKPOINTS, 'md');
   // const filters = useUIStore((state) => state.filters);
   // const setFilters = useUIStore((state) => state.setFilters);
@@ -60,9 +61,9 @@ const List = () => {
   return (
     <>
       <Media greaterThanOrEqual="md">
-        <div className="bg-beige md:pb-28 md:pt-72">
+        <div className={cx('bg-beige md:pb-28 md:pt-72', className)}>
           <Wrapper>
-            <div className="xl:grid xl:grid-cols-12 pt-16">
+            <div className="xl:grid xl:grid-cols-12 pt-4">
               {/* <motion.div
                 className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2 my-12"
                 {...IN_VIEW_PROPS}
@@ -98,7 +99,7 @@ const List = () => {
                   </div>
                 </div>
               </motion.div> */}
-              <div className="flex flex-col space-y-4 xl:col-span-10 xl:col-start-2">
+              <div className="flex flex-col space-y-4 xl:col-span-12">
                 {STORIES.map((s) => (
                   <div key={s.id}>
                     <StoryCard

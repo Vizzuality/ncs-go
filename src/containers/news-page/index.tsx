@@ -27,9 +27,7 @@ const News = () => {
 
       <Highlight />
 
-      <div className="md:-mt-72">
-        <List />
-      </div>
+      <List className="mt-0 md:!pt-0" />
     </motion.section>
   );
 };
