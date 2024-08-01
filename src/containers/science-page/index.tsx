@@ -186,7 +186,7 @@ const Science = () => {
               <br />
               <p>
                 Each spatial dataset presented estimates the mitigation potential of Natural Climate
-                Solution activities derived from original geospatial analysis using the latest
+                Solutions activities derived from original geospatial analysis using the latest
                 satellite and peer-reviewed datasets of current land systems, varied geospatial
                 data, and carbon emissions/sequestration estimates informed by peer-reviewed
                 publications. For more information see our{' '}
