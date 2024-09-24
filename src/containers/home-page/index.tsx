@@ -143,7 +143,7 @@ const HomePage = () => {
               Naturebase is a <span className="text-blue-800">new interactive platform</span> that
               brings together science-based data on nature’s pathways to benefit the climate by
               showing where, why and how to implement high-integrity nature-based projects with the
-              highest carbon mitigation impact whilst improving livelihoods and protecting
+              highest climate mitigation impact whilst improving livelihoods and protecting
               biodiversity.
             </p>
           </div>

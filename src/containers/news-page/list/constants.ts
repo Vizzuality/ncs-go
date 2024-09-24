@@ -24,7 +24,7 @@ export const STORIES: Story[] = [
     title:
       'Unlocking the potential: N4C launches interactive database showing opportunities for high-integrity nature-based projects',
     description:
-      'Nature4Climate unveiled the beta version of naturebase, a free platform designed for policymakers, practitioners, and other decision-makers to identify strategies for implementing impactful nature-based projects, covering carbon mitigation, biodiversity preservation, and livelihood enhancement across global, national, and subnational scales.',
+      'Nature4Climate unveiled the beta version of naturebase, a free platform designed for policymakers, practitioners, and other decision-makers to identify strategies for implementing impactful nature-based projects, covering climate mitigation, biodiversity preservation, and livelihood enhancement across global, national, and subnational scales.',
     image: 'test-1.jpg',
     pathway: 'forest',
     article:
@@ -55,7 +55,7 @@ export const STORIES: Story[] = [
     title:
       'Wetlands for livelihoods: how local communities thrive in protecting mangroves and peatlands in Borneo',
     description:
-      'Dedicated to restoring the Teluk Semanting Mangrove, the village embraces the mantra: "more mangroves, more blessings," as they plant Rhizophora seedlings. Indonesia holds the third-highest potential globally for carbon sequestration through Natural Climate Solutions. Protecting Indonesia\'s remaining wetland ecosystems is crucial for meeting greenhouse gas emissions goals by the end of the decade, all while serving as a vital source of income for local communities.',
+      'Dedicated to restoring the Teluk Semanting Mangrove, the village embraces the mantra: "more mangroves, more blessings," as they plant Rhizophora seedlings. Indonesia holds the third-highest potential globally for climate sequestration through Natural Climate Solutions. Protecting Indonesia\'s remaining wetland ecosystems is crucial for meeting greenhouse gas emissions goals by the end of the decade, all while serving as a vital source of income for local communities.',
     image: 'indonesia.webp',
     pathway: 'savana',
     article: 'https://nature4climate.org/naturebase-indonesia',

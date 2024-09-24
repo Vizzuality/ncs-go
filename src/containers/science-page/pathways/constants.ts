@@ -107,6 +107,13 @@ export const PATHWAYS = [
           'Avoided oxidation of soil carbon (CO2 and CH4) due to soil re-wetting in tropical, temperate, and boreal peatlands.',
         color: '#D6F1F3',
       },
+      {
+        id: 'improved-peatland-management',
+        title: 'Improved Peatland Management',
+        description:
+          'Improved management of drained peatland soils due to partial rewetting of peatlands converted to arable lands (tropical, emperate, and boreal peatlands)',
+        color: '#D6F1F3',
+      },
     ],
   },
   {
@@ -147,7 +154,7 @@ export const PATHWAYS = [
       },
       {
         id: 'reduced-woodfuel-harvest-in-forests',
-        title: 'Reduced Woodfuel Harvest in Forests',
+        title: 'Reduced Woodfuel Harvest in Shrublands',
         color: '#F1FABE',
         description:
           'Avoided emissions due to reduced harvest of woodfuel from savanna biomes used for cooking and heating, without reducing heating or cooking utility.',
