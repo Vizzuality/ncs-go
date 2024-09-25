@@ -111,7 +111,7 @@ export const PATHWAYS = [
         id: 'improved-peatland-management',
         title: 'Improved Peatland Management',
         description:
-          'Improved management of drained peatland soils due to partial rewetting of peatlands converted to arable lands (tropical, emperate, and boreal peatlands)',
+          'Improved management of drained peatland soils due to partial rewetting of peatlands converted to arable lands (tropical, emperate, and boreal peatlands).',
         color: '#D6F1F3',
       },
     ],
